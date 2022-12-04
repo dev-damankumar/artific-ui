@@ -1,0 +1,331 @@
+@import "https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+	--primary: #3d5af1;
+	--primary-color: var(--primary);
+	--primary-hover: #2a47db;
+	--light-hover: #f7f6f6;
+	--primary-hover-box-shadow: #d6e0ff;
+	--hover-box-shadow: #e4e4e5;
+	--light-hover-box-shadow: #f8f8f8;
+	--dark-hover: #000;
+	--light: #fff;
+	--light-color: var(--light);
+	--dark: hsl(219, 36%, 18%);
+	--dark-color: var(--dark);
+	--link-color: #3d59f0;
+}
+
+
+@font-face {
+	font-family: 'Segoe UI Web (West European)';
+	src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semilight.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semilight.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-regular.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semibold.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semibold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+*, ::after, ::before {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+	outline: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	:root {
+		scroll-behavior: smooth;
+	}
+}
+
+html, body {
+	margin: 0;
+	font-family: 'Nunito Sans', sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	line-height: 1.5;
+	font-size: 16px;
+	font-weight: 400;
+	-webkit-text-size-adjust: 100%;
+	background-color: #fff;
+	-webkit-tap-highlight-color: transparent;
+	color: #303a52;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Montserrat Bold", sans-serif;
+	margin-top: 0;
+	margin-bottom: 1rem;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: calc(1.375rem + 1.5vw);
+}
+
+@media (min-width: 1200px) {
+	h1 {
+		font-size: 2.5rem;
+	}
+}
+
+h2 {
+	font-size: calc(1.325rem + 0.9vw);
+}
+
+@media (min-width: 1200px) {
+	h2 {
+		font-size: 2rem;
+	}
+}
+
+h3 {
+	font-size: calc(1.3rem + 0.6vw);
+}
+
+@media (min-width: 1200px) {
+	h3 {
+		font-size: 1.75rem;
+	}
+}
+
+h4 {
+	font-size: calc(1.275rem + 0.3vw);
+}
+
+@media (min-width: 1200px) {
+	h4 {
+		font-size: 1.5rem;
+	}
+}
+
+h5 {
+	font-size: 1.25rem;
+}
+
+h6 {
+	font-size: 1rem;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 1rem
+}
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+small {
+	font-size: 0.875em;
+}
+
+mark {
+	padding: 0.2em;
+	background-color: #fcf8e3;
+}
+
+sub,
+sup {
+	position: relative;
+	font-size: 0.75em;
+	line-height: 0;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+pre,
+code,
+kbd,
+samp {
+	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	font-size: 1em;
+	direction: ltr /* rtl:ignore */;
+	unicode-bidi: bidi-override;
+}
+
+pre {
+	display: block;
+	margin-top: 0;
+	margin-bottom: 1rem;
+	overflow: auto;
+	font-size: 0.875em;
+}
+
+pre code {
+	font-size: inherit;
+	color: inherit;
+	word-break: normal;
+}
+
+code {
+	font-size: 0.875em;
+	color: #d63384;
+	word-wrap: break-word;
+}
+
+a > code {
+	color: inherit;
+}
+
+kbd {
+	padding: 0.2rem 0.4rem;
+	font-size: 0.875em;
+	color: #fff;
+	background-color: #212529;
+	border-radius: 0.2rem;
+}
+
+kbd kbd {
+	padding: 0;
+	font-size: 1em;
+	font-weight: 700;
+}
+
+figure {
+	margin: 0 0 1rem;
+}
+
+table {
+	caption-side: bottom;
+	border-collapse: collapse;
+}
+
+caption {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	color: #6c757d;
+	text-align: left;
+}
+
+th {
+	text-align: inherit;
+	text-align: -webkit-match-parent;
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+	border-color: inherit;
+	border-style: solid;
+	border-width: 0;
+}
+
+label {
+	display: inline-block;
+}
+
+button:focus:not(:focus-visible) {
+	outline: 0;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+[role=button] {
+	cursor: pointer;
+}
+
+select {
+	word-wrap: normal;
+}
+
+select:disabled {
+	opacity: 1;
+}
+
+hr {
+	margin: 0.5rem 0;
+	color: inherit;
+	background-color: gray;
+	border: 0;
+}
+
+hr:not([size]) {
+	height: 1px;
+}
+
+img,
+svg {
+	vertical-align: middle;
+}
+
+svg {
+	vertical-align: middle;
+}
+
+[tabindex="-1"]:focus:not(:focus-visible) {
+	outline: 0 !important
+}
+
+input:focus {
+	outline: none;
+}
+
+button {
+	outline: none;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:not([href]):not([class]), a:not([href]):not([class]):hover {
+	color: inherit;
+	text-decoration: none;
+}
+
+dl, ol, ul {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
