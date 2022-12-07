@@ -1,18 +1,10 @@
-import { ArgsTable, Canvas, Meta, Story, Props } from '@storybook/addon-docs';
+import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
 
-import { Accordion, AccordionButton } from '../../src';
-import AccordionBody from '../../src/Accordion/AccordionBody';
+import {Accordion, AccordionBody, AccordionHeader, AccordionPanel} from '../../src';
 
 <Meta
-  title="Components/Accordion"
-  component={Accordion}
-  subcomponents={{
-    'Accordion.Button': Accordion.Button,
-    'Accordion.Collapse': Accordion.Collapse,
-    'Accordion.Item': Accordion.Item,
-    'Accordion.Header': Accordion.Header,
-    'Accordion.Body': Accordion.Body,
-  }}
+	title="Components/Accordion"
+	component={Accordion}
 />
 
 # Accordion
@@ -23,44 +15,56 @@ As our components are built on top of `React-Bootstrap` library, do check out th
 
 ## Basic Accordion
 
-export const Template = (args) => (
-  <Accordion {...args}>
-    <Accordion.Item eventKey="0">
-      <Accordion.Header>Accordion Item #1</Accordion.Header>
-      <Accordion.Body>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </Accordion.Body>
-    </Accordion.Item>
-    <Accordion.Item eventKey="1">
-      <Accordion.Header>Accordion Item #2</Accordion.Header>
-      <Accordion.Body>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </Accordion.Body>
-    </Accordion.Item>
-  </Accordion>
+export const Template=(args) => (
+	<Accordion {...args}>
+		<AccordionPanel>
+			<AccordionHeader>Is you.accordion-panelr team updated with latest web technical skills?</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Is you.accordion-panelr team updated with latest web technical skills?</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Is you.accordion-panelr team updated with latest web technical skills?</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
 );
 
 <Canvas>
-  <Story
-    name="Basic"
-    args={{
-      defaultActiveKey: '0',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+	<Story
+		name="Basic"
+		args={{
+			defaultActiveKey: '0',
+		}}
+	>
+		{Template.bind({})}
+	</Story>
 </Canvas>
 
 ## API
@@ -69,27 +73,977 @@ export const Template = (args) => (
 import { Accordion } from 'artific-ui/Accordion';
 ```
 
-<ArgsTable story="Basic" />
+<ArgsTable story="Basic"/>
 
-## Fully Collapsed State
+## Accordion Themes
 
 If you want your `Accordion` to start in a fully-collapsed state, then simply don't pass in a `defaultActiveKey` prop to `Accordion`.
 
 <Canvas>
-  <Story name="Fully Collapsed State">{Template.bind({})}</Story>
+	<Story name="Primary Accordion">
+		<Accordion theme="default">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+		<Accordion theme="primary">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+		<Accordion theme="dark">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+		<Accordion theme="light">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+	</Story>
 </Canvas>
 
-## Always Open
+## Basic Accordion Prefix And Suffix icons
 
 When `alwaysOpen` is true, `defaultActiveKey` prop becomes an array of active keys. The AccordionItem remains open even when the next AccordionItem is opened.
 
 Control which AccordionItem should be open on first load by defining `defaultActiveKey` array with the `eventKey`
 
 <Canvas>
-  <Story
-    name="Always Open"
-    args={{ defaultActiveKey: ['0', '1'], alwaysOpen: true }}
-  >
-    {Template.bind({})}
-  </Story>
+	<Story
+		name="Basic Accordion Prefix And Suffix icons"
+	>
+		<Accordion>
+			<AccordionPanel>
+				<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>}>Is you.accordion-panelr team updated with
+					latest web technical skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader suffix={<i className='bx bx-bowl-hot'></i>}>Is you.accordion-panelr team updated with
+					latest web technical skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader suffix={<i className='bx bx-bowl-hot'></i>}
+								 prefix={<i className='bx bx-bowl-hot'></i>}>Is you.accordion-panelr team updated with
+					latest web technical skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+	</Story>
+</Canvas>
+
+## Indicator Icon Directions
+
+When `alwaysOpen` is true, `defaultActiveKey` prop becomes an array of active keys. The AccordionItem remains open even when the next AccordionItem is opened.
+
+Control which AccordionItem should be open on first load by defining `defaultActiveKey` array with the `eventKey`
+
+<Canvas>
+	<Story
+		name="Indicator Icon Directions"
+	>
+		<h3>Default/End Direction</h3>
+		<Accordion theme="primary" indicatorDirection="end">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+		<br/>
+		<h3>Start Direction</h3>
+		<Accordion theme="primary" indicatorDirection="start">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated wl skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+	</Story>
+</Canvas>
+
+## Accordion Layout
+
+When `alwaysOpen` is true, `defaultActiveKey` prop becomes an array of active keys. The AccordionItem remains open even when the next AccordionItem is opened.
+
+Control which AccordionItem should be open on first load by defining `defaultActiveKey` array with the `eventKey`
+
+<Canvas>
+	<Story
+		name="Accordion Layout"
+	>
+		<h5>Basic Accordion Layout</h5>
+		<Accordion theme="primary" layout="default">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+		<br/>
+		<br/>
+		<h5>Rounded Accordion</h5>
+		<Accordion theme="primary" layout="rounded">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+		<br/>
+		<br/>
+		<h5>No Radius Accordion</h5>
+		<Accordion theme="primary" layout="no-radius">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+		<br/>
+		<br/>
+		<h5>Pill Accordion</h5>
+		<Accordion theme="primary" layout="pill">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+	</Story>
+</Canvas>
+
+## Accordion Variant
+
+When `alwaysOpen` is true, `defaultActiveKey` prop becomes an array of active keys. The AccordionItem remains open even when the next AccordionItem is opened.
+
+Control which AccordionItem should be open on first load by defining `defaultActiveKey` array with the `eventKey`
+
+<Canvas>
+	<Story
+		name="Accordion Variant"
+	>
+		<h5>Default Accordion Variant</h5>
+		<Accordion theme="primary" variant="default">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+		<br/>
+		<br/>
+		<h5>Attached Accordion Variant</h5>
+		<Accordion theme="primary" variant="attached">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+		<br/>
+		<br/>
+		<h5>Separate Accordion</h5>
+		<Accordion theme="primary" variant="separate">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+		<br/>
+		<br/>
+		<h5>Bordered Accordion</h5>
+		<Accordion theme="primary" variant="bordered">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+		<br/>
+		<br/>
+		<h5>Outlined Accordion</h5>
+		<Accordion theme="primary" variant="outlined">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+	</Story>
+</Canvas>
+
+## Accordion Sizes
+
+When `alwaysOpen` is true, `defaultActiveKey` prop becomes an array of active keys. The AccordionItem remains open even when the next AccordionItem is opened.
+
+Control which AccordionItem should be open on first load by defining `defaultActiveKey` array with the `eventKey`
+
+<Canvas>
+	<Story
+		name="Accordion Sizes"
+	>
+		<h5>Extra Small Sizing</h5>
+		<Accordion theme="primary" size="xs">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+		<br/>
+		<br/>
+		<h5>Small Size Accordion</h5>
+		<Accordion theme="primary" size="sm">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+		<br/>
+		<br/>
+		<h5>Default/Medium Accordion</h5>
+		<Accordion theme="primary" size="md">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+		<br/>
+		<br/>
+		<h5>Large Accordion</h5>
+		<Accordion theme="primary" size="lg">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+		<br/>
+		<br/>
+		<h5>Extra Large Accordion</h5>
+		<Accordion theme="primary" size="xl">
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+	</Story>
 </Canvas>

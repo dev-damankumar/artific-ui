@@ -16,7 +16,7 @@
 	font-size: var(--btn-font-size);
 	background: var(--btn-main-color);
 	padding: var(--btn-padding) calc(var(--btn-padding) * 3);
-	border: var(--btn-outline-width) solid transparent;
+	border: var(--btn-outline-width) solid var(--primary-color);
 	border-radius: var(--btn-border-radius);
 	display: inline-flex;
 	align-items: center;
@@ -178,22 +178,25 @@ span.ripple {
 /*Index Colors*/
 .btn-primary {
 	background: var(--primary);
+	border-color: var(--primary-color);
 	color: white;
 }
 
 .btn-light {
 	background: var(--light);
+	border-color: var(--light-color);
 }
 
 .btn-dark {
 	background: var(--dark);
 	color: white;
+	border-color: var(--dark-color);
 }
 
 .btn-text {
 	background: none;
 	box-shadow: none;
-	border: none !important;
+	border-color: transparent !important;
 }
 
 .btn-text:hover {

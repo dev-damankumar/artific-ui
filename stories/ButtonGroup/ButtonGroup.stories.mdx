@@ -1,0 +1,90 @@
+import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Button, ButtonGroup} from '../../src/index';
+
+<Meta title="Components/ButtonGroup" component={ButtonGroup}/>
+
+# ButtonGroup
+
+Custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+
+export const defaultTemplate=(args) => <ButtonGroup {...args}>
+	<Button type="button">Primary</Button>
+	<Button type="button">Light</Button>
+	<Button type="button">Dark</Button>
+</ButtonGroup>;
+
+<Canvas>
+	<Story name="Default">{defaultTemplate.bind({})}</Story>
+</Canvas>
+
+## API
+
+```jsx
+import { Button } from 'artific-ui/Button';
+```
+
+<ArgsTable story="Default"/>
+
+## Button Horizontal Group
+
+Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+
+<Canvas>
+	<Story name="Button Horizontal Group">
+		<ButtonGroup>
+			<Button type="button">Primary</Button>
+			<Button theme="light" type="button">Light</Button>
+			<Button theme="dark" type="button">Dark</Button>
+		</ButtonGroup>
+	</Story>
+</Canvas>
+
+
+## Button Vertical Group
+
+Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+
+<Canvas>
+	<Story name="Button Vertical Group">
+		<ButtonGroup direction="vertical">
+			<Button type="button">Primary</Button>
+			<Button theme="light" type="button">Light</Button>
+			<Button theme="dark" type="button">Dark</Button>
+		</ButtonGroup>
+	</Story>
+</Canvas>
+
+## Button Group Sizes
+
+Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+
+<Canvas>
+	<Story name="Button Group Sizes">
+		<ButtonGroup size="xs">
+			<Button type="button">Primary</Button>
+			<Button theme="light" type="button">Light</Button>
+			<Button theme="dark" type="button">Dark</Button>
+		</ButtonGroup>
+		<br/>
+		<br/>
+		<ButtonGroup size="sm">
+			<Button type="button">Primary</Button>
+			<Button theme="light" type="button">Light</Button>
+			<Button theme="dark" type="button">Dark</Button>
+		</ButtonGroup>
+		<br/>
+		<br/>
+		<ButtonGroup size="lg">
+			<Button type="button">Primary</Button>
+			<Button theme="light" type="button">Light</Button>
+			<Button theme="dark" type="button">Dark</Button>
+		</ButtonGroup>
+		<br/>
+		<br/>
+		<ButtonGroup size="xl">
+			<Button type="button">Primary</Button>
+			<Button theme="light" type="button">Light</Button>
+			<Button theme="dark" type="button">Dark</Button>
+		</ButtonGroup>
+	</Story>
+</Canvas>

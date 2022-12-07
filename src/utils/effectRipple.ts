@@ -3,18 +3,20 @@ import rgbaToHsla from './colors/rgbToHSL';
 function ripple(e: any, button: any, focus: any, initial: any, mouseDown: any) {
 	const ms = 500
 	e.stopPropagation();
-	button.style.overflow = 'hidden';
+
 	let timeHandler: any = () => {
 		try {
-			button.style = initial;
+			ripple_elmnt.style.opacity = 0;
 			button.removeChild(ripple_elmnt);
-
+			button.style = initial;
 			mouseDown = false;
 		} catch (er) {
 			console.log("mouseDown", mouseDown)
 		}
 	};
-	
+
+	clearTimeout(timeHandler);
+	button.style.overflow = 'hidden';
 	const style = getComputedStyle(button);
 	let backgroundColor = style['backgroundColor'] || '';
 
@@ -45,26 +47,23 @@ function ripple(e: any, button: any, focus: any, initial: any, mouseDown: any) {
 	}
 	ripple_elmnt.style.transform = 'scale(0)';
 	ripple_elmnt.style.transformOrigin = 'center';
+	button.style = initial;
 	ripple_elmnt.style.transition = `transform ${ms}ms ease, opacity ${ms - 100}ms ease`;
 	ripple_elmnt.style.background = `hsl(${hslColor?.data?.h}deg,${hslColor?.data?.s}%,${(hslColor?.data?.l > 60) ? '80%' : '100%'},0.3)`;
 
 	button.appendChild(ripple_elmnt);
 
 	setTimeout(() => {
+		button.style.overflow = 'hidden';
 		ripple_elmnt.style.transform = 'scale(1)';
 	}, 10);
 
 	button.addEventListener('mouseup', () => {
-		setTimeout(() => {
-			ripple_elmnt.style.opacity = 0;
-			clearTimeout(timeHandler);
-			setTimeout(timeHandler);
-		}, ms / 2)
+		setTimeout(timeHandler, ms / 2)
 	}, {once: true});
+
 	button.addEventListener('blur', () => {
-		ripple_elmnt.style.opacity = 0;
-		clearTimeout(timeHandler);
-		setTimeout(timeHandler);
+		setTimeout(timeHandler, 0)
 	}, {once: true});
 }
 

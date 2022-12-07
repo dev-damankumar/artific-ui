@@ -22,7 +22,7 @@ export const DirectionsArray = ['horizontal', 'vertical'] as const;
 export type Directions = typeof DirectionsArray[number];
 
 export const ButtonTypeArray = ['button', 'reset', 'submit'] as const;
-export type ButtonType = 'button' | 'reset' | 'submit';
+export type ButtonType = typeof ButtonTypeArray[number];
 
 export const propTypes = {
 	variant: PropTypes.oneOf<Variants>(VariantsArray),
@@ -33,8 +33,8 @@ export const propTypes = {
 	theme: PropTypes.oneOf<Themes>(ThemesArray),
 	hideTextOnLoading: PropTypes.bool,
 	loading: PropTypes.bool,
-	prefix: PropTypes.bool || null,
-	suffix: PropTypes.bool || null,
+	prefix: PropTypes.node || null,
+	suffix: PropTypes.node || null,
 	className: PropTypes.string,
 	colorScheme: PropTypes.shape({
 		background: PropTypes.string.isRequired,
@@ -75,8 +75,8 @@ export interface IButtonProps {
 	variants?: Variants[];
 	disabled?: boolean;
 	loading?: boolean;
-	prefix?: boolean;
-	suffix?: boolean;
+	prefix?: React.ReactNode | null | undefined;
+	suffix?: React.ReactNode | null | undefined;
 	className?: string;
 
 	[x: string]: any;

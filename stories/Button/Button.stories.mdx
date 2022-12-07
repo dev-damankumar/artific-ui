@@ -107,10 +107,37 @@ Use any of the available button style types to quickly create a styled button. J
 
 <Canvas>
 	<Story name="Loading buttons">
-		<Button loading hideTextOnLoading loadingStyle="grow" type="button">Loading Grow</Button>
 		<Button loading hideTextOnLoading loadingStyle="spin" type="button">Loading Grow</Button>
+		<Button loading hideTextOnLoading loadingStyle="grow" type="button">Loading Grow</Button>
 		<Button loading loadingStyle="grow" type="button">Loading Grow</Button>
 		<Button loading loadingDirection="after" type="button">Loading Spin</Button>
 		<Button loading loadingDirection="after" loadingStyle="grow" type="button">Loading Grow</Button>
+	</Story>
+</Canvas>
+
+## Custom theme buttons
+
+Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+
+<Canvas>
+	<Story name="Custom theme buttons">
+		<Button colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		}} type="button">Primary</Button>
+		<Button colorScheme={{
+			background: 'red',
+			color: 'white',
+		}} theme="light" type="button">Light</Button>
+		<Button colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		}} variant="outline" type="button">Custom Outline</Button>
+		<Button colorScheme={{
+			background: 'red',
+			color: 'white',
+		}} variant="outline" theme="light" type="button">Custom Outline</Button>
 	</Story>
 </Canvas>
