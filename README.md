@@ -1,4 +1,5 @@
-# Artific UI
+<img style="margin-left: -20px" src="https://artify-indol.vercel.app/assets/images/Logo.png" alt="drawing" width="200"/>
+
 
 A Modern React Ui Library for making developer's life easier
 
@@ -20,7 +21,6 @@ Install Artific UI with npm
   npm install artific-ui
 ```
 
-![Logo](https://artify-indol.vercel.app/assets/images/Logo.png)
 
 ## Support
 
