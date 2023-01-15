@@ -1,0 +1,132 @@
+import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {IconButton} from '../../src/index';
+
+<Meta title="Components/IconButton" component={IconButton}/>
+
+# IconButtons
+
+Custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+
+export const defaultTemplate=(args) => <IconButton {...args}>Default</IconButton>;
+
+<Canvas>
+	<Story name="Default">{defaultTemplate.bind({})}</Story>
+</Canvas>
+
+## API
+
+```jsx
+import { IconButton } from 'artific-ui/IconButton';
+```
+
+<ArgsTable story="Default"/>
+
+## Themes
+
+Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+
+<Canvas>
+	<Story name="Themes">
+		<IconButton theme="primary" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton theme="secondary" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton theme="light" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton theme="dark" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+	</Story>
+</Canvas>
+
+
+## Variants
+
+Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+
+<Canvas>
+	<Story name="Variants">
+		<IconButton variant="default" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton variant="text" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton variant="outline" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+	</Story>
+</Canvas>
+
+
+## Button Layouts
+
+Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+
+<Canvas>
+	<Story name="Button Layouts">
+		<IconButton layout="default" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton layout="rounded" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton layout="pill" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton layout="no-radius" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+	</Story>
+</Canvas>
+
+## Sizes
+
+Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+
+<Canvas>
+	<Story name="Sizes">
+		<IconButton size="xs" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton size="sm" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton size="lg" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton size="xl" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+	</Story>
+</Canvas>
+
+## Disabled IconButtons
+
+Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+
+<Canvas>
+	<Story name="Disabled IconButtons">
+		<IconButton disabled type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton disabled theme="light" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton disabled theme="dark" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+	</Story>
+</Canvas>
+
+## Loading IconButtons
+
+Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+
+<Canvas>
+	<Story name="Loading IconButtons">
+		<IconButton loading hideTextOnLoading loadingStyle="spin" type="button"><i
+			className='bx bxs-color-fill'></i></IconButton>
+		<IconButton loading hideTextOnLoading loadingStyle="grow" type="button"><i
+			className='bx bxs-color-fill'></i></IconButton>
+		<IconButton loading loadingStyle="grow" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton loading loadingDirection="after" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton loading loadingDirection="after" loadingStyle="grow" type="button"><i
+			className='bx bxs-color-fill'></i></IconButton>
+	</Story>
+</Canvas>
+
+## Custom theme IconButtons
+
+Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+
+<Canvas>
+	<Story name="Custom theme IconButtons">
+		<IconButton colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		}} type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton colorScheme={{
+			background: 'red',
+			color: 'white',
+		}} theme="light" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		}} variant="outline" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+		<IconButton colorScheme={{
+			background: 'red',
+			color: 'white',
+		}} variant="outline" theme="light" type="button"><i className='bx bxs-color-fill'></i></IconButton>
+	</Story>
+</Canvas>

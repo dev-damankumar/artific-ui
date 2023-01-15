@@ -56,7 +56,7 @@ export const defaultProps = {
 	loadingDirection: 'before' as LoadingDirections,
 	loadingStyle: 'spin' as LoadingStyles,
 	size: 'md' as Sizes,
-	className: '',
+	className: '' as string,
 	variants: undefined
 };
 

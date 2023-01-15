@@ -6,6 +6,8 @@
 	--card-main-color: #f8f8f8;
 	--card-outline-width: 2px;
 	--card-border-color: #f0f0f0;
+	--card-img-width: 100%;
+	--card-width: 100%;
 }
 
 .card {
@@ -22,6 +24,24 @@
 	-o-transition: ease-in-out .3s;
 	transition: ease-in-out .3s;
 	margin-bottom: 30px;
+	max-width: var(--card-width);
+}
+
+
+.card-large {
+	--card-width: 80%
+}
+
+.card-extra-large {
+	--card-width: 100%
+}
+
+.card-small {
+	--card-width: 40%
+}
+
+.card-extra-small {
+	--card-width: 20%
 }
 
 .card-row {
@@ -60,11 +80,11 @@
 }
 
 .card-img-div {
-	max-width: 100%;
+	max-width: var(--card-img-width);
 }
 
 .card-img-div img {
-	max-width: 100%;
+	width: 100%;
 	height: 100%;
 	border-radius: var(--card-border-radius);
 }
@@ -79,6 +99,22 @@
 
 .card-image-pill {
 	--card-border-radius: 50%;
+}
+
+.card-image-large {
+	--card-img-width: 80%
+}
+
+.card-image-extra-large {
+	--card-img-width: 100%
+}
+
+.card-image-small {
+	--card-img-width: 40%
+}
+
+.card-image-extra-small {
+	--card-img-width: 20%
 }
 
 .card-title {
@@ -101,14 +137,30 @@
 	color: white !important;
 }
 
+.bg-primary a {
+	color: var(--primary) !important;
+	filter: brightness(300%);
+	font-weight: 600;
+}
+
 .bg-light {
 	background: var(--light) !important;
 	color: #303a52 !important;
 }
 
+.bg-light a {
+	color: var(--dark) !important;
+	font-weight: 600;
+}
+
 .bg-dark {
 	background: var(--dark) !important;
 	color: white !important;
+}
+
+.bg-dark a {
+	color: var(--light) !important;
+	font-weight: 600;
 }
 
 .card-btn {

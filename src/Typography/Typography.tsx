@@ -1,49 +1,54 @@
-import React, { createElement } from 'react';
+import React, {createElement} from 'react';
 import getClassNames from '../utils/getClassnames';
 import classes from './Typography.module.css';
-import { ITypographyProps } from '../types/typography';
+import {defaultProps, ITypographyProps, propTypes} from '../types/typography';
+import getRandomClassId from "../utils/generateRandonClassId";
+import applyColorScheme from "../utils/applyColorScheme";
 
 export const Typography: React.FC<ITypographyProps> = (
-    {
-        children,
-        style,
-        className,
-        fontSize,
-        fontWeight,
-        as = 'p',
-        variant = 'text',
-        weight = 'medium',
-        ...rest
-    }) => {
-    let element = as?.toString()?.trim()?.toLowerCase();
-    let variantArray = ['text', 'subtitle', 'subheading', 'caption', 'description', 'code'];
-    let asElement = ['span', 'p', 'div', 'i', 'b', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-    let fontWeightArray = ['medium', 'light', 'bold'];
-    let variantClasses = '';
-    if (variantArray.includes(variant)) {
-        variantClasses = variant !== 'text' ? `typography-${variant}` : '';
-    }
-    let weightClasses = '';
-    if (fontWeightArray.includes(weight)) {
-        weightClasses = `${weight !== 'medium' ? `typography-${weight}` : ''}`;
-    }
-    if (!asElement.includes(element)) {
-        element = 'p';
-    }
+	{
+		children,
+		style,
+		className,
+		fontSize,
+		fontWeight,
+		as = 'p',
+		variant = 'text',
+		weight = 'medium',
+		theme = 'default',
+		colorScheme,
+		...rest
+	}) => {
+	const id = getRandomClassId();
+	const componentId = 'btn';
+	const componentSelector = `${componentId}-${id}`;
+	const element = as?.toString()?.trim()?.toLowerCase() || 'p';
+	const variantClasses = variant !== 'text' ? `typography-${variant}` : '';
+	const weightClasses = `${weight !== 'medium' ? `typography-${weight}` : ''}`;
 
-    let styles = { ...style, fontSize: fontSize };
-    if (fontSize) {
-        styles['fontSize'] = fontSize;
-    }
-    if (fontWeight) {
-        styles['fontWeight'] = fontWeight;
-    }
-    return createElement(element, {
-        style: { ...styles },
-        className: `${getClassNames(classes, 'typography', variantClasses, weightClasses)} ${className}`,
-        ...rest,
-        children: children
-    });
+	const styles = {...style, fontSize: fontSize};
+	if (fontSize) {
+		styles['fontSize'] = fontSize;
+	}
+	if (fontWeight) {
+		styles['fontWeight'] = fontWeight;
+	}
+	const customCss = applyColorScheme(componentSelector, colorScheme, componentId)
+	const mainElement = createElement(element, {
+		style: {...styles},
+		className: `${!colorScheme ? `text-${theme}` : ''} ${getClassNames(classes, 'typography', variantClasses, weightClasses)} ${className}`,
+		...rest,
+		children: children
+	})
+	return <>
+		{customCss && customCss()}
+		{mainElement}
+	</>;
 };
+
+Typography.displayName = 'Typography';
+Typography.propTypes = propTypes;
+Typography.defaultProps = defaultProps;
+
 
 export default Typography

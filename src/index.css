@@ -3,19 +3,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-	--primary: #3d5af1;
+	--text-color-alpha: 1;
+	--text-color-hue: 222;
+	--text-color-saturation: 26%;
+	--text-color-lightness: 25%;
+	--text-color: hsla(var(--text-color-hue, 222), var(--text-color-saturation, 26%), var(--text-color-lightness, 25%), var(--text-color-alpha, 1));
+
+	--link-color-alpha: 1;
+	--link-color-hue: 231;
+	--link-color-saturation: 86%;
+	--link-color-lightness: 59%;
+	--link-color: hsla(var(--link-color-hue, 231), var(--link-color-saturation, 86%), var(--link-color-lightness, 59%), var(--link-color-alpha, 1));
+
+	--primary-alpha: 1;
+	--primary-hue: 230;
+	--primary-saturation: 87%;
+	--primary-lightness: 59%;
+	--primary: hsla(var(--primary-hue, 230), var(--primary-saturation, 87%), var(--primary-lightness, 59%), var(--primary-alpha, 1));
 	--primary-color: var(--primary);
-	--primary-hover: #2a47db;
-	--light-hover: #f7f6f6;
-	--primary-hover-box-shadow: #d6e0ff;
-	--hover-box-shadow: #e4e4e5;
-	--light-hover-box-shadow: #f8f8f8;
-	--dark-hover: #000;
-	--light: #fff;
+
+	--secondary-alpha: 1;
+	--secondary-hue: 187;
+	--secondary-saturation: 100%;
+	--secondary-lightness: 42%;
+	--secondary: hsla(var(--secondary-hue, 187), var(--secondary-saturation, 100%), var(--secondary-lightness, 42%), var(--secondary-alpha, 1));
+	--secondary-color: var(--secondary);
+
+	--light-alpha: 1;
+	--light-hue: 0;
+	--light-saturation: 0%;
+	--light-lightness: 100%;
+	--light: hsla(var(--light-hue, 0), var(--light-saturation, 0%), var(--light-lightness, 100%), var(--light-alpha, 1));
 	--light-color: var(--light);
-	--dark: hsl(219, 36%, 18%);
+
+	--dark-alpha: 1;
+	--dark-hue: 218;
+	--dark-saturation: 36%;
+	--dark-lightness: 18%;
+	--dark: hsla(var(--dark-hue, 218), var(--dark-saturation, 36%), var(--dark-lightness, 18%), var(--dark-alpha, 1));
 	--dark-color: var(--dark);
-	--link-color: #3d59f0;
+
+	--hover-box-shadow-alpha: 1;
+	--hover-box-shadow-hue: 240;
+	--hover-box-shadow-saturation: 2%;
+	--hover-box-shadow-lightness: 90%;
+	--hover-box-shadow: hsla(var(--hover-box-shadow-hue, 240), var(--hover-box-shadow-saturation, 2%), var(--hover-box-shadow-lightness, 90%), var(--hover-box-shadow-alpha, 1));
+
+	--primary-hover-box-shadow-alpha: 1;
+	--primary-hover-box-shadow-hue: 255;
+	--primary-hover-box-shadow-saturation: 100%;
+	--primary-hover-box-shadow-lightness: 92%;
+	--primary-hover-box-shadow: hsla(var(--primary-hover-box-shadow-hue, 255), var(--primary-hover-box-shadow-saturation, 100%), var(--primary-hover-box-shadow-lightness, 92%), var(--primary-hover-box-shadow-alpha, 1));
+
+	--secondary-hover-box-shadow-alpha: 1;
+	--secondary-hover-box-shadow-hue: 193;
+	--secondary-hover-box-shadow-saturation: 100%;
+	--secondary-hover-box-shadow-lightness: 92%;
+	--secondary-hover-box-shadow: hsla(var(--secondary-hover-box-shadow-hue, 255), var(--secondary-hover-box-shadow-saturation, 100%), var(--secondary-hover-box-shadow-lightness, 92%), var(--secondary-hover-box-shadow-alpha, 1));
+
+	--light-hover-box-shadow-alpha: 1;
+	--light-hover-box-shadow-hue: 0;
+	--light-hover-box-shadow-saturation: 0%;
+	--light-hover-box-shadow-lightness: 97%;
+	--light-hover-box-shadow: hsla(var(--light-hover-box-shadow-hue, 0), var(--light-hover-box-shadow-saturation, 0%), var(--light-hover-box-shadow-lightness, 97%), var(--light-hover-box-shadow-alpha, 1));
+
 }
 
 
@@ -46,6 +97,7 @@
 	font-weight: 600;
 	font-style: normal;
 }
+
 *, ::after, ::before {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;

@@ -1,0 +1,183 @@
+import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Pagination, PaginationItem} from '../../src/index';
+
+<Meta title="Components/Pagination" component={Pagination}/>
+
+# Buttons
+
+Custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+
+export const defaultTemplate=(args) => <Pagination {...args}>
+	<PaginationItem>Prev</PaginationItem>
+	<PaginationItem active>1</PaginationItem>
+	<PaginationItem>2</PaginationItem>
+	<PaginationItem>3</PaginationItem>
+	<PaginationItem>Next</PaginationItem>
+</Pagination>;
+
+<Canvas>
+	<Story name="Default">{defaultTemplate.bind({})}</Story>
+</Canvas>
+
+## API
+
+```jsx
+import { Pagination } from 'artific-ui/Pagination';
+```
+
+<ArgsTable story="Default"/>
+
+## Pagination Layouts
+
+Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+
+<Canvas>
+	<Story name="Pagination Layouts">
+		<h5>Default Layout</h5>
+		<Pagination layout="default">
+			<PaginationItem>Prev</PaginationItem>
+			<PaginationItem active={true}>1</PaginationItem>
+			<PaginationItem>2</PaginationItem>
+			<PaginationItem>3</PaginationItem>
+			<PaginationItem>Next</PaginationItem>
+		</Pagination>
+		<br/>
+		<br/>
+		<h5>Rounded Layout</h5>
+		<Pagination layout="rounded">
+			<PaginationItem>Prev</PaginationItem>
+			<PaginationItem active={true}>1</PaginationItem>
+			<PaginationItem>2</PaginationItem>
+			<PaginationItem>3</PaginationItem>
+			<PaginationItem>Next</PaginationItem>
+		</Pagination>
+		<br/>
+		<br/>
+		<h5>Pill Layout</h5>
+		<Pagination layout="pill">
+			<PaginationItem>Prev</PaginationItem>
+			<PaginationItem active={true}>1</PaginationItem>
+			<PaginationItem>2</PaginationItem>
+			<PaginationItem>3</PaginationItem>
+			<PaginationItem>Next</PaginationItem>
+		</Pagination>
+		<br/>
+		<br/>
+		<h5>No Radius Layout</h5>
+		<Pagination layout="no-radius">
+			<PaginationItem>Prev</PaginationItem>
+			<PaginationItem active={true}>1</PaginationItem>
+			<PaginationItem>2</PaginationItem>
+			<PaginationItem>3</PaginationItem>
+			<PaginationItem>Next</PaginationItem>
+		</Pagination>
+	</Story>
+</Canvas>
+
+
+## Pagination Variants
+
+Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+
+<Canvas>
+	<Story name="Pagination Variants">
+		<h5>Default Variant</h5>
+		<Pagination variant="default">
+			<PaginationItem>Prev</PaginationItem>
+			<PaginationItem active={true}>1</PaginationItem>
+			<PaginationItem>2</PaginationItem>
+			<PaginationItem>3</PaginationItem>
+			<PaginationItem>Next</PaginationItem>
+		</Pagination>
+		<br/>
+		<br/>
+		<h5>Separate Variant</h5>
+		<Pagination variant="separate">
+			<PaginationItem>Prev</PaginationItem>
+			<PaginationItem active={true}>1</PaginationItem>
+			<PaginationItem>2</PaginationItem>
+			<PaginationItem>3</PaginationItem>
+			<PaginationItem>Next</PaginationItem>
+		</Pagination>
+		<br/>
+		<br/>
+		<h5>Breadcrumb Variant</h5>
+		<Pagination variant="breadcrumb">
+			<PaginationItem>Photos</PaginationItem>
+			<PaginationItem>Summer 2017</PaginationItem>
+			<PaginationItem>Italy</PaginationItem>
+			<PaginationItem>Rome</PaginationItem>
+		</Pagination>
+		<br/>
+		<br/>
+		<h5>Float Variant</h5>
+		<Pagination variant="float">
+			<PaginationItem>Photos</PaginationItem>
+			<PaginationItem>Summer 2017</PaginationItem>
+			<PaginationItem>Italy</PaginationItem>
+			<PaginationItem>Rome</PaginationItem>
+		</Pagination>
+		<br/>
+		<br/>
+	</Story>
+</Canvas>
+
+
+## Pagination Sizes
+
+Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+
+<Canvas>
+	<Story name="Pagination Sizes">
+		<h5>Extra Small Size</h5>
+		<Pagination size="xs">
+			<PaginationItem>Prev</PaginationItem>
+			<PaginationItem active={true}>1</PaginationItem>
+			<PaginationItem>2</PaginationItem>
+			<PaginationItem>3</PaginationItem>
+			<PaginationItem>Next</PaginationItem>
+		</Pagination>
+		<br/>
+		<br/>
+		<h5>Small Size</h5>
+		<Pagination size="sm">
+			<PaginationItem>Prev</PaginationItem>
+			<PaginationItem active={true}>1</PaginationItem>
+			<PaginationItem>2</PaginationItem>
+			<PaginationItem>3</PaginationItem>
+			<PaginationItem>Next</PaginationItem>
+		</Pagination>
+		<br/>
+		<br/>
+		<h5>Medium Size</h5>
+		<Pagination size="md">
+			<PaginationItem>Prev</PaginationItem>
+			<PaginationItem active={true}>1</PaginationItem>
+			<PaginationItem>2</PaginationItem>
+			<PaginationItem>3</PaginationItem>
+			<PaginationItem>Next</PaginationItem>
+		</Pagination>
+		<br/>
+		<br/>
+		<h5>Large Size</h5>
+		<Pagination size="lg">
+			<PaginationItem>Prev</PaginationItem>
+			<PaginationItem active={true}>1</PaginationItem>
+			<PaginationItem>2</PaginationItem>
+			<PaginationItem>3</PaginationItem>
+			<PaginationItem>Next</PaginationItem>
+		</Pagination>
+		<br/>
+		<br/>
+		<h5>Extra Large Size</h5>
+		<Pagination size="xl">
+			<PaginationItem>Prev</PaginationItem>
+			<PaginationItem active={true}>1</PaginationItem>
+			<PaginationItem>2</PaginationItem>
+			<PaginationItem>3</PaginationItem>
+			<PaginationItem>Next</PaginationItem>
+		</Pagination>
+		<br/>
+		<br/>
+	</Story>
+</Canvas>

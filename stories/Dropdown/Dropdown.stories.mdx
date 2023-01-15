@@ -1,0 +1,658 @@
+import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Dropdown, DropdownMenu, DropdownToggle, MenuItem} from '../../src/index';
+import logo from './logo.svg';
+
+<Meta
+	title="Components/Dropdown"
+	component={Dropdown}
+/>
+
+export const Template=(args) => {
+	return (
+		<>
+			<Dropdown>
+				<DropdownToggle>
+					My Profile
+				</DropdownToggle>
+				<DropdownMenu>
+					<MenuItem onSelect={alert}>Link 1</MenuItem>
+					<MenuItem> Link 2</MenuItem>
+					<MenuItem>Link 3</MenuItem>
+					<MenuItem><img src='https://artify-indol.vercel.app/assets/images/Logo.png'
+								   style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+				</DropdownMenu>
+			</Dropdown>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+		</>
+	);
+};
+
+# Dropdown
+
+Cards can be used for headers and footers, a wide variety of content, contain contextual background colors and images
+
+## Basic Dropdown
+
+`Card` component consist of sub-components : `Card.Img`, `Card.Body`, `Card.Link`, `Card.Title`, `Card.Subtitle`, `Card.Text`, `Card.Header`, `Card.Footer`, `Card.ImgOverlay`.
+
+<Canvas>
+	<Story name="Basic Dropdown">{Template.bind({})}</Story>
+</Canvas>
+
+## API
+
+```jsx
+import { Card } from 'artific-ui/Card';
+```
+
+<ArgsTable story="Basic Dropdown"/>
+
+SGDS `Card` component is build on top of React-bootstrap.
+Please refer to https://react-bootstrap.github.io/components/cards/#api for more detailed API documentation
+
+## Dropdown Directions
+
+Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+
+<Canvas>
+	<Story name="Dropdown Directions">
+		<h5>Dropdown Basic Left</h5>
+		<Dropdown position="left" style={{marginLeft: "50%"}}>
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<h5>Dropdown Basic right</h5>
+		<Dropdown position="right">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<h5>Dropdown Basic Top</h5>
+		<Dropdown position="top">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<h5>Full Width Dropdown Menu</h5>
+		<Dropdown fullwidth={true}>
+			<DropdownToggle>
+				Very Long Button...................................
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+	</Story>
+</Canvas>
+
+
+## Dropdown Layouts
+
+Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+
+<Canvas>
+	<Story name="Dropdown Layouts">
+		<h5>Default Layout</h5>
+		<Dropdown layout="default">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<h5>Rounded Layout</h5>
+		<Dropdown layout="rounded">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<h5>No Radius Layout</h5>
+		<Dropdown layout="no-radius">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<h5>Floating / No Arrow Layout</h5>
+		<Dropdown layout="floating">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+	</Story>
+</Canvas>
+
+## Dropdown Variants
+
+Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+
+<Canvas>
+	<Story name="Dropdown Variants">
+		<h5>Default Variant</h5>
+		<Dropdown variant="default">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<h5>Drawer Variant</h5>
+		<Dropdown variant="drawer">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<h5>Fluid Variant</h5>
+		<Dropdown variant="fluid">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+	</Story>
+</Canvas>
+
+## Dropdown Sizes
+
+Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+
+<Canvas>
+	<Story name="Dropdown Sizes">
+		<h5>Extra Small</h5>
+		<Dropdown size="xs">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<h5>Small</h5>
+		<Dropdown size="sm">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<h5>Default/Medium</h5>
+		<Dropdown size="md">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<h5>Large</h5>
+		<Dropdown size="lg">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<h5>Extra Large</h5>
+		<Dropdown size="xl">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+	</Story>
+</Canvas>
+
+
+## Dropdown Custom
+
+Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+
+<Canvas>
+	<Story name="Dropdown Custom">
+		<h5>Custom Dropdown</h5>
+		<Dropdown colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		}}>
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+	</Story>
+</Canvas>

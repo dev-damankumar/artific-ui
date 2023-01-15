@@ -8,8 +8,8 @@ import applyColorScheme from "../utils/applyColorScheme";
 import getRandomClassId from "../utils/generateRandonClassId";
 /*Responsive checkPropTypes pending for onstalled components*/
 
-export const Button: React.FC<IButtonProps> = (
-	{
+export const Button: React.FC<IButtonProps> = (props) => {
+	const {
 		className,
 		style,
 		hideTextOnLoading,
@@ -28,27 +28,28 @@ export const Button: React.FC<IButtonProps> = (
 		suffix,
 		variants,
 		...rest
-
-	}) => {
+	} = props
 	let mouseDown = false;
 	const id = getRandomClassId();
-	const layoutClasses = layout !== 'default' ? `btn-${layout}` : '';
-	const variantClasses = variant !== 'default' ? `btn-${variant} ${variant === 'text' && 'btn-outline'}` : '';
-	const loadingClasses = loading && `${hideTextOnLoading && 'btn-loading-no-text'} btn-loading ${loadingDirection === 'after' && 'btn-loading-right'} ${loadingStyle === 'grow' && 'btn-loading-grow'}` || '';
-	const sizeClass = sizeClasses('btn', size);
-	const mainBtnSelector = getClassNames(styles, 'btn');
-	const componentSelector = `btn-${id}`;
+	const componentSelector = 'btn';
+	const componentId = `${componentSelector}-${id}`;
+	const layoutClasses = layout !== 'default' ? `${componentSelector}-${layout}` : '';
+	const variantClasses = variant !== 'default' ? `btn-${variant} ${variant === 'text' && `${componentSelector}-outline`}` : '';
+	const loadingClasses = loading && `${hideTextOnLoading && `${componentSelector}-loading-no-text`} ${componentSelector}-loading ${loadingDirection === 'after' && `${componentSelector}-loading-right`} ${loadingStyle === 'grow' && `${componentSelector}-loading-grow`}` || '';
+	const sizeClass = sizeClasses(componentSelector, size);
+	const mainBtnSelector = getClassNames(styles, componentSelector);
 
-	const classes = `${mainBtnSelector} ${componentSelector} ${className} ${getClassNames(
+
+	const classes = `${mainBtnSelector} ${componentId} ${className} ${getClassNames(
 		styles,
-		!colorScheme ? `btn-${theme}` : 'btn-primary',
+		!colorScheme ? `${componentSelector}-${theme}` : `${componentSelector}-primary`,
 		layoutClasses,
-		disabled ? 'btn-disabled' : '',
+		disabled ? `${componentSelector}-disabled` : '',
 		loadingClasses,
 		variantClasses,
 		sizeClass
 	)}`
-	const customCss = applyColorScheme(componentSelector, colorScheme)
+	const customCss = applyColorScheme(componentId, colorScheme, componentSelector)
 
 	return <>
 		{customCss && customCss()}
@@ -57,7 +58,10 @@ export const Button: React.FC<IButtonProps> = (
 			disabled={disabled}
 			type={type}
 			style={style}
-			className={classes}
+			className={`${classes} ${colorScheme ? [layoutClasses,
+				loadingClasses,
+				variantClasses,
+				sizeClass].join(" ") : ''}`}
 			onMouseDown={(e: React.MouseEvent<HTMLButtonElement>) => {
 				mouseDown = true;
 				if (rest.onMouseDown) {

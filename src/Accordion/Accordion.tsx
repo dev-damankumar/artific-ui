@@ -3,6 +3,8 @@ import classes from './Accordion.module.css';
 import getClassNames from '../utils/getClassnames';
 import sizeClasses from '../utils/sizeClasses';
 import {defaultProps, IAccordionProps, propTypes} from '../types/accordion';
+import applyColorScheme from "../utils/applyColorScheme";
+import getRandomClassId from "../utils/generateRandonClassId";
 
 export const Accordion: React.FC<IAccordionProps> = (
 	{
@@ -11,8 +13,12 @@ export const Accordion: React.FC<IAccordionProps> = (
 		variant,
 		size,
 		layout,
-		indicatorDirection
+		indicatorDirection,
+		colorScheme
 	}) => {
+	const id = getRandomClassId();
+	const componentId = 'accordion';
+	const componentSelector = `${componentId}-${id}`;
 	const layoutClasses = layout !== 'default' ? `accordion-${layout}` : '';
 	const variantClasses = variant !== 'default' ? `accordion-${variant}` : '';
 	const sizeClass = sizeClasses('accordion', size);
@@ -23,17 +29,21 @@ export const Accordion: React.FC<IAccordionProps> = (
 		}
 		return child;
 	});
+	const customCss = applyColorScheme(componentSelector, colorScheme, componentId)
 	return (
-		<div
-			className={
-				getClassNames(classes, 'accordion-wrap',
-					indicatorDirection === 'start' ? 'accordion-indicator-left' : '',
-					layoutClasses,
-					variantClasses,
-					sizeClass)
-			}>
-			{childrenWithProps}
-		</div>
+		<>
+			{customCss && customCss()}
+			<div
+				className={
+					`${componentSelector} ${getClassNames(classes, 'accordion-wrap',
+						indicatorDirection === 'start' ? 'accordion-indicator-left' : '',
+						layoutClasses,
+						variantClasses,
+						sizeClass)}`
+				}>
+				{childrenWithProps}
+			</div>
+		</>
 	);
 };
 

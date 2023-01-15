@@ -7,6 +7,16 @@
 	border-color: white !important;
 }
 
+.bg-secondary {
+	background: var(--secondary) !important;
+	color: white !important;
+}
+
+.bg-secondary::before {
+	border-color: white !important;
+}
+
+
 .bg-light {
 	background: var(--light) !important;
 	color: #303a52 !important;
@@ -18,5 +28,35 @@
 }
 
 .bg-dark::before {
+	border-color: white !important;
+}
+
+
+.text-primary {
+	color: var(--primary) !important;
+}
+
+.text-primary::before {
+	border-color: white !important;
+}
+
+.text-secondary {
+	color: var(--secondary) !important;
+}
+
+.text-secondary::before {
+	border-color: white !important;
+}
+
+
+.text-light {
+	color: var(--light) !important;
+}
+
+.text-dark {
+	color: var(--dark) !important;
+}
+
+.text-dark::before {
 	border-color: white !important;
 }

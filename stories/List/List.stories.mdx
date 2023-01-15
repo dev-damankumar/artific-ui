@@ -1,0 +1,332 @@
+import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {List, ListItem} from '../../src/index';
+
+<Meta
+	title="Components/List"
+	component={List}
+/>
+
+export const Template=(args) => {
+	return (
+		<>
+			<List theme="light">
+				<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+				<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+				<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+				<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			</List>
+		</>
+	);
+};
+
+## Basic List
+
+`Card` component consist of sub-components : `Card.Img`, `Card.Body`, `Card.Link`, `Card.Title`, `Card.Subtitle`, `Card.Text`, `Card.Header`, `Card.Footer`, `Card.ImgOverlay`.
+
+<Canvas>
+	<Story name="Basic List">{Template.bind({})}</Story>
+</Canvas>
+
+## API
+
+```jsx
+import { Card } from 'artific-ui/Card';
+```
+
+<ArgsTable story="Basic List"/>
+
+SGDS `Card` component is build on top of React-bootstrap.
+Please refer to https://react-bootstrap.github.io/components/cards/#api for more detailed API documentation
+
+## List Themes
+
+Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+
+<Canvas>
+	<Story name="List Themes">
+		<h5>Primary Basic List</h5>
+		<div className="row">
+			<div className="col-md-12">
+				<List theme="primary">
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+				</List>
+			</div>
+		</div>
+		<br/>
+		<br/>
+		<h5>Secondary Basic List</h5>
+		<div className="row">
+			<div className="col-md-12">
+				<List theme="secondary">
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+				</List>
+			</div>
+		</div>
+		<br/>
+		<br/>
+		<h5>Dark Basic List</h5>
+		<div className="row">
+			<div className="col-md-12">
+				<List theme="dark">
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+				</List>
+			</div>
+		</div>
+		<br/>
+		<br/>
+		<h5>Light Basic List</h5>
+		<div className="row">
+			<div className="col-md-12">
+				<List theme="light">
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+				</List>
+			</div>
+		</div>
+		<br/>
+		<br/>
+		<h5>Custom List</h5>
+		<div className="row">
+			<div className="col-md-12">
+				<List theme="primary" colorScheme={{
+					background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+					backgroundColor: '#e736f4',
+					color: 'white',
+				}}>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+				</List>
+			</div>
+		</div>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+	</Story>
+</Canvas>
+
+
+## Basic List With Icons
+
+Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+
+<Canvas>
+	<Story name="Basic List With Icons">
+		<h5>Basic List With Icons</h5>
+		<List variant="expanded" theme="light">
+			<ListItem prefix={<i className='bx bx-expand-vertical'></i>}>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem suffix={<i className='bx bx-expand-vertical'></i>}>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+	</Story>
+</Canvas>
+
+## List Layouts
+
+Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+
+<Canvas>
+	<Story name="List Layouts">
+		<h6>Default</h6>
+		<List layout="default" theme="light">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+		<h6>Rounded</h6>
+		<List layout="rounded" theme="light">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+		<h6>No Radius</h6>
+		<List layout="no-radius" theme="light">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+	</Story>
+</Canvas>
+
+## List Directions
+
+Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+
+<Canvas>
+	<Story name="List Directions">
+		<h6>Default Direction Column</h6>
+		<List direction="column" theme="light">
+			<ListItem>Lorem ipsum</ListItem>
+			<ListItem>Lorem ipsum</ListItem>
+			<ListItem>Lorem ipsum</ListItem>
+			<ListItem>Lorem ipsum</ListItem>
+		</List>
+		<br/>
+		<br/>
+		<h6>Direction Row</h6>
+		<List direction="row">
+			<ListItem>Lorem ipsum</ListItem>
+			<ListItem>Lorem ipsum</ListItem>
+			<ListItem>Lorem ipsum</ListItem>
+			<ListItem>Lorem ipsum</ListItem>
+		</List>
+		<br/>
+		<br/>
+	</Story>
+</Canvas>
+
+## List Sizes
+
+Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+
+<Canvas>
+	<Story name="List Sizes">
+		<h6>Extra small</h6>
+		<List size="xs" theme="light">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+		<h6>Small</h6>
+		<List size="sm" theme="light">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+		<h6>Default/Medium</h6>
+		<List size="md" theme="light">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+		<h6>Large</h6>
+		<List size="lg" theme="light">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+		<h6>Extra Large</h6>
+		<List size="xl" theme="light">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+	</Story>
+</Canvas>
+
+## List Variants
+
+Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+
+<Canvas>
+	<Story name="List Variants">
+		<h6>Default</h6>
+		<List variant="default" theme="light">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+		<h6>Striped</h6>
+		<List variant="striped" theme="primary">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+		<List variant="striped" theme="secondary">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+		<List variant="striped" theme="light">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+		<List variant="striped" theme="dark">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<h6>Separate</h6>
+		<List variant="separate" theme="light">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+		<h6>Borderless</h6>
+		<List variant="borderless" theme="light">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+		<h6>Bordered</h6>
+		<List variant="bordered" theme="light">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
+		<br/>
+		<br/>
+	</Story>
+</Canvas>
+

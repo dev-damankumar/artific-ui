@@ -1,5 +1,15 @@
 import React from 'react';
-import {CSSStyle, FunctionCallback, Layouts, LayoutsArray, Sizes, SizesArray, Themes, ThemesArray} from './common';
+import {
+	ColorScheme,
+	CSSStyle,
+	FunctionCallback,
+	Layouts,
+	LayoutsArray,
+	Sizes,
+	SizesArray,
+	Themes,
+	ThemesArray
+} from './common';
 import PropTypes from "prop-types";
 
 export const VariantsArray = ['default', 'separate', 'bordered', 'outlined', 'attached'] as const;
@@ -15,6 +25,7 @@ export interface IAccordionProps {
 	layout?: Layouts,
 	indicatorDirection?: IndicatorDirection,
 	size?: Sizes,
+	colorScheme?: ColorScheme;
 }
 
 export const propTypes = {
@@ -24,6 +35,11 @@ export const propTypes = {
 	layout: PropTypes.oneOf(LayoutsArray),
 	indicatorDirection: PropTypes.oneOf(IndicatorDirectionArray),
 	size: PropTypes.oneOf(SizesArray),
+	colorScheme: PropTypes.shape({
+		background: PropTypes.string.isRequired,
+		backgroundColor: PropTypes.string.isRequired,
+		color: PropTypes.string.isRequired,
+	}),
 }
 
 export const defaultProps = {

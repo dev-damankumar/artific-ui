@@ -1,7 +1,7 @@
-import { ISizes } from '../types/common';
+import {IModalSizes, IModalSizesType, ISizes} from '../types/common';
 
-let sizeClasses = (prefix: string, size: any) => {
-    return size !== 'md' ? `${prefix}-${ISizes[size]}` : '';
+let sizeClasses = (prefix: string, size: any): IModalSizesType => {
+	return (size !== 'md' ? `${prefix}-${prefix === 'modal' ? IModalSizes[size] : ISizes[size]}` : '') as IModalSizesType;
 };
 
 export default sizeClasses;

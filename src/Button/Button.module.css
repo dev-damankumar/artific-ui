@@ -89,15 +89,23 @@ span.ripple {
 }
 
 .btn-primary:not(.btn-disabled,[disabled],.btn-loading,.btn-loading-grow,.btn-outline):hover {
-	background: var(--primary-hover);
+	--primary-lightness: 54%;
+	--primary: hsla(var(--primary-hue, 230), var(--primary-saturation, 87%), var(--primary-lightness, 59%), var(--primary-alpha, 1));
+}
+
+.btn-secondary:not(.btn-disabled,[disabled],.btn-loading,.btn-loading-grow,.btn-outline):hover {
+	--secondary-lightness: 37%;
+	--secondary: hsla(var(--secondary-hue, 187), var(--secondary-saturation, 100%), var(--secondary-lightness, 42%), var(--secondary-alpha, 1));
 }
 
 .btn-dark:not(.btn-disabled,[disabled],.btn-loading,.btn-loading-grow,.btn-outline):hover {
-	background: var(--dark-hover);
+	--dark-lightness: 13%;
+	--dark: hsla(var(--dark-hue, 218), var(--dark-saturation, 36%), var(--dark-lightness, 18%), var(--dark-alpha, 1));
 }
 
 .btn-light:not(.btn-disabled,[disabled],.btn-loading,.btn-loading-grow,.btn-outline):hover {
-	background: var(--light-hover);
+	--light-lightness: 95%;
+	--light: hsla(var(--light-hue, 0), var(--light-saturation, 0%), var(--light-lightness, 100%), var(--light-alpha, 1));
 }
 
 .btn-disabled:focus, .btn[disabled]:focus, .btn-text:focus {
@@ -115,6 +123,10 @@ span.ripple {
 
 .btn-primary:not(.btn-disabled,[disabled],.btn-text):focus {
 	box-shadow: 0 0 0 calc(var(--btn-margin) - 8px) var(--primary-hover-box-shadow);
+}
+
+.btn-secondary:not(.btn-disabled,[disabled],.btn-text):focus {
+	box-shadow: 0 0 0 calc(var(--btn-margin) - 8px) var(--secondary-hover-box-shadow);
 }
 
 .btn[disabled], .btn-disabled {
@@ -182,6 +194,12 @@ span.ripple {
 	color: white;
 }
 
+.btn-secondary {
+	background: var(--secondary);
+	border-color: var(--secondary-color);
+	color: white;
+}
+
 .btn-light {
 	background: var(--light);
 	border-color: var(--light-color);
@@ -210,6 +228,12 @@ span.ripple {
 .btn-outline.btn-primary {
 	color: var(--primary-color);
 	border-color: var(--primary-color);
+	background: white;
+}
+
+.btn-outline.btn-secondary {
+	color: var(--secondary-color);
+	border-color: var(--secondary-color);
 	background: white;
 }
 

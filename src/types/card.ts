@@ -1,21 +1,79 @@
-import { Layouts, Themes } from './common';
+import {
+	ColorScheme,
+	LayoutDirections,
+	LayoutDirectionsArray,
+	Layouts,
+	LayoutsArray,
+	Sizes,
+	SizesArray,
+	Themes,
+	ThemesArray
+} from './common';
 import React from 'react';
+import PropTypes from "prop-types";
 
-export type Variants = 'default' | 'fill' | 'outline' | 'fill-with-border'
-export type Directions = 'row' | 'column';
+
+export const VariantsArray = ['default', 'fill', 'outline', 'fill-with-border'] as const;
+export type Variants = typeof VariantsArray[number];
+
+
+export const CardLayoutsArray = ['default', 'extended', 'rounded', 'no-radius'] as const;
+export type CardLayouts = typeof CardLayoutsArray[number];
 
 export interface ICardProps {
-    children: React.ReactNode,
-    direction?: Directions,
-    theme?: Themes,
-    layout?: Layouts,
-    variant?: Variants,
-    className?: string
+	children: React.ReactNode;
+	direction?: LayoutDirections;
+	theme?: Themes;
+	layout?: CardLayouts;
+	variant?: Variants;
+	className?: string;
+	colorScheme?: ColorScheme;
+	size?: Sizes;
 }
 
+export const propTypes = {
+	children: PropTypes.node,
+	direction: PropTypes.oneOf(LayoutDirectionsArray),
+	theme: PropTypes.oneOf(ThemesArray),
+	variant: PropTypes.oneOf(VariantsArray),
+	layout: PropTypes.oneOf(CardLayoutsArray),
+	className: PropTypes.string,
+	size: PropTypes.oneOf<Sizes>(SizesArray),
+	colorScheme: PropTypes.shape({
+		background: PropTypes.string.isRequired,
+		backgroundColor: PropTypes.string.isRequired,
+		color: PropTypes.string.isRequired,
+	}),
+}
+
+export const defaultProps = {
+	layout: 'default' as CardLayouts,
+	theme: 'default' as Themes,
+	variant: 'default' as Variants,
+	direction: 'column' as LayoutDirections,
+	size: 'md' as Sizes,
+	className: '',
+	colorScheme: null,
+}
+
+
 export interface ICardImageProps {
-    layout?: Layouts,
-    className?: string,
-    src: string,
-    alt?: string,
+	layout?: Layouts,
+	className?: string,
+	src: string,
+	alt?: string,
+	size?: Sizes
+}
+
+export const ICardImagePropsTypes = {
+	layout: PropTypes.oneOf(LayoutsArray),
+	className: PropTypes.string,
+	alt: PropTypes.string,
+	src: PropTypes.string.isRequired,
+	size: PropTypes.oneOf<Sizes>(SizesArray),
+}
+
+export const ICardImageDefaultProps = {
+	layout: 'default' as Layouts,
+	size: 'md' as Sizes,
 }
