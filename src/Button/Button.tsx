@@ -34,7 +34,7 @@ export const Button: React.FC<IButtonProps> = (props) => {
 	const componentSelector = 'btn';
 	const componentId = `${componentSelector}-${id}`;
 	const layoutClasses = layout !== 'default' ? `${componentSelector}-${layout}` : '';
-	const variantClasses = variant !== 'default' ? `btn-${variant} ${variant === 'text' && `${componentSelector}-outline`}` : '';
+	const variantClasses = variant !== 'default' ? `${componentSelector}-${variant} ${variant === 'text' && `${componentSelector}-outline`}` : '';
 	const loadingClasses = loading && `${hideTextOnLoading && `${componentSelector}-loading-no-text`} ${componentSelector}-loading ${loadingDirection === 'after' && `${componentSelector}-loading-right`} ${loadingStyle === 'grow' && `${componentSelector}-loading-grow`}` || '';
 	const sizeClass = sizeClasses(componentSelector, size);
 	const mainBtnSelector = getClassNames(styles, componentSelector);

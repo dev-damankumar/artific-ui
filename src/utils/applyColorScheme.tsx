@@ -29,7 +29,7 @@ const applyColorScheme = (componentSelector: string, colorScheme: ColorScheme | 
 		} else {
 			css = <style>
 				{`.${componentSelector}{
-                color: ${scheme.color}; 
+                ${componentSelector !== 'table' && 'color: ${scheme.color};'}
                 --primary: ${scheme.background};
                 ${scheme?.backgroundColor ?
 					` --primary-color: ${scheme.backgroundColor};

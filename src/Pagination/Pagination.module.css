@@ -384,6 +384,27 @@
 	border: 1px solid none;
 }
 
+.pagination-secondary {
+	--primary: var(--secondary);
+	color: white;
+}
+
+.pagination-light {
+	--light-lightness: 95%;
+	--light: hsla(var(--light-hue, 0), var(--light-saturation, 0%), var(--light-lightness, 100%), var(--light-alpha, 1));
+	--primary: var(--light);
+
+}
+
+.pagination-light .page-item.active a {
+	color: #303a52 !important;
+}
+
+.pagination-dark {
+	--primary: var(--dark);
+	color: white;
+}
+
 .page-item.active a {
 	background: var(--primary);
 	color: white;

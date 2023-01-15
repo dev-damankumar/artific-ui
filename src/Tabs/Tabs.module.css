@@ -75,6 +75,24 @@
 	border-radius: var(--tabs-border-radius) var(--tabs-border-radius) 0 0;
 }
 
+.tab-secondary {
+	--primary: var(--secondary);
+}
+
+.tab-dark {
+	--primary: var(--dark)
+}
+
+.tab-light {
+	--light-lightness: 98%;
+	--light: hsla(var(--light-hue, 0), var(--light-saturation, 0%), var(--light-lightness, 100%), var(--light-alpha, 1));
+	--primary: var(--light)
+}
+
+.tab-light .active a.tab-link {
+	color: #303a52 !important;
+}
+
 .tabs .tab-item {
 	margin-bottom: -1px;
 

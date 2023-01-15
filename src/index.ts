@@ -12,4 +12,6 @@ export * from './Typography';
 export * from './Modal';
 export * from './Pagination';
 export * from './Tabs';
+export * from './Table';
+export * from './Tooltip';
 
