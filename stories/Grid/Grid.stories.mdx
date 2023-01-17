@@ -1,0 +1,121 @@
+import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Col, Container, Row} from '../../src';
+
+
+<Meta
+	title="Components/Grid"
+	component={Container}
+	parameters={{docs: {source: {type: 'code'}}}}
+/>
+
+export const Template=(args) => {
+	const colStyle={
+		border: "1px dashed #089b8d",
+		background: '#afe0db'
+	}
+	return <>
+		<h5>Basic Layout</h5>
+		<Container style={{background: '#fff0eb', padding: '20px 35px'}}>
+			<Row style={{background: '#c2c3f5', padding: '20px'}}>
+				<Col style={{...colStyle}}>Col 1</Col>
+				<Col style={{...colStyle}}>Col 2</Col>
+				<Col style={{...colStyle}}>Col 3</Col>
+			</Row>
+		</Container>
+	</>
+};
+
+# Spinners
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+## API
+
+```jsx
+import { Container,Row,Col } from 'artific-ui';
+```
+
+<ArgsTable story="Default"/>
+
+## Containers
+
+Alerts are available for any length of text, as well as an optional dismiss button.For proper styling, use one of the eight ** variant ** colors provided.You may also choose to slot in your icons from any libraries to make your information clearer and user - friendly.
+
+<Canvas>
+	<Story name="Containers">
+		<h5>Basic Containers</h5>
+		<Container style={{background: '#f1f1f1', padding: '20px', height: 100}}>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consectetur et facere maxime
+				molestiae omnis porro praesentium quisquam recusandae reprehenderit.</p>
+		</Container>
+		<br/>
+		<br/>
+		<h5>Basic Container Fluid</h5>
+		<Container fluid={true} style={{background: '#f1f1f1', padding: '20px', height: 100}}>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consectetur et facere maxime
+				molestiae omnis porro praesentium quisquam recusandae reprehenderit.</p>
+		</Container>
+	</Story>
+</Canvas>
+
+## Grids
+
+Alerts are available for any length of text, as well as an optional dismiss button.For proper styling, use one of the eight ** variant ** colors provided.You may also choose to slot in your icons from any libraries to make your information clearer and user - friendly.
+
+export const GridTemplate=(args) => {
+	const colStyle={
+		border: "1px dashed #089b8d",
+		background: '#afe0db'
+	}
+	return <>
+		<h5>12 Columns Layout</h5>
+		<Container fluid style={{background: '#fff0eb', padding: '20px 35px'}}>
+			<Row style={{background: '#c2c3f5', padding: '20px'}}>
+				<Col style={{...colStyle}}>Col 1</Col>
+				<Col style={{...colStyle}}>Col 2</Col>
+				<Col style={{...colStyle}}>Col 3</Col>
+				<Col style={{...colStyle}}>Col 4</Col>
+				<Col style={{...colStyle}}>Col 5</Col>
+				<Col style={{...colStyle}}>Col 6</Col>
+				<Col style={{...colStyle}}>Col 7</Col>
+				<Col style={{...colStyle}}>Col 8</Col>
+				<Col style={{...colStyle}}>Col 9</Col>
+				<Col style={{...colStyle}}>Col 10</Col>
+				<Col style={{...colStyle}}>Col 11</Col>
+				<Col style={{...colStyle}}>Col 12</Col>
+			</Row>
+		</Container>
+		<br/>
+		<br/>
+		<h5>Equal With Columns</h5>
+		<Container fluid style={{background: '#fff0eb', padding: '20px 35px'}}>
+			<Row style={{background: '#c2c3f5', padding: '20px'}}>
+				<Col style={{...colStyle}}>Col 1</Col>
+				<Col style={{...colStyle}}>Col 2</Col>
+				<Col style={{...colStyle}}>Col 3</Col>
+			</Row>
+		</Container>
+		<br/>
+		<br/>
+		<h5>Equal With Columns</h5>
+		<Container fluid style={{background: '#fff0eb', padding: '20px 35px'}}>
+			<Row style={{background: '#c2c3f5', padding: '20px'}}>
+				<Col size="sm" col={6} style={{...colStyle}}>col-sm-6</Col>
+				<Col size="md" col={12} style={{...colStyle}}>col-md-6</Col>
+				<Col size="lg" col={8} style={{...colStyle}}>col-lg-8</Col>
+			</Row>
+		</Container>
+		<br/>
+		<br/>
+	</>
+};
+
+<Canvas>
+	<Story name="Grids">
+		{GridTemplate.bind({})}
+	</Story>
+</Canvas>

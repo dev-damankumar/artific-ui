@@ -1,0 +1,116 @@
+import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Badge} from '../../src';
+
+
+<Meta
+	title="Components/Badge"
+	component={Badge}
+	argTypes={{
+		variant: {
+			table: {
+				type: {
+					summary:
+						" 'primary' | 'secondary' | 'light' | 'dark' ",
+				},
+			},
+			options: [
+				'primary',
+				'secondary',
+				'light',
+				'dark',
+			],
+			control: {
+				type: 'select',
+			},
+		},
+	}}
+	parameters={{docs: {source: {type: 'code'}}}}
+/>
+
+export const Template=(args) => {
+	return <>
+		<h5>Basic Badges</h5>
+		<Badge title="DK" {...args}/>
+		<Badge title="A" {...args}/>
+		<Badge title="M" {...args}/>
+		<Badge title="FR" {...args}/>
+	</>
+};
+
+# Badges
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+## API
+
+```jsx
+import { Badge } from 'artific-ui/Badge';
+```
+
+<ArgsTable story="Default"/>
+
+## Basic Badge
+
+Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
+You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+
+<Canvas>
+	<Story name="Basic Badge">
+		<h5>Basic Alerts Themes</h5>
+		<Badge theme="primary" title="DK"/>
+		<Badge theme="secondary" title="DK"/>
+		<Badge theme="dark" title="DK"/>
+		<Badge theme="light" title="DK"/>
+	</Story>
+</Canvas>
+
+## Badge Size
+
+Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
+You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+
+<Canvas>
+	<Story name="Badge Size">
+		<h5>Badges Sizes Text</h5>
+		<Badge size="xl" title="XL"/>
+		<Badge size="lg" title="LG"/>
+		<Badge size="md" title="MD"/>
+		<Badge size="sm" title="SM"/>
+		<Badge size="xs" title="XS"/>
+	</Story>
+</Canvas>
+
+## Badge Layouts
+
+Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
+You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+
+<Canvas>
+	<Story name="Badge Layouts">
+		<h5>Badge Layouts</h5>
+		<Badge title="DK" layout="default"/>
+		<Badge title="DK" layout="rounded"/>
+		<Badge title="DK" layout="no-radius"/>
+		<Badge title="DK" layout="pill"/>
+		<Badge title="DK" layout="circular"/>
+	</Story>
+</Canvas>
+
+
+## Badge Variants
+
+Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
+You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+
+<Canvas>
+	<Story name="Badge Variants">
+		<h5>Badge Variants</h5>
+		<Badge title="DK" variant="default"/>
+		<Badge title="DK" variant="outline"/>
+		<Badge variant="dot"/>
+	</Story>
+</Canvas>

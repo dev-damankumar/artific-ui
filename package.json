@@ -1,6 +1,6 @@
 {
   "name": "artific-ui",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A modern react ui library for making your life easier",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",

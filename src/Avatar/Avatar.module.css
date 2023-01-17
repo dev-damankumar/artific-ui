@@ -1,0 +1,236 @@
+:root {
+	--avatar-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+	--avatar-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+	--avatar-border-radius: 50%;
+	--avatar-font-size: 14px;
+	--avatar-margin: 15px;
+	--avatar-cursor: pointer;
+	--avatar-outline-width: 2px;
+	--avatar-padding: 0px;
+	--avatar-main-bg: #f8f8f8;
+}
+
+.avatar {
+	position: relative;
+	display: inline-flex;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: calc(var(--avatar-font-size) * 2.5);
+	height: calc(var(--avatar-font-size) * 2.5);
+	overflow: hidden;
+	user-select: none;
+	color: rgb(18, 18, 18);
+	padding: var(--avatar-padding);
+	border-radius: var(--avatar-border-radius);
+	-webkit-box-shadow: var(--avatar-box-shadow);
+	box-shadow: var(--avatar-box-shadow);
+	background: #efefef;
+	z-index: 9;
+	font-size: var(--avatar-font-size);
+	border: var(--avatar-outline-width) solid none;
+	text-overflow: clip;
+	text-align: center;
+}
+
+.avatar-image {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	object-position: center;
+}
+
+.avatar:hover {
+	-moz-box-shadow: var(--avatar-box-shadow-hover);
+	-webkit-box-shadow: var(--avatar-box-shadow-hover);
+	box-shadow: var(--avatar-box-shadow-hover);
+}
+
+.avatar-rounded {
+	--avatar-border-radius: 10px;
+}
+
+.avatar-no-radius {
+	--avatar-border-radius: 0px;
+}
+
+.avatar-pill {
+	--avatar-border-radius: 50px;
+}
+
+
+/*Color*/
+.avatar-primary {
+	background: var(--primary);
+	color: white;
+}
+
+.avatar-secondary {
+	background: var(--secondary);
+	color: white;
+}
+
+.avatar-light {
+	background: var(--light);
+	color: #303a52;
+}
+
+.avatar-dark {
+	background: var(--dark);
+	color: white;
+}
+
+.avatar-outline {
+	border: var(--avatar-outline-width) solid transparent;
+}
+
+.avatar-outline.avatar-primary {
+	color: var(--primary-color);
+	border-color: var(--primary-color);
+	background: white;
+}
+
+.avatar-outline.avatar-secondary {
+	color: var(--secondary-color);
+	border-color: var(--secondary-color);
+	background: white;
+}
+
+.avatar-outline.avatar-light {
+	color: var(--light-color);
+	border-color: var(--light-color);
+	background: var(--dark);
+}
+
+.avatar-outline.avatar-dark {
+	color: var(--dark-color);
+	border-color: var(--dark-color);
+	background: var(--light);
+}
+
+.avatar-fluid {
+	--avatar-padding: 3px;
+	background: white;
+}
+
+.avatar-fluid .avatar-image {
+	border-radius: var(--avatar-border-radius);
+}
+
+@media screen and (max-width: 500px) {
+	.avatar {
+		--avatar-padding: 10px;
+		--avatar-font-size: 14px;
+	}
+}
+
+/*Sizing*/
+
+
+.avatar-extra-large {
+	--avatar-font-size: 22px;
+}
+
+
+.avatar-large {
+	--avatar-font-size: 18px;
+}
+
+.avatar-small {
+	--avatar-font-size: 10px;
+}
+
+.avatar-extra-small {
+	--avatar-font-size: 6px;
+}
+
+@media (min-width: 576px) {
+	.avatar-sm-large {
+		--avatar-font-size: 18px;
+	}
+
+	.avatar-sm-extra-large {
+		--avatar-font-size: 22px;
+	}
+
+	.avatar-sm-small {
+		--avatar-font-size: 10px;
+	}
+
+	.avatar-sm-extra-small {
+
+		--avatar-font-size: 6px;
+	}
+}
+
+@media (min-width: 768px) {
+	.avatar-md-large {
+		--avatar-font-size: 18px;
+	}
+
+	.avatar-md-extra-large {
+		--avatar-font-size: 22px;
+	}
+
+	.avatar-md-small {
+
+		--avatar-font-size: 10px;
+	}
+
+	.avatar-md-extra-small {
+
+		--avatar-font-size: 6px;
+	}
+}
+
+@media (min-width: 992px) {
+	.avatar-lg-large {
+		--avatar-font-size: 18px;
+	}
+
+	.avatar-lg-extra-large {
+		--avatar-font-size: 22px;
+	}
+
+	.avatar-lg-small {
+
+		--avatar-font-size: 10px;
+	}
+
+	.avatar-lg-extra-small {
+
+		--avatar-font-size: 6px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.avatar-xl-large {
+		--avatar-font-size: 18px;
+	}
+
+	.avatar-xl-extra-large {
+		--avatar-font-size: 22px;
+	}
+
+	.avatar-xl-small {
+
+		--avatar-font-size: 10px;
+	}
+
+	.avatar-xl-extra-small {
+
+		--avatar-font-size: 6px;
+	}
+}
+
+.avatar-group {
+	display: flex;
+	align-items: center;
+}
+
+.avatar-group > .avatar {
+	margin-left: calc(6px - var(--avatar-font-size));
+}
+

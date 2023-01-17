@@ -1,0 +1,141 @@
+import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Avatar, AvatarGroup} from '../../src';
+import a1 from "./images/a1.jpg"
+import a2 from "./images/a2.jpeg"
+import a3 from "./images/a3.jpeg"
+import a4 from "./images/a4.jpeg"
+
+<Meta
+	title="Components/Avatar"
+	component={Avatar}
+	argTypes={{
+		variant: {
+			table: {
+				type: {
+					summary:
+						" 'primary' | 'secondary' | 'light' | 'dark' ",
+				},
+			},
+			options: [
+				'primary',
+				'secondary',
+				'light',
+				'dark',
+			],
+			control: {
+				type: 'select',
+			},
+		},
+	}}
+	parameters={{docs: {source: {type: 'code'}}}}
+/>
+
+export const Template=(args) => {
+	return <>
+		<h5>Avatar With Images</h5>
+		<Avatar src={a1} {...args}/>
+		<Avatar src={a2} {...args}/>
+		<Avatar src={a3} {...args}/>
+		<Avatar src={a4} {...args}/>
+		<br/>
+		<br/>
+		<h5>Avatar With Text</h5>
+		<Avatar title="DK" {...args}/>
+		<Avatar title="A" {...args}/>
+		<Avatar title="M" {...args}/>
+		<Avatar title="FR" {...args}/>
+	</>
+};
+
+# Alerts
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+## API
+
+```jsx
+import { Avatar } from 'artific-ui/Avatar';
+```
+
+<ArgsTable story="Default"/>
+
+## Basic Avatar
+
+Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
+You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+
+<Canvas>
+	<Story name="Basic Avatar">
+		<h5>Basic Alerts Themes</h5>
+		<Avatar theme="primary" title="DK"/>
+		<Avatar theme="secondary" title="DK"/>
+		<Avatar theme="dark" title="DK"/>
+		<Avatar theme="light" title="DK"/>
+	</Story>
+</Canvas>
+
+## Avatar Size
+
+Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
+You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+
+<Canvas>
+	<Story name="Avatar Size">
+		<h5>Avatars Sizes Text</h5>
+		<Avatar size="xl" title="XL"/>
+		<Avatar size="lg" title="LG"/>
+		<Avatar size="md" title="MD"/>
+		<Avatar size="sm" title="SM"/>
+		<Avatar size="xs" title="XS"/>
+	</Story>
+</Canvas>
+
+## Avatar Layouts
+
+Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
+You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+
+<Canvas>
+	<Story name="Avatar Layouts">
+		<h5>Avatar Layouts</h5>
+		<Avatar src={a1} layout="default"/>
+		<Avatar src={a2} layout="rounded"/>
+		<Avatar src={a3} layout="no-radius"/>
+		<Avatar src={a4} layout="pill"/>
+	</Story>
+</Canvas>
+
+
+## Avatar Variants
+
+Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
+You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+
+<Canvas>
+	<Story name="Avatar Variants">
+		<h5>Avatar Variants</h5>
+		<Avatar src={a1} variant="default"/>
+		<Avatar src={a2} variant="outline"/>
+		<Avatar src={a3} variant="fluid"/>
+	</Story>
+</Canvas>
+
+## Avatar Group
+
+Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
+You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+
+<Canvas>
+	<Story name="Avatar Group">
+		<h5>Avatar Group</h5>
+		<AvatarGroup>
+			<Avatar src={a1} variant="fluid"/>
+			<Avatar src={a2} variant="fluid"/>
+			<Avatar src={a3} variant="fluid"/>
+		</AvatarGroup>
+	</Story>
+</Canvas>

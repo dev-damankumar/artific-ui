@@ -2,41 +2,33 @@ import React, {useState} from 'react';
 import getClassNames from '../utils/getClassnames';
 import styles from './Alert.module.css';
 import sizeClasses from '../utils/sizeClasses';
-import {IAlertProps} from '../types/alert';
+import {defaultProps, IAlertProps, propTypes} from '../types/alert';
 import applyColorScheme from "../utils/applyColorScheme";
 import getRandomClassId from "../utils/generateRandonClassId";
+
 
 export const Alert: React.FC<IAlertProps> = (
 	{
 		children,
-		direction = 'left',
+		direction,
 		dismiss,
-		size = 'md',
-		theme = 'primary',
-		colorScheme = null,
+		size,
+		theme,
+		colorScheme,
 		className,
-		style = {},
-		variant = 'default',
-		layout = 'default',
+		style,
+		variant,
+		layout,
 		onClose,
 		...rest
 	}) => {
 	const id = getRandomClassId();
 	const componentId = 'alert';
 	const componentSelector = `${componentId}-${id}`;
-	let themeClasses = `alert-${theme}`;
-	let variantArray = ['default', 'text', 'outline', 'note'];
-	let layoutArray = ['default', 'rounded', 'pill', 'no-radius'];
+	let themeClasses = `${componentId}-${theme}`;
 	let [show, setShow] = useState(true);
-	let layoutClasses = '';
-	if (layoutArray.includes(layout)) {
-		layoutClasses = layout !== 'default' ? `alert-${layout}` : '';
-	}
-	let variantClasses = '';
-	if (variantArray.includes(variant)) {
-		variantClasses = variant !== 'default' ? `alert-${variant} ${direction && direction !== 'left' && `alert-note-${direction}`} ${variant === 'note' && 'alert-outline'} ${variant === 'text' && 'alert-outline'}` : '';
-	}
-
+	let layoutClasses = layout !== 'default' ? `${componentId}-${layout}` : '';
+	let variantClasses = variant !== 'default' ? `${componentId}-${variant} ${direction && direction !== 'left' && `${componentId}-note-${direction}`} ${variant === 'note' && `${componentId}-outline`} ${variant === 'text' && `${componentId}-outline`}` : '';
 	let sizeClass = sizeClasses(componentId, size);
 	let mainBtnSelector = getClassNames(styles, componentId);
 
@@ -74,6 +66,9 @@ export const Alert: React.FC<IAlertProps> = (
 	) : null;
 };
 
+Alert.displayName = 'Alert';
+Alert.propTypes = propTypes;
+Alert.defaultProps = defaultProps;
 export default Alert
 
 

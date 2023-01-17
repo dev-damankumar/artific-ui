@@ -1,0 +1,313 @@
+import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Button, useMessage} from '../../src';
+
+
+<Meta
+	title="Components/Message"
+	component={useMessage}
+	parameters={{docs: {source: {type: 'code'}}}}
+/>
+
+export const Template=(args) => {
+	const message=useMessage()
+	message.config({
+		dismissible: true
+	})
+	return <>
+		<Button onClick={() => {
+			message.success('Hi ! This is a message').hold()
+		}}>
+			Success
+		</Button>
+		<br/>
+		<Button onClick={() => {
+			message.info('Hi ! This is a message').hold()
+		}}>
+			Info
+		</Button>
+		<br/>
+		<Button onClick={() => {
+			message.error('Hi ! This is a message').hold()
+		}}>
+			Danger
+		</Button>
+		<br/>
+		<Button onClick={() => {
+			message.warning('Hi ! This is a message').hold()
+		}}>
+			Warning
+		</Button>
+	</>
+};
+
+# Messages
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+## API
+
+```jsx
+import { Message } from 'artific-ui';
+```
+
+<ArgsTable story="Default"/>
+
+export const SizeTemplate=(args) => {
+	const sizes=['xl', 'lg', 'md', 'sm', 'xs']
+	const btns=sizes.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			size: v,
+			dismissible: true
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message.success('Hi ! This is a message').hold()
+			}}>
+				Message `{v}`
+			</Button>
+			<br/>
+		</div>
+	})
+	return <>
+		{btns}
+	</>
+};
+
+# Sizes
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Sizes">{SizeTemplate.bind({})}</Story>
+</Canvas>
+
+
+export const LayoutsTemplate=(args) => {
+	const layouts=['default', 'rounded', 'no-radius', 'pill']
+	const btns=layouts.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			layout: v,
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message.success('Hi ! This is a message').hold()
+			}}>
+				Layout `{v}`
+			</Button>
+			<br/>
+		</div>
+	})
+	return <>
+		{btns}
+	</>
+};
+
+# Layouts
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Layouts">{LayoutsTemplate.bind({})}</Story>
+</Canvas>
+
+
+export const ThemesTemplate=(args) => {
+	const themes=['primary', 'secondary', 'dark', 'light']
+	const btns=themes.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			theme: v,
+			dismissible: true
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message.alert('Hi ! This is a message').hold()
+			}}>
+				Theme `{v}`
+			</Button>
+			<br/>
+		</div>
+	})
+	const message=useMessage()
+	message.config({
+		colorScheme: {
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		},
+		dismissible: true
+	})
+	return <>
+		{btns}
+		<Button onClick={() => {
+			message.alert('Hi ! This is a message').hold()
+		}}>
+			Custom Theme
+		</Button>
+	</>
+};
+
+# Themes
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Themes">{ThemesTemplate.bind({})}</Story>
+</Canvas>
+
+
+export const VariantsTemplate=(args) => {
+	const themes=['default', 'outline', 'note']
+	const btns=themes.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			variant: v,
+			dismissible: true,
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message.success('Hi ! This is a message')
+			}}>
+				Variant `{v}`
+			</Button>
+			<br/>
+		</div>
+	})
+	return <>
+		{btns}
+	</>
+};
+
+# Variants
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Variants">{VariantsTemplate.bind({})}</Story>
+</Canvas>
+
+export const DarkModeTemplate=(args) => {
+	const themes=['success', 'info', 'error', 'warning']
+	const btns=themes.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			mode: 'dark'
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message[v]('Hi ! This is a message')
+			}}>
+				Dark Mode for `{v}`
+			</Button>
+			<br/>
+		</div>
+	})
+	return <>
+		{btns}
+	</>
+};
+
+# Dark Mode
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Dark Mode">{DarkModeTemplate.bind({})}</Story>
+</Canvas>
+
+export const DurationTemplate=(args) => {
+	const themes=['success', 'info', 'error', 'warning']
+	const btns=themes.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			duration: 3,
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message[v]('Hi ! This is a message')
+			}}>
+				Duration 3s
+			</Button>
+			<br/>
+		</div>
+	})
+	return <>
+		{btns}
+	</>
+};
+
+# Duration
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Duration">{DurationTemplate.bind({})}</Story>
+</Canvas>
+
+
+export const NotificationTemplate=(args) => {
+	const themes=['success', 'info', 'error', 'warning', 'alert']
+	const btns=themes.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			type: 'notification',
+			dismissible: true,
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message[v]('Hi User! This is a notification message', 'Message From Artific').hold()
+			}}>
+				Notify me
+			</Button>
+			<br/>
+		</div>
+	})
+	return <>
+		{btns}
+	</>
+};
+
+# Notification Alert
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Notification Alert">{NotificationTemplate.bind({})}</Story>
+</Canvas>
+
+
+export const PositionTemplate=(args) => {
+	const themes=['top', 'top-right', 'bottom-left', 'bottom', 'bottom-right', 'top-left']
+	const btns=themes.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			dismissible: true,
+			position: v
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message.success('Hi ! This is a message').hold()
+			}}>
+				Message {v}
+			</Button>
+			<br/>
+		</div>
+	})
+	return <>
+		{btns}
+	</>
+};
+
+# Message Positions
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Message Positions">{PositionTemplate.bind({})}</Story>
+</Canvas>

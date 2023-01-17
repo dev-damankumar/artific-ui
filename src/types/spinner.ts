@@ -1,20 +1,8 @@
-import {
-    ColorScheme,
-    CSSStyle,
-    Directions,
-    DirectionsArray,
-    Layouts,
-    LayoutsArray,
-    Sizes,
-    SizesArray,
-    Themes,
-    ThemesArray
-} from './common';
-import React from 'react';
+import {ColorScheme, CSSStyle, Directions, DirectionsArray, Sizes, SizesArray, Themes, ThemesArray} from './common';
 import PropTypes from "prop-types";
 
 
-export const VariantsArray = ['default', 'text', 'outline', 'note'] as const;
+export const VariantsArray = ['default', 'ring', 'dots', 'box', 'ripple'] as const;
 export type Variants = typeof VariantsArray[number];
 
 
@@ -30,7 +18,6 @@ export const propTypes = {
 	}),
 	className: PropTypes.string,
 	variant: PropTypes.oneOf<Variants>(VariantsArray),
-	layout: PropTypes.oneOf<Layouts>(LayoutsArray),
 	size: PropTypes.oneOf<Sizes>(SizesArray),
 };
 
@@ -39,14 +26,12 @@ export const defaultProps = {
 	theme: 'primary' as Themes,
 	direction: 'left' as Directions,
 	variant: 'default' as Variants,
-	layout: 'default' as Layouts,
 	size: 'md' as Sizes,
 	className: '' as string,
 };
 
 
-export interface IAlertProps {
-	children: React.ReactNode,
+export interface ISpinnerProps {
 	style?: CSSStyle,
 	dismiss?: boolean,
 	direction?: Directions,
@@ -54,7 +39,6 @@ export interface IAlertProps {
 	colorScheme?: ColorScheme,
 	className?: string,
 	variant?: Variants,
-	layout?: Layouts,
 	size?: Sizes,
 
 	[x: string]: any,

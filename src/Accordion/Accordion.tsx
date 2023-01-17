@@ -46,7 +46,7 @@ export const Accordion: React.FC<IAccordionProps> = (
 		</>
 	);
 };
-
+Accordion.displayName = 'Accordion';
 Accordion.propTypes = propTypes;
 Accordion.defaultProps = defaultProps;
 export default Accordion
