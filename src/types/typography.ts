@@ -9,7 +9,7 @@ export type TypographyAsElements = typeof TypographyAsElementsArray[number];
 export const TypographyWeightsArray = ['medium', 'light', 'bold'] as const;
 export type TypographyWeights = typeof TypographyWeightsArray[number];
 
-export const TypographyVariantsArray = ['text', 'subtitle', 'heading', 'caption', 'description', 'code'] as const;
+export const TypographyVariantsArray = ['text', 'subtitle', 'heading', 'caption', 'description', 'code', 'highlight', 'abbr', 'pre', 'kbd'] as const;
 export type TypographyVariants = typeof TypographyVariantsArray[number];
 
 

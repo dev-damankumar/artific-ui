@@ -33,6 +33,7 @@ export const propTypes = {
 	theme: PropTypes.oneOf<Themes>(ThemesArray),
 	hideTextOnLoading: PropTypes.bool,
 	loading: PropTypes.bool,
+	fullWidth: PropTypes.bool,
 	prefix: PropTypes.node || null,
 	suffix: PropTypes.node || null,
 	className: PropTypes.string,
@@ -57,7 +58,7 @@ export const defaultProps = {
 	loadingStyle: 'spin' as LoadingStyles,
 	size: 'md' as Sizes,
 	className: '' as string,
-	variants: undefined
+	fullWidth: false,
 };
 
 export interface IButtonProps {
@@ -66,6 +67,7 @@ export interface IButtonProps {
 	style?: React.CSSProperties;
 	theme?: Themes;
 	hideTextOnLoading?: boolean;
+	fullWidth?: boolean;
 	colorScheme?: ColorScheme;
 	loadingDirection?: LoadingDirections;
 	variant?: Variants;

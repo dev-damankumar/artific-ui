@@ -11,7 +11,7 @@ function ripple(e: any, button: any, focus: any, initial: any, mouseDown: any) {
 			button.style = initial;
 			mouseDown = false;
 		} catch (er) {
-			console.log("mouseDown", mouseDown)
+			mouseDown
 		}
 	};
 

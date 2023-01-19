@@ -1,0 +1,192 @@
+import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Button, useLoader} from '../../src';
+
+
+<Meta
+	title="Components/Loader"
+	component={useLoader}
+	parameters={{docs: {source: {type: 'code'}}}}
+/>
+
+export const Template=(args) => {
+	const message=useLoader();
+	return <>
+		<Button onClick={() => {
+			message.show('Hi ! This is a message')
+		}}>
+			Submit
+		</Button>
+	</>
+};
+
+# Loaders
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+## API
+
+```jsx
+import { useLoader } from 'artific-ui';
+```
+
+<ArgsTable story="Default"/>
+
+export const DissmissableTemplate=(args) => {
+	const message=useLoader();
+	message.config({dismissible: true})
+	return <div>
+		<Button onClick={() => {
+			message.show('Hi ! This is a message')
+		}}>
+			Loader
+		</Button>
+		<br/>
+	</div>
+};
+
+# Dismissible
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Dismissible">{DissmissableTemplate.bind({})}</Story>
+</Canvas>
+
+export const ThemeTemplate=(args) => {
+	const message=useLoader();
+	const message1=useLoader();
+	message.config({dismissible: true, theme: 'dark'});
+	message1.config({dismissible: true, theme: 'light'});
+	return <div>
+		<Button onClick={() => {
+			message.show('Hi ! This is a message')
+		}}>
+			Loader Dark
+		</Button>
+		<Button onClick={() => {
+			message1.show('Hi ! This is a message')
+		}}>
+			Loader Light
+		</Button>
+		<br/>
+	</div>
+};
+
+# Themes
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Themes">{ThemeTemplate.bind({})}</Story>
+</Canvas>
+
+
+export const VariantsTemplate=(args) => {
+	const message=useLoader()
+	const message1=useLoader()
+	const message2=useLoader()
+	const message3=useLoader()
+	const message4=useLoader()
+	const message5=useLoader()
+	message.config({dismissible: true})
+	message1.config({dismissible: true, variant: 'blur'})
+	message2.config({dismissible: true, variant: 'solid'})
+	message3.config({dismissible: true, theme: 'light'})
+	message4.config({dismissible: true, theme: 'light', variant: 'blur'})
+	message5.config({dismissible: true, theme: 'light', variant: 'solid'})
+	return <div>
+		<Button onClick={() => {
+			message.show('Hi ! This is a message')
+		}}>
+			Loader Default
+		</Button>
+		<Button onClick={() => {
+			message1.show('Hi ! This is a message')
+		}}>
+			Default Loader Blur
+		</Button>
+		<Button onClick={() => {
+			message2.show('Hi ! This is a message')
+		}}>
+			Default Loader Solid
+		</Button>
+		<br/>
+		<Button onClick={() => {
+			message3.show('Hi ! This is a message')
+		}}>
+			Light Loader Default
+		</Button>
+		<Button onClick={() => {
+			message4.show('Hi ! This is a message')
+		}}>
+			Light Loader Blur
+		</Button>
+		<Button onClick={() => {
+			message5.show('Hi ! This is a message')
+		}}>
+			Light Loader Solid
+		</Button>
+	</div>
+};
+
+# Variants
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Variants">{VariantsTemplate.bind({})}</Story>
+</Canvas>
+
+export const SizesTemplate=(args) => {
+	const message=useLoader()
+	const message1=useLoader()
+	const message2=useLoader()
+	const message3=useLoader()
+	const message4=useLoader()
+	const message5=useLoader()
+	message.config({dismissible: true, size: 'xl'})
+	message1.config({dismissible: true, size: 'lg'})
+	message2.config({dismissible: true, size: 'md'})
+	message3.config({dismissible: true, size: 'sm'})
+	message4.config({dismissible: true, size: 'xs'})
+	return <div>
+		<Button onClick={() => {
+			message.show('Hi ! This is a message')
+		}}>
+			Loader XL
+		</Button>
+		<Button onClick={() => {
+			message1.show('Hi ! This is a message')
+		}}>
+			Loader LG
+		</Button>
+		<Button onClick={() => {
+			message2.show('Hi ! This is a message')
+		}}>
+			Default
+		</Button>
+		<br/>
+		<Button onClick={() => {
+			message3.show('Hi ! This is a message')
+		}}>
+			Loader SM
+		</Button>
+		<Button onClick={() => {
+			message4.show('Hi ! This is a message')
+		}}>
+			Loader XS
+		</Button>
+	</div>
+};
+
+# Sizes
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Canvas>
+	<Story name="Sizes">{SizesTemplate.bind({})}</Story>
+</Canvas>

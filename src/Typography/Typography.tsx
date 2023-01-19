@@ -22,7 +22,8 @@ export const Typography: React.FC<ITypographyProps> = (
 	const id = getRandomClassId();
 	const componentId = 'btn';
 	const componentSelector = `${componentId}-${id}`;
-	const element = as?.toString()?.trim()?.toLowerCase() || 'p';
+	const asEl = as?.toString()?.trim()?.toLowerCase() || ''
+	const element = variant === 'abbr' ? 'abbr' : variant === 'pre' ? 'pre' : asEl;
 	const variantClasses = variant !== 'text' ? `typography-${variant}` : '';
 	const weightClasses = `${weight !== 'medium' ? `typography-${weight}` : ''}`;
 

@@ -7,7 +7,14 @@ import {Button} from '../../src/index';
 
 Custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
 
-export const defaultTemplate=(args) => <Button {...args}>Default</Button>;
+export const defaultTemplate=(args) => {
+	return <>
+		<Button {...args}>Default</Button>
+		<br/>
+		<br/>
+		<Button fullWidth>Full width button</Button>
+	</>
+};
 
 <Canvas>
 	<Story name="Default">{defaultTemplate.bind({})}</Story>

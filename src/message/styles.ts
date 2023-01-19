@@ -1,4 +1,5 @@
-@import "https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css";
+const style = `
+<style data-ati-message-alert-style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
@@ -42,33 +43,20 @@
 	--dark-lightness: 18%;
 	--dark: hsla(var(--dark-hue, 218), var(--dark-saturation, 36%), var(--dark-lightness, 18%), var(--dark-alpha, 1));
 	--dark-color: var(--dark);
-
-	--hover-box-shadow-alpha: 1;
-	--hover-box-shadow-hue: 240;
-	--hover-box-shadow-saturation: 2%;
-	--hover-box-shadow-lightness: 90%;
-	--hover-box-shadow: hsla(var(--hover-box-shadow-hue, 240), var(--hover-box-shadow-saturation, 2%), var(--hover-box-shadow-lightness, 90%), var(--hover-box-shadow-alpha, 1));
-
-	--primary-hover-box-shadow-alpha: 1;
-	--primary-hover-box-shadow-hue: 255;
-	--primary-hover-box-shadow-saturation: 100%;
-	--primary-hover-box-shadow-lightness: 92%;
-	--primary-hover-box-shadow: hsla(var(--primary-hover-box-shadow-hue, 255), var(--primary-hover-box-shadow-saturation, 100%), var(--primary-hover-box-shadow-lightness, 92%), var(--primary-hover-box-shadow-alpha, 1));
-
-	--secondary-hover-box-shadow-alpha: 1;
-	--secondary-hover-box-shadow-hue: 193;
-	--secondary-hover-box-shadow-saturation: 100%;
-	--secondary-hover-box-shadow-lightness: 92%;
-	--secondary-hover-box-shadow: hsla(var(--secondary-hover-box-shadow-hue, 255), var(--secondary-hover-box-shadow-saturation, 100%), var(--secondary-hover-box-shadow-lightness, 92%), var(--secondary-hover-box-shadow-alpha, 1));
-
-	--light-hover-box-shadow-alpha: 1;
-	--light-hover-box-shadow-hue: 0;
-	--light-hover-box-shadow-saturation: 0%;
-	--light-hover-box-shadow-lightness: 97%;
-	--light-hover-box-shadow: hsla(var(--light-hover-box-shadow-hue, 0), var(--light-hover-box-shadow-saturation, 0%), var(--light-hover-box-shadow-lightness, 97%), var(--light-hover-box-shadow-alpha, 1));
-
+	
+	
+	--message-box-shadow: rgba(17, 17, 26, 0.10) 0 0 16px;
+	--message-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+	--message-border-radius: 5px;
+	--message-border-width: 4px;
+	--message-padding: 16px;
+	--message-font-size: 16px;
+	--message-margin: 10px;
+	--message-outline-width: 2px;
+	--message-cursor: pointer;
+	--message-main-color: #ededed;
+	--message-mode-bg: white;
 }
-
 
 @font-face {
 	font-family: 'Segoe UI Web (West European)';
@@ -98,291 +86,6 @@
 	font-style: normal;
 }
 
-*, ::after, ::before {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	-moz-transition: all .5s ease;
-	-webkit-transition: all .5s ease;
-	-o-transition: all .5s ease;
-	transition: all .5s ease;
-	outline: 0;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-	:root {
-		scroll-behavior: smooth;
-	}
-}
-
-html, body {
-	margin: 0;
-	font-family: 'Nunito Sans', sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	line-height: 1.5;
-	font-size: 16px;
-	font-weight: 400;
-	-webkit-text-size-adjust: 100%;
-	background-color: #fff;
-	-webkit-tap-highlight-color: transparent;
-	color: #303a52;
-
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: "Montserrat Bold", sans-serif;
-	margin-top: 0;
-	margin-bottom: 1rem;
-	font-weight: 600;
-	line-height: 1.2;
-}
-
-h1 {
-	font-size: calc(1.375rem + 1.5vw);
-}
-
-@media (min-width: 1200px) {
-	h1 {
-		font-size: 2.5rem;
-	}
-}
-
-h2 {
-	font-size: calc(1.325rem + 0.9vw);
-}
-
-@media (min-width: 1200px) {
-	h2 {
-		font-size: 2rem;
-	}
-}
-
-h3 {
-	font-size: calc(1.3rem + 0.6vw);
-}
-
-@media (min-width: 1200px) {
-	h3 {
-		font-size: 1.75rem;
-	}
-}
-
-h4 {
-	font-size: calc(1.275rem + 0.3vw);
-}
-
-@media (min-width: 1200px) {
-	h4 {
-		font-size: 1.5rem;
-	}
-}
-
-h5 {
-	font-size: 1.25rem;
-}
-
-h6 {
-	font-size: 1rem;
-}
-
-p {
-	margin-top: 0;
-	margin-bottom: 1rem
-}
-
-b,
-strong {
-	font-weight: bolder;
-}
-
-small {
-	font-size: 0.875em;
-}
-
-mark {
-	padding: 0.2em;
-	background-color: #fcf8e3;
-}
-
-sub,
-sup {
-	position: relative;
-	font-size: 0.75em;
-	line-height: 0;
-	vertical-align: baseline;
-}
-
-sub {
-	bottom: -0.25em;
-}
-
-sup {
-	top: -0.5em;
-}
-
-pre,
-code,
-kbd,
-samp {
-	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-	font-size: 1em;
-	direction: ltr /* rtl:ignore */;
-	unicode-bidi: bidi-override;
-}
-
-pre {
-	display: block;
-	margin-top: 0;
-	margin-bottom: 1rem;
-	overflow: auto;
-	font-size: 0.875em;
-}
-
-pre code {
-	font-size: inherit;
-	color: inherit;
-	word-break: normal;
-}
-
-code {
-	font-size: 0.875em;
-	color: #d63384;
-	word-wrap: break-word;
-}
-
-a > code {
-	color: inherit;
-}
-
-kbd {
-	padding: 0.2rem 0.4rem;
-	font-size: 0.875em;
-	color: #fff;
-	background-color: #212529;
-	border-radius: 0.2rem;
-}
-
-kbd kbd {
-	padding: 0;
-	font-size: 1em;
-	font-weight: 700;
-}
-
-figure {
-	margin: 0 0 1rem;
-}
-
-table {
-	caption-side: bottom;
-	border-collapse: collapse;
-}
-
-caption {
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
-	color: #6c757d;
-	text-align: left;
-}
-
-th {
-	text-align: inherit;
-	text-align: -webkit-match-parent;
-}
-
-thead,
-tbody,
-tfoot,
-tr,
-td,
-th {
-	border-color: inherit;
-	border-style: solid;
-	border-width: 0;
-}
-
-label {
-	display: inline-block;
-}
-
-button:focus:not(:focus-visible) {
-	outline: 0;
-}
-
-input,
-button,
-select,
-optgroup,
-textarea {
-	margin: 0;
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
-}
-
-button,
-select {
-	text-transform: none;
-}
-
-[role=button] {
-	cursor: pointer;
-}
-
-select {
-	word-wrap: normal;
-}
-
-select:disabled {
-	opacity: 1;
-}
-
-hr {
-	margin: 0.5rem 0;
-	color: inherit;
-	background-color: gray;
-	border: 0;
-}
-
-hr:not([size]) {
-	height: 1px;
-}
-
-img,
-svg {
-	vertical-align: middle;
-}
-
-svg {
-	vertical-align: middle;
-}
-
-[tabindex="-1"]:focus:not(:focus-visible) {
-	outline: 0 !important
-}
-
-input:focus {
-	outline: none;
-}
-
-button {
-	outline: none;
-	cursor: pointer;
-}
-
-a {
-	text-decoration: none;
-}
-
-a:not([href]):not([class]), a:not([href]):not([class]):hover {
-	color: inherit;
-	text-decoration: none;
-}
-
-dl, ol, ul {
-	margin-top: 0;
-	margin-bottom: 1rem;
-}
-
-/*Toast Messages*/
 
 
 @keyframes fromRight {
@@ -420,19 +123,16 @@ dl, ol, ul {
 		transform: translateX(0)
 	}
 }
-
-:root {
-	--message-box-shadow: rgba(17, 17, 26, 0.10) 0 0 16px;
-	--message-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
-	--message-border-radius: 5px;
-	--message-border-width: 4px;
-	--message-padding: 16px;
-	--message-font-size: 16px;
-	--message-margin: 10px;
-	--message-outline-width: 2px;
-	--message-cursor: pointer;
-	--message-main-color: #ededed;
-	--message-mode-bg: white;
+.ati-message-alert-wrapper ,.ati-message-alert-wrapper *, .ati-message-alert-wrapper ::after, .ati-message-alert-wrapper ::before {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+	outline: 0;
+	font-family: 'Nunito Sans', sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .ati-message-alert-wrapper {
@@ -822,3 +522,7 @@ dl, ol, ul {
 	color: #fff;
 }
 
+</style>
+`
+
+export default style

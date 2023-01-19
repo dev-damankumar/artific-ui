@@ -1,6 +1,13 @@
+:root {
+	--typography-outline-width: 2px;
+	--typography-padding: 5px;
+	--typography-font-size: 1rem;
+	--typography-border-radius: 5px;
+}
+
 .typography {
 	font-family: Nunito Sans, sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-	font-size: 1rem;
+	font-size: var(--typography-font-size);
 	font-weight: 400;
 	line-height: 1.5;
 	display: block;
@@ -22,6 +29,35 @@ div.typography {
 	color: #606060;
 	font-size: 0.9rem;
 	letter-spacing: 0.00938em;
+}
+
+.typography-highlight {
+	display: inline;
+	background-color: #fcf8e3;
+	padding: 0.2em;
+}
+
+.typography-abbr {
+	display: inline;
+	border-bottom: var(--typography-outline-width) dotted;
+	text-decoration: none;
+}
+
+.typography-kbd {
+	--typography-padding: 3px;
+	display: inline;
+	padding: var(--typography-padding) calc(var(--typography-padding) * 2);
+	font-size: calc(var(--typography-font-size) / 1.2);
+	color: white;
+	background-color: var(--dark);
+	font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+	border-radius: var(--typography-border-radius);
+}
+
+.typography-pre {
+	word-wrap: break-word;
+	font-size: .875em;
+	font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
 }
 
 .typography-code {

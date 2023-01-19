@@ -41,8 +41,12 @@
 	margin-right: var(--btn-margin);
 }
 
-.btn:not(.btn-disabled,[disabled],.btn-text,.btn-loading,.btn-loading-grow):active {
+.btn:not(.btn-fullwidth,.btn-disabled,[disabled],.btn-text,.btn-loading,.btn-loading-grow):active {
 	transform: scale(0.95);
+}
+
+.btn.btn-fullwidth:active {
+	transform: scale(0.99);
 }
 
 .btn-disabled:active, .btn[disabled]:active, .btn-text:active, .btn-loading:active, .btn-loading-grow:active {
@@ -76,6 +80,10 @@ span.ripple {
 
 .btn-pill {
 	--btn-border-radius: 50px;
+}
+
+.btn-fullwidth {
+	width: 100%;
 }
 
 .btn-no-radius {

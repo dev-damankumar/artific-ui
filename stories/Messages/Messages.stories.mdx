@@ -172,7 +172,7 @@ export const VariantsTemplate=(args) => {
 		})
 		return <div key={i}>
 			<Button onClick={() => {
-				message.success('Hi ! This is a message')
+				message.success('Hi ! This is a message').hold()
 			}}>
 				Variant `{v}`
 			</Button>
