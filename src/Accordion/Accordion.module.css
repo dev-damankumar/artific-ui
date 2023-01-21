@@ -18,7 +18,13 @@
 	padding-right: calc(var(--accordion-padding) * 3);
 	cursor: pointer;
 	background: var(--accordion-bg-color);
+	user-select: none;
 }
+
+.accordion-outlined .accordion-header {
+	border-radius: calc(var(--accordion-border-radius) - 3px);
+}
+
 
 .accordion-rounded {
 	--accordion-border-radius: 10px;
@@ -246,15 +252,15 @@
 }
 
 .accordion-separate .accordion {
-	margin-bottom: 10px;
+	margin-bottom: var(--accordion-margin);
 }
 
 .accordion-separate .accordion-panel {
-	margin-top: 20px;
+	margin-top: var(--accordion-margin);
 	padding: 0 var(--accordion-padding) 0 var(--accordion-padding);
 	background: #f4f4f4;
 	border-radius: var(--accordion-border-radius);
-	margin-bottom: 20px;
+	margin-bottom: var(--accordion-margin);
 }
 
 .accordion-body {
@@ -265,28 +271,34 @@
 .accordion-panel {
 	margin-top: 0;
 	padding: 0 var(--accordion-padding) 0 var(--accordion-padding);
-	margin-bottom: 20px;
+	margin-bottom: var(--accordion-margin);
 	border-radius: 0 0 var(--accordion-border-radius) var(--accordion-border-radius);
 	height: 0;
 	overflow: hidden;
 }
 
-.accordion-bordered .accordion {
-	box-shadow: none;
-	border: var(--accordion-outline-width) solid var(--accordion-bg-color);
-}
-
-.accordion-bordered .accordion .accordion-header {
-	margin-top: -1px;
-}
-
-.accordion-bordered .accordion .accordion-panel {
-	margin-bottom: 0;
-}
-
 .accordion-outlined .accordion {
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-	border: 1px solid var(--accordion-bg-color);
+	border: var(--accordion-outline-width) solid var(--primary);
+}
+
+.accordion-outlined.accordion-secondary .accordion {
+	border: var(--accordion-outline-width) solid var(--secondary);
+}
+
+.accordion-outlined.accordion-dark .accordion {
+	border: var(--accordion-outline-width) solid var(--dark);
+}
+
+.accordion-outlined.accordion-light .accordion {
+	--light-lightness: 95%;
+	--light: hsla(var(--light-hue, 0), var(--light-saturation, 0%), var(--light-lightness, 100%), var(--light-alpha, 1));
+	border: var(--accordion-outline-width) solid var(--light);
+}
+
+.accordion-outlined.accordion-light .accordion-header {
+	--light-lightness: 100%;
+	--light: hsla(var(--light-hue, 0), var(--light-saturation, 0%), var(--light-lightness, 100%), var(--light-alpha, 1));
 }
 
 .accordion-outlined .accordion .accordion-header {

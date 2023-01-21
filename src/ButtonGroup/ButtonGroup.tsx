@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './ButtonGroup.module.css';
-import getClassNames from '../utils/getClassnames';
-import sizeClasses from '../utils/sizeClasses';
-import {Directions, DirectionsArray, Sizes, SizesArray} from '../types/common';
+import getClassNames from '../utils/classes/getClassnames';
+import sizeClasses from '../utils/classes/sizeClasses';
+import {Directions, DirectionsArray, IDiv, Sizes, SizesArray} from '../types/common';
 import PropTypes from "prop-types";
 
 export interface IButtonGroupProps {
@@ -22,11 +22,17 @@ export const defaultProps = {
 	direction: 'horizontal' as Directions
 };
 
-export const ButtonGroup: React.FC<IButtonGroupProps> = ({children, size = 'md', direction = 'horizontal'}) => {
+export const ButtonGroup: React.FC<IButtonGroupProps & IDiv> = (
+	{
+		children,
+		size = 'md',
+		direction = 'horizontal',
+		...rest
+	}) => {
 	let sizeClass = sizeClasses('btn-group', size);
 	let directionClasses = direction !== 'horizontal' ? `btn-group-${direction}` : 'btn-group';
 	return (
-		<div className={getClassNames(styles, sizeClass, directionClasses)}>
+		<div {...rest} className={getClassNames(styles, sizeClass, directionClasses)}>
 			{children}
 		</div>
 	);

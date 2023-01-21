@@ -1,12 +1,12 @@
 import React from 'react';
-import sizeClasses from '../utils/sizeClasses';
-import classes from './Dropdown.module.css';
-import getClassNames from '../utils/getClassnames';
+import styles from './Dropdown.module.css';
+import getClassNames from '../utils/classes/getClassnames';
 import {defaultProps, IDropdownProps, propTypes} from '../types/dropdown';
-import getRandomClassId from "../utils/generateRandonClassId";
-import applyColorScheme from "../utils/applyColorScheme";
+import {IDiv} from "../types/common";
+import getDefaultClasses from "../utils/classes/getDefaultClasses";
+import {addPropsToChildren} from "../utils/helpers";
 
-export const Dropdown: React.FC<IDropdownProps> = (
+export const Dropdown: React.FC<IDropdownProps & IDiv> = (
 	{
 		autoClose,
 		children,
@@ -17,53 +17,46 @@ export const Dropdown: React.FC<IDropdownProps> = (
 		fullwidth,
 		layout,
 		variant,
-		colorScheme
+		colorScheme,
+		...rest
 	}) => {
-	const id = getRandomClassId();
-	const componentId = 'dropdown';
-	const componentSelector = `${componentId}-${id}`;
-	const layoutClasses = layout !== 'default' ? `dropdown-${layout}` : '';
-	const variantClasses = variant !== 'default' ? `dropdown-${variant}` : '';
-	const sizeClass = sizeClasses('dropdown', size);
+	const componentSelector = 'dropdown';
+	const {
+		classNames, customCss
+	} = getDefaultClasses(styles, componentSelector, className, '', layout, variant, size, colorScheme)
+
 	const openDropdown = (e: Event) => {
 		if (e.currentTarget === e.target) {
-			(e.target as HTMLElement)!.parentElement!.classList.toggle(getClassNames(classes, 'dropdown-open').trim());
+			(e.target as HTMLElement)!.parentElement!.classList.toggle(getClassNames(styles, 'dropdown-open').trim());
 		}
 	};
 
 	const handleCloseMenu = (e: React.MouseEvent<Element, MouseEvent>) => {
 		if (e) {
 			if ((e.target! as HTMLElement).hasAttribute('data-dropdown')) {
-				(e.target! as HTMLElement).closest(`.${getClassNames(classes, 'dropdown-open')}`)!.classList.remove(getClassNames(classes, 'dropdown-open').trim());
+				(e.target! as HTMLElement).closest(`.${getClassNames(styles, 'dropdown-open')}`)!.classList.remove(getClassNames(styles, 'dropdown-open').trim());
 			}
 		}
 	};
-	const childrenWithProps = React.Children.map(children, child => {
-		if (React.isValidElement(child)) {
-			return React.cloneElement<any>(child, {
-				autoClose, onClick: openDropdown, closeHandler: handleCloseMenu, colorScheme
-			});
-		}
-		return child;
-	});
-	const customCss = applyColorScheme(componentSelector, colorScheme, componentId)
+	console.log('colorScheme ss', colorScheme)
+	const childrenWithProps = addPropsToChildren(children, {
+		autoClose, onClick: openDropdown, closeHandler: handleCloseMenu, colorScheme
+	})
+
+	const classes = getClassNames(
+		styles,
+		fullwidth ? 'dropdown-full' : '',
+		position !== 'bottom' ? `drop-${position}` : '',
+	)
 	return (
 		<>
 			{customCss && customCss()}
-			<div style={style}
+			<div {...rest} style={style}
 				 onClick={(e: React.MouseEvent<Element, MouseEvent>): void => {
 					 handleCloseMenu(e);
 				 }}
 				 data-dropdown
-				 className={`${componentSelector} ${getClassNames(
-					 classes,
-					 'dropdown',
-					 fullwidth ? 'dropdown-full' : '',
-					 position !== 'bottom' ? `drop-${position}` : '',
-					 layoutClasses,
-					 variantClasses,
-					 sizeClass
-				 )} ${className}`}>
+				 className={`${classNames} ${classes}`}>
 				{childrenWithProps}
 			</div>
 		</>
@@ -72,6 +65,5 @@ export const Dropdown: React.FC<IDropdownProps> = (
 Dropdown.displayName = 'Dropdown';
 Dropdown.propTypes = propTypes;
 Dropdown.defaultProps = defaultProps;
-
 
 export default Dropdown

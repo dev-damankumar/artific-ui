@@ -1,14 +1,13 @@
 import React from 'react';
 import styles from './Button.module.css';
-import getClassNames from '../utils/getClassnames';
-import ripple from '../utils/effectRipple';
-import sizeClasses from '../utils/sizeClasses';
+import getClassNames from '../utils/classes/getClassnames';
+import ripple from '../utils/effects/effectRipple';
 import {defaultProps, IButtonProps, propTypes} from '../types/button';
-import applyColorScheme from "../utils/applyColorScheme";
-import getRandomClassId from "../utils/generateRandonClassId";
+import {IButton} from "../types/common";
+import getDefaultClasses from "../utils/classes/getDefaultClasses";
 /*Responsive checkPropTypes pending for onstalled components*/
 
-export const Button: React.FC<IButtonProps> = (props) => {
+export const Button: React.FC<IButtonProps & IButton> = (props) => {
 	const {
 		className,
 		style,
@@ -31,27 +30,21 @@ export const Button: React.FC<IButtonProps> = (props) => {
 		...rest
 	} = props
 	let mouseDown = false;
-	const id = getRandomClassId();
 	const componentSelector = 'btn';
-	const componentId = `${componentSelector}-${id}`;
-	const layoutClasses = layout !== 'default' ? `${componentSelector}-${layout}` : '';
-	const variantClasses = variant !== 'default' ? `${componentSelector}-${variant} ${variant === 'text' && `${componentSelector}-outline`}` : '';
+	console.log('colorScheme', colorScheme)
+	const {
+		classNames, customCss
+	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
+	const additionalVariantClasses = `${variant === 'text' && `${componentSelector}-outline`}`;
 	const loadingClasses = loading && `${hideTextOnLoading && `${componentSelector}-loading-no-text`} ${componentSelector}-loading ${loadingDirection === 'after' && `${componentSelector}-loading-right`} ${loadingStyle === 'grow' && `${componentSelector}-loading-grow`}` || '';
-	const sizeClass = sizeClasses(componentSelector, size);
-	const mainBtnSelector = getClassNames(styles, componentSelector);
 
-
-	const classes = `${mainBtnSelector} ${componentId} ${className} ${getClassNames(
+	const classes = `${getClassNames(
 		styles,
-		!colorScheme ? `${componentSelector}-${theme}` : `${componentSelector}-primary`,
-		layoutClasses,
+		additionalVariantClasses,
+		loadingClasses,
 		fullWidth ? `${componentSelector}-fullwidth` : '',
 		disabled ? `${componentSelector}-disabled` : '',
-		loadingClasses,
-		variantClasses,
-		sizeClass
 	)}`
-	const customCss = applyColorScheme(componentId, colorScheme, componentSelector)
 
 	return <>
 		{customCss && customCss()}
@@ -60,10 +53,7 @@ export const Button: React.FC<IButtonProps> = (props) => {
 			disabled={disabled}
 			type={type}
 			style={style}
-			className={`${classes} ${colorScheme ? [layoutClasses,
-				loadingClasses,
-				variantClasses,
-				sizeClass].join(" ") : ''}`}
+			className={`${classNames} ${classes}`}
 			onMouseDown={(e: React.MouseEvent<HTMLButtonElement>) => {
 				mouseDown = true;
 				if (rest.onMouseDown) {

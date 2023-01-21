@@ -1,13 +1,11 @@
 import React, {useState} from 'react';
-import getClassNames from '../utils/getClassnames';
 import styles from './Alert.module.css';
-import sizeClasses from '../utils/sizeClasses';
 import {defaultProps, IAlertProps, propTypes} from '../types/alert';
-import applyColorScheme from "../utils/applyColorScheme";
-import getRandomClassId from "../utils/generateRandonClassId";
+import getClassNames from '../utils/classes/getClassnames';
+import {IDiv} from "../types/common";
+import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
-
-export const Alert: React.FC<IAlertProps> = (
+export const Alert: React.FC<IAlertProps & IDiv> = (
 	{
 		children,
 		direction,
@@ -22,44 +20,31 @@ export const Alert: React.FC<IAlertProps> = (
 		onClose,
 		...rest
 	}) => {
-	const id = getRandomClassId();
-	const componentId = 'alert';
-	const componentSelector = `${componentId}-${id}`;
-	let themeClasses = `${componentId}-${theme}`;
+	const componentSelector = 'alert';
 	let [show, setShow] = useState(true);
-	let layoutClasses = layout !== 'default' ? `${componentId}-${layout}` : '';
-	let variantClasses = variant !== 'default' ? `${componentId}-${variant} ${direction && direction !== 'left' && `${componentId}-note-${direction}`} ${variant === 'note' && `${componentId}-outline`} ${variant === 'text' && `${componentId}-outline`}` : '';
-	let sizeClass = sizeClasses(componentId, size);
-	let mainBtnSelector = getClassNames(styles, componentId);
+	const {
+		customCss, classNames
+	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
 
-
-	let onCloseHandler = () => {
+	const onCloseHandler = () => {
 		if (onClose) {
-			onClose();
+			onClose?.();
 			return;
 		}
 		setShow(false);
 	};
-	const customCss = applyColorScheme(componentSelector, colorScheme, componentId)
+
+	const additionalVariantClasses = `${direction && direction !== 'left' && `${componentSelector}-note-${direction}`} ${variant === 'note' && 'alert-outline'} ${variant === 'text' && 'alert-outline'}`;
 
 	return show ? (
 		<>
 			{customCss && customCss()}
 			<div
-				className={
-					`${mainBtnSelector} ${componentSelector} ${getClassNames(
-						styles,
-						!colorScheme ? themeClasses : 'alert-primary',
-						layoutClasses,
-						variantClasses,
-						sizeClass
-					)} ${className}`
-				}
 				{...rest}
+				className={`${classNames} ${getClassNames(styles, additionalVariantClasses)}`}
 			>
-				{dismiss &&
-					<button onClick={onCloseHandler} type='button'
-							className={getClassNames(styles, 'close')}>&times;</button>}
+				{dismiss && <button onClick={onCloseHandler} type='button'
+									className={getClassNames(styles, 'close')}>&times;</button>}
 				{children}
 			</div>
 		</>

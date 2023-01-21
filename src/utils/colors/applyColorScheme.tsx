@@ -1,15 +1,15 @@
 import React from "react";
-import {ColorScheme} from "../types/common";
-import colorShades from "./colors/colorShades";
-import covertColor from "./colors/convertColor";
+import {ColorScheme, ComponentsType} from "../../types/common";
+import colorShades from "./colorShades";
+import covertColor from "./convertColor";
 
-const applyColorScheme = (componentSelector: string, colorScheme: ColorScheme | undefined, componentId: string) => {
+const applyColorScheme = (componentSelector: ComponentsType, colorScheme: ColorScheme | undefined, componentId: string, variant: string = 'default') => {
 	if (colorScheme) {
 		const scheme = (colorScheme as ColorScheme)!;
 		let css: React.ReactNode;
-		if (componentId === 'accordion') {
+		if (componentSelector === 'accordion') {
 			css = <style>
-				{`.${componentSelector}{
+				{`.${componentId}{
                 color: ${scheme.color}; 
                 --primary: ${scheme.background};
                 ${scheme?.backgroundColor ?
@@ -20,7 +20,7 @@ const applyColorScheme = (componentSelector: string, colorScheme: ColorScheme | 
 					`--primary-color:${!scheme.background.includes('gradient') ? scheme.background : 'hsla(var(--light-hover),var(--alpha))'};
                 --primary-hover: ${!scheme.background.includes('gradient') ? colorShades(-0.2, covertColor(scheme.background)) : scheme.background};
                 --primary-hover-box-shadow: ${!scheme.background.includes('gradient') ? colorShades(0.65, covertColor(scheme.background)) : 'hsla(var(--hover-box-shadow),var(--alpha))'};`}
-            .${componentSelector}:not(.${componentId}-disabled,[disabled],.${componentId}-loading,.${componentId}-loading-grow,.${componentId}-outline):hover{
+            .${componentId}:not(.${componentId}-disabled,[disabled],.${componentId}-loading,.${componentId}-loading-grow,.${componentId}-outline):hover{
            		background: ${scheme?.backgroundColor ? `${!scheme.background.includes('gradient') ? colorShades(-0.2, covertColor(scheme.backgroundColor)) : scheme.background}` : `${!scheme.background.includes('gradient') ? colorShades(-0.2, covertColor(scheme.background)) : scheme.background}`}
            }
            }
@@ -28,8 +28,8 @@ const applyColorScheme = (componentSelector: string, colorScheme: ColorScheme | 
 			</style>;
 		} else {
 			css = <style>
-				{`.${componentSelector}{
-                ${componentSelector !== 'table' && 'color: ${scheme.color};'}
+				{`.${componentId}{
+                ${componentSelector !== 'table' && `color: ${scheme.color};`}
                 --primary: ${scheme.background};
                 ${scheme?.backgroundColor ?
 					` --primary-color: ${scheme.backgroundColor};
@@ -42,12 +42,11 @@ const applyColorScheme = (componentSelector: string, colorScheme: ColorScheme | 
            
            }
            
-           ${componentId === 'btn' ? `
-           .${componentSelector}:not(.${componentId}-disabled,[disabled],.${componentId}-loading,.${componentId}-loading-grow,.${componentId}-outline):hover{
+           ${(componentSelector === 'btn' && variant !== 'outline') ? `
+           .${componentId}:not(.${componentId}[disabled]):hover{
            		background: ${scheme?.backgroundColor ? `${!scheme.background.includes('gradient') ? colorShades(-0.2, covertColor(scheme.backgroundColor)) : scheme.background}` : `${!scheme.background.includes('gradient') ? colorShades(-0.2, covertColor(scheme.background)) : scheme.background}`}
            }
            ` : ''}
-           
            `}
 			</style>;
 		}

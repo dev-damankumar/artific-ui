@@ -1,13 +1,13 @@
 import React from 'react';
 import modalStyles from "./Modal.module.css"
-import getClassNames from "../utils/getClassnames";
+import getClassNames from "../utils/classes/getClassnames";
 import {defaultProps, IModalProps, OverLaySizesArray, propTypes} from "../types/modal";
-import getRandomClassId from "../utils/generateRandonClassId";
-import sizeClasses from "../utils/sizeClasses";
-import applyColorScheme from "../utils/applyColorScheme";
-import {IModalSizesType} from "../types/common";
+import {IDiv, IModalSizesType} from "../types/common";
+import getDefaultClasses from "../utils/classes/getDefaultClasses";
+import {addPropsToChildren} from "../utils/helpers";
+import sizeClasses from "../utils/classes/sizeClasses";
 
-export const Modal: React.FC<IModalProps> = (
+export const Modal: React.FC<IModalProps & IDiv> = (
 	{
 		open,
 		className,
@@ -28,24 +28,16 @@ export const Modal: React.FC<IModalProps> = (
 		children,
 		...rest
 	}) => {
-	const id = getRandomClassId();
-	const componentId = 'modal';
-	const componentSelector = `${componentId}-${id}`;
-	const layoutClasses = layout !== 'default' ? `${componentId}-${layout}` : '';
-	const variantClasses = variant !== 'default' ? `${componentId}-${variant}` : '';
-	const dockClasses = dock ? `${componentId}-dock-${dock}` : '';
-	const positionClasses = position ? `${componentId}-${position}` : '';
-	const sizeClass: IModalSizesType = sizeClasses(componentId, size);
-	const mainBtnSelector = getClassNames(modalStyles, componentId);
-
-	const childrenWithProps = React.Children.map(children, child => {
-		if (React.isValidElement(child)) {
-			return React.cloneElement<any>(child, {
-				onClose, colorScheme, dismiss,
-			});
-		}
-		return child;
-	});
+	const componentSelector = 'modal';
+	const {
+		classNames, customCss
+	} = getDefaultClasses(modalStyles, componentSelector, className, theme, layout, variant, '', colorScheme)
+	const dockClasses = dock ? `${componentSelector}-dock-${dock}` : '';
+	const positionClasses = position ? `${componentSelector}-${position}` : '';
+	const sizeClass: IModalSizesType = sizeClasses(componentSelector, size);
+	const additionalModalSize = OverLaySizesArray.includes(size || '') ? sizeClass : ''
+	const additionalModalContentSize = !OverLaySizesArray.includes(size || '') ? sizeClass : ''
+	const childrenWithProps = addPropsToChildren(children, {onClose, colorScheme, dismiss})
 
 	const onBackdropEffect = (e: React.MouseEvent<HTMLElement>) => {
 		if (e.target !== e.currentTarget) return;
@@ -55,39 +47,34 @@ export const Modal: React.FC<IModalProps> = (
 		}, 500)
 	}
 
-	const mainClasses = `${mainBtnSelector} ${componentSelector} ${className} ${getClassNames(
+
+	const mainClasses = `${classNames} ${getClassNames(
 		modalStyles,
-		!colorScheme ? `${componentId}-${theme}` : `${componentId}-dark`,
+		!colorScheme ? `${componentSelector}-${theme}` : `${componentSelector}-dark`,
 		open ? 'modal-show' : '',
 		overlay === 'blur' ? 'modal-overlay-blur' : '',
-		layoutClasses,
-		variantClasses,
 		dockClasses,
 		positionClasses,
-		OverLaySizesArray.includes(size || '') ? sizeClass : ''
+		additionalModalSize
 	)}`
-	const customCss = applyColorScheme(componentSelector, colorScheme, componentId)
 	return (
 		<>
 			{customCss && customCss()}
-			<div style={style} className={`${mainClasses}`} onClick={(e) => {
-				if (onBackdropClick) {
-					onBackdropClick(e);
-				}
-				if (rest.onClick) {
-					rest.onClick(e)
-				}
+			<div {...rest} style={style} className={mainClasses} onClick={(e) => {
+				onBackdropClick?.(e);
+				rest?.onClick?.(e)
 				onBackdropEffect(e)
 			}}>
 				<div
 					style={styles}
-					className={`${classes} ${getClassNames(modalStyles, "modal-content", !OverLaySizesArray.includes(size || '') ? sizeClass : '')}`}>
+					className={`${classes} ${getClassNames(modalStyles, "modal-content", additionalModalContentSize)}`}>
 					{childrenWithProps}
 				</div>
 			</div>
 		</>
 	);
 };
+
 Modal.displayName = 'Modal';
 Modal.propTypes = propTypes;
 Modal.defaultProps = defaultProps;

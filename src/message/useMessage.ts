@@ -1,6 +1,6 @@
-import getRandomClassId from "../utils/generateRandonClassId";
-import sizeClasses from "../utils/sizeClasses";
-import applyColorScheme from "../utils/applyColorScheme";
+import getRandomClassId from "../utils/uuids/generateRandonClassId";
+import sizeClasses from "../utils/classes/sizeClasses";
+import applyColorScheme from "../utils/colors/applyColorScheme";
 import {MessageConfig, Messages, MessageType} from "../types/message";
 import {MessageAlert} from "./components";
 import styles from './styles'
@@ -59,7 +59,7 @@ export const useMessage = (function () {
 			const variantClasses = this.variant !== 'default' ? `${componentSelector}-${this.variant}` : '';
 			const layoutClasses = this.layout !== 'default' ? `${componentSelector}-${this.layout}` : '';
 			const sizeClass = sizeClasses(componentSelector, this.size);
-			const customCss: any = applyColorScheme(componentId, this.colorScheme, componentSelector)
+			const customCss: any = applyColorScheme(componentSelector, this.colorScheme, componentId)
 			const styleCss = `<style>${customCss?.()?.props?.children}</style>`
 			const classes = [
 				this.className,

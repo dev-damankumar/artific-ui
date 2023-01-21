@@ -1,10 +1,15 @@
 import React from 'react';
-import getClassNames from "../../utils/getClassnames";
+import getClassNames from "../../utils/classes/getClassnames";
 import styles from "../Modal.module.css";
+import {IDiv} from "../../types/common";
 
-export const ModalBody: React.FC<{ children: React.ReactNode }> = ({children}) => {
+export const ModalBody: React.FC<{ children: React.ReactNode } & IDiv> = (
+	{
+		children,
+		...rest
+	}) => {
 	return (
-		<div className={getClassNames(styles, "modal-body")}>
+		<div {...rest} className={getClassNames(styles, "modal-body")}>
 			{children}
 		</div>
 	);

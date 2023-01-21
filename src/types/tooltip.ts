@@ -16,7 +16,6 @@ export const propTypes = {
 	size: PropTypes.oneOf<Sizes>(SizesArray),
 	style: PropTypes.object,
 	className: PropTypes.string,
-	title: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 	colorScheme: PropTypes.shape({
 		background: PropTypes.string.isRequired,
 		backgroundColor: PropTypes.string.isRequired,
@@ -31,7 +30,7 @@ export const defaultProps = {
 	layout: 'default' as Layouts,
 	size: 'md' as Sizes,
 	className: '' as string,
-	placement: 'bottom' as Placement
+	placement: 'bottom' as Placement,
 };
 
 export interface ITooltipProps {

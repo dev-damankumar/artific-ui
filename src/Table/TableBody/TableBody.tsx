@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import {ITbody} from "../../types/common";
 
-export const TableBody: React.FC<{ children: React.ReactNode }> = ({children}) => {
+export const TableBody: React.FC<{ children: React.ReactNode } & ITbody> = (
+	{
+		children,
+		...rest
+	}) => {
 	return (
-		<tbody>
+		<tbody {...rest}>
 		{children}
 		</tbody>
 	);

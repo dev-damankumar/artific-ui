@@ -1,26 +1,24 @@
 import React, {useState} from 'react';
-import classes from '../Accordion.module.css';
-import getClassNames from '../../utils/getClassnames';
+import styles from '../Accordion.module.css';
 import {IAccordionPanel, IAccordionPanelDefaultPropTypes, IAccordionPanelPropTypes} from '../../types/accordion';
+import getClassNames from '../../utils/classes/getClassnames';
+import {addPropsToChildren} from "../../utils/helpers";
+import {IDiv} from "../../types/common";
 
 
-export const AccordionPanel: React.FC<IAccordionPanel> = (
+export const AccordionPanel: React.FC<IAccordionPanel & IDiv> = (
 	{
 		children,
-		theme
+		theme,
+		...rest
 	}) => {
 	const [open, setOpen] = useState(false);
 	let toggleAccordion = () => {
 		setOpen(!open);
 	};
-	const childrenWithProps = React.Children.map(children, child => {
-		if (React.isValidElement(child)) {
-			return React.cloneElement(child, {theme, open, onToggle: toggleAccordion, ...child.props});
-		}
-		return child;
-	});
+	const childrenWithProps = addPropsToChildren(children, {theme, open, onToggle: toggleAccordion})
 	return (
-		<div className={getClassNames(classes, 'accordion', open ? 'open' : '')}>
+		<div {...rest} className={getClassNames(styles, 'accordion', open ? 'open' : '')}>
 			{childrenWithProps}
 		</div>
 	);

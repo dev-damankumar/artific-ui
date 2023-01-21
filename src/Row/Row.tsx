@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from "../Grid.module.css"
-import getClassNames from "../utils/getClassnames";
+import getClassNames from "../utils/classes/getClassnames";
 import PropTypes from "prop-types";
+import {IDiv} from "../types/common";
 
 interface IRowProps {
 	children: React.ReactNode;
@@ -9,14 +10,15 @@ interface IRowProps {
 	style?: React.CSSProperties;
 }
 
-export const Row: React.FC<IRowProps> = (
+export const Row: React.FC<IRowProps & IDiv> = (
 	{
 		style,
 		className,
-		children
+		children,
+		...rest
 	}) => {
 	return (
-		<div style={style} className={`${className} ${getClassNames(styles, 'row')}`}>
+		<div {...rest} style={style} className={`${className} ${getClassNames(styles, 'row')}`}>
 			{children}
 		</div>
 	);

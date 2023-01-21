@@ -1,0 +1,130 @@
+import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Progress} from '../../src';
+
+<Meta title="Components/Progress" component={Progress}/>
+
+# Progress
+
+Custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+
+export const defaultTemplate=(args) => <Progress value={50} {...args}/>;
+
+<Canvas>
+	<Story name="Default">{defaultTemplate.bind({})}</Story>
+</Canvas>
+
+## API
+
+```jsx
+import { Progress } from 'artific-ui/Progress';
+```
+
+<ArgsTable story="Default"/>
+
+## Progress Theme
+
+Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+
+<Canvas>
+	<Story name="Progress Theme">
+		<Progress theme="primary" value={50}/>
+		<Progress theme="secondary" value={50}/>
+		<Progress theme="light" value={50}/>
+		<Progress theme="dark" value={50}/>
+		<h5>Custom Theme</h5>
+		<Progress value={50} colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		}}/>
+	</Story>
+</Canvas>
+
+## Multiple Progress
+
+Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+
+<Canvas>
+	<Story name="Multiple Progress">
+		<Progress theme="primary" barColors={['red', 'blue', 'green']} values={[50, 20, 10]}/>
+		<h5>Label Inside</h5>
+		<Progress label="inside" theme="secondary" value={50}/>
+	</Story>
+</Canvas>
+
+## Circular Progress
+
+Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+
+<Canvas>
+	<Story name="Circular Progress">
+		<Progress value={80} circular theme="primary"/>
+	</Story>
+</Canvas>
+
+## Progress Sizes
+
+Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+
+<Canvas>
+	<Story name="Progress Sizes">
+		<Progress size="xl" value={80}/>
+		<Progress size="lg" value={80}/>
+		<Progress value={80}/>
+		<Progress size="sm" value={80}/>
+		<Progress size="xs" value={80}/>
+		<br/>
+		<br/>
+		<h5>Circular Progress Size</h5>
+		<Progress size="xl" value={80} circular/>
+		<Progress size="lg" value={80} circular/>
+		<Progress value={80} circular/>
+		<Progress size="sm" value={80} circular/>
+		<Progress size="xs" value={80} circular/>
+	</Story>
+</Canvas>
+
+## Progress Layouts
+
+Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+
+<Canvas>
+	<Story name="Progress Layouts">
+		<Progress layout="default" value={80}/>
+		<Progress layout="rounded" value={80}/>
+		<Progress layout="no-radius" value={80}/>
+		<Progress layout="pill" value={80}/>
+		<Progress layout="line" value={80}/>
+		<br/>
+		<br/>
+		<h5>Circular Progress Layouts</h5>
+		<Progress circular layout="default" value={80}/>
+		<Progress circular layout="line" value={80}/>
+	</Story>
+</Canvas>
+
+## Progress Variants
+
+Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+
+<Canvas>
+	<Story name="Progress Variants">
+		<Progress variant="default" value={80}/>
+		<Progress variant="fluid" value={80}/>
+		<Progress variant="striped" value={80}/>
+		<Progress variant="outline" value={80}/>
+		<Progress theme="secondary" variant="outline" value={80}/>
+		<Progress theme="dark" variant="outline" value={80}/>
+		<Progress theme="light" variant="outline" value={80}/>
+		<br/>
+		<br/>
+		<h5>Circular Progress Variants</h5>
+		<Progress circular variant="default" value={80}/>
+		<Progress circular variant="fluid" value={80}/>
+		<Progress circular variant="striped" value={80}/>
+		<Progress circular variant="outline" value={80}/>
+		<Progress circular theme="secondary" variant="outline" value={80}/>
+		<Progress circular theme="dark" variant="outline" value={80}/>
+		<Progress circular theme="light" variant="outline" value={80}/>
+	</Story>
+</Canvas>

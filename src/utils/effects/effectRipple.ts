@@ -1,4 +1,4 @@
-import rgbaToHsla from './colors/rgbToHSL';
+import rgbaToHsla from '../colors/rgbToHSL';
 
 function ripple(e: any, button: any, focus: any, initial: any, mouseDown: any) {
 	const ms = 500

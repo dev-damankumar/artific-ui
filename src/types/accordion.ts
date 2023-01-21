@@ -12,7 +12,7 @@ import {
 } from './common';
 import PropTypes from "prop-types";
 
-export const VariantsArray = ['default', 'separate', 'bordered', 'outlined', 'attached'] as const;
+export const VariantsArray = ['default', 'separate', 'outlined', 'attached'] as const;
 export type Variants = typeof VariantsArray[number];
 
 export const IndicatorDirectionArray = ['start', 'end'] as const;
@@ -20,6 +20,8 @@ export type IndicatorDirection = typeof IndicatorDirectionArray[number];
 
 export interface IAccordionProps {
 	children: React.ReactNode,
+	className?: string;
+	style?: React.CSSProperties;
 	theme?: Themes,
 	variant?: Variants,
 	layout?: Layouts,
@@ -30,6 +32,8 @@ export interface IAccordionProps {
 
 export const propTypes = {
 	children: PropTypes.node,
+	className: PropTypes.string,
+	style: PropTypes.object,
 	theme: PropTypes.oneOf(ThemesArray),
 	variant: PropTypes.oneOf(VariantsArray),
 	layout: PropTypes.oneOf(LayoutsArray),
@@ -47,6 +51,7 @@ export const defaultProps = {
 	variant: 'default' as Variants,
 	size: 'md' as Sizes,
 	layout: 'default' as Layouts,
+	className: '' as string,
 	indicatorDirection: 'end' as IndicatorDirection
 }
 
@@ -66,16 +71,14 @@ export interface IAccordionHeader {
 	children: React.ReactNode,
 	theme?: Themes,
 	onToggle?: FunctionCallback,
-	prefix?: React.ReactNode,
-	suffix?: React.ReactNode
+	prefix?: React.ReactNode | undefined,
+	suffix?: React.ReactNode | undefined
 }
 
 export const IAccordionHeaderPropTypes = {
 	children: PropTypes.node,
 	theme: PropTypes.oneOf(ThemesArray),
 	onToggle: PropTypes.func,
-	prefix: PropTypes.node,
-	suffix: PropTypes.node
 }
 
 export const IAccordionHeaderDefaultPropTypes = {

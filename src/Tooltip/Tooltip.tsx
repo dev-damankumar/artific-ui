@@ -1,12 +1,11 @@
 import React, {useRef} from 'react';
 import {defaultProps, ITooltipProps, propTypes} from "../types/tooltip";
-import getRandomClassId from "../utils/generateRandonClassId";
-import sizeClasses from "../utils/sizeClasses";
-import getClassNames from "../utils/getClassnames";
+import getClassNames from "../utils/classes/getClassnames";
 import styles from "./Tooltip.module.css";
-import applyColorScheme from "../utils/applyColorScheme";
+import {IDiv} from "../types/common";
+import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
-export const Tooltip: React.FC<ITooltipProps> = (
+export const Tooltip: React.FC<ITooltipProps & IDiv> = (
 	{
 		theme,
 		title,
@@ -18,44 +17,36 @@ export const Tooltip: React.FC<ITooltipProps> = (
 		style,
 		children,
 		colorScheme,
+		...rest
 	}) => {
 	const ref = useRef(null)
-	const id = getRandomClassId();
 	const componentSelector = 'tooltip';
-	const componentId = `${componentSelector}-${id}`;
-	const layoutClasses = layout !== 'default' ? `${componentSelector}-${layout}` : '';
-	const variantClasses = variant !== 'default' ? `${componentSelector}-${variant}` : '';
+	const {
+		classNames, customCss
+	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
 	const placementClasses = placement !== 'bottom' ? `${componentSelector}-${placement}` : `${componentSelector}-bottom`;
-	const sizeClass = sizeClasses(componentSelector, size);
-	const mainBtnSelector = getClassNames(styles, componentSelector);
 
-	const classes = `${mainBtnSelector} ${componentId} ${className} ${getClassNames(
+	const classes = `${classNames} ${getClassNames(
 		styles,
-		!colorScheme ? `${componentSelector}-${theme}` : `${componentSelector}-primary`,
-		layoutClasses,
-		variantClasses,
 		placementClasses,
-		sizeClass
 	)}`
 
 	const childrenWithProps = React.Children.map(children, (child: React.ReactNode) => {
 		if (React.isValidElement(child)) {
 			return React.cloneElement<any>(child, {
 				'data-tooltip': true,
-				children: [child.props.children, <div style={style} ref={ref}
+				children: [child.props.children, <div {...rest} style={style} ref={ref}
 													  className={`${classes}`}>{title}</div>]
 			});
 		}
 		return child;
 	});
-	const customCss = applyColorScheme(componentId, colorScheme, componentSelector)
 
 	return (
 		<>
 			{customCss && customCss()}
 			{childrenWithProps}
 		</>
-
 	);
 };
 

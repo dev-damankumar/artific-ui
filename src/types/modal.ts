@@ -83,8 +83,6 @@ export interface IModalHeaderProps {
 
 export const modalHeaderPropTypes = {
 	dismiss: PropTypes.bool,
-	prefix: PropTypes.node || null,
-	suffix: PropTypes.node || null,
 	onClose: PropTypes.func
 };
 

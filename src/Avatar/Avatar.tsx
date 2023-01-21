@@ -1,13 +1,12 @@
 import React from 'react';
-import getClassNames from '../utils/getClassnames';
 import styles from './Avatar.module.css';
-import sizeClasses from '../utils/sizeClasses';
 import {defaultProps, IAvatarProps, propTypes} from '../types/avatar';
-import applyColorScheme from "../utils/applyColorScheme";
-import getRandomClassId from "../utils/generateRandonClassId";
+import {IDiv} from "../types/common";
+import getClassNames from '../utils/classes/getClassnames';
+import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
 
-export const Avatar: React.FC<IAvatarProps> = (
+export const Avatar: React.FC<IAvatarProps & IDiv> = (
 	{
 		src,
 		alt,
@@ -19,29 +18,16 @@ export const Avatar: React.FC<IAvatarProps> = (
 		style,
 		variant,
 		layout,
+		...rest
 	}) => {
-	const id = getRandomClassId();
 	const componentSelector = 'avatar';
-	const componentId = `${componentSelector}-${id}`;
-	let themeClasses = !colorScheme ? `${componentSelector}-${theme}` : `${componentSelector}-primary`;
-	let layoutClasses = layout !== 'default' ? `${componentSelector}-${layout}` : '';
-	let variantClasses = variant !== 'default' ? `${componentSelector}-${variant}` : '';
-	let sizeClass = sizeClasses(componentSelector, size);
-	let mainBtnSelector = getClassNames(styles, componentSelector);
-
-	const classes = `${mainBtnSelector} ${componentId} ${className} ${getClassNames(
-		styles,
-		layoutClasses,
-		themeClasses,
-		variantClasses,
-		sizeClass
-	)}`
-
-	const customCss = applyColorScheme(componentSelector, colorScheme, componentId)
+	const {
+		classNames, customCss
+	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
 
 	return <>
 		{customCss && customCss()}
-		<div style={style} className={classes}>
+		<div {...rest} style={style} className={classNames}>
 			{src ? <img alt={alt} className={getClassNames(styles, "avatar-image")} src={src}/> :
 				<div className={getClassNames(styles, "avatar-text")}>{title}</div>}
 		</div>

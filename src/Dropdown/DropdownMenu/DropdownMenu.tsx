@@ -1,10 +1,12 @@
 import React from 'react';
-import getClassNames from '../../utils/getClassnames';
-import classes from '../Dropdown.module.css';
+import getClassNames from '../../utils/classes/getClassnames';
+import styles from '../Dropdown.module.css';
 import {IDropdownMenu, IDropdownMenuDefaultProps, IDropdownMenuPropsType} from '../../types/dropdown';
+import {IDiv} from "../../types/common";
+import {addPropsToChildren} from "../../utils/helpers";
 
 
-export const DropdownMenu: React.FC<IDropdownMenu> = (
+export const DropdownMenu: React.FC<IDropdownMenu & IDiv> = (
 	{
 		children,
 		className = '',
@@ -12,21 +14,18 @@ export const DropdownMenu: React.FC<IDropdownMenu> = (
 		position,
 		closeHandler,
 		autoClose,
+		...rest
 	}) => {
-	const childrenWithProps = React.Children.map(children, child => {
-		if (React.isValidElement(child)) {
-			return React.cloneElement<any>(child, {autoClose, closeHandler});
-		}
-		return child;
-	});
+	const classes = getClassNames(styles, 'dropdown-menu', position === 'after' ? 'dropdown-menu-right' : '')
+	const childrenWithProps = addPropsToChildren(children, {autoClose, closeHandler})
+	
 	return (
 		<div
-			className={
-				`${getClassNames(classes, 'dropdown-menu', position === 'after' ? 'dropdown-menu-right' : '')} ${className}`
-			}
+			{...rest}
+			className={`${classes} ${className}`}
 			style={style}
 		>
-			<div className={getClassNames(classes, 'dropdown-wrap')}>
+			<div className={getClassNames(styles, 'dropdown-wrap')}>
 				{childrenWithProps}
 			</div>
 		</div>

@@ -1,48 +1,41 @@
 import React from 'react';
-import classes from './List.module.css';
-import getClassNames from '../utils/getClassnames';
-import sizeClasses from '../utils/sizeClasses';
+import styles from './List.module.css';
+import getClassNames from '../utils/classes/getClassnames';
 import {defaultPropTypes, IListProps, propTypes} from '../types/list';
-import getRandomClassId from "../utils/generateRandonClassId";
-import applyColorScheme from "../utils/applyColorScheme";
+import {IUl} from "../types/common";
+import getDefaultClasses from "../utils/classes/getDefaultClasses";
+import {addPropsToChildren} from "../utils/helpers";
 
-export const List: React.FC<IListProps> = (
+export const List: React.FC<IListProps & IUl> = (
 	{
+		className,
 		children,
 		theme,
 		layout,
 		variant,
 		direction,
 		size,
-		colorScheme
+		colorScheme,
+		...rest
 	}) => {
-	const id = getRandomClassId();
-	const componentId = 'list';
-	const componentSelector = `${componentId}-${id}`;
-	let directionClasses = direction !== 'column' ? `list-group-${direction}` : '';
-	let layoutClasses = layout !== 'default' ? `list-${layout}` : '';
-	let variantClasses = variant !== 'default' ? `list-${variant}` : '';
-	let sizeClass = sizeClasses('list', size);
-	const childrenWithProps = React.Children.map(children, child => {
-		if (React.isValidElement(child)) {
-			return React.cloneElement(child, {theme, ...child.props});
-		}
-		return child;
-	});
-	const customCss = applyColorScheme(componentSelector, colorScheme, componentId)
+	const componentSelector = 'list';
+	const {
+		classNames, customCss
+	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
+	const directionClasses = direction !== 'column' ? `list-group-${direction}` : '';
+	const childrenWithProps = addPropsToChildren(children, {theme})
+
 	return (
 		<>
 			{customCss && customCss()}
-			<ul className={
-				`${componentSelector} ${getClassNames(classes, 'list-group', layoutClasses, variantClasses, directionClasses, sizeClass)}`
-			}>
+			<ul {...rest} className={`${classNames} ${getClassNames(styles, 'list-group', directionClasses)}`}>
 				{childrenWithProps}
 			</ul>
 		</>
 	);
 };
 
-List.displayName = 'Button';
+List.displayName = 'List';
 List.propTypes = propTypes;
 List.defaultProps = defaultPropTypes;
 

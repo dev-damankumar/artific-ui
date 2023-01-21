@@ -34,8 +34,6 @@ export const propTypes = {
 	hideTextOnLoading: PropTypes.bool,
 	loading: PropTypes.bool,
 	fullWidth: PropTypes.bool,
-	prefix: PropTypes.node || null,
-	suffix: PropTypes.node || null,
 	className: PropTypes.string,
 	colorScheme: PropTypes.shape({
 		background: PropTypes.string.isRequired,
@@ -59,6 +57,8 @@ export const defaultProps = {
 	size: 'md' as Sizes,
 	className: '' as string,
 	fullWidth: false,
+	prefix: undefined,
+	suffix: undefined,
 };
 
 export interface IButtonProps {
@@ -77,8 +77,8 @@ export interface IButtonProps {
 	variants?: Variants[];
 	disabled?: boolean;
 	loading?: boolean;
-	prefix?: React.ReactNode | null | undefined;
-	suffix?: React.ReactNode | null | undefined;
+	prefix?: React.ReactNode | undefined;
+	suffix?: React.ReactNode | undefined;
 	className?: string;
 
 	[x: string]: any;

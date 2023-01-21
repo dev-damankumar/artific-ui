@@ -1,9 +1,10 @@
 import React from 'react';
-import getClassNames from '../../utils/getClassnames';
+import getClassNames from '../../utils/classes/getClassnames';
 import classes from '../Dropdown.module.css';
 import {IMenuItemProps, IMenuItemPropsType} from '../../types/dropdown';
+import {ILink} from "../../types/common";
 
-export const MenuItem: React.FC<IMenuItemProps> = (
+export const MenuItem: React.FC<IMenuItemProps & ILink> = (
 	{
 		onSelect,
 		className,
@@ -14,23 +15,23 @@ export const MenuItem: React.FC<IMenuItemProps> = (
 		...rest
 	}) => {
 	return (
-		<a style={style} onClick={(e) => {
-			if (onSelect) {
-				onSelect(e);
-			}
-			if (autoClose) {
-				closeHandler!();
-			}
-			if (rest.onClick) {
-				rest.onClick(e);
-			}
-		}} className={`${getClassNames(classes, 'dropdown-item')} ${className}`} {...rest}>
+		<a
+			{...rest}
+			style={style}
+			onClick={(e) => {
+				onSelect?.(e);
+				rest?.onClick?.(e);
+				if (autoClose) {
+					closeHandler!();
+				}
+			}}
+			className={`${getClassNames(classes, 'dropdown-item')} ${className}`}
+		>
 			{children}
 		</a>
 	);
 };
 MenuItem.displayName = 'MenuItem';
 MenuItem.propTypes = IMenuItemPropsType;
-
 
 export default MenuItem

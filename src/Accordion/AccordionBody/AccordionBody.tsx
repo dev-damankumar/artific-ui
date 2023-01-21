@@ -1,15 +1,16 @@
 import React, {useRef} from 'react';
 import classes from '../Accordion.module.css';
-import getClassNames from '../../utils/getClassnames';
 import {IAccordionBody, IAccordionBodyDefaultPropTypes, IAccordionBodyPropTypes} from '../../types/accordion';
-import {CSSStyle} from '../../types/common';
+import getClassNames from '../../utils/classes/getClassnames';
+import {CSSStyle, IDiv} from '../../types/common';
 
-export const AccordionBody: React.FC<IAccordionBody> = (
+export const AccordionBody: React.FC<IAccordionBody & IDiv> = (
 	{
 		children,
 		open,
 		style,
-		className
+		className,
+		...rest
 	}) => {
 	const ref = useRef(null);
 	const bodyStyle: CSSStyle = {};
@@ -23,7 +24,7 @@ export const AccordionBody: React.FC<IAccordionBody> = (
 		bodyStyle['height'] = 0;
 	}
 	return (
-		<div ref={ref} style={{...style, ...bodyStyle}}
+		<div {...rest} ref={ref} style={{...style, ...bodyStyle}}
 			 className={`${getClassNames(classes, 'accordion-panel')} ${className}`}>
 			<div className={getClassNames(classes, 'accordion-body')}>
 				{children}

@@ -1,13 +1,12 @@
 import React from 'react';
-import getClassNames from '../utils/getClassnames';
+import getClassNames from '../utils/classes/getClassnames';
 import styles from './Badge.module.css';
-import sizeClasses from '../utils/sizeClasses';
 import {defaultProps, IBadgeProps, propTypes} from '../types/badge';
-import applyColorScheme from "../utils/applyColorScheme";
-import getRandomClassId from "../utils/generateRandonClassId";
+import getDefaultClasses from "../utils/classes/getDefaultClasses";
+import {IDiv} from "../types/common";
 
 
-export const Badge: React.FC<IBadgeProps> = (
+export const Badge: React.FC<IBadgeProps & IDiv> = (
 	{
 		title,
 		size,
@@ -17,29 +16,16 @@ export const Badge: React.FC<IBadgeProps> = (
 		style,
 		variant,
 		layout,
+		...rest
 	}) => {
-	const id = getRandomClassId();
 	const componentSelector = 'badge';
-	const componentId = `${componentSelector}-${id}`;
-	let themeClasses = !colorScheme ? `${componentSelector}-${theme}` : `${componentSelector}-primary`;
-	let layoutClasses = layout !== 'default' ? `${componentSelector}-${layout}` : '';
-	let variantClasses = variant !== 'default' ? `${componentSelector}-${variant}` : '';
-	let sizeClass = sizeClasses(componentSelector, size);
-	let mainBtnSelector = getClassNames(styles, componentSelector);
-
-	const classes = `${mainBtnSelector} ${componentId} ${className} ${getClassNames(
-		styles,
-		layoutClasses,
-		themeClasses,
-		variantClasses,
-		sizeClass
-	)}`
-
-	const customCss = applyColorScheme(componentSelector, colorScheme, componentId)
+	const {
+		classNames, customCss
+	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
 
 	return <>
 		{customCss && customCss()}
-		<div style={style} className={classes}>
+		<div {...rest} style={style} className={classNames}>
 			<div className={getClassNames(styles, "badge-text")}>{title}</div>
 		</div>
 	</>

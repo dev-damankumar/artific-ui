@@ -215,12 +215,10 @@
 	}
 
 	.avatar-xl-small {
-
 		--avatar-font-size: 10px;
 	}
 
 	.avatar-xl-extra-small {
-
 		--avatar-font-size: 6px;
 	}
 }
@@ -231,6 +229,6 @@
 }
 
 .avatar-group > .avatar {
-	margin-left: calc(6px - var(--avatar-font-size));
+	margin-left: calc(0px - var(--avatar-font-size));
 }
 

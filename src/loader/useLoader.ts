@@ -1,6 +1,6 @@
 import styles from "./styles"
 import {ILoader, LoaderConfig} from "../types/loader";
-import getRandomClassId from "../utils/generateRandonClassId";
+import getRandomClassId from "../utils/uuids/generateRandonClassId";
 
 
 const Loader = (styles: string, classes: string, sizeClass: string) => {

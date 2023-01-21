@@ -1,12 +1,11 @@
 import React from 'react';
 import styles from "./Table.module.css"
-import getClassNames from "../utils/getClassnames";
+import getClassNames from "../utils/classes/getClassnames";
 import {defaultProps, ITableProps, propTypes} from "../types/table";
-import getRandomClassId from "../utils/generateRandonClassId";
-import sizeClasses from "../utils/sizeClasses";
-import applyColorScheme from "../utils/applyColorScheme";
+import getDefaultClasses from "../utils/classes/getDefaultClasses";
+import {IDiv} from "../types/common";
 
-export const Table: React.FC<ITableProps> = (
+export const Table: React.FC<ITableProps & IDiv> = (
 	{
 		children,
 		layout,
@@ -14,28 +13,28 @@ export const Table: React.FC<ITableProps> = (
 		size,
 		className,
 		colorScheme,
-		theme
+		theme,
+		...rest
 	}) => {
-	const id = getRandomClassId();
 	const componentSelector = 'table';
-	const componentId = `${componentSelector}-${id}`;
-	const layoutClasses = layout !== 'default' ? `${componentSelector}-${layout}` : '';
-	const variantClasses = variant !== 'default' ? `${componentSelector}-${variant}` : '';
-	const sizeClass = sizeClasses(componentSelector, size);
-	const mainBtnSelector = getClassNames(styles, componentSelector);
+	const {
+		classNames, customCss
+	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
+
+	const {
+		classNames: wrapperClassNames
+	} = getDefaultClasses(styles, componentSelector, '', '', layout, '', size, null)
 
 
-	const classes = `${mainBtnSelector} ${componentId} ${className} ${getClassNames(
+	const classes = `${classNames} ${getClassNames(
 		styles,
 		!colorScheme ? `${componentSelector}-${theme}` : `${componentSelector}-primary`,
-		variantClasses,
 	)}`
 
-	const customCss = applyColorScheme(componentId, colorScheme, componentSelector)
 	return (
 		<>
 			{customCss && customCss()}
-			<div className={getClassNames(styles, 'table-wrap', layoutClasses, sizeClass)}>
+			<div {...rest} className={`${wrapperClassNames} ${getClassNames(styles, 'table-wrap')}`}>
 				{/*<div className={getClassNames(styles, "table-customize-div")}>*/}
 				{/*</div>*/}
 				<div className={getClassNames(styles, "table-responsive")}>

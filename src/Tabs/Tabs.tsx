@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import styles from "./Tabs.module.css";
-import getClassNames from "../utils/getClassnames";
+import getClassNames from "../utils/classes/getClassnames";
 import {defaultProps, ITabsProps, propTypes} from "../types/tabs";
-import getRandomClassId from "../utils/generateRandonClassId";
-import sizeClasses from "../utils/sizeClasses";
-import applyColorScheme from "../utils/applyColorScheme";
+import getRandomClassId from "../utils/uuids/generateRandonClassId";
+import getDefaultClasses from "../utils/classes/getDefaultClasses";
+import {IDiv} from "../types/common";
 
-export const Tabs: React.FC<ITabsProps> = (
+export const Tabs: React.FC<ITabsProps & IDiv> = (
 	{
 		type,
 		children,
@@ -17,25 +17,22 @@ export const Tabs: React.FC<ITabsProps> = (
 		size,
 		className,
 		colorScheme,
-		theme
+		theme,
+		...rest
 	}) => {
 	const [activeTab, setActiveTab] = useState(null)
-	const id = getRandomClassId();
 	const componentSelector = 'tab';
-	const componentId = `${componentSelector}-${id}`;
+	const {
+		classNames, customCss
+	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
 	const typeClasses = type !== 'default' ? `tab-${type}` : 'tabs';
 	const positionClasses = position !== 'top' ? `tab-${position}` : '';
-	const layoutClasses = layout !== 'default' ? `${componentSelector}-${layout}` : '';
-	const variantClasses = variant !== 'default' ? `${componentSelector}-${variant}` : '';
 	const lineDirectionClasses = variant === 'floating-line' ? `${componentSelector}-${variant}-${lineDirection}` : '';
-	const sizeClass = sizeClasses(componentSelector, size);
-	const mainBtnSelector = getClassNames(styles, componentSelector);
 
 
-	const classes = `${mainBtnSelector} ${componentId} ${className} ${getClassNames(
+	const classes = `${classNames} ${getClassNames(
 		styles,
 		!colorScheme ? `${componentSelector}-${theme}` : `${componentSelector}-primary`,
-		positionClasses,
 	)}`
 
 	let hasActiveProp: boolean = false
@@ -65,12 +62,11 @@ export const Tabs: React.FC<ITabsProps> = (
 		}
 	}, [])
 
-	const customCss = applyColorScheme(componentId, colorScheme, componentSelector)
 	return (
 		<>
 			{customCss && customCss()}
-			<div className={`${classes} ${getClassNames(styles, "tab-wrap")}`}>
-				<ul className={getClassNames(styles, "tab-pills", typeClasses, sizeClass, layoutClasses, variantClasses, lineDirectionClasses)}
+			<div {...rest} className={`${classes} ${getClassNames(styles, "tab-wrap", positionClasses)}`}>
+				<ul className={`${classes} ${getClassNames(styles, "tab-pills", typeClasses, lineDirectionClasses)}`}
 					role="tablist">
 					{tabItems}
 				</ul>

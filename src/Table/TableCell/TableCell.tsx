@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import {Typography} from "../../Typography";
+import {ITd} from "../../types/common";
 
-export const TableCell: React.FC<{ children: React.ReactNode }> = ({children}) => {
+export const TableCell: React.FC<{ children: React.ReactNode } & ITd> = ({children, ...rest}) => {
 	return (
-		<td>
+		<td {...rest}>
 			<Typography fontSize="inherit" style={{color: 'inherit'}} as="div">
 				{children}
 			</Typography>

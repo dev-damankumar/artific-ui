@@ -1,11 +1,11 @@
 import React from 'react';
-import classes from './Card.module.css';
-import getClassNames from '../utils/getClassnames';
+import getClassNames from '../utils/classes/getClassnames';
 import {defaultProps, ICardProps, propTypes} from '../types/card';
-import applyColorScheme from "../utils/applyColorScheme";
-import getRandomClassId from "../utils/generateRandonClassId";
+import getDefaultClasses from "../utils/classes/getDefaultClasses";
+import styles from "./Card.module.css";
+import {IDiv} from "../types/common";
 
-export const Card: React.FC<ICardProps> = (
+export const Card: React.FC<ICardProps & IDiv> = (
 	{
 		children,
 		layout,
@@ -17,29 +17,23 @@ export const Card: React.FC<ICardProps> = (
 		colorScheme,
 		...rest
 	}) => {
-	const id = getRandomClassId();
-	const componentId = 'card';
-	const componentSelector = `${componentId}-${id}`;
-	const themeClasses = theme ? `bg-${colorScheme ? 'primary' : theme}` : '';
-	const layoutClasses = layout !== 'default' ? `card-${layout}` : '';
-	const variantClasses = variant !== 'default' ? `card-${variant}` : '';
-
-	const customCss = applyColorScheme(componentSelector, colorScheme, componentId)
-	// const sizeClass = sizeClasses('card-image', size);
+	const componentSelector = 'card';
+	const {
+		classNames, customCss
+	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
+	const additionalThemeClasses = theme ? `bg-${colorScheme ? 'primary' : theme}` : '';
+	console.log('classNames', classNames)
+	const classes = getClassNames(
+		styles,
+		'card',
+		direction === 'row' ? 'card-row' : '',
+		additionalThemeClasses
+	)
 	return (
 		<>
 			{customCss && customCss()}
 			<div {...rest}
-				 className={`${
-					 getClassNames(
-						 classes,
-						 'card',
-						 direction === 'row' ? 'card-row' : '',
-						 layoutClasses,
-						 themeClasses,
-						 variantClasses,
-						 // sizeClass
-					 )} ${className} ${componentSelector}`}>
+				 className={`${classNames} ${classes}`}>
 				{children}
 			</div>
 		</>

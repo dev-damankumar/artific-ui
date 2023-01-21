@@ -1,13 +1,12 @@
 import React from 'react';
-import getClassNames from '../utils/getClassnames';
+import getClassNames from '../utils/classes/getClassnames';
 import styles from './Spinner.module.css';
-import sizeClasses from '../utils/sizeClasses';
 import {defaultProps, ISpinnerProps, propTypes} from '../types/spinner';
-import applyColorScheme from "../utils/applyColorScheme";
-import getRandomClassId from "../utils/generateRandonClassId";
+import {IDiv} from "../types/common";
+import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
 
-export const Spinner: React.FC<ISpinnerProps> = (
+export const Spinner: React.FC<ISpinnerProps & IDiv> = (
 	{
 		size,
 		theme,
@@ -15,34 +14,30 @@ export const Spinner: React.FC<ISpinnerProps> = (
 		className,
 		style,
 		variant,
+		...rest
 	}) => {
-	const id = getRandomClassId();
 	const componentSelector = 'spinner';
-	const componentId = `${componentSelector}-${id}`;
-	let themeClasses = !colorScheme ? `${componentSelector}-${theme}` : `${componentSelector}-primary`;
-	let variantClasses = variant !== 'default' ? `${componentSelector}-${variant}` : `${componentSelector}-default`;
-	let sizeClass = sizeClasses(componentSelector, size);
-	let mainBtnSelector = getClassNames(styles, componentSelector);
+	const {
+		classNames, customCss
+	} = getDefaultClasses(styles, componentSelector, className, theme, '', variant, size, colorScheme)
+	let additionalVariantClasses = variant === 'default' && `${componentSelector}-default`;
 
-	const classes = `${mainBtnSelector} ${componentId} ${className} ${getClassNames(
+	const classes = `${classNames} ${getClassNames(
 		styles,
-		themeClasses,
-		variantClasses,
-		sizeClass
+		additionalVariantClasses
 	)}`
 
-	const customCss = applyColorScheme(componentSelector, colorScheme, componentId)
-	let element: JSX.Element = <div style={style} className={classes}>
+	let element: JSX.Element = <div {...rest} style={style} className={classes}>
 		<div></div>
 		<div></div>
 		<div></div>
 		<div></div>
 	</div>
 	if (variant === 'ring' || variant === 'box') {
-		element = <div style={style} className={classes}></div>
+		element = <div {...rest} style={style} className={classes}></div>
 	}
 	if (variant === 'dots') {
-		element = <div style={style} className={classes}>
+		element = <div {...rest} style={style} className={classes}>
 			<div></div>
 			<div></div>
 			<div></div>
@@ -56,7 +51,7 @@ export const Spinner: React.FC<ISpinnerProps> = (
 
 	}
 	if (variant === 'ripple') {
-		element = <div style={style} className={classes}>
+		element = <div {...rest} style={style} className={classes}>
 			<div></div>
 			<div></div>
 		</div>

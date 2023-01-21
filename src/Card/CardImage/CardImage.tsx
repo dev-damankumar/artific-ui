@@ -1,22 +1,22 @@
 import React from 'react';
-import classes from '../Card.module.css';
-import getClassNames from '../../utils/getClassnames';
+import styles from '../Card.module.css';
+import getClassNames from '../../utils/classes/getClassnames';
 import {ICardImageDefaultProps, ICardImageProps, ICardImagePropsTypes} from '../../types/card';
+import {IImage} from "../../types/common";
 
-export const CardImage: React.FC<ICardImageProps> = (
+export const CardImage: React.FC<ICardImageProps & IImage> = (
 	{
 		src,
 		alt,
-		layout = 'default',
-		className = '',
+		layout,
+		className,
 		size,
 		...rest
 	}) => {
 	const layoutClasses = layout !== 'default' ? `card-image-${layout}` : '';
-	// const sizeClass = sizeClasses('card-image', size);
 	return (
-		<div className={getClassNames(classes, 'card-img-div')}>
-			<img {...rest} className={`${getClassNames(classes, layoutClasses)} ${className}`} src={src}
+		<div className={getClassNames(styles, 'card-img-div')}>
+			<img {...rest} className={`${getClassNames(styles, layoutClasses)} ${className}`} src={src}
 				 alt={alt}/>
 		</div>
 	);

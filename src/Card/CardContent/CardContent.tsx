@@ -1,14 +1,15 @@
 import React from 'react';
-import getClassNames from '../../utils/getClassnames';
+import getClassNames from '../../utils/classes/getClassnames';
 import classes from '../Card.module.css';
+import {IDiv} from "../../types/common";
 
 export interface ICardContentProps {
 	children: React.ReactNode,
 }
 
-export const CardContent: React.FC<ICardContentProps> = ({children}) => {
+export const CardContent: React.FC<ICardContentProps & IDiv> = ({children, ...rest}) => {
 	return (
-		<div className={getClassNames(classes, 'card-body')}>
+		<div {...rest} className={getClassNames(classes, 'card-body')}>
 			{children}
 		</div>
 	);

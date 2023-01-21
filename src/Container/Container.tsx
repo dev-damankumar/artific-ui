@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from "../Grid.module.css"
-import getClassNames from "../utils/getClassnames";
+import getClassNames from "../utils/classes/getClassnames";
 import PropTypes from "prop-types";
-import {Sizes, SizesArray} from "../types/common";
+import {IDiv, Sizes, SizesArray} from "../types/common";
 
 interface IContainerProps {
 	children: React.ReactNode;
@@ -12,17 +12,18 @@ interface IContainerProps {
 	size?: Sizes;
 }
 
-export const Container: React.FC<IContainerProps> = (
+export const Container: React.FC<IContainerProps & IDiv> = (
 	{
 		style,
 		className,
 		size,
 		fluid,
-		children
+		children,
+		...rest
 	}) => {
 	const sizeClass = fluid ? '' : `container-${size}`
 	return (
-		<div style={style}
+		<div {...rest} style={style}
 			 className={`${className} ${getClassNames(styles, fluid ? 'container-fluid' : 'container', sizeClass)}`}>
 			{children}
 		</div>

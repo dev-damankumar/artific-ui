@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from "../Grid.module.css"
-import getClassNames from "../utils/getClassnames";
+import getClassNames from "../utils/classes/getClassnames";
 import PropTypes from "prop-types";
-import {Sizes, SizesArray} from "../types/common";
+import {IDiv, Sizes, SizesArray} from "../types/common";
 
 
 export const ColArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, undefined] as const;
-export type Col = typeof ColArray[number];
+export type Column = typeof ColArray[number];
 
 
 interface IColProps {
@@ -14,20 +14,21 @@ interface IColProps {
 	className?: string;
 	style?: React.CSSProperties;
 	size?: Sizes;
-	col?: Col;
+	col?: Column;
 }
 
-export const Col: React.FC<IColProps> = (
+export const Col: React.FC<IColProps & IDiv> = (
 	{
 		col,
 		size,
 		style,
 		className,
-		children
+		children,
+		...rest
 	}) => {
 	const sizeClass = !col ? `col-${size}` : `col-${size}-${col}`
 	return (
-		<div style={style} className={`${className} ${getClassNames(styles, 'col', sizeClass)}`}>
+		<div {...rest} style={style} className={`${className} ${getClassNames(styles, 'col', sizeClass)}`}>
 			{children}
 		</div>
 	);
@@ -39,11 +40,11 @@ Col.propTypes = {
 	className: PropTypes.string,
 	style: PropTypes.object,
 	size: PropTypes.oneOf<Sizes>(SizesArray),
-	col: PropTypes.oneOf<Col>(ColArray),
+	col: PropTypes.oneOf<Column>(ColArray),
 };
 Col.defaultProps = {
 	className: '',
 	size: 'md' as Sizes,
-	col: undefined as Col,
+	col: undefined as Column,
 };
 export default Col;

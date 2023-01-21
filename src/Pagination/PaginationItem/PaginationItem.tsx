@@ -1,11 +1,19 @@
 import React from 'react';
-import getClassNames from "../../utils/getClassnames";
+import getClassNames from "../../utils/classes/getClassnames";
 import styles from "../Pagination.module.css";
 import {IPaginationItemProps, paginationItemDefaultProps, paginationItemPropTypes} from "../../types/pagination";
+import {ILi} from "../../types/common";
 
-export const PaginationItem: React.FC<IPaginationItemProps> = ({children, variant, active}) => {
+export const PaginationItem: React.FC<IPaginationItemProps & ILi> = (
+	{
+		children,
+		variant,
+		active,
+		...rest
+	}) => {
 	return (
-		<li className={getClassNames(styles, (variant === 'breadcrumb' || variant === 'float') ? 'breadcrumb-item' : 'page-item', active ? 'active' : '')}>
+		<li {...rest}
+			className={getClassNames(styles, (variant === 'breadcrumb' || variant === 'float') ? 'breadcrumb-item' : 'page-item', active ? 'active' : '')}>
 			<a
 				className={getClassNames(styles, (variant === 'breadcrumb' || variant === 'float') ? 'breadcrumb-link' : 'page-link')}
 			>

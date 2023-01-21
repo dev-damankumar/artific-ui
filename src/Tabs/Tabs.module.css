@@ -41,6 +41,7 @@
 	margin: var(--tabs-margin) 0;
 	display: none;
 	line-height: 1.5;
+	color: var(--text-color);
 }
 
 .tab-pane *:last-child {

@@ -1,46 +1,36 @@
 import React from 'react';
-import classes from './Accordion.module.css';
-import getClassNames from '../utils/getClassnames';
-import sizeClasses from '../utils/sizeClasses';
+import styles from './Accordion.module.css';
 import {defaultProps, IAccordionProps, propTypes} from '../types/accordion';
-import applyColorScheme from "../utils/applyColorScheme";
-import getRandomClassId from "../utils/generateRandonClassId";
+import getClassNames from '../utils/classes/getClassnames';
+import getDefaultClasses from "../utils/classes/getDefaultClasses";
+import {addPropsToChildren} from "../utils/helpers";
+import {IDiv} from "../types/common";
 
-export const Accordion: React.FC<IAccordionProps> = (
+export const Accordion: React.FC<IAccordionProps & IDiv> = (
 	{
+		className,
 		children,
 		theme,
 		variant,
 		size,
 		layout,
 		indicatorDirection,
-		colorScheme
+		colorScheme,
+		...rest
 	}) => {
-	const id = getRandomClassId();
-	const componentId = 'accordion';
-	const componentSelector = `${componentId}-${id}`;
-	const layoutClasses = layout !== 'default' ? `accordion-${layout}` : '';
-	const variantClasses = variant !== 'default' ? `accordion-${variant}` : '';
-	const sizeClass = sizeClasses('accordion', size);
+	const componentSelector = 'accordion';
+	const {
+		customCss, classNames
+	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
+	const childrenWithProps = addPropsToChildren(children, {theme})
+	const classes = getClassNames(styles, 'accordion-wrap', indicatorDirection === 'start' && 'accordion-indicator-left')
 
-	const childrenWithProps = React.Children.map(children, child => {
-		if (React.isValidElement(child)) {
-			return React.cloneElement(child, {theme, ...child.props});
-		}
-		return child;
-	});
-	const customCss = applyColorScheme(componentSelector, colorScheme, componentId)
 	return (
 		<>
 			{customCss && customCss()}
 			<div
-				className={
-					`${componentSelector} ${getClassNames(classes, 'accordion-wrap',
-						indicatorDirection === 'start' ? 'accordion-indicator-left' : '',
-						layoutClasses,
-						variantClasses,
-						sizeClass)}`
-				}>
+				{...rest}
+				className={`${classNames} ${classes}`}>
 				{childrenWithProps}
 			</div>
 		</>

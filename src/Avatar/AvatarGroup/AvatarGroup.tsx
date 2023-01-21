@@ -1,8 +1,9 @@
 import React from 'react';
-import getClassNames from "../../utils/getClassnames";
+import getClassNames from "../../utils/classes/getClassnames";
 import styles from '../Avatar.module.css';
+import {IDiv} from "../../types/common";
 
-export const AvatarGroup: React.FC<{ children: React.ReactNode }> = ({children}) => {
+export const AvatarGroup: React.FC<{ children: React.ReactNode } & IDiv> = ({children}) => {
 	return (
 		<div className={getClassNames(styles, "avatar-group")}>
 			{children}
