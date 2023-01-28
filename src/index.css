@@ -1,15 +1,6 @@
 @import "https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
-
-:root {
-	--hover-box-shadow-alpha: 1;
-	--hover-box-shadow-hue: 240;
-	--hover-box-shadow-saturation: 2%;
-	--hover-box-shadow-lightness: 90%;
-
-}
-
 :root {
 	--font-size: 1rem;
 	--text: hsla(222, 26%, 25%, 1);
@@ -17,6 +8,9 @@
 	--scroll-bg: #f1f1f1;
 	--border-color: #eeeeee;
 	--accent-bg: #f4f4f4;
+	--hover-box-shadow: hsla(240, 2%, 90%, 1);
+
+
 	--primary: hsla(230, 87%, 59%, 1);
 	--primary-color: var(--primary);
 	--primary-text: white;
@@ -25,7 +19,6 @@
 	--primary-text-hover: white;
 	--primary-hover-box-shadow: hsla(230, 87%, 90%, 1);
 
-
 	--secondary: hsla(187, 100%, 42%, 1);
 	--secondary-color: var(--secondary);
 	--secondary-text: white;
@@ -33,7 +26,6 @@
 	--secondary-color-hover: var(--secondary-hover);
 	--secondary-text-hover: white;
 	--secondary-hover-box-shadow: hsla(187, 100%, 90%, 1);
-
 
 	--light: hsla(0, 0%, 100%, 1);
 	--light-alt: hsl(0, 0%, 96%);
@@ -44,7 +36,6 @@
 	--light-text-hover: white;
 	--light-hover-box-shadow: hsla(0, 0%, 90%, 1);
 
-
 	--dark: hsla(218, 36%, 18%, 1);
 	--dark-color: var(--dark);
 	--dark-text: white;
@@ -53,12 +44,10 @@
 	--dark-text-hover: white;
 	--dark-hover-box-shadow: hsla(218, 36%, 90%, 1);
 
-
-	--hover-box-shadow: hsla(var(--hover-box-shadow-hue, 240), var(--hover-box-shadow-saturation, 2%), var(--hover-box-shadow-lightness, 90%), var(--hover-box-shadow-alpha, 1));
 }
 
 @font-face {
-	font-family: 'Segoe UI Web (West European)';
+	font-family: 'Segoe UI';
 	src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff') format('woff');
 	font-weight: 100;
 	font-style: normal;

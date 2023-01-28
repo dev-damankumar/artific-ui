@@ -18,6 +18,7 @@ const applyColorScheme = (componentSelector: ComponentsType, colorScheme: ColorS
 				}
 			}, {
 				scope: 'local',
+				themeId: '',
 				componentId,
 				componentSelector
 			})}
