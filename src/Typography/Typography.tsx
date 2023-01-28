@@ -1,10 +1,11 @@
 import React, {createElement} from 'react';
 import getClassNames from '../utils/classes/getClassnames';
 import classes from './Typography.module.css';
-import colorClasses from '../bg.module.css';
+import colorClasses from '../color.module.css';
 import {defaultProps, ITypographyProps, propTypes} from '../types/typography';
 import {IAnyElement} from "../types/common";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
+
 
 export const Typography: React.FC<ITypographyProps & IAnyElement> = (
 	{
@@ -24,7 +25,7 @@ export const Typography: React.FC<ITypographyProps & IAnyElement> = (
 	const {
 		classNames, customCss
 	} = getDefaultClasses(classes, componentSelector, className, '', '', variant, '', colorScheme)
-	const asEl = as?.toString()?.trim()?.toLowerCase() || ''
+	const asEl = as?.toString()?.trim()?.toLowerCase() || 'p'
 	const element = variant === 'abbr' ? 'abbr' : variant === 'pre' ? 'pre' : asEl;
 	const variantClasses = variant !== 'text' ? `typography-${variant}` : '';
 	const weightClasses = `${weight !== 'medium' ? `typography-${weight}` : ''}`;
@@ -46,7 +47,6 @@ export const Typography: React.FC<ITypographyProps & IAnyElement> = (
 	})
 	return <>
 		{customCss && customCss()}
-		<p></p>
 		{mainElement}
 	</>;
 };

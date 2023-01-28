@@ -17,6 +17,7 @@
 	align-items: center;
 	-webkit-box-pack: center;
 	justify-content: center;
+	vertical-align: middle;
 	flex-shrink: 0;
 	width: calc(var(--avatar-font-size) * 2.5);
 	height: calc(var(--avatar-font-size) * 2.5);
@@ -48,6 +49,7 @@
 	box-shadow: var(--avatar-box-shadow-hover);
 }
 
+/*=====Layouts=====*/
 .avatar-rounded {
 	--avatar-border-radius: 10px;
 }
@@ -60,30 +62,33 @@
 	--avatar-border-radius: 50px;
 }
 
+/*=====Layouts End=====*/
 
-/*Color*/
+/*=====Colors=====*/
 .avatar-primary {
 	background: var(--primary);
-	color: white;
+	color: var(--primary-text);
 }
 
 .avatar-secondary {
 	background: var(--secondary);
-	color: white;
+	color: var(--secondary-text);
 }
 
 .avatar-light {
 	background: var(--light);
-	color: #303a52;
+	color: var(--light-text);
 }
 
 .avatar-dark {
 	background: var(--dark);
-	color: white;
+	color: var(--dark-text);
 }
 
+/*=====Layouts End=====*/
+/*=====Varints=====*/
 .avatar-outline {
-	border: var(--avatar-outline-width) solid transparent;
+	border: var(--avatar-outline-width) solid;
 }
 
 .avatar-outline.avatar-primary {
@@ -119,6 +124,7 @@
 	border-radius: var(--avatar-border-radius);
 }
 
+/*=====Variants End=====*/
 @media screen and (max-width: 500px) {
 	.avatar {
 		--avatar-padding: 10px;
@@ -126,8 +132,7 @@
 	}
 }
 
-/*Sizing*/
-
+/*=====Sizes =====*/
 
 .avatar-extra-large {
 	--avatar-font-size: 22px;
@@ -146,83 +151,6 @@
 	--avatar-font-size: 6px;
 }
 
-@media (min-width: 576px) {
-	.avatar-sm-large {
-		--avatar-font-size: 18px;
-	}
-
-	.avatar-sm-extra-large {
-		--avatar-font-size: 22px;
-	}
-
-	.avatar-sm-small {
-		--avatar-font-size: 10px;
-	}
-
-	.avatar-sm-extra-small {
-
-		--avatar-font-size: 6px;
-	}
-}
-
-@media (min-width: 768px) {
-	.avatar-md-large {
-		--avatar-font-size: 18px;
-	}
-
-	.avatar-md-extra-large {
-		--avatar-font-size: 22px;
-	}
-
-	.avatar-md-small {
-
-		--avatar-font-size: 10px;
-	}
-
-	.avatar-md-extra-small {
-
-		--avatar-font-size: 6px;
-	}
-}
-
-@media (min-width: 992px) {
-	.avatar-lg-large {
-		--avatar-font-size: 18px;
-	}
-
-	.avatar-lg-extra-large {
-		--avatar-font-size: 22px;
-	}
-
-	.avatar-lg-small {
-
-		--avatar-font-size: 10px;
-	}
-
-	.avatar-lg-extra-small {
-
-		--avatar-font-size: 6px;
-	}
-}
-
-@media (min-width: 1200px) {
-	.avatar-xl-large {
-		--avatar-font-size: 18px;
-	}
-
-	.avatar-xl-extra-large {
-		--avatar-font-size: 22px;
-	}
-
-	.avatar-xl-small {
-		--avatar-font-size: 10px;
-	}
-
-	.avatar-xl-extra-small {
-		--avatar-font-size: 6px;
-	}
-}
-
 .avatar-group {
 	display: flex;
 	align-items: center;
@@ -232,3 +160,4 @@
 	margin-left: calc(0px - var(--avatar-font-size));
 }
 
+/*=====Sizes End=====*/

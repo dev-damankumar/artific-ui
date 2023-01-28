@@ -6,7 +6,6 @@
 	--table-font-size: 15px;
 	--table-margin: 10px;
 	--table-outline-width: 1px;
-	--table-cursor: pointer;
 }
 
 .table-customize-div {
@@ -26,33 +25,12 @@
 	margin-bottom: 30px;
 }
 
-.table-rounded {
-	--table-border-radius: 10px
-}
-
 .table tr th:first-child {
 	border-top-left-radius: var(--table-border-radius);
 }
 
 .table tr th:last-child {
 	border-top-right-radius: var(--table-border-radius);
-}
-
-.table-no-radius {
-	--table-border-radius: 0px
-}
-
-.table-pill {
-	--table-border-radius: 50px
-}
-
-.table-pill .table thead tr > *:first-child {
-	border-radius: var(--table-border-radius) 0 0 0;
-}
-
-
-.table-pill .table thead tr > *:last-child {
-	border-radius: 0 var(--table-border-radius) 0 0;
 }
 
 .table {
@@ -71,10 +49,6 @@
 	margin-bottom: 0px;
 }
 
-.table-outline {
-	overflow: hidden;
-}
-
 .table th {
 	font-family: SegoeUI Semibold, sans-serif;
 	text-transform: capitalize;
@@ -90,17 +64,6 @@
 	top: 0;
 	left: 0;
 	border: none;
-}
-
-.table.table-light th, .table.table-outline th {
-	border-bottom: var(--table-outline-width) solid #e9ecef;
-	border-top: var(--table-outline-width) solid #e9ecef;
-}
-
-.dark-head th {
-	background: #303a52;
-	color: #fff;
-	z-index: 9;
 }
 
 tr:last-child td:first-child {
@@ -124,124 +87,61 @@ tr:last-child td:last-child {
 	white-space: nowrap;
 }
 
-.table-large {
-	--table-padding: 15px;
-	--table-font-size: 18px;
-}
-
-.table-extra-large {
-	--table-padding: 20px;
-	--table-font-size: 20px;
-}
-
-.table-small {
-	--table-padding: 8px;
-	--table-font-size: 14px;
-}
-
-.table-extra-small {
-	--table-padding: 5px;
-	--table-font-size: 13px;
-}
-
-
-@media (min-width: 576px) {
-	.table-sm-large {
-		--table-padding: 15px;
-		--table-font-size: 18px;
-	}
-
-	.table-sm-extra-large {
-		--table-padding: 20px;
-		--table-font-size: 20px;
-	}
-
-	.table-sm-small {
-		--table-padding: 8px;
-		--table-font-size: 14px;
-	}
-
-	.table-sm-extra-small {
-		--table-padding: 5px;
-		--table-font-size: 14px;
-	}
-
-
-}
-
-@media (min-width: 768px) {
-	.table-md-large {
-		--table-padding: 15px;
-		--table-font-size: 18px;
-	}
-
-	.table-md-extra-large {
-		--table-padding: 20px;
-		--table-font-size: 20px;
-	}
-
-	.table-md-small {
-		--table-padding: 8px;
-		--table-font-size: 14px;
-	}
-
-	.table-md-extra-small {
-		--table-padding: 5px;
-		--table-font-size: 14px;
-	}
-
-
-}
-
-@media (min-width: 992px) {
-	.table-lg-large {
-		--table-padding: 15px;
-		--table-font-size: 18px;
-	}
-
-	.table-lg-extra-large {
-		--table-padding: 20px;
-		--table-font-size: 20px;
-	}
-
-	.table-lg-small {
-		--table-padding: 8px;
-		--table-font-size: 14px;
-	}
-
-	.table-lg-extra-small {
-		--table-padding: 5px;
-		--table-font-size: 14px;
-	}
-
-
-}
-
-@media (min-width: 1200px) {
-	.table-xl-large {
-		--table-padding: 15px;
-		--table-font-size: 18px;
-	}
-
-	.table-xl-extra-large {
-		--table-padding: 20px;
-		--table-font-size: 20px;
-	}
-
-	.table-xl-small {
-		--table-padding: 8px;
-		--table-font-size: 14px;
-	}
-
-	.table-xl-extra-small {
-		--table-padding: 5px;
-		--table-font-size: 14px;
-	}
-
-}
-
 .table-responsive {
 	overflow: auto;
+}
+
+/*=====Layouts=====*/
+.table-rounded {
+	--table-border-radius: 10px
+}
+
+.table-no-radius {
+	--table-border-radius: 0px
+}
+
+.table-pill {
+	--table-border-radius: 50px
+}
+
+.table-pill .table thead tr > *:first-child {
+	border-radius: var(--table-border-radius) 0 0 0;
+}
+
+
+.table-pill .table thead tr > *:last-child {
+	border-radius: 0 var(--table-border-radius) 0 0;
+}
+
+/*=====Layouts End=====*/
+
+/*=====Colors=====*/
+
+.table-primary th {
+	background: var(--primary) !important;
+	color: var(--primary-text) !important;
+}
+
+.table-secondary th {
+	background: var(--secondary) !important;
+	color: var(--secondary-text) !important;
+}
+
+.table-light th {
+	background: var(--light) !important;
+	color: var(--light-text) !important;
+}
+
+.table-dark th {
+	background: var(--dark) !important;
+	color: var(--dark-text) !important;
+}
+
+/*=====Colors End=====*/
+
+/*=====Variants=====*/
+.table-outline {
+	overflow: hidden;
 }
 
 .table-borderless {
@@ -257,26 +157,6 @@ tr:last-child td:last-child {
 	background: #00000015 !important;
 }
 
-.table-primary th {
-	background: var(--primary) !important;
-	color: white !important;
-}
-
-.table-secondary th {
-	background: var(--secondary) !important;
-	color: white !important;
-}
-
-.table-light th {
-	background: var(--light) !important;
-	color: #303a52 !important;
-}
-
-.table-dark th {
-	background: var(--dark) !important;
-	color: white !important;
-}
-
 .table-outline.table-primary th {
 	color: var(--primary-color) !important;
 	border-color: var(--primary-color) !important;
@@ -288,7 +168,6 @@ tr:last-child td:last-child {
 	border-color: var(--secondary-color) !important;
 	background: white !important;
 }
-
 
 .table-outline.table-light th {
 	color: var(--light-color) !important;
@@ -302,34 +181,33 @@ tr:last-child td:last-child {
 	background: var(--light) !important;
 }
 
-.table-primary-bg, .table-primary-bg td, .table-primary-bg th {
-	background: var(--primary) !important;
-	color: white !important;
+/*=====Variants End=====*/
+
+/*=====Sizes=====*/
+
+.table-extra-large {
+	--table-padding: 20px;
+	--table-font-size: 20px;
 }
 
-.table-secondary-bg, .table-secondary-bg td, .table-secondary-bg th {
-	background: var(--secondary) !important;
-	color: white !important;
+.table-large {
+	--table-padding: 15px;
+	--table-font-size: 18px;
 }
 
-
-.table-light-bg, .table-light-bg th, .table-light-bg td {
-	background: var(--light) !important;
-	color: #303a52 !important;
+.table-small {
+	--table-padding: 8px;
+	--table-font-size: 14px;
 }
 
-.table-dark-bg, .table-dark-bg td, .table-dark-bg th {
-	background: var(--dark) !important;
-	color: white !important;
+.table-extra-small {
+	--table-padding: 5px;
+	--table-font-size: 13px;
 }
 
-@media screen and (max-width: 500px) {
-	.table th, .table td {
-		font-size: 14px;
+/*=====Sizes End=====*/
 
-	}
-
-	.table-wrap, .table-wrap * {
-		font-size: 14px;
-	}
+.table.table-light th, .table.table-outline th {
+	border-bottom: var(--table-outline-width) solid #e9ecef;
+	border-top: var(--table-outline-width) solid #e9ecef;
 }

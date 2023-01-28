@@ -4,6 +4,8 @@ import {defaultProps, ICardProps, propTypes} from '../types/card';
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import styles from "./Card.module.css";
 import {IDiv} from "../types/common";
+import {addPropsToChildren} from "../utils/helpers";
+
 
 export const Card: React.FC<ICardProps & IDiv> = (
 	{
@@ -22,19 +24,20 @@ export const Card: React.FC<ICardProps & IDiv> = (
 		classNames, customCss
 	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
 	const additionalThemeClasses = theme ? `bg-${colorScheme ? 'primary' : theme}` : '';
-	console.log('classNames', classNames)
 	const classes = getClassNames(
 		styles,
 		'card',
 		direction === 'row' ? 'card-row' : '',
 		additionalThemeClasses
 	)
+
+	const childrenWithProps = addPropsToChildren(children, {direction, layout}, true)
 	return (
 		<>
 			{customCss && customCss()}
 			<div {...rest}
 				 className={`${classNames} ${classes}`}>
-				{children}
+				{childrenWithProps}
 			</div>
 		</>
 

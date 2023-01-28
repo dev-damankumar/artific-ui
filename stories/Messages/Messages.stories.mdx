@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Canvas, Meta, Story} from '@storybook/addon-docs';
 import {Button, useMessage} from '../../src';
 
 
@@ -19,19 +19,16 @@ export const Template=(args) => {
 		}}>
 			Success
 		</Button>
-		<br/>
 		<Button onClick={() => {
 			message.info('Hi ! This is a message').hold()
 		}}>
 			Info
 		</Button>
-		<br/>
 		<Button onClick={() => {
 			message.error('Hi ! This is a message').hold()
 		}}>
 			Danger
 		</Button>
-		<br/>
 		<Button onClick={() => {
 			message.warning('Hi ! This is a message').hold()
 		}}>
@@ -42,7 +39,7 @@ export const Template=(args) => {
 
 # Messages
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+The useMessage is like an message box that is only shown for a couple of seconds when something happens (i.e. when the user clicks on a button, submits a form, etc.).
 
 <Canvas>
 	<Story name="Default">{Template.bind({})}</Story>
@@ -54,7 +51,16 @@ Provide contextual feedback messages for typical user actions with the handful o
 import { Message } from 'artific-ui';
 ```
 
-<ArgsTable story="Default"/>
+
+<b>useMessage()</b> instance has following methods to use:
+
+`config()` to set the config and supported props to the loader.
+
+`(success|info|error|warning)()` method is used to show the message with their respective color schemes.
+
+`alert()`  method is used to the message with the predefine library themes. ie. (`primary`,`secondary`,`dark`,`light`)
+
+`hold()` chain the hold method to your message to make message no disappear after the specific time.
 
 export const SizeTemplate=(args) => {
 	const sizes=['xl', 'lg', 'md', 'sm', 'xs']
@@ -62,7 +68,7 @@ export const SizeTemplate=(args) => {
 		const message=useMessage()
 		message.config({
 			size: v,
-			dismissible: true
+			dismissible: true,
 		})
 		return <div key={i}>
 			<Button onClick={() => {
@@ -78,12 +84,16 @@ export const SizeTemplate=(args) => {
 	</>
 };
 
-# Sizes
+# Message Sizes
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+you can use a `size` prop to define the size of your components
+
+Set `size` prop in config with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <Canvas>
-	<Story name="Sizes">{SizeTemplate.bind({})}</Story>
+	<Story name="Message Sizes">{SizeTemplate.bind({})}</Story>
 </Canvas>
 
 
@@ -108,12 +118,16 @@ export const LayoutsTemplate=(args) => {
 	</>
 };
 
-# Layouts
+# Message Layouts
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+Message Has basic four layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
+
+`Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
 <Canvas>
-	<Story name="Layouts">{LayoutsTemplate.bind({})}</Story>
+	<Story name="Message Layouts">{LayoutsTemplate.bind({})}</Story>
 </Canvas>
 
 
@@ -153,12 +167,16 @@ export const ThemesTemplate=(args) => {
 	</>
 };
 
-# Themes
+# Message Themes
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+If you want to use a different theme for `Alert` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
+
+You can also use `colorScheme` prop to define a custom theme.
+
 
 <Canvas>
-	<Story name="Themes">{ThemesTemplate.bind({})}</Story>
+	<Story name="Message Themes">{ThemesTemplate.bind({})}</Story>
 </Canvas>
 
 
@@ -184,12 +202,17 @@ export const VariantsTemplate=(args) => {
 	</>
 };
 
-# Variants
+# Message Variants
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`note`|`outline`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
 
 <Canvas>
-	<Story name="Variants">{VariantsTemplate.bind({})}</Story>
+	<Story name="Message Variants">{VariantsTemplate.bind({})}</Story>
 </Canvas>
 
 export const DarkModeTemplate=(args) => {
@@ -215,7 +238,7 @@ export const DarkModeTemplate=(args) => {
 
 # Dark Mode
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+To set the dark mode for your message use `mode` prop and its value as `dark`
 
 <Canvas>
 	<Story name="Dark Mode">{DarkModeTemplate.bind({})}</Story>
@@ -226,13 +249,13 @@ export const DurationTemplate=(args) => {
 	const btns=themes.map((v, i) => {
 		const message=useMessage()
 		message.config({
-			duration: 3,
+			duration: i + 3,
 		})
 		return <div key={i}>
 			<Button onClick={() => {
 				message[v]('Hi ! This is a message')
 			}}>
-				Duration 3s
+				Duration {i + 3}s
 			</Button>
 			<br/>
 		</div>
@@ -242,12 +265,14 @@ export const DurationTemplate=(args) => {
 	</>
 };
 
-# Duration
+# Message Duration
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+`duration` prop is used to set after how much time message should disappare. value must be number referring to number of seconds.
+
+`Note:` if you are chaining `.hold()` to the instance message will not disappear as it is the intended behaviour.
 
 <Canvas>
-	<Story name="Duration">{DurationTemplate.bind({})}</Story>
+	<Story name="Message Duration">{DurationTemplate.bind({})}</Story>
 </Canvas>
 
 
@@ -263,7 +288,7 @@ export const NotificationTemplate=(args) => {
 			<Button onClick={() => {
 				message[v]('Hi User! This is a notification message', 'Message From Artific').hold()
 			}}>
-				Notify me
+				Notification {v.toUpperCase()}
 			</Button>
 			<br/>
 		</div>
@@ -275,7 +300,9 @@ export const NotificationTemplate=(args) => {
 
 # Notification Alert
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+Message can be used as different element called notification which has header and body acting as notification.
+
+set `type` prop to `"notification"` to make message as notification.
 
 <Canvas>
 	<Story name="Notification Alert">{NotificationTemplate.bind({})}</Story>
@@ -306,7 +333,9 @@ export const PositionTemplate=(args) => {
 
 # Message Positions
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+`position` prop is used to define the position of message to be appear on the screen.
+
+possible values are (`top`| `top-right`| `bottom-left`| `bottom`| `bottom-right`| `top-left`)
 
 <Canvas>
 	<Story name="Message Positions">{PositionTemplate.bind({})}</Story>

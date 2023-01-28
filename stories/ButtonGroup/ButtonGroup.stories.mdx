@@ -5,7 +5,7 @@ import {Button, ButtonGroup} from '../../src/index';
 
 # ButtonGroup
 
-Custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+You can group together multiple button with `ButtonGroup`
 
 export const defaultTemplate=(args) => <ButtonGroup {...args}>
 	<Button type="button">Primary</Button>
@@ -27,7 +27,9 @@ import { Button } from 'artific-ui/Button';
 
 ## Button Horizontal Group
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+Use `direction` props on `ButtonGroup` to define the direction of the ButtonGroup
+
+default is `horizontal`
 
 <Canvas>
 	<Story name="Button Horizontal Group">
@@ -43,7 +45,9 @@ Use any of the available button themes types to quickly create a styled button. 
 
 ## Button Vertical Group
 
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+Use `direction` props on `ButtonGroup` to define the direction of the ButtonGroup
+
+default is `horizontal`
 
 <Canvas>
 	<Story name="Button Vertical Group">
@@ -57,7 +61,11 @@ Use any of the available button style types to quickly create a styled button. J
 
 ## Button Group Sizes
 
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+`Note:` when using `ButtonGroup` you don't have to provide the `size` prop on `Button` itself just use the props on the main component.
 
 <Canvas>
 	<Story name="Button Group Sizes">

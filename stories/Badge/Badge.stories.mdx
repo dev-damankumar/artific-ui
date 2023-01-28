@@ -5,31 +5,10 @@ import {Badge} from '../../src';
 <Meta
 	title="Components/Badge"
 	component={Badge}
-	argTypes={{
-		variant: {
-			table: {
-				type: {
-					summary:
-						" 'primary' | 'secondary' | 'light' | 'dark' ",
-				},
-			},
-			options: [
-				'primary',
-				'secondary',
-				'light',
-				'dark',
-			],
-			control: {
-				type: 'select',
-			},
-		},
-	}}
-	parameters={{docs: {source: {type: 'code'}}}}
 />
 
 export const Template=(args) => {
 	return <>
-		<h5>Basic Badges</h5>
 		<Badge title="DK" {...args}/>
 		<Badge title="A" {...args}/>
 		<Badge title="M" {...args}/>
@@ -39,7 +18,7 @@ export const Template=(args) => {
 
 # Badges
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+Badges are used to display some info about the specific element like: count etc.
 
 <Canvas>
 	<Story name="Default">{Template.bind({})}</Story>
@@ -53,29 +32,37 @@ import { Badge } from 'artific-ui/Badge';
 
 <ArgsTable story="Default"/>
 
-## Basic Badge
+## Badges Theme
 
-Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
-You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+If you want to use a different theme for `Badge` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
+
+You can also use `colorScheme` prop to define a custom theme.
 
 <Canvas>
-	<Story name="Basic Badge">
-		<h5>Basic Alerts Themes</h5>
+	<Story name="Badges Theme">
 		<Badge theme="primary" title="DK"/>
 		<Badge theme="secondary" title="DK"/>
 		<Badge theme="dark" title="DK"/>
 		<Badge theme="light" title="DK"/>
+		<Badge colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		}} title="DK"/>
 	</Story>
 </Canvas>
 
 ## Badge Size
 
-Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
-You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <Canvas>
 	<Story name="Badge Size">
-		<h5>Badges Sizes Text</h5>
 		<Badge size="xl" title="XL"/>
 		<Badge size="lg" title="LG"/>
 		<Badge size="md" title="MD"/>
@@ -86,8 +73,11 @@ You may also choose to slot in your icons from any libraries to make your inform
 
 ## Badge Layouts
 
-Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
-You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+Badge Has basic five layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`,`circular`)
+
+`Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
 <Canvas>
 	<Story name="Badge Layouts">
@@ -103,8 +93,12 @@ You may also choose to slot in your icons from any libraries to make your inform
 
 ## Badge Variants
 
-Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
-You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`dot`|`outline`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
 
 <Canvas>
 	<Story name="Badge Variants">

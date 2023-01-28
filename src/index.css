@@ -1,74 +1,61 @@
 @import "https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
+
 :root {
-	--text-color-alpha: 1;
-	--text-color-hue: 222;
-	--text-color-saturation: 26%;
-	--text-color-lightness: 25%;
-	--text-color: hsla(var(--text-color-hue, 222), var(--text-color-saturation, 26%), var(--text-color-lightness, 25%), var(--text-color-alpha, 1));
-
-	--link-color-alpha: 1;
-	--link-color-hue: 231;
-	--link-color-saturation: 86%;
-	--link-color-lightness: 59%;
-	--link-color: hsla(var(--link-color-hue, 231), var(--link-color-saturation, 86%), var(--link-color-lightness, 59%), var(--link-color-alpha, 1));
-
-	--primary-alpha: 1;
-	--primary-hue: 230;
-	--primary-saturation: 87%;
-	--primary-lightness: 59%;
-	--primary: hsla(var(--primary-hue, 230), var(--primary-saturation, 87%), var(--primary-lightness, 59%), var(--primary-alpha, 1));
-	--primary-color: var(--primary);
-
-	--secondary-alpha: 1;
-	--secondary-hue: 187;
-	--secondary-saturation: 100%;
-	--secondary-lightness: 42%;
-	--secondary: hsla(var(--secondary-hue, 187), var(--secondary-saturation, 100%), var(--secondary-lightness, 42%), var(--secondary-alpha, 1));
-	--secondary-color: var(--secondary);
-
-	--light-alpha: 1;
-	--light-hue: 0;
-	--light-saturation: 0%;
-	--light-lightness: 100%;
-	--light: hsla(var(--light-hue, 0), var(--light-saturation, 0%), var(--light-lightness, 100%), var(--light-alpha, 1));
-	--light-color: var(--light);
-
-	--dark-alpha: 1;
-	--dark-hue: 218;
-	--dark-saturation: 36%;
-	--dark-lightness: 18%;
-	--dark: hsla(var(--dark-hue, 218), var(--dark-saturation, 36%), var(--dark-lightness, 18%), var(--dark-alpha, 1));
-	--dark-color: var(--dark);
-
 	--hover-box-shadow-alpha: 1;
 	--hover-box-shadow-hue: 240;
 	--hover-box-shadow-saturation: 2%;
 	--hover-box-shadow-lightness: 90%;
-	--hover-box-shadow: hsla(var(--hover-box-shadow-hue, 240), var(--hover-box-shadow-saturation, 2%), var(--hover-box-shadow-lightness, 90%), var(--hover-box-shadow-alpha, 1));
-
-	--primary-hover-box-shadow-alpha: 1;
-	--primary-hover-box-shadow-hue: 255;
-	--primary-hover-box-shadow-saturation: 100%;
-	--primary-hover-box-shadow-lightness: 92%;
-	--primary-hover-box-shadow: hsla(var(--primary-hover-box-shadow-hue, 255), var(--primary-hover-box-shadow-saturation, 100%), var(--primary-hover-box-shadow-lightness, 92%), var(--primary-hover-box-shadow-alpha, 1));
-
-	--secondary-hover-box-shadow-alpha: 1;
-	--secondary-hover-box-shadow-hue: 193;
-	--secondary-hover-box-shadow-saturation: 100%;
-	--secondary-hover-box-shadow-lightness: 92%;
-	--secondary-hover-box-shadow: hsla(var(--secondary-hover-box-shadow-hue, 255), var(--secondary-hover-box-shadow-saturation, 100%), var(--secondary-hover-box-shadow-lightness, 92%), var(--secondary-hover-box-shadow-alpha, 1));
-
-	--light-hover-box-shadow-alpha: 1;
-	--light-hover-box-shadow-hue: 0;
-	--light-hover-box-shadow-saturation: 0%;
-	--light-hover-box-shadow-lightness: 97%;
-	--light-hover-box-shadow: hsla(var(--light-hover-box-shadow-hue, 0), var(--light-hover-box-shadow-saturation, 0%), var(--light-hover-box-shadow-lightness, 97%), var(--light-hover-box-shadow-alpha, 1));
 
 }
 
+:root {
+	--font-size: 1rem;
+	--text: hsla(222, 26%, 25%, 1);
+	--link-color: hsla(231, 86%, 59%, 1);
+	--scroll-bg: #f1f1f1;
+	--border-color: #eeeeee;
+	--accent-bg: #f4f4f4;
+	--primary: hsla(230, 87%, 59%, 1);
+	--primary-color: var(--primary);
+	--primary-text: white;
+	--primary-hover: hsla(230, 87%, 54%, 1);
+	--primary-color-hover: var(--primary-hover);
+	--primary-text-hover: white;
+	--primary-hover-box-shadow: hsla(230, 87%, 90%, 1);
+
+
+	--secondary: hsla(187, 100%, 42%, 1);
+	--secondary-color: var(--secondary);
+	--secondary-text: white;
+	--secondary-hover: hsla(187, 100%, 37%, 1);
+	--secondary-color-hover: var(--secondary-hover);
+	--secondary-text-hover: white;
+	--secondary-hover-box-shadow: hsla(187, 100%, 90%, 1);
+
+
+	--light: hsla(0, 0%, 100%, 1);
+	--light-alt: hsl(0, 0%, 96%);
+	--light-color: var(--light);
+	--light-text: hsla(222, 26%, 25%, 1);
+	--light-hover: hsla(0, 0%, 100%, 1);
+	--light-color-hover: var(--light-hover);
+	--light-text-hover: white;
+	--light-hover-box-shadow: hsla(0, 0%, 90%, 1);
+
+
+	--dark: hsla(218, 36%, 18%, 1);
+	--dark-color: var(--dark);
+	--dark-text: white;
+	--dark-hover: hsla(218, 36%, 13%, 1);
+	--dark-color-hover: var(--dark-hover);
+	--dark-text-hover: white;
+	--dark-hover-box-shadow: hsla(218, 36%, 90%, 1);
+
+
+	--hover-box-shadow: hsla(var(--hover-box-shadow-hue, 240), var(--hover-box-shadow-saturation, 2%), var(--hover-box-shadow-lightness, 90%), var(--hover-box-shadow-alpha, 1));
+}
 
 @font-face {
 	font-family: 'Segoe UI Web (West European)';
@@ -119,17 +106,17 @@ html, body {
 	margin: 0;
 	font-family: 'Nunito Sans', sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	line-height: 1.5;
-	font-size: 16px;
+	font-size: var(--font-size);
 	font-weight: 400;
 	-webkit-text-size-adjust: 100%;
 	background-color: #fff;
 	-webkit-tap-highlight-color: transparent;
-	color: #303a52;
+	color: var(--text);
 
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Montserrat Bold", sans-serif;
+	font-family: 'Nunito Sans', sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	margin-top: 0;
 	margin-bottom: 1rem;
 	font-weight: 600;
@@ -620,7 +607,7 @@ dl, ol, ul {
 }
 
 .ati-message-alert-light .ati-message-message {
-	color: var(--text-color) !important;
+	color: var(--text) !important;
 }
 
 .ati-message-alert-primary {
@@ -640,7 +627,7 @@ dl, ol, ul {
 
 .ati-message-alert-light {
 	background: var(--light) !important;
-	color: var(--text-color) !important;
+	color: var(--text) !important;
 }
 
 .ati-message-alert-primary .ati-message-alert-icon, .ati-message-alert-primary .ati-message-close-icon {
@@ -659,7 +646,7 @@ dl, ol, ul {
 }
 
 .ati-message-alert-light .ati-message-alert-icon, .ati-message-alert-light .ati-message-close-icon {
-	color: var(--text-color) !important;
+	color: var(--text) !important;
 	background: whitesmoke !important;
 }
 
@@ -749,7 +736,7 @@ dl, ol, ul {
 
 .ati-message-message {
 	margin: 0;
-	color: #303a52;
+	color: var(--text);
 	font-size: var(--message-font-size);
 	line-height: 1.35;
 	font-weight: 500;
@@ -984,6 +971,5 @@ dl, ol, ul {
 		margin-top: 0;
 	}
 }
-
 
 /*============= Loader Style End=============*/

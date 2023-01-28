@@ -5,26 +5,6 @@ import {Alert, Button} from '../../src';
 <Meta
 	title="Components/Alert"
 	component={Alert}
-	argTypes={{
-		variant: {
-			table: {
-				type: {
-					summary:
-						" 'primary' | 'secondary' | 'light' | 'dark' ",
-				},
-			},
-			options: [
-				'primary',
-				'secondary',
-				'light',
-				'dark',
-			],
-			control: {
-				type: 'select',
-			},
-		},
-	}}
-	parameters={{docs: {source: {type: 'code'}}}}
 />
 
 export const Template=(args) => {
@@ -42,7 +22,7 @@ export const Template=(args) => {
 
 # Alerts
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+An alert displays a short, important message in a way that attracts the user's attention without interrupting the user's task.
 
 <Canvas>
 	<Story name="Default">{Template.bind({})}</Story>
@@ -56,82 +36,85 @@ import { Alert } from 'artific-ui/Alert';
 
 <ArgsTable story="Default"/>
 
-## Basic with Icon
+## Dismissible Alert
 
-Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
-You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+A dismissible alert is a alert which can be removed from the user's screen by clicking on the close icon button
 
 <Canvas>
-	<Story name="Basic with Icon">
-		<h5>Basic Alerts</h5>
-		<br/>
-		<Alert><strong>Primary!</strong> You should <a href="#" className="alert-link">read this message</a>.</Alert>
-		<Alert theme="secondary"><strong>Secondary!</strong> You should <a href="#" className="alert-link">read this
-			message</a>.</Alert>
-		<Alert theme="light"><strong>Light!</strong> You should <a href="#" className="alert-link">read this message</a>.</Alert>
-		<Alert theme="dark"><strong>Dark!</strong> You should <a href="#" className="alert-link">read this message</a>.</Alert>
-		<br/>
-		<h5>Alert Dismissable</h5>
-		<br/>
+	<Story name="Dismissible Alert">
 		<Alert dismiss="true"><strong>Primary!</strong> You should <a href="#" className="alert-link">read this
 			message</a>.</Alert>
-		<Alert theme="secondary" dismiss="true"><strong>Secondary!</strong> You should <a href="#"
+	</Story>
+</Canvas>
+
+## Alert Themes
+
+If you want to use a different theme for `Alert` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
+
+<Canvas>
+	<Story name="Alert Themes">
+		<h5>Basic Alerts</h5>
+		<br/>
+		<Alert dismiss={true}><strong>Primary!</strong> You should <a href="#" className="alert-link">read this
+			message</a>.</Alert>
+		<Alert dismiss={true} theme="secondary"><strong>Secondary!</strong> You should <a href="#"
 																						  className="alert-link">read
 			this
 			message</a>.</Alert>
-		<Alert dismiss="true" theme="light"><strong>Light!</strong> You should <a href="#" className="alert-link">read
+		<Alert dismiss={true} theme="light"><strong>Light!</strong> You should <a href="#" className="alert-link">read
 			this message</a>.</Alert>
-		<Alert dismiss="true" theme="dark"><strong>Dark!</strong> You should <a href="#" className="alert-link">read
+		<Alert dismiss={true} theme="dark"><strong>Dark!</strong> You should <a href="#" className="alert-link">read
 			this message</a>.</Alert>
+		<br/>
 	</Story>
 </Canvas>
 
 ## 2. Custom Alert
 
-For links, use the `<Alert.Link>` component to provide matching colored links within any alert.
+If you want to use a different color scheme for `Alert` instead of the provided themes then you can use
+`colorScheme` props to define your color scheme.
+
+colorScheme is an object containing three properties: `background`, `backgroundColor`, `color`
 
 <Canvas>
 	<Story name="Custom Alert">
 		<h5>CustomScheme Alerts</h5>
 		<br/>
-		<Alert colorScheme={{
+		<Alert dismiss="true" colorScheme={{
 			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
 			backgroundColor: '#e736f4',
 			color: 'white',
 		}}><strong>Primary!</strong> You should <a href="#" className="alert-link">read
-			this message</a>.</Alert>
-		<br/>
-		<h5>Alert Dismissable</h5>
-		<br/>
-		<Alert colorScheme={{
-			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
-			backgroundColor: '#e736f4',
-			color: 'white',
-		}} dismiss="true"><strong>Primary!</strong> You should <a href="#"
-																  className="alert-link">read
 			this message</a>.</Alert>
 	</Story>
 </Canvas>
 
 ## 3. Alert Sizes
 
-Alerts can contain whatever content you like. Headers, paragraphs, dividers etc.
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <Canvas>
 	<Story name="Alert Sizes">
-		<h5>Basic Alerts Size</h5>
-		<br/>
-		<Alert size="xs"><strong>Primary!</strong> You should <a href="#" className="alert-link">read this message</a>.</Alert>
-		<Alert size="sm"><strong>Primary!</strong> You should <a href="#" className="alert-link">read this message</a>.</Alert>
-		<Alert><strong>Primary!</strong> You should <a href="#" className="alert-link">read this message</a>.</Alert>
-		<Alert size="lg"><strong>Primary!</strong> You should <a href="#" className="alert-link">read this message</a>.</Alert>
-		<Alert size="xl"><strong>Primary!</strong> You should <a href="#" className="alert-link">read this message</a>.</Alert>
+		<Alert size="xs">You should <a href="#" className="alert-link">read this message</a>.</Alert>
+		<Alert size="sm">You should <a href="#" className="alert-link">read this message</a>.</Alert>
+		<Alert>You should <a href="#" className="alert-link">read this message</a>.</Alert>
+		<Alert size="lg">You should <a href="#" className="alert-link">read this message</a>.</Alert>
+		<Alert size="xl">You should <a href="#" className="alert-link">read this message</a>.</Alert>
 	</Story>
 </Canvas>
 
 ## 3. Alert Layouts
 
-Alerts can contain whatever content you like. Headers, paragraphs, dividers etc.
+Alert Has basic four layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
+
+`Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
 <Canvas>
 	<Story name="Alert Layouts">
@@ -150,12 +133,15 @@ Alerts can contain whatever content you like. Headers, paragraphs, dividers etc.
 
 ## 3. Alert Variants
 
-Alerts can contain whatever content you like. Headers, paragraphs, dividers etc.
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`text`|`note`|`outline`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
 
 <Canvas>
 	<Story name="Alert Variants">
-		<h5>Alerts Variants</h5>
-		<br/>
 		<Alert variant="outline"><strong>Outline!</strong> You should <a href="#" className="alert-link">read this
 			message</a>.</Alert>
 		<Alert variant="text"><strong>Text</strong> You should <a href="#" className="alert-link">read this message</a>.</Alert>
@@ -164,11 +150,25 @@ Alerts can contain whatever content you like. Headers, paragraphs, dividers etc.
 		<Alert variant="note"><strong>Note!</strong> You should <a href="#"
 																   className="alert-link">read
 			this message</a>.</Alert>
-		<Alert direction="right" variant="note"><strong>Note!</strong> You should <a href="#" className="alert-link">read
+	</Story>
+</Canvas>
+
+## 3. Note Variant Directions
+
+Alert Note Variant has `direction` prop to define which direction the alert should follow.
+
+Set `direction` prop with the value of (`top`|`bottom`|`left`|`right`). you can mix them with different supported `theme` or `layout`
+
+<Canvas>
+	<Story name="Note Variant Directions">
+		<Alert variant="note">You should <a href="#"
+											className="alert-link">read
 			this message</a>.</Alert>
-		<Alert direction="top" variant="note"><strong>Note!</strong> You should <a href="#" className="alert-link">read
+		<Alert direction="right" variant="note">You should <a href="#" className="alert-link">read
 			this message</a>.</Alert>
-		<Alert direction="bottom" variant="note"><strong>Note!</strong> You should <a href="#" className="alert-link">read
+		<Alert direction="top" variant="note">You should <a href="#" className="alert-link">read
+			this message</a>.</Alert>
+		<Alert direction="bottom" variant="note">You should <a href="#" className="alert-link">read
 			this message</a>.</Alert>
 	</Story>
 </Canvas>

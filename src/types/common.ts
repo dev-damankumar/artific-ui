@@ -61,7 +61,7 @@ export type Axis = typeof AxisArray[number];
 
 export type ColorScheme = {
 	background: string;
-	backgroundColor?: string;
+	backgroundColor: string;
 	color: string;
 } | null
 

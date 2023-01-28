@@ -6,6 +6,7 @@ import getRandomClassId from "../utils/uuids/generateRandonClassId";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {IDiv} from "../types/common";
 
+
 export const Tabs: React.FC<ITabsProps & IDiv> = (
 	{
 		type,

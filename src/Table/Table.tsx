@@ -5,6 +5,7 @@ import {defaultProps, ITableProps, propTypes} from "../types/table";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {IDiv} from "../types/common";
 
+
 export const Table: React.FC<ITableProps & IDiv> = (
 	{
 		children,

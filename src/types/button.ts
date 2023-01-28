@@ -33,7 +33,7 @@ export const propTypes = {
 	theme: PropTypes.oneOf<Themes>(ThemesArray),
 	hideTextOnLoading: PropTypes.bool,
 	loading: PropTypes.bool,
-	fullWidth: PropTypes.bool,
+	fullwidth: PropTypes.bool,
 	className: PropTypes.string,
 	colorScheme: PropTypes.shape({
 		background: PropTypes.string.isRequired,
@@ -43,7 +43,6 @@ export const propTypes = {
 	loadingDirection: PropTypes.oneOf<LoadingDirections>(LoadingDirectionsArray),
 	layout: PropTypes.oneOf<Layouts>(LayoutsArray),
 	loadingStyle: PropTypes.oneOf<LoadingStyles>(LoadingStylesArray),
-	variants: PropTypes.arrayOf(PropTypes.oneOf(VariantsArray).isRequired),
 };
 
 export const defaultProps = {
@@ -56,7 +55,7 @@ export const defaultProps = {
 	loadingStyle: 'spin' as LoadingStyles,
 	size: 'md' as Sizes,
 	className: '' as string,
-	fullWidth: false,
+	fullwidth: false,
 	prefix: undefined,
 	suffix: undefined,
 };
@@ -67,14 +66,13 @@ export interface IButtonProps {
 	style?: React.CSSProperties;
 	theme?: Themes;
 	hideTextOnLoading?: boolean;
-	fullWidth?: boolean;
+	fullwidth?: boolean;
 	colorScheme?: ColorScheme;
 	loadingDirection?: LoadingDirections;
 	variant?: Variants;
 	layout?: Layouts;
 	size?: Sizes;
 	loadingStyle?: LoadingStyles;
-	variants?: Variants[];
 	disabled?: boolean;
 	loading?: boolean;
 	prefix?: React.ReactNode | undefined;

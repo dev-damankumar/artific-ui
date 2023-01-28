@@ -1,0 +1,82 @@
+import {Meta, Source} from '@storybook/addon-docs';
+
+<Meta title="Get Started"/>
+
+<h1>Artific UI</h1>
+
+Artific UI is a library of React UI components that provides you the pre designed and customizable components to use.
+
+<h1>Introduction</h1>
+
+Artific UI is an open-source React component library that implements its own design system called artific-design
+
+It includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box.
+
+Artific UI is modern and well-designed library it provides a customization options that make it easy to implement your own custom design system on top of our components.
+
+
+<h1>Usage</h1>
+
+Learn the basics of working with Artific UI components.
+
+<Source
+	language='js'
+	dark
+	format={true}
+	code={`import Button from 'artific-ui/Button';
+           export default function HugeComponentShowcase() {
+              return <Button>Click me!</Button>
+            }`}
+/>
+
+<h1>Overview</h1>
+
+Artific UI uses design rules to make components flexible and attractive
+
+Mostly all components shares some common props to make a design flexible. These props define how your component should looks like in terms of <b>ui</b>,  <b>structure</b>,  <b>positioning</b> and  <b>sizing</b>
+
+Here are the main props that are used by almost every component: (`layout`, `theme`, `variant`, `size`)
+
+<h2>Layout</h2>
+
+Layout defines how your component's structure is going to look like for example, should it be has rounded corners or should it be circular and so on.
+
+`layout` props has basic four values (`default`|`rounded`|`no-radius`|`pill`).
+
+If you don't understand what this means then explore the components to know more.
+
+`NOTE:` most of the components shares the same values for layout, but it can have some additional or different values based on component's flexibility and design
+
+
+<h2>Theme</h2>
+
+Theme defines which colors to apply on your component by default its primary. but it can be one of the four values.
+
+`theme` props has basic four values (`primary`|`secondary`|`dark`|`light`).
+
+`NOTE:` If you want to use a different color scheme for component instead of the provided themes then  you can use
+`colorScheme` props to define your color scheme.
+
+colorScheme is an object containing three properties: `background`, `backgroundColor`, `color`.
+
+`background:` is used primarly for backgrond only and its value can be `color` | `gredient` | `url`. its same as the css property `background`
+
+`backgroundColor:` is used primarily for additional properties like outline or border color and it can only have `color` as value its same as the css property `backgroundColor`
+
+`color:` is used to define your text color.
+
+<h2>Variant</h2>
+
+Variant defines how you components ui should look like
+
+`variant` prop has different the values based on which component you are using
+but most common are (`default`|`outline`|`separate`|`text`). you can mix them with diffrent supported `theme` or `layout` to make component more customizabe
+
+
+<h2>Size</h2>
+
+Size prop defines the size of your component that how big or small it should be on screen.
+
+`size` prop has common five values (`xs`|`sm`|`md`|`lg`|`xl`).
+
+values for `size` props can differ for some exceptional components

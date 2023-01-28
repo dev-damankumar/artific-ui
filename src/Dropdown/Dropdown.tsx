@@ -6,6 +6,7 @@ import {IDiv} from "../types/common";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
 
+
 export const Dropdown: React.FC<IDropdownProps & IDiv> = (
 	{
 		autoClose,
@@ -17,13 +18,14 @@ export const Dropdown: React.FC<IDropdownProps & IDiv> = (
 		fullwidth,
 		layout,
 		variant,
+		theme,
 		colorScheme,
 		...rest
 	}) => {
 	const componentSelector = 'dropdown';
 	const {
 		classNames, customCss
-	} = getDefaultClasses(styles, componentSelector, className, '', layout, variant, size, colorScheme)
+	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
 
 	const openDropdown = (e: Event) => {
 		if (e.currentTarget === e.target) {
@@ -38,9 +40,8 @@ export const Dropdown: React.FC<IDropdownProps & IDiv> = (
 			}
 		}
 	};
-	console.log('colorScheme ss', colorScheme)
 	const childrenWithProps = addPropsToChildren(children, {
-		autoClose, onClick: openDropdown, closeHandler: handleCloseMenu, colorScheme
+		autoClose, onClick: openDropdown, closeHandler: handleCloseMenu, colorScheme, theme
 	})
 
 	const classes = getClassNames(

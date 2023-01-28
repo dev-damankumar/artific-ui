@@ -5,13 +5,14 @@ import styles from "./Tooltip.module.css";
 import {IDiv} from "../types/common";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
+
 export const Tooltip: React.FC<ITooltipProps & IDiv> = (
 	{
 		theme,
 		title,
 		layout,
-		variant
-		, placement,
+		variant,
+		placement,
 		size,
 		className,
 		style,

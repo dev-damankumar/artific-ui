@@ -12,16 +12,17 @@ export const DropdownToggle: React.FC<IButtonProps & IButton> = (
 		children,
 		onClick,
 		colorScheme,
+		theme,
 		...rest
 	}) => {
-	console.log('colorScheme d', colorScheme)
 	return (
 		<Button
 			{...rest}
-			style={style}
+			style={{...style, margin: '0'}}
 			onClick={onClick}
 			colorScheme={colorScheme}
 			type='button'
+			theme={theme}
 			className={
 				`${getClassNames(classes, 'dropdown-btn', 'dropdown-toggle')} ${className}`
 			}

@@ -4,9 +4,10 @@ import {useState} from "react";
 
 <Meta title="Components/Modal" component={Modal}/>
 
-# Buttons
+# Modals
 
-Custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+The Modal component is a dialog box/popup window that is displayed on top of the current page:
+
 
 export const defaultTemplate=(args) => {
 	const [open, setOpen]=useState(false);
@@ -45,8 +46,15 @@ import {Modal} from 'artific-ui/Modal';
 
 <ArgsTable story="Default"/>
 
-## Dismissibles
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+## Dismissible
+
+Dismissible Modal will close itself when user clicks outside of it.
+
+`onClose` prop expect a callback which it will use to call when user click on the close button on header.
+
+use `dismiss={false}` when you don't want user to close modal. it will remove the close button from header.
+
+if you want user to close button when he clicks outside use `onBackdropClick` and provide it with callback to close the modal.
 
 export const dismissTypesTemplate=(args) => {
 	const [open, setOpen]=useState(false);
@@ -150,8 +158,13 @@ export const dismissTypesTemplate=(args) => {
 </Canvas>
 
 
-## Layouts
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+## Modal Layouts
+
+Modal Has basic four layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`)
+
+`Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
 export const layoutsTemplate=(args) => {
 	const [open, setOpen]=useState(false);
@@ -249,13 +262,18 @@ export const layoutsTemplate=(args) => {
 };
 
 <Canvas>
-	<Story name="Layouts">
+	<Story name="Modal Layouts">
 		{layoutsTemplate.bind({})}
 	</Story>
 </Canvas>
 
-## Themes
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+## Modal Themes
+
+If you want to use a different theme for `Modal` use the `theme` prop to set the theme
+
+Note: All components have basic four themes ie. (`dark`|`light`). you can use either of them.
+
+also you can use `overlay` prop to set your backdrop to either `transparent` which is default or `blur`.
 
 export const themesTemplate=(args) => {
 	const [open, setOpen]=useState(false);
@@ -385,14 +403,18 @@ export const themesTemplate=(args) => {
 };
 
 <Canvas>
-	<Story name="Themes">
+	<Story name="Modal Themes">
 		{themesTemplate.bind({})}
 	</Story>
 </Canvas>
 
 
-## Sizes
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+## Modal Sizes
+
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`|`full-width`|`full-height`|`full`|`extended`). you can mix them with different supported `theme` or `layout`
+
 
 export const sizesTemplate=(args) => {
 	const [open, setOpen]=useState(false);
@@ -669,14 +691,20 @@ export const sizesTemplate=(args) => {
 };
 
 <Canvas>
-	<Story name="Sizes">
+	<Story name="Modal Sizes">
 		{sizesTemplate.bind({})}
 	</Story>
 </Canvas>
 
 
-## Variants
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+## Modal Variants
+
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`striped`|`striped-body`|`striped-header`|`striped-footer`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
 
 export const variantsTemplate=(args) => {
 	const [open, setOpen]=useState(false);
@@ -833,13 +861,16 @@ export const variantsTemplate=(args) => {
 };
 
 <Canvas>
-	<Story name="Variants">
+	<Story name="Modal Variants">
 		{variantsTemplate.bind({})}
 	</Story>
 </Canvas>
 
 ## Docking
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+
+`dock` prop is used to make modal dock or stick to the specific direction with padding.
+
+possible values are: (`left`|`right`|`top`|`bottom`)
 
 export const dockingTemplate=(args) => {
 	const [open, setOpen]=useState(false);
@@ -973,7 +1004,10 @@ export const dockingTemplate=(args) => {
 </Canvas>
 
 ## Positions
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+
+`position` prop is used to make modal start from the specific direction. The main differnce between `dock` and `position` is that position does not includes padding.
+
+possible values are: (`left`|`right`|`top`|`bottom`)
 
 export const positionTemplate=(args) => {
 	const [open, setOpen]=useState(false);

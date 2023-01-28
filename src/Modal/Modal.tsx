@@ -7,6 +7,7 @@ import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
 import sizeClasses from "../utils/classes/sizeClasses";
 
+
 export const Modal: React.FC<IModalProps & IDiv> = (
 	{
 		open,

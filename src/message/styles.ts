@@ -1,49 +1,17 @@
 const style = `
 <style data-ati-message-alert-style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
-
 :root {
-	--text-color-alpha: 1;
-	--text-color-hue: 222;
-	--text-color-saturation: 26%;
-	--text-color-lightness: 25%;
-	--text-color: hsla(var(--text-color-hue, 222), var(--text-color-saturation, 26%), var(--text-color-lightness, 25%), var(--text-color-alpha, 1));
-
-	--link-color-alpha: 1;
-	--link-color-hue: 231;
-	--link-color-saturation: 86%;
-	--link-color-lightness: 59%;
+	--text: hsla(var(--text-hue, 222), var(--text-saturation, 26%), var(--text-lightness, 25%), var(--text-alpha, 1));
 	--link-color: hsla(var(--link-color-hue, 231), var(--link-color-saturation, 86%), var(--link-color-lightness, 59%), var(--link-color-alpha, 1));
-
-	--primary-alpha: 1;
-	--primary-hue: 230;
-	--primary-saturation: 87%;
-	--primary-lightness: 59%;
 	--primary: hsla(var(--primary-hue, 230), var(--primary-saturation, 87%), var(--primary-lightness, 59%), var(--primary-alpha, 1));
 	--primary-color: var(--primary);
-
-	--secondary-alpha: 1;
-	--secondary-hue: 187;
-	--secondary-saturation: 100%;
-	--secondary-lightness: 42%;
 	--secondary: hsla(var(--secondary-hue, 187), var(--secondary-saturation, 100%), var(--secondary-lightness, 42%), var(--secondary-alpha, 1));
 	--secondary-color: var(--secondary);
-
-	--light-alpha: 1;
-	--light-hue: 0;
-	--light-saturation: 0%;
-	--light-lightness: 100%;
 	--light: hsla(var(--light-hue, 0), var(--light-saturation, 0%), var(--light-lightness, 100%), var(--light-alpha, 1));
 	--light-color: var(--light);
-
-	--dark-alpha: 1;
-	--dark-hue: 218;
-	--dark-saturation: 36%;
-	--dark-lightness: 18%;
 	--dark: hsla(var(--dark-hue, 218), var(--dark-saturation, 36%), var(--dark-lightness, 18%), var(--dark-alpha, 1));
 	--dark-color: var(--dark);
-	
 	
 	--message-box-shadow: rgba(17, 17, 26, 0.10) 0 0 16px;
 	--message-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
@@ -260,7 +228,6 @@ const style = `
 
 /*Close*/
 
-
 .ati-message-close {
 	border: none;
 	background: no-repeat;
@@ -320,7 +287,7 @@ const style = `
 }
 
 .ati-message-alert-light .ati-message-message {
-	color: var(--text-color) !important;
+	color: var(--text) !important;
 }
 
 .ati-message-alert-primary {
@@ -340,7 +307,7 @@ const style = `
 
 .ati-message-alert-light {
 	background: var(--light) !important;
-	color: var(--text-color) !important;
+	color: var(--text) !important;
 }
 
 .ati-message-alert-primary .ati-message-alert-icon, .ati-message-alert-primary .ati-message-close-icon {
@@ -359,7 +326,7 @@ const style = `
 }
 
 .ati-message-alert-light .ati-message-alert-icon, .ati-message-alert-light .ati-message-close-icon {
-	color: var(--text-color) !important;
+	color: var(--text) !important;
 	background: whitesmoke !important;
 }
 
@@ -449,7 +416,7 @@ const style = `
 
 .ati-message-message {
 	margin: 0;
-	color: #303a52;
+	color: var(--text);
 	font-size: var(--message-font-size);
 	line-height: 1.35;
 	font-weight: 500;

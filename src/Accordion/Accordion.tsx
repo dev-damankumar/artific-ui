@@ -24,7 +24,6 @@ export const Accordion: React.FC<IAccordionProps & IDiv> = (
 	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
 	const childrenWithProps = addPropsToChildren(children, {theme})
 	const classes = getClassNames(styles, 'accordion-wrap', indicatorDirection === 'start' && 'accordion-indicator-left')
-
 	return (
 		<>
 			{customCss && customCss()}

@@ -1,33 +1,34 @@
-import rgbaToHsla from '../colors/rgbToHSL';
+import Color from 'color';
 
-function ripple(e: any, button: any, focus: any, initial: any, mouseDown: any) {
+function ripple(e: any, button: any, focus: any, mouseDown: any) {
 	const ms = 500
 	e.stopPropagation();
-
+	button.style.overflow = 'hidden';
 	let timeHandler: any = () => {
 		try {
 			ripple_elmnt.style.opacity = 0;
 			button.removeChild(ripple_elmnt);
-			button.style = initial;
+			setTimeout(() => {
+				button.style.removeProperty('overflow')
+			}, 5000)
+
 			mouseDown = false;
 		} catch (er) {
 			mouseDown
 		}
 	};
+	if (mouseDown) {
+		clearTimeout(timeHandler);
+	}
 
-	clearTimeout(timeHandler);
-	button.style.overflow = 'hidden';
 	const style = getComputedStyle(button);
 	let backgroundColor = style['backgroundColor'] || '';
 
 	if (backgroundColor === 'rgba(0, 0, 0, 0)' && !style['background'].includes('gradient')) {
 		backgroundColor = 'rgb(255, 255, 255)';
 	}
-	if (backgroundColor.startsWith('rgb')) {
-		backgroundColor = backgroundColor.replace(/^\w*/gm, '').replace(/[(|)]/g, '');
-		var [r, g, b, a] = backgroundColor.split(',');
-		var hslColor: any = rgbaToHsla(r, g, b, a ? a : '1');
-	}
+
+	console.log('backgroundColor', Color(backgroundColor).hsl().darken(0.5).alpha(0.5).string())
 
 	let ripple_elmnt: any = document.createElement('span');
 	let diameter = Math.max(parseInt(style.height), parseInt(style.width)) * 1.5;
@@ -47,10 +48,8 @@ function ripple(e: any, button: any, focus: any, initial: any, mouseDown: any) {
 	}
 	ripple_elmnt.style.transform = 'scale(0)';
 	ripple_elmnt.style.transformOrigin = 'center';
-	button.style = initial;
 	ripple_elmnt.style.transition = `transform ${ms}ms ease, opacity ${ms - 100}ms ease`;
-	ripple_elmnt.style.background = `hsl(${hslColor?.data?.h}deg,${hslColor?.data?.s}%,${(hslColor?.data?.l > 60) ? '80%' : '100%'},0.3)`;
-
+	ripple_elmnt.style.background = `${Color(backgroundColor).hsl().darken(0.4).alpha(0.3).string()}`;
 	button.appendChild(ripple_elmnt);
 
 	setTimeout(() => {
@@ -60,11 +59,11 @@ function ripple(e: any, button: any, focus: any, initial: any, mouseDown: any) {
 
 	button.addEventListener('mouseup', () => {
 		setTimeout(timeHandler, ms / 2)
-	}, {once: true});
+	});
 
 	button.addEventListener('blur', () => {
 		setTimeout(timeHandler, 0)
-	}, {once: true});
+	});
 }
 
 export default ripple;

@@ -49,6 +49,7 @@
 	box-shadow: var(--badge-box-shadow-hover);
 }
 
+/*=====Layouts=====*/
 .badge-rounded {
 	--badge-border-radius: 10px;
 }
@@ -66,28 +67,32 @@
 	width: calc(var(--badge-font-size) * 1.5);
 }
 
+/*=====Layouts End=====*/
 
-/*Color*/
+/*=====Colors=====*/
 .badge-primary {
 	background: var(--primary);
-	color: white;
+	color: var(--primary-text);
 }
 
 .badge-secondary {
 	background: var(--secondary);
-	color: white;
+	color: var(--secondary-text);
 }
 
 .badge-light {
 	background: var(--light);
-	color: #303a52;
+	color: var(--light-text);
 }
 
 .badge-dark {
 	background: var(--dark);
-	color: white;
+	color: var(--dark-text);
 }
 
+/*=====Colors End=====*/
+
+/*=====Variants=====*/
 .badge-outline {
 	border: var(--badge-outline-width) solid transparent;
 }
@@ -123,6 +128,7 @@
 	height: calc(var(--badge-font-size));
 }
 
+/*=====Variants End=====*/
 @media screen and (max-width: 500px) {
 	.badge {
 		--badge-padding: 10px;
@@ -130,8 +136,7 @@
 	}
 }
 
-/*Sizing*/
-
+/*=====Sizes =====*/
 
 .badge-extra-large {
 	--badge-font-size: 18px;
@@ -150,82 +155,4 @@
 	--badge-font-size: 10px;
 }
 
-@media (min-width: 576px) {
-	.badge-sm-large {
-		--badge-font-size: 16px;
-	}
-
-	.badge-sm-extra-large {
-		--badge-font-size: 18px;
-	}
-
-	.badge-sm-small {
-		--badge-font-size: 12px;
-	}
-
-	.badge-sm-extra-small {
-
-		--badge-font-size: 10px;
-	}
-}
-
-@media (min-width: 768px) {
-	.badge-md-large {
-		--badge-font-size: 16px;
-	}
-
-	.badge-md-extra-large {
-		--badge-font-size: 18px;
-	}
-
-	.badge-md-small {
-
-		--badge-font-size: 1012;
-	}
-
-	.badge-md-extra-small {
-
-		--badge-font-size: 10px;
-	}
-}
-
-@media (min-width: 992px) {
-	.badge-lg-large {
-		--badge-font-size: 16px;
-	}
-
-	.badge-lg-extra-large {
-		--badge-font-size: 18px;
-	}
-
-	.badge-lg-small {
-
-		--badge-font-size: 12px;
-	}
-
-	.badge-lg-extra-small {
-
-		--badge-font-size: 10px;
-	}
-}
-
-@media (min-width: 1200px) {
-	.badge-xl-large {
-		--badge-font-size: 18px;
-	}
-
-	.badge-xl-extra-large {
-		--badge-font-size: 16px;
-	}
-
-	.badge-xl-small {
-
-		--badge-font-size: 12px;
-	}
-
-	.badge-xl-extra-small {
-
-		--badge-font-size: 10px;
-	}
-}
-
+/*=====Sizes End=====*/

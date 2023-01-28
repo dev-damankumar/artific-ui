@@ -1,4 +1,14 @@
-import {ColorScheme, CSSStyle, Directions, DirectionsArray, FunctionCallback, Sizes, SizesArray} from './common';
+import {
+	ColorScheme,
+	CSSStyle,
+	Directions,
+	DirectionsArray,
+	FunctionCallback,
+	Sizes,
+	SizesArray,
+	Themes,
+	ThemesArray
+} from './common';
 import React from 'react';
 import PropTypes from "prop-types";
 
@@ -17,12 +27,11 @@ export interface IDropdownProps {
 	children: React.ReactNode,
 	style?: CSSStyle,
 	className?: string,
-	multiple?: boolean,
 	autoClose?: boolean,
 	fullwidth?: boolean,
-	variants?: Variants[],
 	position?: Directions,
 	layout?: Layouts,
+	theme?: Themes,
 	size?: Sizes,
 	colorScheme?: ColorScheme,
 	variant?: Variants,
@@ -41,13 +50,12 @@ export const propTypes = {
 	children: PropTypes.node,
 	style: PropTypes.object,
 	className: PropTypes.string,
-	multiple: PropTypes.bool,
 	autoClose: PropTypes.bool,
 	fullwidth: PropTypes.bool,
-	variants: PropTypes.arrayOf(PropTypes.oneOf(VariantsArray).isRequired),
 	name: PropTypes.string,
 	position: PropTypes.oneOf(DirectionsArray),
 	layout: PropTypes.oneOf(LayoutsArray),
+	theme: PropTypes.oneOf(ThemesArray),
 	variant: PropTypes.oneOf<Variants>(VariantsArray),
 	size: PropTypes.oneOf<Sizes>(SizesArray),
 	disabled: PropTypes.bool,
@@ -70,6 +78,7 @@ export const defaultProps = {
 	size: 'md' as Sizes,
 	position: 'bottom' as Directions,
 	layout: 'default' as Layouts,
+	theme: 'primary' as Themes,
 	variant: 'default' as Variants,
 }
 
@@ -79,6 +88,7 @@ export interface IMenuItemProps {
 	onSelect?: FunctionCallback,
 	closeHandler?: FunctionCallback,
 	autoClose?: boolean,
+	active?: boolean,
 	children: React.ReactNode,
 
 	[key: string]: any
@@ -91,6 +101,7 @@ export const IMenuItemPropsType = {
 	onSelect: PropTypes.func,
 	closeHandler: PropTypes.func,
 	autoClose: PropTypes.bool,
+	active: PropTypes.bool,
 	children: PropTypes.node,
 }
 

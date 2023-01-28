@@ -9,7 +9,7 @@ import {List, ListItem} from '../../src/index';
 export const Template=(args) => {
 	return (
 		<>
-			<List theme="light">
+			<List {...args}>
 				<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 				<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 				<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -21,7 +21,7 @@ export const Template=(args) => {
 
 ## Basic List
 
-`Card` component consist of sub-components : `Card.Img`, `Card.Body`, `Card.Link`, `Card.Title`, `Card.Subtitle`, `Card.Text`, `Card.Header`, `Card.Footer`, `Card.ImgOverlay`.
+Lists are a continuous group of text or images. They are composed of items containing primary and supplemental actions, which are represented by icons and text.
 
 <Canvas>
 	<Story name="Basic List">{Template.bind({})}</Story>
@@ -35,84 +35,58 @@ import { Card } from 'artific-ui/Card';
 
 <ArgsTable story="Basic List"/>
 
-SGDS `Card` component is build on top of React-bootstrap.
-Please refer to https://react-bootstrap.github.io/components/cards/#api for more detailed API documentation
 
 ## List Themes
 
-Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+If you want to use a different theme for `Alert` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
+
+You can also use `colorScheme` prop to define a custom theme.
 
 <Canvas>
 	<Story name="List Themes">
-		<h5>Primary Basic List</h5>
-		<div className="row">
-			<div className="col-md-12">
-				<List theme="primary">
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-				</List>
-			</div>
-		</div>
+		<List>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
 		<br/>
 		<br/>
-		<h5>Secondary Basic List</h5>
-		<div className="row">
-			<div className="col-md-12">
-				<List theme="secondary">
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-				</List>
-			</div>
-		</div>
+		<List theme="secondary">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
 		<br/>
 		<br/>
-		<h5>Dark Basic List</h5>
-		<div className="row">
-			<div className="col-md-12">
-				<List theme="dark">
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-				</List>
-			</div>
-		</div>
+		<List theme="dark">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
 		<br/>
 		<br/>
-		<h5>Light Basic List</h5>
-		<div className="row">
-			<div className="col-md-12">
-				<List theme="light">
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-				</List>
-			</div>
-		</div>
+		<List theme="light">
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
 		<br/>
 		<br/>
-		<h5>Custom List</h5>
-		<div className="row">
-			<div className="col-md-12">
-				<List theme="primary" colorScheme={{
-					background: 'linear-gradient(45deg, #e736f4, #673ab7)',
-					backgroundColor: '#e736f4',
-					color: 'white',
-				}}>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-					<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-				</List>
-			</div>
-		</div>
-		<br/>
-		<br/>
+		<List theme="primary" colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		}}>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
+		</List>
 		<br/>
 		<br/>
 	</Story>
@@ -121,25 +95,29 @@ Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` 
 
 ## Basic List With Icons
 
-Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+Use `prefix` or `suffix` to add a icon to your list at the start or end respectively.
 
 <Canvas>
 	<Story name="Basic List With Icons">
-		<h5>Basic List With Icons</h5>
 		<List variant="expanded" theme="light">
 			<ListItem prefix={<i className='bx bx-expand-vertical'></i>}>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem suffix={<i className='bx bx-expand-vertical'></i>}>Lorem ipsum dolor sit amet.</ListItem>
 		</List>
+		<br/>
+		<br/>
 	</Story>
 </Canvas>
 
 ## List Layouts
 
-Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+List Has basic four layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`)
+
+`Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
 <Canvas>
 	<Story name="List Layouts">
-		<h6>Default</h6>
 		<List layout="default" theme="light">
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -148,7 +126,6 @@ Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` 
 		</List>
 		<br/>
 		<br/>
-		<h6>Rounded</h6>
 		<List layout="rounded" theme="light">
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -157,7 +134,6 @@ Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` 
 		</List>
 		<br/>
 		<br/>
-		<h6>No Radius</h6>
 		<List layout="no-radius" theme="light">
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -171,11 +147,12 @@ Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` 
 
 ## List Directions
 
-Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+Use `direction` prop to set the direction flow of your list.
+
+Followings are the value for `direction` props (`column`|`row`)
 
 <Canvas>
 	<Story name="List Directions">
-		<h6>Default Direction Column</h6>
 		<List direction="column" theme="light">
 			<ListItem>Lorem ipsum</ListItem>
 			<ListItem>Lorem ipsum</ListItem>
@@ -184,8 +161,7 @@ Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` 
 		</List>
 		<br/>
 		<br/>
-		<h6>Direction Row</h6>
-		<List direction="row">
+		<List theme="light" direction="row">
 			<ListItem>Lorem ipsum</ListItem>
 			<ListItem>Lorem ipsum</ListItem>
 			<ListItem>Lorem ipsum</ListItem>
@@ -198,11 +174,14 @@ Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` 
 
 ## List Sizes
 
-Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <Canvas>
 	<Story name="List Sizes">
-		<h6>Extra small</h6>
 		<List size="xs" theme="light">
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -211,7 +190,6 @@ Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` 
 		</List>
 		<br/>
 		<br/>
-		<h6>Small</h6>
 		<List size="sm" theme="light">
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -220,7 +198,6 @@ Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` 
 		</List>
 		<br/>
 		<br/>
-		<h6>Default/Medium</h6>
 		<List size="md" theme="light">
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -229,7 +206,6 @@ Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` 
 		</List>
 		<br/>
 		<br/>
-		<h6>Large</h6>
 		<List size="lg" theme="light">
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -238,7 +214,6 @@ Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` 
 		</List>
 		<br/>
 		<br/>
-		<h6>Extra Large</h6>
 		<List size="xl" theme="light">
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -252,29 +227,16 @@ Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` 
 
 ## List Variants
 
-Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` to add a hyperlink
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`striped`|`separate`|`borderless`|`bordered`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
 
 <Canvas>
 	<Story name="List Variants">
-		<h6>Default</h6>
 		<List variant="default" theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<h6>Striped</h6>
-		<List variant="striped" theme="primary">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List variant="striped" theme="secondary">
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -290,17 +252,6 @@ Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` 
 		</List>
 		<br/>
 		<br/>
-		<List variant="striped" theme="dark">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-		<h6>Separate</h6>
 		<List variant="separate" theme="light">
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -309,7 +260,6 @@ Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` 
 		</List>
 		<br/>
 		<br/>
-		<h6>Borderless</h6>
 		<List variant="borderless" theme="light">
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -318,7 +268,6 @@ Use `Card.Link` to add a link to your card. Wrap Card elements with `Card.Link` 
 		</List>
 		<br/>
 		<br/>
-		<h6>Bordered</h6>
 		<List variant="bordered" theme="light">
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>

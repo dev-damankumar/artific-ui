@@ -58,22 +58,23 @@ export const defaultProps = {
 
 
 export interface ICardImageProps {
-	layout?: Layouts,
+	layout?: CardLayouts | Layouts,
 	className?: string,
 	src: string,
 	alt?: string,
-	size?: Sizes
+	size?: Sizes,
+	direction?: LayoutDirections;
 }
 
 export const ICardImagePropsTypes = {
-	layout: PropTypes.oneOf(LayoutsArray),
+	layout: PropTypes.oneOf([...LayoutsArray, ...CardLayoutsArray]),
 	className: PropTypes.string,
 	alt: PropTypes.string,
 	src: PropTypes.string.isRequired,
 	size: PropTypes.oneOf<Sizes>(SizesArray),
+	direction: PropTypes.oneOf(LayoutDirectionsArray),
 }
 
 export const ICardImageDefaultProps = {
-	layout: 'default' as Layouts,
 	size: 'md' as Sizes,
 }

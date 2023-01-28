@@ -6,6 +6,7 @@ import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
 import {IUl} from "../types/common";
 
+
 export const Pagination: React.FC<IPaginationProps & IUl> = (
 	{
 		children,

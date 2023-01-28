@@ -6,6 +6,7 @@ import uuid from "../utils/uuids/uuid";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {IDiv} from "../types/common";
 
+
 export const Progress: React.FC<IProgressProps & IDiv> = (
 	{
 		value,

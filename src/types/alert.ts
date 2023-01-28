@@ -1,20 +1,20 @@
 import {
-    ColorScheme,
-    CSSStyle,
-    Directions,
-    DirectionsArray,
-    Layouts,
-    LayoutsArray,
-    Sizes,
-    SizesArray,
-    Themes,
-    ThemesArray
+	ColorScheme,
+	CSSStyle,
+	Directions,
+	DirectionsArray,
+	Layouts,
+	LayoutsArray,
+	Sizes,
+	SizesArray,
+	Themes,
+	ThemesArray
 } from './common';
 import React from 'react';
 import PropTypes from "prop-types";
 
 
-export const VariantsArray = ['default', 'text', 'outline', 'note'] as const;
+export const VariantsArray = ['default', 'outline', 'note'] as const;
 export type Variants = typeof VariantsArray[number];
 
 

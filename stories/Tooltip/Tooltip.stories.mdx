@@ -5,7 +5,7 @@ import {Button, Tooltip} from '../../src';
 
 # Tooltip
 
-Custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+Tooltips display informative text when users hover over, focus on, or tap an element.
 
 export const defaultTemplate=(args) => <Tooltip title="This is tooltip">
 	<Button>Default Tooltip</Button>
@@ -25,35 +25,33 @@ import { Tooltip } from 'artific-ui/Tooltip';
 
 ## Tooltip Theme
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+If you want to use a different theme for `Tooltip` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
+
+You can also use `colorScheme` prop to define a custom theme.
 
 <Canvas>
 	<Story name="Tooltip Theme">
-		<h5>Default Theme</h5>
 		<Tooltip title="This is tooltip">
 			<Button>Default Tooltip</Button>
 		</Tooltip>
 		<br/>
 		<br/>
-		<h5>Secondary Theme</h5>
 		<Tooltip theme="secondary" title="This is tooltip">
 			<Button>Secondary Tooltip</Button>
 		</Tooltip>
 		<br/>
 		<br/>
-		<h5>Dark Theme</h5>
 		<Tooltip theme="dark" title="This is tooltip">
 			<Button>Dark Tooltip</Button>
 		</Tooltip>
 		<br/>
 		<br/>
-		<h5>Light Theme</h5>
 		<Tooltip theme="light" title="This is tooltip">
 			<Button>Light Tooltip</Button>
 		</Tooltip>
 		<br/>
 		<br/>
-		<h5>Custom Theme</h5>
 		<Tooltip colorScheme={{
 			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
 			backgroundColor: '#e736f4',
@@ -69,7 +67,9 @@ Use any of the available button themes types to quickly create a styled button. 
 
 ## Tooltip Placements
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+Use `placement` prop to set where the tooltip should appear
+
+possible values are (`bottom`|`bottom-start`|`bottom-end`|`top`|`top-start`|`top-end`|`right`|`right-start`|`right-end`|`bottom`|`bottom-start`|`bottom-end`)
 
 <Canvas>
 	<Story name="Tooltip Placements">
@@ -123,29 +123,29 @@ Use any of the available button themes types to quickly create a styled button. 
 
 ## Tooltip Layouts
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+Tooltip Has basic four layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
+
+`Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
 <Canvas>
 	<Story name="Tooltip Layouts">
-		<h5>Default Layouts</h5>
 		<Tooltip layout="default" title="This is tooltip">
 			<Button>Default Tooltip</Button>
 		</Tooltip>
 		<br/>
 		<br/>
-		<h5>Rounded Layouts</h5>
 		<Tooltip layout="rounded" title="This is tooltip">
 			<Button>Rounded Tooltip</Button>
 		</Tooltip>
 		<br/>
 		<br/>
-		<h5>No Radius Layouts</h5>
 		<Tooltip layout="no-radius" title="This is tooltip">
 			<Button>No Radius Tooltip</Button>
 		</Tooltip>
 		<br/>
 		<br/>
-		<h5>Pill Layouts</h5>
 		<Tooltip layout="pill" title="This is tooltip">
 			<Button>Pill Tooltip</Button>
 		</Tooltip>
@@ -156,20 +156,60 @@ Use any of the available button themes types to quickly create a styled button. 
 
 ## Tooltip Variants
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`arrow`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
 
 <Canvas>
 	<Story name="Tooltip Variants">
-		<h5>Default Variant</h5>
 		<Tooltip variant="default" title="This is tooltip">
 			<Button>Default Tooltip</Button>
 		</Tooltip>
 		<br/>
 		<br/>
-		<h5>Arrow Variant</h5>
 		<Tooltip variant="arrow" title="This is tooltip">
 			<Button>Arrow Tooltip</Button>
 		</Tooltip>
 	</Story>
 </Canvas>
 
+## Tooltip Sizes
+
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
+
+<Canvas>
+	<Story name="Tooltip Sizes">
+		<Tooltip size="xs" title="This is tooltip">
+			<Button>Tooltip</Button>
+		</Tooltip>
+		<br/>
+		<br/>
+		<Tooltip size="sm" title="This is tooltip">
+			<Button>Tooltip</Button>
+		</Tooltip>
+		<br/>
+		<br/>
+		<Tooltip size="md" title="This is tooltip">
+			<Button>Tooltip</Button>
+		</Tooltip>
+		<br/>
+		<br/>
+		<Tooltip size="lg" title="This is tooltip">
+			<Button>Tooltip</Button>
+		</Tooltip>
+		<br/>
+		<br/>
+		<Tooltip size="xl" title="This is tooltip">
+			<Button>Tooltip</Button>
+		</Tooltip>
+		<br/>
+		<br/>
+	</Story>
+</Canvas>

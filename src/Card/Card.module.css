@@ -2,7 +2,7 @@
 	--card-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.1);
 	--card-box-shadow-hover: 0 1px 13px rgba(0, 0, 0, 0.1);
 	--card-border-radius: 5px;
-	--card-padding: 10px;
+	--card-padding: 15px;
 	--card-main-color: #f8f8f8;
 	--card-outline-width: 2px;
 	--card-border-color: #f0f0f0;
@@ -27,7 +27,166 @@
 	max-width: var(--card-width);
 }
 
+.card-body {
+	margin-top: 0;
+}
 
+.card-img-div-col {
+	margin-bottom: calc(var(--card-padding) + 5px) !important;
+}
+
+.card-img-no-margin {
+	margin-bottom: 0 !important;
+}
+
+.card-img-div {
+	max-width: var(--card-img-width);
+	margin-right: var(--card-padding);
+}
+
+.card-img-div img {
+	width: 100%;
+	height: 100%;
+	border-radius: var(--card-border-radius);
+}
+
+.card-row {
+	flex-direction: row;
+}
+
+.card:not(.card-fill,.card-fill-with-border,.card-outline):hover {
+	box-shadow: var(--card-box-shadow-hover);
+}
+
+.card > img {
+	width: 100%;
+	max-height: 500px;
+}
+
+/*=====Layouts=====*/
+
+.card-rounded {
+	--card-border-radius: 15px;
+}
+
+.card-no-radius {
+	--card-border-radius: 0px;
+}
+
+.card-image-no-radius {
+	--card-border-radius: 0
+}
+
+.card-image-rounded {
+	--card-border-radius: 15px;
+}
+
+.card-image-pill {
+	--card-border-radius: 50%;
+}
+
+
+/*=====Layouts End=====*/
+
+/*=====Variants=====*/
+.card-extended {
+	padding: 0 !important;
+	overflow: hidden;
+}
+
+.card-extended .card-body {
+	margin-top: 0 !important;
+	padding: calc(var(--card-padding) + 5px) !important;
+}
+
+.card-fill {
+	box-shadow: none;
+	background: var(--card-main-color);
+}
+
+.card-outline {
+	box-shadow: none;
+	border: var(--card-outline-width) solid var(--card-border-color);
+}
+
+.card-outline.bg-primary {
+	background: white;
+	color: var(--primary-color);
+	border-color: var(--primary-color);
+}
+
+.card-outline.bg-secondary {
+	background: white;
+	color: var(--secondary-color);
+	border-color: var(--secondary-color);
+}
+
+.card-outline.bg-dark {
+	background: white;
+	color: var(--dark-color);
+	border-color: var(--dark-color);
+}
+
+.card-outline.bg-light {
+	background: white;
+	color: var(--light-color);
+	border-color: var(--light-color);
+}
+
+
+.card-fill-with-border {
+	box-shadow: none;
+	background: var(--card-main-color);
+	border: var(--card-outline-width) solid var(--card-border-color);
+}
+
+/*=====Variants End=====*/
+
+
+/*=====Colors=====*/
+
+.bg-primary {
+	background: var(--primary);
+	color: var(--primary-text);
+}
+
+.bg-primary a {
+	color: var(--primary-text);
+	font-weight: 600;
+}
+
+.bg-secondary {
+	background: var(--secondary);
+	color: var(--secondary-text);
+}
+
+.bg-secondary a {
+	color: var(--secondary-text);
+	font-weight: 600;
+}
+
+.bg-light {
+	background: var(--light);
+	color: var(--light-text);
+}
+
+.bg-light a {
+	color: var(--light-text);
+	font-weight: 600;
+}
+
+.bg-dark {
+	background: var(--dark);
+	color: var(--dark-text);
+}
+
+.bg-dark a {
+	color: var(--dark-text);
+	font-weight: 600;
+}
+
+/*=====Colors End=====*/
+/*=====Sizes=====*/
 .card-large {
 	--card-width: 80%
 }
@@ -42,63 +201,6 @@
 
 .card-extra-small {
 	--card-width: 20%
-}
-
-.card-row {
-	flex-direction: row;
-}
-
-.card:not(.card-fill,.card-fill-with-border,.card-outline):hover {
-	box-shadow: var(--card-box-shadow-hover);
-}
-
-.card-rounded {
-	--card-border-radius: 15px;
-}
-
-.card-no-radius {
-	--card-border-radius: 0px;
-}
-
-.card > img {
-	width: 100%;
-	max-height: 500px;
-}
-
-.card-extended {
-	padding: 0 !important;
-	overflow: hidden;
-}
-
-.card-body {
-	margin-top: calc(var(--card-padding) + 5px) !important;
-}
-
-.card-extended .card-body {
-	margin-top: 0 !important;
-	padding: calc(var(--card-padding) + 5px) !important;
-}
-
-.card-img-div {
-	max-width: var(--card-img-width);
-}
-
-.card-img-div img {
-	width: 100%;
-	height: 100%;
-	border-radius: var(--card-border-radius);
-}
-
-.card-image-no-radius {
-	--card-border-radius: 0
-}
-
-.card-image-rounded {
-	--card-border-radius: 15px;
-}
-
-.card-image-pill {
-	--card-border-radius: 50%;
 }
 
 .card-image-large {
@@ -117,95 +219,7 @@
 	--card-img-width: 20%
 }
 
-.card-title {
-	color: inherit;
-	font-size: 20px;
-	font-weight: 600;
-	margin: 10px auto;
-}
-
-.card-subtitle {
-	color: #505050;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 20px;
-	margin-bottom: 10px;
-}
-
-.bg-primary {
-	background: var(--primary) !important;
-	color: white !important;
-}
-
-.bg-primary a {
-	color: var(--primary) !important;
-	filter: brightness(300%);
-	font-weight: 600;
-}
-
-.bg-light {
-	background: var(--light) !important;
-	color: #303a52 !important;
-}
-
-.bg-light a {
-	color: var(--dark) !important;
-	font-weight: 600;
-}
-
-.bg-dark {
-	background: var(--dark) !important;
-	color: white !important;
-}
-
-.bg-dark a {
-	color: var(--light) !important;
-	font-weight: 600;
-}
-
-.card-btn {
-	border: none;
-	margin: 0;
-	padding: 7px 20px;
-	display: block;
-	border-radius: 8px;
-	font-size: 14px;
-	margin-top: 20px;
-	font-weight: 700;
-	color: #333;
-	cursor: pointer;
-}
-
-.card.card-center {
-	text-align: center;
-}
-
-.card.card-center .card-btn {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.card-fill {
-	box-shadow: none;
-	background: var(--card-main-color);
-}
-
-.card-outline {
-	box-shadow: none;
-	border: var(--card-outline-width) solid var(--card-border-color);
-}
-
-.card-fill-with-border {
-	box-shadow: none;
-	background: var(--card-main-color);
-	border: var(--card-outline-width) solid var(--card-border-color);
-}
-
-.card-row .card-body {
-	margin-top: 0 !important;
-	margin-left: var(--card-padding);
-}
-
+/*=====Sizes End=====*/
 @media screen and (max-width: 500px) {
 	.card-title {
 		font-size: 16px;

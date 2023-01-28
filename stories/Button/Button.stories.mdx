@@ -5,15 +5,10 @@ import {Button} from '../../src/index';
 
 # Buttons
 
-Custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+Buttons allow users to take actions, and make choices, with a single tap.
 
 export const defaultTemplate=(args) => {
-	return <>
-		<Button {...args}>Default</Button>
-		<br/>
-		<br/>
-		<Button fullWidth>Full width button</Button>
-	</>
+	return <Button {...args}>Default</Button>
 };
 
 <Canvas>
@@ -28,12 +23,13 @@ import { Button } from 'artific-ui/Button';
 
 <ArgsTable story="Default"/>
 
-## Themes
+## Button Themes
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+If you want to use a different theme for `Button` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
 
 <Canvas>
-	<Story name="Themes">
+	<Story name="Button Themes">
 		<Button theme="primary" type="button">Primary</Button>
 		<Button theme="secondary" type="button">Secondary</Button>
 		<Button theme="light" type="button">Light</Button>
@@ -41,91 +37,12 @@ Use any of the available button themes types to quickly create a styled button. 
 	</Story>
 </Canvas>
 
+## Custom Theme Buttons
 
-## Variants
+If you want to use a different color scheme for `Button` instead of the provided themes then you can use
+`colorScheme` props to define your color scheme.
 
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
-
-<Canvas>
-	<Story name="Variants">
-		<Button variant="default" type="button">Default</Button>
-		<Button variant="text" type="button">Text</Button>
-		<Button variant="outline" type="button">Outline</Button>
-	</Story>
-</Canvas>
-
-## Icons In Buttons
-
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
-
-<Canvas>
-	<Story name="Icons In Buttons">
-		<Button prefix={<i className='bx bxs-user-circle'></i>} type="button">User</Button>
-		<Button theme="light" type="button" suffix={<i className='bx bx-cog'></i>}>Settings</Button>
-		<Button theme="dark"
-				prefix={<img src="https://www.freepnglogos.com/uploads/logo-outlook/transparent-outlook-icon-2.png"/>}
-				type="button">User</Button>
-		<Button theme="light" type="button" suffix={<img
-			src="https://www.freepnglogos.com/uploads/logo-outlook/transparent-outlook-icon-2.png"/>}>Settings</Button>
-	</Story>
-</Canvas>
-
-## Button Layouts
-
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
-
-<Canvas>
-	<Story name="Button Layouts">
-		<Button layout="default" type="button">Default</Button>
-		<Button layout="rounded" type="button">Rounded</Button>
-		<Button layout="pill" type="button">Pill</Button>
-		<Button layout="no-radius" type="button">No Radius</Button>
-	</Story>
-</Canvas>
-
-## Sizes
-
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
-
-<Canvas>
-	<Story name="Sizes">
-		<Button size="xs" type="button">Extra Small</Button>
-		<Button size="sm" type="button">Small</Button>
-		<Button type="button">default</Button>
-		<Button size="lg" type="button">Large</Button>
-		<Button size="xl" type="button">Extra Large</Button>
-	</Story>
-</Canvas>
-
-## Disabled Buttons
-
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
-
-<Canvas>
-	<Story name="Disabled Buttons">
-		<Button disabled type="button">Primary</Button>
-		<Button disabled theme="light" type="button">Light</Button>
-		<Button disabled theme="dark" type="button">Dark</Button>
-	</Story>
-</Canvas>
-
-## Loading buttons
-
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
-
-<Canvas>
-	<Story name="Loading buttons">
-		<Button loading hideTextOnLoading loadingStyle="spin" type="button">Loading Grow</Button>
-		<Button loading hideTextOnLoading loadingStyle="grow" type="button">Loading Grow</Button>
-		<Button loading loadingStyle="grow" type="button">Loading Grow</Button>
-		<Button loading loadingDirection="after" type="button">Loading Spin</Button>
-		<Button loading loadingDirection="after" loadingStyle="grow" type="button">Loading Grow</Button>
-	</Story>
-</Canvas>
-
-## Custom theme buttons
-
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+colorScheme is an object containing three properties: `background`, `backgroundColor`, `color`
 
 <Canvas>
 	<Story name="Custom theme buttons">
@@ -149,3 +66,121 @@ Use any of the available button style types to quickly create a styled button. J
 		}} variant="outline" theme="light" type="button">Custom Outline</Button>
 	</Story>
 </Canvas>
+
+## Variants
+
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`text`|`outline`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
+
+<Canvas>
+	<Story name="Variants">
+		<Button variant="default" type="button">Default</Button>
+		<Button variant="text" type="button">Text</Button>
+		<Button variant="outline" type="button">Outline</Button>
+	</Story>
+</Canvas>
+
+## Icons In Buttons
+
+You can append or prepend an icon to the button with prop called `prefix` and `suffix`
+
+any jsx is allowed in these props.
+
+<Canvas>
+	<Story name="Icons In Buttons">
+		<Button
+			prefix={<i className='bx bxs-user-circle'></i>}
+			type="button"
+		>User
+		</Button>
+		<Button theme="light" type="button" suffix={<i className='bx bx-cog'></i>}>Settings</Button>
+		<Button theme="dark"
+				prefix={<img src="https://www.freepnglogos.com/uploads/logo-outlook/transparent-outlook-icon-2.png"/>}
+				type="button">User</Button>
+		<Button theme="light" type="button"
+				suffix={<img
+					src="https://www.freepnglogos.com/uploads/logo-outlook/transparent-outlook-icon-2.png"/>}>Settings</Button>
+	</Story>
+</Canvas>
+
+## Button Layouts
+
+Button Has basic four layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
+
+`Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
+
+<Canvas>
+	<Story name="Button Layouts">
+		<Button layout="default" type="button">Default</Button>
+		<Button layout="rounded" type="button">Rounded</Button>
+		<Button layout="pill" type="button">Pill</Button>
+		<Button layout="no-radius" type="button">No Radius</Button>
+	</Story>
+</Canvas>
+
+## Full Width Button
+
+Button has a `fullWidth` prop which is used to make a button full width
+
+<Canvas>
+	<Story name="Full Width Button">
+		<Button fullwidth type="button">Default</Button>
+	</Story>
+</Canvas>
+
+## Sizes
+
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
+
+<Canvas>
+	<Story name="Sizes">
+		<Button size="xs" type="button">Extra Small</Button>
+		<Button size="sm" type="button">Small</Button>
+		<Button type="button">default</Button>
+		<Button size="lg" type="button">Large</Button>
+		<Button size="xl" type="button">Extra Large</Button>
+	</Story>
+</Canvas>
+
+## Disabled Buttons
+
+Use `disabled` prop to make any button disable.
+
+<Canvas>
+	<Story name="Disabled Buttons">
+		<Button disabled type="button">Primary</Button>
+		<Button disabled theme="light" type="button">Light</Button>
+		<Button disabled theme="dark" type="button">Dark</Button>
+	</Story>
+</Canvas>
+
+## Loading Buttons
+
+When you click the button you can set it to loading state with the prop called `loading`
+
+also you can choose to hide the text of button when `loading` is true, by setting with the `hideTextOnLoading` props
+
+also you can use `loadingStyle:` (`spin`|`grow`) to change the loading style.
+
+use `loadingDirection` to set on with direction loader should appare.
+
+<Canvas>
+	<Story name="Loading Buttons">
+		<Button loading hideTextOnLoading loadingStyle="spin" type="button">Loading Grow</Button>
+		<Button loading hideTextOnLoading loadingStyle="grow" type="button">Loading Grow</Button>
+		<Button loading loadingStyle="grow" type="button">Loading Grow</Button>
+		<Button loading loadingDirection="after" type="button">Loading Spin</Button>
+		<Button loading loadingDirection="after" loadingStyle="grow" type="button">Loading Grow</Button>
+	</Story>
+</Canvas>
+

@@ -34,8 +34,7 @@ export const Alert: React.FC<IAlertProps & IDiv> = (
 		setShow(false);
 	};
 
-	const additionalVariantClasses = `${direction && direction !== 'left' && `${componentSelector}-note-${direction}`} ${variant === 'note' && 'alert-outline'} ${variant === 'text' && 'alert-outline'}`;
-
+	const additionalVariantClasses = `${(variant === 'note' && direction && direction !== 'left') ? `${componentSelector}-note-${direction} ${(variant === 'note') && 'alert-outline'}` : ''}`;
 	return show ? (
 		<>
 			{customCss && customCss()}

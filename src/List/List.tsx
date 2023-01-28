@@ -6,6 +6,7 @@ import {IUl} from "../types/common";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
 
+
 export const List: React.FC<IListProps & IUl> = (
 	{
 		className,

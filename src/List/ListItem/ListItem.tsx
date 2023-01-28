@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from '../List.module.css';
-import bgClasses from '../../bg.module.css';
+import bgClasses from '../../color.module.css';
 import getClassNames from '../../utils/classes/getClassnames';
 import {IListItemProps} from '../../types/list';
 import {ILi} from "../../types/common";

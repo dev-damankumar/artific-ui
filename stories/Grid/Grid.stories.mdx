@@ -25,9 +25,9 @@ export const Template=(args) => {
 	</>
 };
 
-# Spinners
+# Grids
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+The grid creates visual consistency between layouts while allowing flexibility across a wide variety of designs. Material Design's responsive UI is based on a 12-column grid layout.
 
 <Canvas>
 	<Story name="Default">{Template.bind({})}</Story>
@@ -43,18 +43,24 @@ import { Container,Row,Col } from 'artific-ui';
 
 ## Containers
 
-Alerts are available for any length of text, as well as an optional dismiss button.For proper styling, use one of the eight ** variant ** colors provided.You may also choose to slot in your icons from any libraries to make your information clearer and user - friendly.
+The container centers your content horizontally. It's the most basic layout element.
 
 <Canvas>
 	<Story name="Containers">
-		<h5>Basic Containers</h5>
 		<Container style={{background: '#f1f1f1', padding: '20px', height: 100}}>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consectetur et facere maxime
 				molestiae omnis porro praesentium quisquam recusandae reprehenderit.</p>
 		</Container>
-		<br/>
-		<br/>
-		<h5>Basic Container Fluid</h5>
+	</Story>
+</Canvas>
+
+
+## Container Fluid
+
+A fluid container width is bounded by the 100% screen width
+
+<Canvas>
+	<Story name="Container Fluid">
 		<Container fluid={true} style={{background: '#f1f1f1', padding: '20px', height: 100}}>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consectetur et facere maxime
 				molestiae omnis porro praesentium quisquam recusandae reprehenderit.</p>
@@ -62,9 +68,10 @@ Alerts are available for any length of text, as well as an optional dismiss butt
 	</Story>
 </Canvas>
 
+
 ## Grids
 
-Alerts are available for any length of text, as well as an optional dismiss button.For proper styling, use one of the eight ** variant ** colors provided.You may also choose to slot in your icons from any libraries to make your information clearer and user - friendly.
+The grid creates visual consistency between layouts while allowing flexibility across a wide variety of designs. Material Design's responsive UI is based on a 12-column grid layout.
 
 export const GridTemplate=(args) => {
 	const colStyle={
@@ -119,3 +126,5 @@ export const GridTemplate=(args) => {
 		{GridTemplate.bind({})}
 	</Story>
 </Canvas>
+
+

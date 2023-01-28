@@ -14,13 +14,12 @@ const getDefaultClasses = (styles: CSSClasses, componentSelector: ComponentsType
 	const layoutClass = layout !== 'default' ? `${componentSelector}-${layout}` : '';
 	const variantClass = variant !== 'default' ? `${componentSelector}-${variant}` : '';
 	const themeClass = !colorScheme ? theme !== 'default' ? `${componentSelector}-${theme}` : `${componentSelector}-primary` : `${componentSelector}-primary`;
-	console.log('themeClass', themeClass)
 	const sizeClass = sizeClasses(componentSelector, size);
-	const customCss = applyColorScheme(componentSelector, colorScheme, componentId, variant)
+	const customCss = applyColorScheme(componentSelector, colorScheme, componentId)
 	return {
 		componentId,
 		customCss,
-		classNames: `${componentSelector} ${componentId} ${className} ${getClassNames(styles, themeClass, layoutClass, variantClass, sizeClass, componentSelector)}`
+		classNames: `${componentSelector !== 'accordion' ? componentSelector : ''} ${componentId} ${className} ${getClassNames(styles, themeClass, layoutClass, variantClass, sizeClass, componentSelector !== 'accordion' ? componentSelector : '')}`
 	}
 }
 

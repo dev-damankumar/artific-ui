@@ -6,6 +6,7 @@ import {ILink} from "../../types/common";
 
 export const MenuItem: React.FC<IMenuItemProps & ILink> = (
 	{
+		active,
 		onSelect,
 		className,
 		style,
@@ -25,7 +26,7 @@ export const MenuItem: React.FC<IMenuItemProps & ILink> = (
 					closeHandler!();
 				}
 			}}
-			className={`${getClassNames(classes, 'dropdown-item')} ${className}`}
+			className={`${getClassNames(classes, 'dropdown-item', active ? 'active' : '')} ${className}`}
 		>
 			{children}
 		</a>

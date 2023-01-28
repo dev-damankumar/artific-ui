@@ -1,0 +1,99 @@
+import {ArgsTable, Canvas, Meta, Source, Story} from '@storybook/addon-docs';
+import {Button, ThemeProvider} from '../../src/index';
+
+<Meta title="Components/ThemeProvider" component={ThemeProvider}/>
+
+# ThemeProvider
+
+ThemeProvider allow users to define their own theming for the components globally.
+
+export const defaultTemplate=(args) => {
+	const theme={
+		secondary: {
+			main: '#F4D35E',
+			text: 'white',
+		},
+		primary: {
+			main: '#DA4167',
+			text: 'white'
+		},
+		light: {
+			main: '#fffce6',
+			text: '#000'
+		},
+		dark: {
+			main: '#173658',
+			text: 'white'
+		}
+	}
+	return <>
+		<h5>Default Theme</h5>
+		<Button theme="primary" {...args}>Primary</Button>
+		<Button theme="secondary" {...args}>Secondary</Button>
+		<Button theme="dark" {...args}>Dark</Button>
+		<Button theme="light" {...args}>Light</Button>
+		<br/>
+		<br/>
+		<h5>Custom Theme</h5>
+		<ThemeProvider theme={theme}>
+			<Button theme="primary" {...args}>Primary</Button>
+			<Button theme="secondary" {...args}>Secondary</Button>
+			<Button theme="dark" {...args}>Dark</Button>
+			<Button theme="light" {...args}>Light</Button>
+		</ThemeProvider>
+	</>
+};
+
+<Canvas>
+	<Story name="Default">{defaultTemplate.bind({})}</Story>
+</Canvas>
+
+## API
+
+```jsx
+import { ThemeProvider } from 'artific-ui/ThemeProvider';
+```
+
+<ArgsTable story="Default"/>
+
+## Basics
+
+If you want to use a custom theme for entire library use `ThemeProvider` and wrap it around your `app.js` or root component.
+
+Provide theme object where each property donaetes the main themes ie. (`primary`|`secondary`|`dark`|`light`);
+
+Each Theme is a object with two properties (`main`,`text`)
+
+`main` prop value can either be string defining color or can be object defining two properties `background` and `backgroundColor`.
+
+The main purpose of this is to let you use gradients without disrupting the styings so when you provide object to the main property.
+`background` with be your gradient color or image (this prop is similar to css background property) and `backgroundColor` will be your simple color
+
+`text` props value is a string that will be your text color
+
+<Source
+	language='js'
+	dark
+	format={true}
+	code={`{
+		primary: {
+			main: {
+				background: linear-gradient(to right, #43cea2, #185a9d);
+				backgroundColor:'red';
+			},
+			text: 'white'
+		},
+		secondary: {
+			main: '#F4D35E',
+			text: 'white',
+		},
+		light: {
+			main: '#fffce6',
+			text: '#000'
+		},
+		dark: {
+			main: '#173658',
+			text: 'white'
+		}
+	}`}
+/>

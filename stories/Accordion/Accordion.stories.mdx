@@ -9,14 +9,14 @@ import {Accordion, AccordionBody, AccordionHeader, AccordionPanel} from '../../s
 
 # Accordion
 
-Build vertically collapsing accordions in combination with the Collapse component.
+The accordion component allows the user to show and hide sections of related content on a page.
 
-As our components are built on top of `React-Bootstrap` library, do check out the detailed `Accordion` API references <a href="https://react-bootstrap.github.io/components/accordion/" target="_blank">here</a>.
+An accordion is a lightweight container that may either be used standalone, or be connected to a larger surface, such as a card.
 
 ## Basic Accordion
 
 export const Template=(args) => (
-	<Accordion {...args}>
+	<Accordion  {...args}>
 		<AccordionPanel>
 			<AccordionHeader>Is you.accordion-panelr team updated with latest web technical skills?</AccordionHeader>
 			<AccordionBody>
@@ -59,9 +59,6 @@ export const Template=(args) => (
 <Canvas>
 	<Story
 		name="Basic"
-		args={{
-			defaultActiveKey: '0',
-		}}
 	>
 		{Template.bind({})}
 	</Story>
@@ -77,14 +74,16 @@ import { Accordion } from 'artific-ui/Accordion';
 
 ## Accordion Themes
 
-If you want your `Accordion` to start in a fully-collapsed state, then simply don't pass in a `defaultActiveKey` prop to `Accordion`.
+If you want to use a different theme for `accordion` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them
 
 <Canvas>
-	<Story name="Primary Accordion">
+	<Story name="Accordion Themes">
 		<Accordion>
 			<AccordionPanel>
 				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+					skills?
+				</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -245,11 +244,25 @@ If you want your `Accordion` to start in a fully-collapsed state, then simply do
 				</AccordionBody>
 			</AccordionPanel>
 		</Accordion>
-		<Accordion colorScheme={{
-			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
-			backgroundColor: '#e736f4',
-			color: 'white',
-		}} theme="primary">
+	</Story>
+</Canvas>
+
+## Accordion Custom Themes
+
+If you want to use a different color scheme for `accordion` instead of the provided themes then  you can use
+`colorScheme` props to define your color scheme.
+
+colorScheme is an object containing three properties: `background`, `backgroundColor`, `color`
+
+<Canvas>
+	<Story name="Accordion Custom Themes">
+		<Accordion
+			variant="outlined"
+			colorScheme={{
+				background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+				backgroundColor: '#e736f4',
+				color: 'white',
+			}} theme="primary">
 			<AccordionPanel>
 				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
 					skills?</AccordionHeader>
@@ -293,20 +306,23 @@ If you want your `Accordion` to start in a fully-collapsed state, then simply do
 	</Story>
 </Canvas>
 
-## Basic Accordion Prefix And Suffix icons
 
-When `alwaysOpen` is true, `defaultActiveKey` prop becomes an array of active keys. The AccordionItem remains open even when the next AccordionItem is opened.
+## Prefix And Suffix icons
 
-Control which AccordionItem should be open on first load by defining `defaultActiveKey` array with the `eventKey`
+You can add icons to the start or end of `AccordionHeader`.
+
+provide the prop `prefix` or `suffix` or both to the `AccordionHeader` to add the icons.
 
 <Canvas>
 	<Story
-		name="Basic Accordion Prefix And Suffix icons"
+		name="Prefix And Suffix icons"
 	>
 		<Accordion>
 			<AccordionPanel>
-				<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>}>Is you.accordion-panelr team updated with
-					latest web technical skills?</AccordionHeader>
+				<AccordionHeader
+					prefix={<i className='bx bx-bowl-hot'></i>}>
+					Lorem ipsum dolor sitamet.
+				</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -318,8 +334,9 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 			<AccordionPanel>
-				<AccordionHeader suffix={<i className='bx bx-bowl-hot'></i>}>Is you.accordion-panelr team updated with
-					latest web technical skills?</AccordionHeader>
+				<AccordionHeader
+					suffix={<i className='bx bx-bowl-hot'></i>}>Lorem ipsum dolor sit amet.
+				</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -331,9 +348,11 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 			<AccordionPanel>
-				<AccordionHeader suffix={<i className='bx bx-bowl-hot'></i>}
-								 prefix={<i className='bx bx-bowl-hot'></i>}>Is you.accordion-panelr team updated with
-					latest web technical skills?</AccordionHeader>
+				<AccordionHeader
+					suffix={<i className='bx bx-bowl-hot'></i>}
+					prefix={<i className='bx bx-bowl-hot'></i>}
+				>Lorem ipsum dolor sit amet.
+				</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -350,19 +369,18 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 
 ## Indicator Icon Directions
 
-When `alwaysOpen` is true, `defaultActiveKey` prop becomes an array of active keys. The AccordionItem remains open even when the next AccordionItem is opened.
+You can choose where accordion's indicator icon should appear when opening and closing the panel
 
-Control which AccordionItem should be open on first load by defining `defaultActiveKey` array with the `eventKey`
+Control which it direction should be by providing it `indicatorDirection` of `start` or `end`
 
 <Canvas>
 	<Story
 		name="Indicator Icon Directions"
 	>
-		<h3>Default/End Direction</h3>
-		<Accordion theme="primary" indicatorDirection="end">
+		<h5>Default/End Direction</h5>
+		<Accordion>
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -374,8 +392,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -387,8 +404,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -401,10 +417,10 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 			</AccordionPanel>
 		</Accordion>
 		<br/>
-		<h3>Start Direction</h3>
-		<Accordion theme="primary" indicatorDirection="start">
+		<h5>Start Direction</h5>
+		<Accordion indicatorDirection="start">
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -416,7 +432,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated wl skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -428,8 +444,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -446,16 +461,18 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 
 ## Accordion Layout
 
-When `alwaysOpen` is true, `defaultActiveKey` prop becomes an array of active keys. The AccordionItem remains open even when the next AccordionItem is opened.
+Artific UI provides basic four layouts to choose from to define how you component's structure should look like.
 
-Control which AccordionItem should be open on first load by defining `defaultActiveKey` array with the `eventKey`
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
+
+Note: Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
 <Canvas>
 	<Story
 		name="Accordion Layout"
 	>
 		<h5>Basic Accordion Layout</h5>
-		<Accordion theme="primary" layout="default">
+		<Accordion layout="default">
 			<AccordionPanel>
 				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
 					skills?</AccordionHeader>
@@ -499,7 +516,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 		<br/>
 		<br/>
 		<h5>Rounded Accordion</h5>
-		<Accordion theme="primary" layout="rounded">
+		<Accordion layout="rounded">
 			<AccordionPanel>
 				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
 					skills?</AccordionHeader>
@@ -543,7 +560,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 		<br/>
 		<br/>
 		<h5>No Radius Accordion</h5>
-		<Accordion theme="primary" layout="no-radius">
+		<Accordion layout="no-radius">
 			<AccordionPanel>
 				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
 					skills?</AccordionHeader>
@@ -587,7 +604,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 		<br/>
 		<br/>
 		<h5>Pill Accordion</h5>
-		<Accordion theme="primary" layout="pill">
+		<Accordion layout="pill">
 			<AccordionPanel>
 				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
 					skills?</AccordionHeader>
@@ -633,19 +650,21 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 
 ## Accordion Variant
 
-When `alwaysOpen` is true, `defaultActiveKey` prop becomes an array of active keys. The AccordionItem remains open even when the next AccordionItem is opened.
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
 
-Control which AccordionItem should be open on first load by defining `defaultActiveKey` array with the `eventKey`
+Set `variant` prop with the value of (`default`|`attached`|`separate`|`outlined`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
 
 <Canvas>
 	<Story
 		name="Accordion Variant"
 	>
 		<h5>Default Accordion Variant</h5>
-		<Accordion theme="primary" variant="default">
+		<Accordion variant="default">
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -657,21 +676,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -686,10 +691,9 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 		<br/>
 		<br/>
 		<h5>Attached Accordion Variant</h5>
-		<Accordion theme="primary" variant="attached">
+		<Accordion variant="attached">
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -701,21 +705,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -730,10 +720,9 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 		<br/>
 		<br/>
 		<h5>Separate Accordion</h5>
-		<Accordion theme="primary" variant="separate">
+		<Accordion variant="separate">
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -745,21 +734,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -773,11 +748,10 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 		</Accordion>
 		<br/>
 		<br/>
-		<h5>Primary Outlined Accordion</h5>
-		<Accordion theme="primary" variant="outlined">
+		<h5>Outlined Accordion</h5>
+		<Accordion variant="outlined">
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -789,21 +763,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -815,158 +775,26 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 		</Accordion>
-		<br/>
-		<br/>
-		<h5>Seconadry Outlined Accordion</h5>
-		<Accordion theme="secondary" variant="outlined">
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-		</Accordion>
-		<br/>
-		<br/>
-		<h5>Dark Outlined Accordion</h5>
-		<Accordion theme="dark" variant="outlined">
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-		</Accordion>
-		<br/>
-		<br/>
-		<h5>Light Outlined Accordion</h5>
-		<Accordion theme="light" variant="outlined">
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-		</Accordion>
-		<br/>
-		<br/>
 	</Story>
 </Canvas>
 
 ## Accordion Sizes
 
-When `alwaysOpen` is true, `defaultActiveKey` prop becomes an array of active keys. The AccordionItem remains open even when the next AccordionItem is opened.
 
-Control which AccordionItem should be open on first load by defining `defaultActiveKey` array with the `eventKey`
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <Canvas>
 	<Story
 		name="Accordion Sizes"
 	>
 		<h5>Extra Small Sizing</h5>
-		<Accordion theme="primary" size="xs">
+		<Accordion size="xs">
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -978,21 +806,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -1009,8 +823,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 		<h5>Small Size Accordion</h5>
 		<Accordion theme="primary" size="sm">
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -1022,21 +835,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -1053,8 +852,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 		<h5>Default/Medium Accordion</h5>
 		<Accordion theme="primary" size="md">
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -1066,21 +864,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -1097,8 +881,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 		<h5>Large Accordion</h5>
 		<Accordion theme="primary" size="lg">
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -1110,21 +893,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -1141,8 +910,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 		<h5>Extra Large Accordion</h5>
 		<Accordion theme="primary" size="xl">
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis
@@ -1154,21 +922,7 @@ Control which AccordionItem should be open on first load by defining `defaultAct
 				</AccordionBody>
 			</AccordionPanel>
 			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
-				<AccordionBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-					eligendi eos fuga
-					iure omnis reprehenderit sequi unde.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-					harum officiis
-				</AccordionBody>
-			</AccordionPanel>
-			<AccordionPanel>
-				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
-					skills?</AccordionHeader>
+				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 					harum officiis

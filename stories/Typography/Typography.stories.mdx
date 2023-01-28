@@ -3,11 +3,11 @@ import {Typography} from '../../src/index';
 
 <Meta title="Components/Typography" component={Typography}/>
 
-# Buttons
+# Typography
 
-Custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+Use typography to present your design and content as clearly and efficiently as possible.
 
-export const defaultTemplate=(args) => <Typography {...args}>Default</Typography>;
+export const defaultTemplate=(args) => <Typography {...args}>Lorem ipsum dolor sit amet.</Typography>;
 
 <Canvas>
 	<Story name="Default">{defaultTemplate.bind({})}</Story>
@@ -23,7 +23,9 @@ import { Typography } from 'artific-ui/Typography';
 
 ## Default Typography
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+Use typography to present your design and content as clearly and efficiently as possible.
+
+you can use `as` props to define which element type your typography should have.
 
 <Canvas>
 	<Story name="Default Typography">
@@ -35,7 +37,7 @@ Use any of the available button themes types to quickly create a styled button. 
 
 ## Typography Weights
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+Use `weight` prop with value (`light`|`medium`|`bold`) to set the font weight.
 
 <Canvas>
 	<Story name="Typography Weights">
@@ -47,7 +49,7 @@ Use any of the available button themes types to quickly create a styled button. 
 
 ## Typography As HTML Element
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+Use `as` prop with value (`p`|`b`|`span`|`i`|`div`|`h1-h6`) to set the element type.
 
 <Canvas>
 	<Story name="Typography As HTML Element">
@@ -68,7 +70,12 @@ Use any of the available button themes types to quickly create a styled button. 
 
 ## Variants
 
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`subtitle`|`heading`|`caption`|`description`|`highlight`|`abbr`|`kbd`|`pre`|`code`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
 
 <Canvas>
 	<Story name="Variants">
@@ -91,11 +98,12 @@ Use any of the available button style types to quickly create a styled button. J
 			<h5>Heading Variants</h5>
 			<div className="row">
 				<div className="col-md-12">
-					<Typography weight="light" variant="heading">Heading Variant for typography</Typography>
-					<Typography weight="medium" variant="heading" as="span">Heading Variant for typography as
-						span</Typography>
-					<Typography weight="bold" variant="heading" as="div">Heading Variant for typography as
-						div</Typography>
+					<Typography as="h1" variant="heading">Heading Variant H1</Typography>
+					<Typography as="h2" variant="heading">Heading Variant H2</Typography>
+					<Typography as="h3" variant="heading">Heading Variant H3</Typography>
+					<Typography as="h4" variant="heading">Heading Variant H4</Typography>
+					<Typography as="h5" variant="heading">Heading Variant H5</Typography>
+					<Typography as="h6" variant="heading">Heading Variant H6</Typography>
 				</div>
 			</div>
 		</div>
@@ -320,15 +328,24 @@ Use any of the available button style types to quickly create a styled button. J
 	</Story>
 </Canvas>
 
-## Themes
+## Typography Themes
 
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+
+If you want to use a different theme for `Alert` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
+
+You can also use `colorScheme` prop to define a custom theme.
 
 <Canvas>
-	<Story name="Icons In Buttons">
+	<Story name="Typography Themes">
 		<Typography theme="primary">Default Paragraph</Typography>
 		<Typography theme="secondary">Default Paragraph</Typography>
 		<Typography style={{backgroundColor: 'black'}} theme="light">Default Paragraph</Typography>
 		<Typography theme="dark">Default Paragraph</Typography>
+		<Typography colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: "red",
+		}}>Default Paragraph</Typography>
 	</Story>
 </Canvas>

@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Canvas, Meta, Story} from '@storybook/addon-docs';
 import {Button, useLoader} from '../../src';
 
 
@@ -21,10 +21,10 @@ export const Template=(args) => {
 
 # Loaders
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+useLoader is used to show that a process is happening on the background and tells user to wait.
 
 <Canvas>
-	<Story name="Default">{Template.bind({})}</Story>
+	<Story name="Loaders">{Template.bind({})}</Story>
 </Canvas>
 
 ## API
@@ -33,7 +33,16 @@ Provide contextual feedback messages for typical user actions with the handful o
 import { useLoader } from 'artific-ui';
 ```
 
-<ArgsTable story="Default"/>
+<b>useLoader()</b> instance has following methods to use:
+
+`config()` to set the config and supported props to the loader.
+
+`show()` method is used to show the loader.
+
+`hide()`  method is used to hide the loader.
+
+`destroy()`  method is used to remove the loader from the DOM.
+
 
 export const DissmissableTemplate=(args) => {
 	const message=useLoader();
@@ -50,7 +59,9 @@ export const DissmissableTemplate=(args) => {
 
 # Dismissible
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+Dismissible Loader can be used to close the loader when user clicks on it.
+
+provide `{dismissible: true}` to the `config` method when instantiating loader.
 
 <Canvas>
 	<Story name="Dismissible">{DissmissableTemplate.bind({})}</Story>
@@ -76,12 +87,14 @@ export const ThemeTemplate=(args) => {
 	</div>
 };
 
-# Themes
+# Loader Themes
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+If you want to use a different theme for `Loader` use the `theme` prop in `config` method to set the theme
+
+Note: Loader only have basic twi themes ie. (`dark`|`light`). you can use either of them.
 
 <Canvas>
-	<Story name="Themes">{ThemeTemplate.bind({})}</Story>
+	<Story name="Loader Themes">{ThemeTemplate.bind({})}</Story>
 </Canvas>
 
 
@@ -114,7 +127,6 @@ export const VariantsTemplate=(args) => {
 		}}>
 			Default Loader Solid
 		</Button>
-		<br/>
 		<Button onClick={() => {
 			message3.show('Hi ! This is a message')
 		}}>
@@ -135,7 +147,12 @@ export const VariantsTemplate=(args) => {
 
 # Variants
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`blur`|`solid`). you can mix them with different supported `theme`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
 
 <Canvas>
 	<Story name="Variants">{VariantsTemplate.bind({})}</Story>
@@ -169,7 +186,6 @@ export const SizesTemplate=(args) => {
 		}}>
 			Default
 		</Button>
-		<br/>
 		<Button onClick={() => {
 			message3.show('Hi ! This is a message')
 		}}>
@@ -185,7 +201,11 @@ export const SizesTemplate=(args) => {
 
 # Sizes
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <Canvas>
 	<Story name="Sizes">{SizesTemplate.bind({})}</Story>

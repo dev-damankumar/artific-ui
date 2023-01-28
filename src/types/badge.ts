@@ -1,4 +1,4 @@
-import {ColorScheme, CSSStyle, Directions, DirectionsArray, Sizes, SizesArray, Themes, ThemesArray} from './common';
+import {ColorScheme, CSSStyle, Sizes, SizesArray, Themes, ThemesArray} from './common';
 import PropTypes from "prop-types";
 
 export const LayoutsArray = ['default', 'rounded', 'pill', 'no-radius', 'circular'] as const;
@@ -10,8 +10,6 @@ export type Variants = typeof VariantsArray[number];
 
 export const propTypes = {
 	style: PropTypes.object,
-	dismiss: PropTypes.bool,
-	direction: PropTypes.oneOf<Directions>(DirectionsArray),
 	theme: PropTypes.oneOf<Themes>(ThemesArray),
 	colorScheme: PropTypes.shape({
 		background: PropTypes.string.isRequired,
@@ -28,7 +26,6 @@ export const propTypes = {
 export const defaultProps = {
 	colorScheme: null,
 	theme: 'primary' as Themes,
-	direction: 'left' as Directions,
 	variant: 'default' as Variants,
 	layout: 'default' as Layouts,
 	size: 'md' as Sizes,
@@ -39,8 +36,6 @@ export const defaultProps = {
 
 export interface IBadgeProps {
 	style?: CSSStyle,
-	dismiss?: boolean,
-	direction?: Directions,
 	theme?: Themes,
 	colorScheme?: ColorScheme,
 	className?: string,

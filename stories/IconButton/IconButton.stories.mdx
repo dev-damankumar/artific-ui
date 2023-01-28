@@ -5,9 +5,9 @@ import {IconButton} from '../../src/index';
 
 # IconButtons
 
-Custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+Icon Button are used to show icons in the form of button
 
-export const defaultTemplate=(args) => <IconButton {...args}>Default</IconButton>;
+export const defaultTemplate=(args) => <IconButton {...args}><i className='bx bxs-color-fill'></i></IconButton>;
 
 <Canvas>
 	<Story name="Default">{defaultTemplate.bind({})}</Story>
@@ -21,12 +21,13 @@ import { IconButton } from 'artific-ui/IconButton';
 
 <ArgsTable story="Default"/>
 
-## Themes
+## IconButton Themes
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+If you want to use a different theme for `IconButton` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
 
 <Canvas>
-	<Story name="Themes">
+	<Story name="IconButton Themes">
 		<IconButton theme="primary" type="button"><i className='bx bxs-color-fill'></i></IconButton>
 		<IconButton theme="secondary" type="button"><i className='bx bxs-color-fill'></i></IconButton>
 		<IconButton theme="light" type="button"><i className='bx bxs-color-fill'></i></IconButton>
@@ -35,12 +36,17 @@ Use any of the available button themes types to quickly create a styled button. 
 </Canvas>
 
 
-## Variants
+## IconButton Variants
 
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`text`|`outline`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
 
 <Canvas>
-	<Story name="Variants">
+	<Story name="IconButton Variants">
 		<IconButton variant="default" type="button"><i className='bx bxs-color-fill'></i></IconButton>
 		<IconButton variant="text" type="button"><i className='bx bxs-color-fill'></i></IconButton>
 		<IconButton variant="outline" type="button"><i className='bx bxs-color-fill'></i></IconButton>
@@ -48,9 +54,13 @@ Use any of the available button style types to quickly create a styled button. J
 </Canvas>
 
 
-## Button Layouts
+## IconButton Layouts
 
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+IconButton Has basic four layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
+
+`Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
 <Canvas>
 	<Story name="Button Layouts">
@@ -63,7 +73,11 @@ Use any of the available button style types to quickly create a styled button. J
 
 ## Sizes
 
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <Canvas>
 	<Story name="Sizes">
@@ -77,7 +91,7 @@ Use any of the available button style types to quickly create a styled button. J
 
 ## Disabled IconButtons
 
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+Use `disabled` prop to make any button disable.
 
 <Canvas>
 	<Story name="Disabled IconButtons">
@@ -89,12 +103,19 @@ Use any of the available button style types to quickly create a styled button. J
 
 ## Loading IconButtons
 
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+When you click the button you can set it to loading state with the prop called `loading`
+
+also you can choose to hide the text of button when `loading` is true, by setting with the `hideTextOnLoading` props
+
+also you can use `loadingStyle:` (`spin`|`grow`) to change the loading style.
+
+use `loadingDirection` to set on with direction loader should appare.
 
 <Canvas>
 	<Story name="Loading IconButtons">
-		<IconButton loading hideTextOnLoading loadingStyle="spin" type="button"><i
-			className='bx bxs-color-fill'></i></IconButton>
+		<IconButton loading hideTextOnLoading loadingStyle="spin" type="button">
+			<i className='bx bxs-color-fill'></i>
+		</IconButton>
 		<IconButton loading hideTextOnLoading loadingStyle="grow" type="button"><i
 			className='bx bxs-color-fill'></i></IconButton>
 		<IconButton loading loadingStyle="grow" type="button"><i className='bx bxs-color-fill'></i></IconButton>
@@ -106,7 +127,10 @@ Use any of the available button style types to quickly create a styled button. J
 
 ## Custom theme IconButtons
 
-Use any of the available button style types to quickly create a styled button. Just modify the `variant` prop.
+If you want to use a different color scheme for `Alert` instead of the provided themes then you can use
+`colorScheme` props to define your color scheme.
+
+colorScheme is an object containing three properties: `background`, `backgroundColor`, `color`
 
 <Canvas>
 	<Story name="Custom theme IconButtons">

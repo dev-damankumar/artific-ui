@@ -5,7 +5,9 @@ import {Progress} from '../../src';
 
 # Progress
 
-Custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+Progress indicators commonly known as spinners, express an unspecified wait time or display the length of a process.
+
+use `value` | `values` props to set how much progress is done.
 
 export const defaultTemplate=(args) => <Progress value={50} {...args}/>;
 
@@ -23,7 +25,10 @@ import { Progress } from 'artific-ui/Progress';
 
 ## Progress Theme
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+If you want to use a different theme for `Progress` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
+
+You can also use `colorScheme` prop to define a custom theme.
 
 <Canvas>
 	<Story name="Progress Theme">
@@ -31,7 +36,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		<Progress theme="secondary" value={50}/>
 		<Progress theme="light" value={50}/>
 		<Progress theme="dark" value={50}/>
-		<h5>Custom Theme</h5>
 		<Progress value={50} colorScheme={{
 			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
 			backgroundColor: '#e736f4',
@@ -40,21 +44,35 @@ Use any of the available button themes types to quickly create a styled button. 
 	</Story>
 </Canvas>
 
-## Multiple Progress
+## Label Inside Progress
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+Use `label` props on `Progress` and value as `"inside"` to make label inside the bar.
+
 
 <Canvas>
-	<Story name="Multiple Progress">
-		<Progress theme="primary" barColors={['red', 'blue', 'green']} values={[50, 20, 10]}/>
-		<h5>Label Inside</h5>
+	<Story name="Label Inside Progress">
 		<Progress label="inside" theme="secondary" value={50}/>
 	</Story>
 </Canvas>
 
+## Multiple Progress
+
+Use `values` props to progres bar as number array ie.(number[]) if you want multiple progress bar.
+
+Use `barColors` props to define the color of progress bar. make sure colors passed in array are respective to the values. if no color is provides it will use default color for each bar.
+
+<Canvas>
+	<Story name="Multiple Progress">
+		<Progress theme="primary" barColors={['red', 'blue', 'green']} values={[50, 20, 10]}/>
+	</Story>
+</Canvas>
+
+
 ## Circular Progress
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+You can also make progress bar as circular by providing `circular` prop. same themes can be use on circular bar too.
+
+<b>Note: It does not support multiple bars</b>.
 
 <Canvas>
 	<Story name="Circular Progress">
@@ -64,7 +82,11 @@ Use any of the available button themes types to quickly create a styled button. 
 
 ## Progress Sizes
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <Canvas>
 	<Story name="Progress Sizes">
@@ -86,7 +108,11 @@ Use any of the available button themes types to quickly create a styled button. 
 
 ## Progress Layouts
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+Progress Has basic four layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`|`line`)
+
+`Note:` circular progress bar only has (`default`|`line`) layouts
 
 <Canvas>
 	<Story name="Progress Layouts">
@@ -105,7 +131,12 @@ Use any of the available button themes types to quickly create a styled button. 
 
 ## Progress Variants
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`fluid`|`striped`|`outline`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
 
 <Canvas>
 	<Story name="Progress Variants">
@@ -113,9 +144,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		<Progress variant="fluid" value={80}/>
 		<Progress variant="striped" value={80}/>
 		<Progress variant="outline" value={80}/>
-		<Progress theme="secondary" variant="outline" value={80}/>
-		<Progress theme="dark" variant="outline" value={80}/>
-		<Progress theme="light" variant="outline" value={80}/>
 		<br/>
 		<br/>
 		<h5>Circular Progress Variants</h5>
@@ -123,8 +151,5 @@ Use any of the available button themes types to quickly create a styled button. 
 		<Progress circular variant="fluid" value={80}/>
 		<Progress circular variant="striped" value={80}/>
 		<Progress circular variant="outline" value={80}/>
-		<Progress circular theme="secondary" variant="outline" value={80}/>
-		<Progress circular theme="dark" variant="outline" value={80}/>
-		<Progress circular theme="light" variant="outline" value={80}/>
 	</Story>
 </Canvas>

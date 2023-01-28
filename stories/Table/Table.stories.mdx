@@ -3,9 +3,9 @@ import {Table, TableBody, TableCell, TableHead, TableHeading, TableRow} from '..
 
 <Meta title="Components/Table" component={Table}/>
 
-# Buttons
+# Tables
 
-Custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+Tables display information in a way that's easy to scan, so that users can look for patterns and insights. Its a combination of rows an columns.
 
 export const defaultTemplate=(args) => <Table {...args}>
 	<TableHead>
@@ -166,11 +166,14 @@ import { Table } from 'artific-ui/Table';
 
 ## Table Theme
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+If you want to use a different theme for `Table` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
+
+You can also use `colorScheme` prop to define a custom theme.
+
 
 <Canvas>
 	<Story name="Table Theme">
-		<h5>Default/Primary Theme</h5>
 		<Table>
 			<TableHead>
 				<TableRow>
@@ -317,7 +320,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		</Table>
 		<br/>
 		<br/>
-		<h5>Secondary Theme</h5>
 		<Table theme="secondary">
 			<TableHead>
 				<TableRow>
@@ -464,7 +466,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		</Table>
 		<br/>
 		<br/>
-		<h5>Dark Theme</h5>
 		<Table theme="dark">
 			<TableHead>
 				<TableRow>
@@ -611,7 +612,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		</Table>
 		<br/>
 		<br/>
-		<h5>Light Theme</h5>
 		<Table theme="light">
 			<TableHead>
 				<TableRow>
@@ -758,7 +758,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		</Table>
 		<br/>
 		<br/>
-		<h5>Custom Theme</h5>
 		<Table colorScheme={{
 			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
 			backgroundColor: '#e736f4',
@@ -915,7 +914,11 @@ Use any of the available button themes types to quickly create a styled button. 
 
 ## Table Layouts
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+Table Has basic four layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
+
+`Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
 <Canvas>
 	<Story name="Table Layouts">
@@ -1066,7 +1069,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		</Table>
 		<br/>
 		<br/>
-		<h5>Rounded Layout</h5>
 		<Table layout="rounded">
 			<TableHead>
 				<TableRow>
@@ -1213,7 +1215,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		</Table>
 		<br/>
 		<br/>
-		<h5>No Radius Layout</h5>
 		<Table layout="no-radius">
 			<TableHead>
 				<TableRow>
@@ -1360,7 +1361,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		</Table>
 		<br/>
 		<br/>
-		<h5>Pill Layout</h5>
 		<Table layout="pill">
 			<TableHead>
 				<TableRow>
@@ -1513,7 +1513,12 @@ Use any of the available button themes types to quickly create a styled button. 
 
 ## Table Variants
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`striped`|`borderless`|`outline`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
 
 <Canvas>
 	<Story name="Table Variants">
@@ -1664,8 +1669,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		</Table>
 		<br/>
 		<br/>
-		<h5>Outline Variants</h5>
-		<h6>Primary</h6>
 		<Table variant="outline">
 			<TableHead>
 				<TableRow>
@@ -1812,448 +1815,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		</Table>
 		<br/>
 		<br/>
-		<h6>Secondary</h6>
-		<Table theme="secondary" variant="outline">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<h6>Dark</h6>
-		<Table theme="dark" variant="outline">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<h6>Light Variants</h6>
-		<Table theme="light" variant="outline">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<h5>Striped Variants</h5>
 		<Table variant="striped">
 			<TableHead>
 				<TableRow>
@@ -2400,7 +1961,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		</Table>
 		<br/>
 		<br/>
-		<h5>Borderless Variants</h5>
 		<Table variant="borderless">
 			<TableHead>
 				<TableRow>
@@ -2553,11 +2113,15 @@ Use any of the available button themes types to quickly create a styled button. 
 
 ## Table Sizes
 
-Use any of the available button themes types to quickly create a styled button. Just modify the `theme` prop.
+
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <Canvas>
 	<Story name="Table Sizes">
-		<h5>Extra Small Size</h5>
 		<Table size="xs">
 			<TableHead>
 				<TableRow>
@@ -2704,7 +2268,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		</Table>
 		<br/>
 		<br/>
-		<h5>Small Size</h5>
 		<Table size="sm">
 			<TableHead>
 				<TableRow>
@@ -2851,7 +2414,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		</Table>
 		<br/>
 		<br/>
-		<h5>Default/Medium Size</h5>
 		<Table size="md">
 			<TableHead>
 				<TableRow>
@@ -2998,7 +2560,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		</Table>
 		<br/>
 		<br/>
-		<h5>Large Size</h5>
 		<Table size="lg">
 			<TableHead>
 				<TableRow>
@@ -3145,7 +2706,6 @@ Use any of the available button themes types to quickly create a styled button. 
 		</Table>
 		<br/>
 		<br/>
-		<h5>Extra Large Size</h5>
 		<Table size="xl">
 			<TableHead>
 				<TableRow>

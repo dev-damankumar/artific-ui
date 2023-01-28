@@ -17,7 +17,7 @@ export const Template=(args) => {
 
 # Spinners
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+A spinner for displaying loading state of a page or a section.
 
 <Canvas>
 	<Story name="Default">{Template.bind({})}</Story>
@@ -31,30 +31,40 @@ import { Spinner } from 'artific-ui/Spinner';
 
 <ArgsTable story="Default"/>
 
-## Basic Spinner Themes
+## Spinner Themes
 
-Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
-You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+If you want to use a different theme for `Alert` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
+
+You can also use `colorScheme` prop to define a custom theme.
+
 
 <Canvas>
 	<Story name="Basic Spinner Themes">
-		<h5>Basic Alerts Themes</h5>
 		<Spinner theme="primary"/>
 		<Spinner theme="secondary"/>
 		<Spinner theme="dark"/>
 		<div style={{padding: "0 5px", background: 'black', display: "inline-block"}}>
 			<Spinner theme="light"/>
 		</div>
+		<Spinner colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		}}/>
 	</Story>
 </Canvas>
 
 ## Spinner Size
 
-Alerts are available for any length of text, as well as an optional dismiss button.For proper styling, use one of the eight ** variant ** colors provided.You may also choose to slot in your icons from any libraries to make your information clearer and user - friendly.
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <Canvas>
 	<Story name="Spinner Size">
-		<h5>Spinners Sizes Text</h5>
 		<Spinner size="xl"/>
 		<Spinner size="lg"/>
 		<Spinner size="md"/>
@@ -65,30 +75,29 @@ Alerts are available for any length of text, as well as an optional dismiss butt
 
 ## Spinner Variants
 
-Alerts are available for any length of text, as well as an optional dismiss button.For proper styling, use one of the eight ** variant ** colors provided.You may also choose to slot in your icons from any libraries to make your information clearer and user - friendly.
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`ring`|`dots`|`box`|`ripple`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
 
 <Canvas>
 	<Story name="Spinner Variants">
-		<h5>Spinner Variants</h5>
-		<h6>Spinner Default</h6>
 		<Spinner variant="default"/>
 		<br/>
 		<br/>
-		<h6>Spinner Ring</h6>
 		<Spinner variant="ring"/>
 		<br/>
 		<br/>
-		<h6>Spinner Dots</h6>
 		<Spinner variant="dots"/>
 		<br/>
 		<br/>
-		<h6>Spinner Box</h6>
 		<br/>
 		<br/>
 		<Spinner variant="box"/>
 		<br/>
 		<br/>
-		<h6>Spinner Ripple</h6>
 		<Spinner variant="ripple"/>
 		<br/>
 		<br/>

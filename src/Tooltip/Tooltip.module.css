@@ -1,12 +1,14 @@
 :root {
 	--tooltip-background: white;
 	--tooltip-border-radius: 5px;
-	--tooltip-color: #303a52;
+	--tooltip-color: var(--text);
 	--tooltip-left: 50%;
 	--tooltip-transform-x: -50%;
 	--tooltip-right: 50%;
 	--tooltip-top: 100%;
 	--tooltip-bottom: -100%;
+	--tooltip-padding: 4px;
+	--tooltip-font-size: 13px;
 }
 
 .tooltip {
@@ -22,10 +24,10 @@
 	position: absolute;
 	border-radius: var(--tooltip-border-radius);
 	text-align: left;
-	padding: 4px 8px;
+	padding: var(--tooltip-padding) calc(var(--tooltip-padding) * 2);
 	opacity: 0;
 	visibility: hidden;
-	font-size: 13px;
+	font-size: var(--tooltip-font-size);
 	transform: translateX(var(--tooltip-transform-x));
 }
 
@@ -38,18 +40,8 @@
 	visibility: visible;
 }
 
-.tooltip-arrow.tooltip:before {
-	content: "";
-	border-width: 7px;
-	border-style: solid;
-	border-color: transparent transparent var(--tooltip-background) transparent;
-	position: absolute;
-	top: calc(var(--tooltip-bottom) + 16px);
-	left: var(--tooltip-left);
-	transform: translateX(-50%);
-}
 
-/*Tooltip Layouts*/
+/*=====Layouts=====*/
 .tooltip-rounded {
 	--tooltip-border-radius: 10px
 }
@@ -62,7 +54,71 @@
 	--tooltip-border-radius: 50px
 }
 
-/*Tooltip Placements*/
+/*=====Layouts End=====*/
+
+/*=====Variants=====*/
+.tooltip-arrow.tooltip:before {
+	content: "";
+	border-width: 7px;
+	border-style: solid;
+	border-color: transparent transparent var(--tooltip-background) transparent;
+	position: absolute;
+	top: calc(var(--tooltip-bottom) + 16px);
+	left: var(--tooltip-left);
+	transform: translateX(-50%);
+}
+
+/*=====Variants End=====*/
+
+/*=====Sizes=====*/
+.tooltip-extra-large {
+	--tooltip-font-size: 18px;
+	--tooltip-padding: 8px;
+}
+
+
+.tooltip-large {
+	--tooltip-font-size: 16px;
+	--tooltip-padding: 6px;
+}
+
+.tooltip-small {
+	--tooltip-font-size: 10px;
+	--tooltip-padding: 3px;
+}
+
+.tooltip-extra-small {
+	--tooltip-font-size: 8px;
+	--tooltip-padding: 2px;
+}
+
+/*=====Sizes End=====*/
+
+/*=====Colors=====*/
+.tooltip-primary {
+	--tooltip-background: var(--primary);
+	--tooltip-color: var(--primary-text);
+}
+
+.tooltip-secondary {
+	--tooltip-background: var(--secondary);
+	--tooltip-color: var(--secondary-text);
+}
+
+.tooltip-light {
+	--tooltip-background: var(--light);
+	--tooltip-color: var(--light-text);
+}
+
+.tooltip-dark {
+	--tooltip-background: var(--dark);
+	--tooltip-color: var(--dark-text);
+}
+
+/*=====Colors End=====*/
+
+
+/*=====Placements=====*/
 .tooltip-bottom-start {
 	--tooltip-left: 0;
 	--tooltip-transform-x: 0
@@ -203,199 +259,4 @@
 	border-color: var(--tooltip-background) transparent transparent transparent;
 }
 
-/*Tooltip Themes*/
-.tooltip-primary {
-	--tooltip-background: var(--primary);
-	--tooltip-color: white;
-}
-
-.tooltip-secondary {
-	--tooltip-background: var(--secondary);
-	--tooltip-color: white;
-}
-
-.tooltip-dark {
-	--tooltip-background: var(--dark);
-	--tooltip-color: white;
-}
-
-
-@media (min-width: 576px) {
-	.tooltip-sm-dark {
-		--tooltip-background: var(--dark-color);
-		--tooltip-color: white;
-	}
-
-	.tooltip-sm-up {
-		bottom: calc(100% + 10px);
-		top: unset;
-	}
-
-	.tooltip-sm-right {
-		left: calc(100% + 10px);
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.tooltip-sm-left {
-		right: calc(100% + 10px);
-		left: unset;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.tooltip-sm-up:before {
-		bottom: -14px;
-		top: unset;
-		border-color: var(--tooltip-background) transparent transparent transparent;
-	}
-
-	.tooltip-sm-right:before {
-		border-color: transparent var(--tooltip-background) transparent transparent;
-		top: 6px;
-		left: -13px;
-	}
-
-	.tooltip-sm-left:before {
-		border-color: transparent transparent transparent var(--tooltip-background);
-		top: 6px;
-		left: unset;
-		right: -13px;
-	}
-
-}
-
-@media (min-width: 768px) {
-	.tooltip-md-dark {
-		--tooltip-background: var(--dark-color);
-		--tooltip-color: white;
-	}
-
-	.tooltip-md-up {
-		bottom: calc(100% + 10px);
-		top: unset;
-	}
-
-	.tooltip-md-right {
-		left: calc(100% + 10px);
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.tooltip-md-left {
-		right: calc(100% + 10px);
-		left: unset;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.tooltip-md-up:before {
-		bottom: -14px;
-		top: unset;
-		border-color: var(--tooltip-background) transparent transparent transparent;
-	}
-
-	.tooltip-md-right:before {
-		border-color: transparent var(--tooltip-background) transparent transparent;
-		top: 6px;
-		left: -13px;
-	}
-
-	.tooltip-md-left:before {
-		border-color: transparent transparent transparent var(--tooltip-background);
-		top: 6px;
-		left: unset;
-		right: -13px;
-	}
-
-}
-
-@media (min-width: 992px) {
-	.tooltip-lg-dark {
-		--tooltip-background: var(--dark-color);
-		--tooltip-color: white;
-	}
-
-	.tooltip-lg-up {
-		bottom: calc(100% + 10px);
-		top: unset;
-	}
-
-	.tooltip-lg-right {
-		left: calc(100% + 10px);
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.tooltip-lg-left {
-		right: calc(100% + 10px);
-		left: unset;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.tooltip-lg-up:before {
-		bottom: -14px;
-		top: unset;
-		border-color: var(--tooltip-background) transparent transparent transparent;
-	}
-
-	.tooltip-lg-right:before {
-		border-color: transparent var(--tooltip-background) transparent transparent;
-		top: 6px;
-		left: -13px;
-	}
-
-	.tooltip-lg-left:before {
-		border-color: transparent transparent transparent var(--tooltip-background);
-		top: 6px;
-		left: unset;
-		right: -13px;
-	}
-
-}
-
-@media (min-width: 1200px) {
-	.tooltip-xl-dark {
-		--tooltip-background: var(--dark-color);
-		--tooltip-color: white;
-	}
-
-	.tooltip-xl-up {
-		bottom: calc(100% + 10px);
-		top: unset;
-	}
-
-	.tooltip-xl-right {
-		left: calc(100% + 10px);
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.tooltip-xl-left {
-		right: calc(100% + 10px);
-		left: unset;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.tooltip-xl-up:before {
-		bottom: -14px;
-		top: unset;
-		border-color: var(--tooltip-background) transparent transparent transparent;
-	}
-
-	.tooltip-xl-right:before {
-		border-color: transparent var(--tooltip-background) transparent transparent;
-		top: 6px;
-		left: -13px;
-	}
-
-	.tooltip-xl-left:before {
-		border-color: transparent transparent transparent var(--tooltip-background);
-		top: 6px;
-		left: unset;
-		right: -13px;
-	}
-
-}
+/*=====Placements End=====*/

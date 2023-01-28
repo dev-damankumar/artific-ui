@@ -8,48 +8,20 @@ import a4 from "./images/a4.jpeg"
 <Meta
 	title="Components/Avatar"
 	component={Avatar}
-	argTypes={{
-		variant: {
-			table: {
-				type: {
-					summary:
-						" 'primary' | 'secondary' | 'light' | 'dark' ",
-				},
-			},
-			options: [
-				'primary',
-				'secondary',
-				'light',
-				'dark',
-			],
-			control: {
-				type: 'select',
-			},
-		},
-	}}
-	parameters={{docs: {source: {type: 'code'}}}}
 />
 
 export const Template=(args) => {
 	return <>
-		<h5>Avatar With Images</h5>
 		<Avatar src={a1} {...args}/>
-		<Avatar src={a2} {...args}/>
-		<Avatar src={a3} {...args}/>
-		<Avatar src={a4} {...args}/>
-		<br/>
-		<br/>
-		<h5>Avatar With Text</h5>
 		<Avatar title="DK" {...args}/>
-		<Avatar title="A" {...args}/>
+		<Avatar src={a3} {...args}/>
 		<Avatar title="M" {...args}/>
-		<Avatar title="FR" {...args}/>
 	</>
 };
 
-# Alerts
+# Avatars
 
-Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+Avatars are used for displaying images and text in confined space.
 
 <Canvas>
 	<Story name="Default">{Template.bind({})}</Story>
@@ -63,29 +35,37 @@ import { Avatar } from 'artific-ui/Avatar';
 
 <ArgsTable story="Default"/>
 
-## Basic Avatar
+## Avatar Themes
 
-Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
-You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+If you want to use a different theme for `Avatar` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
+
+You can also use `colorScheme` prop to define a custom theme.
 
 <Canvas>
-	<Story name="Basic Avatar">
-		<h5>Basic Alerts Themes</h5>
-		<Avatar theme="primary" title="DK"/>
-		<Avatar theme="secondary" title="DK"/>
-		<Avatar theme="dark" title="DK"/>
-		<Avatar theme="light" title="DK"/>
+	<Story name="Avatar Themes">
+		<Avatar variant="outline" theme="primary" title="DK"/>
+		<Avatar variant="outline" theme="secondary" title="DK"/>
+		<Avatar variant="outline" theme="dark" title="DK"/>
+		<Avatar variant="outline" theme="light" title="DK"/>
+		<Avatar variant="outline" colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		}} title="DK"/>
 	</Story>
 </Canvas>
 
 ## Avatar Size
 
-Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
-You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <Canvas>
 	<Story name="Avatar Size">
-		<h5>Avatars Sizes Text</h5>
 		<Avatar size="xl" title="XL"/>
 		<Avatar size="lg" title="LG"/>
 		<Avatar size="md" title="MD"/>
@@ -96,12 +76,14 @@ You may also choose to slot in your icons from any libraries to make your inform
 
 ## Avatar Layouts
 
-Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
-You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+Avatar Has basic four layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
+
+`Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
 <Canvas>
 	<Story name="Avatar Layouts">
-		<h5>Avatar Layouts</h5>
 		<Avatar src={a1} layout="default"/>
 		<Avatar src={a2} layout="rounded"/>
 		<Avatar src={a3} layout="no-radius"/>
@@ -112,12 +94,15 @@ You may also choose to slot in your icons from any libraries to make your inform
 
 ## Avatar Variants
 
-Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
-You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`fluid`|`outline`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
 
 <Canvas>
 	<Story name="Avatar Variants">
-		<h5>Avatar Variants</h5>
 		<Avatar src={a1} variant="default"/>
 		<Avatar src={a2} variant="outline"/>
 		<Avatar src={a3} variant="fluid"/>
@@ -126,12 +111,12 @@ You may also choose to slot in your icons from any libraries to make your inform
 
 ## Avatar Group
 
-Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **variant** colors provided.
-You may also choose to slot in your icons from any libraries to make your information clearer and user-friendly.
+Avatar Group is used to group together a multiple avatars
+
+Use `AvatarGroup` with `Avatar` as children to group them together
 
 <Canvas>
 	<Story name="Avatar Group">
-		<h5>Avatar Group</h5>
 		<AvatarGroup>
 			<Avatar src={a1} variant="fluid"/>
 			<Avatar src={a2} variant="fluid"/>
