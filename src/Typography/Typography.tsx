@@ -1,9 +1,8 @@
 import React, {createElement} from 'react';
 import getClassNames from '../utils/classes/getClassnames';
 import classes from './Typography.module.css';
-import colorClasses from '../color.module.css';
-import {defaultProps, ITypographyProps, propTypes} from '../types/typography';
-import {IAnyElement} from "../types/common";
+import {defaultProps, ITypographyProps, propTypes} from '../types/typography.types';
+import {IAnyElement} from "../types/common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
 
@@ -41,7 +40,7 @@ export const Typography: React.FC<ITypographyProps & IAnyElement> = (
 	}
 	const mainElement = createElement(element, {
 		style: {...styles},
-		className: `${classNames} ${!colorScheme ? `text-${theme}` : ''} ${getClassNames(colorClasses, additionalThemeClass)} ${getClassNames(classes, 'typography', variantClasses, weightClasses)}`,
+		className: `${classNames} ${!colorScheme ? `text-${theme}` : ''} ${getClassNames(classes, additionalThemeClass)} ${getClassNames(classes, 'typography', variantClasses, weightClasses)}`,
 		...rest,
 		children: children
 	})

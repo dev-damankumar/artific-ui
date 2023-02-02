@@ -42,7 +42,7 @@ A dismissible alert is a alert which can be removed from the user's screen by cl
 
 <Canvas>
 	<Story name="Dismissible Alert">
-		<Alert dismiss="true"><strong>Primary!</strong> You should <a href="#" className="alert-link">read this
+		<Alert dismiss="true"><strong>Primary!</strong> You should <a href="#">read this
 			message</a>.</Alert>
 	</Story>
 </Canvas>
@@ -56,16 +56,11 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 	<Story name="Alert Themes">
 		<h5>Basic Alerts</h5>
 		<br/>
-		<Alert dismiss={true}><strong>Primary!</strong> You should <a href="#" className="alert-link">read this
+		<Alert dismiss={true}><strong>Primary!</strong> You should <a href="#">read this message</a>.</Alert>
+		<Alert dismiss={true} theme="secondary"><strong>Secondary!</strong> You should <a href="#">read this message</a>.</Alert>
+		<Alert dismiss={true} theme="light"><strong>Light!</strong> You should <a href="#">read this
 			message</a>.</Alert>
-		<Alert dismiss={true} theme="secondary"><strong>Secondary!</strong> You should <a href="#"
-																						  className="alert-link">read
-			this
-			message</a>.</Alert>
-		<Alert dismiss={true} theme="light"><strong>Light!</strong> You should <a href="#" className="alert-link">read
-			this message</a>.</Alert>
-		<Alert dismiss={true} theme="dark"><strong>Dark!</strong> You should <a href="#" className="alert-link">read
-			this message</a>.</Alert>
+		<Alert dismiss={true} theme="dark"><strong>Dark!</strong> You should <a href="#">read this message</a>.</Alert>
 		<br/>
 	</Story>
 </Canvas>
@@ -81,12 +76,14 @@ colorScheme is an object containing three properties: `background`, `backgroundC
 	<Story name="Custom Alert">
 		<h5>CustomScheme Alerts</h5>
 		<br/>
-		<Alert dismiss="true" colorScheme={{
-			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
-			backgroundColor: '#e736f4',
-			color: 'white',
-		}}><strong>Primary!</strong> You should <a href="#" className="alert-link">read
-			this message</a>.</Alert>
+		<Alert dismiss="true"
+			   colorScheme={{
+				   background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+				   backgroundColor: '#e736f4',
+				   color: 'white',
+			   }}>
+			<strong>Primary!</strong> You should <a href="#">read this message</a>.
+		</Alert>
 	</Story>
 </Canvas>
 
@@ -100,11 +97,11 @@ Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg
 
 <Canvas>
 	<Story name="Alert Sizes">
-		<Alert size="xs">You should <a href="#" className="alert-link">read this message</a>.</Alert>
-		<Alert size="sm">You should <a href="#" className="alert-link">read this message</a>.</Alert>
-		<Alert>You should <a href="#" className="alert-link">read this message</a>.</Alert>
-		<Alert size="lg">You should <a href="#" className="alert-link">read this message</a>.</Alert>
-		<Alert size="xl">You should <a href="#" className="alert-link">read this message</a>.</Alert>
+		<Alert size="xs">You should <a href="#">read this message</a>.</Alert>
+		<Alert size="sm">You should <a href="#">read this message</a>.</Alert>
+		<Alert>You should <a href="#">read this message</a>.</Alert>
+		<Alert size="lg">You should <a href="#">read this message</a>.</Alert>
+		<Alert size="xl">You should <a href="#">read this message</a>.</Alert>
 	</Story>
 </Canvas>
 
@@ -120,13 +117,10 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 	<Story name="Alert Layouts">
 		<h5>Alerts Layouts</h5>
 		<br/>
-		<Alert layout="rounded"><strong>Rounded!</strong> You should <a href="#" className="alert-link">read this
-			message</a>.</Alert>
-		<Alert layout="pill"><strong>Pill!</strong> You should <a href="#" className="alert-link">read this message</a>.</Alert>
-		<Alert layout="no-radius"><strong>No Radius!</strong> You should <a href="#" className="alert-link">read this
-			message</a>.</Alert>
-		<Alert layout="default"><strong>Default!</strong> You should <a href="#" className="alert-link">read this
-			message</a>.</Alert>
+		<Alert layout="rounded"><strong>Rounded!</strong> You should <a href="#">read this message</a>.</Alert>
+		<Alert layout="pill"><strong>Pill!</strong> You should <a href="#">read this message</a>.</Alert>
+		<Alert layout="no-radius"><strong>No Radius!</strong> You should <a href="#">read this message</a>.</Alert>
+		<Alert layout="default"><strong>Default!</strong> You should <a href="#">read this message</a>.</Alert>
 	</Story>
 </Canvas>
 
@@ -142,14 +136,9 @@ you can check out the props table to see which variant is supported by the compo
 
 <Canvas>
 	<Story name="Alert Variants">
-		<Alert variant="outline"><strong>Outline!</strong> You should <a href="#" className="alert-link">read this
-			message</a>.</Alert>
-		<Alert variant="text"><strong>Text</strong> You should <a href="#" className="alert-link">read this message</a>.</Alert>
-		<Alert variant="default"><strong>Default!</strong> You should <a href="#" className="alert-link">read this
-			message</a>.</Alert>
-		<Alert variant="note"><strong>Note!</strong> You should <a href="#"
-																   className="alert-link">read
-			this message</a>.</Alert>
+		<Alert variant="outline"><strong>Outline!</strong> You should <a href="#">read this message</a>.</Alert>
+		<Alert variant="default"><strong>Default!</strong> You should <a href="#">read thismessage</a>.</Alert>
+		<Alert variant="note"><strong>Note!</strong> You should <a href="#">read this message</a>.</Alert>
 	</Story>
 </Canvas>
 
@@ -161,14 +150,9 @@ Set `direction` prop with the value of (`top`|`bottom`|`left`|`right`). you can 
 
 <Canvas>
 	<Story name="Note Variant Directions">
-		<Alert variant="note">You should <a href="#"
-											className="alert-link">read
-			this message</a>.</Alert>
-		<Alert direction="right" variant="note">You should <a href="#" className="alert-link">read
-			this message</a>.</Alert>
-		<Alert direction="top" variant="note">You should <a href="#" className="alert-link">read
-			this message</a>.</Alert>
-		<Alert direction="bottom" variant="note">You should <a href="#" className="alert-link">read
-			this message</a>.</Alert>
+		<Alert variant="note">You should <a href="#">read this message</a>.</Alert>
+		<Alert direction="right" variant="note">You should <a href="#">read this message</a>.</Alert>
+		<Alert direction="top" variant="note">You should <a href="#">read this message</a>.</Alert>
+		<Alert direction="bottom" variant="note">You should <a href="#">read this message</a>.</Alert>
 	</Story>
 </Canvas>

@@ -2,8 +2,8 @@ import React from 'react';
 import getClassNames from '../../utils/classes/getClassnames';
 import classes from '../Dropdown.module.css';
 import {Button, IButtonProps} from "../../Button";
-import {defaultProps, propTypes} from "../../types/button";
-import {IButton} from "../../types/common";
+import {defaultProps, propTypes} from "../../types/button.types";
+import {IButton} from "../../types/common.types";
 
 export const DropdownToggle: React.FC<IButtonProps & IButton> = (
 	{

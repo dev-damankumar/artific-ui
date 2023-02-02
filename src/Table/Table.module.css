@@ -5,7 +5,10 @@
 	--table-padding: 10px;
 	--table-font-size: 15px;
 	--table-margin: 10px;
-	--table-outline-width: 1px;
+	--table-border-width: 1px;
+	--table-background: #f8f8f8;
+	--table-background-color: #f8f8f8;
+	--table-text: #f8f8f8;
 }
 
 .table-customize-div {
@@ -57,7 +60,7 @@
 	white-space: nowrap;
 	text-align: left;
 	font-size: var(--table-font-size);
-	background: #fff;
+	background: var(--main-bg);
 	font-weight: bold;
 	position: -webkit-sticky;
 	position: sticky;
@@ -83,7 +86,7 @@ tr:last-child td:last-child {
 .table td {
 	padding: var(--table-padding) calc(var(--table-padding) + 5px);
 	font-size: var(--table-font-size);
-	border-bottom: var(--table-outline-width) solid #e9ecef;
+	border-bottom: var(--table-border-width) solid #e9ecef;
 	white-space: nowrap;
 }
 
@@ -116,25 +119,33 @@ tr:last-child td:last-child {
 /*=====Layouts End=====*/
 
 /*=====Colors=====*/
-
-.table-primary th {
-	background: var(--primary) !important;
-	color: var(--primary-text) !important;
+.table-primary {
+	--table-background: var(--primary);
+	--table-background-color: var(--primary-color);
+	--table-text: var(--primary-text);
 }
 
-.table-secondary th {
-	background: var(--secondary) !important;
-	color: var(--secondary-text) !important;
+.table-secondary {
+	--table-background: var(--secondary);
+	--table-background-color: var(--secondary-color);
+	--table-text: var(--secondary-text);
 }
 
-.table-light th {
-	background: var(--light) !important;
-	color: var(--light-text) !important;
+.table-light {
+	--table-background: var(--light);
+	--table-background-color: var(--light-color);
+	--table-text: var(--light-text);
 }
 
-.table-dark th {
-	background: var(--dark) !important;
-	color: var(--dark-text) !important;
+.table-dark {
+	--table-background: var(--dark);
+	--table-background-color: var(--dark-color);
+	--table-text: var(--dark-text);
+}
+
+.table th {
+	background: var(--table-background) !important;
+	color: var(--table-text) !important;
 }
 
 /*=====Colors End=====*/
@@ -145,7 +156,7 @@ tr:last-child td:last-child {
 }
 
 .table-borderless {
-	--table-outline-width: 0;
+	--table-border-width: 0;
 }
 
 .table-striped tr:nth-child(even) td {
@@ -208,6 +219,6 @@ tr:last-child td:last-child {
 /*=====Sizes End=====*/
 
 .table.table-light th, .table.table-outline th {
-	border-bottom: var(--table-outline-width) solid #e9ecef;
-	border-top: var(--table-outline-width) solid #e9ecef;
+	border-bottom: var(--table-border-width) solid #e9ecef;
+	border-top: var(--table-border-width) solid #e9ecef;
 }

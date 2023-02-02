@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './List.module.css';
 import getClassNames from '../utils/classes/getClassnames';
-import {defaultPropTypes, IListProps, propTypes} from '../types/list';
-import {IUl} from "../types/common";
+import {defaultPropTypes, IListProps, propTypes} from '../types/list.types';
+import {IUl} from "../types/common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
 

@@ -1,9 +1,8 @@
 import '../index.css';
 import List from "./List";
 
-export default List
 export * from './List';
 export * from './ListItem';
+export default List
 
 
-export type {IListProps} from '../types/list';

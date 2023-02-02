@@ -4,7 +4,10 @@
 	--accordion-padding: 15px;
 	--accordion-font-size: 16px;
 	--accordion-margin: 10px;
-	--accordion-outline-width: 2px;
+	--accordion-border-width: 2px;
+	--accordion-background: white;
+	--accordion-background-color: white;
+	--accordion-text: inherit;
 }
 
 .accordion {
@@ -17,13 +20,14 @@
 }
 
 .accordion-header {
+	color: var(--accordion-text);
 	padding: var(--accordion-padding);
 	border-radius: var(--accordion-border-radius);
 	font-weight: 600;
 	position: relative;
 	padding-right: calc(var(--accordion-padding) * 3);
 	cursor: pointer;
-	background: white;
+	background: var(--accordion-background);
 	user-select: none;
 }
 
@@ -34,7 +38,7 @@
 	right: calc(var(--accordion-margin) + 15px);
 	width: calc(var(--accordion-font-size) - 6px);
 	height: calc(var(--accordion-font-size) - 6px);
-	border: 2px solid var(--text);
+	border: 2px solid var(--accordion-text);
 	-webkit-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
@@ -98,7 +102,6 @@
 	color: var(--text);
 }
 
-
 /*=====Layout=====*/
 
 .accordion-rounded {
@@ -121,25 +124,38 @@
 
 /*=====Layout End=====*/
 
-/*=====Variants=====*/
+/*=====Colors=====*/
+.accordion-primary {
+	--accordion-background: var(--primary);
+	--accordion-background-color: var(--primary-color);
+	--accordion-text: var(--primary-text);
+}
 
-/*-----Outline Variant-----*/
+.accordion-secondary {
+	--accordion-background: var(--secondary);
+	--accordion-background-color: var(--secondary-color);
+	--accordion-text: var(--secondary-text);
+}
+
+.accordion-light {
+	--accordion-background: var(--light);
+	--accordion-background-color: var(--light-color);
+	--accordion-text: var(--light-text);
+}
+
+.accordion-dark {
+	--accordion-background: var(--dark);
+	--accordion-background-color: var(--dark-color);
+	--accordion-text: var(--dark-text);
+}
+
+/*=====Colors End=====*/
+
+/*=====Variants=====*/
 
 .accordion-outlined .accordion {
 	box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px 0;
-	border: var(--accordion-outline-width) solid var(--primary-color);
-}
-
-.accordion-outlined.accordion-secondary .accordion {
-	border: var(--accordion-outline-width) solid var(--secondary-color);
-}
-
-.accordion-outlined.accordion-dark .accordion {
-	border: var(--accordion-outline-width) solid var(--dark-color);
-}
-
-.accordion-outlined.accordion-light .accordion {
-	border: var(--accordion-outline-width) solid var(--light-color);
+	border: var(--accordion-border-width) solid var(--accordion-background);
 }
 
 .accordion-outlined .accordion-header {
@@ -153,10 +169,6 @@
 .accordion-outlined .accordion .accordion-panel {
 	margin-bottom: 0;
 }
-
-/*-----Outline Variant End-----*/
-
-/*-----Separate Variant-----*/
 
 .accordion-separate .accordion {
 	-moz-box-shadow: none;
@@ -172,7 +184,6 @@
 	-moz-box-shadow: var(--accordion-box-shadow);
 	-webkit-box-shadow: var(--accordion-box-shadow);
 	box-shadow: var(--accordion-box-shadow);
-	background: white;
 }
 
 .accordion-separate .accordion-panel {
@@ -183,9 +194,6 @@
 	margin-bottom: var(--accordion-margin);
 }
 
-/*-----Separate Variant End-----*/
-
-/*-----Attach Variant-----*/
 
 .accordion-attached {
 	-moz-box-shadow: var(--accordion-box-shadow);
@@ -205,7 +213,7 @@
 
 .accordion-attached .accordion .accordion-header {
 	border-radius: 0;
-	border-bottom: var(--accordion-outline-width) solid var(--border-color);
+	border-bottom: var(--accordion-border-width) solid var(--border-color);
 }
 
 .accordion-attached .accordion:first-child .accordion-header {
@@ -218,11 +226,20 @@
 	border-bottom-right-radius: var(--accordion-border-radius);
 }
 
-/*-----Attach Variant End-----*/
-
 /*=====Variants End=====*/
 
 /*=====Sizes=====*/
+.accordion-extra-large {
+	--accordion-padding: 25px;
+	--accordion-font-size: 20px;
+	--accordion-margin: 20px;
+}
+
+.accordion-large {
+	--accordion-padding: 20px;
+	--accordion-font-size: 18px;
+	--accordion-margin: 15px;
+}
 
 .accordion-small {
 	--accordion-padding: 10px;
@@ -236,17 +253,4 @@
 	--accordion-margin: 5px;
 }
 
-.accordion-large {
-	--accordion-padding: 20px;
-	--accordion-font-size: 18px;
-	--accordion-margin: 15px;
-}
-
-.accordion-extra-large {
-	--accordion-padding: 25px;
-	--accordion-font-size: 20px;
-	--accordion-margin: 20px;
-}
-
 /*=====Sizes End=====*/
-

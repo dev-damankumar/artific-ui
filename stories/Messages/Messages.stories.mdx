@@ -132,12 +132,12 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 
 
 export const ThemesTemplate=(args) => {
-	const themes=['primary', 'secondary', 'dark', 'light']
+	const themes=['primary', 'secondary', 'dark', 'light'];
 	const btns=themes.map((v, i) => {
-		const message=useMessage()
+		const message=useMessage(false)
 		message.config({
 			theme: v,
-			dismissible: true
+			dismissible: true,
 		})
 		return <div key={i}>
 			<Button onClick={() => {
@@ -148,14 +148,14 @@ export const ThemesTemplate=(args) => {
 			<br/>
 		</div>
 	})
-	const message=useMessage()
+	const message=useMessage(false)
 	message.config({
 		colorScheme: {
 			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
 			backgroundColor: '#e736f4',
 			color: 'white',
 		},
-		dismissible: true
+		dismissible: true,
 	})
 	return <>
 		{btns}

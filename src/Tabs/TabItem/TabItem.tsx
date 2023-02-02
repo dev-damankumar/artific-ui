@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
 import getClassNames from "../../utils/classes/getClassnames";
 import styles from "../Tabs.module.css";
-import {ITabItemProps, tabItemDefaultProps, tabItemPropTypes} from "../../types/tabs";
+import {ITabItemProps, tabItemDefaultProps, tabItemPropTypes} from "../../types/tabs.types";
 import ErrorMessage from "../../utils/errors/Error";
-import {ILi} from "../../types/common";
+import {ILi} from "../../types/common.types";
 
 export const TabItem: React.FC<ITabItemProps & ILi> = (
 	{

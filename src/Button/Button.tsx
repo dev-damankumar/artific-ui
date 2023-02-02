@@ -1,10 +1,9 @@
 import React from 'react';
-import '../index.css';
 import styles from './Button.module.css';
 import getClassNames from '../utils/classes/getClassnames';
 import ripple from '../utils/effects/effectRipple';
-import {defaultProps, IButtonProps, propTypes} from '../types/button';
-import {IButton} from "../types/common";
+import {defaultProps, IButtonProps, propTypes} from '../types/button.types';
+import {IButton} from "../types/common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
 /*Responsive checkPropTypes pending for onstalled components*/

@@ -1,8 +1,8 @@
 import React from 'react';
 import getClassNames from '../../utils/classes/getClassnames';
 import styles from '../Dropdown.module.css';
-import {IDropdownMenu, IDropdownMenuDefaultProps, IDropdownMenuPropsType} from '../../types/dropdown';
-import {IDiv} from "../../types/common";
+import {IDropdownMenu, IDropdownMenuDefaultProps, IDropdownMenuPropsType} from '../../types/dropdown.types';
+import {IDiv} from "../../types/common.types";
 import {addPropsToChildren} from "../../utils/helpers";
 
 
@@ -18,7 +18,7 @@ export const DropdownMenu: React.FC<IDropdownMenu & IDiv> = (
 	}) => {
 	const classes = getClassNames(styles, 'dropdown-menu', position === 'after' ? 'dropdown-menu-right' : '')
 	const childrenWithProps = addPropsToChildren(children, {autoClose, closeHandler})
-	
+
 	return (
 		<div
 			{...rest}

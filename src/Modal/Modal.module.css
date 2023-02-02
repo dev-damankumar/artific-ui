@@ -3,7 +3,7 @@
 	--modal-padding: 15px;
 	--modal-font-size: 16px;
 	--modal-margin: 10px;
-	--modal-outline-width: 2px;
+	--modal-border-width: 2px;
 	--modal-cursor: pointer;
 	--modal-box-shadow: rgba(99, 99, 99, 0.20) 0px 2px 8px 0px;
 	--modal-background: #f6f8fa;
@@ -91,7 +91,7 @@
 .modal-header {
 	padding: var(--modal-padding);
 	position: relative;
-	border-bottom: var(--modal-outline-width) solid #e9ecef;
+	border-bottom: var(--modal-border-width) solid #e9ecef;
 }
 
 .modal-body {
@@ -126,7 +126,7 @@
 
 .modal-footer {
 	padding: var(--modal-padding);
-	border-top: var(--modal-outline-width) solid #e9ecef;
+	border-top: var(--modal-border-width) solid #e9ecef;
 }
 
 .d-modal-button-div {

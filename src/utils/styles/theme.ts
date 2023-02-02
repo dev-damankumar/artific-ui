@@ -1,15 +1,28 @@
 import Color from 'color';
+import {ComponentsType, Themes, ThemesArray} from "../../types/common.types";
+import {ComponentsArray} from "../constants";
 
 interface IMain {
 	background: string;
 	backgroundColor: string;
 }
 
+interface IThemeProps {
+	background: string;
+	backgroundColorHover: string;
+	backgroundColor: string;
+	textHover: string;
+	text: string;
+	boxShadow: string;
+	isBackgroundImage: boolean;
+	backgroundHover: string;
+}
+
 interface IConfig {
 	themeId: string;
 	scope: 'global' | 'local'
 	componentId?: string;
-	componentSelector?: string;
+	componentSelector?: ComponentsType;
 }
 
 const getBackgroundColors = (main: string | IMain) => {
@@ -41,14 +54,34 @@ const getDefaultHoverColors = (bgHsl: any) => {
 		backgroundColorHover: hoverBg,
 	}
 }
+
+const createNewTheme = (themeName: string, config: IConfig, themeProps: IThemeProps) => {
+	let styles = `#${config.themeId} {`
+	ComponentsArray.forEach(component => {
+		styles += `--${component}-background: var(--${themeName});
+				   --${component}-background-color: var(--${themeName});
+				   --${component}-text: var(--${themeName}-text);
+				   --${component}-hover: ${themeProps.isBackgroundImage ? themeProps.background : themeProps.backgroundHover};
+				   --${component}-color-hover: ${themeProps.backgroundColorHover};
+				   --${component}-text-hover: ${themeProps.textHover || themeProps.text};
+				   --${component}-hover-box-shadow : ${themeProps.boxShadow};
+    `
+
+	})
+	styles += '}'
+	return styles
+}
 const createTheme = (theme: object, config: IConfig = {
 	scope: 'global',
 	themeId: ''
 }) => {
 	let themeStyle = '';
 	Object.keys(theme).forEach((t: string) => {
+
 		const {main, text, $hover} = (theme[t as keyof object] as any);
 		const {background, backgroundColor} = getBackgroundColors(main)
+		let newThemeStyles = ''
+
 		const bgColorObject = Color(backgroundColor).hsl().object()
 		const boxShadow = `hsla(${bgColorObject.h},${bgColorObject.s}%, 90%, ${bgColorObject.alpha ? bgColorObject.alpha : '1'})`
 		let {backgroundHover, backgroundColorHover} = getDefaultHoverColors(bgColorObject)
@@ -60,7 +93,18 @@ const createTheme = (theme: object, config: IConfig = {
 			textHover = colors.textHover
 		}
 		const isBackgroundImage = (background.includes('gradient') || background.includes('url'))
-
+		if (!ThemesArray.includes(t as Themes)) {
+			newThemeStyles = createNewTheme(t, config, {
+				backgroundColorHover,
+				textHover,
+				text,
+				boxShadow,
+				isBackgroundImage,
+				background,
+				backgroundHover,
+				backgroundColor
+			})
+		}
 		themeStyle += `
 		${config.scope === 'local' ? `.${config.componentId}` : `#${config.themeId}`}{
 			--${t}:${background} ;
@@ -71,6 +115,7 @@ const createTheme = (theme: object, config: IConfig = {
 			--${t}-text-hover: ${textHover || text};
 			--${t}-hover-box-shadow : ${boxShadow};
 		}
+		${newThemeStyles}
 	`
 	})
 	return themeStyle

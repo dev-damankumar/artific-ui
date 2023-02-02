@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from "./Table.module.css"
 import getClassNames from "../utils/classes/getClassnames";
-import {defaultProps, ITableProps, propTypes} from "../types/table";
+import {defaultProps, ITableProps, propTypes} from "../types/table.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
-import {IDiv} from "../types/common";
+import {IDiv} from "../types/common.types";
 
 
 export const Table: React.FC<ITableProps & IDiv> = (

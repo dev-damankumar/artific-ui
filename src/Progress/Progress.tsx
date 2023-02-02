@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './Progress.module.css';
 import getClassNames from '../utils/classes/getClassnames';
-import {defaultProps, IProgressProps, propTypes} from '../types/progress';
+import {defaultProps, IProgressProps, propTypes} from '../types/progress.types';
 import uuid from "../utils/uuids/uuid";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
-import {IDiv} from "../types/common";
+import {IDiv} from "../types/common.types";
 
 
 export const Progress: React.FC<IProgressProps & IDiv> = (
@@ -14,12 +14,12 @@ export const Progress: React.FC<IProgressProps & IDiv> = (
 		values,
 		symbol,
 		className,
-		circular,
 		style,
 		children,
 		barColors,
 		colorScheme,
 		theme,
+		type,
 		variant,
 		layout,
 		disabled,
@@ -36,10 +36,11 @@ export const Progress: React.FC<IProgressProps & IDiv> = (
 		styles,
 		label !== 'default' ? `${componentSelector}-label-${label}` : '',
 		isLabelInside ? `${componentSelector}-label-inside` : '',
+		type !== 'default' ? `${componentSelector}-${type}` : '',
 		values?.length! > 0 ? `${componentSelector}-multiple` : '',
 		disabled ? `${componentSelector}-disabled` : '',
 	)}`
-	if (circular) {
+	if (type === 'circular') {
 		return <>
 			{customCss && customCss()}
 			<div role="progressbar" {...rest} className={`${classes} ${getClassNames(styles, 'progress-circular')}`}>

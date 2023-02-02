@@ -6,4 +6,4 @@ export * from './ModalBody';
 export * from './ModalHeader';
 export * from './ModalFooter';
 export default Modal;
-export type {IModalProps} from '../types/modal';
+export type {IModalProps} from '../types/modal.types';

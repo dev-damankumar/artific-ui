@@ -1,6 +1,6 @@
 import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
 import {Divider, Dropdown, DropdownMenu, DropdownToggle, MenuItem} from '../../src/index';
-import logo from './logo.svg';
+import logo from './logo.svg'; import {MenuHeading} from "../../src/Dropdown/MenuHeading";
 
 <Meta
 	title="Components/Dropdown"
@@ -15,6 +15,7 @@ export const Template=(args) => {
 					My Profile
 				</DropdownToggle>
 				<DropdownMenu>
+					<MenuHeading>Main Items</MenuHeading>
 					<MenuItem onSelect={alert}>Link 1</MenuItem>
 					<MenuItem> Link 2</MenuItem>
 					<Divider/>
@@ -84,57 +85,58 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 
 <Canvas>
 	<Story name="Dropdown Themes">
-		<Dropdown theme="primary">
+		<Dropdown variant="drawer" theme="primary">
 			<DropdownToggle>
 				Dropdown
 			</DropdownToggle>
 			<DropdownMenu>
-				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuHeading>Main Items</MenuHeading>
+				<MenuItem active onSelect={alert}>Link 1</MenuItem>
 				<MenuItem> Link 2</MenuItem>
 				<MenuItem>Link 3</MenuItem>
 				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
 				<MenuItem>Link 5</MenuItem>
 			</DropdownMenu>
 		</Dropdown>
-		<Dropdown theme="secondary">
+		<Dropdown variant="drawer" theme="secondary">
 			<DropdownToggle>
 				Dropdown
 			</DropdownToggle>
 			<DropdownMenu>
-				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuHeading>Main Items</MenuHeading>
+				<MenuItem active onSelect={alert}>Link 1</MenuItem>
 				<MenuItem> Link 2</MenuItem>
 				<MenuItem>Link 3</MenuItem>
 				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
 				<MenuItem>Link 5</MenuItem>
 			</DropdownMenu>
 		</Dropdown>
-		<Dropdown theme="dark">
+		<Dropdown variant="drawer" theme="dark">
 			<DropdownToggle>
 				Dropdown
 			</DropdownToggle>
 			<DropdownMenu>
-				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuHeading>Main Items</MenuHeading>
+				<MenuItem active onSelect={alert}>Link 1</MenuItem>
 				<MenuItem> Link 2</MenuItem>
 				<MenuItem>Link 3</MenuItem>
 				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
 				<MenuItem>Link 5</MenuItem>
 			</DropdownMenu>
 		</Dropdown>
-		<Dropdown theme="light">
+		<Dropdown variant="drawer" theme="light">
 			<DropdownToggle>
 				Dropdown
 			</DropdownToggle>
 			<DropdownMenu>
-				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuHeading>Main Items</MenuHeading>
+				<MenuItem active onSelect={alert}>Link 1</MenuItem>
 				<MenuItem> Link 2</MenuItem>
 				<MenuItem>Link 3</MenuItem>
 				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
 				<MenuItem>Link 5</MenuItem>
 			</DropdownMenu>
 		</Dropdown>
-		<br/>
-		<br/>
-		<br/>
 		<br/>
 		<br/>
 		<br/>

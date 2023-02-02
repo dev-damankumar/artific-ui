@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from "../Grid.module.css"
+import styles from "./Container.module.css"
 import getClassNames from "../utils/classes/getClassnames";
 import PropTypes from "prop-types";
-import {IDiv, Sizes, SizesArray} from "../types/common";
+import {IDiv, Sizes, SizesArray} from "../types/common.types";
 
 interface IContainerProps {
 	children: React.ReactNode;

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ButtonGroup.module.css';
 import getClassNames from '../utils/classes/getClassnames';
 import sizeClasses from '../utils/classes/sizeClasses';
-import {Directions, DirectionsArray, IDiv, Sizes, SizesArray} from '../types/common';
+import {Directions, DirectionsArray, IDiv, Sizes, SizesArray} from '../types/common.types';
 import PropTypes from "prop-types";
 
 

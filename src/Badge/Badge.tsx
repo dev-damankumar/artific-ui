@@ -1,9 +1,9 @@
 import React from 'react';
 import getClassNames from '../utils/classes/getClassnames';
 import styles from './Badge.module.css';
-import {defaultProps, IBadgeProps, propTypes} from '../types/badge';
+import {defaultProps, IBadgeProps, propTypes} from '../types/badge.types';
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
-import {IDiv} from "../types/common";
+import {IDiv} from "../types/common.types";
 
 
 export const Badge: React.FC<IBadgeProps & IDiv> = (
@@ -26,7 +26,7 @@ export const Badge: React.FC<IBadgeProps & IDiv> = (
 	return <>
 		{customCss && customCss()}
 		<div {...rest} style={style} className={classNames}>
-			<div className={getClassNames(styles, "badge-text")}>{title}</div>
+			{variant !== 'dot' && <div className={getClassNames(styles, "badge-text")}>{title}</div>}
 		</div>
 	</>
 };

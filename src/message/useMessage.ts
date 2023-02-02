@@ -1,9 +1,11 @@
 import getRandomClassId from "../utils/uuids/generateRandonClassId";
+import generateRandonClassId from "../utils/uuids/generateRandonClassId";
 import sizeClasses from "../utils/classes/sizeClasses";
 import applyColorScheme from "../utils/colors/applyColorScheme";
-import {MessageConfig, Messages, MessageType} from "../types/message";
+import {IThemeProvider, MessageConfig, Messages, MessageType} from "../types/message.types";
 import {MessageAlert} from "./components";
 import styles from './styles'
+import createTheme from "../utils/styles/theme";
 
 const assignClassesToAlert = (conditions: MessageConfig & { msgType: MessageType, componentSelector: string }) => {
 	let alertClasses = 'ati-message-alert-destroying';
@@ -15,9 +17,9 @@ const assignClassesToAlert = (conditions: MessageConfig & { msgType: MessageType
 	return alertClasses
 }
 
-
 export const useMessage = (function () {
-	function Constructor(this: Messages & MessageConfig, loadStyles: boolean) {
+
+	function Constructor(this: Messages & MessageConfig, loadStyles: boolean, themeProvider: IThemeProvider | null | undefined) {
 		if (typeof window === "undefined") return
 		this.type = 'default';
 		this.mode = 'light';
@@ -31,6 +33,7 @@ export const useMessage = (function () {
 		this.style = '';
 		this.size = 'md';
 		this.theme = 'primary';
+		const themeId = generateRandonClassId()
 
 		let timeHandler: any = null;
 		let delay = 1
@@ -105,10 +108,22 @@ export const useMessage = (function () {
 		}
 
 		function render(this: MessageConfig, toast: HTMLElement) {
+			const isThemeStyleExist = document.querySelector(`[data-artific-css='${themeId}']`)
 			let wrapperExist = document.querySelector(`[data-ati-message-wrapper].ati-message-alert-position-${this.position}`)
 			if (wrapperExist) {
 				wrapperExist.className = `ati-message-alert-position-${this.position} ati-message-alert-wrapper`
 				wrapperExist.insertAdjacentElement("beforeend", toast)
+				if (!isThemeStyleExist) {
+					if (themeProvider?.theme) {
+						wrapperExist.id = themeId
+						const themeStyle = createTheme(themeProvider.theme, {
+							themeId,
+							scope: "global"
+						})
+						const themeStyles = `<style data-artific-css=${themeId}>${themeStyle && themeStyle}</style>`
+						wrapperExist.insertAdjacentHTML('afterbegin', themeStyles)
+					}
+				}
 				setTimeout(() => {
 					toast.classList.remove('ati-message-alert-destroying')
 				}, destroyingSeconds)
@@ -117,6 +132,17 @@ export const useMessage = (function () {
 				wrapper.className = `ati-message-alert-position-${this.position} ati-message-alert-wrapper`
 				wrapper.setAttribute("data-ati-message-wrapper", "")
 				wrapper.append(toast)
+				if (!isThemeStyleExist) {
+					if (themeProvider?.theme) {
+						wrapper.id = themeId
+						const themeStyle = createTheme(themeProvider.theme, {
+							themeId,
+							scope: "global"
+						})
+						const themeStyles = `<style data-artific-css=${themeId}>${themeStyle && themeStyle}</style>`
+						wrapper.insertAdjacentHTML('afterbegin', themeStyles)
+					}
+				}
 				document.body.append(wrapper)
 				setTimeout(() => {
 					toast.classList.remove('ati-message-alert-destroying')
@@ -172,8 +198,8 @@ export const useMessage = (function () {
 		}
 	}
 
-	return function instance(loadStyles: boolean = false) {
-		return (new (Constructor as any)(loadStyles) as Messages)
+	return function instance(loadStyles: boolean = true, themeProvider: IThemeProvider | null | undefined = null) {
+		return (new (Constructor as any)(loadStyles, themeProvider) as Messages)
 	}
 })()
 export default useMessage

@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Dropdown.module.css';
 import getClassNames from '../utils/classes/getClassnames';
-import {defaultProps, IDropdownProps, propTypes} from '../types/dropdown';
-import {IDiv} from "../types/common";
+import {defaultProps, IDropdownProps, propTypes} from '../types/dropdown.types';
+import {IDiv} from "../types/common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
 

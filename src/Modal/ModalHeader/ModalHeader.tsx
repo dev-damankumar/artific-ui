@@ -2,8 +2,8 @@ import React from 'react';
 import getClassNames from "../../utils/classes/getClassnames";
 import styles from "../Modal.module.css";
 import buttonStyles from "../../Button/Button.module.css";
-import {IModalHeaderProps, modalHeaderDefaultProps, modalHeaderPropTypes} from "../../types/modal";
-import {IDiv} from "../../types/common";
+import {IModalHeaderProps, modalHeaderDefaultProps, modalHeaderPropTypes} from "../../types/modal.types";
+import {IDiv} from "../../types/common.types";
 
 export const ModalHeader: React.FC<IModalHeaderProps & IDiv> = (
 	{

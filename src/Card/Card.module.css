@@ -3,17 +3,21 @@
 	--card-box-shadow-hover: 0 1px 13px rgba(0, 0, 0, 0.1);
 	--card-border-radius: 5px;
 	--card-padding: 15px;
-	--card-main-color: #f8f8f8;
-	--card-outline-width: 2px;
+	--card-main-color: var(--bg-alt);
+	--card-border-width: 2px;
 	--card-border-color: #f0f0f0;
 	--card-img-width: 100%;
 	--card-width: 100%;
+	--card-background: white;
+	--card-background-color: white;
+	--card-text: inherit;
 }
 
 .card {
 	display: flex;
 	flex-direction: column;
-	background: #fff;
+	background: var(--card-background);
+	color: var(--card-text);
 	-moz-box-shadow: var(--card-box-shadow);
 	-webkit-box-shadow: var(--card-box-shadow);
 	box-shadow: var(--card-box-shadow);
@@ -63,6 +67,33 @@
 	max-height: 500px;
 }
 
+/*=====Colors=====*/
+.card-primary {
+	--card-background: var(--primary);
+	--card-background-color: var(--primary-color);
+	--card-text: var(--primary-text);
+}
+
+.card-secondary {
+	--card-background: var(--secondary);
+	--card-background-color: var(--secondary-color);
+	--card-text: var(--secondary-text);
+}
+
+.card-light {
+	--card-background: var(--light);
+	--card-background-color: var(--light-color);
+	--card-text: var(--light-text);
+}
+
+.card-dark {
+	--card-background: var(--dark);
+	--card-background-color: var(--dark-color);
+	--card-text: var(--dark-text);
+}
+
+
+/*=====Colors End=====*/
 /*=====Layouts=====*/
 
 .card-rounded {
@@ -85,7 +116,6 @@
 	--card-border-radius: 50%;
 }
 
-
 /*=====Layouts End=====*/
 
 /*=====Variants=====*/
@@ -99,93 +129,55 @@
 	padding: calc(var(--card-padding) + 5px) !important;
 }
 
-.card-fill {
+.card.card-fill {
 	box-shadow: none;
 	background: var(--card-main-color);
+	--card-text: var(--card-background-color);
 }
 
 .card-outline {
 	box-shadow: none;
-	border: var(--card-outline-width) solid var(--card-border-color);
+	background: var(--main-bg);
+	border: var(--card-border-width) solid var(--card-background-color);
+	color: var(--card-background-color);
 }
 
-.card-outline.bg-primary {
-	background: white;
-	color: var(--primary-color);
-	border-color: var(--primary-color);
+.card-outline.card-primary {
+	--card-background-color: var(--primary-color);
+	--card-text: var(--primary-color);
 }
 
-.card-outline.bg-secondary {
-	background: white;
-	color: var(--secondary-color);
-	border-color: var(--secondary-color);
+.card-outline.card-secondary {
+	--card-background-color: var(--secondary-color);
+	--card-text: var(--secondary-color);
 }
 
-.card-outline.bg-dark {
-	background: white;
-	color: var(--dark-color);
-	border-color: var(--dark-color);
+.card-outline.card-dark {
+	--card-background-color: var(--dark-color);
+	--card-text: var(--dark-color);
 }
 
-.card-outline.bg-light {
-	background: white;
-	color: var(--light-color);
-	border-color: var(--light-color);
+.card-outline.card-light {
+	--card-background-color: var(--light-color);
+	--card-text: var(--light-color);
 }
 
 
 .card-fill-with-border {
 	box-shadow: none;
+	border: var(--card-border-width) solid var(--card-main-color);
 	background: var(--card-main-color);
-	border: var(--card-outline-width) solid var(--card-border-color);
+	--card-text: var(--card-background-color);
+}
+
+.card a {
+	font-weight: 600;
+	color: var(--card-text);
 }
 
 /*=====Variants End=====*/
 
 
-/*=====Colors=====*/
-
-.bg-primary {
-	background: var(--primary);
-	color: var(--primary-text);
-}
-
-.bg-primary a {
-	color: var(--primary-text);
-	font-weight: 600;
-}
-
-.bg-secondary {
-	background: var(--secondary);
-	color: var(--secondary-text);
-}
-
-.bg-secondary a {
-	color: var(--secondary-text);
-	font-weight: 600;
-}
-
-.bg-light {
-	background: var(--light);
-	color: var(--light-text);
-}
-
-.bg-light a {
-	color: var(--light-text);
-	font-weight: 600;
-}
-
-.bg-dark {
-	background: var(--dark);
-	color: var(--dark-text);
-}
-
-.bg-dark a {
-	color: var(--dark-text);
-	font-weight: 600;
-}
-
-/*=====Colors End=====*/
 /*=====Sizes=====*/
 .card-large {
 	--card-width: 80%

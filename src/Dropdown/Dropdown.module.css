@@ -1,13 +1,15 @@
 :root {
 	--dropdown-box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
 	--dropdown-border-radius: 5px;
-	--dropdown-padding: 8px 10px;
-	--dropdown-side-padding: 5px 0;
-	--dropdown-font-size: 16px;
+	--dropdown-padding: 10px;
 	--dropdown-margin: 10px;
+	--dropdown-font-size: 16px;
 	--dropdown-min-width: 200px;
 	--dropdown-max-height: 200px;
-	--dropdown-outline-width: 2px;
+	--dropdown-border-width: 2px;
+	--dropdown-background: white;
+	--dropdown-background-color: white;
+	--dropdown-text: inherit;
 }
 
 .dropdown {
@@ -39,8 +41,9 @@
 .dropdown-btn {
 	border: none;
 	position: relative;
-	padding: var(--dropdown-padding);
+	padding: var(--dropdown-padding) calc(var(--dropdown-padding) * 2);
 	border-radius: var(--dropdown-border-radius);
+	font-size: var(--dropdown-font-size);
 }
 
 .dropdown-open .dropdown-menu {
@@ -62,10 +65,10 @@
 	position: absolute;
 	content: "";
 	top: calc(50% - 9px);
-	right: 15px;
+	right: var(--dropdown-padding);
 	width: calc(var(--dropdown-font-size) / 2);
 	height: calc(var(--dropdown-font-size) / 2);
-	border: var(--dropdown-outline-width) solid;
+	border: var(--dropdown-border-width) solid;
 	border-top: 0;
 	border-left: 0;
 	-webkit-transform: translateY(calc(-50% + 7px)) rotate(45deg);
@@ -74,7 +77,7 @@
 }
 
 .dropdown-toggle {
-	padding-right: 33px !important;
+	padding-right: calc(var(--dropdown-padding) * 3.5) !important;
 }
 
 .dropdown-menu {
@@ -90,7 +93,7 @@
 	-moz-box-shadow: var(--dropdown-box-shadow);
 	-webkit-box-shadow: var(--dropdown-box-shadow);
 	box-shadow: var(--dropdown-box-shadow);
-	padding: var(--dropdown-side-padding);
+	padding: calc(var(--dropdown-padding) / 2) 0;
 	z-index: 999999;
 	top: calc(100% + 10px);
 	height: auto;
@@ -104,6 +107,7 @@
 	transform-origin: top left;
 	margin: 0;
 }
+
 
 .dropdown-menu:before {
 	content: "";
@@ -158,11 +162,12 @@
 
 .dropdown-header {
 	display: block;
-	padding: var(--dropdown-padding);
+	padding: calc(var(--dropdown-padding) / 2) var(--dropdown-padding);
 	margin-bottom: 0;
 	font-size: calc(var(--dropdown-font-size) - 2px);
-	color: #575b5d;
+	color: var(--text);
 	font-weight: 600;
+	cursor: default;
 }
 
 .dropdown-item-text {
@@ -172,65 +177,46 @@
 }
 
 /*=====Colors=====*/
+.dropdown-primary {
+	--dropdown-background: var(--primary);
+	--dropdown-background-color: var(--primary-color);
+	--dropdown-text: var(--primary-text);
+}
+
+.dropdown-secondary {
+	--dropdown-background: var(--secondary);
+	--dropdown-background-color: var(--secondary-color);
+	--dropdown-text: var(--secondary-text);
+}
+
+.dropdown-light {
+	--dropdown-background: var(--light);
+	--dropdown-background-color: var(--light-color);
+	--dropdown-text: var(--light-text);
+}
+
+.dropdown-dark {
+	--dropdown-background: var(--dark);
+	--dropdown-background-color: var(--dark-color);
+	--dropdown-text: var(--dark-text);
+}
+
+
 .dropdown-wrap::-webkit-scrollbar-thumb {
-	background: var(--primary);
+	background: var(--dropdown-background);
 	border-radius: 50px;
 }
 
-.dropdown-secondary .dropdown-wrap::-webkit-scrollbar-thumb {
-	background: var(--secondary);
+.dropdown-menu .dropdown-item.active {
+	background: var(--dropdown-background);
+	color: var(--dropdown-text);
 }
 
-.dropdown-dark .dropdown-wrap::-webkit-scrollbar-thumb {
-	background: var(--dark);
-}
-
-.dropdown-light .dropdown-wrap::-webkit-scrollbar-thumb {
-	background: var(--light);
-}
-
-.btn-primary ~ .dropdown-menu .dropdown-item.active {
-	background: var(--primary);
-	color: var(--primary-text);
-}
-
-.btn-secondary ~ .dropdown-menu .dropdown-item.active {
-	background: var(--secondary);
-	color: var(--secondary-text);
-}
-
-
-.btn-light ~ .dropdown-menu .dropdown-item.active {
-	background: var(--light-alt);
-	color: var(--light-text);
-}
-
-.btn-dark ~ .dropdown-menu .dropdown-item.active {
-	background: var(--dark);
-	color: var(--dark-text);
-}
 
 .dropdown-item.active {
-	background: var(--primary);
-	color: var(--primary-text);
+	background: var(--dropdown-background);
+	color: var(--dropdown-text);
 }
-
-.dropdown-secondary .dropdown-item.active {
-	background: var(--secondary);
-	color: var(--secondary-text);
-}
-
-.dropdown-light .dropdown-item.active {
-	background: var(--light);
-	color: var(--light-text);
-}
-
-
-.dropdown-dark .dropdown-item.active {
-	background: var(--dark);
-	color: var(--dark-text);
-}
-
 
 /*=====Colors End=====*/
 
@@ -244,15 +230,10 @@
 }
 
 /*=====Layouts End=====*/
-/*=====Varints=====*/
-
+/*=====Variants=====*/
 
 .dropdown-floating .dropdown-menu:before {
 	display: none;
-}
-
-.dropdown-fluid {
-	--dropdown-side-padding: 5px;
 }
 
 .dropdown-fluid .dropdown-item {
@@ -260,7 +241,15 @@
 }
 
 .dropdown-fluid .dropdown-wrap {
-	padding-right: var(--dropdown-side-padding);
+	padding-right: calc(var(--dropdown-padding) / 2);
+}
+
+.dropdown-fluid .dropdown-menu {
+	padding: calc(var(--dropdown-padding) / 2);
+}
+
+.dropdown-fluid .dropdown-header {
+	padding: calc(var(--dropdown-padding) / 2);
 }
 
 .dropdown-drawer .dropdown-menu:before {
@@ -285,32 +274,25 @@
 
 /*=====Sizes=====*/
 
-.dropdown-large {
-	--dropdown-padding: 10px 18px;
-	--dropdown-font-size: 17px;
-	--dropdown-min-width: 250px;
-	--dropdown-max-height: 250px;
-	--dropdown-margin: 15px;
-}
-
-.dropdown-large.dropdown-fluid {
-	--dropdown-side-padding: 8px;
-}
-
 .dropdown-extra-large {
-	--dropdown-padding: 10px 20px;
+	--dropdown-padding: 20px;
 	--dropdown-margin: 15px;
-	--dropdown-font-size: 19px;
+	--dropdown-font-size: 20px;
 	--dropdown-min-width: 300px;
 	--dropdown-max-height: 300px;
 }
 
-.dropdown-extra-large.dropdown-fluid {
-	--dropdown-side-padding: 10px;
+.dropdown-large {
+	--dropdown-padding: 15px;
+	--dropdown-margin: 15px;
+	--dropdown-font-size: 18px;
+	--dropdown-min-width: 250px;
+	--dropdown-max-height: 250px;
 }
 
+
 .dropdown-small {
-	--dropdown-padding: 5px 15px;
+	--dropdown-padding: 8px;
 	--dropdown-margin: 5px;
 	--dropdown-font-size: 14px;
 	--dropdown-min-width: 150px;
@@ -318,23 +300,13 @@
 
 }
 
-.dropdown-small.dropdown-fluid {
-	--dropdown-side-padding: 5px;
-}
-
 .dropdown-extra-small {
-	--dropdown-margin: 3px;
-	--dropdown-padding: 3px 10px;
+	--dropdown-margin: 5px;
+	--dropdown-padding: 4px;
 	--dropdown-font-size: 12px;
 	--dropdown-min-width: 130px;
 	--dropdown-max-height: 130px;
-
 }
-
-.dropdown-extra-small.dropdown-fluid {
-	--dropdown-side-padding: 3px;
-}
-
 
 /*=====Sizes End=====*/
 

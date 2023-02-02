@@ -17,9 +17,11 @@ const Components = {
 	Row: 'row',
 	Spinner: 'spinner',
 	Table: 'table',
+	Tab: 'tab',
 	Typography: 'typography',
 }
 export const ComponentsArray = [
+	'ati-message-alert',
 	'accordion',
 	'alert',
 	'avatar',
@@ -32,7 +34,6 @@ export const ComponentsArray = [
 	'dropdown',
 	'list',
 	'modal',
-	'ati-message-alert',
 	'pagination',
 	'progress',
 	'row',

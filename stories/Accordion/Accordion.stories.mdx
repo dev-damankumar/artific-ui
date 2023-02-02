@@ -16,9 +16,10 @@ An accordion is a lightweight container that may either be used standalone, or b
 ## Basic Accordion
 
 export const Template=(args) => (
-	<Accordion  {...args}>
+	<Accordion  {...args} theme="primary">
 		<AccordionPanel>
-			<AccordionHeader>Is you.accordion-panelr team updated with latest web technical skills?</AccordionHeader>
+			<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+				skills?</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 				harum officiis
@@ -30,7 +31,8 @@ export const Template=(args) => (
 			</AccordionBody>
 		</AccordionPanel>
 		<AccordionPanel>
-			<AccordionHeader>Is you.accordion-panelr team updated with latest web technical skills?</AccordionHeader>
+			<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+				skills?</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 				harum officiis
@@ -42,7 +44,8 @@ export const Template=(args) => (
 			</AccordionBody>
 		</AccordionPanel>
 		<AccordionPanel>
-			<AccordionHeader>Is you.accordion-panelr team updated with latest web technical skills?</AccordionHeader>
+			<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+				skills?</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 				harum officiis
@@ -367,17 +370,17 @@ provide the prop `prefix` or `suffix` or both to the `AccordionHeader` to add th
 	</Story>
 </Canvas>
 
-## Indicator Icon Directions
+## Indicator Icon Position
 
 You can choose where accordion's indicator icon should appear when opening and closing the panel
 
-Control which it direction should be by providing it `indicatorDirection` of `start` or `end`
+Control which it direction should be by providing it `indicatorPosition` of `start` or `end`
 
 <Canvas>
 	<Story
-		name="Indicator Icon Directions"
+		name="Indicator Icon Position"
 	>
-		<h5>Default/End Direction</h5>
+		<h5>Default/End Position</h5>
 		<Accordion>
 			<AccordionPanel>
 				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
@@ -417,8 +420,8 @@ Control which it direction should be by providing it `indicatorDirection` of `st
 			</AccordionPanel>
 		</Accordion>
 		<br/>
-		<h5>Start Direction</h5>
-		<Accordion indicatorDirection="start">
+		<h5>Start Position</h5>
+		<Accordion indicatorPosition="start">
 			<AccordionPanel>
 				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>

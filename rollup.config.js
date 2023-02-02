@@ -1,33 +1,39 @@
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import resolve from '@rollup/plugin-node-resolve';
+import {nodeResolve} from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import replace from '@rollup/plugin-replace';
-import {terser} from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 import {getFolders} from './scripts/buildUtils.js';
 import generatePackageJson from 'rollup-plugin-generate-package-json';
 import postCSS from 'rollup-plugin-postcss';
+import {getBabelOutputPlugin} from '@rollup/plugin-babel';
 
 const packageJson=require('./package.json');
 
 const plugins=[
 	peerDepsExternal(),
-	resolve(),
+	nodeResolve(),
 	replace({
 		preventAssignment: true,
-		__IS_DEV__: process.env.NODE_ENV==='development',
+		'process.env.NODE_ENV': JSON.stringify('production'),
 	}),
-	commonjs(),
+	commonjs({sourceMap: false}),
+	getBabelOutputPlugin({
+		presets: ['@babel/preset-env']
+	}),
 	typescript({
 		tsconfig: './tsconfig.json',
 		useTsconfigDeclarationDir: true,
 	}),
 	postCSS({
-		plugins: [require('autoprefixer')]
+		plugins: [require('autoprefixer')],
+		minimize: true
+
 	}),
 	terser(),
 ];
-const subfolderPlugins=(folderName) => [
+const subFolderPlugins=(folderName) => [
 	...plugins,
 	generatePackageJson({
 		baseContents: {
@@ -49,7 +55,7 @@ getFolders('./src').forEach((folder) => {
 				file: `dist/${folder}`,
 
 			},
-			plugins: subfolderPlugins(folder),
+			plugins: subFolderPlugins(folder),
 		})
 		return;
 	}
@@ -61,7 +67,7 @@ getFolders('./src').forEach((folder) => {
 			exports: 'named',
 			format: 'esm',
 		},
-		plugins: subfolderPlugins(folder),
+		plugins: subFolderPlugins(folder),
 		external: ['react', 'react-dom'],
 	})
 });
@@ -73,7 +79,13 @@ export default [
 			{
 				file: packageJson.module,
 				format: 'esm',
-				sourcemap: false,
+				sourcemap: true,
+				exports: 'named',
+			},
+			{
+				file: packageJson.main,
+				format: 'cjs',
+				sourcemap: true,
 				exports: 'named',
 			},
 		],
@@ -81,17 +93,4 @@ export default [
 		external: ['react', 'react-dom'],
 	},
 	...folderBuilds,
-	{
-		input: ['src/index.ts'],
-		output: [
-			{
-				file: packageJson.main,
-				format: 'cjs',
-				sourcemap: false,
-				exports: 'named',
-			},
-		],
-		plugins,
-		external: ['react', 'react-dom'],
-	},
 ];

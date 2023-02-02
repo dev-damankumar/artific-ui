@@ -1,9 +1,12 @@
 import React from 'react';
 import classes from '../Accordion.module.css';
-import bgClasses from '../../color.module.css';
 import getClassNames from '../../utils/classes/getClassnames';
-import {IAccordionHeader, IAccordionHeaderDefaultPropTypes, IAccordionHeaderPropTypes} from '../../types/accordion';
-import {IDiv} from "../../types/common";
+import {
+	IAccordionHeader,
+	IAccordionHeaderDefaultPropTypes,
+	IAccordionHeaderPropTypes
+} from '../../types/accordion.types';
+import {IDiv} from "../../types/common.types";
 
 export const AccordionHeader: React.FC<IAccordionHeader & IDiv> = (
 	{
@@ -14,7 +17,6 @@ export const AccordionHeader: React.FC<IAccordionHeader & IDiv> = (
 		suffix,
 		...rest
 	}) => {
-	const themeClasses = theme !== 'default' ? `bg-${theme}` : 'bg-primary';
 	return (
 		<div
 			{...rest}
@@ -22,7 +24,7 @@ export const AccordionHeader: React.FC<IAccordionHeader & IDiv> = (
 				onToggle?.(e)
 				rest.onClick?.(e)
 			}}
-			className={`${getClassNames(classes, 'accordion-header')} ${getClassNames(bgClasses, themeClasses)}`}>
+			className={`${getClassNames(classes, 'accordion-header')}`}>
 			<a className={getClassNames(classes, 'accordion-link')}>
 				{prefix && <div className={getClassNames(classes, 'accordion-icon-left')}>{prefix}</div>}
 				{children}

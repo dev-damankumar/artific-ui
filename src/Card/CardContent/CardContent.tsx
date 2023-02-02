@@ -1,7 +1,7 @@
 import React from 'react';
 import getClassNames from '../../utils/classes/getClassnames';
 import classes from '../Card.module.css';
-import {IDiv} from "../../types/common";
+import {IDiv} from "../../types/common.types";
 
 export interface ICardContentProps {
 	children: React.ReactNode,

@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './Accordion.module.css';
-import {defaultProps, IAccordionProps, propTypes} from '../types/accordion';
+import {defaultProps, IAccordionProps, propTypes} from '../types/accordion.types';
 import getClassNames from '../utils/classes/getClassnames';
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
-import {IDiv} from "../types/common";
+import {IDiv} from "../types/common.types";
 
 export const Accordion: React.FC<IAccordionProps & IDiv> = (
 	{
@@ -14,7 +14,7 @@ export const Accordion: React.FC<IAccordionProps & IDiv> = (
 		variant,
 		size,
 		layout,
-		indicatorDirection,
+		indicatorPosition,
 		colorScheme,
 		...rest
 	}) => {
@@ -23,7 +23,7 @@ export const Accordion: React.FC<IAccordionProps & IDiv> = (
 		customCss, classNames
 	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
 	const childrenWithProps = addPropsToChildren(children, {theme})
-	const classes = getClassNames(styles, 'accordion-wrap', indicatorDirection === 'start' && 'accordion-indicator-left')
+	const classes = getClassNames(styles, 'accordion-wrap', indicatorPosition === 'start' && 'accordion-indicator-left')
 	return (
 		<>
 			{customCss && customCss()}

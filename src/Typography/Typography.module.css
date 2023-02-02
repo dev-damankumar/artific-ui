@@ -1,5 +1,5 @@
 :root {
-	--typography-outline-width: 2px;
+	--typography-border-width: 2px;
 	--typography-padding: 5px;
 	--typography-font-size: 1rem;
 	--typography-border-radius: 5px;
@@ -38,7 +38,7 @@ div.typography {
 
 .typography-abbr {
 	display: inline;
-	border-bottom: var(--typography-outline-width) dotted;
+	border-bottom: var(--typography-border-width) dotted;
 	text-decoration: none;
 }
 
@@ -90,3 +90,21 @@ div.typography {
 .typography-bold {
 	font-weight: 600;
 }
+
+
+.text-primary {
+	color: var(--primary-color) !important;
+}
+
+.text-secondary {
+	color: var(--secondary-color) !important;
+}
+
+.text-light {
+	color: var(--light-color) !important;
+}
+
+.text-dark {
+	color: var(--dark-color) !important;
+}
+

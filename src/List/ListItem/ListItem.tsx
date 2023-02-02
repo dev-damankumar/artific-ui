@@ -1,27 +1,29 @@
 import React from 'react';
 import classes from '../List.module.css';
-import bgClasses from '../../color.module.css';
 import getClassNames from '../../utils/classes/getClassnames';
-import {IListItemProps} from '../../types/list';
-import {ILi} from "../../types/common";
+import {IListItemProps, ListItemDefaultPropTypes, ListItemPropTypes} from '../../types/list.types';
+import {ILi} from "../../types/common.types";
 
 export const ListItem: React.FC<IListItemProps & ILi> = (
 	{
 		children,
-		theme = 'primary',
+		theme,
 		prefix,
 		suffix,
+		disabled,
 		...rest
 	}) => {
-	let themeClasses = theme ? `bg-${theme}` : '';
 	return (
 		<li {...rest}
-			className={`${getClassNames(classes, 'list-group-item')} ${getClassNames(bgClasses, themeClasses)}`}>
+			className={`${getClassNames(classes, 'list-group-item', disabled ? 'disabled' : '')}`}>
 			{prefix && <div className={getClassNames(classes, 'list-icon-left')}>{prefix}</div>}
 			{children}
 			{suffix && <div className={getClassNames(classes, 'list-icon-right')}>{suffix}</div>}
 		</li>
 	);
 };
+ListItem.displayName = 'List';
+ListItem.propTypes = ListItemPropTypes;
+ListItem.defaultProps = ListItemDefaultPropTypes;
 
 export default ListItem;

@@ -1,5 +1,5 @@
 import styles from "./styles"
-import {ILoader, LoaderConfig} from "../types/loader";
+import {ILoader, LoaderConfig} from "../types/loader.types";
 import getRandomClassId from "../utils/uuids/generateRandonClassId";
 
 

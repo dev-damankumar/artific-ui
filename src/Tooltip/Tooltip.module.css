@@ -1,7 +1,9 @@
 :root {
 	--tooltip-background: white;
+	--tooltip-background-color: white;
+	--tooltip-text: var(--text);
+
 	--tooltip-border-radius: 5px;
-	--tooltip-color: var(--text);
 	--tooltip-left: 50%;
 	--tooltip-transform-x: -50%;
 	--tooltip-right: 50%;
@@ -16,7 +18,7 @@
 	left: var(--tooltip-left);
 	z-index: 999;
 	background: var(--tooltip-background);
-	color: var(--tooltip-color);
+	color: var(--tooltip-text);
 	max-width: 200px;
 	box-shadow: 0 1px 13px rgb(0 0 0 / 10%);
 	width: max-content;
@@ -97,22 +99,26 @@
 /*=====Colors=====*/
 .tooltip-primary {
 	--tooltip-background: var(--primary);
-	--tooltip-color: var(--primary-text);
+	--tooltip-background-color: var(--primary-color);
+	--tooltip-text: var(--primary-text);
 }
 
 .tooltip-secondary {
 	--tooltip-background: var(--secondary);
-	--tooltip-color: var(--secondary-text);
+	--tooltip-text: var(--secondary-text);
+	--tooltip-background-color: var(--secondary-color);
 }
 
 .tooltip-light {
 	--tooltip-background: var(--light);
-	--tooltip-color: var(--light-text);
+	--tooltip-text: var(--light-text);
+	--tooltip-background-color: var(--light-color);
 }
 
 .tooltip-dark {
 	--tooltip-background: var(--dark);
-	--tooltip-color: var(--dark-text);
+	--tooltip-text: var(--dark-text);
+	--tooltip-background-color: var(--dark-color);
 }
 
 /*=====Colors End=====*/

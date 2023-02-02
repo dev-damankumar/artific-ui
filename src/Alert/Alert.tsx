@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import styles from './Alert.module.css';
-import {defaultProps, IAlertProps, propTypes} from '../types/alert';
+import {defaultProps, IAlertProps, propTypes} from '../types/alert.types';
 import getClassNames from '../utils/classes/getClassnames';
-import {IDiv} from "../types/common";
+import {IDiv} from "../types/common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
 export const Alert: React.FC<IAlertProps & IDiv> = (
@@ -34,7 +34,7 @@ export const Alert: React.FC<IAlertProps & IDiv> = (
 		setShow(false);
 	};
 
-	const additionalVariantClasses = `${(variant === 'note' && direction && direction !== 'left') ? `${componentSelector}-note-${direction} ${(variant === 'note') && 'alert-outline'}` : ''}`;
+	const additionalVariantClasses = `${(variant === 'note' && direction && direction !== 'left') ? `${componentSelector}-note-${direction}` : ''} ${(variant === 'note') ? 'alert-outline' : ''}`;
 	return show ? (
 		<>
 			{customCss && customCss()}

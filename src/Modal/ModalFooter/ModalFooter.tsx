@@ -1,7 +1,7 @@
 import React from 'react';
 import getClassNames from "../../utils/classes/getClassnames";
 import styles from "../Modal.module.css";
-import {IDiv} from "../../types/common";
+import {IDiv} from "../../types/common.types";
 
 export const ModalFooter: React.FC<{ children: React.ReactNode } & IDiv> = (
 	{

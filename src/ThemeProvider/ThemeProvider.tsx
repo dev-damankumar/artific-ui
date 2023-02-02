@@ -33,7 +33,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode, theme: object 
 			<style data-artific-css={themeId}>
 				{themeStyle && themeStyle}
 			</style>
-			<div style={{display: "inline"}} id={themeId}>
+			<div data-theme-provider style={{display: "inline"}} id={themeId}>
 				{children}
 			</div>
 		</ThemeContext.Provider>

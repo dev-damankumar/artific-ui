@@ -1,8 +1,8 @@
 import React from 'react';
 import modalStyles from "./Modal.module.css"
 import getClassNames from "../utils/classes/getClassnames";
-import {defaultProps, IModalProps, OverLaySizesArray, propTypes} from "../types/modal";
-import {IDiv, IModalSizesType} from "../types/common";
+import {defaultProps, IModalProps, OverLaySizesArray, propTypes} from "../types/modal.types";
+import {IDiv, IModalSizesType} from "../types/common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
 import sizeClasses from "../utils/classes/sizeClasses";

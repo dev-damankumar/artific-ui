@@ -1,8 +1,8 @@
 import React, {useRef} from 'react';
-import {defaultProps, ITooltipProps, propTypes} from "../types/tooltip";
+import {defaultProps, ITooltipProps, propTypes} from "../types/tooltip.types";
 import getClassNames from "../utils/classes/getClassnames";
 import styles from "./Tooltip.module.css";
-import {IDiv} from "../types/common";
+import {IDiv} from "../types/common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
 
