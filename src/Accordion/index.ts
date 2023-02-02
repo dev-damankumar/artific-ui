@@ -1,5 +1,5 @@
 import Accordion from "./Accordion";
-import '../index.css';
+import "../index.css"
 
 export * from './Accordion';
 export * from './AccordionPanel';

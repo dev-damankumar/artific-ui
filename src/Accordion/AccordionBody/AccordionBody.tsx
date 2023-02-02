@@ -1,8 +1,8 @@
 import React, {useRef} from 'react';
 import classes from '../Accordion.module.css';
-import {IAccordionBody, IAccordionBodyDefaultPropTypes, IAccordionBodyPropTypes} from '../../types/accordion.types';
+import {IAccordionBody, IAccordionBodyDefaultPropTypes, IAccordionBodyPropTypes} from '../Accordion.types';
 import getClassNames from '../../utils/classes/getClassnames';
-import {CSSStyle, IDiv} from '../../types/common.types';
+import {CSSStyle, IDiv} from '../../types/Common.types';
 
 export const AccordionBody: React.FC<IAccordionBody & IDiv> = (
 	{

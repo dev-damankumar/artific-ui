@@ -1,4 +1,4 @@
-import {ColorScheme, CSSStyle, Themes, ThemesArray} from './common.types';
+import {ColorScheme, CSSStyle, Themes, ThemesArray} from '../types/Common.types';
 import React from 'react';
 import PropTypes from "prop-types";
 

@@ -53,6 +53,16 @@ getFolders('./src').forEach((folder) => {
 			input: `src/${folder}`,
 			output: {
 				file: `dist/${folder}`,
+			},
+			plugins: subFolderPlugins(folder),
+		})
+		return;
+	}
+	if (folder.includes('.css')) {
+		folderBuilds.push({
+			input: `src/${folder}`,
+			output: {
+				file: `dist/${folder}`,
 
 			},
 			plugins: subFolderPlugins(folder),

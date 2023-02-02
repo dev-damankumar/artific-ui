@@ -1,7 +1,8 @@
 import React from 'react';
+
 import PropTypes from "prop-types";
 import {Typography} from "../../Typography";
-import {ITh} from "../../types/common.types";
+import {ITh} from "../../types/Common.types";
 
 export const TableHeading: React.FC<{ children: React.ReactNode } & ITh> = ({children, ...rest}) => {
 	return (

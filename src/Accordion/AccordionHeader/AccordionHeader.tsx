@@ -1,12 +1,8 @@
 import React from 'react';
 import classes from '../Accordion.module.css';
 import getClassNames from '../../utils/classes/getClassnames';
-import {
-	IAccordionHeader,
-	IAccordionHeaderDefaultPropTypes,
-	IAccordionHeaderPropTypes
-} from '../../types/accordion.types';
-import {IDiv} from "../../types/common.types";
+import {IAccordionHeader, IAccordionHeaderDefaultPropTypes, IAccordionHeaderPropTypes} from '../Accordion.types';
+import {IDiv} from "../../types/Common.types";
 
 export const AccordionHeader: React.FC<IAccordionHeader & IDiv> = (
 	{

@@ -1,9 +1,10 @@
 import React from 'react';
+
 import getClassNames from "../../utils/classes/getClassnames";
 import styles from "../Tabs.module.css";
-import {ITabContentProps, tabContentDefaultProps, tabContentPropTypes} from "../../types/tabs.types";
+import {ITabContentProps, tabContentDefaultProps, tabContentPropTypes} from "../Tabs.types";
 import ErrorMessage from "../../utils/errors/Error";
-import {IDiv} from "../../types/common.types";
+import {IDiv} from "../../types/Common.types";
 
 export const TabContent: React.FC<ITabContentProps & IDiv> = (
 	{

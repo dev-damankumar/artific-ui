@@ -1,5 +1,5 @@
-import '../index.css';
 import Table from "./Table"
+import "../index.css"
 
 export * from './TableCell';
 export * from './TableRow';

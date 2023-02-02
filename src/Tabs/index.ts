@@ -1,5 +1,5 @@
-import '../index.css';
 import Tabs from "./Tabs"
+import "../index.css"
 
 export * from './Tabs';
 export * from './TabItem';

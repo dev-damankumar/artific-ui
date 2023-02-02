@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import createTheme from "../utils/styles/theme";
-import generateRandonClassId from "../utils/uuids/generateRandonClassId";
+import generateRandomClassId from "../utils/uuids/generateRandomClassId";
 
 interface ITheme {
 	usingThemeProvider: boolean;
@@ -21,7 +21,7 @@ export const ThemeContext = React.createContext<ITheme | null>({
 export const ThemeProvider: React.FC<{ children: React.ReactNode, theme: object }> = ({children, theme}) => {
 	const [themeState, setTheme] = useState<object>(theme)
 	const usingThemeProvider = true
-	const themeId = generateRandonClassId()
+	const themeId = generateRandomClassId()
 	const themeStyle = createTheme(theme, {
 		themeId,
 		scope: "global"

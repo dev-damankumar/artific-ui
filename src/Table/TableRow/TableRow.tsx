@@ -1,6 +1,7 @@
 import React from 'react';
+
 import PropTypes from "prop-types";
-import {ITr} from "../../types/common.types";
+import {ITr} from "../../types/Common.types";
 
 export const TableRow: React.FC<{ children: React.ReactNode } & ITr> = ({children, ...rest}) => {
 	return (

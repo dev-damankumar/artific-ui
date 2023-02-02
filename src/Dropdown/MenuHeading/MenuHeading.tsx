@@ -1,7 +1,8 @@
 import React from 'react';
+
 import getClassNames from '../../utils/classes/getClassnames';
 import classes from '../Dropdown.module.css';
-import {IDiv} from "../../types/common.types";
+import {IDiv} from "../../types/Common.types";
 
 export const MenuHeading: React.FC<IDiv> = (
 	{

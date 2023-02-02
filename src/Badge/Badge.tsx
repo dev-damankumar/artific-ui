@@ -1,9 +1,11 @@
 import React from 'react';
+
+
 import getClassNames from '../utils/classes/getClassnames';
 import styles from './Badge.module.css';
-import {defaultProps, IBadgeProps, propTypes} from '../types/badge.types';
+import {defaultProps, IBadgeProps, propTypes} from './Badge.types';
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
-import {IDiv} from "../types/common.types";
+import {IDiv} from "../types/Common.types";
 
 
 export const Badge: React.FC<IBadgeProps & IDiv> = (

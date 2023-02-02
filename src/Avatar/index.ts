@@ -1,5 +1,5 @@
-import '../index.css';
 import Avatar from "./Avatar";
+import "../index.css"
 
 export default Avatar
 export * from './Avatar';

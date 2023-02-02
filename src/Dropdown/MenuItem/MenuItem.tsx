@@ -1,8 +1,9 @@
 import React from 'react';
+
 import getClassNames from '../../utils/classes/getClassnames';
 import classes from '../Dropdown.module.css';
-import {IMenuItemProps, IMenuItemPropsType} from '../../types/dropdown.types';
-import {ILink} from "../../types/common.types";
+import {IMenuItemProps, IMenuItemPropsType} from '../Dropdown.types';
+import {ILink} from "../../types/Common.types";
 
 export const MenuItem: React.FC<IMenuItemProps & ILink> = (
 	{

@@ -1,7 +1,8 @@
 import React from 'react';
+
 import PropTypes from "prop-types";
 import {Typography} from "../../Typography";
-import {ITd} from "../../types/common.types";
+import {ITd} from "../../types/Common.types";
 
 export const TableCell: React.FC<{ children: React.ReactNode } & ITd> = ({children, ...rest}) => {
 	return (

@@ -1,7 +1,9 @@
 import React from 'react';
+
+
 import styles from "./Divider.module.css"
 import getClassNames from "../utils/classes/getClassnames";
-import {IDiv} from "../types/common.types";
+import {IDiv} from "../types/Common.types";
 
 export const Divider: React.FC<{ direction?: 'horizontal' | 'vertical', children?: React.ReactNode } & IDiv> = ({direction = 'horizontal'}) => {
 	return (

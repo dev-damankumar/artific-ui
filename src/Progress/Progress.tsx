@@ -1,10 +1,12 @@
 import React from 'react';
+
+
 import styles from './Progress.module.css';
 import getClassNames from '../utils/classes/getClassnames';
-import {defaultProps, IProgressProps, propTypes} from '../types/progress.types';
+import {defaultProps, IProgressProps, propTypes} from './Progress.types';
 import uuid from "../utils/uuids/uuid";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
-import {IDiv} from "../types/common.types";
+import {IDiv} from "../types/Common.types";
 
 
 export const Progress: React.FC<IProgressProps & IDiv> = (

@@ -1,8 +1,10 @@
 import React, {createElement} from 'react';
+
+
 import getClassNames from '../utils/classes/getClassnames';
 import classes from './Typography.module.css';
-import {defaultProps, ITypographyProps, propTypes} from '../types/typography.types';
-import {IAnyElement} from "../types/common.types";
+import {defaultProps, ITypographyProps, propTypes} from './Typography.types';
+import {IAnyElement} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
 

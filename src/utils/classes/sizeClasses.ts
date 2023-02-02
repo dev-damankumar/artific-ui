@@ -1,4 +1,4 @@
-import {IModalSizes, IModalSizesType, ISizes} from '../../types/common.types';
+import {IModalSizes, IModalSizesType, ISizes} from '../../types/Common.types';
 
 const sizeClasses = (prefix: string, size: any): IModalSizesType => {
 	return (size !== 'md' ? `${prefix}-${prefix === 'modal' ? IModalSizes[size] : ISizes[size]}` : '') as IModalSizesType;

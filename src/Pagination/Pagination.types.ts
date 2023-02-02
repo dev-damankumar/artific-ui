@@ -1,5 +1,5 @@
 import React from 'react';
-import {ColorScheme, Layouts, LayoutsArray, Sizes, SizesArray, Themes, ThemesArray,} from './common.types';
+import {ColorScheme, Layouts, LayoutsArray, Sizes, SizesArray, Themes, ThemesArray,} from '../types/Common.types';
 import PropTypes from "prop-types";
 
 export const VariantsArray = ["default", "separate", "breadcrumb", "float"] as const;

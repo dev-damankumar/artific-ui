@@ -8,7 +8,7 @@ import {
 	SizesArray,
 	Themes,
 	ThemesArray
-} from './common.types';
+} from '../types/Common.types';
 import React from 'react';
 import PropTypes from "prop-types";
 

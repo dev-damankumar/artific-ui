@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import styles from '../Accordion.module.css';
-import {IAccordionPanel, IAccordionPanelDefaultPropTypes, IAccordionPanelPropTypes} from '../../types/accordion.types';
+import {IAccordionPanel, IAccordionPanelDefaultPropTypes, IAccordionPanelPropTypes} from '../Accordion.types';
 import getClassNames from '../../utils/classes/getClassnames';
 import {addPropsToChildren} from "../../utils/helpers";
-import {IDiv} from "../../types/common.types";
+import {IDiv} from "../../types/Common.types";
 
 
 export const AccordionPanel: React.FC<IAccordionPanel & IDiv> = (

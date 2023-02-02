@@ -1,5 +1,5 @@
 import React from 'react';
-import {ColorScheme, Sizes, SizesArray, Themes, ThemesArray} from './common.types';
+import {ColorScheme, Sizes, SizesArray, Themes, ThemesArray} from '../types/Common.types';
 import PropTypes from "prop-types";
 
 // @ts-ignore

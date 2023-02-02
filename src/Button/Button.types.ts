@@ -9,7 +9,7 @@ import {
 	ThemesArray,
 	Variants,
 	VariantsArray
-} from './common.types';
+} from '../types/Common.types';
 import PropTypes from "prop-types";
 
 export const LoadingDirectionsArray = ['before', 'after'] as const;

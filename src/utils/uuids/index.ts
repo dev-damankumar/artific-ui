@@ -1,2 +1,2 @@
 export * from './uuid';
-export * from './generateRandonClassId';
+export * from './generateRandomClassId';

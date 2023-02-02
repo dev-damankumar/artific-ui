@@ -1,8 +1,10 @@
 import React from 'react';
+
+
 import styles from "./Col.module.css"
 import getClassNames from "../utils/classes/getClassnames";
 import PropTypes from "prop-types";
-import {IDiv, Sizes, SizesArray} from "../types/common.types";
+import {IDiv, Sizes, SizesArray} from "../types/Common.types";
 
 
 export const ColArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'auto', undefined] as const;

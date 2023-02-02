@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from '../Card.module.css';
 import getClassNames from '../../utils/classes/getClassnames';
-import {ICardImageDefaultProps, ICardImageProps, ICardImagePropsTypes} from '../../types/card.types';
-import {IImage} from "../../types/common.types";
+import {ICardImageDefaultProps, ICardImageProps, ICardImagePropsTypes} from '../Card.types';
+import {IImage} from "../../types/Common.types";
 
 export const CardImage: React.FC<ICardImageProps & IImage> = (
 	{

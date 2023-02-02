@@ -1,4 +1,4 @@
-import {ColorScheme, FunctionCallback, Layouts, Sizes, Themes} from "./common.types";
+import {ColorScheme, FunctionCallback, Layouts, Sizes, Themes} from "../types/Common.types";
 
 export type MessageType = 'success' | 'info' | 'error' | 'warning' | 'alert'
 export type Positions = 'top-left' | 'top' | 'top-right' | 'bottom-left' | 'bottom' | 'bottom-right'

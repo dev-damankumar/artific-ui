@@ -1,5 +1,5 @@
-import '../index.css';
 import Dropdown from "./Dropdown";
+import "../index.css"
 
 export * from './Dropdown';
 export * from './DropdownToggle';

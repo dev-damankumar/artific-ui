@@ -1,18 +1,14 @@
 import React from 'react';
-import {ColorScheme, Layouts, LayoutsArray, Sizes, SizesArray, Themes, ThemesArray,} from './common.types';
+import {ColorScheme, Layouts, LayoutsArray, Sizes, SizesArray, Themes, ThemesArray,} from '../types/Common.types';
 import PropTypes from "prop-types";
 
-export const PlacementArray = ["bottom", "bottom-start", "bottom-end", "top", "top-start", "top-end", "left", "left-start", "left-end", "right", "right-start", "right-end"] as const;
-export type Placement = typeof PlacementArray[number];
-
-export const VariantsArray = ["default", "arrow"] as const;
+export const VariantsArray = ["default", "borderless", "striped", "outline"] as const;
 export type Variants = typeof VariantsArray[number];
 
 export const propTypes = {
 	theme: PropTypes.oneOf<Themes>(ThemesArray),
 	layout: PropTypes.oneOf<Layouts>(LayoutsArray),
 	variant: PropTypes.oneOf<Variants>(VariantsArray),
-	placement: PropTypes.oneOf<Placement>(PlacementArray),
 	size: PropTypes.oneOf<Sizes>(SizesArray),
 	style: PropTypes.object,
 	className: PropTypes.string,
@@ -30,17 +26,15 @@ export const defaultProps = {
 	layout: 'default' as Layouts,
 	size: 'md' as Sizes,
 	className: '' as string,
-	placement: 'bottom' as Placement,
+	variants: undefined
 };
 
-export interface ITooltipProps {
+export interface ITableProps {
 	children?: React.ReactNode;
-	title: string | React.ReactNode;
 	style?: React.CSSProperties;
 	theme?: Themes;
 	colorScheme?: ColorScheme;
 	variant?: Variants;
-	placement?: Placement;
 	layout?: Layouts;
 	size?: Sizes;
 	className?: string;

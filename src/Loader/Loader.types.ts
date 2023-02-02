@@ -1,4 +1,4 @@
-import {FunctionCallback, Sizes} from "./common.types";
+import {FunctionCallback, Sizes} from "../types/Common.types";
 
 
 export type Variants = 'default' | 'solid' | 'blur'

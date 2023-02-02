@@ -1,6 +1,6 @@
 import sizeClasses from "./sizeClasses";
-import getRandomClassId from "../uuids/generateRandonClassId";
-import {ColorScheme, ComponentsType} from "../../types/common.types";
+import getRandomClassId from "../uuids/generateRandomClassId";
+import {ColorScheme, ComponentsType} from "../../types/Common.types";
 import getClassNames from "./getClassnames";
 import applyColorScheme from "../colors/applyColorScheme";
 

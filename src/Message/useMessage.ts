@@ -1,8 +1,8 @@
-import getRandomClassId from "../utils/uuids/generateRandonClassId";
-import generateRandonClassId from "../utils/uuids/generateRandonClassId";
+import getRandomClassId from "../utils/uuids/generateRandomClassId";
+import generateRandomClassId from "../utils/uuids/generateRandomClassId";
 import sizeClasses from "../utils/classes/sizeClasses";
 import applyColorScheme from "../utils/colors/applyColorScheme";
-import {IThemeProvider, MessageConfig, Messages, MessageType} from "../types/message.types";
+import {IThemeProvider, MessageConfig, Messages, MessageType} from "./Message.types";
 import {MessageAlert} from "./components";
 import styles from './styles'
 import createTheme from "../utils/styles/theme";
@@ -33,7 +33,7 @@ export const useMessage = (function () {
 		this.style = '';
 		this.size = 'md';
 		this.theme = 'primary';
-		const themeId = generateRandonClassId()
+		const themeId = generateRandomClassId()
 
 		let timeHandler: any = null;
 		let delay = 1
@@ -143,7 +143,7 @@ export const useMessage = (function () {
 						wrapper.insertAdjacentHTML('afterbegin', themeStyles)
 					}
 				}
-				document.body.append(wrapper)
+				document.body.insertAdjacentElement('afterend', wrapper)
 				setTimeout(() => {
 					toast.classList.remove('ati-message-alert-destroying')
 				}, destroyingSeconds)

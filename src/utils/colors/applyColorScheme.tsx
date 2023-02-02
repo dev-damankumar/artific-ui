@@ -1,5 +1,5 @@
 import React from "react";
-import {ColorScheme, ComponentsType} from "../../types/common.types";
+import {ColorScheme, ComponentsType} from "../../types/Common.types";
 import createTheme from "../styles/theme";
 
 const applyColorScheme = (componentSelector: ComponentsType, colorScheme: ColorScheme | undefined, componentId: string) => {

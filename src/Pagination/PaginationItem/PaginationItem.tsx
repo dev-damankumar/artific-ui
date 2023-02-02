@@ -1,8 +1,9 @@
 import React from 'react';
+
 import getClassNames from "../../utils/classes/getClassnames";
 import styles from "../Pagination.module.css";
-import {IPaginationItemProps, paginationItemDefaultProps, paginationItemPropTypes} from "../../types/pagination.types";
-import {ILi} from "../../types/common.types";
+import {IPaginationItemProps, paginationItemDefaultProps, paginationItemPropTypes} from "../Pagination.types";
+import {ILi} from "../../types/Common.types";
 
 export const PaginationItem: React.FC<IPaginationItemProps & ILi> = (
 	{

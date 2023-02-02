@@ -9,7 +9,7 @@ import {
 	SizesArray,
 	Themes,
 	ThemesArray,
-} from './common.types';
+} from '../types/Common.types';
 import PropTypes from "prop-types";
 import React from "react";
 

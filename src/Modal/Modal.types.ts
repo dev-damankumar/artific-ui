@@ -1,5 +1,5 @@
 import React from 'react';
-import {ColorScheme, Directions, DirectionsArray, FunctionCallback} from './common.types';
+import {ColorScheme, Directions, DirectionsArray, FunctionCallback} from '../types/Common.types';
 import PropTypes from "prop-types";
 
 export const LayoutsArray = ['default', 'rounded', 'no-radius'] as const;

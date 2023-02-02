@@ -1,6 +1,6 @@
 import styles from "./styles"
-import {ILoader, LoaderConfig} from "../types/loader.types";
-import getRandomClassId from "../utils/uuids/generateRandonClassId";
+import {ILoader, LoaderConfig} from "./Loader.types";
+import getRandomClassId from "../utils/uuids/generateRandomClassId";
 
 
 const Loader = (styles: string, classes: string, sizeClass: string) => {
@@ -43,13 +43,13 @@ export const useLoader = (function () {
 			}
 			const prevLoader = document.querySelector(`[data-ati-loader-modal].${componentId}`)
 			if (!prevLoader) {
-				document.body.insertAdjacentHTML("beforeend", loader)
+				document.body.insertAdjacentHTML("afterend", loader)
 			}
 			if (recreated) {
 				if (prevLoader) {
 					prevLoader.remove()
 				}
-				document.body.insertAdjacentHTML("beforeend", loader)
+				document.body.insertAdjacentHTML("afterend", loader)
 			}
 
 			this.selector = document.querySelector(`[data-ati-loader-modal].${componentId}`)

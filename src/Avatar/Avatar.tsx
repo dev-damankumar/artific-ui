@@ -1,7 +1,9 @@
 import React from 'react';
+
+
 import styles from './Avatar.module.css';
-import {defaultProps, IAvatarProps, propTypes} from '../types/avatar.types';
-import {IDiv} from "../types/common.types";
+import {defaultProps, IAvatarProps, propTypes} from './Avatar.types';
+import {IDiv} from "../types/Common.types";
 import getClassNames from '../utils/classes/getClassnames';
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 

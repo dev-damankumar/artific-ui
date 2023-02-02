@@ -1,4 +1,4 @@
-import {IconType, MessageConfig, MessageType, Types} from "../types/message.types";
+import {IconType, MessageConfig, MessageType, Types} from "./Message.types";
 import icons from "./icons";
 
 export const Button = (dismissible: boolean | undefined) => {

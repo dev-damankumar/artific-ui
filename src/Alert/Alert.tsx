@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
+
+
 import styles from './Alert.module.css';
-import {defaultProps, IAlertProps, propTypes} from '../types/alert.types';
+import {defaultProps, IAlertProps, propTypes} from './Alert.types';
 import getClassNames from '../utils/classes/getClassnames';
-import {IDiv} from "../types/common.types";
+import {IDiv} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
 export const Alert: React.FC<IAlertProps & IDiv> = (

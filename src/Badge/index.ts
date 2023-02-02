@@ -1,5 +1,5 @@
-import '../index.css';
 import Badge from "./Badge";
+import "../index.css"
 
 export default Badge
 export * from './Badge';

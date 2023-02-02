@@ -1,8 +1,10 @@
 import React from 'react';
+
+
 import getClassNames from '../utils/classes/getClassnames';
 import styles from './Spinner.module.css';
-import {defaultProps, ISpinnerProps, propTypes} from '../types/spinner.types';
-import {IDiv} from "../types/common.types";
+import {defaultProps, ISpinnerProps, propTypes} from './Spinner.types';
+import {IDiv} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
 

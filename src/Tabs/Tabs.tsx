@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
+
+
 import styles from "./Tabs.module.css";
 import getClassNames from "../utils/classes/getClassnames";
-import {defaultProps, ITabsProps, propTypes} from "../types/tabs.types";
-import getRandomClassId from "../utils/uuids/generateRandonClassId";
+import {defaultProps, ITabsProps, propTypes} from "./Tabs.types";
+import getRandomClassId from "../utils/uuids/generateRandomClassId";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
-import {IDiv} from "../types/common.types";
+import {IDiv} from "../types/Common.types";
 
 
 export const Tabs: React.FC<ITabsProps & IDiv> = (

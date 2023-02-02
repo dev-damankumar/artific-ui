@@ -1,8 +1,9 @@
 import React from 'react';
+
 import classes from '../List.module.css';
 import getClassNames from '../../utils/classes/getClassnames';
-import {IListItemProps, ListItemDefaultPropTypes, ListItemPropTypes} from '../../types/list.types';
-import {ILi} from "../../types/common.types";
+import {IListItemProps, ListItemDefaultPropTypes, ListItemPropTypes} from '../List.types';
+import {ILi} from "../../types/Common.types";
 
 export const ListItem: React.FC<IListItemProps & ILi> = (
 	{

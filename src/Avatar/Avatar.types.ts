@@ -1,10 +1,17 @@
-import {ColorScheme, CSSStyle, Sizes, SizesArray, Themes, ThemesArray} from './common.types';
+import {
+	ColorScheme,
+	CSSStyle,
+	Layouts,
+	LayoutsArray,
+	Sizes,
+	SizesArray,
+	Themes,
+	ThemesArray
+} from '../types/Common.types';
 import PropTypes from "prop-types";
 
-export const LayoutsArray = ['default', 'rounded', 'pill', 'no-radius', 'circular'] as const;
-export type Layouts = typeof LayoutsArray[number];
 
-export const VariantsArray = ['default', 'outline', 'dot'] as const;
+export const VariantsArray = ['default', 'outline', 'fluid'] as const;
 export type Variants = typeof VariantsArray[number];
 
 
@@ -17,6 +24,8 @@ export const propTypes = {
 		color: PropTypes.string.isRequired,
 	}),
 	className: PropTypes.string,
+	src: PropTypes.string,
+	alt: PropTypes.string,
 	title: PropTypes.string,
 	variant: PropTypes.oneOf<Variants>(VariantsArray),
 	layout: PropTypes.oneOf<Layouts>(LayoutsArray),
@@ -30,15 +39,19 @@ export const defaultProps = {
 	layout: 'default' as Layouts,
 	size: 'md' as Sizes,
 	className: '' as string,
+	src: '' as string,
 	title: '' as string,
+	alt: '' as string,
 };
 
 
-export interface IBadgeProps {
+export interface IAvatarProps {
 	style?: CSSStyle,
 	theme?: Themes,
 	colorScheme?: ColorScheme,
 	className?: string,
+	src?: string,
+	alt?: string,
 	title?: string,
 	variant?: Variants,
 	layout?: Layouts,

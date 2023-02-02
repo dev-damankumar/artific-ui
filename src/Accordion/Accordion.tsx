@@ -1,10 +1,12 @@
 import React from 'react';
+
+
 import styles from './Accordion.module.css';
-import {defaultProps, IAccordionProps, propTypes} from '../types/accordion.types';
+import {defaultProps, IAccordionProps, propTypes} from './Accordion.types';
 import getClassNames from '../utils/classes/getClassnames';
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
-import {IDiv} from "../types/common.types";
+import {IDiv} from "../types/Common.types";
 
 export const Accordion: React.FC<IAccordionProps & IDiv> = (
 	{

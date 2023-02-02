@@ -1,5 +1,5 @@
 import Color from 'color';
-import {ComponentsType, Themes, ThemesArray} from "../../types/common.types";
+import {ComponentsType, Themes, ThemesArray} from "../../types/Common.types";
 import {ComponentsArray} from "../constants";
 
 interface IMain {

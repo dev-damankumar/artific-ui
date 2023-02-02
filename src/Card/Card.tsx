@@ -1,9 +1,11 @@
 import React from 'react';
+
+
 import getClassNames from '../utils/classes/getClassnames';
-import {defaultProps, ICardProps, propTypes} from '../types/card.types';
+import {defaultProps, ICardProps, propTypes} from './Card.types';
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import styles from "./Card.module.css";
-import {IDiv} from "../types/common.types";
+import {IDiv} from "../types/Common.types";
 import {addPropsToChildren} from "../utils/helpers";
 
 
