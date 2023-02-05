@@ -7,7 +7,7 @@ import terser from '@rollup/plugin-terser';
 import {getFolders} from './scripts/buildUtils.js';
 import generatePackageJson from 'rollup-plugin-generate-package-json';
 import postCSS from 'rollup-plugin-postcss';
-import {getBabelOutputPlugin} from '@rollup/plugin-babel';
+// import {getBabelOutputPlugin} from '@rollup/plugin-babel';
 
 const packageJson=require('./package.json');
 
@@ -18,10 +18,10 @@ const plugins=[
 		preventAssignment: true,
 		'process.env.NODE_ENV': JSON.stringify('production'),
 	}),
-	commonjs({sourceMap: false}),
-	getBabelOutputPlugin({
-		presets: ['@babel/preset-env']
-	}),
+	commonjs(),
+	// getBabelOutputPlugin({
+	// 	presets: ['@babel/preset-env']
+	// }),
 	typescript({
 		tsconfig: './tsconfig.json',
 		useTsconfigDeclarationDir: true,
@@ -29,9 +29,8 @@ const plugins=[
 	postCSS({
 		plugins: [require('autoprefixer')],
 		minimize: true
-
 	}),
-	terser({compress: true, sourceMap: false}),
+	terser({compress: true}),
 ];
 const subFolderPlugins=(folderName) => [
 	...plugins,
@@ -45,16 +44,16 @@ const subFolderPlugins=(folderName) => [
 		},
 	}),
 ];
+
 const folderBuilds=[]
+
 getFolders('./src').forEach((folder) => {
 	if (folder.includes('.d.ts') || folder.includes('types')) return
 	if (folder.includes('.css')) {
-		console.log("`src/${folder}`", `src/${folder}`)
 		folderBuilds.push({
 			input: `src/${folder}`,
 			output: {
 				file: `dist/${folder}`,
-
 			},
 			plugins: subFolderPlugins(folder),
 		})
@@ -64,7 +63,7 @@ getFolders('./src').forEach((folder) => {
 		input: `src/${folder}/index.ts`,
 		output: {
 			file: `dist/${folder}/index.js`,
-			sourcemap: false,
+			sourcemap: true,
 			exports: 'named',
 			format: 'esm',
 		},
@@ -83,6 +82,14 @@ export default [
 				sourcemap: true,
 				exports: 'named',
 			},
+		],
+		plugins,
+		external: ['react', 'react-dom'],
+	},
+	...folderBuilds,
+	{
+		input: ['src/index.ts'],
+		output: [
 			{
 				file: packageJson.main,
 				format: 'cjs',
@@ -93,5 +100,4 @@ export default [
 		plugins,
 		external: ['react', 'react-dom'],
 	},
-	...folderBuilds,
 ];
