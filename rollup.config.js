@@ -31,7 +31,7 @@ const plugins=[
 		minimize: true
 
 	}),
-	terser(),
+	terser({compress: true, sourceMap: false}),
 ];
 const subFolderPlugins=(folderName) => [
 	...plugins,
@@ -49,16 +49,7 @@ const folderBuilds=[]
 getFolders('./src').forEach((folder) => {
 	if (folder.includes('.d.ts') || folder.includes('types')) return
 	if (folder.includes('.css')) {
-		folderBuilds.push({
-			input: `src/${folder}`,
-			output: {
-				file: `dist/${folder}`,
-			},
-			plugins: subFolderPlugins(folder),
-		})
-		return;
-	}
-	if (folder.includes('.css')) {
+		console.log("`src/${folder}`", `src/${folder}`)
 		folderBuilds.push({
 			input: `src/${folder}`,
 			output: {

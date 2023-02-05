@@ -29,7 +29,10 @@ const getDefaultClasses = (styles: CSSClasses, componentSelector: ComponentsType
 	const variantClass = variant !== 'default' ? `${componentSelector}-${variant}` : '';
 	const themeClass = !colorScheme ? theme !== 'default' ? `${componentSelector}-${theme}` : config?.theme?.default ? `${componentSelector}-primary` : '' : `${componentSelector}-primary`;
 	const sizeClass = sizeClasses(componentSelector, size);
-	const customCss = applyColorScheme(componentSelector, colorScheme, componentId)
+	let customCss = null
+	if (colorScheme) {
+		customCss = applyColorScheme(componentSelector, colorScheme, componentId)
+	}
 	return {
 		componentId,
 		customCss,

@@ -42,10 +42,10 @@
   ],
   "exclude": [
     "dist",
+    "stories",
     "storybook-static",
     "node_modules",
     "build",
-    "src/**/*.stories.tsx",
     "src/**/*.test.tsx"
   ]
 }

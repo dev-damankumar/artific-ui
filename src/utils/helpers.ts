@@ -1,12 +1,12 @@
-import React from "react";
+import {Children, cloneElement, isValidElement, ReactNode} from "react";
 
-export const addPropsToChildren = (children: React.ReactNode, props: object, prioritizeChildren = false) => {
-	return React.Children.map(children, child => {
-		if (React.isValidElement(child)) {
+export const addPropsToChildren = (children: ReactNode, props: object, prioritizeChildren = false) => {
+	return Children.map(children, child => {
+		if (isValidElement(child)) {
 			if (prioritizeChildren) {
-				return React.cloneElement(child, {...props, ...child.props});
+				return cloneElement(child, {...props, ...child.props});
 			}
-			return React.cloneElement(child, {...child.props, ...props,});
+			return cloneElement(child, {...child.props, ...props,});
 		}
 		return child;
 	});
