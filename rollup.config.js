@@ -15,7 +15,6 @@ const plugins=[
 	peerDepsExternal(),
 	nodeResolve(),
 	replace({
-		preventAssignment: true,
 		'process.env.NODE_ENV': JSON.stringify('production'),
 	}),
 	commonjs(),
@@ -25,6 +24,7 @@ const plugins=[
 	typescript({
 		tsconfig: './tsconfig.json',
 		useTsconfigDeclarationDir: true,
+		inlineSources: true,
 	}),
 	postCSS({
 		plugins: [require('autoprefixer')],
