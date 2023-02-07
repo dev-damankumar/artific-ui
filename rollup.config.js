@@ -15,6 +15,7 @@ const plugins=[
 	peerDepsExternal(),
 	nodeResolve(),
 	replace({
+		preventAssignment: true,
 		'process.env.NODE_ENV': JSON.stringify('production'),
 	}),
 	commonjs(),
@@ -63,7 +64,7 @@ getFolders('./src').forEach((folder) => {
 		input: `src/${folder}/index.ts`,
 		output: {
 			file: `dist/${folder}/index.js`,
-			sourcemap: true,
+			sourcemap: false,
 			exports: 'named',
 			format: 'esm',
 		},
@@ -79,7 +80,7 @@ export default [
 			{
 				file: packageJson.module,
 				format: 'esm',
-				sourcemap: true,
+				sourcemap: false,
 				exports: 'named',
 			},
 		],
@@ -93,7 +94,7 @@ export default [
 			{
 				file: packageJson.main,
 				format: 'cjs',
-				sourcemap: true,
+				sourcemap: false,
 				exports: 'named',
 			},
 		],
