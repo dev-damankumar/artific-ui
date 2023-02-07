@@ -1,21 +1,19 @@
-import React from 'react';
+import {CSSProperties, ReactNode} from 'react';
 import {ColorScheme, Layouts, LayoutsArray, Sizes, SizesArray, Themes, ThemesArray,} from '../types/Common.types';
-import PropTypes from "prop-types";
+import {oneOf, shape, string} from "prop-types";
 
 export const VariantsArray = ["default", "borderless", "striped", "outline"] as const;
 export type Variants = typeof VariantsArray[number];
 
 export const propTypes = {
-	theme: PropTypes.oneOf<Themes>(ThemesArray),
-	layout: PropTypes.oneOf<Layouts>(LayoutsArray),
-	variant: PropTypes.oneOf<Variants>(VariantsArray),
-	size: PropTypes.oneOf<Sizes>(SizesArray),
-	style: PropTypes.object,
-	className: PropTypes.string,
-	colorScheme: PropTypes.shape({
-		background: PropTypes.string.isRequired,
-		backgroundColor: PropTypes.string.isRequired,
-		color: PropTypes.string.isRequired,
+	theme: oneOf<Themes>(ThemesArray),
+	layout: oneOf<Layouts>(LayoutsArray),
+	variant: oneOf<Variants>(VariantsArray),
+	size: oneOf<Sizes>(SizesArray),
+	colorScheme: shape({
+		background: string.isRequired,
+		backgroundColor: string.isRequired,
+		color: string.isRequired,
 	}),
 };
 
@@ -25,19 +23,14 @@ export const defaultProps = {
 	variant: 'default' as Variants,
 	layout: 'default' as Layouts,
 	size: 'md' as Sizes,
-	className: '' as string,
-	variants: undefined
 };
 
 export interface ITableProps {
-	children?: React.ReactNode;
-	style?: React.CSSProperties;
+	children?: ReactNode;
+	style?: CSSProperties;
 	theme?: Themes;
 	colorScheme?: ColorScheme;
 	variant?: Variants;
 	layout?: Layouts;
 	size?: Sizes;
-	className?: string;
-
-	[x: string]: any;
 }

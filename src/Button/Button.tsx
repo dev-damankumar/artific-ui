@@ -2,34 +2,33 @@ import React from 'react';
 import styles from './Button.module.css';
 import getClassNames from '../utils/classes/getClassnames';
 import ripple from '../utils/effects/effectRipple';
-import {defaultProps, IButtonProps, propTypes} from './Button.types';
+import {IButtonProps, propTypes} from './Button.types';
 import {IButton} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
 /*Responsive checkPropTypes pending for onstalled components*/
 
-export const Button: React.FC<IButtonProps & IButton> = (props) => {
-	const {
+export const Button: React.FC<IButtonProps & IButton> = (
+	{
 		className,
 		style,
 		hideTextOnLoading,
 		children,
-		type,
+		type = 'button',
 		colorScheme,
-		theme,
-		variant,
-		layout,
+		theme = 'primary',
+		variant = 'default',
+		layout = 'default',
 		disabled,
 		loading,
-		fullwidth,
-		loadingDirection,
-		loadingStyle,
-		size,
+		fullwidth = false,
+		loadingDirection = 'before',
+		loadingStyle = 'spin',
+		size = 'md',
 		prefix,
 		suffix,
-		variants,
 		...rest
-	} = props
+	}) => {
 	let mouseDown = false;
 	const componentSelector = 'btn';
 	const {
@@ -94,6 +93,5 @@ export const Button: React.FC<IButtonProps & IButton> = (props) => {
 
 Button.displayName = 'Button';
 Button.propTypes = propTypes;
-Button.defaultProps = defaultProps;
 
 export default Button

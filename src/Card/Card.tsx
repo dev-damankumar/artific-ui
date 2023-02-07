@@ -1,8 +1,6 @@
 import React from 'react';
-
-
 import getClassNames from '../utils/classes/getClassnames';
-import {defaultProps, ICardProps, propTypes} from './Card.types';
+import {ICardProps, propTypes} from './Card.types';
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import styles from "./Card.module.css";
 import {IDiv} from "../types/Common.types";
@@ -12,12 +10,12 @@ import {addPropsToChildren} from "../utils/helpers";
 export const Card: React.FC<ICardProps & IDiv> = (
 	{
 		children,
-		layout,
-		theme,
-		variant,
-		direction,
+		layout = 'default',
+		theme = 'default',
+		variant = 'default',
+		direction = 'column',
 		className,
-		size,
+		size = 'md',
 		colorScheme,
 		...rest
 	}) => {
@@ -45,6 +43,5 @@ export const Card: React.FC<ICardProps & IDiv> = (
 };
 Card.displayName = 'Card';
 Card.propTypes = propTypes;
-Card.defaultProps = defaultProps;
 
 export default Card

@@ -1,21 +1,18 @@
 import React from 'react';
-
-
 import getClassNames from '../utils/classes/getClassnames';
 import styles from './Spinner.module.css';
-import {defaultProps, ISpinnerProps, propTypes} from './Spinner.types';
+import {ISpinnerProps, propTypes} from './Spinner.types';
 import {IDiv} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
-
 export const Spinner: React.FC<ISpinnerProps & IDiv> = (
 	{
-		size,
-		theme,
+		size = 'md',
+		theme = 'primary',
 		colorScheme,
 		className,
 		style,
-		variant,
+		variant = 'default',
 		...rest
 	}) => {
 	const componentSelector = 'spinner';
@@ -66,7 +63,6 @@ export const Spinner: React.FC<ISpinnerProps & IDiv> = (
 
 Spinner.displayName = 'Spinner';
 Spinner.propTypes = propTypes;
-Spinner.defaultProps = defaultProps;
 export default Spinner
 
 

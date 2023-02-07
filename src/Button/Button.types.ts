@@ -1,4 +1,4 @@
-import React from 'react';
+import {CSSProperties, ReactNode} from 'react';
 import {
 	ColorScheme,
 	Layouts,
@@ -29,12 +29,10 @@ export const propTypes = {
 	size: PropTypes.oneOf<Sizes>(SizesArray),
 	disabled: PropTypes.bool,
 	type: PropTypes.oneOf(ButtonTypeArray),
-	style: PropTypes.object,
 	theme: PropTypes.oneOf<Themes>(ThemesArray),
 	hideTextOnLoading: PropTypes.bool,
 	loading: PropTypes.bool,
 	fullwidth: PropTypes.bool,
-	className: PropTypes.string,
 	colorScheme: PropTypes.shape({
 		background: PropTypes.string.isRequired,
 		backgroundColor: PropTypes.string.isRequired,
@@ -45,25 +43,11 @@ export const propTypes = {
 	loadingStyle: PropTypes.oneOf<LoadingStyles>(LoadingStylesArray),
 };
 
-export const defaultProps = {
-	type: 'button' as ButtonType,
-	colorScheme: null,
-	theme: 'primary' as Themes,
-	variant: 'default' as Variants,
-	layout: 'default' as Layouts,
-	loadingDirection: 'before' as LoadingDirections,
-	loadingStyle: 'spin' as LoadingStyles,
-	size: 'md' as Sizes,
-	className: '' as string,
-	fullwidth: false,
-	prefix: undefined,
-	suffix: undefined,
-};
 
 export interface IButtonProps {
-	children: React.ReactNode;
+	children: ReactNode;
 	type?: ButtonType;
-	style?: React.CSSProperties;
+	style?: CSSProperties;
 	theme?: Themes;
 	hideTextOnLoading?: boolean;
 	fullwidth?: boolean;
@@ -75,9 +59,6 @@ export interface IButtonProps {
 	loadingStyle?: LoadingStyles;
 	disabled?: boolean;
 	loading?: boolean;
-	prefix?: React.ReactNode | undefined;
-	suffix?: React.ReactNode | undefined;
-	className?: string;
-
-	[x: string]: any;
+	prefix?: ReactNode | undefined;
+	suffix?: ReactNode | undefined;
 }

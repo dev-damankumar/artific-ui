@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 
 import styles from "./Tabs.module.css";
 import getClassNames from "../utils/classes/getClassnames";
-import {defaultProps, ITabsProps, propTypes} from "./Tabs.types";
+import {ITabsProps, propTypes} from "./Tabs.types";
 import getRandomClassId from "../utils/uuids/generateRandomClassId";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {IDiv} from "../types/Common.types";
@@ -11,16 +11,16 @@ import {IDiv} from "../types/Common.types";
 
 export const Tabs: React.FC<ITabsProps & IDiv> = (
 	{
-		type,
+		type = 'default',
 		children,
-		layout,
-		position,
-		variant,
-		lineDirection,
-		size,
+		layout = 'default',
+		position = 'top',
+		variant = 'default',
+		lineDirection = 'bottom',
+		size = 'md',
 		className,
 		colorScheme,
-		theme,
+		theme = 'primary',
 		...rest
 	}) => {
 	const [activeTab, setActiveTab] = useState(null)
@@ -83,5 +83,4 @@ export const Tabs: React.FC<ITabsProps & IDiv> = (
 
 Tabs.displayName = 'Tabs';
 Tabs.propTypes = propTypes;
-Tabs.defaultProps = defaultProps;
 export default Tabs;

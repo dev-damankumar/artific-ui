@@ -1,65 +1,42 @@
-import React from 'react';
+import {CSSProperties, ReactNode} from 'react';
 import {ColorScheme, Layouts, LayoutsArray, Sizes, SizesArray, Themes, ThemesArray,} from '../types/Common.types';
-import PropTypes from "prop-types";
+import {bool, oneOf, shape, string} from "prop-types";
 
 export const VariantsArray = ["default", "separate", "breadcrumb", "float"] as const;
 export type Variants = typeof VariantsArray[number];
 
 export const propTypes = {
-	variant: PropTypes.oneOf<Variants>(VariantsArray),
-	size: PropTypes.oneOf<Sizes>(SizesArray),
-	style: PropTypes.object,
-	theme: PropTypes.oneOf<Themes>(ThemesArray),
-	className: PropTypes.string,
-	colorScheme: PropTypes.shape({
-		background: PropTypes.string.isRequired,
-		backgroundColor: PropTypes.string.isRequired,
-		color: PropTypes.string.isRequired,
+	variant: oneOf<Variants>(VariantsArray),
+	size: oneOf<Sizes>(SizesArray),
+	theme: oneOf<Themes>(ThemesArray),
+	colorScheme: shape({
+		background: string.isRequired,
+		backgroundColor: string.isRequired,
+		color: string.isRequired,
 	}),
-	layout: PropTypes.oneOf<Layouts>(LayoutsArray),
-};
-
-export const defaultProps = {
-	colorScheme: null,
-	theme: 'primary' as Themes,
-	variant: 'default' as Variants,
-	layout: 'default' as Layouts,
-	size: 'md' as Sizes,
-	className: '' as string,
-	variants: undefined
+	layout: oneOf<Layouts>(LayoutsArray),
 };
 
 export interface IPaginationProps {
-	children: React.ReactNode;
-	style?: React.CSSProperties;
+	children: ReactNode;
+	style?: CSSProperties;
 	theme?: Themes;
 	colorScheme?: ColorScheme;
 	variant?: Variants;
 	layout?: Layouts;
 	size?: Sizes;
-	className?: string;
-
-	[x: string]: any;
 }
 
 export interface IPaginationItemProps {
-	children: React.ReactNode;
-	style?: React.CSSProperties;
+	children: ReactNode;
+	style?: CSSProperties;
 	variant?: Variants;
 	active?: boolean;
-	className?: string;
 }
 
 
 export const paginationItemPropTypes = {
-	variant: PropTypes.oneOf<Variants>(VariantsArray),
-	style: PropTypes.object,
-	className: PropTypes.string,
-	active: PropTypes.bool,
+	variant: oneOf<Variants>(VariantsArray),
+	active: bool,
 };
 
-export const paginationItemDefaultProps = {
-	className: '' as string,
-	active: false,
-	variant: 'default' as Variants,
-};

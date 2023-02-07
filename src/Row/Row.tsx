@@ -8,7 +8,7 @@ import {IDiv} from "../types/Common.types";
 
 interface IRowProps {
 	children: React.ReactNode;
-	className?: string;
+
 	style?: React.CSSProperties;
 }
 
@@ -29,10 +29,8 @@ export const Row: React.FC<IRowProps & IDiv> = (
 Row.displayName = 'Row';
 Row.propTypes = {
 	children: PropTypes.node,
-	className: PropTypes.string,
-	style: PropTypes.object,
+
+
 };
-Row.defaultProps = {
-	className: ''
-};
+
 export default Row;

@@ -1,6 +1,6 @@
-import React from 'react';
+import {CSSProperties, ReactNode} from 'react';
 import {ColorScheme, Directions, DirectionsArray, FunctionCallback} from '../types/Common.types';
-import PropTypes from "prop-types";
+import {bool, func, object, oneOf, shape, string} from "prop-types";
 
 export const LayoutsArray = ['default', 'rounded', 'no-radius'] as const;
 export type Layouts = typeof LayoutsArray[number];
@@ -20,46 +20,33 @@ export type Sizes = typeof SizesArray[number];
 export const OverLaySizesArray = ['full-width', 'full-height', 'full', 'expanded'];
 
 export const propTypes = {
-	variant: PropTypes.oneOf<Variants>(VariantsArray),
-	size: PropTypes.oneOf<Sizes>(SizesArray).isRequired,
-	overlay: PropTypes.oneOf<Overlay>(OverlayArray),
-	dock: PropTypes.oneOf<Directions>(DirectionsArray),
-	position: PropTypes.oneOf<Directions>(DirectionsArray),
-	style: PropTypes.object,
-	styles: PropTypes.object,
-	theme: PropTypes.oneOf<Themes>(ThemesArray),
-	className: PropTypes.string,
-	classes: PropTypes.string,
-	colorScheme: PropTypes.shape({
-		background: PropTypes.string.isRequired,
-		backgroundColor: PropTypes.string.isRequired,
-		color: PropTypes.string.isRequired,
+	variant: oneOf<Variants>(VariantsArray),
+	size: oneOf<Sizes>(SizesArray).isRequired,
+	overlay: oneOf<Overlay>(OverlayArray),
+	dock: oneOf<Directions>(DirectionsArray),
+	position: oneOf<Directions>(DirectionsArray),
+	styles: object,
+	theme: oneOf<Themes>(ThemesArray),
+	classes: string,
+	colorScheme: shape({
+		background: string.isRequired,
+		backgroundColor: string.isRequired,
+		color: string.isRequired,
 	}),
-	layout: PropTypes.oneOf<Layouts>(LayoutsArray),
-	onBackdropClick: PropTypes.func
+	layout: oneOf<Layouts>(LayoutsArray),
+	onBackdropClick: func
 };
 
-export const defaultProps = {
-	colorScheme: null,
-	theme: 'dark' as Themes,
-	variant: 'default' as Variants,
-	layout: 'default' as Layouts,
-	size: 'md' as Sizes,
-	className: '' as string,
-	classes: '' as string,
-	open: false
-};
 
 export interface IModalProps {
-	children?: React.ReactNode;
-	style?: React.CSSProperties;
-	styles?: React.CSSProperties;
+	children?: ReactNode;
+	style?: CSSProperties;
+	styles?: CSSProperties;
 	theme?: Themes;
 	colorScheme?: ColorScheme;
 	variant?: Variants;
 	layout?: Layouts;
 	size?: Sizes;
-	className?: string;
 	classes?: string;
 	open: boolean;
 	onClose?: FunctionCallback;
@@ -68,25 +55,18 @@ export interface IModalProps {
 	position?: Directions;
 	dismiss?: boolean;
 	onBackdropClick?: FunctionCallback;
-
-	[x: string]: any;
 }
 
 export interface IModalHeaderProps {
-	children?: React.ReactNode;
+	children?: ReactNode;
 	dismiss?: boolean;
-	prefix?: React.ReactNode | null | undefined;
-	suffix?: React.ReactNode | null | undefined;
+	prefix?: ReactNode | null | undefined;
+	suffix?: ReactNode | null | undefined;
 	onClose?: FunctionCallback,
 }
 
 
 export const modalHeaderPropTypes = {
-	dismiss: PropTypes.bool,
-	onClose: PropTypes.func
-};
-
-export const modalHeaderDefaultProps = {
-	dismiss: true,
-	backdropDismiss: false,
+	dismiss: bool,
+	onClose: func
 };

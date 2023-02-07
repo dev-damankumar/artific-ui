@@ -1,6 +1,5 @@
 import {
 	ColorScheme,
-	CSSStyle,
 	Directions,
 	DirectionsArray,
 	FunctionCallback,
@@ -9,13 +8,11 @@ import {
 	Themes,
 	ThemesArray
 } from '../types/Common.types';
-import React from 'react';
-import PropTypes from "prop-types";
-
+import {ReactNode} from 'react';
+import {bool, func, node, object, oneOf, shape, string} from "prop-types";
 
 export const VariantsArray = ['drawer', 'fluid', 'default'] as const;
 export type Variants = typeof VariantsArray[number];
-
 
 export const LayoutsArray = ['rounded', 'default', 'no-radius', 'floating'] as const;
 export type Layouts = typeof LayoutsArray[number];
@@ -24,9 +21,7 @@ export const PositionArray = ['before', 'after'] as const;
 export type Position = typeof PositionArray[number];
 
 export interface IDropdownProps {
-	children: React.ReactNode,
-	style?: CSSStyle,
-	className?: string,
+	children: ReactNode,
 	autoClose?: boolean,
 	fullwidth?: boolean,
 	position?: Directions,
@@ -39,7 +34,6 @@ export interface IDropdownProps {
 	value?: string,
 	placeholder?: string,
 	defaultValue?: string,
-	id?: string,
 	menuClass?: string,
 	menuStyle?: object,
 	dropdownButtonStyle?: object,
@@ -47,86 +41,59 @@ export interface IDropdownProps {
 }
 
 export const propTypes = {
-	children: PropTypes.node,
-	style: PropTypes.object,
-	className: PropTypes.string,
-	autoClose: PropTypes.bool,
-	fullwidth: PropTypes.bool,
-	name: PropTypes.string,
-	position: PropTypes.oneOf(DirectionsArray),
-	layout: PropTypes.oneOf(LayoutsArray),
-	theme: PropTypes.oneOf(ThemesArray),
-	variant: PropTypes.oneOf<Variants>(VariantsArray),
-	size: PropTypes.oneOf<Sizes>(SizesArray),
-	disabled: PropTypes.bool,
-	value: PropTypes.string,
-	placeholder: PropTypes.string,
-	defaultValue: PropTypes.string,
-	id: PropTypes.string,
-	menuClass: PropTypes.string,
-	menuStyle: PropTypes.object,
-	dropdownButtonStyle: PropTypes.object,
-	dropdownButtonClassName: PropTypes.string,
-	colorScheme: PropTypes.shape({
-		background: PropTypes.string.isRequired,
-		backgroundColor: PropTypes.string.isRequired,
-		color: PropTypes.string.isRequired,
+	children: node,
+	autoClose: bool,
+	fullwidth: bool,
+	name: string,
+	position: oneOf(DirectionsArray),
+	layout: oneOf(LayoutsArray),
+	theme: oneOf(ThemesArray),
+	variant: oneOf<Variants>(VariantsArray),
+	size: oneOf<Sizes>(SizesArray),
+	disabled: bool,
+	value: string,
+	placeholder: string,
+	defaultValue: string,
+	id: string,
+	menuClass: string,
+	menuStyle: object,
+	dropdownButtonStyle: object,
+	dropdownButtonClassName: string,
+	colorScheme: shape({
+		background: string.isRequired,
+		backgroundColor: string.isRequired,
+		color: string.isRequired,
 	}),
 }
 
-export const defaultProps = {
-	size: 'md' as Sizes,
-	position: 'bottom' as Directions,
-	layout: 'default' as Layouts,
-	theme: 'primary' as Themes,
-	variant: 'default' as Variants,
-}
-
 export interface IMenuItemProps {
-	style?: CSSStyle,
-	className?: string,
 	onSelect?: FunctionCallback,
 	closeHandler?: FunctionCallback,
 	autoClose?: boolean,
 	active?: boolean,
-	children: React.ReactNode,
-
-	[key: string]: any
-
+	children: ReactNode,
 }
 
 export const IMenuItemPropsType = {
-	style: PropTypes.object,
-	className: PropTypes.string,
-	onSelect: PropTypes.func,
-	closeHandler: PropTypes.func,
-	autoClose: PropTypes.bool,
-	active: PropTypes.bool,
-	children: PropTypes.node,
+	onSelect: func,
+	closeHandler: func,
+	autoClose: bool,
+	active: bool,
+	children: node,
 }
 
 
 export interface IDropdownMenu {
-	children: React.ReactNode,
-	className?: string,
-	style?: object,
+	children: ReactNode,
 	position?: Position,
 	autoClose?: boolean,
 	closeHandler?: FunctionCallback,
-
-	[key: string]: any
 }
 
 export const IDropdownMenuPropsType = {
-	children: PropTypes.node,
-	style: PropTypes.object,
-	className: PropTypes.string,
-	position: PropTypes.oneOf(PositionArray),
-	closeHandler: PropTypes.func,
-	autoClose: PropTypes.bool,
+	children: node,
+	position: oneOf(PositionArray),
+	closeHandler: func,
+	autoClose: bool,
 }
 
-
-export const IDropdownMenuDefaultProps = {
-	position: 'before' as Position,
-}

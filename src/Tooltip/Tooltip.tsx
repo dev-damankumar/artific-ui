@@ -1,21 +1,18 @@
 import React, {useRef} from 'react';
-
-
-import {defaultProps, ITooltipProps, propTypes} from "./Tooltip.types";
+import {ITooltipProps, propTypes} from "./Tooltip.types";
 import getClassNames from "../utils/classes/getClassnames";
 import styles from "./Tooltip.module.css";
 import {IDiv} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
-
 export const Tooltip: React.FC<ITooltipProps & IDiv> = (
 	{
-		theme,
+		theme = 'primary',
 		title,
-		layout,
-		variant,
-		placement,
-		size,
+		layout = 'default',
+		variant = 'default',
+		placement = 'bottom',
+		size = 'md',
 		className,
 		style,
 		children,
@@ -56,7 +53,5 @@ export const Tooltip: React.FC<ITooltipProps & IDiv> = (
 
 Tooltip.displayName = 'Tooltip';
 Tooltip.propTypes = propTypes;
-Tooltip.defaultProps = defaultProps;
-
 
 export default Tooltip;

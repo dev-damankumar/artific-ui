@@ -1,7 +1,6 @@
 import React from 'react';
 import {
 	ColorScheme,
-	CSSStyle,
 	FunctionCallback,
 	Layouts,
 	LayoutsArray,
@@ -20,8 +19,6 @@ export type IndicatorDirection = typeof IndicatorDirectionArray[number];
 
 export interface IAccordionProps {
 	children: React.ReactNode,
-	className?: string;
-	style?: React.CSSProperties;
 	theme?: Themes,
 	variant?: Variants,
 	layout?: Layouts,
@@ -32,8 +29,6 @@ export interface IAccordionProps {
 
 export const propTypes = {
 	children: PropTypes.node,
-	className: PropTypes.string,
-	style: PropTypes.object,
 	theme: PropTypes.oneOf(ThemesArray),
 	variant: PropTypes.oneOf(VariantsArray),
 	layout: PropTypes.oneOf(LayoutsArray),
@@ -46,15 +41,6 @@ export const propTypes = {
 	}),
 }
 
-export const defaultProps = {
-	theme: 'default' as Themes,
-	variant: 'default' as Variants,
-	size: 'md' as Sizes,
-	layout: 'default' as Layouts,
-	className: '' as string,
-	indicatorPosition: 'end' as IndicatorDirection
-}
-
 export interface IAccordionPanel {
 	children: React.ReactNode,
 	theme?: Themes;
@@ -65,7 +51,6 @@ export const IAccordionPanelPropTypes = {
 	theme: PropTypes.oneOf(ThemesArray)
 }
 
-export const IAccordionPanelDefaultPropTypes = {}
 
 export interface IAccordionHeader {
 	children: React.ReactNode,
@@ -81,23 +66,14 @@ export const IAccordionHeaderPropTypes = {
 	onToggle: PropTypes.func,
 }
 
-export const IAccordionHeaderDefaultPropTypes = {
-	prefix: undefined,
-	suffix: undefined
-}
 
 export interface IAccordionBody {
 	children: React.ReactNode,
 	open?: boolean,
-	style?: CSSStyle,
-	className?: string
 }
 
 export const IAccordionBodyPropTypes = {
 	children: PropTypes.node,
 	open: PropTypes.bool,
-	style: PropTypes.object,
-	className: PropTypes.string,
 }
 
-export const IAccordionBodyDefaultPropTypes = {}

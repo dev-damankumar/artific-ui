@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-
-
 import styles from './Alert.module.css';
 import {defaultProps, IAlertProps, propTypes} from './Alert.types';
 import getClassNames from '../utils/classes/getClassnames';

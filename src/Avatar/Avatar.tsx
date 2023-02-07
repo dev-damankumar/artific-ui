@@ -1,8 +1,6 @@
 import React from 'react';
-
-
 import styles from './Avatar.module.css';
-import {defaultProps, IAvatarProps, propTypes} from './Avatar.types';
+import {IAvatarProps, propTypes} from './Avatar.types';
 import {IDiv} from "../types/Common.types";
 import getClassNames from '../utils/classes/getClassnames';
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
@@ -11,15 +9,15 @@ import getDefaultClasses from "../utils/classes/getDefaultClasses";
 export const Avatar: React.FC<IAvatarProps & IDiv> = (
 	{
 		src,
-		alt,
-		title,
-		size,
-		theme,
+		alt = '',
+		title = '',
+		size = 'md',
+		theme = 'primary',
 		colorScheme,
 		className,
 		style,
-		variant,
-		layout,
+		variant = 'default',
+		layout = 'default',
 		...rest
 	}) => {
 	const componentSelector = 'avatar';
@@ -38,7 +36,6 @@ export const Avatar: React.FC<IAvatarProps & IDiv> = (
 
 Avatar.displayName = 'Avatar';
 Avatar.propTypes = propTypes;
-Avatar.defaultProps = defaultProps;
 export default Avatar
 
 

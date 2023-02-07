@@ -1,6 +1,4 @@
 import React from 'react';
-
-
 import styles from '../Button/Button.module.css';
 import getClassNames from '../utils/classes/getClassnames';
 import Button from '../Button';

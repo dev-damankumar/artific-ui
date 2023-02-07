@@ -1,54 +1,28 @@
-import {
-	ColorScheme,
-	CSSStyle,
-	Directions,
-	DirectionsArray,
-	Sizes,
-	SizesArray,
-	Themes,
-	ThemesArray
-} from '../types/Common.types';
-import PropTypes from "prop-types";
-
+import {ColorScheme, Directions, DirectionsArray, Sizes, SizesArray, Themes, ThemesArray} from '../types/Common.types';
+import {bool, oneOf, shape, string} from "prop-types";
 
 export const VariantsArray = ['default', 'ring', 'dots', 'box', 'ripple'] as const;
 export type Variants = typeof VariantsArray[number];
 
 
 export const propTypes = {
-	style: PropTypes.object,
-	dismiss: PropTypes.bool,
-	direction: PropTypes.oneOf<Directions>(DirectionsArray),
-	theme: PropTypes.oneOf<Themes>(ThemesArray),
-	colorScheme: PropTypes.shape({
-		background: PropTypes.string.isRequired,
-		backgroundColor: PropTypes.string.isRequired,
-		color: PropTypes.string.isRequired,
+	dismiss: bool,
+	direction: oneOf<Directions>(DirectionsArray),
+	theme: oneOf<Themes>(ThemesArray),
+	colorScheme: shape({
+		background: string.isRequired,
+		backgroundColor: string.isRequired,
+		color: string.isRequired,
 	}),
-	className: PropTypes.string,
-	variant: PropTypes.oneOf<Variants>(VariantsArray),
-	size: PropTypes.oneOf<Sizes>(SizesArray),
+	variant: oneOf<Variants>(VariantsArray),
+	size: oneOf<Sizes>(SizesArray),
 };
-
-export const defaultProps = {
-	colorScheme: null,
-	theme: 'primary' as Themes,
-	direction: 'left' as Directions,
-	variant: 'default' as Variants,
-	size: 'md' as Sizes,
-	className: '' as string,
-};
-
 
 export interface ISpinnerProps {
-	style?: CSSStyle,
 	dismiss?: boolean,
 	direction?: Directions,
 	theme?: Themes,
 	colorScheme?: ColorScheme,
-	className?: string,
 	variant?: Variants,
 	size?: Sizes,
-
-	[x: string]: any,
 }

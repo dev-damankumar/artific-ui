@@ -11,12 +11,12 @@ import {IDiv} from "../types/Common.types";
 export const Table: React.FC<ITableProps & IDiv> = (
 	{
 		children,
-		layout,
-		variant,
-		size,
+		layout = 'default',
+		variant = 'default',
+		size = 'md',
 		className,
 		colorScheme,
-		theme,
+		theme = 'primary',
 		...rest
 	}) => {
 	const componentSelector = 'table';

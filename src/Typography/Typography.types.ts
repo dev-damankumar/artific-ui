@@ -1,7 +1,6 @@
-import {ColorScheme, CSSStyle, Themes, ThemesArray} from '../types/Common.types';
-import React from 'react';
-import PropTypes from "prop-types";
-
+import {ColorScheme, Themes, ThemesArray} from '../types/Common.types';
+import {ReactNode} from 'react';
+import {number, oneOf, oneOfType, shape, string} from "prop-types";
 
 export const TypographyAsElementsArray = ['span', 'p', 'div', 'i', 'b', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const;
 export type TypographyAsElements = typeof TypographyAsElementsArray[number];
@@ -12,39 +11,25 @@ export type TypographyWeights = typeof TypographyWeightsArray[number];
 export const TypographyVariantsArray = ['text', 'subtitle', 'heading', 'caption', 'description', 'code', 'highlight', 'abbr', 'pre', 'kbd'] as const;
 export type TypographyVariants = typeof TypographyVariantsArray[number];
 
-
 export const propTypes = {
-	variant: PropTypes.oneOf<TypographyVariants>(TypographyVariantsArray),
-	as: PropTypes.oneOf<TypographyAsElements>(TypographyAsElementsArray),
-	weight: PropTypes.oneOf<TypographyWeights>(TypographyWeightsArray),
-	fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-	fontWeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-	style: PropTypes.object,
-	theme: PropTypes.oneOf<Themes>(ThemesArray),
-	className: PropTypes.string,
-	colorScheme: PropTypes.shape({
-		background: PropTypes.string.isRequired,
-		backgroundColor: PropTypes.string.isRequired,
-		color: PropTypes.string.isRequired,
+	variant: oneOf<TypographyVariants>(TypographyVariantsArray),
+	as: oneOf<TypographyAsElements>(TypographyAsElementsArray),
+	weight: oneOf<TypographyWeights>(TypographyWeightsArray),
+	fontSize: oneOfType([string, number]),
+	fontWeight: oneOfType([string, number]),
+	theme: oneOf<Themes>(ThemesArray),
+	colorScheme: shape({
+		background: string.isRequired,
+		backgroundColor: string.isRequired,
+		color: string.isRequired,
 	}),
 };
 
-export const defaultProps = {
-	as: 'p' as TypographyAsElements,
-	weight: 'medium' as TypographyWeights,
-	variant: 'text' as TypographyVariants,
-	theme: 'default' as Themes,
-	colorScheme: null,
-	className: '' as string,
-};
-
 export interface ITypographyProps {
-	children?: React.ReactNode,
+	children?: ReactNode,
 	as?: TypographyAsElements,
 	weight?: TypographyWeights,
 	variant?: TypographyVariants,
-	style?: CSSStyle,
-	className?: string,
 	fontSize?: string | number,
 	fontWeight?: string | number,
 	theme?: Themes;

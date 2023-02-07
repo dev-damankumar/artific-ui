@@ -1,12 +1,9 @@
 import React, {createElement} from 'react';
-
-
 import getClassNames from '../utils/classes/getClassnames';
 import classes from './Typography.module.css';
-import {defaultProps, ITypographyProps, propTypes} from './Typography.types';
+import {ITypographyProps, propTypes} from './Typography.types';
 import {IAnyElement} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
-
 
 export const Typography: React.FC<ITypographyProps & IAnyElement> = (
 	{
@@ -54,7 +51,5 @@ export const Typography: React.FC<ITypographyProps & IAnyElement> = (
 
 Typography.displayName = 'Typography';
 Typography.propTypes = propTypes;
-Typography.defaultProps = defaultProps;
-
 
 export default Typography

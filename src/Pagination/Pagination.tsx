@@ -3,7 +3,7 @@ import React from 'react';
 
 import styles from "./Pagination.module.css"
 import getClassNames from "../utils/classes/getClassnames";
-import {defaultProps, IPaginationProps, propTypes} from "./Pagination.types";
+import {IPaginationProps, propTypes} from "./Pagination.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
 import {IUl} from "../types/Common.types";
@@ -12,12 +12,12 @@ import {IUl} from "../types/Common.types";
 export const Pagination: React.FC<IPaginationProps & IUl> = (
 	{
 		children,
-		layout,
-		variant,
-		size,
+		layout = 'default',
+		variant = 'default',
+		size = 'md',
 		className,
 		colorScheme,
-		theme,
+		theme = 'primary',
 		...rest
 	}) => {
 	const componentSelector = 'pagination';
@@ -44,5 +44,4 @@ export const Pagination: React.FC<IPaginationProps & IUl> = (
 };
 Pagination.displayName = 'Pagination';
 Pagination.propTypes = propTypes;
-Pagination.defaultProps = defaultProps;
 export default Pagination;

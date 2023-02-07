@@ -1,11 +1,8 @@
 import React from 'react';
-
-
 import styles from "./Col.module.css"
 import getClassNames from "../utils/classes/getClassnames";
 import PropTypes from "prop-types";
 import {IDiv, Sizes, SizesArray} from "../types/Common.types";
-
 
 export const ColArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'auto', undefined] as const;
 export type Column = typeof ColArray[number];
@@ -18,7 +15,7 @@ export type Offset = typeof OffsetArray[number];
 
 interface IColProps {
 	children: React.ReactNode;
-	className?: string;
+
 	style?: React.CSSProperties;
 	size?: Sizes;
 	col?: Column;
@@ -51,15 +48,12 @@ export const Col: React.FC<IColProps & IDiv> = (
 Col.displayName = 'Col';
 Col.propTypes = {
 	children: PropTypes.node,
-	className: PropTypes.string,
-	style: PropTypes.object,
 	size: PropTypes.oneOf<Sizes>(SizesArray),
 	col: PropTypes.oneOf<Column>(ColArray),
 	order: PropTypes.oneOf<Order>(OrderArray),
 	offset: PropTypes.oneOf<Offset>(OffsetArray),
 };
 Col.defaultProps = {
-	className: '',
 	size: 'md' as Sizes,
 	col: undefined as Column,
 	order: undefined as Order,

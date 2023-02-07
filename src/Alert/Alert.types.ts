@@ -1,8 +1,8 @@
 import {
 	ColorScheme,
-	CSSStyle,
 	Directions,
 	DirectionsArray,
+	FunctionCallback,
 	Layouts,
 	LayoutsArray,
 	Sizes,
@@ -10,28 +10,26 @@ import {
 	Themes,
 	ThemesArray
 } from '../types/Common.types';
-import React from 'react';
-import PropTypes from "prop-types";
-
+import {ReactNode} from 'react';
+import {bool, func, oneOf, shape, string} from "prop-types";
 
 export const VariantsArray = ['default', 'outline', 'note'] as const;
 export type Variants = typeof VariantsArray[number];
 
 
 export const propTypes = {
-	style: PropTypes.object,
-	dismiss: PropTypes.bool,
-	direction: PropTypes.oneOf<Directions>(DirectionsArray),
-	theme: PropTypes.oneOf<Themes>(ThemesArray),
-	colorScheme: PropTypes.shape({
-		background: PropTypes.string.isRequired,
-		backgroundColor: PropTypes.string.isRequired,
-		color: PropTypes.string.isRequired,
+	dismiss: bool,
+	onClose: func,
+	direction: oneOf<Directions>(DirectionsArray),
+	theme: oneOf<Themes>(ThemesArray),
+	colorScheme: shape({
+		background: string.isRequired,
+		backgroundColor: string.isRequired,
+		color: string.isRequired,
 	}),
-	className: PropTypes.string,
-	variant: PropTypes.oneOf<Variants>(VariantsArray),
-	layout: PropTypes.oneOf<Layouts>(LayoutsArray),
-	size: PropTypes.oneOf<Sizes>(SizesArray),
+	variant: oneOf<Variants>(VariantsArray),
+	layout: oneOf<Layouts>(LayoutsArray),
+	size: oneOf<Sizes>(SizesArray),
 };
 
 export const defaultProps = {
@@ -41,21 +39,17 @@ export const defaultProps = {
 	variant: 'default' as Variants,
 	layout: 'default' as Layouts,
 	size: 'md' as Sizes,
-	className: '' as string,
 };
 
 
 export interface IAlertProps {
-	children: React.ReactNode,
-	style?: CSSStyle,
+	children: ReactNode,
 	dismiss?: boolean,
 	direction?: Directions,
 	theme?: Themes,
 	colorScheme?: ColorScheme,
-	className?: string,
 	variant?: Variants,
 	layout?: Layouts,
 	size?: Sizes,
-
-	[x: string]: any,
+	onClose?: FunctionCallback
 }

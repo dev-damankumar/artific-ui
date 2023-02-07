@@ -8,7 +8,7 @@ import {IDiv, Sizes, SizesArray} from "../types/Common.types";
 
 interface IContainerProps {
 	children: React.ReactNode;
-	className?: string;
+
 	style?: React.CSSProperties;
 	fluid?: boolean;
 	size?: Sizes;
@@ -35,15 +35,13 @@ export const Container: React.FC<IContainerProps & IDiv> = (
 Container.displayName = 'Container';
 Container.propTypes = {
 	children: PropTypes.node,
-	className: PropTypes.string,
-	style: PropTypes.object,
+
+
 	fluid: PropTypes.bool,
 	size: PropTypes.oneOf<Sizes>(SizesArray),
 };
 Container.defaultProps = {
 	fluid: false,
 	size: 'md' as Sizes,
-	className: ''
-
 };
 export default Container;

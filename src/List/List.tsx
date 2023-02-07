@@ -1,9 +1,7 @@
 import React from 'react';
-
-
 import styles from './List.module.css';
 import getClassNames from '../utils/classes/getClassnames';
-import {defaultPropTypes, IListProps, propTypes} from './List.types';
+import {IListProps, propTypes} from './List.types';
 import {IUl} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
@@ -13,11 +11,11 @@ export const List: React.FC<IListProps & IUl> = (
 	{
 		className,
 		children,
-		theme,
-		layout,
-		variant,
+		theme = 'primary',
+		layout = 'default',
+		variant = 'default',
 		direction,
-		size,
+		size = 'md',
 		colorScheme,
 		...rest
 	}) => {
@@ -40,6 +38,5 @@ export const List: React.FC<IListProps & IUl> = (
 
 List.displayName = 'List';
 List.propTypes = propTypes;
-List.defaultProps = defaultPropTypes;
 
 export default List

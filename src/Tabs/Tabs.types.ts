@@ -10,8 +10,8 @@ import {
 	Themes,
 	ThemesArray,
 } from '../types/Common.types';
-import PropTypes from "prop-types";
-import React from "react";
+import {bool, oneOf, shape, string} from "prop-types";
+import {CSSProperties, ReactNode} from "react";
 
 export const VariantsArray = ["default", "separate", "line", "floating-line"] as const;
 export type Variants = typeof VariantsArray[number];
@@ -20,39 +20,23 @@ export const TabTypesArray = ["default", "float"] as const;
 export type TabTypes = typeof TabTypesArray[number];
 
 export const propTypes = {
-	variant: PropTypes.oneOf<Variants>(VariantsArray),
-	size: PropTypes.oneOf<Sizes>(SizesArray),
-	style: PropTypes.object,
-	theme: PropTypes.oneOf<Themes>(ThemesArray),
-	type: PropTypes.oneOf<TabTypes>(TabTypesArray),
-	lineDirection: PropTypes.oneOf<Directions>(DirectionsArray),
-	position: PropTypes.oneOf<Directions>(DirectionsArray),
-	className: PropTypes.string,
-	colorScheme: PropTypes.shape({
-		background: PropTypes.string.isRequired,
-		backgroundColor: PropTypes.string.isRequired,
-		color: PropTypes.string.isRequired,
+	variant: oneOf<Variants>(VariantsArray),
+	size: oneOf<Sizes>(SizesArray),
+	theme: oneOf<Themes>(ThemesArray),
+	type: oneOf<TabTypes>(TabTypesArray),
+	lineDirection: oneOf<Directions>(DirectionsArray),
+	position: oneOf<Directions>(DirectionsArray),
+	colorScheme: shape({
+		background: string.isRequired,
+		backgroundColor: string.isRequired,
+		color: string.isRequired,
 	}),
-	layout: PropTypes.oneOf<Layouts>(LayoutsArray),
-};
-
-export const defaultProps = {
-	colorScheme: null,
-	theme: 'primary' as Themes,
-	variant: 'default' as Variants,
-	layout: 'default' as Layouts,
-	lineDirection: 'bottom' as Directions,
-	position: 'top' as Directions,
-	type: 'default' as TabTypes,
-	size: 'md' as Sizes,
-	className: '' as string,
-	variants: undefined
+	layout: oneOf<Layouts>(LayoutsArray),
 };
 
 export interface ITabsProps {
 	type?: TabTypes;
-	children: React.ReactNode;
-	style?: React.CSSProperties;
+	children: ReactNode;
 	theme?: Themes;
 	lineDirection?: Directions;
 	position?: Directions;
@@ -60,57 +44,34 @@ export interface ITabsProps {
 	variant?: Variants;
 	layout?: Layouts;
 	size?: Sizes;
-	className?: string;
-
-	[x: string]: any;
 }
 
 export interface ITabItemProps {
-	children: React.ReactNode;
-	style?: React.CSSProperties;
+	children: ReactNode;
 	variant?: Variants;
 	active?: boolean;
 	activeTab?: string;
 	setActiveTab?: FunctionCallback;
-	className?: string;
 	target: string;
 }
 
 
 export const tabItemPropTypes = {
-	variant: PropTypes.oneOf<Variants>(VariantsArray),
-	style: PropTypes.object,
-	className: PropTypes.string,
-	active: PropTypes.bool,
+	variant: oneOf<Variants>(VariantsArray),
+	active: bool,
 };
-
-export const tabItemDefaultProps = {
-	className: '' as string,
-	active: false,
-	variant: 'default' as Variants,
-};
-
 
 export interface ITabContentProps {
-	children: React.ReactNode;
-	style?: React.CSSProperties;
+	children: ReactNode;
+	style?: CSSProperties;
 	variant?: Variants;
 	activeTab?: string;
 	setActiveTab?: FunctionCallback;
-	className?: string;
 	id: string;
 }
 
 
 export const tabContentPropTypes = {
-	variant: PropTypes.oneOf<Variants>(VariantsArray),
-	style: PropTypes.object,
-	className: PropTypes.string,
-	activeTab: PropTypes.string,
-};
-
-export const tabContentDefaultProps = {
-	className: '' as string,
-	activeTab: '',
-	variant: 'default' as Variants,
+	variant: oneOf<Variants>(VariantsArray),
+	activeTab: string,
 };

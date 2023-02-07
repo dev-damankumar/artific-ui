@@ -3,7 +3,7 @@ import React from 'react';
 
 import getClassNames from '../utils/classes/getClassnames';
 import styles from './Badge.module.css';
-import {defaultProps, IBadgeProps, propTypes} from './Badge.types';
+import {IBadgeProps, propTypes} from './Badge.types';
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {IDiv} from "../types/Common.types";
 
@@ -11,13 +11,13 @@ import {IDiv} from "../types/Common.types";
 export const Badge: React.FC<IBadgeProps & IDiv> = (
 	{
 		title,
-		size,
-		theme,
+		size = 'md',
+		theme = 'primary',
 		colorScheme,
 		className,
 		style,
-		variant,
-		layout,
+		variant = 'default',
+		layout = 'default',
 		...rest
 	}) => {
 	const componentSelector = 'badge';
@@ -35,7 +35,6 @@ export const Badge: React.FC<IBadgeProps & IDiv> = (
 
 Badge.displayName = 'Badge';
 Badge.propTypes = propTypes;
-Badge.defaultProps = defaultProps;
 export default Badge
 
 

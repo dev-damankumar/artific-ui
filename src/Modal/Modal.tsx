@@ -1,9 +1,7 @@
 import React from 'react';
-
-
 import modalStyles from "./Modal.module.css"
 import getClassNames from "../utils/classes/getClassnames";
-import {defaultProps, IModalProps, OverLaySizesArray, propTypes} from "./Modal.types";
+import {IModalProps, OverLaySizesArray, propTypes} from "./Modal.types";
 import {IDiv, IModalSizesType} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
@@ -12,16 +10,16 @@ import sizeClasses from "../utils/classes/sizeClasses";
 
 export const Modal: React.FC<IModalProps & IDiv> = (
 	{
-		open,
+		open = false,
 		className,
 		style,
-		classes,
+		classes = '',
 		styles,
 		colorScheme,
-		theme,
-		variant,
-		layout,
-		size,
+		theme = 'dark',
+		variant = 'default',
+		layout = 'default',
+		size = 'md',
 		onClose,
 		dismiss,
 		onBackdropClick,
@@ -80,5 +78,4 @@ export const Modal: React.FC<IModalProps & IDiv> = (
 
 Modal.displayName = 'Modal';
 Modal.propTypes = propTypes;
-Modal.defaultProps = defaultProps;
 export default Modal;

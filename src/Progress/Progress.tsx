@@ -1,9 +1,7 @@
 import React from 'react';
-
-
 import styles from './Progress.module.css';
 import getClassNames from '../utils/classes/getClassnames';
-import {defaultProps, IProgressProps, propTypes} from './Progress.types';
+import {IProgressProps, propTypes} from './Progress.types';
 import uuid from "../utils/uuids/uuid";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {IDiv} from "../types/Common.types";
@@ -11,21 +9,21 @@ import {IDiv} from "../types/Common.types";
 
 export const Progress: React.FC<IProgressProps & IDiv> = (
 	{
-		value,
-		label,
+		value = 0,
+		label = 'default',
 		values,
-		symbol,
+		symbol = '%',
 		className,
 		style,
 		children,
-		barColors,
+		barColors = ['primary', 'secondary', 'dark', 'light'],
 		colorScheme,
-		theme,
-		type,
-		variant,
-		layout,
+		theme = 'primary',
+		type = 'default',
+		variant = 'default',
+		layout = 'default',
 		disabled,
-		size,
+		size = 'md',
 		...rest
 	}) => {
 	const componentSelector = 'progress';
@@ -83,6 +81,4 @@ export const Progress: React.FC<IProgressProps & IDiv> = (
 
 Progress.displayName = 'Progress';
 Progress.propTypes = propTypes;
-Progress.defaultProps = defaultProps;
-
 export default Progress

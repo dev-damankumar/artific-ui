@@ -3,7 +3,7 @@ import React from 'react';
 
 import styles from './Dropdown.module.css';
 import getClassNames from '../utils/classes/getClassnames';
-import {defaultProps, IDropdownProps, propTypes} from './Dropdown.types';
+import {IDropdownProps, propTypes} from './Dropdown.types';
 import {IDiv} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
@@ -15,12 +15,12 @@ export const Dropdown: React.FC<IDropdownProps & IDiv> = (
 		children,
 		className = '',
 		style,
-		size,
-		position,
+		size = 'md',
+		position = 'bottom',
 		fullwidth,
-		layout,
-		variant,
-		theme,
+		layout = 'default',
+		variant = 'default',
+		theme = 'primary',
 		colorScheme,
 		...rest
 	}) => {
@@ -67,6 +67,5 @@ export const Dropdown: React.FC<IDropdownProps & IDiv> = (
 };
 Dropdown.displayName = 'Dropdown';
 Dropdown.propTypes = propTypes;
-Dropdown.defaultProps = defaultProps;
 
 export default Dropdown

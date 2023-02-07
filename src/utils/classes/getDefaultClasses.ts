@@ -5,7 +5,7 @@ import getClassNames from "./getClassnames";
 import applyColorScheme from "../colors/applyColorScheme";
 
 interface CSSClasses {
-	[x: string]: any,
+
 }
 
 type IStyleConfig = {
