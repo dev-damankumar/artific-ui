@@ -30,6 +30,7 @@
   ],
   "exclude": [
     "dist",
+    "scripts",
     "stories",
     "storybook-static",
     "node_modules",
