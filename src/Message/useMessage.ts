@@ -19,7 +19,7 @@ const assignClassesToAlert = (conditions: MessageConfig & { msgType: MessageType
 
 export const useMessage = (function () {
 
-	function Constructor(this: Messages & MessageConfig, loadStyles: boolean, themeProvider: IThemeProvider | null | undefined) {
+	function Constructor(this: Messages & MessageConfig, loadStyles: boolean = true, themeProvider: IThemeProvider | null | undefined) {
 		if (typeof window === "undefined") return
 		this.type = 'default';
 		this.mode = 'light';
@@ -198,8 +198,8 @@ export const useMessage = (function () {
 		}
 	}
 
-	return function instance(loadStyles: boolean = true, themeProvider: IThemeProvider | null | undefined = null) {
-		return (new (Constructor as any)(loadStyles, themeProvider) as Messages)
+	return function instance(this: (Messages & MessageConfig), loadStyle: boolean = true, themeProvider: IThemeProvider | null | undefined = null) {
+		return (new (Constructor as any)(this, loadStyle, themeProvider) as Messages)
 	}
 })()
 export default useMessage

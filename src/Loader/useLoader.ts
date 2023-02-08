@@ -16,7 +16,7 @@ const assignClasses = (conditions: LoaderConfig) => {
 }
 export const useLoader = (function () {
 
-	function Constructor(this: ILoader & LoaderConfig & { selector: Element | null }, loadStyles: boolean) {
+	function Constructor(this: ILoader & LoaderConfig & { selector: Element | null }, loadStyles: boolean = true) {
 		if (typeof window === "undefined") return
 		this.dismissible = false;
 		this.variant = 'default';
@@ -112,8 +112,8 @@ export const useLoader = (function () {
 		}
 	}
 
-	return function instance(loadStyles: boolean = true) {
-		return (new (Constructor as any)(loadStyles) as ILoader)
+	return function instance(this: ILoader & LoaderConfig & { selector: Element | null }, loadStyles: boolean = true) {
+		return (new (Constructor as any)(this, loadStyles) as ILoader)
 	}
 
 })()

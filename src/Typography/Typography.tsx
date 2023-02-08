@@ -24,7 +24,7 @@ export const Typography: React.FC<ITypographyProps & IAnyElement> = (
 		classNames, customCss
 	} = getDefaultClasses(classes, componentSelector, className, '', '', variant, '', colorScheme)
 	const asEl = as?.toString()?.trim()?.toLowerCase() || 'p'
-	const element = variant === 'abbr' ? 'abbr' : variant === 'pre' ? 'pre' : asEl;
+	const element = variant === 'abbr' ? 'abbr' : variant === 'pre' ? 'pre' : (variant === 'highlight' || variant === 'kbd') ? 'span' : asEl;
 	const variantClasses = variant !== 'text' ? `typography-${variant}` : '';
 	const weightClasses = `${weight !== 'medium' ? `typography-${weight}` : ''}`;
 	const additionalThemeClass = !colorScheme ? theme !== 'default' ? `text-${theme}` : `` : ``;
