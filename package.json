@@ -43,14 +43,13 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.1",
     "@rollup/plugin-terser": "^0.4.0",
-    "@storybook/addon-actions": "^6.5.14",
-    "@storybook/addon-docs": "^6.5.14",
-    "@storybook/addon-essentials": "^6.5.14",
-    "@storybook/addon-interactions": "^6.5.14",
-    "@storybook/addon-links": "^6.5.14",
-    "@storybook/builder-webpack5": "^6.5.14",
-    "@storybook/manager-webpack5": "^6.5.14",
-    "@storybook/react": "^6.5.14",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
     "@types/color": "^3.0.3",
     "@types/node": "^18.11.10",
@@ -60,6 +59,7 @@
     "babel-jest": "^29.4.2",
     "babel-loader": "^9.1.0",
     "color": "^4.2.3",
+    "fs-extra": "^11.1.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -75,5 +75,6 @@
     "prop-types": ">=15.8.1",
     "react": ">=17.0.2",
     "react-dom": ">=17.0.2"
-  }
+  },
+  "dependencies": {}
 }
