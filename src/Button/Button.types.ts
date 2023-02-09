@@ -1,4 +1,4 @@
-import {CSSProperties, ReactNode} from 'react';
+import {CSSProperties, ReactElement, ReactNode} from 'react';
 import {
 	ColorScheme,
 	Layouts,
@@ -59,6 +59,6 @@ export interface IButtonProps {
 	loadingStyle?: LoadingStyles;
 	disabled?: boolean;
 	loading?: boolean;
-	prefix?: ReactNode | undefined;
-	suffix?: ReactNode | undefined;
+	prefix?: ReactElement | null;
+	suffix?: ReactElement | null;
 }

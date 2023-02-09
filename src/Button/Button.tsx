@@ -8,7 +8,7 @@ import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
 /*Responsive checkPropTypes pending for onstalled components*/
 
-export const Button: React.FC<IButtonProps & IButton> = (
+export const Button: React.FC<Omit<IButton, 'prefix'> & IButtonProps> = (
 	{
 		className,
 		style,
@@ -19,14 +19,14 @@ export const Button: React.FC<IButtonProps & IButton> = (
 		theme = 'primary',
 		variant = 'default',
 		layout = 'default',
-		disabled,
+		disabled = false,
 		loading,
 		fullwidth = false,
 		loadingDirection = 'before',
 		loadingStyle = 'spin',
 		size = 'md',
-		prefix,
-		suffix,
+		prefix = null,
+		suffix = null,
 		...rest
 	}) => {
 	let mouseDown = false;

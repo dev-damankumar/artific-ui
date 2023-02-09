@@ -7,10 +7,9 @@ import terser from '@rollup/plugin-terser';
 import {getFolders} from './scripts/buildUtils.js';
 import generatePackageJson from 'rollup-plugin-generate-package-json';
 import postCSS from 'rollup-plugin-postcss';
-// import {getBabelOutputPlugin} from '@rollup/plugin-babel';
 
 const packageJson=require('./package.json');
-
+const generateSourceMaps=false
 const plugins=[
 	peerDepsExternal(),
 	nodeResolve(),
@@ -19,9 +18,6 @@ const plugins=[
 		'process.env.NODE_ENV': JSON.stringify('production'),
 	}),
 	commonjs(),
-	// getBabelOutputPlugin({
-	// 	presets: ['@babel/preset-env']
-	// }),
 	typescript({
 		tsconfig: './tsconfig.json',
 		useTsconfigDeclarationDir: true,
@@ -33,6 +29,7 @@ const plugins=[
 	}),
 	terser({compress: true}),
 ];
+
 const subFolderPlugins=(folderName) => [
 	...plugins,
 	generatePackageJson({
@@ -57,6 +54,7 @@ getFolders('./src').forEach((folder) => {
 				file: `dist/${folder}`,
 			},
 			plugins: subFolderPlugins(folder),
+			external: ['react', 'react-dom'],
 		})
 		return;
 	}
@@ -64,7 +62,7 @@ getFolders('./src').forEach((folder) => {
 		input: `src/${folder}/index.ts`,
 		output: {
 			file: `dist/${folder}/index.js`,
-			sourcemap: false,
+			sourcemap: generateSourceMaps,
 			exports: 'named',
 			format: 'esm',
 		},
@@ -80,25 +78,18 @@ export default [
 			{
 				file: packageJson.module,
 				format: 'esm',
-				sourcemap: false,
+				sourcemap: generateSourceMaps,
 				exports: 'named',
 			},
-		],
-		plugins,
-		external: ['react', 'react-dom'],
-	},
-	...folderBuilds,
-	{
-		input: ['src/index.ts'],
-		output: [
 			{
 				file: packageJson.main,
 				format: 'cjs',
-				sourcemap: false,
+				sourcemap: generateSourceMaps,
 				exports: 'named',
-			},
+			}
 		],
 		plugins,
 		external: ['react', 'react-dom'],
 	},
+	...folderBuilds
 ];

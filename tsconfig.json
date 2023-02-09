@@ -29,12 +29,7 @@
     "src/**/*"
   ],
   "exclude": [
-    "dist",
-    "scripts",
-    "stories",
-    "storybook-static",
-    "node_modules",
-    "build",
-    "src/**/*.test.tsx"
+    "src/**/*.test.tsx",
+    "src/types"
   ]
 }
