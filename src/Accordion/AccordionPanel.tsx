@@ -9,15 +9,17 @@ export const AccordionPanel: React.FC<IAccordionPanel & IDiv> = (
 	{
 		children,
 		theme,
+		disabled = false,
 		...rest
 	}) => {
 	const [open, setOpen] = useState(false);
 	let toggleAccordion = () => {
+		if (disabled) return
 		setOpen(!open);
 	};
-	const childrenWithProps = addPropsToChildren(children, {theme, open, onToggle: toggleAccordion})
+	const childrenWithProps = addPropsToChildren(children, {theme, disabled, open, onToggle: toggleAccordion})
 	return (
-		<div {...rest} className={getClassNames(styles, 'accordion', open ? 'open' : '')}>
+		<div {...rest} className={getClassNames(styles, 'accordion', open ? 'accordion-open' : '', disabled ? 'accordion-disabled' : '')}>
 			{childrenWithProps}
 		</div>
 	);

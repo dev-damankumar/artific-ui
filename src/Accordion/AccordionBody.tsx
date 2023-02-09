@@ -24,10 +24,13 @@ export const AccordionBody: React.FC<IAccordionBody & IDiv> = (
 		bodyStyle['height'] = 0;
 	}
 	return (
-		<div {...rest} ref={ref} style={{...style, ...bodyStyle}}
-			 className={`${getClassNames(classes, 'accordion-panel')} ${className}`}>
+		<div
+			{...rest}
+			ref={ref}
+			style={{...style, ...bodyStyle}}
+			className={`${getClassNames(classes, 'accordion-panel')} ${className}`}>
 			<div className={getClassNames(classes, 'accordion-body')}>
-				{children}
+				{!rest.disabled && children}
 			</div>
 		</div>
 	);

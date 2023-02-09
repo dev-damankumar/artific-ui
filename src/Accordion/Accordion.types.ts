@@ -1,4 +1,4 @@
-import React from 'react';
+import {ReactNode} from 'react';
 import {
 	ColorScheme,
 	FunctionCallback,
@@ -9,16 +9,16 @@ import {
 	Themes,
 	ThemesArray
 } from '../types/Common.types';
-import PropTypes from "prop-types";
+import {bool, func, node, oneOf, shape, string} from "prop-types";
 
-export const VariantsArray = ['default', 'separate', 'outlined', 'attached'] as const;
+export const VariantsArray = ['default', 'separate', 'outline', 'attached'] as const;
 export type Variants = typeof VariantsArray[number];
 
 export const IndicatorDirectionArray = ['start', 'end'] as const;
 export type IndicatorDirection = typeof IndicatorDirectionArray[number];
 
 export interface IAccordionProps {
-	children: React.ReactNode,
+	children: ReactNode,
 	theme?: Themes,
 	variant?: Variants,
 	layout?: Layouts,
@@ -28,52 +28,56 @@ export interface IAccordionProps {
 }
 
 export const propTypes = {
-	children: PropTypes.node,
-	theme: PropTypes.oneOf(ThemesArray),
-	variant: PropTypes.oneOf(VariantsArray),
-	layout: PropTypes.oneOf(LayoutsArray),
-	indicatorPosition: PropTypes.oneOf(IndicatorDirectionArray),
-	size: PropTypes.oneOf(SizesArray),
-	colorScheme: PropTypes.shape({
-		background: PropTypes.string.isRequired,
-		backgroundColor: PropTypes.string.isRequired,
-		color: PropTypes.string.isRequired,
+	children: node,
+	theme: oneOf(ThemesArray),
+	variant: oneOf(VariantsArray),
+	layout: oneOf(LayoutsArray),
+	indicatorPosition: oneOf(IndicatorDirectionArray),
+	size: oneOf(SizesArray),
+	colorScheme: shape({
+		background: string.isRequired,
+		backgroundColor: string.isRequired,
+		color: string.isRequired,
 	}),
 }
 
 export interface IAccordionPanel {
-	children: React.ReactNode,
+	children: ReactNode,
 	theme?: Themes;
+	disabled?: boolean;
 }
 
 export const IAccordionPanelPropTypes = {
-	children: PropTypes.node,
-	theme: PropTypes.oneOf(ThemesArray)
+	children: node,
+	theme: oneOf(ThemesArray),
+	disabled: bool,
 }
 
 
 export interface IAccordionHeader {
-	children: React.ReactNode,
+	children: ReactNode,
 	theme?: Themes,
 	onToggle?: FunctionCallback,
-	prefix?: React.ReactNode | undefined,
-	suffix?: React.ReactNode | undefined
+	prefix?: ReactNode | undefined,
+	suffix?: ReactNode | undefined
 }
 
 export const IAccordionHeaderPropTypes = {
-	children: PropTypes.node,
-	theme: PropTypes.oneOf(ThemesArray),
-	onToggle: PropTypes.func,
+	children: node,
+	theme: oneOf(ThemesArray),
+	onToggle: func,
 }
 
 
 export interface IAccordionBody {
-	children: React.ReactNode,
+	children: ReactNode,
 	open?: boolean,
+	disabled?: boolean,
 }
 
 export const IAccordionBodyPropTypes = {
-	children: PropTypes.node,
-	open: PropTypes.bool,
+	children: node,
+	open: bool,
+	disabled: bool,
 }
 

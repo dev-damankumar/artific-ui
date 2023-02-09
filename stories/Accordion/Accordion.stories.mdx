@@ -260,7 +260,7 @@ colorScheme is an object containing three properties: `background`, `backgroundC
 <Canvas>
 	<Story name="Accordion Custom Themes">
 		<Accordion
-			variant="outlined"
+			variant="outline"
 			colorScheme={{
 				background: 'linear-gradient(45deg, #e736f4, #673ab7)',
 				backgroundColor: '#e736f4',
@@ -309,6 +309,51 @@ colorScheme is an object containing three properties: `background`, `backgroundC
 	</Story>
 </Canvas>
 
+
+## Accordion Disabled Panel
+
+If you want to disable a specific panel of the Accordion use `disabled` prop on `AccordionPanel` to disable it.
+
+
+<Canvas>
+	<Story name="Accordion Disabled Panel">
+		<Accordion
+			theme="primary">
+			<AccordionPanel disabled={true}>
+				<AccordionHeader>Restricted Section!!</AccordionHeader>
+				<AccordionBody>
+					Secret content
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+			<AccordionPanel>
+				<AccordionHeader>Is you.accordion-panelr team updated with latest web technical
+					skills?</AccordionHeader>
+				<AccordionBody>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+					porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+					eligendi eos fuga
+					iure omnis reprehenderit sequi unde.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+					harum officiis
+				</AccordionBody>
+			</AccordionPanel>
+		</Accordion>
+	</Story>
+</Canvas>
 
 ## Prefix And Suffix icons
 
@@ -655,7 +700,7 @@ Note: Different components might have addition layouts based on there configurat
 
 Artific UI provides a `variant` prop to make you choose how your component ui should look like
 
-Set `variant` prop with the value of (`default`|`attached`|`separate`|`outlined`). you can mix them with different supported `theme` or `layout`
+Set `variant` prop with the value of (`default`|`attached`|`separate`|`outline`). you can mix them with different supported `theme` or `layout`
 
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
@@ -752,7 +797,7 @@ you can check out the props table to see which variant is supported by the compo
 		<br/>
 		<br/>
 		<h5>Outlined Accordion</h5>
-		<Accordion variant="outlined">
+		<Accordion variant="outline">
 			<AccordionPanel>
 				<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
 				<AccordionBody>

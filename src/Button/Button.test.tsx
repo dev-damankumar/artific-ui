@@ -3,7 +3,7 @@ import {fireEvent, getByTestId, getByText, render} from "@testing-library/react"
 import Button from "./Button";
 
 describe("Render Button", () => {
-	test("renders the Button component", () => {
+	test("render the Button component", () => {
 		const {container} = render(<Button>Hello World!</Button>);
 		getByText(container, "Hello World!");
 	});
@@ -16,7 +16,7 @@ describe("Render Button", () => {
 		fireEvent.click(component!);
 		expect(onClickMock).toBeCalled();
 	});
-	test("renders default styles", () => {
+	test("render default styles", () => {
 		const {container} = render(<Button>Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn')
@@ -24,32 +24,32 @@ describe("Render Button", () => {
 });
 
 describe("Render Button Default Themes", () => {
-	test("renders default theme", () => {
+	test("render default theme", () => {
 		const {container} = render(<Button>Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-primary')
 	});
-	test("renders primary theme", () => {
+	test("render primary theme", () => {
 		const {container} = render(<Button theme="primary">Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-primary')
 	});
-	test("renders secondary theme", () => {
+	test("render secondary theme", () => {
 		const {container} = render(<Button theme="secondary">Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-secondary')
 	});
-	test("renders light theme", () => {
+	test("render light theme", () => {
 		const {container} = render(<Button theme="light">Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-light')
 	});
-	test("renders dark theme", () => {
+	test("render dark theme", () => {
 		const {container} = render(<Button theme="dark">Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-dark')
 	});
-	test("renders custom color scheme", () => {
+	test("render custom color scheme", () => {
 		const colorScheme = {
 			color: 'black',
 			background: 'linear-gradient(45deg, black, transparent)',
@@ -65,25 +65,25 @@ describe("Render Button Default Themes", () => {
 });
 
 describe("Render Button Layouts", () => {
-	test("renders default layout", () => {
+	test("render default layout", () => {
 		const {container} = render(<Button>Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn')
 		expect(component).not.toHaveClass('btn-rounded', 'btn-pill', 'btn-no-radius')
 	});
-	test("renders rounded layout", () => {
+	test("render rounded layout", () => {
 		const {container} = render(<Button layout="rounded">Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-rounded')
 		expect(component).not.toHaveClass('btn-pill', 'btn-no-radius')
 	});
-	test("renders no-radius layout", () => {
+	test("render no-radius layout", () => {
 		const {container} = render(<Button layout="no-radius">Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-no-radius')
 		expect(component).not.toHaveClass('btn-rounded', 'btn-pill')
 	});
-	test("renders pill layout", () => {
+	test("render pill layout", () => {
 		const {container} = render(<Button layout="pill">Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-pill')
@@ -92,19 +92,19 @@ describe("Render Button Layouts", () => {
 });
 
 describe("Render Button Variants", () => {
-	test("renders default variant", () => {
+	test("render default variant", () => {
 		const {container} = render(<Button>Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn')
 		expect(component).not.toHaveClass('btn-outline', 'btn-text')
 	});
-	test("renders outline variant", () => {
+	test("render outline variant", () => {
 		const {container} = render(<Button variant="outline">Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-outline')
 		expect(component).not.toHaveClass('btn-text')
 	});
-	test("renders text variant", () => {
+	test("render text variant", () => {
 		const {container} = render(<Button variant="text">Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-text', 'btn-outline')
@@ -112,37 +112,37 @@ describe("Render Button Variants", () => {
 });
 
 describe("Render Button Sizes", () => {
-	test("renders default/md size", () => {
+	test("render default/md size", () => {
 		const {container} = render(<Button>Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn')
 		expect(component).not.toHaveClass('btn-extra-large', 'btn-large', 'btn-small', 'btn-extra-small')
 	});
-	test("renders xl size", () => {
+	test("render xl size", () => {
 		const {container} = render(<Button size="xl">Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-extra-large')
 		expect(component).not.toHaveClass('btn-large', 'btn-small', 'btn-extra-small')
 	});
-	test("renders lg size", () => {
+	test("render lg size", () => {
 		const {container} = render(<Button size="lg">Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-large')
 		expect(component).not.toHaveClass('btn-extra-large', 'btn-small', 'btn-extra-small')
 	});
-	test("renders sm size", () => {
+	test("render sm size", () => {
 		const {container} = render(<Button size="sm">Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-small')
 		expect(component).not.toHaveClass('btn-extra-large', 'btn-large', 'btn-extra-small')
 	});
-	test("renders xs size", () => {
+	test("render xs size", () => {
 		const {container} = render(<Button size="xs">Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-extra-small')
 		expect(component).not.toHaveClass('btn-extra-large', 'btn-large', 'btn-small')
 	});
-	test("renders fullwidth button", () => {
+	test("render fullwidth button", () => {
 		const {container} = render(<Button fullwidth>Click Me</Button>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-fullwidth')
@@ -150,7 +150,7 @@ describe("Render Button Sizes", () => {
 });
 
 describe("Render Button With Icons", () => {
-	test("renders suffix icon", () => {
+	test("render suffix icon", () => {
 		const {container} = render(<Button
 			suffix={<i data-testid='icon1' className='bx bxs-user-circle'></i>}
 			type="button"
@@ -162,7 +162,7 @@ describe("Render Button With Icons", () => {
 		expect(component).toContainHTML(`<i data-testid='icon1' class='bx bxs-user-circle'></i>`)
 		expect(icon1.parentElement).toHaveClass('btn-icon-suffix')
 	});
-	test("renders prefix icon", () => {
+	test("render prefix icon", () => {
 		const {container} = render(<Button
 			prefix={<i data-testid='icon1' className='bx bxs-user-circle'></i>}
 			type="button"
@@ -175,7 +175,7 @@ describe("Render Button With Icons", () => {
 		expect(icon1.parentElement).toHaveClass('btn-icon-prefix')
 
 	});
-	test("renders both icon", () => {
+	test("render both icon", () => {
 		const {container} = render(<Button
 			suffix={<i data-testid='icon1' className='bx bxs-user-circle'></i>}
 			prefix={<i data-testid='icon2' className='bx bxs-user-circle'></i>}
@@ -194,7 +194,7 @@ describe("Render Button With Icons", () => {
 });
 
 describe("Render Button States", () => {
-	test("renders disabled button", () => {
+	test("render disabled button", () => {
 		const {container} = render(<Button
 			disabled={true}
 			type="button"
@@ -204,7 +204,7 @@ describe("Render Button States", () => {
 		const component = container.firstChild;
 		expect(component).toHaveAttribute('disabled', "")
 	});
-	test("renders not disabled button", () => {
+	test("render not disabled button", () => {
 		const {container} = render(<Button
 			type="button"
 		>
@@ -213,7 +213,7 @@ describe("Render Button States", () => {
 		const component = container.firstChild;
 		expect(component).not.toHaveAttribute('disabled', "")
 	});
-	test("renders loading button", () => {
+	test("render loading button", () => {
 		const {container} = render(<Button
 			loading={true}
 			type="button"
@@ -223,7 +223,7 @@ describe("Render Button States", () => {
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-loading')
 	});
-	test("renders no loading button", () => {
+	test("render no loading button", () => {
 		const {container} = render(<Button
 			loading={false}
 			type="button"

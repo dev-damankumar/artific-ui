@@ -28,7 +28,7 @@ export const Avatar: React.FC<IAvatarProps & IDiv> = (
 	return <>
 		{customCss && customCss()}
 		<div {...rest} style={style} className={classNames}>
-			{src ? <img alt={alt} className={getClassNames(styles, "avatar-image")} src={src}/> :
+			{src ? <img role="img" alt={alt} className={getClassNames(styles, "avatar-image")} src={src}/> :
 				<div className={getClassNames(styles, "avatar-text")}>{title}</div>}
 		</div>
 	</>

@@ -42,7 +42,7 @@ export const Alert: React.FC<IAlertProps & IDiv> = (
 				{...rest}
 				className={`${classNames} ${getClassNames(styles, additionalVariantClasses)}`}
 			>
-				{dismiss && <button onClick={onCloseHandler} type='button'
+				{dismiss && <button role="button" onClick={onCloseHandler} type='button'
 									className={getClassNames(styles, 'close')}>&times;</button>}
 				{children}
 			</div>
