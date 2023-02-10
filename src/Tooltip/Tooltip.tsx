@@ -35,7 +35,7 @@ export const Tooltip: React.FC<ITooltipProps & IDiv> = (
 		if (React.isValidElement(child)) {
 			return React.cloneElement<any>(child, {
 				'data-tooltip': true,
-				children: [child.props.children, <div {...rest} style={style} ref={ref}
+				children: [child.props.children, <div role="tooltip" {...rest} style={style} ref={ref}
 													  className={`${classes}`}>{title}</div>]
 			});
 		}
