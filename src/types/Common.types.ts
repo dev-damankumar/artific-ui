@@ -8,7 +8,7 @@ export const ISizes: any = {
 	xl: 'extra-large'
 };
 
-export const IModalSizesArray = ['extra-small-content', 'full', 'expanded', 'small-content', 'large-content', 'extra-large-content', 'full-width', 'full-height'] as const;
+export const IModalSizesArray = ['', 'extra-small-content', 'full', 'expanded', 'small-content', 'large-content', 'extra-large-content', 'full-width', 'full-height'] as const;
 export type IModalSizesType = typeof IModalSizesArray[number];
 export const IModalSizes: any = {
 	xs: 'extra-small-content',

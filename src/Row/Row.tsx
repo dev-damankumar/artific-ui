@@ -1,6 +1,4 @@
 import React from 'react';
-
-
 import styles from "./Row.module.css"
 import getClassNames from "../utils/classes/getClassnames";
 import PropTypes from "prop-types";
@@ -8,7 +6,6 @@ import {IDiv} from "../types/Common.types";
 
 interface IRowProps {
 	children: React.ReactNode;
-
 	style?: React.CSSProperties;
 }
 

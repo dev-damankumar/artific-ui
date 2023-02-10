@@ -13,16 +13,22 @@ export const DropdownMenu: React.FC<IDropdownMenu & IDiv> = (
 		position = 'before',
 		closeHandler,
 		autoClose,
+		onClick,
 		...rest
 	}) => {
 	const classes = getClassNames(styles, 'dropdown-menu', position === 'after' ? 'dropdown-menu-right' : '')
-	const childrenWithProps = addPropsToChildren(children, {autoClose, closeHandler})
+	const childrenWithProps = addPropsToChildren(children, {}, false)
 
 	return (
 		<div
 			{...rest}
 			className={`${classes} ${className}`}
 			style={style}
+			onClick={(e) => {
+				if (autoClose) {
+					onClick?.(e)
+				}
+			}}
 		>
 			<div className={getClassNames(styles, 'dropdown-wrap')}>
 				{childrenWithProps}

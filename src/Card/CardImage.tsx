@@ -15,12 +15,10 @@ export const CardImage: React.FC<ICardImageProps & IImage> = (
 		...rest
 	}) => {
 	const layoutClasses = layout !== 'default' ? `card-image-${layout}` : '';
-	console.log('direction', direction)
-	console.log('layout', layout)
 	return (
 		<div
 			className={getClassNames(styles, 'card-img-div', direction === 'row' ? 'card-img-no-margin' : '', (direction === 'column' && layout !== 'extended') ? 'card-img-div-col' : '')}>
-			<img {...rest} className={`${getClassNames(styles, layoutClasses)} ${className}`} src={src}
+			<img role="img" {...rest} className={`${getClassNames(styles, layoutClasses)} ${className}`} src={src}
 				 alt={alt}/>
 		</div>
 	);

@@ -6,7 +6,7 @@ import {IButtonProps} from '../Button/Button.types';
 import {IButton} from "../types/Common.types";
 
 
-export const IconButton: React.FC<IButtonProps & IButton> = (props) => {
+export const IconButton: React.FC<Omit<IButton, 'prefix'> & IButtonProps> = (props) => {
 	return <><Button
 		{...props}
 		className={`${getClassNames(styles, 'icon-btn')} ${props.className}`}

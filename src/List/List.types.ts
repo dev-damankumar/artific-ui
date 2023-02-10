@@ -7,7 +7,7 @@ import {
 	Themes,
 	ThemesArray
 } from '../types/Common.types';
-import {ReactHTMLElement, ReactNode} from 'react';
+import {ReactNode} from 'react';
 import {bool, oneOf, shape, string} from "prop-types";
 
 export const VariantsArray = ['default', 'striped', 'separate', 'borderless', 'bordered'] as const;
@@ -42,8 +42,8 @@ export interface IListProps {
 export interface IListItemProps {
 	children: ReactNode,
 	theme?: Themes,
-	prefix?: ReactHTMLElement<any>,
-	suffix?: ReactHTMLElement<any>,
+	prefix?: ReactNode,
+	suffix?: ReactNode,
 	disabled?: boolean
 }
 

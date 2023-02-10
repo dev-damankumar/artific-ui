@@ -4,7 +4,7 @@ import getClassNames from '../utils/classes/getClassnames';
 import {IListItemProps, ListItemPropTypes} from './List.types';
 import {ILi} from "../types/Common.types";
 
-export const ListItem: React.FC<IListItemProps & ILi> = (
+export const ListItem: React.FC<Omit<ILi, 'prefix'> & IListItemProps> = (
 	{
 		children,
 		theme = 'primary',

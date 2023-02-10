@@ -1,12 +1,28 @@
-import {Children, cloneElement, isValidElement, ReactNode} from "react";
+import React, {Children, cloneElement, isValidElement, ReactNode} from "react";
 
-export const addPropsToChildren = (children: ReactNode, props: object, prioritizeChildren = false) => {
+interface Config {
+	[k: string]: any
+}
+
+export const addPropsToChildren = (children: ReactNode, props: object, prioritizeChildren = false, config: Config | null = null) => {
 	return Children.map(children, child => {
 		if (isValidElement(child)) {
+			let tempChild = {...child.props, ...props}
 			if (prioritizeChildren) {
-				return cloneElement(child, {...props, ...child.props});
+				tempChild = {...props, ...child.props}
 			}
-			return cloneElement(child, {...child.props, ...props,});
+			if (config) {
+				for (const key in config) {
+					if (child.props?.originalType?.displayName === key || (child.type as React.FC)?.displayName === key) {
+						tempChild = {...child.props, ...props, ...config[key]}
+						if (prioritizeChildren) {
+							tempChild = {...props, ...config[key], ...child.props}
+						}
+					}
+				}
+
+			}
+			return cloneElement(child, tempChild);
 		}
 		return child;
 	});

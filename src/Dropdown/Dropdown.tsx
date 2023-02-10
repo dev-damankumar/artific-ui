@@ -1,6 +1,4 @@
-import React from 'react';
-
-
+import React, {useState} from 'react';
 import styles from './Dropdown.module.css';
 import getClassNames from '../utils/classes/getClassnames';
 import {IDropdownProps, propTypes} from './Dropdown.types';
@@ -11,6 +9,7 @@ import {addPropsToChildren} from "../utils/helpers";
 
 export const Dropdown: React.FC<IDropdownProps & IDiv> = (
 	{
+		open = false,
 		autoClose,
 		children,
 		className = '',
@@ -25,39 +24,44 @@ export const Dropdown: React.FC<IDropdownProps & IDiv> = (
 		...rest
 	}) => {
 	const componentSelector = 'dropdown';
+	const [openMenu, setOpenMenu] = useState(false)
 	const {
 		classNames, customCss
 	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
 
-	const openDropdown = (e: Event) => {
-		if (e.currentTarget === e.target) {
-			(e.target as HTMLElement)!.parentElement!.classList.toggle(getClassNames(styles, 'dropdown-open').trim());
-		}
+	const toggleDropdown = () => {
+		setOpenMenu(!openMenu)
 	};
 
-	const handleCloseMenu = (e: React.MouseEvent<Element, MouseEvent>) => {
-		if (e) {
-			if ((e.target! as HTMLElement).hasAttribute('data-dropdown')) {
-				(e.target! as HTMLElement).closest(`.${getClassNames(styles, 'dropdown-open')}`)!.classList.remove(getClassNames(styles, 'dropdown-open').trim());
-			}
-		}
+	const handleCloseMenu = () => {
+		setOpenMenu(false)
 	};
-	const childrenWithProps = addPropsToChildren(children, {
-		autoClose, onClick: openDropdown, closeHandler: handleCloseMenu, colorScheme, theme
+	const childrenWithProps = addPropsToChildren(children, {}, false, {
+		'DropdownToggle': {
+			colorScheme, theme, onClick: toggleDropdown
+		},
+		'DropdownMenu': {
+			closeHandler: handleCloseMenu,
+			autoClose,
+			onClick: toggleDropdown,
+		},
+		'MenuItem': {
+			closeHandler: handleCloseMenu,
+			autoClose,
+			onClick: toggleDropdown,
+		}
 	})
 
 	const classes = getClassNames(
 		styles,
-		fullwidth ? 'dropdown-full' : '',
+		fullwidth ? 'dropdown-fullwidth' : '',
 		position !== 'bottom' ? `drop-${position}` : '',
+		openMenu ? 'dropdown-open' : '',
 	)
 	return (
 		<>
 			{customCss && customCss()}
 			<div {...rest} style={style}
-				 onClick={(e: React.MouseEvent<Element, MouseEvent>): void => {
-					 handleCloseMenu(e);
-				 }}
 				 data-dropdown
 				 className={`${classNames} ${classes}`}>
 				{childrenWithProps}

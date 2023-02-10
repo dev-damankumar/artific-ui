@@ -41,7 +41,7 @@ export const Table: React.FC<ITableProps & IDiv> = (
 				{/*<div className={getClassNames(styles, "table-customize-div")}>*/}
 				{/*</div>*/}
 				<div className={getClassNames(styles, "table-responsive")}>
-					<table className={`${classes} ${getClassNames(styles, "table", "table-primary")}`}>
+					<table role="table" className={`${classes} ${getClassNames(styles, "table", "table-primary")}`}>
 						{children}
 					</table>
 				</div>

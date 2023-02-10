@@ -21,7 +21,7 @@ export const Modal: React.FC<IModalProps & IDiv> = (
 		layout = 'default',
 		size = 'md',
 		onClose,
-		dismiss,
+		dismiss = true,
 		onBackdropClick,
 		overlay,
 		dock,
@@ -47,7 +47,6 @@ export const Modal: React.FC<IModalProps & IDiv> = (
 			(e.target as HTMLElement).firstElementChild!.classList.remove(getClassNames(modalStyles, 'shake').trim())
 		}, 500)
 	}
-
 
 	const mainClasses = `${classNames} ${getClassNames(
 		modalStyles,

@@ -8,7 +8,6 @@ import {IDiv, Sizes, SizesArray} from "../types/Common.types";
 
 interface IContainerProps {
 	children: React.ReactNode;
-
 	style?: React.CSSProperties;
 	fluid?: boolean;
 	size?: Sizes;

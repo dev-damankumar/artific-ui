@@ -14,7 +14,7 @@ export const List: React.FC<IListProps & IUl> = (
 		theme = 'primary',
 		layout = 'default',
 		variant = 'default',
-		direction,
+		direction = 'column',
 		size = 'md',
 		colorScheme,
 		...rest

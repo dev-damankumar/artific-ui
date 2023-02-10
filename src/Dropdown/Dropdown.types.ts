@@ -23,6 +23,7 @@ export type Position = typeof PositionArray[number];
 export interface IDropdownProps {
 	children: ReactNode,
 	autoClose?: boolean,
+	open?: boolean,
 	fullwidth?: boolean,
 	position?: Directions,
 	layout?: Layouts,
@@ -44,6 +45,7 @@ export const propTypes = {
 	children: node,
 	autoClose: bool,
 	fullwidth: bool,
+	open: bool,
 	name: string,
 	position: oneOf(DirectionsArray),
 	layout: oneOf(LayoutsArray),

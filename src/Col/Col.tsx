@@ -25,16 +25,16 @@ interface IColProps {
 
 export const Col: React.FC<IColProps & IDiv> = (
 	{
-		col,
-		size,
+		col = undefined,
+		size = undefined,
 		style,
 		className,
-		order,
-		offset,
+		order = undefined,
+		offset = undefined,
 		children,
 		...rest
 	}) => {
-	const sizeClass = !col ? `col-${size}` : `col-${size}-${col}`
+	const sizeClass = col === undefined ? size !== undefined ? `col-${size}` : 'col' : size !== undefined ? `col-${size}-${col}` : `col-${col}`
 	const orderClass = order !== undefined ? `order-${order}` : ''
 	const offsetClass = offset !== undefined ? `offset-${offset}` : ''
 
@@ -53,10 +53,5 @@ Col.propTypes = {
 	order: PropTypes.oneOf<Order>(OrderArray),
 	offset: PropTypes.oneOf<Offset>(OffsetArray),
 };
-Col.defaultProps = {
-	size: 'md' as Sizes,
-	col: undefined as Column,
-	order: undefined as Order,
-	offset: undefined as Offset,
-};
+
 export default Col;

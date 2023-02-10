@@ -21,7 +21,7 @@ export const OverLaySizesArray = ['full-width', 'full-height', 'full', 'expanded
 
 export const propTypes = {
 	variant: oneOf<Variants>(VariantsArray),
-	size: oneOf<Sizes>(SizesArray).isRequired,
+	size: oneOf<Sizes>(SizesArray),
 	overlay: oneOf<Overlay>(OverlayArray),
 	dock: oneOf<Directions>(DirectionsArray),
 	position: oneOf<Directions>(DirectionsArray),
@@ -48,7 +48,7 @@ export interface IModalProps {
 	layout?: Layouts;
 	size?: Sizes;
 	classes?: string;
-	open: boolean;
+	open?: boolean;
 	onClose?: FunctionCallback;
 	overlay?: Overlay;
 	dock?: Directions;
