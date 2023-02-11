@@ -3,6 +3,7 @@ export * from './Alert';
 export * from './Avatar';
 export * from './Badge';
 export * from './Spinner';
+export * from './Space';
 export * from './Button';
 export * from './ButtonGroup';
 export * from './Card';

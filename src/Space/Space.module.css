@@ -1,0 +1,28 @@
+:root {
+	--gap: 10px;
+}
+
+.space {
+	display: inline-flex;
+	gap: var(--gap);
+}
+
+.space-wrap {
+	flex-wrap: wrap;
+}
+
+.space-align-start {
+	align-items: flex-start;
+}
+
+.space-align-end {
+	align-items: flex-end;
+}
+
+.space-align-center {
+	align-items: center;
+}
+
+.space-align-baseline {
+	align-items: baseline;
+}
