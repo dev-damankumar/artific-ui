@@ -1,4 +1,5 @@
 import React, {Children, cloneElement, isValidElement, ReactNode} from "react";
+import {ColorScheme} from "../types/Common.types";
 
 interface Config {
 	[k: string]: any
@@ -26,4 +27,8 @@ export const addPropsToChildren = (children: ReactNode, props: object, prioritiz
 		}
 		return child;
 	});
+}
+
+export const containsGradient = (colorScheme: ColorScheme) => {
+	return !!(colorScheme && colorScheme.background.includes('gradient'))
 }

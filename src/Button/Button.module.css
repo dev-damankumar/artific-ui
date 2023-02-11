@@ -11,7 +11,7 @@
 	--btn-background: #ededed;
 	--btn-background-color: #ededed;
 	--btn-text: inherit;
-	--btn-color-hover: var(--primary-color-hover);
+	--btn-color-hover: var(--primary-color);
 	--btn-text-hover: var(--primary-text-hover);
 	--btn-hover-box-shadow: var(--primary-hover-box-shadow)
 }
@@ -43,7 +43,6 @@
 	transition: all .3s ease-out;
 	position: relative;
 	vertical-align: middle;
-	margin-right: var(--btn-margin);
 }
 
 .btn:not(.btn-fullwidth,.btn-disabled,[disabled],.btn-text,.btn-loading,.btn-loading-grow):active,
@@ -57,14 +56,17 @@
 	transform: scale(1) !important;
 }
 
-span.ripple {
-	background: rgba(0, 0, 0, 0.09);
-	z-index: 0;
-}
 
 [data-ripple] {
 	overflow: hidden;
-	position: relative;
+	pointer-events: none;
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	border-radius: inherit;
 }
 
 @keyframes scale_up {
@@ -129,6 +131,14 @@ span.ripple {
 	--btn-border-radius: 0px;
 }
 
+.btn.btn-gradient-hover:hover:not(.btn-outline) .btn-ripple {
+	background: hsla(0, 0%, 0%, 0.15);
+}
+
+.btn.btn-gradient-hover:hover {
+	z-index: 1;
+}
+
 /*=====Layouts End=====*/
 
 /*=====Colors=====*/
@@ -136,7 +146,7 @@ span.ripple {
 	--btn-background: var(--primary);
 	--btn-background-color: var(--primary-color);
 	--btn-text: var(--primary-text);
-	--btn-color-hover: var(--primary-color-hover);
+	--btn-color-hover: var(--primary-hover);
 }
 
 .btn-secondary {

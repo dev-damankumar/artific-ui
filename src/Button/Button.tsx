@@ -5,6 +5,7 @@ import ripple from '../utils/effects/effectRipple';
 import {IButtonProps, propTypes} from './Button.types';
 import {IButton} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
+import {containsGradient} from "../utils/helpers";
 
 /*Responsive checkPropTypes pending for onstalled components*/
 
@@ -15,7 +16,7 @@ export const Button: React.FC<Omit<IButton, 'prefix'> & IButtonProps> = (
 		hideTextOnLoading,
 		children,
 		type = 'button',
-		colorScheme,
+		colorScheme = null,
 		theme = 'primary',
 		variant = 'default',
 		layout = 'default',
@@ -29,7 +30,10 @@ export const Button: React.FC<Omit<IButton, 'prefix'> & IButtonProps> = (
 		suffix = null,
 		...rest
 	}) => {
-	let mouseDown = false;
+	const rippleEvents = {
+		mouseDown: false,
+		inFocus: false
+	}
 	const componentSelector = 'btn';
 	const {
 		classNames, customCss
@@ -43,6 +47,7 @@ export const Button: React.FC<Omit<IButton, 'prefix'> & IButtonProps> = (
 		loadingClasses,
 		fullwidth ? `${componentSelector}-fullwidth` : '',
 		disabled ? `${componentSelector}-disabled` : '',
+		containsGradient(colorScheme) ? 'btn-gradient-hover' : ''
 	)}`
 
 	return <>
@@ -54,18 +59,21 @@ export const Button: React.FC<Omit<IButton, 'prefix'> & IButtonProps> = (
 			style={style}
 			className={`${classNames} ${classes}`}
 			onMouseDown={(e: React.MouseEvent<HTMLButtonElement>) => {
-				mouseDown = true;
+				rippleEvents.mouseDown = true;
 				if (rest.onMouseDown) {
 					rest.onMouseDown(e);
 				}
 				const target = (e.target as HTMLInputElement)!;
 				if (loading || disabled) return;
-				if (target.nodeName.toLowerCase() === 'button' || target.closest('button')) {
-					let button = e.target as HTMLButtonElement;
-					if (target.closest('button')) {
-						button = target.closest('button')!;
+				if (rippleEvents.mouseDown) {
+					if (target.nodeName.toLowerCase() === 'button' || target.closest('button')) {
+						let button = e.target as HTMLButtonElement;
+						if (target.closest('button')) {
+							button = target.closest('button')!;
+						}
+						const rippleEl = button.querySelector("[data-ripple]")
+						ripple(e, button, rippleEl, false, rippleEvents);
 					}
-					ripple(e, button, false, mouseDown);
 				}
 			}}
 			onFocus={(e) => {
@@ -73,13 +81,14 @@ export const Button: React.FC<Omit<IButton, 'prefix'> & IButtonProps> = (
 					rest.onFocus(e);
 				}
 				if (loading || disabled) return;
-				if (!mouseDown) {
+				if (!rippleEvents.mouseDown) {
 					if (e.target.nodeName.toLowerCase() === 'button' || e.target.closest('button')) {
 						let button = e.target;
 						if (e.target.closest('button')) {
 							button = e.target.closest('button')!;
 						}
-						ripple(e, button, true, mouseDown);
+						const rippleEl = button.querySelector("[data-ripple]")
+						ripple(e, button, rippleEl, true, rippleEvents);
 					}
 				}
 			}}
@@ -87,6 +96,7 @@ export const Button: React.FC<Omit<IButton, 'prefix'> & IButtonProps> = (
 			{prefix && <div className={getClassNames(styles, 'btn-icon', 'btn-icon-prefix')}>{prefix}</div>}
 			{(hideTextOnLoading && loading) ? <span>&nbsp;</span> : children}
 			{suffix && <div className={getClassNames(styles, 'btn-icon', 'btn-icon-suffix')}>{suffix}</div>}
+			<span className={getClassNames(styles, "btn-ripple")} data-ripple></span>
 		</button>
 	</>
 };

@@ -15,7 +15,6 @@
 .dropdown {
 	position: relative;
 	display: inline-block;
-	z-index: 1;
 }
 
 .dropdown-wrap {
@@ -31,12 +30,8 @@
 	content: "";
 	left: 0;
 	background: transparent;
-	z-index: 9999;
+	z-index: var(--z-index-fixed);
 }*/
-
-.dropdown-open {
-	z-index: 2;
-}
 
 .dropdown-btn {
 	border: none;
@@ -94,7 +89,7 @@
 	-webkit-box-shadow: var(--dropdown-box-shadow);
 	box-shadow: var(--dropdown-box-shadow);
 	padding: calc(var(--dropdown-padding) / 2) 0;
-	z-index: 999999;
+	z-index: var(--z-index-dropdown);
 	top: calc(100% + 10px);
 	height: auto;
 	visibility: hidden;

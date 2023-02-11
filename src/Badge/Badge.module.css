@@ -35,7 +35,24 @@
 	text-overflow: clip;
 	line-height: 0;
 	text-align: center;
+	cursor: pointer;
 }
+
+.badge-group {
+	display: flex;
+}
+
+
+.badge-group > .badge-group:not(:last-child) > .badge, .badge-group > .badge:not(:last-child):not(.dropdown-toggle) {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.badge-group > .badge-group:not(:first-child) > .badge, .badge-group > .badge:nth-child(n+3), .badge-group > :not(.btn-check) + .badge {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
 
 .badge-image {
 	object-fit: cover;

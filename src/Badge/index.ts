@@ -3,3 +3,4 @@ import "../index.css"
 
 export default Badge
 export * from './Badge';
+export * from './BadgeGroup';

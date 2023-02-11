@@ -146,7 +146,7 @@ const style = `
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	z-index: 99999;
+	z-index: var(--z-index-popover);
 }
 
 .ati-message-alert-position-top-left.ati-message-alert-wrapper {
@@ -407,6 +407,7 @@ const style = `
 	position: fixed;
 	top: var(--ati-message-alert-margin);
 	right: var(--ati-message-alert-margin);
+	z-index: var(--z-index-popover);
 	transition: .15s all ease
 }
 

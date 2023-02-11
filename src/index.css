@@ -12,6 +12,14 @@
 	--accent-bg: #f4f4f4;
 	--hover-box-shadow: hsla(240, 2%, 90%, 1);
 
+	--z-index-dropdown: 1000;
+	--z-index-sticky: 1020;
+	--z-index-fixed: 1030;
+	--z-index-modal-backdrop: 1040;
+	--z-index-offcanvas: 1050;
+	--z-index-modal: 1060;
+	--z-index-popover: 1070;
+	--z-index-tooltip: 1080;
 
 	--primary: hsla(230, 87%, 59%, 1);
 	--primary-color: var(--primary);

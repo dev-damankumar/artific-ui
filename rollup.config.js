@@ -46,7 +46,7 @@ const subFolderPlugins=(folderName) => [
 const folderBuilds=[]
 
 getFolders('./src').forEach((folder) => {
-	if (folder.includes('.d.ts') || folder.includes('types')) return
+	if (folder.includes('.d.ts') || folder.includes('types') || folder.includes('tests')) return
 	if (folder.includes('.css')) {
 		folderBuilds.push({
 			input: `src/${folder}`,

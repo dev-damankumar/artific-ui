@@ -1,5 +1,5 @@
 import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
-import {Badge} from '../../src';
+import {Badge, BadgeGroup} from '../../src';
 
 
 <Meta
@@ -31,6 +31,25 @@ import { Badge } from 'artific-ui/Badge';
 ```
 
 <ArgsTable story="Default"/>
+
+## Badge Group
+
+If you want to group the badges together use `BadgeGruop`. `BadgeGroup` has same props as `Badge` which act as global `props` for its children
+
+<Canvas>
+	<Story name="Badge Group">
+		<BadgeGroup>
+			<Badge theme="primary" title="REACT"/>
+			<Badge theme="secondary" title="NEXTJS"/>
+			<Badge colorScheme={{
+				background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+				backgroundColor: '#e736f4',
+				color: 'white',
+			}} title="JAVASCRIPT"/>
+		</BadgeGroup>
+	</Story>
+</Canvas>
+
 
 ## Badges Theme
 

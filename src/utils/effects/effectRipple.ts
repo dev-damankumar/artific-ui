@@ -1,34 +1,27 @@
 import Color from 'color';
 
-function ripple(e: any, button: any, focus: any, mouseDown: any) {
+function ripple(e: any, button: any, rippleEl: any, focus: any, config: any) {
 	const ms = 500
 	e.stopPropagation();
-	button.style.overflow = 'hidden';
 	let timeHandler: any = () => {
 		try {
 			ripple_elmnt.style.opacity = 0;
-			button.removeChild(ripple_elmnt);
-			setTimeout(() => {
-				button.style.removeProperty('overflow')
-			}, 5000)
-
-			mouseDown = false;
+			rippleEl.removeChild(ripple_elmnt);
+			config.mouseDown = false
+			config.inFocus = false;
 		} catch (er) {
-			mouseDown
 		}
 	};
-	if (mouseDown) {
-		clearTimeout(timeHandler);
-	}
 
+	if (config.mouseDown) {
+		clearTimeout(timeHandler)
+	}
 	const style = getComputedStyle(button);
 	let backgroundColor = style['backgroundColor'] || '';
 
 	if (backgroundColor === 'rgba(0, 0, 0, 0)' && !style['background'].includes('gradient')) {
 		backgroundColor = 'rgb(255, 255, 255)';
 	}
-
-	console.log('backgroundColor', Color(backgroundColor).hsl().darken(0.5).alpha(0.5).string())
 
 	let ripple_elmnt: any = document.createElement('span');
 	let diameter = Math.max(parseInt(style.height), parseInt(style.width)) * 1.5;
@@ -50,10 +43,9 @@ function ripple(e: any, button: any, focus: any, mouseDown: any) {
 	ripple_elmnt.style.transformOrigin = 'center';
 	ripple_elmnt.style.transition = `transform ${ms}ms ease, opacity ${ms - 100}ms ease`;
 	ripple_elmnt.style.background = `${Color(backgroundColor).hsl().darken(0.4).alpha(0.3).string()}`;
-	button.appendChild(ripple_elmnt);
+	rippleEl.appendChild(ripple_elmnt);
 
 	setTimeout(() => {
-		button.style.overflow = 'hidden';
 		ripple_elmnt.style.transform = 'scale(1)';
 	}, 10);
 

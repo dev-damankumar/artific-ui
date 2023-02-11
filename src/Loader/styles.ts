@@ -20,7 +20,7 @@ const style = `<style data-ati-loader-style>
 	background: var(--dark);
 	align-items: center;
 	justify-content: center;
-	z-index: 999999;
+	z-index: var(--z-index-modal-backdrop);
 	display: none;
 }
 

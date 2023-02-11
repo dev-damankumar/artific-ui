@@ -16,7 +16,7 @@
 .tooltip {
 	top: calc(var(--tooltip-top) + 10px);
 	left: var(--tooltip-left);
-	z-index: 999;
+	z-index: var(--z-index-tooltip);
 	background: var(--tooltip-background);
 	color: var(--tooltip-text);
 	max-width: 200px;
