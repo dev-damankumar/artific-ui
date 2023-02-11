@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styles from './Alert.module.css';
-import {defaultProps, IAlertProps, propTypes} from './Alert.types';
+import {IAlertProps, propTypes} from './Alert.types';
 import getClassNames from '../utils/classes/getClassnames';
 import {IDiv} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
@@ -8,15 +8,15 @@ import getDefaultClasses from "../utils/classes/getDefaultClasses";
 export const Alert: React.FC<IAlertProps & IDiv> = (
 	{
 		children,
-		direction,
+		direction = 'left',
 		dismiss,
-		size,
-		theme,
+		size = 'md',
+		theme = 'primary',
 		colorScheme,
 		className,
 		style,
-		variant,
-		layout,
+		variant = 'default',
+		layout = 'default',
 		onClose,
 		...rest
 	}) => {
@@ -52,7 +52,6 @@ export const Alert: React.FC<IAlertProps & IDiv> = (
 
 Alert.displayName = 'Alert';
 Alert.propTypes = propTypes;
-Alert.defaultProps = defaultProps;
 export default Alert
 
 

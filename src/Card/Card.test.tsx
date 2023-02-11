@@ -1,6 +1,9 @@
 import {findByRole, getByTestId, getByText, render} from "@testing-library/react";
 import Card, {CardContent, CardImage} from "../Card";
 import React from "react";
+import {ISizes, SizesArray, ThemesArray} from "../types/Common.types";
+import except from "../tests/except";
+import {CardLayoutsArray, VariantsArray} from "./Card.types";
 
 describe("Render Card", () => {
 	test("render the Card component", () => {
@@ -34,105 +37,16 @@ describe("Render Card", () => {
 	});
 });
 
-describe("Render Card Image Layouts", () => {
-	test("render card image default layout", async () => {
-		const {container} = render(<Card>
-			<CardImage data-testid="img" src='img.jpg'/>
-			<CardContent>
-				This is content
-			</CardContent>
-		</Card>);
-		const content = getByTestId(container, 'img')
-		expect(content).not.toHaveClass('card-image-rounded', 'card-image-pill', 'card-image-extended', 'card-image-no-radius')
-	});
-	test("render card image rounded layout", async () => {
-		const {container} = render(<Card>
-			<CardImage layout="rounded" data-testid="img" src='img.jpg'/>
-			<CardContent>
-				This is content
-			</CardContent>
-		</Card>);
-		const content = getByTestId(container, 'img')
-		expect(content).toHaveClass('card-image-rounded')
-		expect(content).not.toHaveClass('card-image-pill', 'card-image-extended', 'card-image-no-radius')
-	});
-
-	test("render card image pill layout", async () => {
-		const {container} = render(<Card>
-			<CardImage layout="pill" data-testid="img" src='img.jpg'/>
-			<CardContent>
-				This is content
-			</CardContent>
-		</Card>);
-		const content = getByTestId(container, 'img')
-		expect(content).toHaveClass('card-image-pill')
-		expect(content).not.toHaveClass('card-image-rounded', 'card-image-extended', 'card-image-no-radius')
-	});
-
-	test("render card image extended layout", async () => {
-		const {container} = render(<Card>
-			<CardImage layout="extended" data-testid="img" src='img.jpg'/>
-			<CardContent>
-				This is content
-			</CardContent>
-		</Card>);
-		const content = getByTestId(container, 'img')
-		expect(content).toHaveClass('card-image-extended')
-		expect(content).not.toHaveClass('card-image-rounded', 'card-image-pill', 'card-image-no-radius')
-	});
-
-	test("render card image extended layout", async () => {
-		const {container} = render(<Card>
-			<CardImage layout="no-radius" data-testid="img" src='img.jpg'/>
-			<CardContent>
-				This is content
-			</CardContent>
-		</Card>);
-		const content = getByTestId(container, 'img')
-		expect(content).toHaveClass('card-image-no-radius')
-		expect(content).not.toHaveClass('card-image-rounded', 'card-image-pill', 'card-image-no-radius')
-	});
-
-	test("render card image with extended layout and direction column", async () => {
-		const {container} = render(<Card direction="column">
-			<CardImage layout="no-radius" data-testid="img" src='img.jpg'/>
-			<CardContent>
-				This is content
-			</CardContent>
-		</Card>);
-		const content = getByTestId(container, 'img')
-		expect(content).toHaveClass('card-image-no-radius')
-		expect(content.parentElement).toHaveClass('card-img-div-col')
-		expect(content).not.toHaveClass('card-image-rounded', 'card-image-pill', 'card-image-no-radius')
-	});
-});
-
 describe("Render Card Default Themes", () => {
-	test("render default theme", () => {
-		const {container} = render(<Card>Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card-primary')
-	});
-	test("render primary theme", () => {
-		const {container} = render(<Card theme="primary">Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card-primary')
-	});
-	test("render secondary theme", () => {
-		const {container} = render(<Card theme="secondary">Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card-secondary')
-	});
-	test("render light theme", () => {
-		const {container} = render(<Card theme="light">Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card-light')
-	});
-	test("render dark theme", () => {
-		const {container} = render(<Card theme="dark">Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card-dark')
-	});
+	const themes = [...ThemesArray]
+	themes.forEach((theme) => {
+		test(`render ${theme} theme`, () => {
+			const {container} = render(<Card theme={theme}>Click Me</Card>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(theme === 'default' ? 'card' : `card-${theme}`)
+			expect(component).not.toHaveClass(...except(themes, theme === 'default' ? '' : `card-${theme}`))
+		});
+	})
 	test("render custom color scheme", () => {
 		const colorScheme = {
 			color: 'black',
@@ -148,92 +62,85 @@ describe("Render Card Default Themes", () => {
 	});
 });
 
+
 describe("Render Card Layouts", () => {
-	test("render default layout", () => {
-		const {container} = render(<Card>Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card')
-		expect(component).not.toHaveClass('card-rounded', 'card-extended', 'card-no-radius')
-	});
-	test("render rounded layout", () => {
-		const {container} = render(<Card layout="rounded">Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card-rounded')
-		expect(component).not.toHaveClass('card-extended', 'card-no-radius')
-	});
-	test("render no-radius layout", () => {
-		const {container} = render(<Card layout="no-radius">Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card-no-radius')
-		expect(component).not.toHaveClass('card-rounded', 'card-extended')
-	});
-	test("render extended layout", () => {
-		const {container} = render(<Card layout="extended">Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card-extended')
-		expect(component).not.toHaveClass('card-rounded', 'card-no-radius')
-	});
+	const layouts = [...CardLayoutsArray]
+	layouts.forEach((layout) => {
+		test(`render ${layout} layout`, () => {
+			const {container} = render(<Card layout={layout}>Click Me</Card>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(layout === 'default' ? 'card' : `card-${layout}`)
+			expect(component).not.toHaveClass(...except(layouts, layout === 'default' ? '' : `card-${layout}`))
+		});
+	})
 });
 
 describe("Render Card Variants", () => {
-	test("render default variant", () => {
-		const {container} = render(<Card>Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card')
-		expect(component).not.toHaveClass('card-outline', 'card-fill', 'card-fill-with-border')
-	});
-	test("render outline variant", () => {
-		const {container} = render(<Card variant="outline">Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card-outline')
-		expect(component).not.toHaveClass('card-fill', 'card-fill-with-border')
-	});
-	test("render fill variant", () => {
-		const {container} = render(<Card variant="fill">Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card-fill')
-		expect(component).not.toHaveClass('card-outline', 'card-fill-with-border')
-	});
-	test("render fill with border variant", () => {
-		const {container} = render(<Card variant="fill-with-border">Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card-fill-with-border')
-		expect(component).not.toHaveClass('card-outline', 'card-fill')
-	});
+	const variants = [...VariantsArray]
+	variants.forEach((variant) => {
+		test(`render ${variant} variant`, () => {
+			const {container} = render(<Card variant={variant}>Click Me</Card>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(variant === 'default' ? 'card' : `card-${variant}`)
+			expect(component).not.toHaveClass(...except(variants, variant === 'default' ? '' : `card-${variant}`))
+		});
+	})
 });
 
 describe("Render Card Sizes", () => {
-	test("render default/md size", () => {
-		const {container} = render(<Card>Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card')
-		expect(component).not.toHaveClass('card-extra-large', 'card-large', 'card-small', 'card-extra-small')
+	const sizes = [...SizesArray]
+	sizes.forEach((size) => {
+		test(`render ${size} size`, () => {
+			const {container} = render(<Card size={size}>Click Me</Card>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(size === 'md' ? 'card' : `card-${ISizes[size]}`)
+			expect(component).not.toHaveClass(...except(sizes, size === 'md' ? '' : `card-${ISizes[size]}`))
+		});
+	})
+});
+
+describe("Render Card Image Layouts", () => {
+	const layouts = [...CardLayoutsArray]
+	layouts.forEach(layout => {
+		test(`render card image ${layout} layout`, async () => {
+			const {container} = render(<Card>
+				<CardImage layout={layout} data-testid="img" src='img.jpg'/>
+				<CardContent>
+					This is content
+				</CardContent>
+			</Card>);
+			const content = getByTestId(container, 'img')
+			expect(content).toHaveClass(layout === 'default' ? 'card-image' : `card-image-${layout}`)
+			expect(content).not.toHaveClass(...except(layouts, layout === 'default' ? '' : `card-image-${layout}`))
+		});
+	})
+
+	test("render card image extended layout", async () => {
+		const {container} = render(<Card>
+			<CardImage layout="no-radius" data-testid="img" src='img.jpg'/>
+			<CardContent>
+				This is content
+			</CardContent>
+		</Card>);
+		const content = getByTestId(container, 'img')
+		expect(content).toHaveClass('card-image-no-radius')
+		expect(content).not.toHaveClass(...except(layouts, 'card-image-no-radius'))
 	});
-	test("render xl size", () => {
-		const {container} = render(<Card size="xl">Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card-extra-large')
-		expect(component).not.toHaveClass('card-large', 'card-small', 'card-extra-small')
-	});
-	test("render lg size", () => {
-		const {container} = render(<Card size="lg">Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card-large')
-		expect(component).not.toHaveClass('card-extra-large', 'card-small', 'card-extra-small')
-	});
-	test("render sm size", () => {
-		const {container} = render(<Card size="sm">Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card-small')
-		expect(component).not.toHaveClass('card-extra-large', 'card-large', 'card-extra-small')
-	});
-	test("render xs size", () => {
-		const {container} = render(<Card size="xs">Click Me</Card>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('card-extra-small')
-		expect(component).not.toHaveClass('card-extra-large', 'card-large', 'card-small')
+
+	test("render card image with extended layout and direction column", async () => {
+		const {container} = render(<Card direction="column">
+			<CardImage layout="no-radius" data-testid="img" src='img.jpg'/>
+			<CardContent>
+				This is content
+			</CardContent>
+		</Card>);
+		const content = getByTestId(container, 'img')
+		expect(content).toHaveClass('card-image-no-radius')
+		expect(content.parentElement).toHaveClass('card-img-div-col')
+		expect(content).not.toHaveClass('card-img-rounded', 'card-img-pill', 'card-img-no-radius')
 	});
 });
+
 
 describe("Render Card Directions", () => {
 	test("render default/column direction", () => {

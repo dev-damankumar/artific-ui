@@ -5,7 +5,6 @@ import {IDiv} from "../types/Common.types";
 import getClassNames from '../utils/classes/getClassnames';
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 
-
 export const Avatar: React.FC<IAvatarProps & IDiv> = (
 	{
 		src,

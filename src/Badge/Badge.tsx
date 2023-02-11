@@ -1,6 +1,4 @@
 import React from 'react';
-
-
 import getClassNames from '../utils/classes/getClassnames';
 import styles from './Badge.module.css';
 import {IBadgeProps, propTypes} from './Badge.types';

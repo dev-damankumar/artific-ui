@@ -45,7 +45,7 @@ export const Tabs: React.FC<ITabsProps & IDiv> = (
 		if (React.isValidElement(child)) {
 			if (child.props?.originalType?.displayName === 'TabContent' || (child.type as React.FC)?.displayName === 'TabContent') {
 				tabContents.push(React.cloneElement<any>(child, {
-					variant, activeTab, setActiveTab, key: getRandomClassId()
+					variant, activeTab, key: getRandomClassId()
 				}))
 			} else {
 				if (child.props.active) {

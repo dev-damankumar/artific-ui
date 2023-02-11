@@ -2,6 +2,9 @@ import React from "react";
 import {getByRole, getByTestId, getByText, render} from "@testing-library/react";
 import Avatar from "./Avatar";
 import AvatarGroup from "./AvatarGroup";
+import {ISizes, LayoutsArray, SizesArray, ThemesArray} from "../types/Common.types";
+import except from "../tests/except";
+import {VariantsArray} from "./Avatar.types";
 
 describe("Render Avatar", () => {
 	test("render the Avatar component", () => {
@@ -30,31 +33,15 @@ describe("Render Avatar", () => {
 });
 
 describe("Render Avatar Default Themes", () => {
-	test("render default theme", () => {
-		const {container} = render(<Avatar/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar-primary')
-	});
-	test("render primary theme", () => {
-		const {container} = render(<Avatar theme="primary"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar-primary')
-	});
-	test("render secondary theme", () => {
-		const {container} = render(<Avatar theme="secondary"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar-secondary')
-	});
-	test("render light theme", () => {
-		const {container} = render(<Avatar theme="light"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar-light')
-	});
-	test("render dark theme", () => {
-		const {container} = render(<Avatar theme="dark"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar-dark')
-	});
+	const themes = [...ThemesArray]
+	themes.forEach((theme) => {
+		test(`render ${theme} theme`, () => {
+			const {container} = render(<Avatar theme={theme}>Click Me</Avatar>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(theme === 'default' ? 'avatar' : `avatar-${theme}`)
+			expect(component).not.toHaveClass(...except(themes, theme === 'default' ? '' : `avatar-${theme}`))
+		});
+	})
 	test("render custom color scheme", () => {
 		const colorScheme = {
 			color: 'black',
@@ -71,85 +58,39 @@ describe("Render Avatar Default Themes", () => {
 });
 
 describe("Render Avatar Layouts", () => {
-	test("render default layout", () => {
-		const {container} = render(<Avatar/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar')
-		expect(component).not.toHaveClass('avatar-rounded', 'avatar-pill', 'avatar-no-radius')
-	});
-	test("render rounded layout", () => {
-		const {container} = render(<Avatar layout="rounded"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar-rounded')
-		expect(component).not.toHaveClass('avatar-pill', 'avatar-no-radius')
-	});
-	test("render no-radius layout", () => {
-		const {container} = render(<Avatar layout="no-radius"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar-no-radius')
-		expect(component).not.toHaveClass('avatar-rounded', 'avatar-pill')
-	});
-	test("render pill layout", () => {
-		const {container} = render(<Avatar layout="pill"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar-pill')
-		expect(component).not.toHaveClass('avatar-rounded', 'avatar-no-radius')
-	});
+	const layouts = [...LayoutsArray]
+	layouts.forEach((layout) => {
+		test(`render ${layout} layout`, () => {
+			const {container} = render(<Avatar layout={layout}>Click Me</Avatar>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(layout === 'default' ? 'avatar' : `avatar-${layout}`)
+			expect(component).not.toHaveClass(...except(layouts, layout === 'default' ? '' : `avatar-${layout}`))
+		});
+	})
 });
 
 describe("Render Avatar Variants", () => {
-	test("render default variant", () => {
-		const {container} = render(<Avatar/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar')
-		expect(component).not.toHaveClass('avatar-outline', 'avatar-fluid')
-	});
-	test("render outline variant", () => {
-		const {container} = render(<Avatar variant="outline"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar-outline')
-		expect(component).not.toHaveClass('avatar-fluid')
-	});
-	test("render fluid variant", () => {
-		const {container} = render(<Avatar variant="fluid"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar-fluid')
-		expect(component).not.toHaveClass('avatar-outline')
-
-	});
+	const variants = [...VariantsArray]
+	variants.forEach((variant) => {
+		test(`render ${variant} variant`, () => {
+			const {container} = render(<Avatar variant={variant}>Click Me</Avatar>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(variant === 'default' ? 'avatar' : `avatar-${variant}`)
+			expect(component).not.toHaveClass(...except(variants, variant === 'default' ? '' : `avatar-${variant}`))
+		});
+	})
 });
 
 describe("Render Avatar Sizes", () => {
-	test("render default/md size", () => {
-		const {container} = render(<Avatar/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar')
-		expect(component).not.toHaveClass('avatar-extra-large', 'avatar-large', 'avatar-small', 'avatar-extra-small')
-	});
-	test("render xl size", () => {
-		const {container} = render(<Avatar size="xl"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar-extra-large')
-		expect(component).not.toHaveClass('avatar-large', 'avatar-small', 'avatar-extra-small')
-	});
-	test("render lg size", () => {
-		const {container} = render(<Avatar size="lg"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar-large')
-		expect(component).not.toHaveClass('avatar-extra-large', 'avatar-small', 'avatar-extra-small')
-	});
-	test("render sm size", () => {
-		const {container} = render(<Avatar size="sm"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar-small')
-		expect(component).not.toHaveClass('avatar-extra-large', 'avatar-large', 'avatar-extra-small')
-	});
-	test("render xs size", () => {
-		const {container} = render(<Avatar size="xs"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('avatar-extra-small')
-		expect(component).not.toHaveClass('avatar-extra-large', 'avatar-large', 'avatar-small')
-	});
+	const sizes = [...SizesArray]
+	sizes.forEach((size) => {
+		test(`render ${size} size`, () => {
+			const {container} = render(<Avatar size={size}>Click Me</Avatar>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(size === 'md' ? 'avatar' : `avatar-${ISizes[size]}`)
+			expect(component).not.toHaveClass(...except(sizes, size === 'md' ? '' : `avatar-${ISizes[size]}`))
+		});
+	})
 });
 
 

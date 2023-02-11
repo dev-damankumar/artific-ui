@@ -18,7 +18,8 @@ export const ThemeContext = React.createContext<ITheme | null>({
 });
 
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode, theme: object }> = ({children, theme}) => {
+export const ThemeProvider: React.FC<{ children: React.ReactNode, theme: object }> = (
+	{children, theme}) => {
 	const [themeState, setTheme] = useState<object>(theme)
 	const usingThemeProvider = true
 	const themeId = generateRandomClassId()

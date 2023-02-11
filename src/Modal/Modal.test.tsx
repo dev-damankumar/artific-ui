@@ -1,6 +1,8 @@
 import React from "react";
 import {fireEvent, getByTestId, getByText, render} from "@testing-library/react";
 import Modal from "./Modal";
+import {LayoutsArray, ThemesArray, VariantsArray} from "./Modal.types";
+import except from "../tests/except";
 
 describe("Render Modal", () => {
 	test("render the Modal component", () => {
@@ -24,74 +26,39 @@ describe("Render Modal", () => {
 });
 
 describe("Render Modal Default Themes", () => {
-	test("render light theme", () => {
-		const {container} = render(<Modal theme="light">Click Me</Modal>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('modal-light')
-	});
-	test("render dark theme", () => {
-		const {container} = render(<Modal theme="dark">Click Me</Modal>);
-		const component = container.firstChild;
-		expect(component).not.toHaveClass('modal-light')
-	});
+	const themes = [...ThemesArray]
+	themes.forEach((theme) => {
+		test(`render ${theme} theme`, () => {
+			const {container} = render(<Modal theme={theme}>Click Me</Modal>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(theme === 'dark' ? 'modal' : `modal-${theme}`)
+			expect(component).not.toHaveClass(...except(themes, theme === 'dark' ? '' : `modal-${theme}`))
+		});
+	})
 });
 
 describe("Render Modal Layouts", () => {
-	test("render default layout", () => {
-		const {container} = render(<Modal>Click Me</Modal>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('modal')
-		expect(component).not.toHaveClass('modal-rounded', 'modal-pill', 'modal-no-radius')
-	});
-	test("render rounded layout", () => {
-		const {container} = render(<Modal layout="rounded">Click Me</Modal>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('modal-rounded')
-		expect(component).not.toHaveClass('modal-pill', 'modal-no-radius')
-	});
-	test("render no-radius layout", () => {
-		const {container} = render(<Modal layout="no-radius">Click Me</Modal>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('modal-no-radius')
-		expect(component).not.toHaveClass('modal-rounded', 'modal-pill')
-	});
+	const layouts = [...LayoutsArray]
+	layouts.forEach((layout) => {
+		test(`render ${layout} layout`, () => {
+			const {container} = render(<Modal layout={layout}>Click Me</Modal>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(layout === 'default' ? 'modal' : `modal-${layout}`)
+			expect(component).not.toHaveClass(...except(layouts, layout === 'default' ? '' : `modal-${layout}`))
+		});
+	})
 });
 
 describe("Render Modal Variants", () => {
-	test("render default variant", () => {
-		const {container} = render(<Modal>Click Me</Modal>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('modal')
-		expect(component).not.toHaveClass('modal-striped', 'modal-striped-body', 'modal-striped-header', 'modal-striped-footer')
-	});
-	test("render striped variant", () => {
-		const {container} = render(<Modal variant="striped">Click Me</Modal>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('modal-striped')
-		expect(component).not.toHaveClass('modal-striped-body', 'modal-striped-header', 'modal-striped-footer')
-
-	});
-	test("render striped-body variant", () => {
-		const {container} = render(<Modal variant="striped-body">Click Me</Modal>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('modal-striped-body')
-		expect(component).not.toHaveClass('modal-striped', 'modal-striped-header', 'modal-striped-footer')
-
-	});
-	test("render striped-header variant", () => {
-		const {container} = render(<Modal variant="striped-header">Click Me</Modal>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('modal-striped-header')
-		expect(component).not.toHaveClass('modal-striped', 'modal-striped-body', 'modal-striped-footer')
-
-	});
-	test("render striped-footer variant", () => {
-		const {container} = render(<Modal variant="striped-footer">Click Me</Modal>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('modal-striped-footer')
-		expect(component).not.toHaveClass('modal-striped', 'modal-striped-body', 'modal-striped-header')
-
-	});
+	const variants = [...VariantsArray]
+	variants.forEach((variant) => {
+		test(`render ${variant} variant`, () => {
+			const {container} = render(<Modal variant={variant}>Click Me</Modal>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(variant === 'default' ? 'modal' : `modal-${variant}`)
+			expect(component).not.toHaveClass(...except(variants, variant === 'default' ? '' : `modal-${variant}`))
+		});
+	})
 });
 
 describe("Render Modal Sizes", () => {

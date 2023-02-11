@@ -18,7 +18,7 @@ export const CardImage: React.FC<ICardImageProps & IImage> = (
 	return (
 		<div
 			className={getClassNames(styles, 'card-img-div', direction === 'row' ? 'card-img-no-margin' : '', (direction === 'column' && layout !== 'extended') ? 'card-img-div-col' : '')}>
-			<img role="img" {...rest} className={`${getClassNames(styles, layoutClasses)} ${className}`} src={src}
+			<img role="img" {...rest} className={`${getClassNames(styles, 'card-image', layoutClasses)} ${className}`} src={src}
 				 alt={alt}/>
 		</div>
 	);

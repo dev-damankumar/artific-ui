@@ -4,6 +4,9 @@ import Accordion from "./Accordion";
 import AccordionPanel from "./AccordionPanel";
 import AccordionHeader from "./AccordionHeader";
 import AccordionBody from "./AccordionBody";
+import {ISizes, LayoutsArray, SizesArray, ThemesArray} from "../types/Common.types";
+import except from "../tests/except";
+import {VariantsArray} from "./Accordion.types";
 
 describe("Render Accordion", () => {
 	test("render the Accordion component", () => {
@@ -44,58 +47,22 @@ describe("Render Accordion", () => {
 });
 
 describe("Render Accordion Default Themes", () => {
-	test("render default theme", () => {
-		const {container} = render(<Accordion>
-			<AccordionPanel>
-				<AccordionHeader>Header 1</AccordionHeader>
-				<AccordionBody>
-					Header 1 Content
-				</AccordionBody>
-			</AccordionPanel>
-		</Accordion>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('accordion-primary')
-	});
-	test("render primary theme", () => {
-		const {container} = render(<Accordion theme="primary">
-			<AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody>
-		</Accordion>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('accordion-primary')
-	});
-	test("render secondary theme", () => {
-		const {container} = render(<Accordion theme="secondary">
-			<AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody>
-		</Accordion>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('accordion-secondary')
-	});
-	test("render light theme", () => {
-		const {container} = render(<Accordion theme="light">
-			<AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody>
-		</Accordion>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('accordion-light')
-	});
-	test("render dark theme", () => {
-		const {container} = render(<Accordion theme="dark">
-			<AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody>
-		</Accordion>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('accordion-dark')
-	});
+	const themes = [...ThemesArray]
+	themes.forEach((theme) => {
+		test(`render ${theme} theme`, () => {
+			const {container} = render(<Accordion theme={theme}>
+				<AccordionPanel>
+					<AccordionHeader>Header 1</AccordionHeader>
+					<AccordionBody>
+						Header 1 Content
+					</AccordionBody>
+				</AccordionPanel>
+			</Accordion>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(theme === 'default' ? 'accordion-wrap' : `accordion-${theme}`)
+			expect(component).not.toHaveClass(...except(themes, theme === 'default' ? '' : `accordion-${theme}`))
+		});
+	})
 	test("render custom color scheme", () => {
 		const colorScheme = {
 			color: 'black',
@@ -117,136 +84,50 @@ describe("Render Accordion Default Themes", () => {
 });
 
 describe("Render Accordion Layouts", () => {
-	test("render default layout", () => {
-		const {container} = render(<Accordion>
-			<AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody></Accordion>);
-		const component = container.firstChild;
-		expect(component).not.toHaveClass('accordion-rounded', 'accordion-pill', 'accordion-no-radius')
-	});
-	test("render rounded layout", () => {
-		const {container} = render(<Accordion layout="rounded">
-			<AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody></Accordion>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('accordion-rounded')
-		expect(component).not.toHaveClass('accordion-pill', 'accordion-no-radius')
-	});
-	test("render no-radius layout", () => {
-		const {container} = render(<Accordion layout="no-radius">
-			<AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody></Accordion>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('accordion-no-radius')
-		expect(component).not.toHaveClass('accordion-rounded', 'accordion-pill')
-	});
-	test("render pill layout", () => {
-		const {container} = render(<Accordion layout="pill">
-			<AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody></Accordion>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('accordion-pill')
-		expect(component).not.toHaveClass('accordion-rounded', 'accordion-no-radius')
-	});
+	const layouts = [...LayoutsArray]
+	layouts.forEach((layout) => {
+		test(`render ${layout} layout`, () => {
+			const {container} = render(<Accordion layout={layout}>
+				<AccordionHeader>Header 1</AccordionHeader>
+				<AccordionBody>
+					Header 1 Content
+				</AccordionBody></Accordion>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(layout === 'default' ? 'accordion-wrap' : `accordion-${layout}`)
+			expect(component).not.toHaveClass(...except(layouts, layout === 'default' ? '' : `accordion-${layout}`))
+		});
+	})
 });
 
 describe("Render Accordion Variants", () => {
-	test("render default variant", () => {
-		const {container} = render(<Accordion>
-			<AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody></Accordion>);
-		const component = container.firstChild;
-		expect(component).not.toHaveClass('accordion-outline', 'accordion-attached', 'accordion-separate')
-	});
-	test("render outline variant", () => {
-		const {container} = render(<Accordion variant="outline">
-			<AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody></Accordion>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('accordion-outline')
-		expect(component).not.toHaveClass('accordion-attached', 'accordion-separate')
-	});
-	test("render separate variant", () => {
-		const {container} = render(<Accordion variant="separate"><AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody></Accordion>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('accordion-separate')
-		expect(component).not.toHaveClass('accordion-outline', 'accordion-attached')
-	});
-	test("render attached variant", () => {
-		const {container} = render(<Accordion variant="attached"><AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody></Accordion>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('accordion-attached')
-		expect(component).not.toHaveClass('accordion-outline', 'accordion-separate')
-	});
+	const variants = [...VariantsArray]
+	variants.forEach((variant) => {
+		test(`render ${variant} variant`, () => {
+			const {container} = render(<Accordion variant={variant}>
+				<AccordionHeader>Header 1</AccordionHeader>
+				<AccordionBody>
+					Header 1 Content
+				</AccordionBody></Accordion>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(variant === 'default' ? 'accordion-wrap' : `accordion-${variant}`)
+			expect(component).not.toHaveClass(...except(variants, variant === 'default' ? '' : `accordion-${variant}`))
+		});
+	})
 });
 
 describe("Render Accordion Sizes", () => {
-	test("render default/md size", () => {
-		const {container} = render(<Accordion><AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody></Accordion>);
-		const component = container.firstChild;
-		expect(component).not.toHaveClass('accordion-extra-large', 'accordion-large', 'accordion-small', 'accordion-extra-small')
-	});
-	test("render xl size", () => {
-		const {container} = render(<Accordion size="xl">
-			<AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody></Accordion>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('accordion-extra-large')
-		expect(component).not.toHaveClass('accordion-large', 'accordion-small', 'accordion-extra-small')
-	});
-	test("render lg size", () => {
-		const {container} = render(<Accordion size="lg">
-			<AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody></Accordion>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('accordion-large')
-		expect(component).not.toHaveClass('accordion-extra-large', 'accordion-small', 'accordion-extra-small')
-	});
-	test("render sm size", () => {
-		const {container} = render(<Accordion size="sm">
-			<AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody></Accordion>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('accordion-small')
-		expect(component).not.toHaveClass('accordion-extra-large', 'accordion-large', 'accordion-extra-small')
-	});
-	test("render xs size", () => {
-		const {container} = render(<Accordion size="xs">
-			<AccordionHeader>Header 1</AccordionHeader>
-			<AccordionBody>
-				Header 1 Content
-			</AccordionBody></Accordion>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('accordion-extra-small')
-		expect(component).not.toHaveClass('accordion-extra-large', 'accordion-large', 'accordion-small')
-	});
+	const sizes = [...SizesArray]
+	sizes.forEach((size) => {
+		test(`render ${size} size`, () => {
+			const {container} = render(<Accordion size={size}><AccordionHeader>Header 1</AccordionHeader>
+				<AccordionBody>
+					Header 1 Content
+				</AccordionBody></Accordion>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(size === 'md' ? 'accordion-wrap' : `accordion-${ISizes[size]}`)
+			expect(component).not.toHaveClass(...except(sizes, size === 'md' ? '' : `accordion-${ISizes[size]}`))
+		});
+	})
 });
 
 describe("Render Accordion With Icons", () => {

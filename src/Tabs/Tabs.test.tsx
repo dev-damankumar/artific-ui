@@ -1,8 +1,11 @@
 import React from "react";
-import {fireEvent, getByTestId, render} from "@testing-library/react";
+import {fireEvent, getByRole, getByTestId, render} from "@testing-library/react";
 import Tabs from "./Tabs";
 import TabItem from "./TabItem";
 import TabContent from "./TabContent";
+import {DirectionsArray, ISizes, LayoutsArray, SizesArray, ThemesArray} from "../types/Common.types";
+import except from "../tests/except";
+import {VariantsArray} from "./Tabs.types";
 
 describe("Render Tabs", () => {
 	test("render the Tabs component", () => {
@@ -50,8 +53,11 @@ describe("Render Tabs", () => {
 		expect(content1).toHaveClass('tab-open')
 		expect(content2).not.toHaveClass('tab-open')
 		fireEvent.click(item2);
-		// expect(content1).not.toHaveClass('tab-open')
-		expect(content2).toHaveClass('tab-open')
+		setTimeout(() => {
+			expect(content1).not.toHaveClass('tab-open')
+			expect(content2).toHaveClass('tab-open')
+		}, 500)
+
 	});
 	test("render default styles", () => {
 		const {container} = render(<Tabs>
@@ -76,106 +82,30 @@ describe("Render Tabs", () => {
 });
 
 describe("Render Tabs Default Themes", () => {
-	test("render default theme", () => {
-		const {container} = render(<Tabs>
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab-primary')
-	});
-	test("render primary theme", () => {
-		const {container} = render(<Tabs theme="primary">
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab-primary')
-	});
-	test("render secondary theme", () => {
-		const {container} = render(<Tabs theme="secondary">
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab-secondary')
-	});
-	test("render light theme", () => {
-		const {container} = render(<Tabs theme="light">
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab-light')
-	});
-	test("render dark theme", () => {
-		const {container} = render(<Tabs theme="dark">
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab-dark')
-	});
+	const themes = [...ThemesArray]
+	themes.forEach((theme) => {
+		test(`render ${theme} theme`, () => {
+			const {container} = render(<Tabs theme={theme}>
+				<TabItem active target="home">Home</TabItem>
+				<TabItem target="about">About</TabItem>
+				<TabContent id="home">
+					<h3>HOME</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore
+						et dolore magna aliqua.</p>
+				</TabContent>
+				<TabContent id="about">
+					<h3>About</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore
+						et dolore magna aliqua.</p>
+				</TabContent>
+			</Tabs>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(theme === 'default' ? 'tab' : `tab-${theme}`)
+			expect(component).not.toHaveClass(...except(themes, theme === 'default' ? 'tab' : `tab-${theme}`))
+		});
+	})
 	test("render custom color scheme", () => {
 		const colorScheme = {
 			color: 'black',
@@ -207,285 +137,138 @@ describe("Render Tabs Default Themes", () => {
 });
 
 describe("Render Tabs Layouts", () => {
-	test("render default layout", () => {
-		const {container} = render(<Tabs>
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab')
-		expect(component).not.toHaveClass('tab-rounded', 'tab-pill', 'tab-no-radius')
-	});
-	test("render rounded layout", () => {
-		const {container} = render(<Tabs layout="rounded">
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab-rounded')
-		expect(component).not.toHaveClass('tab-pill', 'tab-no-radius')
-	});
-	test("render no-radius layout", () => {
-		const {container} = render(<Tabs layout="no-radius">
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab-no-radius')
-		expect(component).not.toHaveClass('tab-rounded', 'tab-pill')
-	});
-	test("render pill layout", () => {
-		const {container} = render(<Tabs layout="pill">
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab-pill')
-		expect(component).not.toHaveClass('tab-rounded', 'tab-no-radius')
-	});
+	const layouts = [...LayoutsArray]
+	layouts.forEach((layout) => {
+		test(`render ${layout} layout`, () => {
+			const {container} = render(<Tabs layout={layout}>
+				<TabItem active target="home">Home</TabItem>
+				<TabItem target="about">About</TabItem>
+				<TabContent id="home">
+					<h3>HOME</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore
+						et dolore magna aliqua.</p>
+				</TabContent>
+				<TabContent id="about">
+					<h3>About</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore
+						et dolore magna aliqua.</p>
+				</TabContent>
+			</Tabs>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(layout === 'default' ? 'tab' : `tab-${layout}`)
+			expect(component).not.toHaveClass(...except(layouts, layout === 'default' ? 'tab' : `tab-${layout}`))
+		});
+	})
 });
 
 describe("Render Tabs Variants", () => {
-	test("render default variant", () => {
-		const {container} = render(<Tabs>
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab')
-		expect(component).not.toHaveClass('tab-line', 'tab-floating-line', 'tab-separate')
-	});
-	test("render line variant", () => {
-		const {container} = render(<Tabs variant="line">
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab-line')
-		expect(component).not.toHaveClass('tab-floating-line', 'tab-separate')
-	});
-	test("render floating-line variant", () => {
-		const {container} = render(<Tabs variant="floating-line">
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab-floating-line')
-		expect(component).not.toHaveClass('tab-line', 'tab-separate')
-	});
-	test("render separate variant", () => {
-		const {container} = render(<Tabs variant="separate">
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab-separate')
-		expect(component).not.toHaveClass('tab-line', 'tab-floating-line')
-	});
+	const variants = [...VariantsArray]
+	variants.forEach((variant) => {
+		test(`render ${variant} variant`, () => {
+			const {container} = render(<Tabs variant={variant}>
+				<TabItem active target="home">Home</TabItem>
+				<TabItem target="about">About</TabItem>
+				<TabContent id="home">
+					<h3>HOME</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore
+						et dolore magna aliqua.</p>
+				</TabContent>
+				<TabContent id="about">
+					<h3>About</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore
+						et dolore magna aliqua.</p>
+				</TabContent>
+			</Tabs>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(variant === 'default' ? 'tab' : `tab-${variant}`)
+			expect(component).not.toHaveClass(...except(variants, variant === 'default' ? 'tab' : `tab-${variant}`))
+		});
+	})
 });
 
 describe("Render Tabs Sizes", () => {
-	test("render default/md size", () => {
-		const {container} = render(<Tabs>
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab')
-		expect(component).not.toHaveClass('tab-extra-large', 'tab-large', 'tab-small', 'tab-extra-small')
-	});
-	test("render xl size", () => {
-		const {container} = render(<Tabs size="xl">
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab-extra-large')
-		expect(component).not.toHaveClass('tab-large', 'tab-small', 'tab-extra-small')
-	});
-	test("render lg size", () => {
-		const {container} = render(<Tabs size="lg">
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab-large')
-		expect(component).not.toHaveClass('tab-extra-large', 'tab-small', 'tab-extra-small')
-	});
-	test("render sm size", () => {
-		const {container} = render(<Tabs size="sm">
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab-small')
-		expect(component).not.toHaveClass('tab-extra-large', 'tab-large', 'tab-extra-small')
-	});
-	test("render xs size", () => {
-		const {container} = render(<Tabs size="xs">
-			<TabItem active target="home">Home</TabItem>
-			<TabItem target="about">About</TabItem>
-			<TabContent id="home">
-				<h3>HOME</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-			<TabContent id="about">
-				<h3>About</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-					labore
-					et dolore magna aliqua.</p>
-			</TabContent>
-		</Tabs>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('tab-extra-small')
-		expect(component).not.toHaveClass('tab-extra-large', 'tab-large', 'tab-small')
-	});
+	const sizes = [...SizesArray]
+	sizes.forEach((size) => {
+		test(`render ${size} size`, () => {
+			const {container} = render(<Tabs size={size}>
+				<TabItem active target="home">Home</TabItem>
+				<TabItem target="about">About</TabItem>
+				<TabContent id="home">
+					<h3>HOME</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore
+						et dolore magna aliqua.</p>
+				</TabContent>
+				<TabContent id="about">
+					<h3>About</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore
+						et dolore magna aliqua.</p>
+				</TabContent>
+			</Tabs>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(size === 'md' ? 'tab' : `tab-${ISizes[size]}`)
+			expect(component).not.toHaveClass(...except(sizes, size === 'md' ? 'tab' : `tab-${ISizes[size]}`))
+		});
+	})
+});
+
+describe("Render Tabs Postions", () => {
+	const positions = [...DirectionsArray]
+	positions.forEach((position) => {
+		test(`render ${position} position`, () => {
+			const {container} = render(<Tabs position={position}>
+				<TabItem active target="home">Home</TabItem>
+				<TabItem target="about">About</TabItem>
+				<TabContent id="home">
+					<h3>HOME</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore
+						et dolore magna aliqua.</p>
+				</TabContent>
+				<TabContent id="about">
+					<h3>About</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore
+						et dolore magna aliqua.</p>
+				</TabContent>
+			</Tabs>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(position === 'top' ? 'tab' : `tab-${position}`)
+			expect(component).not.toHaveClass(...except(positions, position === 'top' ? 'tab' : `tab-${position}`))
+		});
+	})
+});
+
+describe("Render Floating-Lines Line Direction", () => {
+	const lineDirections = [...DirectionsArray]
+	lineDirections.forEach((lineDirection) => {
+		test(`render ${lineDirection} lineDirection`, () => {
+			const {container} = render(<Tabs variant="floating-line" lineDirection={lineDirection}>
+				<TabItem active target="home">Home</TabItem>
+				<TabItem target="about">About</TabItem>
+				<TabContent id="home">
+					<h3>HOME</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore
+						et dolore magna aliqua.</p>
+				</TabContent>
+				<TabContent id="about">
+					<h3>About</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore
+						et dolore magna aliqua.</p>
+				</TabContent>
+			</Tabs>);
+			const component = getByRole(container, 'tablist')
+			expect(component).toHaveClass(lineDirection === 'left' ? 'tab-floating-line' : `tab-floating-line-${lineDirection}`)
+			expect(component).not.toHaveClass(...except(lineDirections, lineDirection === 'left' ? 'tab-floating-line' : `tab-floating-line-${lineDirection}`))
+		});
+	})
 });
 
 

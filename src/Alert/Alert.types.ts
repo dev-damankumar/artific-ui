@@ -32,15 +32,6 @@ export const propTypes = {
 	size: oneOf<Sizes>(SizesArray),
 };
 
-export const defaultProps = {
-	colorScheme: null,
-	theme: 'primary' as Themes,
-	direction: 'left' as Directions,
-	variant: 'default' as Variants,
-	layout: 'default' as Layouts,
-	size: 'md' as Sizes,
-};
-
 
 export interface IAlertProps {
 	children: ReactNode,

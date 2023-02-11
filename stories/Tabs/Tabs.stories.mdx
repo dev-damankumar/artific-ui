@@ -8,16 +8,16 @@ import {TabContent, TabItem, Tabs} from '../../src/index';
 Tabs make it easy to explore and switch between different views.
 
 export const defaultTemplate=(args) => {
-	return <Tabs {...args}>
-		<TabItem active target="home">Home</TabItem>
-		<TabItem target="about">About</TabItem>
-		<TabContent id="home">
+	return <Tabs>
+		<TabItem data-testid="item1" active target="home">Home</TabItem>
+		<TabItem data-testid="item2" target="about">About</TabItem>
+		<TabContent data-testid="content1" id="home">
 			<h3>HOME</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
 				labore
 				et dolore magna aliqua.</p>
 		</TabContent>
-		<TabContent id="about">
+		<TabContent data-testid="content2" id="about">
 			<h3>About</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
 				labore

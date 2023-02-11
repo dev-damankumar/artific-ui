@@ -2,6 +2,9 @@ import React from "react";
 import {getByTestId, getByText, render} from "@testing-library/react";
 import List from "./List";
 import ListItem from "./ListItem";
+import {ISizes, LayoutsArray, SizesArray, ThemesArray} from "../types/Common.types";
+import except from "../tests/except";
+import {VariantsArray} from "./List.types";
 
 describe("Render List", () => {
 	test("render the List component", () => {
@@ -72,46 +75,18 @@ describe("Render List With Icons", () => {
 });
 
 describe("Render List Default Themes", () => {
-	test("render default theme", () => {
-		const {container} = render(<List>
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-primary')
-	});
-	test("render primary theme", () => {
-		const {container} = render(<List theme="primary">
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-primary')
-	});
-	test("render secondary theme", () => {
-		const {container} = render(<List theme="secondary">
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-secondary')
-	});
-	test("render light theme", () => {
-		const {container} = render(<List theme="light">
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-light')
-	});
-	test("render dark theme", () => {
-		const {container} = render(<List theme="dark">
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-dark')
-	});
+	const themes = [...ThemesArray]
+	themes.forEach((theme) => {
+		test(`render ${theme} theme`, () => {
+			const {container} = render(<List theme={theme}>
+				<ListItem>item1</ListItem>
+				<ListItem>item2</ListItem>
+			</List>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(theme === 'default' ? 'list' : `list-${theme}`)
+			expect(component).not.toHaveClass(...except(themes, theme === 'default' ? '' : `list-${theme}`))
+		});
+	})
 	test("render custom color scheme", () => {
 		const colorScheme = {
 			color: 'black',
@@ -131,138 +106,48 @@ describe("Render List Default Themes", () => {
 });
 
 describe("Render List Layouts", () => {
-	test("render default layout", () => {
-		const {container} = render(<List>
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list')
-		expect(component).not.toHaveClass('list-rounded', 'list-pill', 'list-no-radius')
-	});
-	test("render rounded layout", () => {
-		const {container} = render(<List layout="rounded">
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-rounded')
-		expect(component).not.toHaveClass('list-pill', 'list-no-radius')
-	});
-	test("render no-radius layout", () => {
-		const {container} = render(<List layout="no-radius">
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-no-radius')
-		expect(component).not.toHaveClass('list-rounded', 'list-pill')
-	});
-	test("render pill layout", () => {
-		const {container} = render(<List layout="pill">
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-pill')
-		expect(component).not.toHaveClass('list-rounded', 'list-no-radius')
-	});
+	const layouts = [...LayoutsArray]
+	layouts.forEach((layout) => {
+		test(`render ${layout} layout`, () => {
+			const {container} = render(<List layout={layout}>
+				<ListItem>item1</ListItem>
+				<ListItem>item2</ListItem>
+			</List>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(layout === 'default' ? 'list' : `list-${layout}`)
+			expect(component).not.toHaveClass(...except(layouts, layout === 'default' ? '' : `list-${layout}`))
+		});
+	})
 });
 
 describe("Render List Variants", () => {
-	test("render default variant", () => {
-		const {container} = render(<List>
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list')
-		expect(component).not.toHaveClass('list-separate', 'list-striped', 'list-bordered', 'list-borderless')
-	});
-	test("render outline variant", () => {
-		const {container} = render(<List variant="separate">
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-separate')
-		expect(component).not.toHaveClass('list-striped', 'list-bordered', 'list-borderless')
-	});
-	test("render outline variant", () => {
-		const {container} = render(<List variant="striped">
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-striped')
-		expect(component).not.toHaveClass('list-separate', 'list-bordered', 'list-borderless')
-	});
-	test("render outline variant", () => {
-		const {container} = render(<List variant="bordered">
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-bordered')
-		expect(component).not.toHaveClass('list-separate', 'list-striped', 'list-borderless')
-	});
-	test("render note variant", () => {
-		const {container} = render(<List variant="borderless">
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-borderless')
-		expect(component).not.toHaveClass('list-separate', 'list-striped', 'list-bordered')
-	});
+	const variants = [...VariantsArray]
+	variants.forEach((variant) => {
+		test(`render ${variant} variant`, () => {
+			const {container} = render(<List variant={variant}>
+				<ListItem>item1</ListItem>
+				<ListItem>item2</ListItem>
+			</List>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(variant === 'default' ? 'list' : `list-${variant}`)
+			expect(component).not.toHaveClass(...except(variants, variant === 'default' ? '' : `list-${variant}`))
+		});
+	})
 });
 
 describe("Render List Sizes", () => {
-	test("render default/md size", () => {
-		const {container} = render(<List>
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list')
-		expect(component).not.toHaveClass('list-extra-large', 'list-large', 'list-small', 'list-extra-small')
-	});
-	test("render xl size", () => {
-		const {container} = render(<List size="xl">
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-extra-large')
-		expect(component).not.toHaveClass('list-large', 'list-small', 'list-extra-small')
-	});
-	test("render lg size", () => {
-		const {container} = render(<List size="lg">
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-large')
-		expect(component).not.toHaveClass('list-extra-large', 'list-small', 'list-extra-small')
-	});
-	test("render sm size", () => {
-		const {container} = render(<List size="sm">
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-small')
-		expect(component).not.toHaveClass('list-extra-large', 'list-large', 'list-extra-small')
-	});
-	test("render xs size", () => {
-		const {container} = render(<List size="xs">
-			<ListItem>item1</ListItem>
-			<ListItem>item2</ListItem>
-		</List>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('list-extra-small')
-		expect(component).not.toHaveClass('list-extra-large', 'list-large', 'list-small')
-	});
+	const sizes = [...SizesArray]
+	sizes.forEach((size) => {
+		test(`render ${size} size`, () => {
+			const {container} = render(<List size={size}>
+				<ListItem>item1</ListItem>
+				<ListItem>item2</ListItem>
+			</List>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(size === 'md' ? 'list' : `list-${ISizes[size]}`)
+			expect(component).not.toHaveClass(...except(sizes, size === 'md' ? '' : `list-${ISizes[size]}`))
+		});
+	})
 });
 
 describe("Render List Directions", () => {

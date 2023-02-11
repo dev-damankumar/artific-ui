@@ -2,6 +2,8 @@ import React from "react";
 import {getByTestId, getByText, render} from "@testing-library/react";
 import ButtonGroup from "./ButtonGroup";
 import Button from "../Button";
+import {ISizes, LayoutsArray, SizesArray, ThemesArray, VariantsArray} from "../types/Common.types";
+import except from "../tests/except";
 
 describe("Render ButtonGroup", () => {
 	test("render the ButtonGroup component", () => {
@@ -17,56 +19,18 @@ describe("Render ButtonGroup", () => {
 });
 
 describe("Render ButtonGroup Default Themes", () => {
-	test("render default theme", () => {
-		const {container} = render(<ButtonGroup>
-			<Button data-testid="button1">Button 1</Button>
-			<Button data-testid="button2">Button 2</Button>
-		</ButtonGroup>);
-		const button1 = getByTestId(container, 'button1')
-		const button2 = getByTestId(container, 'button2')
-		expect(button1).toHaveClass('btn-primary')
-		expect(button2).toHaveClass('btn-primary')
-	});
-	test("render primary theme", () => {
-		const {container} = render(<ButtonGroup theme="primary">
-			<Button data-testid="button1">Button 1</Button>
-			<Button data-testid="button2">Button 2</Button>
-		</ButtonGroup>);
-		const button1 = getByTestId(container, 'button1')
-		const button2 = getByTestId(container, 'button2')
-		expect(button1).toHaveClass('btn-primary')
-		expect(button2).toHaveClass('btn-primary')
-	});
-	test("render secondary theme", () => {
-		const {container} = render(<ButtonGroup theme="secondary">
-			<Button data-testid="button1">Button 1</Button>
-			<Button data-testid="button2">Button 2</Button>
-		</ButtonGroup>);
-		const button1 = getByTestId(container, 'button1')
-		const button2 = getByTestId(container, 'button2')
-		expect(button1).toHaveClass('btn-secondary')
-		expect(button2).toHaveClass('btn-secondary')
-	});
-	test("render light theme", () => {
-		const {container} = render(<ButtonGroup theme="light">
-			<Button data-testid="button1">Button 1</Button>
-			<Button data-testid="button2">Button 2</Button>
-		</ButtonGroup>);
-		const button1 = getByTestId(container, 'button1')
-		const button2 = getByTestId(container, 'button2')
-		expect(button1).toHaveClass('btn-light')
-		expect(button2).toHaveClass('btn-light')
-	});
-	test("render dark theme", () => {
-		const {container} = render(<ButtonGroup theme="dark">
-			<Button data-testid="button1">Button 1</Button>
-			<Button data-testid="button2">Button 2</Button>
-		</ButtonGroup>);
-		const button1 = getByTestId(container, 'button1')
-		const button2 = getByTestId(container, 'button2')
-		expect(button1).toHaveClass('btn-dark')
-		expect(button2).toHaveClass('btn-dark')
-	});
+	const themes = [...ThemesArray]
+	themes.forEach((theme) => {
+		test(`render ${theme} theme`, () => {
+			const {container} = render(<ButtonGroup theme={theme}>
+				<Button data-testid="button1">Button 1</Button>
+				<Button data-testid="button2">Button 2</Button>
+			</ButtonGroup>);
+			const component = container.firstChild!;
+			expect(component.firstChild).toHaveClass(theme === 'default' ? 'btn' : `btn-${theme}`)
+			expect(component.firstChild).not.toHaveClass(...except(themes, theme === 'default' ? '' : `btn-${theme}`))
+		});
+	})
 	test("render custom color scheme", () => {
 		const colorScheme = {
 			color: 'black',
@@ -92,133 +56,46 @@ describe("Render ButtonGroup Default Themes", () => {
 });
 
 describe("Render ButtonGroup Layouts", () => {
-	test("render default layout", () => {
-		const {container} = render(<ButtonGroup>
-			<Button data-testid="button1">Button 1</Button>
-			<Button data-testid="button2">Button 2</Button>
-		</ButtonGroup>);
-		const button1 = getByTestId(container, 'button1')
-		const button2 = getByTestId(container, 'button2')
-		expect(button1).not.toHaveClass('btn-rounded', 'btn-pill', 'btn-no-radius')
-		expect(button2).not.toHaveClass('btn-rounded', 'btn-pill', 'btn-no-radius')
-	});
-	test("render rounded layout", () => {
-		const {container} = render(<ButtonGroup layout="rounded">
-			<Button data-testid="button1">Button 1</Button>
-			<Button data-testid="button2">Button 2</Button>
-		</ButtonGroup>);
-		const button1 = getByTestId(container, 'button1')
-		const button2 = getByTestId(container, 'button2')
-		expect(button1).toHaveClass('btn-rounded')
-		expect(button1).not.toHaveClass('btn-pill', 'btn-no-radius')
-		expect(button2).toHaveClass('btn-rounded')
-		expect(button2).not.toHaveClass('btn-pill', 'btn-no-radius')
-	});
-	test("render no-radius layout", () => {
-		const {container} = render(<ButtonGroup layout="no-radius">
-			<Button data-testid="button1">Button 1</Button>
-			<Button data-testid="button2">Button 2</Button>
-		</ButtonGroup>);
-		const button1 = getByTestId(container, 'button1')
-		const button2 = getByTestId(container, 'button2')
-		expect(button1).toHaveClass('btn-no-radius')
-		expect(button1).not.toHaveClass('btn-rounded', 'btn-pill')
-		expect(button2).toHaveClass('btn-no-radius')
-		expect(button2).not.toHaveClass('btn-rounded', 'btn-pill')
-	});
-	test("render pill layout", () => {
-		const {container} = render(<ButtonGroup layout="pill">
-			<Button data-testid="button1">Button 1</Button>
-			<Button data-testid="button2">Button 2</Button>
-		</ButtonGroup>);
-		const button1 = getByTestId(container, 'button1')
-		const button2 = getByTestId(container, 'button2')
-		expect(button1).toHaveClass('btn-pill')
-		expect(button1).not.toHaveClass('btn-rounded', 'btn-no-radius')
-		expect(button2).toHaveClass('btn-pill')
-		expect(button2).not.toHaveClass('btn-rounded', 'btn-no-radius')
-	});
+	const layouts = [...LayoutsArray]
+	layouts.forEach((layout) => {
+		test(`render ${layout} layout`, () => {
+			const {container} = render(<ButtonGroup layout={layout}>
+				<Button data-testid="button1">Button 1</Button>
+				<Button data-testid="button2">Button 2</Button>
+			</ButtonGroup>);
+			const component = container.firstChild!;
+			expect(component.firstChild).toHaveClass(layout === 'default' ? 'btn' : `btn-${layout}`)
+			expect(component.firstChild).not.toHaveClass(...except(layouts, layout === 'default' ? '' : `btn-${layout}`))
+		});
+	})
 });
 
 describe("Render ButtonGroup Variants", () => {
-	test("render default variant", () => {
-		const {container} = render(<ButtonGroup>
-			<Button data-testid="button1">Button 1</Button>
-			<Button data-testid="button2">Button 2</Button>
-		</ButtonGroup>);
-		const button1 = getByTestId(container, 'button1')
-		const button2 = getByTestId(container, 'button2')
-		expect(button1).not.toHaveClass('btn-outline', 'btn-text')
-		expect(button2).not.toHaveClass('btn-outline', 'btn-text')
-	});
-	test("render outline variant", () => {
-		const {container} = render(<ButtonGroup variant="outline">
-			<Button data-testid="button1">Button 1</Button>
-			<Button data-testid="button2">Button 2</Button>
-		</ButtonGroup>);
-		const button1 = getByTestId(container, 'button1')
-		const button2 = getByTestId(container, 'button2')
-		expect(button1).toHaveClass('btn-outline')
-		expect(button1).not.toHaveClass('btn-text')
-		expect(button2).toHaveClass('btn-outline')
-		expect(button2).not.toHaveClass('btn-text')
-	});
-	test("render text variant", () => {
-		const {container} = render(<ButtonGroup variant="text">
-			<Button data-testid="button1">Button 1</Button>
-			<Button data-testid="button2">Button 2</Button>
-		</ButtonGroup>);
-		const button1 = getByTestId(container, 'button1')
-		const button2 = getByTestId(container, 'button2')
-		expect(button1).toHaveClass('btn-text', 'btn-outline')
-		expect(button2).toHaveClass('btn-text', 'btn-outline')
-	});
+	const variants = [...VariantsArray]
+	variants.forEach((variant) => {
+		test(`render ${variant} variant`, () => {
+			const {container} = render(<ButtonGroup variant={variant}>
+				<Button data-testid="button1">Button 1</Button>
+				<Button data-testid="button2">Button 2</Button>
+			</ButtonGroup>);
+			const component = container.firstChild!;
+			expect(component.firstChild).toHaveClass(variant === 'default' ? 'btn' : `btn-${variant}`)
+			expect(component.firstChild).not.toHaveClass(...except(variants, variant === 'default' ? '' : `btn-${variant}`))
+		});
+	})
 });
 
 describe("Render ButtonGroup Sizes", () => {
-	test("render default/md size", () => {
-		const {container} = render(<ButtonGroup>
-			<Button>Button 1</Button>
-			<Button>Button 2</Button>
-		</ButtonGroup>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-group')
-		expect(component).not.toHaveClass('btn-group-extra-large', 'btn-group-large', 'btn-group-small', 'btn-group-extra-small')
-	});
-	test("render xl size", () => {
-		const {container} = render(<ButtonGroup size="xl">
-			<Button>Button 1</Button>
-			<Button>Button 2</Button>
-		</ButtonGroup>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-group-extra-large')
-		expect(component).not.toHaveClass('btn-group-large', 'btn-group-small', 'btn-group-extra-small')
-	});
-	test("render lg size", () => {
-		const {container} = render(<ButtonGroup size="lg">
-			<Button>Button 1</Button>
-			<Button>Button 2</Button>
-		</ButtonGroup>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-group-large')
-		expect(component).not.toHaveClass('btn-group-extra-large', 'btn-group-small', 'btn-group-extra-small')
-	});
-	test("render sm size", () => {
-		const {container} = render(<ButtonGroup size="sm">
-			<Button>Button 1</Button>
-			<Button>Button 2</Button>
-		</ButtonGroup>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-group-small')
-		expect(component).not.toHaveClass('btn-group-extra-large', 'btn-group-large', 'btn-group-extra-small')
-	});
-	test("render xs size", () => {
-		const {container} = render(<ButtonGroup size="xs">
-			<Button>Button 1</Button>
-			<Button>Button 2</Button>
-		</ButtonGroup>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-group-extra-small')
-		expect(component).not.toHaveClass('btn-group-extra-large', 'btn-group-large', 'btn-group-small')
-	});
+	const sizes = [...SizesArray]
+	sizes.forEach((size) => {
+		test(`render ${size} size`, () => {
+			const {container} = render(<ButtonGroup size={size}>
+				<Button>Button 1</Button>
+				<Button>Button 2</Button>
+			</ButtonGroup>);
+			const component = container.firstChild!;
+			expect(component).toHaveClass(size === 'md' ? 'btn-group' : `btn-group-${ISizes[size]}`)
+			expect(component).not.toHaveClass(...except(sizes, size === 'md' ? '' : `btn-group-${ISizes[size]}`))
+		});
+	})
 });

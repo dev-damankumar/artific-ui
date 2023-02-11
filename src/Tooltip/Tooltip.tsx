@@ -4,6 +4,7 @@ import getClassNames from "../utils/classes/getClassnames";
 import styles from "./Tooltip.module.css";
 import {IDiv} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
+import uuid from "../utils/uuids/uuid";
 
 export const Tooltip: React.FC<ITooltipProps & IDiv> = (
 	{
@@ -35,7 +36,7 @@ export const Tooltip: React.FC<ITooltipProps & IDiv> = (
 		if (React.isValidElement(child)) {
 			return React.cloneElement<any>(child, {
 				'data-tooltip': true,
-				children: [child.props.children, <div role="tooltip" {...rest} style={style} ref={ref}
+				children: [child.props.children, <div key={uuid()} role="tooltip" {...rest} style={style} ref={ref}
 													  className={`${classes}`}>{title}</div>]
 			});
 		}

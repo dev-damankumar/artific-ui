@@ -1,6 +1,8 @@
 import React from "react";
 import {getByText, render} from "@testing-library/react";
-import Col from "./Col";
+import Col, {ColArray} from "./Col";
+import {SizesArray} from "../types/Common.types";
+import except from "../tests/except";
 
 describe("Render Col", () => {
 	test("render the Col component", () => {
@@ -20,64 +22,26 @@ describe("Render Col", () => {
 
 
 describe("Render Col Number", () => {
-	test("render default col", () => {
-		const {container} = render(<Col>Click Me</Col>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('col')
-	});
-	test("render 12 col", () => {
-		const {container} = render(<Col col={12}>Click Me</Col>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('col-12')
-	});
-	test("render lg col", () => {
-		const {container} = render(<Col col={6}>Click Me</Col>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('col-6')
-	});
-	test("render sm col", () => {
-		const {container} = render(<Col col={3}>Click Me</Col>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('col-3')
-	});
-	test("render xs col", () => {
-		const {container} = render(<Col col={8}>Click Me</Col>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('col-8')
-	});
+	const cols = [...ColArray]
+	cols.forEach(col => {
+		test(`render ${col} col`, () => {
+			const {container} = render(<Col col={col}>Click Me</Col>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(col === 'auto' || col === undefined ? 'col' : `col-${col}`)
+		});
+	})
 });
 
 describe("Render Col Sizes", () => {
-	test("render default/md size", () => {
-		const {container} = render(<Col>Click Me</Col>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('col')
-		expect(component).not.toHaveClass('col-xl', 'col-lg', 'col-sm', 'col-xs')
-	});
-	test("render xl size", () => {
-		const {container} = render(<Col size="xl">Click Me</Col>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('col-xl')
-		expect(component).not.toHaveClass('col-lg', 'col-sm', 'col-xs')
-	});
-	test("render lg size", () => {
-		const {container} = render(<Col size="lg">Click Me</Col>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('col-lg')
-		expect(component).not.toHaveClass('col-xl', 'col-sm', 'col-xs')
-	});
-	test("render sm size", () => {
-		const {container} = render(<Col size="sm">Click Me</Col>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('col-sm')
-		expect(component).not.toHaveClass('col-xl', 'col-lg', 'col-xs')
-	});
-	test("render xs size", () => {
-		const {container} = render(<Col size="xs">Click Me</Col>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('col-xs')
-		expect(component).not.toHaveClass('col-xl', 'col-lg', 'col-sm')
-	});
+	const sizes = [...SizesArray]
+	sizes.forEach((size) => {
+		test(`render ${size} size`, () => {
+			const {container} = render(<Col size={size}>Click Me</Col>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(size === 'md' ? 'col' : `col-${size}`)
+			expect(component).not.toHaveClass(...except(sizes, size === 'md' ? '' : `col-${size}`))
+		});
+	})
 });
 
 describe("Render Col Sizes With Numbers", () => {

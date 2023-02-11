@@ -2,6 +2,9 @@ import React from "react";
 import {getByTestId, render} from "@testing-library/react";
 import Tooltip from "./Tooltip";
 import {Button} from "../Button";
+import {ISizes, LayoutsArray, SizesArray, ThemesArray} from "../types/Common.types";
+import except from "../tests/except";
+import {PlacementArray, VariantsArray} from "./Tooltip.types";
 
 describe("Render Tooltip", () => {
 	test("render default styles", () => {
@@ -14,33 +17,16 @@ describe("Render Tooltip", () => {
 });
 
 describe("Render Tooltip Default Themes", () => {
-	test("render default theme", () => {
-		const {container} = render(<Tooltip title="tooltip" data-testid="tooltip"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip-primary')
-	});
-	test("render primary theme", () => {
-		const {container} = render(
-			<Tooltip title="tooltip" data-testid="tooltip" theme="primary"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip-primary')
-	});
-	test("render secondary theme", () => {
-		const {container} = render(
-			<Tooltip title="tooltip" data-testid="tooltip" theme="secondary"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip-secondary')
-	});
-	test("render light theme", () => {
-		const {container} = render(<Tooltip title="tooltip" data-testid="tooltip" theme="light"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip-light')
-	});
-	test("render dark theme", () => {
-		const {container} = render(<Tooltip title="tooltip" data-testid="tooltip" theme="dark"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip-dark')
-	});
+	const themes = [...ThemesArray]
+	themes.forEach((theme) => {
+		test(`render ${theme} theme`, () => {
+			const {container} = render(
+				<Tooltip theme={theme} title="tooltip" data-testid="tooltip"><Button>Tooltip</Button></Tooltip>);
+			const component = getByTestId(container, 'tooltip')
+			expect(component).toHaveClass(theme === 'default' ? 'tooltip' : `tooltip-${theme}`)
+			expect(component).not.toHaveClass(...except(themes, theme === 'default' ? '' : `tooltip-${theme}`))
+		});
+	})
 	test("render custom color scheme", () => {
 		const colorScheme = {
 			color: 'black',
@@ -58,84 +44,55 @@ describe("Render Tooltip Default Themes", () => {
 });
 
 describe("Render Tooltip Layouts", () => {
-	test("render default layout", () => {
-		const {container} = render(<Tooltip title="tooltip" data-testid="tooltip"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip')
-		expect(component).not.toHaveClass('tooltip-rounded', 'tooltip-pill', 'tooltip-no-radius')
-	});
-	test("render rounded layout", () => {
-		const {container} = render(
-			<Tooltip title="tooltip" data-testid="tooltip" layout="rounded"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip-rounded')
-		expect(component).not.toHaveClass('tooltip-pill', 'tooltip-no-radius')
-	});
-	test("render no-radius layout", () => {
-		const {container} = render(
-			<Tooltip title="tooltip" data-testid="tooltip" layout="no-radius"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip-no-radius')
-		expect(component).not.toHaveClass('tooltip-rounded', 'tooltip-pill')
-	});
-	test("render pill layout", () => {
-		const {container} = render(<Tooltip title="tooltip" data-testid="tooltip" layout="pill"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip-pill')
-		expect(component).not.toHaveClass('tooltip-rounded', 'tooltip-no-radius')
-	});
+	const layouts = [...LayoutsArray]
+	layouts.forEach((layout) => {
+		test(`render ${layout} layout`, () => {
+			const {container} = render(
+				<Tooltip title="tooltip" data-testid="tooltip" layout={layout}><Button>Tooltip</Button></Tooltip>);
+			const component = getByTestId(container, 'tooltip');
+			expect(component).toHaveClass(layout === 'default' ? 'tooltip' : `tooltip-${layout}`)
+			expect(component).not.toHaveClass(...except(layouts, layout === 'default' ? '' : `tooltip-${layout}`))
+		});
+	})
 });
 
 describe("Render Tooltip Variants", () => {
-	test("render default variant", () => {
-		const {container} = render(<Tooltip title="tooltip" data-testid="tooltip"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip')
-		expect(component).not.toHaveClass('tooltip-arrow')
-	});
-	test("render outline variant", () => {
-		const {container} = render(
-			<Tooltip title="tooltip" data-testid="tooltip" variant="arrow"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip-arrow')
-	});
+	const variants = [...VariantsArray]
+	variants.forEach((variant) => {
+		test(`render ${variant} variant`, () => {
+			const {container} = render(
+				<Tooltip variant={variant} title="tooltip" data-testid="tooltip"><Button>Tooltip</Button></Tooltip>);
+			const component = getByTestId(container, 'tooltip')
+			expect(component).toHaveClass(variant === 'default' ? 'tooltip' : `tooltip-${variant}`)
+			expect(component).not.toHaveClass(...except(variants, variant === 'default' ? '' : `tooltip-${variant}`))
+		});
+	})
 });
 
 describe("Render Tooltip Sizes", () => {
-	test("render default/md size", () => {
-		const {container} = render(<Tooltip title="tooltip" data-testid="tooltip"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip')
-		expect(component).not.toHaveClass('tooltip-extra-large', 'tooltip-large', 'tooltip-small', 'tooltip-extra-small')
-	});
-	test("render xl size", () => {
-		const {container} = render(
-			<Tooltip title="tooltip" data-testid="tooltip" size="xl"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip-extra-large')
-		expect(component).not.toHaveClass('tooltip-large', 'tooltip-small', 'tooltip-extra-small')
-	});
-	test("render lg size", () => {
-		const {container} = render(
-			<Tooltip title="tooltip" data-testid="tooltip" size="lg"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip-large')
-		expect(component).not.toHaveClass('tooltip-extra-large', 'tooltip-small', 'tooltip-extra-small')
-	});
-	test("render sm size", () => {
-		const {container} = render(
-			<Tooltip title="tooltip" data-testid="tooltip" size="sm"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip-small')
-		expect(component).not.toHaveClass('tooltip-extra-large', 'tooltip-large', 'tooltip-extra-small')
-	});
-	test("render xs size", () => {
-		const {container} = render(
-			<Tooltip title="tooltip" data-testid="tooltip" size="xs"><Button>Tooltip</Button></Tooltip>);
-		const component = getByTestId(container, 'tooltip')
-		expect(component).toHaveClass('tooltip-extra-small')
-		expect(component).not.toHaveClass('tooltip-extra-large', 'tooltip-large', 'tooltip-small')
-	});
+	const sizes = [...SizesArray]
+	sizes.forEach((size) => {
+		test(`render ${size} size`, () => {
+			const {container} = render(
+				<Tooltip size={size} title="tooltip" data-testid="tooltip"><Button>Tooltip</Button></Tooltip>);
+			const component = getByTestId(container, 'tooltip')
+			expect(component).toHaveClass(size === 'md' ? 'tooltip' : `tooltip-${ISizes[size]}`)
+			expect(component).not.toHaveClass(...except(sizes, size === 'md' ? '' : `tooltip-${ISizes[size]}`))
+		});
+	})
+});
+
+describe("Render Tooltip Placements", () => {
+	const placements = [...PlacementArray]
+	placements.forEach((placement) => {
+		test(`render ${placement} placement`, () => {
+			const {container} = render(
+				<Tooltip placement={placement} title="tooltip" data-testid="tooltip"><Button>Tooltip</Button></Tooltip>);
+			const component = getByTestId(container, 'tooltip')
+			expect(component).toHaveClass(placement === 'bottom' ? 'tooltip' : `tooltip-${placement}`)
+			expect(component).not.toHaveClass(...except(placements, placement === 'bottom' ? '' : `tooltip-${placement}`))
+		});
+	})
 });
 
 

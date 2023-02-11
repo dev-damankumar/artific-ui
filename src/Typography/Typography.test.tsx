@@ -1,6 +1,14 @@
 import React from "react";
 import {getByText, render} from "@testing-library/react";
 import Typography from "./Typography";
+import except from "../tests/except";
+import {
+	TypographyAsElementsArray,
+	TypographyVariants,
+	TypographyVariantsArray,
+	TypographyWeightsArray
+} from "./Typography.types";
+import {ThemesArray} from "../types/Common.types";
 
 describe("Render Typography", () => {
 	test("render the Typography component", () => {
@@ -15,31 +23,15 @@ describe("Render Typography", () => {
 });
 
 describe("Render Typography Default Themes", () => {
-	test("render default theme", () => {
-		const {container} = render(<Typography>Click Me</Typography>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('text-default')
-	});
-	test("render primary theme", () => {
-		const {container} = render(<Typography theme="primary">Click Me</Typography>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('text-primary')
-	});
-	test("render secondary theme", () => {
-		const {container} = render(<Typography theme="secondary">Click Me</Typography>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('text-secondary')
-	});
-	test("render light theme", () => {
-		const {container} = render(<Typography theme="light">Click Me</Typography>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('text-light')
-	});
-	test("render dark theme", () => {
-		const {container} = render(<Typography theme="dark">Click Me</Typography>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('text-dark')
-	});
+	const themes = [...ThemesArray]
+	themes.forEach((theme) => {
+		test(`render ${theme} theme`, () => {
+			const {container} = render(<Typography theme={theme}>Click Me</Typography>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(theme === 'default' ? 'typography' : `text-${theme}`)
+			expect(component).not.toHaveClass(...except(themes, theme === 'default' ? 'typography' : `text-${theme}`))
+		});
+	})
 	test("render custom color scheme", () => {
 		const colorScheme = {
 			color: 'black',
@@ -56,44 +48,37 @@ describe("Render Typography Default Themes", () => {
 });
 
 describe("Render Typography Weights", () => {
-	test("render default/medium weight", () => {
-		const {container} = render(<Typography>Click Me</Typography>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('typography')
-		expect(component).not.toHaveClass('typography-light', 'typography-bold')
-	});
-	test("render rounded weight", () => {
-		const {container} = render(<Typography weight="light">Click Me</Typography>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('typography-light')
-		expect(component).not.toHaveClass('typography-bold')
-	});
-	test("render no-radius weight", () => {
-		const {container} = render(<Typography weight="bold">Click Me</Typography>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('typography-bold')
-		expect(component).not.toHaveClass('typography-light')
-	});
+	const weights = [...TypographyWeightsArray]
+	weights.forEach((weight) => {
+		test(`render ${weight} weight`, () => {
+			const {container} = render(<Typography weight={weight}>Click Me</Typography>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(weight === 'medium' ? 'typography' : `typography-${weight}`)
+			expect(component).not.toHaveClass(...except(weights, weight === 'medium' ? 'typography' : `typography-${weight}`))
+		});
+	})
 });
 
 describe("Render Typography Variants", () => {
-	test("render default variant", () => {
-		const {container} = render(<Typography>Click Me</Typography>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('typography')
-		expect(component).not.toHaveClass('typography-text', 'typography-heading')
-	});
-	test("render outline variant", () => {
-		const {container} = render(<Typography variant="text">Click Me</Typography>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('typography-text')
-		expect(component).not.toHaveClass('typography-heading')
-	});
-	test("render note variant", () => {
-		const {container} = render(<Typography variant="heading">Click Me</Typography>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('typography-heading');
-		expect(component).not.toHaveClass('typography-text')
-	});
+	const variants = [...TypographyVariantsArray]
+	variants.forEach((variant) => {
+		test(`render ${variant} variant`, () => {
+			const {container} = render(<Typography variant={variant as TypographyVariants}>Click Me</Typography>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(variant === 'text' ? 'typography' : `typography-${variant}`)
+			expect(component).not.toHaveClass(...except(variants, variant === 'text' ? 'typography' : `typography-${variant}`))
+		});
+	})
+});
+
+describe("Render Typography As Element", () => {
+	const asElements = [...TypographyAsElementsArray]
+	asElements.forEach((asElement) => {
+		test(`render ${asElement} element`, () => {
+			const {container} = render(<Typography as={asElement}>Click Me</Typography>);
+			const component = container.firstElementChild!;
+			expect(component.nodeName.toLowerCase()).toBe(asElement)
+		});
+	})
 });
 

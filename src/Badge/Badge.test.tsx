@@ -1,6 +1,9 @@
 import React from "react";
 import {getByTestId, getByText, render} from "@testing-library/react";
 import Badge from "./Badge";
+import {ISizes, LayoutsArray, SizesArray, ThemesArray} from "../types/Common.types";
+import except from "../tests/except";
+import {VariantsArray} from "./Badge.types";
 
 describe("Render Badge", () => {
 	test("render the Badge component", () => {
@@ -15,31 +18,15 @@ describe("Render Badge", () => {
 });
 
 describe("Render Badge Default Themes", () => {
-	test("render default theme", () => {
-		const {container} = render(<Badge/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge-primary')
-	});
-	test("render primary theme", () => {
-		const {container} = render(<Badge theme="primary"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge-primary')
-	});
-	test("render secondary theme", () => {
-		const {container} = render(<Badge theme="secondary"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge-secondary')
-	});
-	test("render light theme", () => {
-		const {container} = render(<Badge theme="light"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge-light')
-	});
-	test("render dark theme", () => {
-		const {container} = render(<Badge theme="dark"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge-dark')
-	});
+	const themes = [...ThemesArray]
+	themes.forEach((theme) => {
+		test(`render ${theme} theme`, () => {
+			const {container} = render(<Badge theme={theme}>Click Me</Badge>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(theme === 'default' ? 'badge' : `badge-${theme}`)
+			expect(component).not.toHaveClass(...except(themes, theme === 'default' ? '' : `badge-${theme}`))
+		});
+	})
 	test("render custom color scheme", () => {
 		const colorScheme = {
 			color: 'black',
@@ -56,85 +43,39 @@ describe("Render Badge Default Themes", () => {
 });
 
 describe("Render Badge Layouts", () => {
-	test("render default layout", () => {
-		const {container} = render(<Badge/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge')
-		expect(component).not.toHaveClass('badge-rounded', 'badge-pill', 'badge-no-radius')
-	});
-	test("render rounded layout", () => {
-		const {container} = render(<Badge layout="rounded"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge-rounded')
-		expect(component).not.toHaveClass('badge-pill', 'badge-no-radius')
-	});
-	test("render no-radius layout", () => {
-		const {container} = render(<Badge layout="no-radius"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge-no-radius')
-		expect(component).not.toHaveClass('badge-rounded', 'badge-pill')
-	});
-	test("render pill layout", () => {
-		const {container} = render(<Badge layout="pill"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge-pill')
-		expect(component).not.toHaveClass('badge-rounded', 'badge-no-radius')
-	});
+	const layouts = [...LayoutsArray]
+	layouts.forEach((layout) => {
+		test(`render ${layout} layout`, () => {
+			const {container} = render(<Badge layout={layout}>Click Me</Badge>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(layout === 'default' ? 'badge' : `badge-${layout}`)
+			expect(component).not.toHaveClass(...except(layouts, layout === 'default' ? '' : `badge-${layout}`))
+		});
+	})
 });
 
 describe("Render Badge Variants", () => {
-	test("render default variant", () => {
-		const {container} = render(<Badge/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge')
-		expect(component).not.toHaveClass('badge-outline', 'badge-dot')
-	});
-	test("render outline variant", () => {
-		const {container} = render(<Badge variant="outline"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge-outline')
-		expect(component).not.toHaveClass('badge-dot')
-	});
-	test("render dot variant", () => {
-		const {container} = render(<Badge variant="dot"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge-dot')
-		expect(component).not.toHaveClass('badge-outline')
-
-	});
+	const variants = [...VariantsArray]
+	variants.forEach((variant) => {
+		test(`render ${variant} variant`, () => {
+			const {container} = render(<Badge variant={variant}>Click Me</Badge>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(variant === 'default' ? 'badge' : `badge-${variant}`)
+			expect(component).not.toHaveClass(...except(variants, variant === 'default' ? '' : `badge-${variant}`))
+		});
+	})
 });
 
 describe("Render Badge Sizes", () => {
-	test("render default/md size", () => {
-		const {container} = render(<Badge/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge')
-		expect(component).not.toHaveClass('badge-extra-large', 'badge-large', 'badge-small', 'badge-extra-small')
-	});
-	test("render xl size", () => {
-		const {container} = render(<Badge size="xl"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge-extra-large')
-		expect(component).not.toHaveClass('badge-large', 'badge-small', 'badge-extra-small')
-	});
-	test("render lg size", () => {
-		const {container} = render(<Badge size="lg"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge-large')
-		expect(component).not.toHaveClass('badge-extra-large', 'badge-small', 'badge-extra-small')
-	});
-	test("render sm size", () => {
-		const {container} = render(<Badge size="sm"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge-small')
-		expect(component).not.toHaveClass('badge-extra-large', 'badge-large', 'badge-extra-small')
-	});
-	test("render xs size", () => {
-		const {container} = render(<Badge size="xs"/>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('badge-extra-small')
-		expect(component).not.toHaveClass('badge-extra-large', 'badge-large', 'badge-small')
-	});
+	const sizes = [...SizesArray]
+	sizes.forEach((size) => {
+		test(`render ${size} size`, () => {
+			const {container} = render(<Badge size={size}>Click Me</Badge>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(size === 'md' ? 'badge' : `badge-${ISizes[size]}`)
+			expect(component).not.toHaveClass(...except(sizes, size === 'md' ? '' : `badge-${ISizes[size]}`))
+		});
+	})
 });
 
 

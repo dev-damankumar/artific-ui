@@ -1,6 +1,9 @@
 import React from "react";
 import {getByTestId, render} from "@testing-library/react";
 import Spinner from "./Spinner";
+import {ISizes, SizesArray, ThemesArray} from "../types/Common.types";
+import except from "../tests/except";
+import {VariantsArray} from "./Spinner.types";
 
 describe("Render Spinner", () => {
 	test("render the Spinner component", () => {
@@ -11,31 +14,15 @@ describe("Render Spinner", () => {
 });
 
 describe("Render Spinner Default Themes", () => {
-	test("render default theme", () => {
-		const {container} = render(<Spinner>Click Me</Spinner>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('spinner-primary')
-	});
-	test("render primary theme", () => {
-		const {container} = render(<Spinner theme="primary">Click Me</Spinner>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('spinner-primary')
-	});
-	test("render secondary theme", () => {
-		const {container} = render(<Spinner theme="secondary">Click Me</Spinner>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('spinner-secondary')
-	});
-	test("render light theme", () => {
-		const {container} = render(<Spinner theme="light">Click Me</Spinner>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('spinner-light')
-	});
-	test("render dark theme", () => {
-		const {container} = render(<Spinner theme="dark">Click Me</Spinner>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('spinner-dark')
-	});
+	const themes = [...ThemesArray]
+	themes.forEach((theme) => {
+		test(`render ${theme} theme`, () => {
+			const {container} = render(<Spinner theme={theme}>Click Me</Spinner>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(theme === 'default' ? 'spinner' : `spinner-${theme}`)
+			expect(component).not.toHaveClass(...except(themes, theme === 'default' ? '' : `spinner-${theme}`))
+		});
+	})
 	test("render custom color scheme", () => {
 		const colorScheme = {
 			color: 'black',
@@ -52,68 +39,26 @@ describe("Render Spinner Default Themes", () => {
 });
 
 describe("Render Spinner Variants", () => {
-	test("render default variant", () => {
-		const {container} = render(<Spinner>Click Me</Spinner>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('spinner')
-		expect(component).not.toHaveClass('spinner-box', 'spinner-dots', 'spinner-ring', 'spinner-ripple')
-	});
-	test("render box variant", () => {
-		const {container} = render(<Spinner variant="box">Click Me</Spinner>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('spinner-box')
-		expect(component).not.toHaveClass('spinner-dots', 'spinner-ring', 'spinner-ripple')
-	});
-	test("render dots variant", () => {
-		const {container} = render(<Spinner variant="dots">Click Me</Spinner>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('spinner-dots')
-		expect(component).not.toHaveClass('spinner-box', 'spinner-ring', 'spinner-ripple')
-	});
-	test("render ring variant", () => {
-		const {container} = render(<Spinner variant="ring">Click Me</Spinner>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('spinner-ring')
-		expect(component).not.toHaveClass('spinner-box', 'spinner-dots', 'spinner-ripple')
-	});
-	test("render ripple variant", () => {
-		const {container} = render(<Spinner variant="ripple">Click Me</Spinner>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('spinner-ripple')
-		expect(component).not.toHaveClass('spinner-box', 'spinner-dots', 'spinner-ring')
-	});
+	const variants = [...VariantsArray]
+	variants.forEach((variant) => {
+		test(`render ${variant} variant`, () => {
+			const {container} = render(<Spinner variant={variant}>Click Me</Spinner>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(variant === 'default' ? 'spinner' : `spinner-${variant}`)
+			expect(component).not.toHaveClass(...except(variants, variant === 'default' ? '' : `spinner-${variant}`))
+		});
+	})
 });
 
 describe("Render Spinner Sizes", () => {
-	test("render default/md size", () => {
-		const {container} = render(<Spinner>Click Me</Spinner>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('spinner')
-		expect(component).not.toHaveClass('spinner-extra-large', 'spinner-large', 'spinner-small', 'spinner-extra-small')
-	});
-	test("render xl size", () => {
-		const {container} = render(<Spinner size="xl">Click Me</Spinner>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('spinner-extra-large')
-		expect(component).not.toHaveClass('spinner-large', 'spinner-small', 'spinner-extra-small')
-	});
-	test("render lg size", () => {
-		const {container} = render(<Spinner size="lg">Click Me</Spinner>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('spinner-large')
-		expect(component).not.toHaveClass('spinner-extra-large', 'spinner-small', 'spinner-extra-small')
-	});
-	test("render sm size", () => {
-		const {container} = render(<Spinner size="sm">Click Me</Spinner>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('spinner-small')
-		expect(component).not.toHaveClass('spinner-extra-large', 'spinner-large', 'spinner-extra-small')
-	});
-	test("render xs size", () => {
-		const {container} = render(<Spinner size="xs">Click Me</Spinner>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('spinner-extra-small')
-		expect(component).not.toHaveClass('spinner-extra-large', 'spinner-large', 'spinner-small')
-	});
+	const sizes = [...SizesArray]
+	sizes.forEach((size) => {
+		test(`render ${size} size`, () => {
+			const {container} = render(<Spinner size={size}>Click Me</Spinner>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(size === 'md' ? 'spinner' : `spinner-${ISizes[size]}`)
+			expect(component).not.toHaveClass(...except(sizes, size === 'md' ? '' : `spinner-${ISizes[size]}`))
+		});
+	})
 });
 

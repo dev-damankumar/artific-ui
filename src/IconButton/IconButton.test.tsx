@@ -1,6 +1,8 @@
 import React from "react";
 import {fireEvent, getByTestId, getByText, render} from "@testing-library/react";
 import IconButton from "./IconButton";
+import {ISizes, LayoutsArray, SizesArray, ThemesArray, VariantsArray} from "../types/Common.types";
+import except from "../tests/except";
 
 describe("Render IconButton", () => {
 	test("render the IconButton component", () => {
@@ -19,36 +21,20 @@ describe("Render IconButton", () => {
 	test("render default styles", () => {
 		const {container} = render(<IconButton>Click Me</IconButton>);
 		const component = container.firstChild;
-		expect(component).toHaveClass('btn', 'icon-btn')
+		expect(component).toHaveClass('btn')
 	});
 });
 
 describe("Render IconButton Default Themes", () => {
-	test("render default theme", () => {
-		const {container} = render(<IconButton>Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-primary')
-	});
-	test("render primary theme", () => {
-		const {container} = render(<IconButton theme="primary">Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-primary')
-	});
-	test("render secondary theme", () => {
-		const {container} = render(<IconButton theme="secondary">Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-secondary')
-	});
-	test("render light theme", () => {
-		const {container} = render(<IconButton theme="light">Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-light')
-	});
-	test("render dark theme", () => {
-		const {container} = render(<IconButton theme="dark">Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-dark')
-	});
+	const themes = [...ThemesArray]
+	themes.forEach((theme) => {
+		test(`render ${theme} theme`, () => {
+			const {container} = render(<IconButton theme={theme}>Click Me</IconButton>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(theme === 'default' ? 'btn' : `btn-${theme}`)
+			expect(component).not.toHaveClass(...except(themes, theme === 'default' ? '' : `btn-${theme}`))
+		});
+	})
 	test("render custom color scheme", () => {
 		const colorScheme = {
 			color: 'black',
@@ -65,84 +51,40 @@ describe("Render IconButton Default Themes", () => {
 });
 
 describe("Render IconButton Layouts", () => {
-	test("render default layout", () => {
-		const {container} = render(<IconButton>Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn')
-		expect(component).not.toHaveClass('btn-rounded', 'btn-pill', 'btn-no-radius')
-	});
-	test("render rounded layout", () => {
-		const {container} = render(<IconButton layout="rounded">Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-rounded')
-		expect(component).not.toHaveClass('btn-pill', 'btn-no-radius')
-	});
-	test("render no-radius layout", () => {
-		const {container} = render(<IconButton layout="no-radius">Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-no-radius')
-		expect(component).not.toHaveClass('btn-rounded', 'btn-pill')
-	});
-	test("render pill layout", () => {
-		const {container} = render(<IconButton layout="pill">Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-pill')
-		expect(component).not.toHaveClass('btn-rounded', 'btn-no-radius')
-	});
+	const layouts = [...LayoutsArray]
+	layouts.forEach((layout) => {
+		test(`render ${layout} layout`, () => {
+			const {container} = render(<IconButton layout={layout}>Click Me</IconButton>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(layout === 'default' ? 'btn' : `btn-${layout}`)
+			expect(component).not.toHaveClass(...except(layouts, layout === 'default' ? '' : `btn-${layout}`))
+		});
+	})
 });
 
 describe("Render IconButton Variants", () => {
-	test("render default variant", () => {
-		const {container} = render(<IconButton>Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn')
-		expect(component).not.toHaveClass('btn-outline', 'btn-text')
-	});
-	test("render outline variant", () => {
-		const {container} = render(<IconButton variant="outline">Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-outline')
-		expect(component).not.toHaveClass('btn-text')
-	});
-	test("render text variant", () => {
-		const {container} = render(<IconButton variant="text">Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-text', 'btn-outline')
-	});
+	const variants = [...VariantsArray]
+	variants.forEach((variant) => {
+		test(`render ${variant} variant`, () => {
+			const {container} = render(<IconButton variant={variant}>Click Me</IconButton>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(variant === 'default' ? 'btn' : `btn-${variant}`)
+			expect(component).not.toHaveClass(...except(variants, variant === 'default' ? '' : `btn-${variant}`))
+		});
+	})
 });
 
 describe("Render IconButton Sizes", () => {
-	test("render default/md size", () => {
-		const {container} = render(<IconButton>Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn')
-		expect(component).not.toHaveClass('btn-extra-large', 'btn-large', 'btn-small', 'btn-extra-small')
-	});
-	test("render xl size", () => {
-		const {container} = render(<IconButton size="xl">Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-extra-large')
-		expect(component).not.toHaveClass('btn-large', 'btn-small', 'btn-extra-small')
-	});
-	test("render lg size", () => {
-		const {container} = render(<IconButton size="lg">Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-large')
-		expect(component).not.toHaveClass('btn-extra-large', 'btn-small', 'btn-extra-small')
-	});
-	test("render sm size", () => {
-		const {container} = render(<IconButton size="sm">Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-small')
-		expect(component).not.toHaveClass('btn-extra-large', 'btn-large', 'btn-extra-small')
-	});
-	test("render xs size", () => {
-		const {container} = render(<IconButton size="xs">Click Me</IconButton>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('btn-extra-small')
-		expect(component).not.toHaveClass('btn-extra-large', 'btn-large', 'btn-small')
-	});
-	test("render fullwidth icon button", () => {
+	const sizes = [...SizesArray]
+	sizes.forEach((size) => {
+		test(`render ${size} size`, () => {
+			const {container} = render(<IconButton size={size}>Click Me</IconButton>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(size === 'md' ? 'btn' : `btn-${ISizes[size]}`)
+			expect(component).not.toHaveClass(...except(sizes, size === 'md' ? '' : `btn-${ISizes[size]}`))
+		});
+	})
+	test("render fullwidth button", () => {
 		const {container} = render(<IconButton fullwidth>Click Me</IconButton>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-fullwidth')
@@ -153,7 +95,7 @@ describe("Render IconButton With Icons", () => {
 	test("render suffix icon", () => {
 		const {container} = render(<IconButton
 			suffix={<i data-testid='icon1' className='bx bxs-user-circle'></i>}
-
+			type="button"
 		>
 			Click Me
 		</IconButton>);
@@ -165,6 +107,7 @@ describe("Render IconButton With Icons", () => {
 	test("render prefix icon", () => {
 		const {container} = render(<IconButton
 			prefix={<i data-testid='icon1' className='bx bxs-user-circle'></i>}
+			type="button"
 		>
 			Click Me
 		</IconButton>);
@@ -178,6 +121,7 @@ describe("Render IconButton With Icons", () => {
 		const {container} = render(<IconButton
 			suffix={<i data-testid='icon1' className='bx bxs-user-circle'></i>}
 			prefix={<i data-testid='icon2' className='bx bxs-user-circle'></i>}
+			type="button"
 		>
 			Click Me
 		</IconButton>);
@@ -192,38 +136,39 @@ describe("Render IconButton With Icons", () => {
 });
 
 describe("Render IconButton States", () => {
-	test("render disabled icon button", () => {
+	test("render disabled button", () => {
 		const {container} = render(<IconButton
 			disabled={true}
+			type="button"
 		>
 			Click Me
 		</IconButton>);
 		const component = container.firstChild;
 		expect(component).toHaveAttribute('disabled', "")
 	});
-	test("render not disabled icon button", () => {
+	test("render not disabled button", () => {
 		const {container} = render(<IconButton
-
+			type="button"
 		>
 			Click Me
 		</IconButton>);
 		const component = container.firstChild;
 		expect(component).not.toHaveAttribute('disabled', "")
 	});
-	test("render loading icon button", () => {
+	test("render loading button", () => {
 		const {container} = render(<IconButton
 			loading={true}
-
+			type="button"
 		>
 			Click Me
 		</IconButton>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-loading')
 	});
-	test("render no loading icon button", () => {
+	test("render no loading button", () => {
 		const {container} = render(<IconButton
 			loading={false}
-
+			type="button"
 		>
 			Click Me
 		</IconButton>);
@@ -234,18 +179,18 @@ describe("Render IconButton States", () => {
 		const {container} = render(<IconButton
 			hideTextOnLoading
 			loading={true}
-
+			type="button"
 		>
 			Click Me
 		</IconButton>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-loading', 'btn-loading-no-text')
 	});
-	test("render icon button loading direction:before", () => {
+	test("render button loading direction:before", () => {
 		const {container} = render(<IconButton
 			loadingDirection="before"
 			loading={true}
-
+			type="button"
 		>
 			Click Me
 		</IconButton>);
@@ -253,22 +198,22 @@ describe("Render IconButton States", () => {
 		expect(component).toHaveClass('btn-loading')
 		expect(component).not.toHaveClass('btn-loading-right')
 	});
-	test("render icon button loading direction:after", () => {
+	test("render button loading direction:after", () => {
 		const {container} = render(<IconButton
 			loadingDirection="after"
 			loading={true}
-
+			type="button"
 		>
 			Click Me
 		</IconButton>);
 		const component = container.firstChild;
 		expect(component).toHaveClass('btn-loading', 'btn-loading-right')
 	});
-	test("render icon button loading style:grow", () => {
+	test("render button loading style:grow", () => {
 		const {container} = render(<IconButton
 			loadingStyle="grow"
 			loading={true}
-
+			type="button"
 		>
 			Click Me
 		</IconButton>);

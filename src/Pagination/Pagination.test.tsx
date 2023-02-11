@@ -1,6 +1,9 @@
 import React from "react";
 import {getByText, render} from "@testing-library/react";
 import Pagination from "./Pagination";
+import {ISizes, LayoutsArray, SizesArray, ThemesArray} from "../types/Common.types";
+import except from "../tests/except";
+import {VariantsArray} from "./Pagination.types";
 
 describe("Render Pagination", () => {
 	test("render the Pagination component", () => {
@@ -15,31 +18,15 @@ describe("Render Pagination", () => {
 });
 
 describe("Render Pagination Default Themes", () => {
-	test("render default theme", () => {
-		const {container} = render(<Pagination>Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination-primary')
-	});
-	test("render primary theme", () => {
-		const {container} = render(<Pagination theme="primary">Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination-primary')
-	});
-	test("render secondary theme", () => {
-		const {container} = render(<Pagination theme="secondary">Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination-secondary')
-	});
-	test("render light theme", () => {
-		const {container} = render(<Pagination theme="light">Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination-light')
-	});
-	test("render dark theme", () => {
-		const {container} = render(<Pagination theme="dark">Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination-dark')
-	});
+	const themes = [...ThemesArray]
+	themes.forEach((theme) => {
+		test(`render ${theme} theme`, () => {
+			const {container} = render(<Pagination theme={theme}>Click Me</Pagination>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(theme === 'default' ? 'pagination' : `pagination-${theme}`)
+			expect(component).not.toHaveClass(...except(themes, theme === 'default' ? '' : `pagination-${theme}`))
+		});
+	})
 	test("render custom color scheme", () => {
 		const colorScheme = {
 			color: 'black',
@@ -56,90 +43,39 @@ describe("Render Pagination Default Themes", () => {
 });
 
 describe("Render Pagination Layouts", () => {
-	test("render default layout", () => {
-		const {container} = render(<Pagination>Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination')
-		expect(component).not.toHaveClass('pagination-rounded', 'pagination-pill', 'pagination-no-radius')
-	});
-	test("render rounded layout", () => {
-		const {container} = render(<Pagination layout="rounded">Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination-rounded')
-		expect(component).not.toHaveClass('pagination-pill', 'pagination-no-radius')
-	});
-	test("render no-radius layout", () => {
-		const {container} = render(<Pagination layout="no-radius">Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination-no-radius')
-		expect(component).not.toHaveClass('pagination-rounded', 'pagination-pill')
-	});
-	test("render pill layout", () => {
-		const {container} = render(<Pagination layout="pill">Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination-pill')
-		expect(component).not.toHaveClass('pagination-rounded', 'pagination-no-radius')
-	});
+	const layouts = [...LayoutsArray]
+	layouts.forEach((layout) => {
+		test(`render ${layout} layout`, () => {
+			const {container} = render(<Pagination layout={layout}>Click Me</Pagination>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(layout === 'default' ? 'pagination' : `pagination-${layout}`)
+			expect(component).not.toHaveClass(...except(layouts, layout === 'default' ? '' : `pagination-${layout}`))
+		});
+	})
 });
 
 describe("Render Pagination Variants", () => {
-	test("render default variant", () => {
-		const {container} = render(<Pagination>Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination')
-		expect(component).not.toHaveClass('pagination-separate', 'pagination-float', 'pagination-breadcrumb')
-	});
-	test("render separate variant", () => {
-		const {container} = render(<Pagination variant="separate">Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination-separate')
-		expect(component).not.toHaveClass('pagination-float', 'pagination-breadcrumb')
-	});
-	test("render float variant", () => {
-		const {container} = render(<Pagination variant="float">Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination-float')
-		expect(component).not.toHaveClass('pagination-separate', 'pagination-breadcrumb')
-	});
-	test("render breadcrumb variant", () => {
-		const {container} = render(<Pagination variant="breadcrumb">Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination-breadcrumb', 'breadcrumb')
-		expect(component).not.toHaveClass('pagination-separate', 'pagination-float')
-	});
+	const variants = [...VariantsArray]
+	variants.forEach((variant) => {
+		test(`render ${variant} variant`, () => {
+			const {container} = render(<Pagination variant={variant}>Click Me</Pagination>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(variant === 'default' ? 'pagination' : `pagination-${variant}`)
+			expect(component).not.toHaveClass(...except(variants, variant === 'default' ? '' : `pagination-${variant}`))
+		});
+	})
 });
 
 describe("Render Pagination Sizes", () => {
-	test("render default/md size", () => {
-		const {container} = render(<Pagination>Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination')
-		expect(component).not.toHaveClass('pagination-extra-large', 'pagination-large', 'pagination-small', 'pagination-extra-small')
-	});
-	test("render xl size", () => {
-		const {container} = render(<Pagination size="xl">Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination-extra-large')
-		expect(component).not.toHaveClass('pagination-large', 'pagination-small', 'pagination-extra-small')
-	});
-	test("render lg size", () => {
-		const {container} = render(<Pagination size="lg">Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination-large')
-		expect(component).not.toHaveClass('pagination-extra-large', 'pagination-small', 'pagination-extra-small')
-	});
-	test("render sm size", () => {
-		const {container} = render(<Pagination size="sm">Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination-small')
-		expect(component).not.toHaveClass('pagination-extra-large', 'pagination-large', 'pagination-extra-small')
-	});
-	test("render xs size", () => {
-		const {container} = render(<Pagination size="xs">Click Me</Pagination>);
-		const component = container.firstChild;
-		expect(component).toHaveClass('pagination-extra-small')
-		expect(component).not.toHaveClass('pagination-extra-large', 'pagination-large', 'pagination-small')
-	});
+	const sizes = [...SizesArray]
+	sizes.forEach((size) => {
+		test(`render ${size} size`, () => {
+			const {container} = render(<Pagination size={size}>Click Me</Pagination>);
+			const component = container.firstChild;
+			expect(component).toHaveClass(size === 'md' ? 'pagination' : `pagination-${ISizes[size]}`)
+			expect(component).not.toHaveClass(...except(sizes, size === 'md' ? '' : `pagination-${ISizes[size]}`))
+		});
+	})
 });
 
 
