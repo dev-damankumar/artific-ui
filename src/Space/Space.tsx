@@ -36,7 +36,7 @@ export const Space: React.FC<IColProps & IDiv> = (
 	const mainStyle = {gap: gapStyle, flexDirection: directionStyle};
 	const alignClasses = `space-align-${align}`
 	return (
-		<div {...rest} style={{...rest.style, ...mainStyle}} className={`${getClassNames(styles, alignClasses, 'space', wrap ? 'space-wrap' : '')}`}>
+		<div {...rest} style={{...rest.style, ...mainStyle}} className={`${getClassNames(styles, alignClasses, 'space', wrap ? 'space-wrap' : '', `space-direction-${directionStyle}`)}`}>
 			{children}
 		</div>
 	);

@@ -7,6 +7,10 @@
 	gap: var(--gap);
 }
 
+.space-direction-column > * {
+	width: 100%;
+}
+
 .space-wrap {
 	flex-wrap: wrap;
 }
