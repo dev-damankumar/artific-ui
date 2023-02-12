@@ -1,12 +1,17 @@
-import {Meta, Source} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
+import Code from "../docs/src/components/Code";
+import TitleBar from "../docs/src/components/TitleBar";
 
 <Meta title="Get Started"/>
 
-<h1>Artific UI</h1>
+
+<div className="main-blogs">
+	{props.noMainHeading ? <TitleBar title="Artific UI - Overview"/> : <h2>Artific UI - Overview</h2>}
+</div>
 
 Artific UI is a library of React UI components that provides you the pre-designed and customizable components to use.
 
-<h1>Introduction</h1>
+<h2>Introduction</h2>
 
 Artific UI is an open-source React component library that implements its own design system called artific-design
 
@@ -15,19 +20,18 @@ It includes a comprehensive collection of prebuilt components that are ready for
 Artific UI is modern and well-designed library it provides a customization options that make it easy to implement your own custom design system on top of our components.
 
 
-<h1>Usage</h1>
+<h2>Usage</h2>
 
 Learn the basics of working with Artific UI components.
 
-<Source
-	language='js'
-	dark
-	format={true}
-	code={`import Button from 'artific-ui/Button';
-           export default function HugeComponentShowcase() {
-              return <Button>Click me!</Button>
-            }`}
-/>
+<Code>
+	{`
+import Button from 'artific-ui/Button';
+export default function HugeComponentShowcase() {
+   return <Button>Click me!</Button>
+}
+`}
+</Code>
 
 <h1>Overview</h1>
 

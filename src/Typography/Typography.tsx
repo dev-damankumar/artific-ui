@@ -24,7 +24,7 @@ export const Typography: React.FC<ITypographyProps & IAnyElement> = (
 		classNames, customCss
 	} = getDefaultClasses(classes, componentSelector, className, '', '', variant, '', colorScheme)
 	const asEl = as?.toString()?.trim()?.toLowerCase() || 'p'
-	const element = variant === 'abbr' ? 'abbr' : variant === 'pre' ? 'pre' : (variant === 'highlight' || variant === 'kbd') ? 'span' : asEl;
+	const element = variant === 'abbr' ? 'abbr' : variant === 'pre' ? 'pre' : (variant === 'highlight' || variant === 'kbd') ? 'span' : variant === 'code' ? 'code' : asEl;
 	const variantClasses = variant !== 'text' ? `typography-${variant}` : '';
 	const weightClasses = `${weight !== 'medium' ? `typography-${weight}` : ''}`;
 	const additionalThemeClass = !colorScheme ? theme !== 'default' ? `text-${theme}` : `` : ``;
@@ -37,6 +37,12 @@ export const Typography: React.FC<ITypographyProps & IAnyElement> = (
 	if (fontWeight) {
 		styles['fontWeight'] = fontWeight;
 	}
+	console.log('adg', {
+		style: {...styles},
+		className: `${classNames} ${!colorScheme ? `text-${theme}` : ''} ${getClassNames(classes, additionalThemeClass)} ${getClassNames(classes, 'typography', variantClasses, weightClasses)}`,
+		...rest,
+		children: children
+	})
 	const mainElement = createElement(element, {
 		style: {...styles},
 		className: `${classNames} ${!colorScheme ? `text-${theme}` : ''} ${getClassNames(classes, additionalThemeClass)} ${getClassNames(classes, 'typography', variantClasses, weightClasses)}`,

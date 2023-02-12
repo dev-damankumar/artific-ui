@@ -15,8 +15,8 @@ interface IContainerProps {
 
 export const Container: React.FC<IContainerProps & IDiv> = (
 	{
-		style,
-		className,
+		style = {},
+		className = '',
 		size,
 		fluid,
 		children,
@@ -25,7 +25,7 @@ export const Container: React.FC<IContainerProps & IDiv> = (
 	const sizeClass = fluid ? '' : `container-${size}`
 	return (
 		<div {...rest} style={style}
-			 className={`${className} ${getClassNames(styles, fluid ? 'container-fluid' : 'container', sizeClass)}`}>
+			 className={`${className} ${getClassNames(styles, fluid ? 'container-fluid' : 'container', sizeClass)}`.trim()}>
 			{children}
 		</div>
 	);

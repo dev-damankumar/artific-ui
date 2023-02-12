@@ -11,8 +11,8 @@ interface IRowProps {
 
 export const Row: React.FC<IRowProps & IDiv> = (
 	{
-		style,
-		className,
+		style = {},
+		className = '',
 		children,
 		...rest
 	}) => {

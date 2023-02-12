@@ -65,6 +65,7 @@ const createNewTheme = (themeName: string, config: IConfig, themeProps: IThemePr
 				   --${component}-color-hover: ${themeProps.backgroundColorHover};
 				   --${component}-text-hover: ${themeProps.textHover || themeProps.text};
 				   --${component}-hover-box-shadow : ${themeProps.boxShadow};
+				   ${themeProps.isBackgroundImage ? `--${component}-gradient-hover:hsla(0, 0%, 0%, 0.15);` : ''}
     `
 
 	})
@@ -111,9 +112,10 @@ const createTheme = (theme: object, config: IConfig = {
 			--${t}-color: ${backgroundColor};
 			--${t}-text: ${text};
 			--${t}-hover: ${isBackgroundImage ? background : backgroundHover};
-			--${t}-color-hover: ${backgroundColorHover};
+			--${t}-color-hover: ${isBackgroundImage ? background : backgroundColorHover};
 			--${t}-text-hover: ${textHover || text};
 			--${t}-hover-box-shadow : ${boxShadow};
+			${isBackgroundImage ? `--${t}-gradient-hover:hsla(0, 0%, 0%, 0.15);` : ''}
 		}
 		${newThemeStyles}
 	`

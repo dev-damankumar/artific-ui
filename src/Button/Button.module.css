@@ -13,7 +13,8 @@
 	--btn-text: inherit;
 	--btn-color-hover: var(--primary-color);
 	--btn-text-hover: var(--primary-text-hover);
-	--btn-hover-box-shadow: var(--primary-hover-box-shadow)
+	--btn-hover-box-shadow: var(--primary-hover-box-shadow);
+	--gradient-hover: transparent;
 }
 
 .btn {
@@ -131,11 +132,11 @@
 	--btn-border-radius: 0px;
 }
 
-.btn.btn-gradient-hover:hover:not(.btn-outline) .btn-ripple {
-	background: hsla(0, 0%, 0%, 0.15);
+.btn:hover:not(.btn-outline) .btn-ripple {
+	background: var(--gradient-hover);
 }
 
-.btn.btn-gradient-hover:hover {
+.btn:hover {
 	z-index: 1;
 }
 
@@ -147,6 +148,7 @@
 	--btn-background-color: var(--primary-color);
 	--btn-text: var(--primary-text);
 	--btn-color-hover: var(--primary-hover);
+	--gradient-hover: var(--primary-gradient-hover);
 }
 
 .btn-secondary {
@@ -154,6 +156,7 @@
 	--btn-background-color: var(--secondary-color);
 	--btn-text: var(--secondary-text);
 	--btn-color-hover: var(--secondary-color-hover);
+	--gradient-hover: var(--secondary-gradient-hover);
 }
 
 .btn-light {
@@ -161,6 +164,7 @@
 	--btn-background-color: var(--light-color);
 	--btn-text: var(--light-text);
 	--btn-color-hover: var(--light-color-hover);
+	--gradient-hover: var(--light-gradient-hover);
 }
 
 .btn-dark {
@@ -168,6 +172,7 @@
 	--btn-background-color: var(--dark-color);
 	--btn-text: var(--dark-text);
 	--btn-color-hover: var(--dark-color-hover);
+	--gradient-hover: var(--dark-gradient-hover);
 }
 
 .btn-primary:not(.btn-disabled,[disabled],.btn-text):focus {

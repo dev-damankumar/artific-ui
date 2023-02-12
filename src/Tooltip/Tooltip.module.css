@@ -63,7 +63,7 @@
 	content: "";
 	border-width: 7px;
 	border-style: solid;
-	border-color: transparent transparent var(--tooltip-background) transparent;
+	border-color: transparent transparent var(--tooltip-background-color) transparent;
 	position: absolute;
 	top: calc(var(--tooltip-bottom) + 16px);
 	left: var(--tooltip-left);
@@ -125,144 +125,144 @@
 
 
 /*=====Placements=====*/
-.tooltip-bottom-start {
+.tooltip-arrow.tooltip-bottom-start {
 	--tooltip-left: 0;
 	--tooltip-transform-x: 0
 }
 
-.tooltip-bottom-start:before {
+.tooltip-arrow.tooltip-bottom-start:before {
 	--tooltip-left: 20px;
 }
 
-.tooltip-bottom-end {
+.tooltip-arrow.tooltip-bottom-end {
 	--tooltip-left: 100%;
 	--tooltip-transform-x: -100%
 }
 
-.tooltip-bottom-end:before {
+.tooltip-arrow.tooltip-bottom-end:before {
 	--tooltip-left: calc(100% - 20px);
 }
 
-.tooltip-left {
+.tooltip-arrow.tooltip-left {
 	right: calc(100% + 10px);
 	left: unset;
 	top: 50%;
 	transform: translateY(-50%);
 }
 
-.tooltip-left:before {
-	border-color: transparent transparent transparent var(--tooltip-background);
+.tooltip-arrow.tooltip-left:before {
+	border-color: transparent transparent transparent var(--tooltip-background-color);
 	top: 50%;
 	transform: translateY(-50%);
 	--tooltip-left: 100%
 }
 
-.tooltip-left-start {
+.tooltip-arrow.tooltip-left-start {
 	right: calc(100% + 10px);
 	left: unset;
 	top: 0%;
 	transform: translateY(0%);
 }
 
-.tooltip-left-start:before {
-	border-color: transparent transparent transparent var(--tooltip-background);
+.tooltip-arrow.tooltip-left-start:before {
+	border-color: transparent transparent transparent var(--tooltip-background-color);
 	top: 50%;
 	transform: translateY(-50%);
 	--tooltip-left: 100%
 }
 
-.tooltip-left-end {
+.tooltip-arrow.tooltip-left-end {
 	right: calc(100% + 10px);
 	left: unset;
 	top: 100%;
 	transform: translateY(-100%);
 }
 
-.tooltip-left-end:before {
-	border-color: transparent transparent transparent var(--tooltip-background);
+.tooltip-arrow.tooltip-left-end:before {
+	border-color: transparent transparent transparent var(--tooltip-background-color);
 	top: 50%;
 	transform: translateY(-50%);
 	--tooltip-left: 100%
 }
 
-.tooltip-right {
+.tooltip-arrow.tooltip-right {
 	left: calc(100% + 10px);
 	top: 50%;
 	transform: translateY(-50%);
 }
 
-.tooltip-right:before {
-	border-color: transparent var(--tooltip-background) transparent transparent;
+.tooltip-arrow.tooltip-right:before {
+	border-color: transparent var(--tooltip-background-color) transparent transparent;
 	top: 50%;
 	transform: translateY(-50%);
 	left: -13px;
 }
 
-.tooltip-right-start {
+.tooltip-arrow.tooltip-right-start {
 	left: calc(100% + 10px);
 	top: 0%;
 	transform: translateY(0%);
 }
 
-.tooltip-right-start:before {
-	border-color: transparent var(--tooltip-background) transparent transparent;
+.tooltip-arrow.tooltip-right-start:before {
+	border-color: transparent var(--tooltip-background-color) transparent transparent;
 	top: 50%;
 	transform: translateY(-50%);
 	left: -13px;
 }
 
-.tooltip-right-end {
+.tooltip-arrow.tooltip-right-end {
 	left: calc(100% + 10px);
 	top: 100%;
 	transform: translateY(-100%);
 }
 
-.tooltip-right-end:before {
-	border-color: transparent var(--tooltip-background) transparent transparent;
+.tooltip-arrow.tooltip-right-end:before {
+	border-color: transparent var(--tooltip-background-color) transparent transparent;
 	top: 50%;
 	transform: translateY(-50%);
 	left: -12px;
 }
 
-.tooltip-top {
+.tooltip-arrow.tooltip-top {
 	bottom: calc(100% + 10px);
 	top: unset;
 }
 
-.tooltip-top:before {
+.tooltip-arrow.tooltip-top:before {
 	bottom: -13px;
 	top: unset;
-	border-color: var(--tooltip-background) transparent transparent transparent;
+	border-color: var(--tooltip-background-color) transparent transparent transparent;
 }
 
-.tooltip-top-start {
+.tooltip-arrow.tooltip-top-start {
 	bottom: calc(100% + 10px);
 	top: unset;
 	--tooltip-left: 0;
 	--tooltip-transform-x: 0;
 }
 
-.tooltip-top-start:before {
+.tooltip-arrow.tooltip-top-start:before {
 	--tooltip-left: 20px;
 	--tooltip-transform-x: 0;
 	bottom: -13px;
 	top: unset;
-	border-color: var(--tooltip-background) transparent transparent transparent;
+	border-color: var(--tooltip-background-color) transparent transparent transparent;
 }
 
-.tooltip-top-end {
+.tooltip-arrow.tooltip-top-end {
 	--tooltip-left: 100%;
 	--tooltip-transform-x: -100%;
 	bottom: calc(100% + 10px);
 	top: unset;
 }
 
-.tooltip-top-end:before {
+.tooltip-arrow.tooltip-top-end:before {
 	--tooltip-left: calc(100% - 20px);
 	--tooltip-transform-x: 0;
 	bottom: -13px;
 	top: unset;
-	border-color: var(--tooltip-background) transparent transparent transparent;
+	border-color: var(--tooltip-background-color) transparent transparent transparent;
 }
 
 /*=====Placements End=====*/
