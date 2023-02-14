@@ -1,0 +1,1387 @@
+import {TabContent, TabItem, Tabs} from '../../../src/index';
+
+
+# Tabs
+
+Tabs make it easy to explore and switch between different views.
+
+export const defaultTemplate=(args) => {
+	return <Tabs>
+		<TabItem data-testid="item1" active target="home">Home</TabItem>
+		<TabItem data-testid="item2" target="about">About</TabItem>
+		<TabContent data-testid="content1" id="home">
+			<h3>HOME</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+				labore
+				et dolore magna aliqua.</p>
+		</TabContent>
+		<TabContent data-testid="content2" id="about">
+			<h3>About</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+				labore
+				et dolore magna aliqua.</p>
+		</TabContent>
+	</Tabs>
+};
+
+<div>
+	<div name="Default">{defaultTemplate.bind({})}</div>
+</div>
+
+## API
+
+```jsx
+import { Tabs } from 'artific-ui/Tabs';
+```
+
+
+
+## Tab Types
+
+Tabs have two types `default` and `float`
+
+<div>
+	<div name="Tab Types">
+		<Tabs>
+			<TabItem target="home">Home</TabItem>
+			<TabItem target="about">About</TabItem>
+			<TabItem target="contact">Contact</TabItem>
+			<TabContent id="home">
+				<h3>HOME</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+			<TabContent id="about">
+				<h3>About</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+			<TabContent id="contact">
+				<h3>Contact</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+		</Tabs>
+		<br/>
+		<br/>
+		<Tabs type="float">
+			<TabItem target="home">Home</TabItem>
+			<TabItem target="about">About</TabItem>
+			<TabItem target="contact">Contact</TabItem>
+			<TabContent id="home">
+				<h3>HOME</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+			<TabContent id="about">
+				<h3>About</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+			<TabContent id="contact">
+				<h3>Contact</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+		</Tabs>
+	</div>
+</div>
+
+## Tab Themes
+
+If you want to use a different theme for `Tabs` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
+
+You can also use `colorScheme` prop to define a custom theme.
+
+<div>
+	<div name="Tab Themes">
+		<Tabs>
+			<TabItem target="home">Home</TabItem>
+			<TabItem target="about">About</TabItem>
+			<TabItem target="contact">Contact</TabItem>
+			<TabContent id="home">
+				<h3>HOME</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+			<TabContent id="about">
+				<h3>About</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+			<TabContent id="contact">
+				<h3>Contact</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+		</Tabs>
+		<br/>
+		<br/>
+		<Tabs theme="secondary">
+			<TabItem target="home">Home</TabItem>
+			<TabItem target="about">About</TabItem>
+			<TabItem target="contact">Contact</TabItem>
+			<TabContent id="home">
+				<h3>HOME</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+			<TabContent id="about">
+				<h3>About</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+			<TabContent id="contact">
+				<h3>Contact</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+		</Tabs>
+		<br/>
+		<br/>
+		<Tabs theme="dark">
+			<TabItem target="home">Home</TabItem>
+			<TabItem target="about">About</TabItem>
+			<TabItem target="contact">Contact</TabItem>
+			<TabContent id="home">
+				<h3>HOME</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+			<TabContent id="about">
+				<h3>About</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+			<TabContent id="contact">
+				<h3>Contact</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+		</Tabs>
+		<br/>
+		<br/>
+		<Tabs theme="light">
+			<TabItem target="home">Home</TabItem>
+			<TabItem target="about">About</TabItem>
+			<TabItem target="contact">Contact</TabItem>
+			<TabContent id="home">
+				<h3>HOME</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+			<TabContent id="about">
+				<h3>About</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+			<TabContent id="contact">
+				<h3>Contact</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+		</Tabs>
+		<br/>
+		<br/>
+		<Tabs colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		}}>
+			<TabItem target="home">Home</TabItem>
+			<TabItem target="about">About</TabItem>
+			<TabItem target="contact">Contact</TabItem>
+			<TabContent id="home">
+				<h3>HOME</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+			<TabContent id="about">
+				<h3>About</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+			<TabContent id="contact">
+				<h3>Contact</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+					labore
+					et dolore magna aliqua.</p>
+			</TabContent>
+		</Tabs>
+		<br/>
+		<br/>
+	</div>
+</div>
+
+
+## Tab Layout
+
+Tabs Has basic four layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
+
+`Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
+
+<div>
+	<div name="Tab Layout">
+		<div style={{display: 'flex'}}>
+			<div style={{width: '50%'}}>
+				<h3>Default Type</h3>
+				<Tabs layout="default">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs layout="rounded">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs layout="no-radius">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs layout="pill">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+			</div>
+			<div style={{width: '50%'}}>
+				<h3>Float Type</h3>
+				<Tabs type="float" layout="default">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs type="float" layout="rounded">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs type="float" layout="no-radius">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs type="float" layout="pill">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+## Tab Variants
+
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`separate`|`line`|`floating-line`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
+
+<div>
+	<div name="Tab Variants">
+		<div style={{display: 'flex'}}>
+			<div style={{width: '50%'}}>
+				<h3>Default Type</h3>
+				<Tabs variant="default">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs variant="separate">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs variant="line">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs variant="floating-line">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+			</div>
+			<div style={{width: '50%'}}>
+				<h3>Float Type</h3>
+				<Tabs type="float" variant="default">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs type="float" variant="separate">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs type="float" variant="line">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs type="float" variant="floating-line">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+			</div>
+		</div>
+	</div>
+</div>
+
+## Floating Line Variant Directions
+
+floating-line variant has four direction to position its line.
+
+<div>
+	<div name="Floating Line Variant Directions">
+		<div style={{display: 'flex'}}>
+			<div style={{width: '50%'}}>
+				<h3>Default Type</h3>
+				<Tabs variant="floating-line">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs lineDirection="left" variant="floating-line">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs lineDirection="right" variant="floating-line">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs lineDirection="top" variant="floating-line">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+			</div>
+			<div style={{width: '50%'}}>
+				<h3>Float Type</h3>
+				<Tabs type="float" variant="floating-line">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs lineDirection="left" type="float" variant="floating-line">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs lineDirection="right" type="float" variant="floating-line">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs lineDirection="top" type="float" variant="floating-line">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+			</div>
+		</div>
+	</div>
+</div>
+
+## Tab Sizes
+
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
+
+<div>
+	<div name="Tab Sizes">
+		<div style={{display: 'flex'}}>
+			<div style={{width: '50%'}}>
+				<h3>Default Type</h3>
+				<Tabs size="xs">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs size="sm">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs size="md">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs size="lg">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs size="xl">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+			</div>
+			<div style={{width: '50%'}}>
+				<h3>Float Type</h3>
+				<Tabs type="float" size="xs">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs type="float" size="sm">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs type="float" size="md">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs type="float" size="lg">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs type="float" size="xl">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+			</div>
+		</div>
+	</div>
+</div>
+
+## Tab Position
+
+Use `position` prop on `Tabs` to set the position for tabs.
+
+possible values are (`left`|`right`|`top`|`bottom`)
+
+<div>
+	<div name="Tab Position">
+		<div style={{display: 'flex'}}>
+			<div style={{width: '50%'}}>
+				<h3>Default Type</h3>
+				<Tabs position="top">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs position="left">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs position="right">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs position="bottom">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+			</div>
+			<div style={{width: '50%'}}>
+				<h3>Float Type</h3>
+				<Tabs type="float" position="top">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs type="float" position="left">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs type="float" position="right">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+				<Tabs type="float" position="bottom">
+					<TabItem target="home">Home</TabItem>
+					<TabItem target="about">About</TabItem>
+					<TabItem target="contact">Contact</TabItem>
+					<TabContent id="home">
+						<h3>HOME</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="about">
+						<h3>About</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+					<TabContent id="contact">
+						<h3>Contact</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore
+							et dolore magna aliqua.</p>
+					</TabContent>
+				</Tabs>
+				<br/>
+				<br/>
+			</div>
+		</div>
+	</div>
+</div>

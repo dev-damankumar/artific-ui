@@ -1,0 +1,204 @@
+import {Button, useLoader} from '../../../src/index';
+
+export const Template=(args) => {
+	const message=useLoader();
+	return <>
+		<Button onClick={() => {
+			message.show('Hi ! This is a message')
+		}}>
+			Submit
+		</Button>
+	</>
+};
+
+# Loaders
+
+useLoader is used to show that a process is happening on the background and tells user to wait.
+
+<div>
+	<div name="Loaders">{Template.bind({})}</div>
+</div>
+
+## API
+
+```jsx
+import { useLoader } from 'artific-ui';
+```
+
+<b>useLoader()</b> instance has following methods to use:
+
+`config()` to set the config and supported props to the loader.
+
+`show()` method is used to show the loader.
+
+`hide()`  method is used to hide the loader.
+
+`destroy()`  method is used to remove the loader from the DOM.
+
+
+export const DissmissableTemplate=(args) => {
+	const message=useLoader();
+	message.config({dismissible: true})
+	return <div>
+		<Button onClick={() => {
+			message.show('Hi ! This is a message')
+		}}>
+			Loader
+		</Button>
+		<br/>
+	</div>
+};
+
+# Dismissible
+
+Dismissible Loader can be used to close the loader when user clicks on it.
+
+provide `{dismissible: true}` to the `config` method when instantiating loader.
+
+<div>
+	<div name="Dismissible">{DissmissableTemplate.bind({})}</div>
+</div>
+
+export const ThemeTemplate=(args) => {
+	const message=useLoader();
+	const message1=useLoader();
+	message.config({dismissible: true, theme: 'dark'});
+	message1.config({dismissible: true, theme: 'light'});
+	return <div>
+		<Button onClick={() => {
+			message.show('Hi ! This is a message')
+		}}>
+			Loader Dark
+		</Button>
+		<Button onClick={() => {
+			message1.show('Hi ! This is a message')
+		}}>
+			Loader Light
+		</Button>
+		<br/>
+	</div>
+};
+
+# Loader Themes
+
+If you want to use a different theme for `Loader` use the `theme` prop in `config` method to set the theme
+
+Note: Loader only have basic twi themes ie. (`dark`|`light`). you can use either of them.
+
+<div>
+	<div name="Loader Themes">{ThemeTemplate.bind({})}</div>
+</div>
+
+
+export const VariantsTemplate=(args) => {
+	const message=useLoader()
+	const message1=useLoader()
+	const message2=useLoader()
+	const message3=useLoader()
+	const message4=useLoader()
+	const message5=useLoader()
+	message.config({dismissible: true})
+	message1.config({dismissible: true, variant: 'blur'})
+	message2.config({dismissible: true, variant: 'solid'})
+	message3.config({dismissible: true, theme: 'light'})
+	message4.config({dismissible: true, theme: 'light', variant: 'blur'})
+	message5.config({dismissible: true, theme: 'light', variant: 'solid'})
+	return <div>
+		<Button onClick={() => {
+			message.show('Hi ! This is a message')
+		}}>
+			Loader Default
+		</Button>
+		<Button onClick={() => {
+			message1.show('Hi ! This is a message')
+		}}>
+			Default Loader Blur
+		</Button>
+		<Button onClick={() => {
+			message2.show('Hi ! This is a message')
+		}}>
+			Default Loader Solid
+		</Button>
+		<Button onClick={() => {
+			message3.show('Hi ! This is a message')
+		}}>
+			Light Loader Default
+		</Button>
+		<Button onClick={() => {
+			message4.show('Hi ! This is a message')
+		}}>
+			Light Loader Blur
+		</Button>
+		<Button onClick={() => {
+			message5.show('Hi ! This is a message')
+		}}>
+			Light Loader Solid
+		</Button>
+	</div>
+};
+
+# Variants
+
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`blur`|`solid`). you can mix them with different supported `theme`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
+
+<div>
+	<div name="Variants">{VariantsTemplate.bind({})}</div>
+</div>
+
+export const SizesTemplate=(args) => {
+	const message=useLoader()
+	const message1=useLoader()
+	const message2=useLoader()
+	const message3=useLoader()
+	const message4=useLoader()
+	const message5=useLoader()
+	message.config({dismissible: true, size: 'xl'})
+	message1.config({dismissible: true, size: 'lg'})
+	message2.config({dismissible: true, size: 'md'})
+	message3.config({dismissible: true, size: 'sm'})
+	message4.config({dismissible: true, size: 'xs'})
+	return <div>
+		<Button onClick={() => {
+			message.show('Hi ! This is a message')
+		}}>
+			Loader XL
+		</Button>
+		<Button onClick={() => {
+			message1.show('Hi ! This is a message')
+		}}>
+			Loader LG
+		</Button>
+		<Button onClick={() => {
+			message2.show('Hi ! This is a message')
+		}}>
+			Default
+		</Button>
+		<Button onClick={() => {
+			message3.show('Hi ! This is a message')
+		}}>
+			Loader SM
+		</Button>
+		<Button onClick={() => {
+			message4.show('Hi ! This is a message')
+		}}>
+			Loader XS
+		</Button>
+	</div>
+};
+
+# Sizes
+
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
+
+<div>
+	<div name="Sizes">{SizesTemplate.bind({})}</div>
+</div>

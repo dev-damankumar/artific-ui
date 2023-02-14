@@ -23,5 +23,5 @@ Install Artific UI with npm
 
 ## Support
 
-For support, email dev.damankumar@gmail.com
+For support, email [dev.damankumar@gmail.com](mailto:dev.damankumar@gmail.com)
 

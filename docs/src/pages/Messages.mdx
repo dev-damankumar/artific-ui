@@ -1,0 +1,335 @@
+import {Button, useMessage} from '../../../src/index';
+
+
+export const Template=(args) => {
+	const message=useMessage()
+	message.config({
+		dismissible: true
+	})
+	return <>
+		<Button onClick={() => {
+			message.success('Hi ! This is a message').hold()
+		}}>
+			Success
+		</Button>
+		<Button onClick={() => {
+			message.info('Hi ! This is a message').hold()
+		}}>
+			Info
+		</Button>
+		<Button onClick={() => {
+			message.error('Hi ! This is a message').hold()
+		}}>
+			Danger
+		</Button>
+		<Button onClick={() => {
+			message.warning('Hi ! This is a message').hold()
+		}}>
+			Warning
+		</Button>
+	</>
+};
+
+# Messages
+
+The useMessage is like an message box that is only shown for a couple of seconds when something happens (i.e. when the user clicks on a button, submits a form, etc.).
+
+<div>
+	<div name="Default">{Template.bind({})}</div>
+</div>
+
+## API
+
+```jsx
+import { Message } from 'artific-ui';
+```
+
+
+<b>useMessage()</b> instance has following methods to use:
+
+`config()` to set the config and supported props to the loader.
+
+`(success|info|error|warning)()` method is used to show the message with their respective color schemes.
+
+`alert()`  method is used to the message with the predefine library themes. ie. (`primary`,`secondary`,`dark`,`light`)
+
+`hold()` chain the hold method to your message to make message no disappear after the specific time.
+
+export const SizeTemplate=(args) => {
+	const sizes=['xl', 'lg', 'md', 'sm', 'xs']
+	const btns=sizes.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			size: v,
+			dismissible: true,
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message.success('Hi ! This is a message').hold()
+			}}>
+				Message `{v}`
+			</Button>
+			<br/>
+		</div>
+	})
+	return <>
+		{btns}
+	</>
+};
+
+# Message Sizes
+
+you can use a `size` prop to define the size of your components
+
+Set `size` prop in config with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
+
+<div>
+	<div name="Message Sizes">{SizeTemplate.bind({})}</div>
+</div>
+
+
+export const LayoutsTemplate=(args) => {
+	const layouts=['default', 'rounded', 'no-radius', 'pill']
+	const btns=layouts.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			layout: v,
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message.success('Hi ! This is a message').hold()
+			}}>
+				Layout `{v}`
+			</Button>
+			<br/>
+		</div>
+	})
+	return <>
+		{btns}
+	</>
+};
+
+# Message Layouts
+
+Message Has basic four layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
+
+`Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
+
+<div>
+	<div name="Message Layouts">{LayoutsTemplate.bind({})}</div>
+</div>
+
+
+export const ThemesTemplate=(args) => {
+	const themes=['primary', 'secondary', 'dark', 'light'];
+	const btns=themes.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			theme: v,
+			dismissible: true,
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message.alert('Hi ! This is a message').hold()
+			}}>
+				Theme `{v}`
+			</Button>
+			<br/>
+		</div>
+	})
+	const message=useMessage()
+	message.config({
+		colorScheme: {
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		},
+		dismissible: true,
+	})
+	return <>
+		{btns}
+		<Button onClick={() => {
+			message.alert('Hi ! This is a message').hold()
+		}}>
+			Custom Theme
+		</Button>
+	</>
+};
+
+# Message Themes
+
+If you want to use a different theme for `Alert` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
+
+You can also use `colorScheme` prop to define a custom theme.
+
+
+<div>
+	<div name="Message Themes">{ThemesTemplate.bind({})}</div>
+</div>
+
+
+export const VariantsTemplate=(args) => {
+	const themes=['default', 'outline', 'note']
+	const btns=themes.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			variant: v,
+			dismissible: true,
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message.success('Hi ! This is a message').hold()
+			}}>
+				Variant `{v}`
+			</Button>
+			<br/>
+		</div>
+	})
+	return <>
+		{btns}
+	</>
+};
+
+# Message Variants
+
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`note`|`outline`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
+
+<div>
+	<div name="Message Variants">{VariantsTemplate.bind({})}</div>
+</div>
+
+export const DarkModeTemplate=(args) => {
+	const themes=['success', 'info', 'error', 'warning']
+	const btns=themes.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			mode: 'dark'
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message[v]('Hi ! This is a message')
+			}}>
+				Dark Mode for `{v}`
+			</Button>
+			<br/>
+		</div>
+	})
+	return <>
+		{btns}
+	</>
+};
+
+# Dark Mode
+
+To set the dark mode for your message use `mode` prop and its value as `dark`
+
+<div>
+	<div name="Dark Mode">{DarkModeTemplate.bind({})}</div>
+</div>
+
+export const DurationTemplate=(args) => {
+	const themes=['success', 'info', 'error', 'warning']
+	const btns=themes.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			duration: i + 3,
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message[v]('Hi ! This is a message')
+			}}>
+				Duration {i + 3}s
+			</Button>
+			<br/>
+		</div>
+	})
+	return <>
+		{btns}
+	</>
+};
+
+# Message Duration
+
+`duration` prop is used to set after how much time message should disappare. value must be number referring to number of seconds.
+
+`Note:` if you are chaining `.hold()` to the instance message will not disappear as it is the intended behaviour.
+
+<div>
+	<div name="Message Duration">{DurationTemplate.bind({})}</div>
+</div>
+
+
+export const NotificationTemplate=(args) => {
+	const themes=['success', 'info', 'error', 'warning', 'alert']
+	const btns=themes.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			type: 'notification',
+			dismissible: true,
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message[v]('Hi User! This is a notification message', 'Message From Artific').hold()
+			}}>
+				Notification {v.toUpperCase()}
+			</Button>
+			<br/>
+		</div>
+	})
+	return <>
+		{btns}
+	</>
+};
+
+# Notification Alert
+
+Message can be used as different element called notification which has header and body acting as notification.
+
+set `type` prop to `"notification"` to make message as notification.
+
+<div>
+	<div name="Notification Alert">{NotificationTemplate.bind({})}</div>
+</div>
+
+
+export const PositionTemplate=(args) => {
+	const themes=['top', 'top-right', 'bottom-left', 'bottom', 'bottom-right', 'top-left']
+	const btns=themes.map((v, i) => {
+		const message=useMessage()
+		message.config({
+			dismissible: true,
+			position: v
+		})
+		return <div key={i}>
+			<Button onClick={() => {
+				message.success('Hi ! This is a message').hold()
+			}}>
+				Message {v}
+			</Button>
+			<br/>
+		</div>
+	})
+	return <>
+		{btns}
+	</>
+};
+
+# Message Positions
+
+`position` prop is used to define the position of message to be appear on the screen.
+
+possible values are (`top`| `top-right`| `bottom-left`| `bottom`| `bottom-right`| `top-left`)
+
+<div>
+	<div name="Message Positions">{PositionTemplate.bind({})}</div>
+</div>

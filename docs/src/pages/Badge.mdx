@@ -1,0 +1,123 @@
+import {Badge, BadgeGroup} from '../../../src/index';
+
+
+export const Template=(args) => {
+	return <>
+		<Badge title="DK" {...args}/>
+		<Badge title="A" {...args}/>
+		<Badge title="M" {...args}/>
+		<Badge title="FR" {...args}/>
+	</>
+};
+
+# Badges
+
+Badges are used to display some info about the specific element like: count etc.
+
+<div>
+	<div name="Default">{Template.bind({})}</div>
+</div>
+
+## API
+
+```jsx
+import { Badge } from 'artific-ui/Badge';
+```
+
+
+
+## Badge Group
+
+If you want to group the badges together use `BadgeGruop`. `BadgeGroup` has same props as `Badge` which act as global `props` for its children
+
+<div>
+	<div name="Badge Group">
+		<BadgeGroup>
+			<Badge theme="primary" title="REACT"/>
+			<Badge theme="secondary" title="NEXTJS"/>
+			<Badge colorScheme={{
+				background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+				backgroundColor: '#e736f4',
+				color: 'white',
+			}} title="JAVASCRIPT"/>
+		</BadgeGroup>
+	</div>
+</div>
+
+
+## Badges Theme
+
+If you want to use a different theme for `Badge` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
+
+You can also use `colorScheme` prop to define a custom theme.
+
+<div>
+	<div name="Badges Theme">
+		<Badge theme="primary" title="DK"/>
+		<Badge theme="secondary" title="DK"/>
+		<Badge theme="dark" title="DK"/>
+		<Badge theme="light" title="DK"/>
+		<Badge colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		}} title="DK"/>
+	</div>
+</div>
+
+## Badge Size
+
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
+
+<div>
+	<div name="Badge Size">
+		<Badge size="xl" title="XL"/>
+		<Badge size="lg" title="LG"/>
+		<Badge size="md" title="MD"/>
+		<Badge size="sm" title="SM"/>
+		<Badge size="xs" title="XS"/>
+	</div>
+</div>
+
+## Badge Layouts
+
+Badge Has basic five layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`,`circular`)
+
+`Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
+
+<div>
+	<div name="Badge Layouts">
+		<h5>Badge Layouts</h5>
+		<Badge title="DK" layout="default"/>
+		<Badge title="DK" layout="rounded"/>
+		<Badge title="DK" layout="no-radius"/>
+		<Badge title="DK" layout="pill"/>
+		<Badge title="DK" layout="circular"/>
+	</div>
+</div>
+
+
+## Badge Variants
+
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`dot`|`outline`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
+
+<div>
+	<div name="Badge Variants">
+		<h5>Badge Variants</h5>
+		<Badge title="DK" variant="default"/>
+		<Badge title="DK" variant="outline"/>
+		<Badge variant="dot"/>
+	</div>
+</div>

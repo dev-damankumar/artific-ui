@@ -11,7 +11,7 @@
 	--border-color: #eeeeee;
 	--accent-bg: #f4f4f4;
 	--hover-box-shadow: hsla(240, 2%, 90%, 1);
-
+	--gap: 15px;
 	--z-index-dropdown: 1000;
 	--z-index-sticky: 1020;
 	--z-index-fixed: 1030;

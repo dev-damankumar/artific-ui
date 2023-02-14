@@ -4,6 +4,7 @@ import docs from "../docs.jsx"
 import {ThemeProvider} from "artific-ui";
 import theme from "../theme.js";
 import Logo from "./Logo.jsx";
+import UserSettings from "./UserSettings.jsx";
 
 const Sidebar=({openLeftSidebar, closeSidebar}) => {
 	const toggleMenus=(e, id) => {
@@ -13,7 +14,6 @@ const Sidebar=({openLeftSidebar, closeSidebar}) => {
 			menu.classList.toggle('open-menu')
 			if (menu.classList.contains('open-menu')) {
 				menu.style.height=`${height}px`
-
 			} else {
 				menu.style.height=`0`
 			}
@@ -36,19 +36,49 @@ const Sidebar=({openLeftSidebar, closeSidebar}) => {
 							</svg>
 							Getting Started
 						</NavLink>
-						<NavLink className="sidebar-link " to="/installation">
-							<svg width="24px" height="24px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
-								<path d="M13.992 17h3m3 0h-3m0 0v-3m0 3v3" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-								<path d="M4 9.4V4.6a.6.6 0 01.6-.6h4.8a.6.6 0 01.6.6v4.8a.6.6 0 01-.6.6H4.6a.6.6 0 01-.6-.6zM4 19.4v-4.8a.6.6 0 01.6-.6h4.8a.6.6 0 01.6.6v4.8a.6.6 0 01-.6.6H4.6a.6.6 0 01-.6-.6zM14 9.4V4.6a.6.6 0 01.6-.6h4.8a.6.6 0 01.6.6v4.8a.6.6 0 01-.6.6h-4.8a.6.6 0 01-.6-.6z" stroke="#000000" strokeWidth="1.5"></path>
+						<NavLink className={(classData) => {
+							return `${classData.isActive ? 'is-active' : ''} sidebar-link`
+						}} to="/installation">
+							<svg width="30px" height="30px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+								<path d="M6 20h12M12 4v12m0 0l3.5-3.5M12 16l-3.5-3.5" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
 							</svg>
 							Install
 						</NavLink>
-						<NavLink className="sidebar-link " href="#">
-							<svg width="24px" height="24px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
-								<path d="M13.992 17h3m3 0h-3m0 0v-3m0 3v3" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-								<path d="M4 9.4V4.6a.6.6 0 01.6-.6h4.8a.6.6 0 01.6.6v4.8a.6.6 0 01-.6.6H4.6a.6.6 0 01-.6-.6zM4 19.4v-4.8a.6.6 0 01.6-.6h4.8a.6.6 0 01.6.6v4.8a.6.6 0 01-.6.6H4.6a.6.6 0 01-.6-.6zM14 9.4V4.6a.6.6 0 01.6-.6h4.8a.6.6 0 01.6.6v4.8a.6.6 0 01-.6.6h-4.8a.6.6 0 01-.6-.6z" stroke="#000000" strokeWidth="1.5"></path>
+						<NavLink className={(classData) => {
+							return `${classData.isActive ? 'is-active' : ''} sidebar-link`
+						}} to="/layouts">
+							<svg width="30px" height="30px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+								<path d="M3.6 3h16.8a.6.6 0 01.6.6v16.8a.6.6 0 01-.6.6H3.6a.6.6 0 01-.6-.6V3.6a.6.6 0 01.6-.6zM9.75 9.75V21M3 9.75h18" stroke="#000000" strokeWidth="1.5"></path>
 							</svg>
-							Layout
+							Layouts
+						</NavLink>
+						<NavLink className={(classData) => {
+							return `${classData.isActive ? 'is-active' : ''} sidebar-link`
+						}} to="/variants">
+							<svg width="30px" height="30px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+								<path d="M21 7.353v9.294a.6.6 0 01-.309.525l-8.4 4.666a.6.6 0 01-.582 0l-8.4-4.666A.6.6 0 013 16.647V7.353a.6.6 0 01.309-.524l8.4-4.667a.6.6 0 01.582 0l8.4 4.667a.6.6 0 01.309.524z" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+								<path d="M3.528 7.294l8.18 4.544a.6.6 0 00.583 0l8.209-4.56M12 21v-9" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+								<path d="M11.691 11.829l-7.8-4.334A.6.6 0 003 8.02v8.627a.6.6 0 00.309.525l7.8 4.333A.6.6 0 0012 20.98v-8.627a.6.6 0 00-.309-.524z" fill="#000000" stroke="#000000" strokeWidth="1.5" strokeLinejoin="round"></path>
+							</svg>
+							Variants
+						</NavLink>
+
+						<NavLink className={(classData) => {
+							return `${classData.isActive ? 'is-active' : ''} sidebar-link`
+						}} to="/themes">
+							<svg width="30px" height="30px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+								<path d="M13.879 7.697L16 9.817a1 1 0 010 1.415L8.363 18.87a1.001 1.001 0 01-.326.218L5.54 20.114c-1.233.508-2.466-.725-1.958-1.958L4.61 15.66a.999.999 0 01.218-.327l7.636-7.636a1 1 0 011.415 0zM13.879 3.454L16 5.575m4.243 4.243L18.12 7.697m-2.12-2.122l1.413-1.414a1 1 0 011.414 0l.708.707a1 1 0 010 1.414L18.12 7.697m-2.12-2.122l2.12 2.122" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+							</svg>
+							Themes
+						</NavLink>
+
+						<NavLink className={(classData) => {
+							return `${classData.isActive ? 'is-active' : ''} sidebar-link`
+						}} to="/sizes">
+							<svg width="30px" height="30px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+								<path d="M18 21V11m0 10l-2-2.5m2 2.5l2-2.5M18 11l-2 2m2-2l2 2M9 5v12m0 0H7m2 0h2M15 7V5H3v2" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+							</svg>
+							Sizes
 						</NavLink>
 
 						<a onClick={(e) => {
@@ -97,6 +127,8 @@ const Sidebar=({openLeftSidebar, closeSidebar}) => {
 
 					</div>
 				</div>
+				<UserSettings/>
+
 			</div>
 		</ThemeProvider>
 	);

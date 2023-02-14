@@ -1,0 +1,177 @@
+import {Button, Space} from '../../../src/index';
+
+export const Template=(args) => {
+	<div>
+		<h5>Without <code>Space</code> component</h5>
+		<Button>Button 1</Button>
+		<Button>Button 2</Button>
+		<Button>Button 3</Button>
+		<Button>Button 4</Button>
+		<Button>Button 5</Button>
+		<br/>
+		<br/>
+		<br/>
+		<h5>With <code>Space</code> component</h5>
+		<Space {...args}>
+			<Button>Button 1</Button>
+			<Button>Button 2</Button>
+			<Button>Button 3</Button>
+			<Button>Button 4</Button>
+			<Button>Button 5</Button>
+		</Space>
+		<br/>
+		<br/>
+		<br/>
+		<h5><code>wrap:false</code> component</h5>
+		<Space wrap={false} {...args}>
+			<Button>Button 1</Button>
+			<Button>Button 2</Button>
+			<Button>Button 3</Button>
+			<Button>Button 4</Button>
+			<Button>Button 5</Button>
+			<Button>Button 5</Button>
+		</Space>
+	</div>
+
+};
+
+# Spaces
+
+A Space Helps you to set the spacing of its children in a flexible way. It Avoids components clinging together and set a unified space.
+
+By Default all the items will wrap if content overflows to make it not wrap the items set `wrap` prop to `false`
+<div>
+	<div name="Default">{Template.bind({})}</div>
+</div>
+
+## API
+
+```jsx
+import { Space } from 'artific-ui/Space';
+```
+
+
+
+## Space Gap
+
+A `gap` prop is used to define how much spacing the children should have.
+
+`gap` prop value can be any number donating the px unit to define gap or it can be a tuple [number,number]
+
+donation `horizontal` spacing and `verticle` spacing respectively
+
+
+<div>
+	<div name="Space Gap">
+		<div>
+			<Space gap={30}>
+				<Button>Button 1</Button>
+				<Button>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 4</Button>
+				<Button>Button 5</Button>
+			</Space>
+			<br/>
+			<br/>
+			<Space gap={[30, 0]}>
+				<Button>Button 1</Button>
+				<Button>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 4</Button>
+				<Button>Button 5</Button>
+			</Space>
+			<br/>
+			<br/>
+			<Space gap={[0, 30]}>
+				<Button>Button 1</Button>
+				<Button>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 4</Button>
+				<Button>Button 5</Button>
+				<Button>Button 5</Button>
+			</Space>
+		</div>
+		;
+	</div>
+</div>
+
+
+## Space Direction
+
+A `direction` prop is used to define on which direction the spacing should be applied. by default it applies on `both`
+
+`direction` prop values can be : (`horizontal`,`verticle`,`both`)
+
+<div>
+	<div name="Space Direction">
+		<div>
+			<Space>
+				<Button>Button 1</Button>
+				<Button>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+			</Space>
+			<br/>
+			<br/>
+			<Space direction="horizontal">
+				<Button>Button 1</Button>
+				<Button>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+			</Space>
+			<br/>
+			<br/>
+			<Space direction="vertical">
+				<Button>Button 1</Button>
+				<Button>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+			</Space>
+		</div>
+		;
+	</div>
+</div>
+
+
+
+## Space Align
+
+A `align` prop is used to align items on y-axis. its is same as the `align-item` css property
+
+`align` prop value can be: (`start`|`end`|`baseline`|`center`)
+
+<div>
+	<div name="Space Align">
+		<div>
+			<Space>
+				<Button>Button 1</Button>
+				<Button style={{height: '100px'}}>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 4</Button>
+			</Space>
+			<br/>
+			<br/>
+			<Space align="end">
+				<Button>Button 1</Button>
+				<Button style={{height: '100px'}}>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 4</Button>
+			</Space>
+			<br/>
+			<br/>
+			<Space align="center">
+				<Button>Button 1</Button>
+				<Button style={{height: '100px'}}>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 4</Button>
+			</Space>
+		</div>
+		;
+	</div>
+</div>
+
