@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "artific-ui": "^1.4.4",
+    "artific-ui": "^1.4.43",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
