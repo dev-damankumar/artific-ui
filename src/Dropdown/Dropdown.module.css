@@ -3,7 +3,7 @@
 	--dropdown-border-radius: 5px;
 	--dropdown-padding: 10px;
 	--dropdown-margin: 10px;
-	--dropdown-font-size: 16px;
+	--dropdown-font-size: var(--font-size);
 	--dropdown-min-width: 200px;
 	--dropdown-max-height: 200px;
 	--dropdown-border-width: 2px;

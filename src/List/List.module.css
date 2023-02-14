@@ -3,7 +3,7 @@
 	--list-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 	--list-border-radius: 5px;
 	--list-padding: 10px;
-	--list-font-size: 16px;
+	--list-font-size: var(--font-size);
 	--list-margin: 10px;
 	--list-border-width: 1px;
 	--list-background: var(--main-bg);
@@ -208,15 +208,11 @@
 }
 
 .list-group-row .list-group-item:first-child {
-	border-radius: 0;
-	border-top-left-radius: var(--list-border-radius);
-	border-bottom-left-radius: var(--list-border-radius);
+	border-radius: var(--list-border-radius) 0 0 var(--list-border-radius);
 }
 
 .list-group-row .list-group-item:last-child {
-	border-radius: 0;
-	border-top-right-radius: var(--list-border-radius);
-	border-bottom-right-radius: var(--list-border-radius);
+	border-radius: 0 var(--list-border-radius) var(--list-border-radius) 0;
 }
 
 /*=====Direction End=====*/

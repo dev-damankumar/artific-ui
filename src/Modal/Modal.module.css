@@ -1,7 +1,7 @@
 :root {
 	--modal-border-radius: 5px;
 	--modal-padding: 15px;
-	--modal-font-size: 16px;
+	--modal-font-size: var(--font-size);
 	--modal-margin: 10px;
 	--modal-border-width: 2px;
 	--modal-cursor: pointer;
@@ -26,6 +26,7 @@
 	transition: all .5s ease;
 	display: flex;
 	align-items: center;
+	font-size: var(--modal-font-size);
 	justify-content: center;
 }
 

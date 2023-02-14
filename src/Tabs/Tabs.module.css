@@ -4,7 +4,7 @@
 	--tab-border-radius: 5px;
 	--tab-padding: 10px 20px;
 	--tab-wrap-padding: 10px;
-	--tab-font-size: 16px;
+	--tab-font-size: var(--font-size);
 	--tab-margin: 15px;
 	--tab-border-width: 2px;
 	--tab-cursor: pointer;
@@ -43,7 +43,7 @@
 	padding: 0;
 	margin: var(--tab-margin) 0;
 	display: none;
-	line-height: 1.5;
+	line-height: var(--line-height);
 	color: var(--text);
 }
 
@@ -436,7 +436,8 @@
 
 /*=====Positions End=====*/
 
-@media screen and (max-width: 500px) {
+
+@media screen and (max-width: 576px) {
 	.tabs .tab-link {
 		--tab-padding: 5px 10px;
 	}
@@ -448,4 +449,5 @@
 	.tab-wrap {
 		--tab-wrap-padding: 15px;
 	}
+
 }

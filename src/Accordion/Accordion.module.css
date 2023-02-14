@@ -2,7 +2,7 @@
 	--accordion-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 	--accordion-border-radius: 5px;
 	--accordion-padding: 15px;
-	--accordion-font-size: 16px;
+	--accordion-font-size: var(--font-size);
 	--accordion-margin: 10px;
 	--accordion-border-width: 2px;
 	--accordion-background: white;
@@ -12,7 +12,7 @@
 
 .accordion {
 	font-family: 'Nunito Sans', sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	line-height: 1.5;
+	line-height: var(--line-height);
 	font-weight: 400;
 	font-size: var(--font-size);
 	-moz-box-shadow: var(--accordion-box-shadow);
@@ -245,3 +245,4 @@
 }
 
 /*=====Sizes End=====*/
+

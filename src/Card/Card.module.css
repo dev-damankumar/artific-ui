@@ -11,6 +11,7 @@
 	--card-background: white;
 	--card-background-color: white;
 	--card-text: inherit;
+	--card-font-size: var(--font-size);
 }
 
 .card {
@@ -29,6 +30,7 @@
 	transition: ease-in-out .3s;
 	margin-bottom: 30px;
 	max-width: var(--card-width);
+	font-size: var(--card-font-size);
 }
 
 .card-body {
@@ -211,9 +213,9 @@
 	--card-img-width: 20%
 }
 
-/*=====Sizes End=====*/
-@media screen and (max-width: 500px) {
-	.card-title {
-		font-size: 16px;
-	}
+.card-title {
+	font-size: var(--card-font-size);
 }
+
+/*=====Sizes End=====*/
+

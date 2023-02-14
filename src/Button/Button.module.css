@@ -3,7 +3,7 @@
 	--btn-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
 	--btn-border-radius: 5px;
 	--btn-padding: 8px;
-	--btn-font-size: 16px;
+	--btn-font-size: var(--font-size);
 	--btn-margin: 10px;
 	--btn-border-width: 2px;
 	--btn-cursor: pointer;
@@ -36,14 +36,13 @@
 	user-select: none;
 	outline: none;
 	cursor: var(--btn-cursor) !important;
-	-moz-box-shadow: var(--btn-box-shadow);
-	-webkit-box-shadow: var(--btn-box-shadow);
-	box-shadow: var(--btn-box-shadow);
 	-webkit-transition: all .3s ease-out;
 	-o-transition: all .3s ease-out;
 	transition: all .3s ease-out;
 	position: relative;
 	vertical-align: middle;
+	line-height: var(--line-height);
+	box-shadow: none;
 }
 
 .btn:not(.btn-fullwidth,.btn-disabled,[disabled],.btn-text,.btn-loading,.btn-loading-grow):active,
@@ -57,6 +56,11 @@
 	transform: scale(1) !important;
 }
 
+.btn-elevation {
+	-moz-box-shadow: var(--btn-box-shadow);
+	-webkit-box-shadow: var(--btn-box-shadow);
+	box-shadow: var(--btn-box-shadow);
+}
 
 [data-ripple] {
 	overflow: hidden;
@@ -100,7 +104,7 @@
 
 
 .btn:not(.btn-disabled,[disabled],.btn-text):focus {
-	box-shadow: 0 0 0 calc(var(--btn-margin) - 8px) var(--btn-hover-box-shadow);
+	box-shadow: 0 0 0 calc(var(--btn-padding) / 3) var(--btn-hover-box-shadow);
 }
 
 
@@ -198,15 +202,16 @@
 
 
 /*=====Sizes=====*/
-
-.btn-large {
-	--btn-padding: 10px;
-	--btn-font-size: 18px;
-}
-
 .btn-extra-large {
+	--btn-margin: 14px;
 	--btn-padding: 12px;
 	--btn-font-size: 20px;
+}
+
+.btn-large {
+	--btn-margin: 12px;
+	--btn-padding: 10px;
+	--btn-font-size: 18px;
 }
 
 .btn-small {
@@ -217,8 +222,8 @@
 
 .btn-extra-small {
 	--btn-margin: 5px;
-	--btn-padding: 3px;
-	--btn-font-size: 13px;
+	--btn-padding: 4px;
+	--btn-font-size: 12px;
 }
 
 /*=====Sizes End=====*/
@@ -325,14 +330,20 @@
 }
 
 .icon-btn {
+	--line-height: 1;
 	padding: var(--btn-padding);
 	margin: 0 var(--btn-margin) 0 0;
 }
 
-.icon-btn img, .icon-btn svg {
-	width: var(--btn-font-size);
-	height: var(--btn-font-size);
+.icon-btn {
+	font-size: calc(var(--btn-font-size) * 1.3);
 }
+
+.icon-btn img, .icon-btn svg {
+	width: calc(var(--btn-font-size) * 1.3);
+	height: calc(var(--btn-font-size) * 1.3);
+}
+
 
 /*Button Loading*/
 .btn-loading .spinner {
@@ -417,5 +428,6 @@
 	padding-left: calc(var(--btn-padding) * 3);
 	padding-right: calc(var(--btn-padding) * 3);
 }
+
 
 /*Button Loading End*/

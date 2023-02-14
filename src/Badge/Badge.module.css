@@ -159,7 +159,7 @@
 }
 
 .badge-large {
-	--badge-font-size: 16px;
+	--badge-font-size: var(--font-size);
 }
 
 .badge-small {

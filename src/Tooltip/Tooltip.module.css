@@ -65,7 +65,7 @@
 	border-style: solid;
 	border-color: transparent transparent var(--tooltip-background-color) transparent;
 	position: absolute;
-	top: calc(var(--tooltip-bottom) + 16px);
+	top: calc(var(--tooltip-bottom) + 1rem);
 	left: var(--tooltip-left);
 	transform: translateX(-50%);
 }
@@ -80,7 +80,7 @@
 
 
 .tooltip-large {
-	--tooltip-font-size: 16px;
+	--tooltip-font-size: var(--font-size);
 	--tooltip-padding: 6px;
 }
 

@@ -28,6 +28,7 @@ export const propTypes = {
 	variant: PropTypes.oneOf<Variants>(VariantsArray),
 	size: PropTypes.oneOf<Sizes>(SizesArray),
 	disabled: PropTypes.bool,
+	elevation: PropTypes.bool,
 	type: PropTypes.oneOf(ButtonTypeArray),
 	theme: PropTypes.oneOf<Themes>(ThemesArray),
 	hideTextOnLoading: PropTypes.bool,
@@ -51,6 +52,7 @@ export interface IButtonProps {
 	style?: CSSProperties;
 	theme?: Themes;
 	hideTextOnLoading?: boolean;
+	elevation?: boolean;
 	noRipple?: boolean;
 	fullwidth?: boolean;
 	colorScheme?: ColorScheme;

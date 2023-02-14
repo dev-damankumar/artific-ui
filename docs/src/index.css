@@ -297,7 +297,7 @@ code {
 .progress-header-bar {
 	position: sticky;
 	top: 63.6px;
-	z-index: 999;
+	z-index: 99;
 }
 
 .search-bar {
@@ -363,12 +363,6 @@ code {
 	height: 100%;
 	overflow: auto;
 }
-
-.user-settings svg {
-	width: 10px;
-	flex-shrink: 0
-}
-
 
 .user-settings .notify {
 	position: relative
@@ -753,9 +747,9 @@ button.btn.copy-btn {
 	}
 
 	.right-column {
-		max-width: 35% !important;
-		width: 35% !important;
-		min-width: 35% !important;
+		max-width: 33% !important;
+		width: 33% !important;
+		min-width: 33% !important;
 	}
 }
 

@@ -15,6 +15,7 @@ export const Button: React.FC<Omit<IButton, 'prefix'> & IButtonProps> = (
 		className,
 		style,
 		hideTextOnLoading,
+		elevation = true,
 		children,
 		type = 'button',
 		colorScheme = null,
@@ -49,6 +50,7 @@ export const Button: React.FC<Omit<IButton, 'prefix'> & IButtonProps> = (
 		additionalVariantClasses,
 		loadingClasses,
 		fullwidth ? `${componentSelector}-fullwidth` : '',
+		elevation ? `${componentSelector}-elevation` : '',
 		disabled ? `${componentSelector}-disabled` : '',
 		containsGradient(colorScheme) ? 'btn-gradient-hover' : ''
 	)}`

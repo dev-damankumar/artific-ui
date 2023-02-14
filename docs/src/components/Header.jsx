@@ -4,7 +4,7 @@ import theme from "../theme.js";
 import Logo from "./Logo.jsx";
 import UserSettings from "./UserSettings.jsx";
 import {AppContext} from "../App.jsx";
-// import {Progress} from "../../../src/index"
+// import {Progress} from "artific-ui"
 
 const Header=({toggleSidebar, mode, setMode}) => {
 	const context=useContext(AppContext)

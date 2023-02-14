@@ -3,7 +3,7 @@
 	--progress-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 3px 0px;
 	--progress-box-shadow-hover: rgba(0, 0, 0, 0.05) 0px 0px 3px 2px;
 	--progress-border-radius: 4px;
-	--progress-font-size: 16px;
+	--progress-font-size: var(--font-size);
 	--progress-margin: 15px;
 	--progress-cursor: pointer;
 	--progress-border-width: 2px;
@@ -280,9 +280,9 @@ span.progress-text {
 
 /*=====Sizes End=====*/
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 576px) {
 	.progress {
 		--progress-padding: 10px;
-		--progress-font-size: 14px;
 	}
 }
+

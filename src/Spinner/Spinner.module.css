@@ -1,7 +1,7 @@
 :root {
 	--spinner-background-color: var(--primary-color);
 	--spinner-border-radius: 5px;
-	--spinner-font-size: 16px;
+	--spinner-font-size: var(--font-size);
 	--spinner-margin: 15px;
 	--spinner-cursor: pointer;
 	--spinner-border-width: 2px;

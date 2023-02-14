@@ -4,7 +4,7 @@ const style = `
 :root {
 	--main-bg: #fff;
 	--bg-alt: #dddddd2b;
-	--font-size: 1rem;
+	--font-size: var(--font-size);
 	--text: hsla(222, 26%, 25%, 1);
 
 	--primary: hsla(230, 87%, 59%, 1);
@@ -44,8 +44,8 @@ const style = `
 	--ati-message-alert-box-shadow: rgba(17, 17, 26, 0.10);
 	--ati-message-alert-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
 	--ati-message-alert-border-radius: 5px;
-	--ati-message-alert-padding: 16px;
-	--ati-message-alert-font-size: 16px;
+	--ati-message-alert-padding: 1rem;
+	--ati-message-alert-font-size: var(--font-size);
 	--ati-message-alert-margin: 10px;
 	--ati-message-alert-border-width: 2px;
 	--ati-message-alert-cursor: pointer;
@@ -124,8 +124,8 @@ const style = `
 	--ati-message-alert-box-shadow: rgba(17, 17, 26, 0.10);
 	--ati-message-alert-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
 	--ati-message-alert-border-radius: 5px;
-	--ati-message-alert-padding: 16px;
-	--ati-message-alert-font-size: 16px;
+	--ati-message-alert-padding: 1rem;
+	--ati-message-alert-font-size: var(--font-size);
 	--ati-message-alert-margin: 10px;
 	--ati-message-alert-border-width: 2px;
 	--ati-message-alert-cursor: pointer;
@@ -141,7 +141,7 @@ const style = `
 	font-family: Nunito Sans, sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 	font-size: var(--ati-message-alert-font-size);
 	font-weight: 400;
-	line-height: 1.5;
+	line-height: var(--line-height);
 	margin: 0 0 1rem;
 	display: flex;
 	flex-direction: column;
@@ -398,7 +398,7 @@ const style = `
 	color: inherit;
 	display: flex;
 	align-items: center;
-	line-height: 1.35;
+	line-height: var(--line-height,1.5);
 	padding-right: var(--ati-message-alert-padding);
 	font-family: Nunito Sans, sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color emoji;
 }
@@ -422,7 +422,7 @@ const style = `
 	padding: var(--ati-message-alert-padding);
 	border-radius: var(--ati-message-alert-border-radius);
 	margin-bottom: calc(var(--ati-message-alert-margin) * 2);
-	box-shadow: var(--ati-message-alert-box-shadow) 0 0 16px;
+	box-shadow: var(--ati-message-alert-box-shadow) 0 0 1rem;
 	display: flex;
 	align-items: center;
 	animation: fromRight .5s ease;
@@ -478,7 +478,7 @@ const style = `
 	margin: 0;
 	color: var(--ati-message-alert-text);
 	font-size: var(--ati-message-alert-font-size);
-	line-height: 1.35;
+	line-height: var(--line-height,1.5);
 	font-weight: 500;
 }
 
