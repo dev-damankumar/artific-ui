@@ -23,7 +23,7 @@ const theme={
 	},
 	dark: {
 		main: {
-			background: "linear-gradient(101deg, #424747, #313232, #000000)",
+			background: "linear-gradient(101deg, #1f2121, #202121, #000000)",
 			backgroundColor: '#2a2d2d',
 		},
 		text: 'white'

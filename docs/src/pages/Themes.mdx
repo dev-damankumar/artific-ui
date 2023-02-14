@@ -1,0 +1,24 @@
+import TitleBar from "../components/TitleBar.jsx";
+
+<div className="main-blogs">
+	{props.noMainHeading ? <TitleBar title="Artific UI - Themes"/> : <h2>Artific UI - Themes</h2>}
+</div>
+
+
+<h2>Theme</h2>
+
+Theme defines which colors to apply on your component by default its primary. but it can be one of the four values.
+
+`theme` props has basic four values (`primary`|`secondary`|`dark`|`light`).
+
+`NOTE:` If you want to use a different color scheme for component instead of the provided themes then  you can use
+`colorScheme` props to define your color scheme.
+
+colorScheme is an object containing three properties: `background`, `backgroundColor`, `color`.
+
+`background:` is used primarly for backgrond only and its value can be `color` | `gredient` | `url`. its same as the css property `background`
+
+`backgroundColor:` is used primarily for additional properties like outline or border color and it can only have `color` as value its same as the css property `backgroundColor`
+
+`color:` is used to define your text color.
+

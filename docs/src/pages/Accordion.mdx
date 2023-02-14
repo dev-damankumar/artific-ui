@@ -1,0 +1,676 @@
+import {Accordion, AccordionBody, AccordionHeader, AccordionPanel} from '../../../src/Accordion';
+import TitleBar from "../components/TitleBar.jsx";
+
+<div className="main-blogs">
+	{props.noMainHeading ? <TitleBar title="Accordion - Overview"/> : <h2>Accordion - Overview</h2>}
+</div>
+
+## Accordion
+
+The accordion component allows the user to show and hide sections of related content on a page.
+
+An accordion is a lightweight container that may either be used standalone, or be connected to a larger surface, such as a card.
+
+## Basic Accordion
+
+<Accordion theme="primary">
+	<AccordionPanel>
+		<AccordionHeader>Accordion Header</AccordionHeader>
+		<AccordionBody>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+		</AccordionBody>
+	</AccordionPanel>
+	<AccordionPanel>
+		<AccordionHeader>Accordion Header 2</AccordionHeader>
+		<AccordionBody>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+		</AccordionBody>
+	</AccordionPanel>
+	<AccordionPanel>
+		<AccordionHeader>Accordion Header2</AccordionHeader>
+		<AccordionBody>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+		</AccordionBody>
+	</AccordionPanel>
+</Accordion>
+
+
+
+## API
+
+```jsx
+import { Accordion } from 'artific-ui/Accordion';
+```
+
+
+## Accordion Themes
+
+If you want to use a different theme for `accordion` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them
+
+<div name="Accordion Themes">
+	<Accordion>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="secondary">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="dark">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="light">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+</div>
+
+## Accordion Custom Themes
+
+If you want to use a different color scheme for `accordion` instead of the provided themes then  you can use
+`colorScheme` props to define your color scheme.
+
+colorScheme is an object containing three properties: `background`, `backgroundColor`, `color`
+
+<div name="Accordion Custom Themes">
+	<Accordion
+		variant="outline"
+		colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		}} theme="primary">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+</div>
+
+
+
+## Accordion Disabled Panel
+
+If you want to disable a specific panel of the Accordion use `disabled` prop on `AccordionPanel` to disable it.
+
+
+<div name="Accordion Disabled Panel">
+	<Accordion
+		theme="primary">
+		<AccordionPanel>
+			<AccordionHeader disabled={true}>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+</div>
+
+
+## Prefix And Suffix icons
+
+You can add icons to the start or end of `AccordionHeader`.
+
+provide the prop `prefix` or `suffix` or both to the `AccordionHeader` to add the icons.
+
+<div
+	name="Prefix And Suffix icons"
+>
+	<Accordion>
+		<AccordionPanel>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>}>Lorem ipsum dolor
+				sitamet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader suffix={<i className='bx bx-bowl-hot'></i>}>Lorem ipsum dolor sit
+				amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader suffix={<i className='bx bx-bowl-hot'></i>} prefix={
+				<i className='bx bx-bowl-hot'></i>}>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	</div>
+
+## Indicator Icon Position
+
+You can choose where accordion's indicator icon should appear when opening and closing the panel
+
+Control which it direction should be by providing it `indicatorPosition` of `start` or `end`
+
+<div
+	name="Indicator Icon Position"
+>
+	<h5>Default/End Position</h5>
+	<Accordion>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<h5>Start Position</h5>
+	<Accordion indicatorPosition="start">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+</div>
+
+## Accordion Layout
+
+Artific UI provides basic four layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
+
+Note: Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
+
+<div
+	name="Accordion Layout"
+>
+	<h5>Basic Accordion Layout</h5>
+	<Accordion layout="default">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<br/>
+	<h5>Rounded Accordion</h5>
+	<Accordion layout="rounded">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<br/>
+	<h5>No Radius Accordion</h5>
+	<Accordion layout="no-radius">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<br/>
+	<h5>Pill Accordion</h5>
+	<Accordion layout="pill">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+</div>
+
+## Accordion Variant
+
+Artific UI provides a `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`attached`|`separate`|`outline`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
+
+<div
+	name="Accordion Variant"
+>
+	<h5>Default Accordion Variant</h5>
+	<Accordion variant="default">
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<br/>
+	<h5>Attached Accordion Variant</h5>
+	<Accordion variant="attached">
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<br/>
+	<h5>Separate Accordion</h5>
+	<Accordion variant="separate">
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<br/>
+	<h5>Outlined Accordion</h5>
+	<Accordion variant="outline">
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+</div>
+
+## Accordion Sizes
+
+
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
+
+<div
+	name="Accordion Sizes"
+>
+	<h5>Extra Small Sizing</h5>
+	<Accordion size="xs">
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<br/>
+	<h5>Small Size Accordion</h5>
+	<Accordion theme="primary" size="sm">
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<br/>
+	<h5>Default/Medium Accordion</h5>
+	<Accordion theme="primary" size="md">
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<br/>
+	<h5>Large Accordion</h5>
+	<Accordion theme="primary" size="lg">
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<br/>
+	<h5>Extra Large Accordion</h5>
+	<Accordion theme="primary" size="xl">
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
+				eligendi eos fuga
+				iure omnis reprehenderit sequi unde.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+</div>

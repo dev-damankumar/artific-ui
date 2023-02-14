@@ -1,5 +1,5 @@
-import React from "react";
-import {render} from "@testing-library/react";
+import * as React from "react";
+import {getByTestId, render} from "@testing-library/react";
 import ThemeProvider from "./ThemeProvider";
 import {Button} from "../Button";
 
@@ -32,10 +32,10 @@ describe("Render ThemeProvider", () => {
 		</ThemeProvider>);
 		const component = container.firstChild!
 		expect(component.nodeName.toLowerCase()).toBe('style')
-		const themeWrapper = container.querySelector('[data-theme-provider]')
-		expect(themeWrapper).toBeDefined()
-		expect(themeWrapper).toHaveAttribute('id')
-		const styles = getComputedStyle(themeWrapper!);
+		const btn = getByTestId(container, 'btn')
+		expect(btn).toBeDefined()
+		expect(btn).toHaveAttribute('data-theme-id')
+		const styles = getComputedStyle(btn!);
 		expect(styles.getPropertyValue('--primary')).toBe(theme.primary.main);
 		expect(styles.getPropertyValue('--primary-color')).toBe(theme.primary.main);
 		expect(styles.getPropertyValue('--primary-text')).toBe(theme.primary.text);

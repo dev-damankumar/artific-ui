@@ -1,28 +1,31 @@
 import React from "react";
-import Accordion from "../../stories/Accordion/Accordion.stories.mdx";
-import Alert from "../../stories/Alert/Alert.stories.mdx";
-import Avatar from "../../stories/Avatar/Avatar.stories.mdx";
-import Badge from "../../stories/Badge/Badge.stories.mdx";
-import Button from "../../stories/Button/Button.stories.mdx";
-import ButtonGroup from "../../stories/ButtonGroup/ButtonGroup.stories.mdx";
-import Card from "../../stories/Card/Card.stories.mdx";
-import Divider from "../../stories/Divider/Divider.stories.mdx";
-import Dropdown from "../../stories/Dropdown/Dropdown.stories.mdx";
-import Tabs from "../../stories/Dropdown/Dropdown.stories.mdx";
-import IconButton from "../../stories/IconButton/IconButton.stories.mdx";
-import Grid from "../../stories/Grid/Grid.stories.mdx";
-import List from "../../stories/List/List.stories.mdx";
-import Loader from "../../stories/Loaders/Loaders.stories.mdx";
-import Message from "../../stories/Messages/Messages.stories.mdx";
-import Modal from "../../stories/Modal/Modal.stories.mdx";
-import Pagination from "../../stories/Pagination/Pagination.stories.mdx";
-import Progress from "../../stories/Progress/Progress.stories.mdx";
-import Space from "../../stories/Space/Space.stories.mdx";
-import Spinner from "../../stories/Spinner/Spinner.stories.mdx";
-import Table from "../../stories/Table/Table.stories.mdx";
-import ThemeProvider from "../../stories/ThemeProvider/ThemeProvider.stories.mdx";
-import Tooltip from "../../stories/Tooltip/Tooltip.stories.mdx";
-import Typography from "../../stories/Typography/Typography.stories.mdx";
+
+const Accordion=React.lazy(() => import("./pages/Accordion.mdx"));
+
+const Alert=React.lazy(() => import("./pages/Alert.mdx"));
+const Avatar=React.lazy(() => import("./pages/Avatar.mdx"));
+const Badge=React.lazy(() => import("./pages/Badge.mdx"));
+const Button=React.lazy(() => import("./pages/Button.mdx"));
+const ButtonGroup=React.lazy(() => import("./pages/ButtonGroup.mdx"));
+const Card=React.lazy(() => import("./pages/Card.mdx"));
+const Divider=React.lazy(() => import("./pages/Divider.mdx"));
+const Dropdown=React.lazy(() => import("./pages/Dropdown.mdx"));
+const Tabs=React.lazy(() => import("./pages/Dropdown.mdx"));
+const IconButton=React.lazy(() => import("./pages/IconButton.mdx"));
+const Grid=React.lazy(() => import("./pages/Grid.mdx"));
+const List=React.lazy(() => import("./pages/List.mdx"));
+const Loader=React.lazy(() => import("./pages/Loaders.mdx"));
+const Message=React.lazy(() => import("./pages/Messages.mdx"));
+const Modal=React.lazy(() => import("./pages/Modal.mdx"));
+const Pagination=React.lazy(() => import("./pages/Pagination.mdx"));
+const Progress=React.lazy(() => import("./pages/Progress.mdx"));
+const Space=React.lazy(() => import("./pages/Space.mdx"));
+const Spinner=React.lazy(() => import("./pages/Spinner.mdx"));
+const Table=React.lazy(() => import("./pages/Table.mdx"));
+const ThemeProvider=React.lazy(() => import("./pages/ThemeProvider.mdx"));
+const Tooltip=React.lazy(() => import("./pages/Tooltip.mdx"));
+const Typography=React.lazy(() => import("./pages/Typography.mdx"));
+
 
 const docs=[
 	{

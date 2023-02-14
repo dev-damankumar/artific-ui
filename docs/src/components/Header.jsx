@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {IconButton, Progress, Space, ThemeProvider, Typography} from "artific-ui";
-import github from "../assets/images/github.png";
-import setting from "../assets/images/settings.png";
 import theme from "../theme.js";
 import Logo from "./Logo.jsx";
+import UserSettings from "./UserSettings.jsx";
+import {AppContext} from "../App.jsx";
 // import {Progress} from "../../../src/index"
 
-const Header=({toggleSidebar}) => {
-
+const Header=({toggleSidebar, mode, setMode}) => {
+	const context=useContext(AppContext)
+	const progress=context.progress || 0
 	return (
 		<ThemeProvider theme={theme}>
 			<div className="header">
@@ -28,16 +29,9 @@ const Header=({toggleSidebar}) => {
 					<input type="text" placeholder="Search..."/>
 					<Typography weight="bold" fontSize={12} theme="dark" className="shortcut" variant="kbd">Ctrl+K</Typography>
 				</div>
-				<div className="user-settings">
-					<IconButton className="icon-btn" variant="text" layout="rounded">
-						<img src={github}/>
-					</IconButton>
-					<IconButton className="icon-btn" variant="text" layout="rounded">
-						<img src={setting}/>
-					</IconButton>
-				</div>
+				<UserSettings/>
 			</div>
-			<Progress size="xs" className="progress-header-bar" value={80} variant="striped" layout='no-radius' label="none" type="line"/>
+			<Progress size="xs" className="progress-header-bar" value={progress} variant="striped" layout='no-radius' label="none" type="line"/>
 
 		</ThemeProvider>
 	);

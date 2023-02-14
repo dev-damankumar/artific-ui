@@ -1,0 +1,754 @@
+import {Divider, Dropdown, DropdownMenu, DropdownToggle, MenuItem} from '../../../src/index';
+import logo from './logo.svg'; import {MenuHeading} from "../../../src/Dropdown/MenuHeading";
+
+export const Template=(args) => {
+	return (
+		<>
+			<Dropdown autoClose={false} {...args}>
+				<DropdownToggle>
+					My Profile
+				</DropdownToggle>
+				<DropdownMenu>
+					<MenuHeading>Main Items</MenuHeading>
+					<MenuItem onSelect={alert}>Link 1</MenuItem>
+					<MenuItem> Link 2</MenuItem>
+					<Divider/>
+					<MenuItem>Link 3</MenuItem>
+					<MenuItem><img src='https://artific.vercel.app/assets/images/logo.svg'
+								   style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+					<MenuItem>Link 5</MenuItem>
+				</DropdownMenu>
+			</Dropdown>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+		</>
+	);
+};
+
+# Dropdown
+
+A dropdown menu is a toggleable menu that allows the user to choose one value from a predefined list
+
+## Basic Dropdown
+
+<div>
+	<div name="Basic Dropdown">{Template.bind({})}</div>
+</div>
+
+## API
+
+```jsx
+import { Dropdown } from 'artific-ui/Dropdown';
+```
+
+
+## Dropdown Themes
+
+If you want to use a different theme for `Dropdown` use the `theme` prop to set the theme
+Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
+
+<div>
+	<div name="Dropdown Themes">
+		<Dropdown variant="drawer" theme="primary">
+			<DropdownToggle>
+				Dropdown
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuHeading>Main Items</MenuHeading>
+				<MenuItem active onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<Dropdown variant="drawer" theme="secondary">
+			<DropdownToggle>
+				Dropdown
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuHeading>Main Items</MenuHeading>
+				<MenuItem active onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<Dropdown variant="drawer" theme="dark">
+			<DropdownToggle>
+				Dropdown
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuHeading>Main Items</MenuHeading>
+				<MenuItem active onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<Dropdown variant="drawer" theme="light">
+			<DropdownToggle>
+				Dropdown
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuHeading>Main Items</MenuHeading>
+				<MenuItem active onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+	</div>
+</div>
+
+## Custom Dropdown
+
+If you want to use a different color scheme for `Dropdown` instead of the provided themes then you can use
+`colorScheme` props to define your color scheme.
+
+colorScheme is an object containing three properties: `background`, `backgroundColor`, `color`
+
+<div>
+	<div name="Custom Dropdown">
+		<h5>Custom Dropdown</h5>
+		<Dropdown colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		}}>
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+	</div>
+</div>
+
+
+## Dropdown Positions
+
+Use `position` prop to choose in which direction dropdown should open
+
+Possible values are: (`left`|`right`|`top`|`bottom`)
+
+<div>
+	<div name="Dropdown Positions">
+		<Dropdown position="left" style={{marginLeft: "50%"}}>
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<Dropdown position="right">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<Dropdown position="top">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+	</div>
+</div>
+
+## Full Width Dropdown
+
+Dropdown has a `fullWidth` prop which is used to make a dropdown menu width same as the width of the button
+
+<div>
+	<div name="Full Width Dropdown">
+		<Dropdown fullwidth={true}>
+			<DropdownToggle>
+				Very Long Button...................................
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+	</div>
+</div>
+
+## Dropdown Layouts
+
+Dropdown Has basic four layouts to choose from to define how you component's structure should look like.
+
+Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`floating`)
+
+`Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
+
+<div>
+	<div name="Dropdown Layouts">
+		<Dropdown layout="default">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<Dropdown layout="rounded">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<Dropdown layout="no-radius">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<Dropdown layout="floating">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+	</div>
+</div>
+
+## Dropdown Variants
+
+Dropdown uses `variant` prop to make you choose how your component ui should look like
+
+Set `variant` prop with the value of (`default`|`drawer`|`fluid`). you can mix them with different supported `theme` or `layout`
+
+Note: Different components might have addition or different variant based on there configuration and flexibility.
+you can check out the props table to see which variant is supported by the component
+
+<div>
+	<div name="Dropdown Variants">
+		<Dropdown variant="default">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<Dropdown variant="drawer">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<Dropdown variant="fluid">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+	</div>
+</div>
+
+## Dropdown Sizes
+
+you can use a `size` prop to define the size of your components
+
+Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them with different supported `theme` or `layout`
+
+Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
+
+<div>
+	<div name="Dropdown Sizes">
+		<Dropdown size="xs">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<Dropdown size="sm">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<Dropdown size="md">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<Dropdown size="lg">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<Dropdown size="xl">
+			<DropdownToggle>
+				My Profile
+			</DropdownToggle>
+			<DropdownMenu>
+				<MenuItem onSelect={alert}>Link 1</MenuItem>
+				<MenuItem> Link 2</MenuItem>
+				<MenuItem>Link 3</MenuItem>
+				<MenuItem><img src={logo} style={{width: '20px', height: '20px'}}/> Link 4</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+				<MenuItem>Link 5</MenuItem>
+			</DropdownMenu>
+		</Dropdown>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+	</div>
+</div>
+
+

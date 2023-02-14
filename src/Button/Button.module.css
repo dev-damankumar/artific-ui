@@ -270,7 +270,7 @@
 }
 
 .btn-outline.btn-light {
-	color: var(--light-color);
+	color: var(--light-text);
 }
 
 .btn-outline.btn-dark {
