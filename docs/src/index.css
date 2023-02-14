@@ -834,7 +834,7 @@ button.btn.copy-btn {
 }
 
 .dark-mode-wrapper {
-	--theme-bg: #161717;
+	--theme-bg: #0f1010;
 	--blur-bg: rgba(49, 49, 49, 0.34);
 	--border-color: #393939;
 	--theme-bg-alt: black;
