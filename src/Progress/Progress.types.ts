@@ -5,7 +5,7 @@ import {arrayOf, bool, number, oneOf, shape, string} from "prop-types";
 // @ts-ignore
 export const PercentAgeArray = Array.from(Array(100).keys()) as const;
 export type PercentAge = typeof PercentAgeArray[number]
-export const LabelStyleArray = ['default', 'inside', 'float'] as const;
+export const LabelStyleArray = ['default', 'inside', 'float', 'none'] as const;
 export type LabelStyle = typeof LabelStyleArray[number]
 
 export const VariantsArray = ["default", "striped", "outline", "fluid"] as const;

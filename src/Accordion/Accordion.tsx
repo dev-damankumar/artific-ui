@@ -1,10 +1,11 @@
-import React, {FC} from 'react';
+import React, {FC, useContext} from 'react';
 import styles from './Accordion.module.css';
 import {IAccordionProps, propTypes} from './Accordion.types';
 import getClassNames from '../utils/classes/getClassnames';
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
 import {IDiv} from "../types/Common.types";
+import {ThemeContext} from "../ThemeProvider";
 
 export const Accordion: FC<IAccordionProps & IDiv> = (
 	{
@@ -18,6 +19,7 @@ export const Accordion: FC<IAccordionProps & IDiv> = (
 		colorScheme,
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	const componentSelector = 'accordion';
 	const {
 		customCss, classNames
@@ -28,8 +30,9 @@ export const Accordion: FC<IAccordionProps & IDiv> = (
 		<>
 			{customCss && customCss()}
 			<div
-				{...rest}
-				className={`${classNames} ${classes}`}>
+				{...rest} data-theme-id={context?.themeId || ''}
+				className={`${classNames} ${classes}`}
+			>
 				{childrenWithProps}
 			</div>
 		</>

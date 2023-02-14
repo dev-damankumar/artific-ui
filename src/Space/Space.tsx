@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from "./Space.module.css"
 import getClassNames from "../utils/classes/getClassnames";
 import PropTypes from "prop-types";
 import {Axis, AxisArray, IDiv} from "../types/Common.types";
+import {ThemeContext} from "../ThemeProvider";
 
 
 interface IColProps {
@@ -25,6 +26,7 @@ export const Space: React.FC<IColProps & IDiv> = (
 		align = 'start',
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	let gapStyle: any = gap;
 	let directionStyle: any = 'column';
 	if (typeof gapStyle === 'number') {
@@ -36,7 +38,7 @@ export const Space: React.FC<IColProps & IDiv> = (
 	const mainStyle = {gap: gapStyle, flexDirection: directionStyle};
 	const alignClasses = `space-align-${align}`
 	return (
-		<div {...rest} style={{...rest.style, ...mainStyle}} className={`${getClassNames(styles, alignClasses, 'space', wrap ? 'space-wrap' : '', `space-direction-${directionStyle}`)}`}>
+		<div {...rest} data-theme-id={context?.themeId || ''} style={{...rest.style, ...mainStyle}} className={`${getClassNames(styles, alignClasses, 'space', wrap ? 'space-wrap' : '', `space-direction-${directionStyle}`)}`}>
 			{children}
 		</div>
 	);
@@ -48,7 +50,7 @@ Space.propTypes = {
 	wrap: PropTypes.bool,
 	direction: PropTypes.oneOf(AxisArray),
 	align: PropTypes.oneOf(AlignTypeArray),
-	gap: PropTypes.number || PropTypes.arrayOf(PropTypes.number),
+	gap: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number), PropTypes.any]),
 };
 
 export default Space;

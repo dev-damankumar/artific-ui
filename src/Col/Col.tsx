@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from "./Col.module.css"
 import getClassNames from "../utils/classes/getClassnames";
 import PropTypes from "prop-types";
 import {IDiv, Sizes, SizesArray} from "../types/Common.types";
+import {ThemeContext} from "../ThemeProvider";
 
 export const ColArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'auto', undefined] as const;
 export type Column = typeof ColArray[number];
@@ -38,6 +39,7 @@ export const Col: React.FC<IColProps & IDiv> = (
 		children,
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	const sizeClass = col === undefined ? size !== undefined ? `col-${size}` : 'col' : size !== undefined ? `col-${size}-${col}` : `col-${col}`
 	const orderClass = order !== undefined ? `order-${order}` : ''
 	const offsetClass = offset !== undefined ? `offset-${offset}` : ''
@@ -46,7 +48,7 @@ export const Col: React.FC<IColProps & IDiv> = (
 		justifyContent: justifyClass
 	}
 	return (
-		<div {...rest} style={{...mainStyles, ...style}} className={`${className} ${getClassNames(styles, 'col', sizeClass, offsetClass, orderClass)}`}>
+		<div {...rest} data-theme-id={context?.themeId || ''} style={{...mainStyles, ...style}} className={`${className} ${getClassNames(styles, 'col', sizeClass, offsetClass, orderClass)}`}>
 			{children}
 		</div>
 	);

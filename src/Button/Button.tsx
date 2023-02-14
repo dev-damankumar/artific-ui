@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from './Button.module.css';
 import getClassNames from '../utils/classes/getClassnames';
 import ripple from '../utils/effects/effectRipple';
@@ -6,6 +6,7 @@ import {IButtonProps, propTypes} from './Button.types';
 import {IButton} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {containsGradient} from "../utils/helpers";
+import {ThemeContext} from "../ThemeProvider";
 
 /*Responsive checkPropTypes pending for onstalled components*/
 
@@ -28,8 +29,10 @@ export const Button: React.FC<Omit<IButton, 'prefix'> & IButtonProps> = (
 		size = 'md',
 		prefix = null,
 		suffix = null,
+		noRipple = false,
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	const rippleEvents = {
 		mouseDown: false,
 		inFocus: false
@@ -53,7 +56,7 @@ export const Button: React.FC<Omit<IButton, 'prefix'> & IButtonProps> = (
 	return <>
 		{customCss && customCss()}
 		<button
-			{...rest}
+			{...rest} data-theme-id={context?.themeId || ''}
 			disabled={disabled}
 			type={type}
 			style={style}
@@ -64,7 +67,7 @@ export const Button: React.FC<Omit<IButton, 'prefix'> & IButtonProps> = (
 					rest.onMouseDown(e);
 				}
 				const target = (e.target as HTMLInputElement)!;
-				if (loading || disabled) return;
+				if (loading || disabled || noRipple) return;
 				if (rippleEvents.mouseDown) {
 					if (target.nodeName.toLowerCase() === 'button' || target.closest('button')) {
 						let button = e.target as HTMLButtonElement;
@@ -80,7 +83,7 @@ export const Button: React.FC<Omit<IButton, 'prefix'> & IButtonProps> = (
 				if (rest?.onFocus) {
 					rest.onFocus(e);
 				}
-				if (loading || disabled) return;
+				if (loading || disabled || noRipple) return;
 				if (!rippleEvents.mouseDown) {
 					if (e.target.nodeName.toLowerCase() === 'button' || e.target.closest('button')) {
 						let button = e.target;

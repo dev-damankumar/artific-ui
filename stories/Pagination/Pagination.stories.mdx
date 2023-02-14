@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Pagination, PaginationItem} from '../../src';
 
 <Meta title="Components/Pagination" component={Pagination}/>
@@ -15,9 +15,9 @@ export const defaultTemplate=(args) => <Pagination {...args}>
 	<PaginationItem>Next</PaginationItem>
 </Pagination>;
 
-<Canvas>
-	<Story name="Default">{defaultTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{defaultTemplate.bind({})}</div>
+</div>
 
 ## API
 
@@ -25,7 +25,7 @@ export const defaultTemplate=(args) => <Pagination {...args}>
 import { Pagination } from 'artific-ui/Pagination';
 ```
 
-<ArgsTable story="Default"/>
+
 
 ## Pagination Theme
 
@@ -34,8 +34,8 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 
 You can also use `colorScheme` prop to define a custom theme.
 
-<Canvas>
-	<Story name="Pagination Theme">
+<div>
+	<div name="Pagination Theme">
 		<Pagination theme="primary">
 			<PaginationItem>Prev</PaginationItem>
 			<PaginationItem active={true}>1</PaginationItem>
@@ -83,8 +83,8 @@ You can also use `colorScheme` prop to define a custom theme.
 			<PaginationItem>3</PaginationItem>
 			<PaginationItem>Next</PaginationItem>
 		</Pagination>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Pagination Layouts
 
@@ -94,8 +94,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
-<Canvas>
-	<Story name="Pagination Layouts">
+<div>
+	<div name="Pagination Layouts">
 		<Pagination layout="default">
 			<PaginationItem>Prev</PaginationItem>
 			<PaginationItem active={true}>1</PaginationItem>
@@ -130,8 +130,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 			<PaginationItem>3</PaginationItem>
 			<PaginationItem>Next</PaginationItem>
 		</Pagination>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Pagination Variants
@@ -143,8 +143,8 @@ Set `variant` prop with the value of (`default`|`separate`|`breadcrumb`|`float`)
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="Pagination Variants">
+<div>
+	<div name="Pagination Variants">
 		<Pagination variant="default">
 			<PaginationItem>Prev</PaginationItem>
 			<PaginationItem active={true}>1</PaginationItem>
@@ -179,8 +179,8 @@ you can check out the props table to see which variant is supported by the compo
 		</Pagination>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Pagination Sizes
@@ -191,8 +191,8 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
-<Canvas>
-	<Story name="Pagination Sizes">
+<div>
+	<div name="Pagination Sizes">
 		<Pagination size="xs">
 			<PaginationItem>Prev</PaginationItem>
 			<PaginationItem active={true}>1</PaginationItem>
@@ -238,5 +238,5 @@ Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg
 		</Pagination>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>

@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Divider} from '../../src';
 
 
@@ -20,9 +20,9 @@ export const Template=(args) => {
 
 The divider is used to divide section by putting line between them.
 
-<Canvas>
-	<Story name="Default">{Template.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{Template.bind({})}</div>
+</div>
 
 ## API
 
@@ -30,20 +30,20 @@ The divider is used to divide section by putting line between them.
 import { Divider } from 'artific-ui';
 ```
 
-<ArgsTable story="Default"/>
+
 
 ## Divider Direction
 
 The Divider has main two directions ie. (`horizontal`|`vertical`)
 
-<Canvas>
-	<Story name="Containers">
+<div>
+	<div name="Containers">
 		<div style={{display: 'flex', height: 200}}>
 			<div style={{width: 200, background: 'gainsboro'}}>Basic Divider</div>
 			<Divider direction="vertical"/>
 			<div style={{width: 200, background: 'gainsboro'}}>Basic Divider</div>
 		</div>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 

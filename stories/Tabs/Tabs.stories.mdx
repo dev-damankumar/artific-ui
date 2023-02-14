@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {TabContent, TabItem, Tabs} from '../../src/index';
 
 <Meta title="Components/Tabs" component={Tabs}/>
@@ -26,9 +26,9 @@ export const defaultTemplate=(args) => {
 	</Tabs>
 };
 
-<Canvas>
-	<Story name="Default">{defaultTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{defaultTemplate.bind({})}</div>
+</div>
 
 ## API
 
@@ -36,14 +36,14 @@ export const defaultTemplate=(args) => {
 import { Tabs } from 'artific-ui/Tabs';
 ```
 
-<ArgsTable story="Default"/>
+
 
 ## Tab Types
 
 Tabs have two types `default` and `float`
 
-<Canvas>
-	<Story name="Tab Types">
+<div>
+	<div name="Tab Types">
 		<Tabs>
 			<TabItem target="home">Home</TabItem>
 			<TabItem target="about">About</TabItem>
@@ -92,8 +92,8 @@ Tabs have two types `default` and `float`
 					et dolore magna aliqua.</p>
 			</TabContent>
 		</Tabs>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Tab Themes
 
@@ -102,8 +102,8 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 
 You can also use `colorScheme` prop to define a custom theme.
 
-<Canvas>
-	<Story name="Tab Themes">
+<div>
+	<div name="Tab Themes">
 		<Tabs>
 			<TabItem target="home">Home</TabItem>
 			<TabItem target="about">About</TabItem>
@@ -233,8 +233,8 @@ You can also use `colorScheme` prop to define a custom theme.
 		</Tabs>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Tab Layout
@@ -245,8 +245,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
-<Canvas>
-	<Story name="Tab Layout">
+<div>
+	<div name="Tab Layout">
 		<div style={{display: 'flex'}}>
 			<div style={{width: '50%'}}>
 				<h3>Default Type</h3>
@@ -455,8 +455,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 				<br/>
 			</div>
 		</div>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Tab Variants
@@ -468,8 +468,8 @@ Set `variant` prop with the value of (`default`|`separate`|`line`|`floating-line
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="Tab Variants">
+<div>
+	<div name="Tab Variants">
 		<div style={{display: 'flex'}}>
 			<div style={{width: '50%'}}>
 				<h3>Default Type</h3>
@@ -678,15 +678,15 @@ you can check out the props table to see which variant is supported by the compo
 				<br/>
 			</div>
 		</div>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Floating Line Variant Directions
 
 floating-line variant has four direction to position its line.
 
-<Canvas>
-	<Story name="Floating Line Variant Directions">
+<div>
+	<div name="Floating Line Variant Directions">
 		<div style={{display: 'flex'}}>
 			<div style={{width: '50%'}}>
 				<h3>Default Type</h3>
@@ -895,8 +895,8 @@ floating-line variant has four direction to position its line.
 				<br/>
 			</div>
 		</div>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Tab Sizes
 
@@ -906,8 +906,8 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
-<Canvas>
-	<Story name="Tab Sizes">
+<div>
+	<div name="Tab Sizes">
 		<div style={{display: 'flex'}}>
 			<div style={{width: '50%'}}>
 				<h3>Default Type</h3>
@@ -1166,8 +1166,8 @@ Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg
 				<br/>
 			</div>
 		</div>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Tab Position
 
@@ -1175,8 +1175,8 @@ Use `position` prop on `Tabs` to set the position for tabs.
 
 possible values are (`left`|`right`|`top`|`bottom`)
 
-<Canvas>
-	<Story name="Tab Position">
+<div>
+	<div name="Tab Position">
 		<div style={{display: 'flex'}}>
 			<div style={{width: '50%'}}>
 				<h3>Default Type</h3>
@@ -1385,5 +1385,5 @@ possible values are (`left`|`right`|`top`|`bottom`)
 				<br/>
 			</div>
 		</div>
-	</Story>
-</Canvas>
+	</div>
+</div>

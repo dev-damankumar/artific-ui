@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from './List.module.css';
 import getClassNames from '../utils/classes/getClassnames';
 import {IListProps, propTypes} from './List.types';
 import {IUl} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
+import {ThemeContext} from "../ThemeProvider";
 
 
 export const List: React.FC<IListProps & IUl> = (
@@ -19,6 +20,7 @@ export const List: React.FC<IListProps & IUl> = (
 		colorScheme,
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	const componentSelector = 'list';
 	const {
 		classNames, customCss
@@ -29,7 +31,7 @@ export const List: React.FC<IListProps & IUl> = (
 	return (
 		<>
 			{customCss && customCss()}
-			<ul {...rest} className={`${classNames} ${getClassNames(styles, 'list-group', directionClasses)}`}>
+			<ul {...rest} data-theme-id={context?.themeId || ''} className={`${classNames} ${getClassNames(styles, 'list-group', directionClasses)}`}>
 				{childrenWithProps}
 			</ul>
 		</>

@@ -1,4 +1,4 @@
-import {Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Button, useMessage} from '../../src';
 
 
@@ -41,9 +41,9 @@ export const Template=(args) => {
 
 The useMessage is like an message box that is only shown for a couple of seconds when something happens (i.e. when the user clicks on a button, submits a form, etc.).
 
-<Canvas>
-	<Story name="Default">{Template.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{Template.bind({})}</div>
+</div>
 
 ## API
 
@@ -92,9 +92,9 @@ Set `size` prop in config with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can 
 
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
-<Canvas>
-	<Story name="Message Sizes">{SizeTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Message Sizes">{SizeTemplate.bind({})}</div>
+</div>
 
 
 export const LayoutsTemplate=(args) => {
@@ -126,9 +126,9 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
-<Canvas>
-	<Story name="Message Layouts">{LayoutsTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Message Layouts">{LayoutsTemplate.bind({})}</div>
+</div>
 
 
 export const ThemesTemplate=(args) => {
@@ -175,9 +175,9 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 You can also use `colorScheme` prop to define a custom theme.
 
 
-<Canvas>
-	<Story name="Message Themes">{ThemesTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Message Themes">{ThemesTemplate.bind({})}</div>
+</div>
 
 
 export const VariantsTemplate=(args) => {
@@ -211,9 +211,9 @@ Set `variant` prop with the value of (`default`|`note`|`outline`). you can mix t
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="Message Variants">{VariantsTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Message Variants">{VariantsTemplate.bind({})}</div>
+</div>
 
 export const DarkModeTemplate=(args) => {
 	const themes=['success', 'info', 'error', 'warning']
@@ -240,9 +240,9 @@ export const DarkModeTemplate=(args) => {
 
 To set the dark mode for your message use `mode` prop and its value as `dark`
 
-<Canvas>
-	<Story name="Dark Mode">{DarkModeTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Dark Mode">{DarkModeTemplate.bind({})}</div>
+</div>
 
 export const DurationTemplate=(args) => {
 	const themes=['success', 'info', 'error', 'warning']
@@ -271,9 +271,9 @@ export const DurationTemplate=(args) => {
 
 `Note:` if you are chaining `.hold()` to the instance message will not disappear as it is the intended behaviour.
 
-<Canvas>
-	<Story name="Message Duration">{DurationTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Message Duration">{DurationTemplate.bind({})}</div>
+</div>
 
 
 export const NotificationTemplate=(args) => {
@@ -304,9 +304,9 @@ Message can be used as different element called notification which has header an
 
 set `type` prop to `"notification"` to make message as notification.
 
-<Canvas>
-	<Story name="Notification Alert">{NotificationTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Notification Alert">{NotificationTemplate.bind({})}</div>
+</div>
 
 
 export const PositionTemplate=(args) => {
@@ -337,6 +337,6 @@ export const PositionTemplate=(args) => {
 
 possible values are (`top`| `top-right`| `bottom-left`| `bottom`| `bottom-right`| `top-left`)
 
-<Canvas>
-	<Story name="Message Positions">{PositionTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Message Positions">{PositionTemplate.bind({})}</div>
+</div>

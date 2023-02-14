@@ -3,7 +3,7 @@
 }
 
 .space {
-	display: inline-flex;
+	display: flex;
 	gap: var(--gap);
 }
 

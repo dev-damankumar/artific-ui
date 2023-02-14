@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Progress, ThemeProvider} from '../../src';
 
 <Meta title="Components/Progress" component={Progress}/>
@@ -30,9 +30,9 @@ export const defaultTemplate=(args) => <ThemeProvider theme={{
 	<Progress theme="secondary1" value={50} {...args}/>
 </ThemeProvider>;
 
-<Canvas>
-	<Story name="Default">{defaultTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{defaultTemplate.bind({})}</div>
+</div>
 
 ## API
 
@@ -40,7 +40,7 @@ export const defaultTemplate=(args) => <ThemeProvider theme={{
 import { Progress } from 'artific-ui/Progress';
 ```
 
-<ArgsTable story="Default"/>
+
 
 ## Progress Theme
 
@@ -49,8 +49,8 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 
 You can also use `colorScheme` prop to define a custom theme.
 
-<Canvas>
-	<Story name="Progress Theme">
+<div>
+	<div name="Progress Theme">
 		<Progress theme="primary" value={50}/>
 		<Progress theme="secondary" value={50}/>
 		<Progress theme="light" value={50}/>
@@ -60,19 +60,19 @@ You can also use `colorScheme` prop to define a custom theme.
 			backgroundColor: '#e736f4',
 			color: 'white',
 		}}/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Label Inside Progress
 
 Use `label` props on `Progress` and value as `"inside"` to make label inside the bar.
 
 
-<Canvas>
-	<Story name="Label Inside Progress">
+<div>
+	<div name="Label Inside Progress">
 		<Progress label="inside" theme="secondary" value={50}/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Multiple Progress
 
@@ -80,11 +80,11 @@ Use `values` props to progres bar as number array ie.(number[]) if you want mult
 
 Use `barColors` props to define the color of progress bar. make sure colors passed in array are respective to the values. if no color is provides it will use default color for each bar.
 
-<Canvas>
-	<Story name="Multiple Progress">
+<div>
+	<div name="Multiple Progress">
 		<Progress theme="primary" barColors={['red', 'blue', 'green']} values={[50, 20, 10]}/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ##  Progress Types
@@ -93,13 +93,13 @@ You can also define the type progress bar  by providing `type` prop.
 
 Possible values for `type` prop are (`default`|`circular`|`line`)
 
-<Canvas>
-	<Story name="Progress Types">
+<div>
+	<div name="Progress Types">
 		<Progress value={80} type="default" theme="primary"/>
 		<Progress value={80} type="circular" theme="primary"/>
 		<Progress value={80} type="line" theme="primary"/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Progress Sizes
 
@@ -109,8 +109,8 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
-<Canvas>
-	<Story name="Progress Sizes">
+<div>
+	<div name="Progress Sizes">
 		<Progress size="xl" value={80}/>
 		<Progress size="lg" value={80}/>
 		<Progress value={80}/>
@@ -124,8 +124,8 @@ Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg
 		<Progress value={80} type="circular"/>
 		<Progress size="sm" value={80} type="circular"/>
 		<Progress size="xs" value={80} type="circular"/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Progress Layouts
 
@@ -135,8 +135,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`|`lin
 
 `Note:` circular progress bar only has (`default`|`line`) layouts
 
-<Canvas>
-	<Story name="Progress Layouts">
+<div>
+	<div name="Progress Layouts">
 		<Progress layout="default" value={80}/>
 		<Progress layout="rounded" value={80}/>
 		<Progress layout="no-radius" value={80}/>
@@ -147,8 +147,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`|`lin
 		<h5>Circular Progress Layouts</h5>
 		<Progress type="circular" layout="default" value={80}/>
 		<Progress type="circular" layout="line" value={80}/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Progress Variants
 
@@ -159,8 +159,8 @@ Set `variant` prop with the value of (`default`|`fluid`|`striped`|`outline`). yo
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="Progress Variants">
+<div>
+	<div name="Progress Variants">
 		<Progress variant="default" value={80}/>
 		<Progress variant="fluid" value={80}/>
 		<Progress variant="striped" value={80}/>
@@ -172,5 +172,5 @@ you can check out the props table to see which variant is supported by the compo
 		<Progress type="circular" variant="fluid" value={80}/>
 		<Progress type="circular" variant="striped" value={80}/>
 		<Progress type="circular" variant="outline" value={80}/>
-	</Story>
-</Canvas>
+	</div>
+</div>

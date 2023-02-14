@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import modalStyles from "./Modal.module.css"
 import getClassNames from "../utils/classes/getClassnames";
 import {IModalProps, OverLaySizesArray, propTypes} from "./Modal.types";
@@ -6,6 +6,7 @@ import {IDiv, IModalSizesType} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
 import sizeClasses from "../utils/classes/sizeClasses";
+import {ThemeContext} from "../ThemeProvider";
 
 
 export const Modal: React.FC<IModalProps & IDiv> = (
@@ -29,6 +30,7 @@ export const Modal: React.FC<IModalProps & IDiv> = (
 		children,
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	const componentSelector = 'modal';
 	const {
 		classNames, customCss
@@ -60,7 +62,7 @@ export const Modal: React.FC<IModalProps & IDiv> = (
 	return (
 		<>
 			{customCss && customCss()}
-			<div {...rest} style={style} className={mainClasses} onClick={(e) => {
+			<div {...rest} data-theme-id={context?.themeId || ''} style={style} className={mainClasses} onClick={(e) => {
 				onBackdropClick?.(e);
 				rest?.onClick?.(e)
 				onBackdropEffect(e)

@@ -107,7 +107,7 @@ const createTheme = (theme: object, config: IConfig = {
 			})
 		}
 		themeStyle += `
-		${config.scope === 'local' ? `.${config.componentId}` : `#${config.themeId}`}{
+		${config.scope === 'local' ? `.${config.componentId}` : `[data-theme-id='${config.themeId}']`}{
 			--${t}:${background} ;
 			--${t}-color: ${backgroundColor};
 			--${t}-text: ${text};

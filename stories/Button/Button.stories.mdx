@@ -1,7 +1,5 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
 import {Button, Space} from '../../src/index';
 
-<Meta title="Components/Button" component={Button}/>
 
 # Buttons
 
@@ -11,9 +9,9 @@ export const defaultTemplate=(args) => {
 	return <Button {...args}>Default</Button>
 };
 
-<Canvas>
-	<Story name="Default">{defaultTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div>{defaultTemplate.bind({})}</div>
+</div>
 
 ## API
 
@@ -21,23 +19,22 @@ export const defaultTemplate=(args) => {
 import { Button } from 'artific-ui/Button';
 ```
 
-<ArgsTable story="Default"/>
 
 ## Button Themes
 
 If you want to use a different theme for `Button` use the `theme` prop to set the theme
 Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
 
-<Canvas>
-	<Story name="Button Themes">
+<div>
+	<div>
 		<Space>
 			<Button theme="primary" type="button">Primary</Button>
 			<Button theme="secondary" type="button">Secondary</Button>
 			<Button theme="light" type="button">Light</Button>
 			<Button theme="dark" type="button">Dark</Button>
 		</Space>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Custom Theme Buttons
 
@@ -46,8 +43,8 @@ If you want to use a different color scheme for `Button` instead of the provided
 
 colorScheme is an object containing three properties: `background`, `backgroundColor`, `color`
 
-<Canvas>
-	<Story name="Custom theme buttons">
+<div>
+	<div name="Custom theme buttons">
 		<Space>
 			<Button colorScheme={{
 				background: 'linear-gradient(45deg, #e736f4, #673ab7)',
@@ -68,8 +65,8 @@ colorScheme is an object containing three properties: `background`, `backgroundC
 				color: 'white',
 			}} variant="outline" theme="light" type="button">Custom Outline</Button>
 		</Space>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Variants
 
@@ -80,15 +77,15 @@ Set `variant` prop with the value of (`default`|`text`|`outline`). you can mix t
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="Variants">
+<div>
+	<div name="Variants">
 		<Space>
 			<Button variant="default" type="button">Default</Button>
 			<Button variant="text" type="button">Text</Button>
 			<Button variant="outline" type="button">Outline</Button>
 		</Space>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Icons In Buttons
 
@@ -96,14 +93,13 @@ You can append or prepend an icon to the button with prop called `prefix` and `s
 
 any jsx is allowed in these props.
 
-<Canvas>
-	<Story name="Icons In Buttons">
+<div>
+	<div>
 		<Space>
 			<Button
 				prefix={<i className='bx bxs-user-circle'></i>}
 				type="button"
-			>User
-			</Button>
+			>User</Button>
 			<Button theme="light" type="button" suffix={<i className='bx bx-cog'></i>}>Settings</Button>
 			<Button theme="dark"
 					prefix={
@@ -113,8 +109,8 @@ any jsx is allowed in these props.
 					suffix={<img
 						src="https://www.freepnglogos.com/uploads/logo-outlook/transparent-outlook-icon-2.png"/>}>Settings</Button>
 		</Space>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Button Layouts
 
@@ -124,26 +120,26 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
-<Canvas>
-	<Story name="Button Layouts">
+<div>
+	<div name="Button Layouts">
 		<Space>
 			<Button layout="default" type="button">Default</Button>
 			<Button layout="rounded" type="button">Rounded</Button>
 			<Button layout="pill" type="button">Pill</Button>
 			<Button layout="no-radius" type="button">No Radius</Button>
 		</Space>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Full Width Button
 
 Button has a `fullWidth` prop which is used to make a button full width
 
-<Canvas>
-	<Story name="Full Width Button">
+<div>
+	<div name="Full Width Button">
 		<Button fullwidth type="button">Default</Button>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Sizes
 
@@ -153,8 +149,8 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
-<Canvas>
-	<Story name="Sizes">
+<div>
+	<div name="Sizes">
 		<Space>
 			<Button size="xs" type="button">Extra Small</Button>
 			<Button size="sm" type="button">Small</Button>
@@ -162,22 +158,22 @@ Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg
 			<Button size="lg" type="button">Large</Button>
 			<Button size="xl" type="button">Extra Large</Button>
 		</Space>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Disabled Buttons
 
 Use `disabled` prop to make any button disable.
 
-<Canvas>
-	<Story name="Disabled Buttons">
+<div>
+	<div name="Disabled Buttons">
 		<Space>
 			<Button disabled type="button">Primary</Button>
 			<Button disabled theme="light" type="button">Light</Button>
 			<Button disabled theme="dark" type="button">Dark</Button>
 		</Space>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Loading Buttons
 
@@ -189,8 +185,8 @@ also you can use `loadingStyle:` (`spin`|`grow`) to change the loading style.
 
 use `loadingDirection` to set on with direction loader should appare.
 
-<Canvas>
-	<Story name="Loading Buttons">
+<div>
+	<div name="Loading Buttons">
 		<Space>
 			<Button loading hideTextOnLoading loadingStyle="spin" type="button">Loading Grow</Button>
 			<Button loading hideTextOnLoading loadingStyle="grow" type="button">Loading Grow</Button>
@@ -198,6 +194,6 @@ use `loadingDirection` to set on with direction loader should appare.
 			<Button loading loadingDirection="after" type="button">Loading Spin</Button>
 			<Button loading loadingDirection="after" loadingStyle="grow" type="button">Loading Grow</Button>
 		</Space>
-	</Story>
-</Canvas>
+	</div>
+</div>
 

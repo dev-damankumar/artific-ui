@@ -9,7 +9,7 @@ const Controls=() => {
 					<i className='bx bx-chevron-left'></i>}>Prev</Button>
 			</Col>
 			<Col justify="end" col={6}>
-				<Button theme="dark" layout="rounded" suffix={
+				<Button style={{marginLeft: 'auto', display: 'flex'}} theme="dark" layout="rounded" suffix={
 					<i className='bx bx-chevron-right'></i>}>Next</Button>
 			</Col>
 		</Row>

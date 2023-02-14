@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import createTheme from "../utils/styles/theme";
 import generateRandomClassId from "../utils/uuids/generateRandomClassId";
+import {addPropsToChildren} from "../utils/helpers";
 
 interface ITheme {
 	usingThemeProvider: boolean;
@@ -27,6 +28,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode, theme: object 
 		themeId,
 		scope: "global"
 	})
+	const childrenWithProps = addPropsToChildren(children, {'data-theme-id': themeId})
 	return (
 		<ThemeContext.Provider
 			value={{theme: themeState, setTheme, usingThemeProvider, themeId}}
@@ -34,9 +36,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode, theme: object 
 			<style data-artific-css={themeId}>
 				{themeStyle && themeStyle}
 			</style>
-			<div data-theme-provider style={{display: "inline"}} id={themeId}>
-				{children}
-			</div>
+			{childrenWithProps}
 		</ThemeContext.Provider>
 	);
 };

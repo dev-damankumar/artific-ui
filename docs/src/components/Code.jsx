@@ -17,7 +17,7 @@ const Code=({children}) => {
 				</IconButton>
 			</Tooltip>
 			<Typography variant="pre" className="pre">
-				<Typography contentEditable={true} variant="code" className="language-js">
+				<Typography variant="code" className="language-js">
 					{children.toString().trim()}
 				</Typography>
 			</Typography>

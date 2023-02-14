@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import getClassNames from '../utils/classes/getClassnames';
 import classes from './Dropdown.module.css';
 import {IMenuItemProps, IMenuItemPropsType} from './Dropdown.types';
 import {ILink} from "../types/Common.types";
+import {ThemeContext} from "../ThemeProvider";
 
 export const MenuItem: React.FC<IMenuItemProps & ILink> = (
 	{
@@ -15,9 +16,10 @@ export const MenuItem: React.FC<IMenuItemProps & ILink> = (
 		autoClose,
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	return (
 		<a
-			{...rest}
+			{...rest} data-theme-id={context?.themeId || ''}
 			style={style}
 			onClick={(e) => {
 				onSelect?.(e);

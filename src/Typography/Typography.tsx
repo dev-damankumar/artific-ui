@@ -1,9 +1,10 @@
-import React, {createElement} from 'react';
+import React, {createElement, useContext} from 'react';
 import getClassNames from '../utils/classes/getClassnames';
 import classes from './Typography.module.css';
 import {ITypographyProps, propTypes} from './Typography.types';
 import {IAnyElement} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
+import {ThemeContext} from "../ThemeProvider";
 
 export const Typography: React.FC<ITypographyProps & IAnyElement> = (
 	{
@@ -19,6 +20,7 @@ export const Typography: React.FC<ITypographyProps & IAnyElement> = (
 		colorScheme,
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	const componentSelector = 'typography';
 	const {
 		classNames, customCss
@@ -37,16 +39,11 @@ export const Typography: React.FC<ITypographyProps & IAnyElement> = (
 	if (fontWeight) {
 		styles['fontWeight'] = fontWeight;
 	}
-	console.log('adg', {
-		style: {...styles},
-		className: `${classNames} ${!colorScheme ? `text-${theme}` : ''} ${getClassNames(classes, additionalThemeClass)} ${getClassNames(classes, 'typography', variantClasses, weightClasses)}`,
-		...rest,
-		children: children
-	})
 	const mainElement = createElement(element, {
 		style: {...styles},
 		className: `${classNames} ${!colorScheme ? `text-${theme}` : ''} ${getClassNames(classes, additionalThemeClass)} ${getClassNames(classes, 'typography', variantClasses, weightClasses)}`,
 		...rest,
+		'data-theme-id': context?.themeId || '',
 		children: children
 	})
 	return <>

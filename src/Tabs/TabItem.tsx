@@ -1,10 +1,11 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 
 import getClassNames from "../utils/classes/getClassnames";
 import styles from "./Tabs.module.css";
 import {ITabItemProps, tabItemPropTypes} from "./Tabs.types";
 import ErrorMessage from "../utils/errors/Error";
 import {ILi} from "../types/Common.types";
+import {ThemeContext} from "../ThemeProvider";
 
 export const TabItem: React.FC<ITabItemProps & ILi> = (
 	{
@@ -15,6 +16,7 @@ export const TabItem: React.FC<ITabItemProps & ILi> = (
 		setActiveTab,
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	if (!target) {
 		return <ErrorMessage>`target` Prop is Required</ErrorMessage>
 	}
@@ -30,7 +32,7 @@ export const TabItem: React.FC<ITabItemProps & ILi> = (
 	}
 
 	return (
-		<li {...rest} onClick={(e: React.MouseEvent<HTMLElement>) => {
+		<li {...rest} data-theme-id={context?.themeId || ''} onClick={(e: React.MouseEvent<HTMLElement>) => {
 			tabChangeHandler(e, target)
 		}}
 			className={getClassNames(styles, 'tab-item', activeTab === target ? 'active' : '')}>

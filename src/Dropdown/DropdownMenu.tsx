@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import getClassNames from '../utils/classes/getClassnames';
 import styles from './Dropdown.module.css';
 import {IDropdownMenu, IDropdownMenuPropsType} from './Dropdown.types';
 import {IDiv} from "../types/Common.types";
 import {addPropsToChildren} from "../utils/helpers";
+import {ThemeContext} from "../ThemeProvider";
 
 export const DropdownMenu: React.FC<IDropdownMenu & IDiv> = (
 	{
@@ -16,12 +17,13 @@ export const DropdownMenu: React.FC<IDropdownMenu & IDiv> = (
 		onClick,
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	const classes = getClassNames(styles, 'dropdown-menu', position === 'after' ? 'dropdown-menu-right' : '')
 	const childrenWithProps = addPropsToChildren(children, {}, false)
 
 	return (
 		<div
-			{...rest}
+			{...rest} data-theme-id={context?.themeId || ''}
 			className={`${classes} ${className}`}
 			style={style}
 			onClick={(e) => {

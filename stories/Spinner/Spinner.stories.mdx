@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Spinner} from '../../src';
 
 
@@ -19,9 +19,9 @@ export const Template=(args) => {
 
 A spinner for displaying loading state of a page or a section.
 
-<Canvas>
-	<Story name="Default">{Template.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{Template.bind({})}</div>
+</div>
 
 ## API
 
@@ -29,7 +29,7 @@ A spinner for displaying loading state of a page or a section.
 import { Spinner } from 'artific-ui/Spinner';
 ```
 
-<ArgsTable story="Default"/>
+
 
 ## Spinner Themes
 
@@ -39,8 +39,8 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 You can also use `colorScheme` prop to define a custom theme.
 
 
-<Canvas>
-	<Story name="Basic Spinner Themes">
+<div>
+	<div name="Basic Spinner Themes">
 		<Spinner theme="primary"/>
 		<Spinner theme="secondary"/>
 		<Spinner theme="dark"/>
@@ -52,8 +52,8 @@ You can also use `colorScheme` prop to define a custom theme.
 			backgroundColor: '#e736f4',
 			color: 'white',
 		}}/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Spinner Size
 
@@ -63,15 +63,15 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
-<Canvas>
-	<Story name="Spinner Size">
+<div>
+	<div name="Spinner Size">
 		<Spinner size="xl"/>
 		<Spinner size="lg"/>
 		<Spinner size="md"/>
 		<Spinner size="sm"/>
 		<Spinner size="xs"/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Spinner Variants
 
@@ -82,8 +82,8 @@ Set `variant` prop with the value of (`default`|`ring`|`dots`|`box`|`ripple`). y
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="Spinner Variants">
+<div>
+	<div name="Spinner Variants">
 		<Spinner variant="default"/>
 		<br/>
 		<br/>
@@ -103,5 +103,5 @@ you can check out the props table to see which variant is supported by the compo
 		<br/>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>

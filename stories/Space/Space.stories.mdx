@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Button, Space} from '../../src';
 
 <Meta
@@ -7,7 +7,7 @@ import {Button, Space} from '../../src';
 />
 
 export const Template=(args) => {
-	return <>
+	<div>
 		<h5>Without <code>Space</code> component</h5>
 		<Button>Button 1</Button>
 		<Button>Button 2</Button>
@@ -37,7 +37,8 @@ export const Template=(args) => {
 			<Button>Button 5</Button>
 			<Button>Button 5</Button>
 		</Space>
-	</>;
+	</div>
+
 };
 
 # Spaces
@@ -45,9 +46,9 @@ export const Template=(args) => {
 A Space Helps you to set the spacing of its children in a flexible way. It Avoids components clinging together and set a unified space.
 
 By Default all the items will wrap if content overflows to make it not wrap the items set `wrap` prop to `false`
-<Canvas>
-	<Story name="Default">{Template.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{Template.bind({})}</div>
+</div>
 
 ## API
 
@@ -55,7 +56,7 @@ By Default all the items will wrap if content overflows to make it not wrap the 
 import { Space } from 'artific-ui/Space';
 ```
 
-<ArgsTable story="Default"/>
+
 
 ## Space Gap
 
@@ -66,38 +67,39 @@ A `gap` prop is used to define how much spacing the children should have.
 donation `horizontal` spacing and `verticle` spacing respectively
 
 
-<Canvas>
-	<Story name="Space Gap">
-		return <>
-		<Space gap={30}>
-			<Button>Button 1</Button>
-			<Button>Button 2</Button>
-			<Button>Button 3</Button>
-			<Button>Button 4</Button>
-			<Button>Button 5</Button>
-		</Space>
-		<br/>
-		<br/>
-		<Space gap={[30, 0]}>
-			<Button>Button 1</Button>
-			<Button>Button 2</Button>
-			<Button>Button 3</Button>
-			<Button>Button 4</Button>
-			<Button>Button 5</Button>
-		</Space>
-		<br/>
-		<br/>
-		<Space gap={[0, 30]}>
-			<Button>Button 1</Button>
-			<Button>Button 2</Button>
-			<Button>Button 3</Button>
-			<Button>Button 4</Button>
-			<Button>Button 5</Button>
-			<Button>Button 5</Button>
-		</Space>
-	</>;
-	</Story>
-</Canvas>
+<div>
+	<div name="Space Gap">
+		<div>
+			<Space gap={30}>
+				<Button>Button 1</Button>
+				<Button>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 4</Button>
+				<Button>Button 5</Button>
+			</Space>
+			<br/>
+			<br/>
+			<Space gap={[30, 0]}>
+				<Button>Button 1</Button>
+				<Button>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 4</Button>
+				<Button>Button 5</Button>
+			</Space>
+			<br/>
+			<br/>
+			<Space gap={[0, 30]}>
+				<Button>Button 1</Button>
+				<Button>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 4</Button>
+				<Button>Button 5</Button>
+				<Button>Button 5</Button>
+			</Space>
+		</div>
+		;
+	</div>
+</div>
 
 
 ## Space Direction
@@ -106,39 +108,40 @@ A `direction` prop is used to define on which direction the spacing should be ap
 
 `direction` prop values can be : (`horizontal`,`verticle`,`both`)
 
-<Canvas>
-	<Story name="Space Direction">
-		return <>
-		<Space>
-			<Button>Button 1</Button>
-			<Button>Button 2</Button>
-			<Button>Button 3</Button>
-			<Button>Button 3</Button>
-			<Button>Button 3</Button>
-		</Space>
-		<br/>
-		<br/>
-		<Space direction="horizontal">
-			<Button>Button 1</Button>
-			<Button>Button 2</Button>
-			<Button>Button 3</Button>
-			<Button>Button 3</Button>
-			<Button>Button 3</Button>
-			<Button>Button 3</Button>
-		</Space>
-		<br/>
-		<br/>
-		<Space direction="vertical">
-			<Button>Button 1</Button>
-			<Button>Button 2</Button>
-			<Button>Button 3</Button>
-			<Button>Button 3</Button>
-			<Button>Button 3</Button>
-			<Button>Button 3</Button>
-		</Space>
-	</>;
-	</Story>
-</Canvas>
+<div>
+	<div name="Space Direction">
+		<div>
+			<Space>
+				<Button>Button 1</Button>
+				<Button>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+			</Space>
+			<br/>
+			<br/>
+			<Space direction="horizontal">
+				<Button>Button 1</Button>
+				<Button>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+			</Space>
+			<br/>
+			<br/>
+			<Space direction="vertical">
+				<Button>Button 1</Button>
+				<Button>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+				<Button>Button 3</Button>
+			</Space>
+		</div>
+		;
+	</div>
+</div>
 
 
 
@@ -148,32 +151,33 @@ A `align` prop is used to align items on y-axis. its is same as the `align-item`
 
 `align` prop value can be: (`start`|`end`|`baseline`|`center`)
 
-<Canvas>
-	<Story name="Space Align">
-		return <>
-		<Space>
-			<Button>Button 1</Button>
-			<Button style={{height: '100px'}}>Button 2</Button>
-			<Button>Button 3</Button>
-			<Button>Button 4</Button>
-		</Space>
-		<br/>
-		<br/>
-		<Space align="end">
-			<Button>Button 1</Button>
-			<Button style={{height: '100px'}}>Button 2</Button>
-			<Button>Button 3</Button>
-			<Button>Button 4</Button>
-		</Space>
-		<br/>
-		<br/>
-		<Space align="center">
-			<Button>Button 1</Button>
-			<Button style={{height: '100px'}}>Button 2</Button>
-			<Button>Button 3</Button>
-			<Button>Button 4</Button>
-		</Space>
-	</>;
-	</Story>
-</Canvas>
+<div>
+	<div name="Space Align">
+		<div>
+			<Space>
+				<Button>Button 1</Button>
+				<Button style={{height: '100px'}}>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 4</Button>
+			</Space>
+			<br/>
+			<br/>
+			<Space align="end">
+				<Button>Button 1</Button>
+				<Button style={{height: '100px'}}>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 4</Button>
+			</Space>
+			<br/>
+			<br/>
+			<Space align="center">
+				<Button>Button 1</Button>
+				<Button style={{height: '100px'}}>Button 2</Button>
+				<Button>Button 3</Button>
+				<Button>Button 4</Button>
+			</Space>
+		</div>
+		;
+	</div>
+</div>
 

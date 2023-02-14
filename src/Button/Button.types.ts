@@ -32,6 +32,7 @@ export const propTypes = {
 	theme: PropTypes.oneOf<Themes>(ThemesArray),
 	hideTextOnLoading: PropTypes.bool,
 	loading: PropTypes.bool,
+	noRipple: PropTypes.bool,
 	fullwidth: PropTypes.bool,
 	colorScheme: PropTypes.shape({
 		background: PropTypes.string.isRequired,
@@ -50,6 +51,7 @@ export interface IButtonProps {
 	style?: CSSProperties;
 	theme?: Themes;
 	hideTextOnLoading?: boolean;
+	noRipple?: boolean;
 	fullwidth?: boolean;
 	colorScheme?: ColorScheme;
 	loadingDirection?: LoadingDirections;

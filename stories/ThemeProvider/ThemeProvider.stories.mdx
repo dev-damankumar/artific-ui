@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Source, Story} from '@storybook/addon-docs';
+import {Meta, Source} from '@storybook/addon-docs';
 import {Button, ThemeProvider} from '../../src/index';
 
 <Meta title="Components/ThemeProvider" component={ThemeProvider}/>
@@ -44,9 +44,9 @@ export const defaultTemplate=(args) => {
 	</>
 };
 
-<Canvas>
-	<Story name="Default">{defaultTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{defaultTemplate.bind({})}</div>
+</div>
 
 ## API
 
@@ -54,7 +54,7 @@ export const defaultTemplate=(args) => {
 import { ThemeProvider } from 'artific-ui/ThemeProvider';
 ```
 
-<ArgsTable story="Default"/>
+
 
 ## Basics
 

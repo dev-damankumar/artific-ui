@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Divider, Dropdown, DropdownMenu, DropdownToggle, MenuItem} from '../../src/index';
 import logo from './logo.svg'; import {MenuHeading} from "../../src/Dropdown/MenuHeading";
 
@@ -66,9 +66,9 @@ A dropdown menu is a toggleable menu that allows the user to choose one value fr
 
 ## Basic Dropdown
 
-<Canvas>
-	<Story name="Basic Dropdown">{Template.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Basic Dropdown">{Template.bind({})}</div>
+</div>
 
 ## API
 
@@ -76,15 +76,14 @@ A dropdown menu is a toggleable menu that allows the user to choose one value fr
 import { Dropdown } from 'artific-ui/Dropdown';
 ```
 
-<ArgsTable story="Basic Dropdown"/>
 
 ## Dropdown Themes
 
 If you want to use a different theme for `Dropdown` use the `theme` prop to set the theme
 Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
 
-<Canvas>
-	<Story name="Dropdown Themes">
+<div>
+	<div name="Dropdown Themes">
 		<Dropdown variant="drawer" theme="primary">
 			<DropdownToggle>
 				Dropdown
@@ -143,8 +142,8 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 		<br/>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Custom Dropdown
 
@@ -153,8 +152,8 @@ If you want to use a different color scheme for `Dropdown` instead of the provid
 
 colorScheme is an object containing three properties: `background`, `backgroundColor`, `color`
 
-<Canvas>
-	<Story name="Custom Dropdown">
+<div>
+	<div name="Custom Dropdown">
 		<h5>Custom Dropdown</h5>
 		<Dropdown colorScheme={{
 			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
@@ -197,8 +196,8 @@ colorScheme is an object containing three properties: `background`, `backgroundC
 		<br/>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Dropdown Positions
@@ -207,8 +206,8 @@ Use `position` prop to choose in which direction dropdown should open
 
 Possible values are: (`left`|`right`|`top`|`bottom`)
 
-<Canvas>
-	<Story name="Dropdown Positions">
+<div>
+	<div name="Dropdown Positions">
 		<Dropdown position="left" style={{marginLeft: "50%"}}>
 			<DropdownToggle>
 				My Profile
@@ -306,15 +305,15 @@ Possible values are: (`left`|`right`|`top`|`bottom`)
 		<br/>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Full Width Dropdown
 
 Dropdown has a `fullWidth` prop which is used to make a dropdown menu width same as the width of the button
 
-<Canvas>
-	<Story name="Full Width Dropdown">
+<div>
+	<div name="Full Width Dropdown">
 		<Dropdown fullwidth={true}>
 			<DropdownToggle>
 				Very Long Button...................................
@@ -352,8 +351,8 @@ Dropdown has a `fullWidth` prop which is used to make a dropdown menu width same
 		<br/>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Dropdown Layouts
 
@@ -363,8 +362,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`floating`)
 
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
-<Canvas>
-	<Story name="Dropdown Layouts">
+<div>
+	<div name="Dropdown Layouts">
 		<Dropdown layout="default">
 			<DropdownToggle>
 				My Profile
@@ -486,8 +485,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`floating`)
 		<br/>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Dropdown Variants
 
@@ -498,8 +497,8 @@ Set `variant` prop with the value of (`default`|`drawer`|`fluid`). you can mix t
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="Dropdown Variants">
+<div>
+	<div name="Dropdown Variants">
 		<Dropdown variant="default">
 			<DropdownToggle>
 				My Profile
@@ -593,8 +592,8 @@ you can check out the props table to see which variant is supported by the compo
 		<br/>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Dropdown Sizes
 
@@ -604,8 +603,8 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
-<Canvas>
-	<Story name="Dropdown Sizes">
+<div>
+	<div name="Dropdown Sizes">
 		<Dropdown size="xs">
 			<DropdownToggle>
 				My Profile
@@ -755,7 +754,7 @@ Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg
 		<br/>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 

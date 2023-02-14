@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 
 import styles from "./Container.module.css"
 import getClassNames from "../utils/classes/getClassnames";
 import PropTypes from "prop-types";
 import {IDiv, Sizes, SizesArray} from "../types/Common.types";
+import {ThemeContext} from "../ThemeProvider";
 
 interface IContainerProps {
 	children: React.ReactNode;
@@ -22,9 +23,10 @@ export const Container: React.FC<IContainerProps & IDiv> = (
 		children,
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	const sizeClass = fluid ? '' : `container-${size}`
 	return (
-		<div {...rest} style={style}
+		<div {...rest} data-theme-id={context?.themeId || ''} style={style}
 			 className={`${className} ${getClassNames(styles, fluid ? 'container-fluid' : 'container', sizeClass)}`.trim()}>
 			{children}
 		</div>

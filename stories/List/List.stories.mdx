@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {List, ListItem} from '../../src/index';
 
 <Meta
@@ -21,9 +21,9 @@ export const defaultTemplate=(args) => {
 	);
 };
 
-<Canvas>
-	<Story name="Default">{defaultTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{defaultTemplate.bind({})}</div>
+</div>
 
 ## API
 
@@ -31,7 +31,7 @@ export const defaultTemplate=(args) => {
 import { List } from 'artific-ui/List';
 ```
 
-<ArgsTable story="Default"/>
+
 
 
 ## List Themes
@@ -41,8 +41,8 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 
 You can also use `colorScheme` prop to define a custom theme.
 
-<Canvas>
-	<Story name="List Themes">
+<div>
+	<div name="List Themes">
 		<List>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -87,39 +87,39 @@ You can also use `colorScheme` prop to define a custom theme.
 		</List>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Basic List With Icons
 
 Use `prefix` or `suffix` to add a icon to your list at the start or end respectively.
 
-<Canvas>
-	<Story name="Basic List With Icons">
+<div>
+	<div name="Basic List With Icons">
 		<List variant="expanded" theme="light">
 			<ListItem prefix={<i className='bx bx-expand-vertical'></i>}>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem suffix={<i className='bx bx-expand-vertical'></i>}>Lorem ipsum dolor sit amet.</ListItem>
 		</List>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Disabled List Item
 
 Use `disabled` prop to disable a list
 
-<Canvas>
-	<Story name="Disabled List Item">
+<div>
+	<div name="Disabled List Item">
 		<List variant="expanded" theme="light">
 			<ListItem disabled>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 		</List>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## List Layouts
 
@@ -129,8 +129,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`)
 
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
-<Canvas>
-	<Story name="List Layouts">
+<div>
+	<div name="List Layouts">
 		<List layout="default" theme="light">
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -163,8 +163,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`)
 		</List>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## List Directions
 
@@ -172,8 +172,8 @@ Use `direction` prop to set the direction flow of your list.
 
 Followings are the value for `direction` props (`column`|`row`)
 
-<Canvas>
-	<Story name="List Directions">
+<div>
+	<div name="List Directions">
 		<List direction="column" theme="light">
 			<ListItem>Lorem ipsum</ListItem>
 			<ListItem>Lorem ipsum</ListItem>
@@ -190,8 +190,8 @@ Followings are the value for `direction` props (`column`|`row`)
 		</List>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## List Sizes
 
@@ -201,8 +201,8 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
-<Canvas>
-	<Story name="List Sizes">
+<div>
+	<div name="List Sizes">
 		<List size="xs" theme="light">
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -243,8 +243,8 @@ Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg
 		</List>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## List Variants
 
@@ -255,8 +255,8 @@ Set `variant` prop with the value of (`default`|`striped`|`separate`|`borderless
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="List Variants">
+<div>
+	<div name="List Variants">
 		<List variant="default" theme="light">
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
 			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
@@ -297,6 +297,6 @@ you can check out the props table to see which variant is supported by the compo
 		</List>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
