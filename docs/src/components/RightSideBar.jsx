@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 import docs from "../docs.jsx"
-import {ThemeProvider} from "../../../src/index";
+import {ThemeProvider} from "artific-ui";
 import theme from "../theme.js";
 
 const RightSidebar=(props) => {

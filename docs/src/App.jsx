@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './index.css'
 import Sidebar from "./components/Sidebar.jsx";
 import Header from "./components/Header.jsx";
-import {Col, Container, Row, Space, ThemeProvider} from "../../src/index";
+import {Col, Container, Row, Space, ThemeProvider} from "artific-ui";
 import Controls from "./components/Controls.jsx";
 import GetStarted from '../../stories/getstarted.stories.mdx'
 import Installation from '../../stories/installation.stories.mdx'

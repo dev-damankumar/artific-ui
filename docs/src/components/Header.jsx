@@ -1,11 +1,10 @@
 import React from 'react';
-import {IconButton, Progress, ThemeProvider, Typography} from "../../../src/index";
+import {IconButton, Progress, Space, ThemeProvider, Typography} from "artific-ui";
 import github from "../assets/images/github.png";
 import setting from "../assets/images/settings.png";
 import theme from "../theme.js";
 import Logo from "./Logo.jsx";
-import {Space} from "artific-ui";
-
+// import {Progress} from "../../../src/index"
 
 const Header=({toggleSidebar}) => {
 

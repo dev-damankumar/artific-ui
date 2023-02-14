@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Col, Row} from "../../../src/index";
+import {Button, Col, Row} from "artific-ui";
 
 const Controls=() => {
 	return (

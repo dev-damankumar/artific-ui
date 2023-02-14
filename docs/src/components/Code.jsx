@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import "../assets/prism.css"
 import "../index.css"
-import {IconButton, Tooltip, Typography} from "../../../src/index";
+import {IconButton, Tooltip, Typography} from "artific-ui";
 import Prism from "prismjs";
 
 
