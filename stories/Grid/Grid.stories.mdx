@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Col, Container, Row} from '../../src';
 
 
@@ -29,9 +29,9 @@ export const Template=(args) => {
 
 The grid creates visual consistency between layouts while allowing flexibility across a wide variety of designs. Material Design's responsive UI is based on a 12-column grid layout.
 
-<Canvas>
-	<Story name="Default">{Template.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{Template.bind({})}</div>
+</div>
 
 ## API
 
@@ -39,34 +39,34 @@ The grid creates visual consistency between layouts while allowing flexibility a
 import { Container,Row,Col } from 'artific-ui';
 ```
 
-<ArgsTable story="Default"/>
+
 
 ## Containers
 
 The container centers your content horizontally. It's the most basic layout element.
 
-<Canvas>
-	<Story name="Containers">
+<div>
+	<div name="Containers">
 		<Container style={{background: '#f1f1f1', padding: '20px', height: 100}}>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consectetur et facere maxime
 				molestiae omnis porro praesentium quisquam recusandae reprehenderit.</p>
 		</Container>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Container Fluid
 
 A fluid container width is bounded by the 100% screen width
 
-<Canvas>
-	<Story name="Container Fluid">
+<div>
+	<div name="Container Fluid">
 		<Container fluid={true} style={{background: '#f1f1f1', padding: '20px', height: 100}}>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consectetur et facere maxime
 				molestiae omnis porro praesentium quisquam recusandae reprehenderit.</p>
 		</Container>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Grids
@@ -121,10 +121,10 @@ export const GridTemplate=(args) => {
 	</>
 };
 
-<Canvas>
-	<Story name="Grids">
+<div>
+	<div name="Grids">
 		{GridTemplate.bind({})}
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 

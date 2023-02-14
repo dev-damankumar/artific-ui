@@ -1,10 +1,11 @@
-import React, {CSSProperties} from 'react';
+import React, {CSSProperties, useContext} from 'react';
 import styles from './ButtonGroup.module.css';
 import getClassNames from '../utils/classes/getClassnames';
 import sizeClasses from '../utils/classes/sizeClasses';
 import {Axis, AxisArray, ColorScheme, IDiv, Layouts, Sizes, SizesArray, Themes, Variants} from '../types/Common.types';
 import PropTypes from "prop-types";
 import {addPropsToChildren} from "../utils/helpers";
+import {ThemeContext} from "../ThemeProvider";
 
 
 export interface IButtonGroupProps {
@@ -29,12 +30,13 @@ export const ButtonGroup: React.FC<IButtonGroupProps & Omit<IDiv, 'prefix'>> = (
 		colorScheme,
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	let sizeClass = sizeClasses('btn-group', size);
 	let directionClasses = direction !== 'horizontal' ? `btn-group-${direction}` : 'btn-group';
 	const childrenWithProps = addPropsToChildren(children, {theme, layout, colorScheme, variant}, true)
 	return (
 		<>
-			<div {...rest} className={getClassNames(styles, sizeClass, directionClasses)}>
+			<div {...rest} data-theme-id={context?.themeId || ''} className={getClassNames(styles, sizeClass, directionClasses)}>
 				{childrenWithProps}
 			</div>
 		</>

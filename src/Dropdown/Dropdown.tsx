@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import styles from './Dropdown.module.css';
 import getClassNames from '../utils/classes/getClassnames';
 import {IDropdownProps, propTypes} from './Dropdown.types';
 import {IDiv} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
+import {ThemeContext} from "../ThemeProvider";
 
 
 export const Dropdown: React.FC<IDropdownProps & IDiv> = (
@@ -23,6 +24,7 @@ export const Dropdown: React.FC<IDropdownProps & IDiv> = (
 		colorScheme,
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	const componentSelector = 'dropdown';
 	const [openMenu, setOpenMenu] = useState(false)
 	const {
@@ -61,7 +63,7 @@ export const Dropdown: React.FC<IDropdownProps & IDiv> = (
 	return (
 		<>
 			{customCss && customCss()}
-			<div {...rest} style={style}
+			<div {...rest} data-theme-id={context?.themeId || ''} style={style}
 				 data-dropdown
 				 className={`${classNames} ${classes}`}>
 				{childrenWithProps}

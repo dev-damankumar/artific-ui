@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Alert, Button} from '../../src';
 
 <Meta
@@ -24,9 +24,9 @@ export const Template=(args) => {
 
 An alert displays a short, important message in a way that attracts the user's attention without interrupting the user's task.
 
-<Canvas>
-	<Story name="Default">{Template.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{Template.bind({})}</div>
+</div>
 
 ## API
 
@@ -34,26 +34,24 @@ An alert displays a short, important message in a way that attracts the user's a
 import { Alert } from 'artific-ui/Alert';
 ```
 
-<ArgsTable story="Default"/>
 
 ## Dismissible Alert
 
 A dismissible alert is a alert which can be removed from the user's screen by clicking on the close icon button
 
-<Canvas>
-	<Story name="Dismissible Alert">
-		<Alert dismiss="true"><strong>Primary!</strong> You should <a href="#">read this
-			message</a>.</Alert>
-	</Story>
-</Canvas>
+<div>
+	<div name="Dismissible Alert">
+		<Alert dismiss="true"><strong>Primary!</strong> You should <a href="#">read this message</a>.</Alert>
+	</div>
+</div>
 
 ## Alert Themes
 
 If you want to use a different theme for `Alert` use the `theme` prop to set the theme
 Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
 
-<Canvas>
-	<Story name="Alert Themes">
+<div>
+	<div name="Alert Themes">
 		<h5>Basic Alerts</h5>
 		<br/>
 		<Alert dismiss={true}><strong>Primary!</strong> You should <a href="#">read this message</a>.</Alert>
@@ -62,8 +60,8 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 			message</a>.</Alert>
 		<Alert dismiss={true} theme="dark"><strong>Dark!</strong> You should <a href="#">read this message</a>.</Alert>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## 2. Custom Alert
 
@@ -72,8 +70,8 @@ If you want to use a different color scheme for `Alert` instead of the provided 
 
 colorScheme is an object containing three properties: `background`, `backgroundColor`, `color`
 
-<Canvas>
-	<Story name="Custom Alert">
+<div>
+	<div name="Custom Alert">
 		<h5>CustomScheme Alerts</h5>
 		<br/>
 		<Alert dismiss="true"
@@ -84,8 +82,8 @@ colorScheme is an object containing three properties: `background`, `backgroundC
 			   }}>
 			<strong>Primary!</strong> You should <a href="#">read this message</a>.
 		</Alert>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## 3. Alert Sizes
 
@@ -95,15 +93,15 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
-<Canvas>
-	<Story name="Alert Sizes">
+<div>
+	<div name="Alert Sizes">
 		<Alert size="xs">You should <a href="#">read this message</a>.</Alert>
 		<Alert size="sm">You should <a href="#">read this message</a>.</Alert>
 		<Alert>You should <a href="#">read this message</a>.</Alert>
 		<Alert size="lg">You should <a href="#">read this message</a>.</Alert>
 		<Alert size="xl">You should <a href="#">read this message</a>.</Alert>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## 3. Alert Layouts
 
@@ -113,16 +111,16 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
-<Canvas>
-	<Story name="Alert Layouts">
+<div>
+	<div name="Alert Layouts">
 		<h5>Alerts Layouts</h5>
 		<br/>
 		<Alert layout="rounded"><strong>Rounded!</strong> You should <a href="#">read this message</a>.</Alert>
 		<Alert layout="pill"><strong>Pill!</strong> You should <a href="#">read this message</a>.</Alert>
 		<Alert layout="no-radius"><strong>No Radius!</strong> You should <a href="#">read this message</a>.</Alert>
 		<Alert layout="default"><strong>Default!</strong> You should <a href="#">read this message</a>.</Alert>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## 3. Alert Variants
@@ -134,13 +132,13 @@ Set `variant` prop with the value of (`default`|`text`|`note`|`outline`). you ca
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="Alert Variants">
+<div>
+	<div name="Alert Variants">
 		<Alert variant="outline"><strong>Outline!</strong> You should <a href="#">read this message</a>.</Alert>
 		<Alert variant="default"><strong>Default!</strong> You should <a href="#">read thismessage</a>.</Alert>
 		<Alert variant="note"><strong>Note!</strong> You should <a href="#">read this message</a>.</Alert>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## 3. Note Variant Directions
 
@@ -148,11 +146,11 @@ Alert Note Variant has `direction` prop to define which direction the alert shou
 
 Set `direction` prop with the value of (`top`|`bottom`|`left`|`right`). you can mix them with different supported `theme` or `layout`
 
-<Canvas>
-	<Story name="Note Variant Directions">
+<div>
+	<div name="Note Variant Directions">
 		<Alert variant="note">You should <a href="#">read this message</a>.</Alert>
 		<Alert direction="right" variant="note">You should <a href="#">read this message</a>.</Alert>
 		<Alert direction="top" variant="note">You should <a href="#">read this message</a>.</Alert>
 		<Alert direction="bottom" variant="note">You should <a href="#">read this message</a>.</Alert>
-	</Story>
-</Canvas>
+	</div>
+</div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 
 import styles from "./Table.module.css"
@@ -6,6 +6,7 @@ import getClassNames from "../utils/classes/getClassnames";
 import {defaultProps, ITableProps, propTypes} from "./Table.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {IDiv} from "../types/Common.types";
+import {ThemeContext} from "../ThemeProvider";
 
 
 export const Table: React.FC<ITableProps & IDiv> = (
@@ -19,6 +20,7 @@ export const Table: React.FC<ITableProps & IDiv> = (
 		theme = 'primary',
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	const componentSelector = 'table';
 	const {
 		classNames, customCss
@@ -37,7 +39,7 @@ export const Table: React.FC<ITableProps & IDiv> = (
 	return (
 		<>
 			{customCss && customCss()}
-			<div {...rest} className={`${wrapperClassNames} ${getClassNames(styles, 'table-wrap')}`}>
+			<div {...rest} data-theme-id={context?.themeId || ''} className={`${wrapperClassNames} ${getClassNames(styles, 'table-wrap')}`}>
 				{/*<div className={getClassNames(styles, "table-customize-div")}>*/}
 				{/*</div>*/}
 				<div className={getClassNames(styles, "table-responsive")}>

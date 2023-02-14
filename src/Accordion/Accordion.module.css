@@ -1,5 +1,5 @@
 :root {
-	--accordion-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.1);
+	--accordion-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 	--accordion-border-radius: 5px;
 	--accordion-padding: 15px;
 	--accordion-font-size: 16px;
@@ -108,6 +108,10 @@
 
 .accordion-body {
 	color: var(--text);
+}
+
+.accordion-body :last-child {
+	margin-bottom: 0;
 }
 
 /*=====Layout=====*/

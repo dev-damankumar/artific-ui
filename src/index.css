@@ -21,38 +21,38 @@
 	--z-index-popover: 1070;
 	--z-index-tooltip: 1080;
 
-	--primary: hsla(230, 87%, 59%, 1);
+	--primary: hsla(235, 100%, 50%, 1);
 	--primary-color: var(--primary);
-	--primary-text: #cfd7ff;
-	--primary-hover: hsla(230, 87%, 54%, 1);
+	--primary-text: hsl(0, 0%, 100%);
+	--primary-hover: hsla(230, 87%, 45%, 1);
 	--primary-color-hover: var(--primary-hover);
 	--primary-text-hover: white;
-	--primary-hover-box-shadow: hsla(230, 87%, 90%, 1);
+	--primary-hover-box-shadow: hsla(235, 100%, 90%, 1);
 
-	--secondary: hsla(187, 100%, 42%, 1);
+	--secondary: hsla(332deg, 96%, 48%, 1);
 	--secondary-color: var(--secondary);
-	--secondary-text: hsl(187, 82%, 81%);
-	--secondary-hover: hsla(187, 100%, 37%, 1);
+	--secondary-text: hsl(0, 0%, 100%);
+	--secondary-hover: hsla(332, 96%, 33%, 1);
 	--secondary-color-hover: var(--secondary-hover);
 	--secondary-text-hover: white;
-	--secondary-hover-box-shadow: hsla(187, 100%, 90%, 1);
+	--secondary-hover-box-shadow: hsla(332, 96%, 90%, 1);
 
-	--light: hsla(0, 0%, 100%, 1);
-	--light-alt: hsl(0, 0%, 96%);
+	--light: hsla(180, 23%, 95%, 1);
+	--light-alt: var(--light);
 	--light-color: var(--light);
 	--light-text: hsl(221, 18%, 34%);
-	--light-hover: hsla(0, 0%, 95%, 1);
+	--light-hover: hsla(180, 23%, 90%, 1);
 	--light-color-hover: var(--light-hover);
 	--light-text-hover: white;
-	--light-hover-box-shadow: hsla(0, 0%, 90%, 1);
+	--light-hover-box-shadow: hsla(180, 23%, 90%, 1);
 
-	--dark: hsla(218, 36%, 18%, 1);
+	--dark: hsla(0, 0%, 16%, 1);
 	--dark-color: var(--dark);
-	--dark-text: #d9d9d9;
-	--dark-hover: hsla(218, 36%, 13%, 1);
+	--dark-text: hsl(0, 0%, 100%);
+	--dark-hover: hsla(0, 0%, 11%, 1);
 	--dark-color-hover: var(--dark-hover);
 	--dark-text-hover: white;
-	--dark-hover-box-shadow: hsla(218, 36%, 90%, 1);
+	--dark-hover-box-shadow: hsla(0, 0%, 90%, 1);
 
 }
 
@@ -117,9 +117,9 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Nunito Sans', sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	margin-top: 0;
-	margin-bottom: 1rem;
 	font-weight: 600;
 	line-height: 1.2;
+	margin-bottom: 0;
 }
 
 h1 {
@@ -172,7 +172,7 @@ h6 {
 
 p {
 	margin-top: 0;
-	margin-bottom: 1rem
+	margin-bottom: 0;
 }
 
 b,

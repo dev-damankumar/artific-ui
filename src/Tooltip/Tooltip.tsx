@@ -1,10 +1,11 @@
-import React, {useRef} from 'react';
+import React, {useContext, useRef} from 'react';
 import {ITooltipProps, propTypes} from "./Tooltip.types";
 import getClassNames from "../utils/classes/getClassnames";
 import styles from "./Tooltip.module.css";
 import {IDiv} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import uuid from "../utils/uuids/uuid";
+import {ThemeContext} from "../ThemeProvider";
 
 export const Tooltip: React.FC<ITooltipProps & IDiv> = (
 	{
@@ -20,6 +21,7 @@ export const Tooltip: React.FC<ITooltipProps & IDiv> = (
 		colorScheme,
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	const ref = useRef(null)
 	const componentSelector = 'tooltip';
 	const {
@@ -36,8 +38,9 @@ export const Tooltip: React.FC<ITooltipProps & IDiv> = (
 		if (React.isValidElement(child)) {
 			return React.cloneElement<any>(child, {
 				'data-tooltip': true,
-				children: [child.props.children, <div key={uuid()} role="tooltip" {...rest} style={style} ref={ref}
-													  className={`${classes}`}>{title}</div>]
+				children: [child.props.children,
+					<div key={uuid()} role="tooltip" {...rest} data-theme-id={context?.themeId || ''} style={style} ref={ref}
+						 className={`${classes}`}>{title}</div>]
 			});
 		}
 		return child;

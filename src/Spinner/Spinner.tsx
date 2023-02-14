@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import getClassNames from '../utils/classes/getClassnames';
 import styles from './Spinner.module.css';
 import {ISpinnerProps, propTypes} from './Spinner.types';
 import {IDiv} from "../types/Common.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
+import {ThemeContext} from "../ThemeProvider";
 
 export const Spinner: React.FC<ISpinnerProps & IDiv> = (
 	{
@@ -15,6 +16,7 @@ export const Spinner: React.FC<ISpinnerProps & IDiv> = (
 		variant = 'default',
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	const componentSelector = 'spinner';
 	const {
 		classNames, customCss
@@ -26,17 +28,17 @@ export const Spinner: React.FC<ISpinnerProps & IDiv> = (
 		additionalVariantClasses
 	)}`
 
-	let element: JSX.Element = <div {...rest} style={style} className={classes}>
+	let element: JSX.Element = <div {...rest} data-theme-id={context?.themeId || ''} style={style} className={classes}>
 		<div></div>
 		<div></div>
 		<div></div>
 		<div></div>
 	</div>
 	if (variant === 'ring' || variant === 'box') {
-		element = <div {...rest} style={style} className={classes}></div>
+		element = <div {...rest} data-theme-id={context?.themeId || ''} style={style} className={classes}></div>
 	}
 	if (variant === 'dots') {
-		element = <div {...rest} style={style} className={classes}>
+		element = <div {...rest} data-theme-id={context?.themeId || ''} style={style} className={classes}>
 			<div></div>
 			<div></div>
 			<div></div>
@@ -50,7 +52,7 @@ export const Spinner: React.FC<ISpinnerProps & IDiv> = (
 
 	}
 	if (variant === 'ripple') {
-		element = <div {...rest} style={style} className={classes}>
+		element = <div {...rest} data-theme-id={context?.themeId || ''} style={style} className={classes}>
 			<div></div>
 			<div></div>
 		</div>

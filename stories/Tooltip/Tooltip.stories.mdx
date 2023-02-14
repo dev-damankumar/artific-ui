@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Button, Tooltip} from '../../src';
 
 <Meta title="Components/Tooltip" component={Tooltip}/>
@@ -11,9 +11,9 @@ export const defaultTemplate=(args) => <Tooltip title="This is tooltip">
 	<Button>Default Tooltip</Button>
 </Tooltip>;
 
-<Canvas>
-	<Story name="Default">{defaultTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{defaultTemplate.bind({})}</div>
+</div>
 
 ## API
 
@@ -21,7 +21,7 @@ export const defaultTemplate=(args) => <Tooltip title="This is tooltip">
 import { Tooltip } from 'artific-ui/Tooltip';
 ```
 
-<ArgsTable story="Default"/>
+
 
 ## Tooltip Theme
 
@@ -30,8 +30,8 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 
 You can also use `colorScheme` prop to define a custom theme.
 
-<Canvas>
-	<Story name="Tooltip Theme">
+<div>
+	<div name="Tooltip Theme">
 		<Tooltip title="This is tooltip">
 			<Button>Default Tooltip</Button>
 		</Tooltip>
@@ -61,8 +61,8 @@ You can also use `colorScheme` prop to define a custom theme.
 		</Tooltip>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Tooltip Placements
@@ -71,55 +71,55 @@ Use `placement` prop to set where the tooltip should appear
 
 possible values are (`bottom`|`bottom-start`|`bottom-end`|`top`|`top-start`|`top-end`|`right`|`right-start`|`right-end`|`bottom`|`bottom-start`|`bottom-end`)
 
-<Canvas>
-	<Story name="Tooltip Placements">
-		<Tooltip placement="bottom" title="Bottom tooltip">
+<div>
+	<div name="Tooltip Placements">
+		<Tooltip variant="arrow" placement="bottom" title="Bottom tooltip">
 			<Button>Bottom Placement</Button>
 		</Tooltip>
-		<Tooltip placement="bottom-start" title="Bottom tooltip">
+		<Tooltip variant="arrow" placement="bottom-start" title="Bottom tooltip">
 			<Button>Bottom Start Placement</Button>
 		</Tooltip>
-		<Tooltip placement="bottom-end" title="Bottom tooltip">
+		<Tooltip variant="arrow" placement="bottom-end" title="Bottom tooltip">
 			<Button>Bottom End Placement</Button>
 		</Tooltip>
 		<br/>
 		<br/>
 		<br/>
-		<Tooltip placement="left" title="Left tooltip">
+		<Tooltip variant="arrow" placement="left" title="Left tooltip">
 			<Button style={{marginLeft: 100}}>Left Placement</Button>
 		</Tooltip>
-		<Tooltip placement="left-start" title="Left tooltip">
+		<Tooltip variant="arrow" placement="left-start" title="Left tooltip">
 			<Button>Left Start Placement</Button>
 		</Tooltip>
-		<Tooltip placement="left-end" title="Left tooltip">
+		<Tooltip variant="arrow" placement="left-end" title="Left tooltip">
 			<Button>Left End Placement</Button>
 		</Tooltip>
 		<br/>
 		<br/>
 		<br/>
-		<Tooltip placement="right" title="Right tooltip">
+		<Tooltip variant="arrow" placement="right" title="Right tooltip">
 			<Button>Right Placement</Button>
 		</Tooltip>
-		<Tooltip placement="right-start" title="Right tooltip">
+		<Tooltip variant="arrow" placement="right-start" title="Right tooltip">
 			<Button>Right Start Placement</Button>
 		</Tooltip>
-		<Tooltip placement="right-end" title="Right tooltip">
+		<Tooltip variant="arrow" placement="right-end" title="Right tooltip">
 			<Button>Right End Placement</Button>
 		</Tooltip>
 		<br/>
 		<br/>
 		<br/>
-		<Tooltip placement="top" title="Top tooltip">
+		<Tooltip variant="arrow" placement="top" title="Top tooltip">
 			<Button>Top Placement</Button>
 		</Tooltip>
-		<Tooltip placement="top-start" title="Top tooltip">
+		<Tooltip variant="arrow" placement="top-start" title="Top tooltip">
 			<Button>Top Start Placement</Button>
 		</Tooltip>
-		<Tooltip placement="top-end" title="Top tooltip">
+		<Tooltip variant="arrow" placement="top-end" title="Top tooltip">
 			<Button>Top End Placement</Button>
 		</Tooltip>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Tooltip Layouts
 
@@ -129,8 +129,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
-<Canvas>
-	<Story name="Tooltip Layouts">
+<div>
+	<div name="Tooltip Layouts">
 		<Tooltip layout="default" title="This is tooltip">
 			<Button>Default Tooltip</Button>
 		</Tooltip>
@@ -151,8 +151,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 		</Tooltip>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Tooltip Variants
 
@@ -163,8 +163,8 @@ Set `variant` prop with the value of (`default`|`arrow`). you can mix them with 
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="Tooltip Variants">
+<div>
+	<div name="Tooltip Variants">
 		<Tooltip variant="default" title="This is tooltip">
 			<Button>Default Tooltip</Button>
 		</Tooltip>
@@ -173,8 +173,8 @@ you can check out the props table to see which variant is supported by the compo
 		<Tooltip variant="arrow" title="This is tooltip">
 			<Button>Arrow Tooltip</Button>
 		</Tooltip>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Tooltip Sizes
 
@@ -184,8 +184,8 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
-<Canvas>
-	<Story name="Tooltip Sizes">
+<div>
+	<div name="Tooltip Sizes">
 		<Tooltip size="xs" title="This is tooltip">
 			<Button>Tooltip</Button>
 		</Tooltip>
@@ -211,5 +211,5 @@ Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg
 		</Tooltip>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>

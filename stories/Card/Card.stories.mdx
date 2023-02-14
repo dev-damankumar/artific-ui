@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Card, CardContent, CardImage} from '../../src/index';
 
 <Meta
@@ -25,9 +25,9 @@ export const Template=(args) => {
 Cards can be used for headers and footers, a wide variety of content, contain contextual background colors and images
 
 
-<Canvas>
-	<Story name="Card">{Template.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Card">{Template.bind({})}</div>
+</div>
 
 ## API
 
@@ -35,7 +35,6 @@ Cards can be used for headers and footers, a wide variety of content, contain co
 import { Card } from 'artific-ui/Card';
 ```
 
-<ArgsTable story="Card"/>
 
 ## Card Themes
 
@@ -45,8 +44,8 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 You can also use `colorScheme` prop to define a custom theme.
 
 
-<Canvas>
-	<Story name="Card Themes">
+<div>
+	<div name="Card Themes">
 		<div className="col-md-12">
 			<div style={{display: "flex", alignItems: 'center', flexWrap: 'wrap'}}>
 				<div style={{width: '50%'}}>
@@ -121,15 +120,15 @@ You can also use `colorScheme` prop to define a custom theme.
 				</div>
 			</div>
 		</div>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Card With Image
 
 use `CardImage` to add the main image for your card
 
-<Canvas>
-	<Story name="Card With Image">
+<div>
+	<div name="Card With Image">
 		<div style={{display: "flex", alignItems: 'center', width: '50%'}}>
 			<div className="col-md-6">
 				<Card>
@@ -145,8 +144,8 @@ use `CardImage` to add the main image for your card
 				</Card>
 			</div>
 		</div>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Card Directions
 
@@ -154,8 +153,8 @@ use `CardImage` to add the main image for your card
 
 default `direction` is `column`
 
-<Canvas>
-	<Story name="Card Directions">
+<div>
+	<div name="Card Directions">
 		<div style={{display: "flex", alignItems: 'center', width: '60%'}}>
 			<div className="col-md-6">
 				<Card direction="row">
@@ -171,8 +170,8 @@ default `direction` is `column`
 				</Card>
 			</div>
 		</div>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Card Layouts
 
@@ -182,8 +181,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`extended`)
 
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
-<Canvas>
-	<Story name="Card Layouts">
+<div>
+	<div name="Card Layouts">
 		<div style={{display: "flex", alignItems: 'center', flexWrap: 'wrap'}}>
 			<div style={{width: '50%'}}>
 				<Card layout="default">
@@ -232,8 +231,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`extended`)
 				</Card>
 			</div>
 		</div>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Card Variants
 
@@ -244,8 +243,8 @@ Set `variant` prop with the value of (`default`|`fill`|`fill-with-border`|`outli
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="Card Variants">
+<div>
+	<div name="Card Variants">
 		<div style={{display: "flex", alignItems: 'center', flexWrap: 'wrap'}}>
 			<div style={{width: '50%'}}>
 				<Card variant="default">
@@ -292,8 +291,8 @@ you can check out the props table to see which variant is supported by the compo
 				</Card>
 			</div>
 		</div>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Basic Cards Images Layout
 
@@ -303,8 +302,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
-<Canvas>
-	<Story name="Basic Cards Images Layout">
+<div>
+	<div name="Basic Cards Images Layout">
 		<div style={{display: "flex", alignItems: 'center'}}>
 			<div style={{width: '50%'}} style={{width: '50%'}}>
 				<Card>
@@ -343,6 +342,6 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 				</Card>
 			</div>
 		</div>
-	</Story>
-</Canvas>
+	</div>
+</div>
 

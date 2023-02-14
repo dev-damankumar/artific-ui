@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Typography} from '../../src/index';
 
 <Meta title="Components/Typography" component={Typography}/>
@@ -9,9 +9,9 @@ Use typography to present your design and content as clearly and efficiently as 
 
 export const defaultTemplate=(args) => <Typography {...args}>Lorem ipsum dolor sit amet.</Typography>;
 
-<Canvas>
-	<Story name="Default">{defaultTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{defaultTemplate.bind({})}</div>
+</div>
 
 ## API
 
@@ -19,7 +19,7 @@ export const defaultTemplate=(args) => <Typography {...args}>Lorem ipsum dolor s
 import { Typography } from 'artific-ui/Typography';
 ```
 
-<ArgsTable story="Default"/>
+
 
 ## Default Typography
 
@@ -27,32 +27,32 @@ Use typography to present your design and content as clearly and efficiently as 
 
 you can use `as` props to define which element type your typography should have.
 
-<Canvas>
-	<Story name="Default Typography">
+<div>
+	<div name="Default Typography">
 		<Typography>Default Paragraph</Typography>
 		<Typography as="span">Paragraph as span</Typography>
 		<Typography as="div">Paragraph as div</Typography>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Typography Weights
 
 Use `weight` prop with value (`light`|`medium`|`bold`) to set the font weight.
 
-<Canvas>
-	<Story name="Typography Weights">
+<div>
+	<div name="Typography Weights">
 		<Typography weight="light">Light Weight Paragraph</Typography>
 		<Typography weight="medium">Medium Weight Paragraph</Typography>
 		<Typography weight="bold">Bold Weight Paragraph</Typography>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Typography As HTML Element
 
 Use `as` prop with value (`p`|`b`|`span`|`i`|`div`|`h1-h6`) to set the element type.
 
-<Canvas>
-	<Story name="Typography As HTML Element">
+<div>
+	<div name="Typography As HTML Element">
 		<Typography as="p">Typography as `p`</Typography>
 		<Typography as="b">Typography as `b`</Typography>
 		<Typography as="span">Typography as `span`</Typography>
@@ -64,8 +64,8 @@ Use `as` prop with value (`p`|`b`|`span`|`i`|`div`|`h1-h6`) to set the element t
 		<Typography as="h4">Typography as `h4`</Typography>
 		<Typography as="h5">Typography as `h5`</Typography>
 		<Typography as="h6">Typography as `h6`</Typography>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Variants
@@ -77,8 +77,8 @@ Set `variant` prop with the value of (`subtitle`|`heading`|`caption`|`descriptio
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="Variants">
+<div>
+	<div name="Variants">
 		<div className="col-md-3">
 			<h5>Subtitle Variants</h5>
 			<div className="row">
@@ -325,8 +325,8 @@ you can check out the props table to see which variant is supported by the compo
 		<br/>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Typography Themes
 
@@ -336,8 +336,8 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 
 You can also use `colorScheme` prop to define a custom theme.
 
-<Canvas>
-	<Story name="Typography Themes">
+<div>
+	<div name="Typography Themes">
 		<Typography theme="primary">Default Paragraph</Typography>
 		<Typography theme="secondary">Default Paragraph</Typography>
 		<Typography style={{backgroundColor: 'black'}} theme="light">Default Paragraph</Typography>
@@ -347,5 +347,5 @@ You can also use `colorScheme` prop to define a custom theme.
 			backgroundColor: '#e736f4',
 			color: "red",
 		}}>Default Paragraph</Typography>
-	</Story>
-</Canvas>
+	</div>
+</div>

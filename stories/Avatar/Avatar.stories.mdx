@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Avatar, AvatarGroup} from '../../src';
 import a1 from "./images/a1.jpg"
 import a2 from "./images/a2.jpeg"
@@ -23,9 +23,9 @@ export const Template=(args) => {
 
 Avatars are used for displaying images and text in confined space.
 
-<Canvas>
-	<Story name="Default">{Template.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{Template.bind({})}</div>
+</div>
 
 ## API
 
@@ -33,7 +33,6 @@ Avatars are used for displaying images and text in confined space.
 import { Avatar } from 'artific-ui/Avatar';
 ```
 
-<ArgsTable story="Default"/>
 
 ## Avatar Themes
 
@@ -42,8 +41,8 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 
 You can also use `colorScheme` prop to define a custom theme.
 
-<Canvas>
-	<Story name="Avatar Themes">
+<div>
+	<div name="Avatar Themes">
 		<Avatar theme="primary" title="DK"/>
 		<Avatar theme="secondary" title="DK"/>
 		<Avatar theme="dark" title="DK"/>
@@ -53,8 +52,8 @@ You can also use `colorScheme` prop to define a custom theme.
 			backgroundColor: '#e736f4',
 			color: 'white',
 		}} title="DK"/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Avatar Size
 
@@ -64,15 +63,15 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
-<Canvas>
-	<Story name="Avatar Size">
+<div>
+	<div name="Avatar Size">
 		<Avatar size="xl" title="XL"/>
 		<Avatar size="lg" title="LG"/>
 		<Avatar size="md" title="MD"/>
 		<Avatar size="sm" title="SM"/>
 		<Avatar size="xs" title="XS"/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Avatar Layouts
 
@@ -82,14 +81,14 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
-<Canvas>
-	<Story name="Avatar Layouts">
+<div>
+	<div name="Avatar Layouts">
 		<Avatar src={a1} layout="default"/>
 		<Avatar src={a2} layout="rounded"/>
 		<Avatar src={a3} layout="no-radius"/>
 		<Avatar src={a4} layout="pill"/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Avatar Variants
@@ -101,13 +100,13 @@ Set `variant` prop with the value of (`default`|`fluid`|`outline`). you can mix 
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="Avatar Variants">
+<div>
+	<div name="Avatar Variants">
 		<Avatar src={a1} variant="default"/>
 		<Avatar src={a2} variant="outline"/>
 		<Avatar src={a3} variant="fluid"/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Avatar Group
 
@@ -115,12 +114,12 @@ Avatar Group is used to group together a multiple avatars
 
 Use `AvatarGroup` with `Avatar` as children to group them together
 
-<Canvas>
-	<Story name="Avatar Group">
+<div>
+	<div name="Avatar Group">
 		<AvatarGroup>
 			<Avatar src={a1} variant="fluid"/>
 			<Avatar src={a2} variant="fluid"/>
 			<Avatar src={a3} variant="fluid"/>
 		</AvatarGroup>
-	</Story>
-</Canvas>
+	</div>
+</div>

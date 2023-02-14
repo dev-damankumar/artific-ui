@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Table, TableBody, TableCell, TableHead, TableHeading, TableRow} from '../../src';
 
 <Meta title="Components/Table" component={Table}/>
@@ -152,9 +152,9 @@ export const defaultTemplate=(args) => <Table {...args}>
 	</TableBody>
 </Table>;
 
-<Canvas>
-	<Story name="Default">{defaultTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{defaultTemplate.bind({})}</div>
+</div>
 
 ## API
 
@@ -162,7 +162,7 @@ export const defaultTemplate=(args) => <Table {...args}>
 import { Table } from 'artific-ui/Table';
 ```
 
-<ArgsTable story="Default"/>
+
 
 ## Table Theme
 
@@ -172,8 +172,8 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 You can also use `colorScheme` prop to define a custom theme.
 
 
-<Canvas>
-	<Story name="Table Theme">
+<div>
+	<div name="Table Theme">
 		<Table>
 			<TableHead>
 				<TableRow>
@@ -908,8 +908,8 @@ You can also use `colorScheme` prop to define a custom theme.
 		</Table>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Table Layouts
@@ -920,8 +920,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
-<Canvas>
-	<Story name="Table Layouts">
+<div>
+	<div name="Table Layouts">
 		<h5>Default Layout</h5>
 		<Table>
 			<TableHead>
@@ -1507,8 +1507,8 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 		</Table>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Table Variants
@@ -1520,8 +1520,8 @@ Set `variant` prop with the value of (`default`|`striped`|`borderless`|`outline`
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="Table Variants">
+<div>
+	<div name="Table Variants">
 		<h5>Default Variants</h5>
 		<Table>
 			<TableHead>
@@ -2107,8 +2107,8 @@ you can check out the props table to see which variant is supported by the compo
 		</Table>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Table Sizes
@@ -2120,8 +2120,8 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
-<Canvas>
-	<Story name="Table Sizes">
+<div>
+	<div name="Table Sizes">
 		<Table size="xs">
 			<TableHead>
 				<TableRow>
@@ -2852,5 +2852,5 @@ Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg
 		</Table>
 		<br/>
 		<br/>
-	</Story>
-</Canvas>
+	</div>
+</div>

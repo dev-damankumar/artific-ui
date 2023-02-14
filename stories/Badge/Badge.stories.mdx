@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Badge, BadgeGroup} from '../../src';
 
 
@@ -20,9 +20,9 @@ export const Template=(args) => {
 
 Badges are used to display some info about the specific element like: count etc.
 
-<Canvas>
-	<Story name="Default">{Template.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{Template.bind({})}</div>
+</div>
 
 ## API
 
@@ -30,14 +30,14 @@ Badges are used to display some info about the specific element like: count etc.
 import { Badge } from 'artific-ui/Badge';
 ```
 
-<ArgsTable story="Default"/>
+
 
 ## Badge Group
 
 If you want to group the badges together use `BadgeGruop`. `BadgeGroup` has same props as `Badge` which act as global `props` for its children
 
-<Canvas>
-	<Story name="Badge Group">
+<div>
+	<div name="Badge Group">
 		<BadgeGroup>
 			<Badge theme="primary" title="REACT"/>
 			<Badge theme="secondary" title="NEXTJS"/>
@@ -47,8 +47,8 @@ If you want to group the badges together use `BadgeGruop`. `BadgeGroup` has same
 				color: 'white',
 			}} title="JAVASCRIPT"/>
 		</BadgeGroup>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Badges Theme
@@ -58,8 +58,8 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 
 You can also use `colorScheme` prop to define a custom theme.
 
-<Canvas>
-	<Story name="Badges Theme">
+<div>
+	<div name="Badges Theme">
 		<Badge theme="primary" title="DK"/>
 		<Badge theme="secondary" title="DK"/>
 		<Badge theme="dark" title="DK"/>
@@ -69,8 +69,8 @@ You can also use `colorScheme` prop to define a custom theme.
 			backgroundColor: '#e736f4',
 			color: 'white',
 		}} title="DK"/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Badge Size
 
@@ -80,15 +80,15 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
-<Canvas>
-	<Story name="Badge Size">
+<div>
+	<div name="Badge Size">
 		<Badge size="xl" title="XL"/>
 		<Badge size="lg" title="LG"/>
 		<Badge size="md" title="MD"/>
 		<Badge size="sm" title="SM"/>
 		<Badge size="xs" title="XS"/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Badge Layouts
 
@@ -98,16 +98,16 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`,`cir
 
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
-<Canvas>
-	<Story name="Badge Layouts">
+<div>
+	<div name="Badge Layouts">
 		<h5>Badge Layouts</h5>
 		<Badge title="DK" layout="default"/>
 		<Badge title="DK" layout="rounded"/>
 		<Badge title="DK" layout="no-radius"/>
 		<Badge title="DK" layout="pill"/>
 		<Badge title="DK" layout="circular"/>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Badge Variants
@@ -119,11 +119,11 @@ Set `variant` prop with the value of (`default`|`dot`|`outline`). you can mix th
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="Badge Variants">
+<div>
+	<div name="Badge Variants">
 		<h5>Badge Variants</h5>
 		<Badge title="DK" variant="default"/>
 		<Badge title="DK" variant="outline"/>
 		<Badge variant="dot"/>
-	</Story>
-</Canvas>
+	</div>
+</div>

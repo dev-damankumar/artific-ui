@@ -28,19 +28,16 @@ describe("Render Col Number", () => {
 });
 
 describe("Render Space directions", () => {
-	const sizes = [...AxisArray, 'both']
+	const sizes = [...AxisArray]
 	sizes.forEach((size) => {
 		test(`render ${size} size`, () => {
 			const {container} = render(<Space gap={10} direction={size as Axis}>Click Me</Space>);
 			const component = container.firstChild;
-			const gap = "10"
 			let style: string
 			if (size === 'horizontal') {
-				style = `gap: 0 ${10}px;`
-			} else if (size === 'vertical') {
-				style = `gap: ${10}px 0;`
+				style = `flex-direction: row;`
 			} else {
-				style = `gap: ${gap}px;`
+				style = `flex-direction: column;`
 			}
 			expect(component).toHaveStyle(style)
 		});

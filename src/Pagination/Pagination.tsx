@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 
 import styles from "./Pagination.module.css"
@@ -7,6 +7,7 @@ import {IPaginationProps, propTypes} from "./Pagination.types";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {addPropsToChildren} from "../utils/helpers";
 import {IUl} from "../types/Common.types";
+import {ThemeContext} from "../ThemeProvider";
 
 
 export const Pagination: React.FC<IPaginationProps & IUl> = (
@@ -20,6 +21,7 @@ export const Pagination: React.FC<IPaginationProps & IUl> = (
 		theme = 'primary',
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	const componentSelector = 'pagination';
 	const {
 		classNames, customCss
@@ -36,7 +38,7 @@ export const Pagination: React.FC<IPaginationProps & IUl> = (
 	return (
 		<>
 			{customCss && customCss()}
-			<ul {...rest} className={classes}>
+			<ul {...rest} data-theme-id={context?.themeId || ''} className={classes}>
 				{childrenWithProps}
 			</ul>
 		</>

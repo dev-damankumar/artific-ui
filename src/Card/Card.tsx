@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import getClassNames from '../utils/classes/getClassnames';
 import {ICardProps, propTypes} from './Card.types';
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import styles from "./Card.module.css";
 import {IDiv} from "../types/Common.types";
 import {addPropsToChildren} from "../utils/helpers";
+import {ThemeContext} from "../ThemeProvider";
 
 
 export const Card: React.FC<ICardProps & IDiv> = (
@@ -20,6 +21,7 @@ export const Card: React.FC<ICardProps & IDiv> = (
 		...rest
 	}) => {
 	const componentSelector = 'card';
+	const context = useContext(ThemeContext)
 	const {
 		classNames, customCss
 	} = getDefaultClasses(styles, componentSelector, className, theme, layout, variant, size, colorScheme)
@@ -33,7 +35,7 @@ export const Card: React.FC<ICardProps & IDiv> = (
 	return (
 		<>
 			{customCss && customCss()}
-			<div {...rest}
+			<div {...rest} data-theme-id={context?.themeId || ''}
 				 className={`${classNames} ${classes}`}>
 				{childrenWithProps}
 			</div>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 
 
 import styles from "./Tabs.module.css";
@@ -7,6 +7,7 @@ import {ITabsProps, propTypes} from "./Tabs.types";
 import getRandomClassId from "../utils/uuids/generateRandomClassId";
 import getDefaultClasses from "../utils/classes/getDefaultClasses";
 import {IDiv} from "../types/Common.types";
+import {ThemeContext} from "../ThemeProvider";
 
 
 export const Tabs: React.FC<ITabsProps & IDiv> = (
@@ -23,6 +24,7 @@ export const Tabs: React.FC<ITabsProps & IDiv> = (
 		theme = 'primary',
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	const [activeTab, setActiveTab] = useState(null)
 	const componentSelector = 'tab';
 	const {
@@ -68,7 +70,7 @@ export const Tabs: React.FC<ITabsProps & IDiv> = (
 	return (
 		<>
 			{customCss && customCss()}
-			<div {...rest} className={`${classes} ${getClassNames(styles, "tab-wrap", positionClasses)}`}>
+			<div {...rest} data-theme-id={context?.themeId || ''} className={`${classes} ${getClassNames(styles, "tab-wrap", positionClasses)}`}>
 				<ul className={`${classes} ${getClassNames(styles, "tab-pills", typeClasses, lineDirectionClasses)}`}
 					role="tablist">
 					{tabItems}

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import classes from './Accordion.module.css';
 import getClassNames from '../utils/classes/getClassnames';
 import {IAccordionHeader, IAccordionHeaderPropTypes} from './Accordion.types';
 import {IButton} from "../types/Common.types";
+import {ThemeContext} from "../ThemeProvider";
 
 export const AccordionHeader: React.FC<Omit<IButton, 'prefix'> & IAccordionHeader> = (
 	{
@@ -13,10 +14,11 @@ export const AccordionHeader: React.FC<Omit<IButton, 'prefix'> & IAccordionHeade
 		suffix,
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	return (
 		<button
 			tabIndex={0}
-			{...rest}
+			{...rest} data-theme-id={context?.themeId || ''}
 			onClick={(e) => {
 				onToggle?.(e)
 				rest.onClick?.(e)

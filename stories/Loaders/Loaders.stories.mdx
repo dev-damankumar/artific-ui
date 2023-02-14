@@ -1,4 +1,4 @@
-import {Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Button, useLoader} from '../../src';
 
 
@@ -23,9 +23,9 @@ export const Template=(args) => {
 
 useLoader is used to show that a process is happening on the background and tells user to wait.
 
-<Canvas>
-	<Story name="Loaders">{Template.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Loaders">{Template.bind({})}</div>
+</div>
 
 ## API
 
@@ -63,9 +63,9 @@ Dismissible Loader can be used to close the loader when user clicks on it.
 
 provide `{dismissible: true}` to the `config` method when instantiating loader.
 
-<Canvas>
-	<Story name="Dismissible">{DissmissableTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Dismissible">{DissmissableTemplate.bind({})}</div>
+</div>
 
 export const ThemeTemplate=(args) => {
 	const message=useLoader();
@@ -93,9 +93,9 @@ If you want to use a different theme for `Loader` use the `theme` prop in `confi
 
 Note: Loader only have basic twi themes ie. (`dark`|`light`). you can use either of them.
 
-<Canvas>
-	<Story name="Loader Themes">{ThemeTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Loader Themes">{ThemeTemplate.bind({})}</div>
+</div>
 
 
 export const VariantsTemplate=(args) => {
@@ -154,9 +154,9 @@ Set `variant` prop with the value of (`default`|`blur`|`solid`). you can mix the
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-<Canvas>
-	<Story name="Variants">{VariantsTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Variants">{VariantsTemplate.bind({})}</div>
+</div>
 
 export const SizesTemplate=(args) => {
 	const message=useLoader()
@@ -207,6 +207,6 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
-<Canvas>
-	<Story name="Sizes">{SizesTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Sizes">{SizesTemplate.bind({})}</div>
+</div>

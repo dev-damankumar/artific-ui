@@ -3,8 +3,12 @@
 }
 
 .space {
-	display: inline-flex;
+	display: flex;
 	gap: var(--gap);
+}
+
+.space-direction-column > * {
+	width: 100%;
 }
 
 .space-wrap {

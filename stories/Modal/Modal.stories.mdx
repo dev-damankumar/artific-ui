@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Button, Modal, ModalBody, ModalFooter, ModalHeader, Typography} from '../../src/index';
 import {useState} from "react";
 
@@ -34,9 +34,9 @@ export const defaultTemplate=(args) => {
 	</>
 };
 
-<Canvas>
-	<Story name="Default">{defaultTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{defaultTemplate.bind({})}</div>
+</div>
 
 ## API
 
@@ -44,7 +44,7 @@ export const defaultTemplate=(args) => {
 import {Modal} from 'artific-ui/Modal';
 ```
 
-<ArgsTable story="Default"/>
+
 
 ## Dismissible
 
@@ -151,11 +151,11 @@ export const dismissTypesTemplate=(args) => {
 	</>
 };
 
-<Canvas>
-	<Story name="Dismissible">
+<div>
+	<div name="Dismissible">
 		{dismissTypesTemplate.bind({})}
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Modal Layouts
@@ -261,11 +261,11 @@ export const layoutsTemplate=(args) => {
 	</>
 };
 
-<Canvas>
-	<Story name="Modal Layouts">
+<div>
+	<div name="Modal Layouts">
 		{layoutsTemplate.bind({})}
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Modal Themes
 
@@ -402,11 +402,11 @@ export const themesTemplate=(args) => {
 	</>
 };
 
-<Canvas>
-	<Story name="Modal Themes">
+<div>
+	<div name="Modal Themes">
 		{themesTemplate.bind({})}
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Modal Sizes
@@ -690,11 +690,11 @@ export const sizesTemplate=(args) => {
 	</>
 };
 
-<Canvas>
-	<Story name="Modal Sizes">
+<div>
+	<div name="Modal Sizes">
 		{sizesTemplate.bind({})}
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Modal Variants
@@ -860,11 +860,11 @@ export const variantsTemplate=(args) => {
 	</>
 };
 
-<Canvas>
-	<Story name="Modal Variants">
+<div>
+	<div name="Modal Variants">
 		{variantsTemplate.bind({})}
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Docking
 
@@ -997,11 +997,11 @@ export const dockingTemplate=(args) => {
 	</>
 };
 
-<Canvas>
-	<Story name="Docking">
+<div>
+	<div name="Docking">
 		{dockingTemplate.bind({})}
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Positions
 
@@ -1138,9 +1138,9 @@ export const positionTemplate=(args) => {
 	</>
 };
 
-<Canvas>
-	<Story name="Positions">
+<div>
+	<div name="Positions">
 		{positionTemplate.bind({})}
-	</Story>
-</Canvas>
+	</div>
+</div>
 

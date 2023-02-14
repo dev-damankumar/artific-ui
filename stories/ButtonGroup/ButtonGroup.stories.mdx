@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/addon-docs';
+import {Meta} from '@storybook/addon-docs';
 import {Button, ButtonGroup} from '../../src/index';
 
 <Meta title="Components/ButtonGroup" component={ButtonGroup}/>
@@ -13,9 +13,9 @@ export const defaultTemplate=(args) => <ButtonGroup {...args}>
 	<Button type="button">Dark</Button>
 </ButtonGroup>;
 
-<Canvas>
-	<Story name="Default">{defaultTemplate.bind({})}</Story>
-</Canvas>
+<div>
+	<div name="Default">{defaultTemplate.bind({})}</div>
+</div>
 
 ## API
 
@@ -23,7 +23,7 @@ export const defaultTemplate=(args) => <ButtonGroup {...args}>
 import { Button } from 'artific-ui/Button';
 ```
 
-<ArgsTable story="Default"/>
+
 
 ## Button Horizontal Group
 
@@ -31,16 +31,16 @@ Use `direction` props on `ButtonGroup` to define the direction of the ButtonGrou
 
 default is `horizontal`
 
-<Canvas>
-	<Story name="Button Horizontal Group">
+<div>
+	<div name="Button Horizontal Group">
 		<ButtonGroup>
 			<Button type="button">Primary</Button>
 			<Button theme="secondary" type="button">Secondary</Button>
 			<Button theme="light" type="button">Light</Button>
 			<Button theme="dark" type="button">Dark</Button>
 		</ButtonGroup>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 
 ## Button Vertical Group
@@ -49,15 +49,15 @@ Use `direction` props on `ButtonGroup` to define the direction of the ButtonGrou
 
 default is `horizontal`
 
-<Canvas>
-	<Story name="Button Vertical Group">
+<div>
+	<div name="Button Vertical Group">
 		<ButtonGroup direction="vertical">
 			<Button type="button">Primary</Button>
 			<Button theme="light" type="button">Light</Button>
 			<Button theme="dark" type="button">Dark</Button>
 		</ButtonGroup>
-	</Story>
-</Canvas>
+	</div>
+</div>
 
 ## Button Group Sizes
 
@@ -67,8 +67,8 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 
 `Note:` when using `ButtonGroup` you don't have to provide the `size` prop on `Button` itself just use the props on the main component.
 
-<Canvas>
-	<Story name="Button Group Sizes">
+<div>
+	<div name="Button Group Sizes">
 		<ButtonGroup size="xs">
 			<Button type="button">Primary</Button>
 			<Button theme="light" type="button">Light</Button>
@@ -95,5 +95,5 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 			<Button theme="light" type="button">Light</Button>
 			<Button theme="dark" type="button">Dark</Button>
 		</ButtonGroup>
-	</Story>
-</Canvas>
+	</div>
+</div>

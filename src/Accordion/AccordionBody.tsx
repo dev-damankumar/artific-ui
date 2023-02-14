@@ -1,8 +1,9 @@
-import React, {useRef} from 'react';
+import React, {useContext, useRef} from 'react';
 import classes from './Accordion.module.css';
 import {IAccordionBody, IAccordionBodyPropTypes} from './Accordion.types';
 import getClassNames from '../utils/classes/getClassnames';
 import {CSSStyle, IDiv} from '../types/Common.types';
+import {ThemeContext} from "../ThemeProvider";
 
 export const AccordionBody: React.FC<IAccordionBody & IDiv> = (
 	{
@@ -12,6 +13,7 @@ export const AccordionBody: React.FC<IAccordionBody & IDiv> = (
 		className,
 		...rest
 	}) => {
+	const context = useContext(ThemeContext)
 	const ref = useRef(null);
 	const bodyStyle: CSSStyle = {};
 	if (open) {
@@ -25,7 +27,7 @@ export const AccordionBody: React.FC<IAccordionBody & IDiv> = (
 	}
 	return (
 		<div
-			{...rest}
+			{...rest} data-theme-id={context?.themeId || ''}
 			ref={ref}
 			style={{...style, ...bodyStyle}}
 			className={`${getClassNames(classes, 'accordion-panel')} ${className}`}>
