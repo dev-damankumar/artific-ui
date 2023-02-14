@@ -37,7 +37,7 @@ function App() {
 								</ThemeProvider>
 								<Space gap={15} direction="vertical">
 									<Routes>
-										<Route path="/" exact element={<h1>Hello</h1>}/>
+										<Route path="/" exact element={<GetStarted noMainHeading={true}/>}/>
 										<Route path="/get-started" element={<GetStarted noMainHeading={true}/>}/>
 										<Route path="/installation" element={<Installation noMainHeading={true}/>}/>
 										{docs.map((doc, index) => {
