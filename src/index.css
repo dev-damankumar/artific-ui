@@ -2,59 +2,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-	--main-bg: #fff;
-	--line-height: 1.5;
-	--bg-alt: #dddddd2b;
-	--font-size: 1rem;
-	--text: hsla(222, 26%, 25%, 1);
-	--link-color: hsla(231, 86%, 59%, 1);
-	--scroll-bg: #f1f1f1;
-	--border-color: #eeeeee;
-	--accent-bg: #f4f4f4;
-	--hover-box-shadow: hsla(240, 2%, 90%, 1);
-	--gap: 15px;
-	--z-index-dropdown: 1000;
-	--z-index-sticky: 1020;
-	--z-index-fixed: 1030;
-	--z-index-modal-backdrop: 1040;
-	--z-index-offcanvas: 1050;
-	--z-index-modal: 1060;
-	--z-index-popover: 1070;
-	--z-index-tooltip: 1080;
+	--ai-bg: #fff;
+	--ai-bg-alt: #dddddd2b;
+	--ai-font-family: 'Nunito Sans', sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--ai-font-weight: 400;
+	--ai-font-size: 1rem;
+	--ai-line-height: 1.5;
 
-	--primary: hsla(235, 100%, 50%, 1);
-	--primary-color: var(--primary);
-	--primary-text: hsl(0, 0%, 100%);
-	--primary-hover: hsla(230, 87%, 45%, 1);
-	--primary-color-hover: var(--primary-hover);
-	--primary-text-hover: white;
-	--primary-hover-box-shadow: hsla(235, 100%, 85%, 1);
+	--ai-text: hsla(222, 26%, 25%, 1);
+	--ai-link: hsla(231, 86%, 59%, 1);
+	--ai-scroll: #f1f1f1;
+	--ai-border-color: #eeeeee;
 
-	--secondary: hsla(332deg, 96%, 48%, 1);
-	--secondary-color: var(--secondary);
-	--secondary-text: hsl(0, 0%, 100%);
-	--secondary-hover: hsla(332, 96%, 33%, 1);
-	--secondary-color-hover: var(--secondary-hover);
-	--secondary-text-hover: white;
-	--secondary-hover-box-shadow: hsla(332, 96%, 85%, 1);
+	--ai-gap: 15px;
 
-	--light: hsla(180, 23%, 95%, 1);
-	--light-alt: var(--light);
-	--light-color: var(--light);
-	--light-text: hsl(221, 18%, 34%);
-	--light-hover: hsla(180, 23%, 85%, 1);
-	--light-color-hover: var(--light-hover);
-	--light-text-hover: white;
-	--light-hover-box-shadow: hsla(180, 23%, 85%, 1);
+	--ai-z-index-dropdown: 1000;
+	--ai-z-index-sticky: 1020;
+	--ai-z-index-fixed: 1030;
+	--ai-z-index-modal-backdrop: 1040;
+	--ai-z-index-offcanvas: 1050;
+	--ai-z-index-modal: 1060;
+	--ai-z-index-popover: 1070;
+	--ai-z-index-tooltip: 1080;
 
-	--dark: hsla(0, 0%, 16%, 1);
-	--dark-color: var(--dark);
-	--dark-text: hsl(0, 0%, 100%);
-	--dark-hover: hsla(0, 0%, 11%, 1);
-	--dark-color-hover: var(--dark-hover);
-	--dark-text-hover: white;
-	--dark-hover-box-shadow: hsla(0, 0%, 85%, 1);
+	--ai-primary: hsla(235, 100%, 50%, 1);
+	--ai-primary-color: var(--ai-primary);
+	--ai-primary-text: hsl(0, 0%, 100%);
+	--ai-primary-hover: hsla(230, 87%, 45%, 1);
+	--ai-primary-color-hover: var(--ai-primary-hover);
+	--ai-primary-text-hover: var(--ai-bg);
+	--ai-primary-hover-box-shadow: hsla(235, 100%, 85%, 1);
 
+	--ai-secondary: hsla(332deg, 96%, 48%, 1);
+	--ai-secondary-color: var(--ai-secondary);
+	--ai-secondary-text: hsl(0, 0%, 100%);
+	--ai-secondary-hover: hsla(332, 96%, 33%, 1);
+	--ai-secondary-color-hover: var(--ai-secondary-hover);
+	--ai-secondary-text-hover: var(--ai-bg);
+	--ai-secondary-hover-box-shadow: hsla(332, 96%, 85%, 1);
+
+	--ai-light: hsla(180, 23%, 95%, 1);
+	--ai-light-alt: var(--ai-light);
+	--ai-light-color: var(--ai-light);
+	--ai-light-text: hsl(221, 18%, 34%);
+	--ai-light-hover: hsla(180, 23%, 85%, 1);
+	--ai-light-color-hover: var(--ai-light-hover);
+	--ai-light-text-hover: var(--ai-bg);
+	--ai-light-hover-box-shadow: hsla(180, 23%, 85%, 1);
+
+	--ai-dark: hsla(0, 0%, 16%, 1);
+	--ai-dark-color: var(--ai-dark);
+	--ai-dark-text: hsl(0, 0%, 100%);
+	--ai-dark-hover: hsla(0, 0%, 11%, 1);
+	--ai-dark-color-hover: var(--ai-dark-hover);
+	--ai-dark-text-hover: var(--ai-bg);
+	--ai-dark-hover-box-shadow: hsla(0, 0%, 85%, 1);
 }
 
 @font-face {
@@ -85,6 +87,13 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-bold.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+
 *, ::after, ::before {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -104,22 +113,22 @@
 
 html, body {
 	margin: 0;
-	font-family: 'Nunito Sans', sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	line-height: var(--line-height);
-	font-weight: 400;
-	font-size: var(--font-size);
+	font-family: var(--ai-font-family);
+	line-height: var(--ai-line-height);
+	font-weight: var(--ai-font-weight);
+	font-size: var(--ai-font-size);
 	-webkit-text-size-adjust: 100%;
-	background-color: #fff;
+	background-color: var(--ai-bg);
 	-webkit-tap-highlight-color: transparent;
-	color: var(--text);
+	color: var(--ai-text);
 
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Nunito Sans', sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-family: var(--ai-font-family);
 	margin-top: 0;
 	font-weight: 600;
-	line-height: var(--line-height);
+	line-height: var(--ai-line-height);
 	margin-bottom: 0;
 }
 
@@ -168,12 +177,16 @@ h5 {
 }
 
 h6 {
-	font-size: var(--font-size);
+	font-size: var(--ai-font-size);
 }
 
 p {
 	margin-top: 0;
 	margin-bottom: 0;
+	font-family: var(--ai-font-family);
+	line-height: var(--ai-line-height);
+	font-weight: var(--ai-font-weight);
+	font-size: var(--ai-font-size);
 }
 
 b,
@@ -243,7 +256,7 @@ a > code {
 kbd {
 	padding: 0.2rem 0.4rem;
 	font-size: 0.875em;
-	color: #fff;
+	color: var(--ai-bg);
 	background-color: #212529;
 	border-radius: 0.2rem;
 }
@@ -360,6 +373,6 @@ dl, ol, ul {
 
 @media screen and (max-width: 576px) {
 	html, body {
-		--font-size: 0.9375rem;
+		--ai-font-size: 0.9375rem;
 	}
 }

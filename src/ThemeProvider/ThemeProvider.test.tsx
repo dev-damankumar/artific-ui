@@ -36,25 +36,25 @@ describe("Render ThemeProvider", () => {
 		expect(btn).toBeDefined()
 		expect(btn).toHaveAttribute('data-theme-id')
 		const styles = getComputedStyle(btn!);
-		expect(styles.getPropertyValue('--primary')).toBe(theme.primary.main);
-		expect(styles.getPropertyValue('--primary-color')).toBe(theme.primary.main);
-		expect(styles.getPropertyValue('--primary-text')).toBe(theme.primary.text);
+		expect(styles.getPropertyValue('--ai-primary')).toBe(theme.primary.main);
+		expect(styles.getPropertyValue('--ai-primary-color')).toBe(theme.primary.main);
+		expect(styles.getPropertyValue('--ai-primary-text')).toBe(theme.primary.text);
 
-		expect(styles.getPropertyValue('--secondary')).toBe(theme.secondary.main);
-		expect(styles.getPropertyValue('--secondary-color')).toBe(theme.secondary.main);
-		expect(styles.getPropertyValue('--secondary-text')).toBe(theme.secondary.text);
+		expect(styles.getPropertyValue('--ai-secondary')).toBe(theme.secondary.main);
+		expect(styles.getPropertyValue('--ai-secondary-color')).toBe(theme.secondary.main);
+		expect(styles.getPropertyValue('--ai-secondary-text')).toBe(theme.secondary.text);
 
-		expect(styles.getPropertyValue('--secondaryNew')).toBe(theme.secondaryNew.main);
-		expect(styles.getPropertyValue('--secondaryNew-color')).toBe(theme.secondaryNew.main);
-		expect(styles.getPropertyValue('--secondaryNew-text')).toBe(theme.secondaryNew.text);
+		expect(styles.getPropertyValue('--ai-secondaryNew')).toBe(theme.secondaryNew.main);
+		expect(styles.getPropertyValue('--ai-secondaryNew-color')).toBe(theme.secondaryNew.main);
+		expect(styles.getPropertyValue('--ai-secondaryNew-text')).toBe(theme.secondaryNew.text);
 
-		expect(styles.getPropertyValue('--light')).toBe(theme.light.main);
-		expect(styles.getPropertyValue('--light-color')).toBe(theme.light.main);
-		expect(styles.getPropertyValue('--light-text')).toBe(theme.light.text);
+		expect(styles.getPropertyValue('--ai-light')).toBe(theme.light.main);
+		expect(styles.getPropertyValue('--ai-light-color')).toBe(theme.light.main);
+		expect(styles.getPropertyValue('--ai-light-text')).toBe(theme.light.text);
 
-		expect(styles.getPropertyValue('--dark')).toBe(theme.dark.main);
-		expect(styles.getPropertyValue('--dark-color')).toBe(theme.dark.main);
-		expect(styles.getPropertyValue('--dark-text')).toBe(theme.dark.text);
+		expect(styles.getPropertyValue('--ai-dark')).toBe(theme.dark.main);
+		expect(styles.getPropertyValue('--ai-dark-color')).toBe(theme.dark.main);
+		expect(styles.getPropertyValue('--ai-dark-text')).toBe(theme.dark.text);
 	});
 });
 

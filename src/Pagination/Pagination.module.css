@@ -45,7 +45,7 @@
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	color: var(--text);
+	color: var(--ai-text);
 	border-radius: var(--pagination-border-radius);
 	font-size: var(--pagination-font-size);
 }
@@ -112,27 +112,27 @@
 
 /*=====Colors=====*/
 .pagination-primary {
-	--pagination-background: var(--primary);
-	--pagination-background-color: var(--primary-color);
-	--pagination-text: var(--primary-text);
+	--pagination-background: var(--ai-primary);
+	--pagination-background-color: var(--ai-primary-color);
+	--pagination-text: var(--ai-primary-text);
 }
 
 .pagination-secondary {
-	--pagination-background: var(--secondary);
-	--pagination-background-color: var(--secondary-color);
-	--pagination-text: var(--secondary-text);
+	--pagination-background: var(--ai-secondary);
+	--pagination-background-color: var(--ai-secondary-color);
+	--pagination-text: var(--ai-secondary-text);
 }
 
 .pagination-light {
-	--pagination-background: var(--light);
-	--pagination-background-color: var(--light-color);
-	--pagination-text: var(--light-text);
+	--pagination-background: var(--ai-light);
+	--pagination-background-color: var(--ai-light-color);
+	--pagination-text: var(--ai-light-text);
 }
 
 .pagination-dark {
-	--pagination-background: var(--dark);
-	--pagination-background-color: var(--dark-color);
-	--pagination-text: var(--dark-text);
+	--pagination-background: var(--ai-dark);
+	--pagination-background-color: var(--ai-dark-color);
+	--pagination-text: var(--ai-dark-text);
 }
 
 /*=====Colors End=====*/
@@ -147,7 +147,7 @@
 }
 
 .breadcrumb-separate .breadcrumb-link {
-	color: var(--text);
+	color: var(--ai-text);
 	border-radius: var(--pagination-border-radius)
 }
 
@@ -181,7 +181,7 @@
 .pagination-large, .breadcrumb-large {
 	--pagination-padding: 8px;
 	--pagination-item-padding: 8px 18px;
-	--pagination-font-size: var(--font-size);
+	--pagination-font-size: var(--ai-font-size);
 	--pagination-margin: 15px;
 }
 
@@ -234,7 +234,7 @@
 }
 
 .breadcrumb-separate .breadcrumb-item:not(:last-child):not(.active) .breadcrumb-link {
-	background: white;
+	background: var(--ai-bg);
 }
 
 @media screen and (max-width: 600px) {
@@ -268,5 +268,5 @@
 		flex-wrap: wrap;
 	}
 
-	
+
 }

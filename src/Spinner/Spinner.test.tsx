@@ -32,9 +32,9 @@ describe("Render Spinner Default Themes", () => {
 		const {container} = render(<Spinner data-testid="spinner" colorScheme={colorScheme}>Click Me</Spinner>);
 		const spinner = getByTestId(container, 'spinner')
 		const styles = getComputedStyle(spinner);
-		expect(styles.getPropertyValue('--primary')).toBe(colorScheme.background);
-		expect(styles.getPropertyValue('--primary-color')).toBe(colorScheme.backgroundColor);
-		expect(styles.getPropertyValue('--primary-text')).toBe(colorScheme.color);
+		expect(styles.getPropertyValue('--ai-primary')).toBe(colorScheme.background);
+		expect(styles.getPropertyValue('--ai-primary-color')).toBe(colorScheme.backgroundColor);
+		expect(styles.getPropertyValue('--ai-primary-text')).toBe(colorScheme.color);
 	});
 });
 

@@ -2,7 +2,7 @@
 	--alert-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 	--alert-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 	--alert-border-radius: 5px;
-	--alert-font-size: var(--font-size);
+	--alert-font-size: var(--ai-font-size);
 	--alert-margin: 15px;
 	--alert-border-width: 2px;
 	--alert-padding: 15px;
@@ -94,51 +94,51 @@
 /*=====Layouts End=====*/
 /*=====Colors=====*/
 .alert-primary {
-	--alert-background: var(--primary);
-	--alert-background-color: var(--primary-color);
-	--alert-text: var(--primary-text);
+	--alert-background: var(--ai-primary);
+	--alert-background-color: var(--ai-primary-color);
+	--alert-text: var(--ai-primary-text);
 }
 
 .alert-secondary {
-	--alert-background: var(--secondary);
-	--alert-background-color: var(--secondary-color);
-	--alert-text: var(--secondary-text);
+	--alert-background: var(--ai-secondary);
+	--alert-background-color: var(--ai-secondary-color);
+	--alert-text: var(--ai-secondary-text);
 }
 
 .alert-light {
-	--alert-background: var(--light);
-	--alert-background-color: var(--light-color);
-	--alert-text: var(--light-text);
+	--alert-background: var(--ai-light);
+	--alert-background-color: var(--ai-light-color);
+	--alert-text: var(--ai-light-text);
 }
 
 .alert-dark {
-	--alert-background: var(--dark);
-	--alert-background-color: var(--dark-color);
-	--alert-text: var(--dark-text);
+	--alert-background: var(--ai-dark);
+	--alert-background-color: var(--ai-dark-color);
+	--alert-text: var(--ai-dark-text);
 }
 
 /*=====Colors End=====*/
 /*=====Variants=====*/
 .alert-outline {
-	color: var(--primary-color);
-	background: var(--main-bg);
+	color: var(--ai-primary-color);
+	background: var(--ai-bg);
 	border: var(--alert-border-width) solid;
 }
 
 .alert-outline.alert-primary {
-	color: var(--primary-color);
+	color: var(--ai-primary-color);
 }
 
 .alert-outline.alert-secondary {
-	color: var(--secondary-color);
+	color: var(--ai-secondary-color);
 }
 
 .alert-outline.alert-light {
-	color: var(--light-color);
+	color: var(--ai-light-color);
 }
 
 .alert-outline.alert-dark {
-	color: var(--dark-color);
+	color: var(--ai-dark-color);
 }
 
 .alert-note {

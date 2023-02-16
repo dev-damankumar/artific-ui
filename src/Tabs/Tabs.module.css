@@ -4,7 +4,7 @@
 	--tab-border-radius: 5px;
 	--tab-padding: 10px 20px;
 	--tab-wrap-padding: 10px;
-	--tab-font-size: var(--font-size);
+	--tab-font-size: var(--ai-font-size);
 	--tab-margin: 15px;
 	--tab-border-width: 2px;
 	--tab-cursor: pointer;
@@ -43,8 +43,8 @@
 	padding: 0;
 	margin: var(--tab-margin) 0;
 	display: none;
-	line-height: var(--line-height);
-	color: var(--text);
+	line-height: var(--ai-line-height);
+	color: var(--ai-text);
 }
 
 .tab-pane *:last-child {
@@ -69,8 +69,8 @@
 
 .tabs .tab-item.show .tab-link, .tabs .tab-link.active {
 	color: #495057;
-	background-color: #fff;
-	border-color: #dee2e6 #dee2e6 #fff;
+	background-color: var(--ai-bg);
+	border-color: #dee2e6 #dee2e6 var(--ai-bg);
 }
 
 .tabs .tab-item {
@@ -89,7 +89,7 @@
 	border: none;
 	border-top-right-radius: var(--tab-border-radius);
 	border-top-left-radius: var(--tab-border-radius);
-	color: var(--dark);
+	color: var(--ai-dark);
 	font-size: var(--tab-font-size);
 }
 
@@ -116,27 +116,27 @@
 
 /*=====Colors=====*/
 .tab-primary {
-	--tab-background: var(--primary);
-	--tab-background-color: var(--primary-color);
-	--tab-text: var(--primary-text);
+	--tab-background: var(--ai-primary);
+	--tab-background-color: var(--ai-primary-color);
+	--tab-text: var(--ai-primary-text);
 }
 
 .tab-secondary {
-	--tab-background: var(--secondary);
-	--tab-background-color: var(--secondary-color);
-	--tab-text: var(--secondary-text);
+	--tab-background: var(--ai-secondary);
+	--tab-background-color: var(--ai-secondary-color);
+	--tab-text: var(--ai-secondary-text);
 }
 
 .tab-light {
-	--tab-background: var(--light);
-	--tab-background-color: var(--light-color);
-	--tab-text: var(--light-text);
+	--tab-background: var(--ai-light);
+	--tab-background-color: var(--ai-light-color);
+	--tab-text: var(--ai-light-text);
 }
 
 .tab-dark {
-	--tab-background: var(--dark);
-	--tab-background-color: var(--dark-color);
-	--tab-text: var(--dark-text);
+	--tab-background: var(--ai-dark);
+	--tab-background-color: var(--ai-dark-color);
+	--tab-text: var(--ai-dark-text);
 }
 
 .active a.tab-link {
@@ -298,9 +298,9 @@
 }
 
 .tab-float .tab-item.show .tab-link, .tab-float .tab-link.active {
-	color: var(--text);
-	background-color: #fff;
-	border-color: #dee2e6 #dee2e6 #fff;
+	color: var(--ai-text);
+	background-color: var(--ai-bg);
+	border-color: #dee2e6 #dee2e6 var(--ai-bg);
 }
 
 .tab-float .active a.tab-link {

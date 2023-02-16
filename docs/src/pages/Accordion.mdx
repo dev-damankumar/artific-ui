@@ -13,7 +13,7 @@ An accordion is a lightweight container that may either be used standalone, or b
 
 ## Basic Accordion
 
-<Accordion theme="primary">
+<Accordion>
 	<AccordionPanel>
 		<AccordionHeader>Accordion Header</AccordionHeader>
 		<AccordionBody>
@@ -27,7 +27,7 @@ An accordion is a lightweight container that may either be used standalone, or b
 		</AccordionBody>
 	</AccordionPanel>
 	<AccordionPanel>
-		<AccordionHeader>Accordion Header2</AccordionHeader>
+		<AccordionHeader>Accordion Header 3</AccordionHeader>
 		<AccordionBody>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 		</AccordionBody>
@@ -56,34 +56,10 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader>Accordion Header 2</AccordionHeader>
-			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-			</AccordionBody>
-		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader>Accordion Header2</AccordionHeader>
-			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-			</AccordionBody>
-		</AccordionPanel>
 	</Accordion>
 	<Accordion theme="secondary">
 		<AccordionPanel>
 			<AccordionHeader>Accordion Header</AccordionHeader>
-			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-			</AccordionBody>
-		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader>Accordion Header 2</AccordionHeader>
-			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-			</AccordionBody>
-		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader>Accordion Header2</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
@@ -96,34 +72,10 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader>Accordion Header 2</AccordionHeader>
-			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-			</AccordionBody>
-		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader>Accordion Header2</AccordionHeader>
-			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-			</AccordionBody>
-		</AccordionPanel>
 	</Accordion>
 	<Accordion theme="light">
 		<AccordionPanel>
 			<AccordionHeader>Accordion Header</AccordionHeader>
-			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-			</AccordionBody>
-		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader>Accordion Header 2</AccordionHeader>
-			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-			</AccordionBody>
-		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader>Accordion Header2</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
@@ -140,7 +92,6 @@ colorScheme is an object containing three properties: `background`, `backgroundC
 
 <div name="Accordion Custom Themes">
 	<Accordion
-		variant="outline"
 		colorScheme={{
 			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
 			backgroundColor: '#e736f4',
@@ -148,18 +99,6 @@ colorScheme is an object containing three properties: `background`, `backgroundC
 		}} theme="primary">
 		<AccordionPanel>
 			<AccordionHeader>Accordion Header</AccordionHeader>
-			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-			</AccordionBody>
-		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader>Accordion Header 2</AccordionHeader>
-			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-			</AccordionBody>
-		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader>Accordion Header2</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
@@ -177,22 +116,50 @@ If you want to disable a specific panel of the Accordion use `disabled` prop on 
 <div name="Accordion Disabled Panel">
 	<Accordion
 		theme="primary">
-		<AccordionPanel>
-			<AccordionHeader disabled={true}>Accordion Header</AccordionHeader>
+		<AccordionPanel disabled={true}>
+			<AccordionHeader>Secret Header</AccordionHeader>
 			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				This is a secret content
 			</AccordionBody>
 		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader>Accordion Header 2</AccordionHeader>
+	</Accordion>
+	<Accordion
+		theme="secondary">
+		<AccordionPanel disabled={true}>
+			<AccordionHeader>Secret Header</AccordionHeader>
 			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				This is a secret content
 			</AccordionBody>
 		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader>Accordion Header2</AccordionHeader>
+	</Accordion>
+	<Accordion
+		theme="light">
+		<AccordionPanel disabled={true}>
+			<AccordionHeader>Secret Header</AccordionHeader>
 			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				This is a secret content
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion
+		theme="dark">
+		<AccordionPanel disabled={true}>
+			<AccordionHeader>Secret Header</AccordionHeader>
+			<AccordionBody>
+				This is a secret content
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion
+		colorScheme={{
+			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+			backgroundColor: '#e736f4',
+			color: 'white',
+		}} theme="primary">
+		<AccordionPanel disabled={true}>
+			<AccordionHeader>Secret Header</AccordionHeader>
+			<AccordionBody>
+				This is a secret content
 			</AccordionBody>
 		</AccordionPanel>
 	</Accordion>
@@ -210,28 +177,54 @@ provide the prop `prefix` or `suffix` or both to the `AccordionHeader` to add th
 >
 	<Accordion>
 		<AccordionPanel>
-			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>}>Lorem ipsum dolor
-				sitamet.</AccordionHeader>
-			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-			</AccordionBody>
-		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader suffix={<i className='bx bx-bowl-hot'></i>}>Lorem ipsum dolor sit
-				amet.</AccordionHeader>
-			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-			</AccordionBody>
-		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader suffix={<i className='bx bx-bowl-hot'></i>} prefix={
-				<i className='bx bx-bowl-hot'></i>}>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>} suffix={<i className='bx bx-bowl-hot'></i>}>Accordion
+				Header 3</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
 	</Accordion>
-	</div>
+	<Accordion theme="secondary">
+		<AccordionPanel>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>} suffix={<i className='bx bx-bowl-hot'></i>}>Accordion
+				Header 3</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="light">
+		<AccordionPanel>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>} suffix={<i className='bx bx-bowl-hot'></i>}>Accordion
+				Header 3</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="dark">
+		<AccordionPanel>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>} suffix={<i className='bx bx-bowl-hot'></i>}>Accordion
+				Header 3</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}}>
+		<AccordionPanel>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>} suffix={<i className='bx bx-bowl-hot'></i>}>Accordion
+				Header 3</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+</div>
 
 ## Indicator Icon Position
 
@@ -245,19 +238,48 @@ Control which it direction should be by providing it `indicatorPosition` of `sta
 	<h5>Default/End Position</h5>
 	<Accordion>
 		<AccordionPanel>
-			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>} suffix={<i className='bx bx-bowl-hot'></i>}>Accordion
+				Header 2</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="secondary">
 		<AccordionPanel>
-			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>} suffix={<i className='bx bx-bowl-hot'></i>}>Accordion
+				Header 2</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="light">
 		<AccordionPanel>
-			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>} suffix={<i className='bx bx-bowl-hot'></i>}>Accordion
+				Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="dark">
+		<AccordionPanel>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>} suffix={<i className='bx bx-bowl-hot'></i>}>Accordion
+				Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}}>
+		<AccordionPanel>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>} suffix={<i className='bx bx-bowl-hot'></i>}>Accordion
+				Header 2</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
@@ -267,19 +289,48 @@ Control which it direction should be by providing it `indicatorPosition` of `sta
 	<h5>Start Position</h5>
 	<Accordion indicatorPosition="start">
 		<AccordionPanel>
-			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>} suffix={<i className='bx bx-bowl-hot'></i>}>Accordion
+				Header 2</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="secondary" indicatorPosition="start">
 		<AccordionPanel>
-			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>} suffix={<i className='bx bx-bowl-hot'></i>}>Accordion
+				Header 2</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="light" indicatorPosition="start">
 		<AccordionPanel>
-			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>} suffix={<i className='bx bx-bowl-hot'></i>}>Accordion
+				Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="dark" indicatorPosition="start">
+		<AccordionPanel>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>} suffix={<i className='bx bx-bowl-hot'></i>}>Accordion
+				Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}} indicatorPosition="start">
+		<AccordionPanel>
+			<AccordionHeader prefix={<i className='bx bx-bowl-hot'></i>} suffix={<i className='bx bx-bowl-hot'></i>}>Accordion
+				Header 2</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
@@ -306,14 +357,38 @@ Note: Different components might have addition layouts based on there configurat
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="secondary" layout="default">
 		<AccordionPanel>
-			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="light" layout="default">
 		<AccordionPanel>
-			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="dark" layout="default">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}} layout="default">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
@@ -329,14 +404,38 @@ Note: Different components might have addition layouts based on there configurat
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="secondary" layout="rounded">
 		<AccordionPanel>
-			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="light" layout="rounded">
 		<AccordionPanel>
-			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="dark" layout="rounded">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}} layout="rounded">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
@@ -352,14 +451,38 @@ Note: Different components might have addition layouts based on there configurat
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="secondary" layout="no-radius">
 		<AccordionPanel>
-			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="light" layout="no-radius">
 		<AccordionPanel>
-			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="dark" layout="no-radius">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}} layout="no-radius">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
@@ -375,14 +498,38 @@ Note: Different components might have addition layouts based on there configurat
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="secondary" layout="pill">
 		<AccordionPanel>
-			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="light" layout="pill">
 		<AccordionPanel>
-			<AccordionHeader>Accordion Header2</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="dark" layout="pill">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}} layout="pill">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
@@ -403,116 +550,328 @@ you can check out the props table to see which variant is supported by the compo
 	name="Accordion Variant"
 >
 	<h5>Default Accordion Variant</h5>
+	<br/>
 	<Accordion variant="default">
 		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
 			</AccordionBody>
 		</AccordionPanel>
 		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion theme="secondary" variant="default">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion theme="light" variant="default">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion theme="dark" variant="default">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}} variant="default">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
 	</Accordion>
 	<br/>
 	<br/>
 	<h5>Attached Accordion Variant</h5>
+	<br/>
 	<Accordion variant="attached">
 		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
 			</AccordionBody>
 		</AccordionPanel>
 		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion theme="secondary" variant="attached">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion theme="light" variant="attached">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion theme="dark" variant="attached">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}} variant="attached">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
 	</Accordion>
 	<br/>
 	<br/>
 	<h5>Separate Accordion</h5>
+	<br/>
 	<Accordion variant="separate">
 		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
 			</AccordionBody>
 		</AccordionPanel>
 		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion theme="secondary" variant="separate">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion theme="light" variant="separate">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion theme="dark" variant="separate">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}} variant="separate">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
 	</Accordion>
 	<br/>
 	<br/>
 	<h5>Outlined Accordion</h5>
+	<br/>
 	<Accordion variant="outline">
 		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
 			</AccordionBody>
 		</AccordionPanel>
 		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion theme="secondary" variant="outline">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion theme="light" variant="outline">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion theme="dark" variant="outline">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<br/>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}} variant="outline">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+			</AccordionBody>
+		</AccordionPanel>
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header 2</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 			</AccordionBody>
 		</AccordionPanel>
 	</Accordion>
@@ -531,143 +890,259 @@ Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg
 	name="Accordion Sizes"
 >
 	<h5>Extra Small Sizing</h5>
+	<br/>
 	<Accordion size="xs">
 		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-			</AccordionBody>
-		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
-			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 				harum officiis
 			</AccordionBody>
 		</AccordionPanel>
 	</Accordion>
-	<br/>
+	<Accordion theme="secondary" size="xs">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="light" size="xs">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="dark" size="xs">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}} size="xs">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
 	<br/>
 	<h5>Small Size Accordion</h5>
-	<Accordion theme="primary" size="sm">
+	<br/>
+	<Accordion size="sm">
 		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-			</AccordionBody>
-		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
-			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 				harum officiis
 			</AccordionBody>
 		</AccordionPanel>
 	</Accordion>
-	<br/>
+	<Accordion theme="secondary" size="sm">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="light" size="sm">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="dark" size="sm">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}} size="sm">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
 	<br/>
 	<h5>Default/Medium Accordion</h5>
-	<Accordion theme="primary" size="md">
+	<br/>
+	<Accordion size="md">
 		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-			</AccordionBody>
-		</AccordionPanel>
-		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
-			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 				harum officiis
 			</AccordionBody>
 		</AccordionPanel>
 	</Accordion>
-	<br/>
+	<Accordion theme="secondary" size="md">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="light" size="md">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="dark" size="md">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}} size="md">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
 	<br/>
 	<h5>Large Accordion</h5>
-	<Accordion theme="primary" size="lg">
+	<br/>
+	<Accordion size="lg">
 		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 				harum officiis
 			</AccordionBody>
 		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="secondary" size="lg">
 		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="light" size="lg">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="dark" size="lg">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}} size="lg">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 				harum officiis
 			</AccordionBody>
 		</AccordionPanel>
 	</Accordion>
 	<br/>
-	<br/>
 	<h5>Extra Large Accordion</h5>
-	<Accordion theme="primary" size="xl">
+	<br/>
+	<Accordion size="xl">
 		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
-				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 				harum officiis
 			</AccordionBody>
 		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="secondary" size="xl">
 		<AccordionPanel>
-			<AccordionHeader>Lorem ipsum dolor sit amet.</AccordionHeader>
+			<AccordionHeader>Accordion Header</AccordionHeader>
 			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 				harum officiis
-				porro ratione, reiciendis! Animi, autem beatae blanditiis consequuntur cupiditate
-				eligendi eos fuga
-				iure omnis reprehenderit sequi unde.
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="light" size="xl">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion theme="dark" size="xl">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
+				harum officiis
+			</AccordionBody>
+		</AccordionPanel>
+	</Accordion>
+	<Accordion colorScheme={{
+		background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+		backgroundColor: '#e736f4',
+		color: 'white',
+	}} size="xl">
+		<AccordionPanel>
+			<AccordionHeader>Accordion Header</AccordionHeader>
+			<AccordionBody>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid debitis dolorem
 				harum officiis
 			</AccordionBody>

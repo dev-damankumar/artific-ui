@@ -1,7 +1,7 @@
 :root {
 	--modal-border-radius: 5px;
 	--modal-padding: 15px;
-	--modal-font-size: var(--font-size);
+	--modal-font-size: var(--ai-font-size);
 	--modal-margin: 10px;
 	--modal-border-width: 2px;
 	--modal-cursor: pointer;
@@ -20,7 +20,7 @@
 	height: 100%;
 	background: #000000bf;
 	backdrop-filter: blur(var(--modal-blur-overlay));
-	z-index: var(--z-index-modal);
+	z-index: var(--ai-z-index-modal);
 	opacity: 0;
 	visibility: hidden;
 	transition: all .5s ease;
@@ -39,7 +39,7 @@
 }
 
 .modal-content {
-	background: white;
+	background: var(--ai-bg);
 	max-width: 90%;
 	max-height: 90%;
 	width: 600px;
@@ -112,17 +112,17 @@
 }
 
 .modal-body::-webkit-scrollbar-track {
-	background: var(--scroll-bg);
+	background: var(--ai-scroll);
 }
 
 .modal-body::-webkit-scrollbar-thumb {
-	background: var(--primary);
+	background: var(--ai-primary);
 	border-radius: 50px;
 }
 
 
 .modal-body, .modal-header, .modal-footer {
-	color: var(--text);
+	color: var(--ai-text);
 }
 
 .modal-footer {

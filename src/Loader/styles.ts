@@ -1,7 +1,7 @@
 const style = `<style data-ati-loader-style>
 :root {
-	--loader-secondary-bg: white;
-	--dark: hsla(218, 36%, 18%, 1);
+	--loader-secondary-bg: var(--ai-bg);
+	--ai-dark: hsla(218, 36%, 18%, 1);
 }
 
 .ati-loader-loading {
@@ -9,7 +9,7 @@ const style = `<style data-ati-loader-style>
 }
 
 .ati-loader-modal {
-	--dark: hsla(218, 36%, 18%, 0.8);
+	--ai-dark: hsla(218, 36%, 18%, 0.8);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -17,10 +17,10 @@ const style = `<style data-ati-loader-style>
 	bottom: 0;
 	width: 100%;
 	height: 100%;
-	background: var(--dark);
+	background: var(--ai-dark);
 	align-items: center;
 	justify-content: center;
-	z-index: var(--z-index-modal-backdrop);
+	z-index: var(--ai-z-index-modal-backdrop);
 	display: none;
 }
 
@@ -63,12 +63,12 @@ const style = `<style data-ati-loader-style>
 }
 
 .ati-loader-modal.ati-loader-solid {
-	--dark: hsla(218, 36%, 18%, 1);
-	background: var(--dark);
+	--ai-dark: hsla(218, 36%, 18%, 1);
+	background: var(--ai-dark);
 }
 
 .ati-loader-modal.ati-loader-solid.ati-loader-light {
-	background: white !important;
+	background: var(--ai-bg) !important;
 }
 
 /*Sizes*/
@@ -89,7 +89,7 @@ const style = `<style data-ati-loader-style>
 }
 
 .ati-loader-light .ati-loader {
-	--loader-secondary-bg: var(--dark)
+	--loader-secondary-bg: var(--ai-dark)
 }
 
 .ati-loader {
@@ -109,27 +109,27 @@ const style = `<style data-ati-loader-style>
 .ati-loader:before {
 	animation: ball1 1s infinite;
 	background-color: var(--loader-secondary-bg);
-	box-shadow: 30px 0 0 var(--primary);
+	box-shadow: 30px 0 0 var(--ai-primary);
 	margin-bottom: 10px;
 }
 
 .ati-loader:after {
 	animation: ball2 1s infinite;
-	background-color: var(--primary);
+	background-color: var(--ai-primary);
 	box-shadow: 30px 0 0 var(--loader-secondary-bg);
 }
 
 @keyframes ball1 {
 	0% {
-		box-shadow: 30px 0 0 var(--primary);
+		box-shadow: 30px 0 0 var(--ai-primary);
 	}
 	50% {
-		box-shadow: 0 0 0 var(--primary);
+		box-shadow: 0 0 0 var(--ai-primary);
 		margin-bottom: 0;
 		transform: translate(15px, 15px);
 	}
 	100% {
-		box-shadow: 30px 0 0 var(--primary);
+		box-shadow: 30px 0 0 var(--ai-primary);
 		margin-bottom: 10px;
 	}
 }

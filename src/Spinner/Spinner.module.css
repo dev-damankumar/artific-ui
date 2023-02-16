@@ -1,7 +1,7 @@
 :root {
-	--spinner-background-color: var(--primary-color);
+	--spinner-background-color: var(--ai-primary-color);
 	--spinner-border-radius: 5px;
-	--spinner-font-size: var(--font-size);
+	--spinner-font-size: var(--ai-font-size);
 	--spinner-margin: 15px;
 	--spinner-cursor: pointer;
 	--spinner-border-width: 2px;
@@ -203,15 +203,15 @@
 
 .spinner-box:before {
 	animation: ball1 1s infinite;
-	background: var(--primary-color);
-	box-shadow: calc(var(--spinner-font-size) * 1.5) 0 0 var(--secondary-color);
+	background: var(--ai-primary-color);
+	box-shadow: calc(var(--spinner-font-size) * 1.5) 0 0 var(--ai-secondary-color);
 	margin-bottom: 10px;
 }
 
 .spinner-box:after {
 	animation: ball2 1s infinite;
-	background: var(--secondary-color);
-	box-shadow: calc(var(--spinner-font-size) * 1.5) 0 0 #fff;
+	background: var(--ai-secondary-color);
+	box-shadow: calc(var(--spinner-font-size) * 1.5) 0 0 var(--ai-bg);
 }
 
 @keyframes rotate {
@@ -228,48 +228,48 @@
 
 @keyframes ball1 {
 	0% {
-		box-shadow: calc(var(--spinner-font-size) * 1.5) 0 0 var(--secondary-color);
+		box-shadow: calc(var(--spinner-font-size) * 1.5) 0 0 var(--ai-secondary-color);
 	}
 	50% {
-		box-shadow: 0 0 0 var(--secondary-color);
+		box-shadow: 0 0 0 var(--ai-secondary-color);
 		margin-bottom: 0;
 		transform: translate(var(--spinner-font-size), var(--spinner-font-size));
 	}
 	100% {
-		box-shadow: calc(var(--spinner-font-size) * 1.5) 0 0 var(--secondary-color);
+		box-shadow: calc(var(--spinner-font-size) * 1.5) 0 0 var(--ai-secondary-color);
 		margin-bottom: 10px;
 	}
 }
 
 @keyframes ball2 {
 	0% {
-		box-shadow: calc(var(--spinner-font-size) * 1.5) 0 0 var(--primary-color);
+		box-shadow: calc(var(--spinner-font-size) * 1.5) 0 0 var(--ai-primary-color);
 	}
 	50% {
-		box-shadow: 0 0 0 var(--primary-color);
+		box-shadow: 0 0 0 var(--ai-primary-color);
 		margin-top: -10px;
 		transform: translate(var(--spinner-font-size), var(--spinner-font-size));
 	}
 	100% {
-		box-shadow: calc(var(--spinner-font-size) * 1.5) 0 0 var(--primary-color);
+		box-shadow: calc(var(--spinner-font-size) * 1.5) 0 0 var(--ai-primary-color);
 		margin-top: 0;
 	}
 }
 
 .spinner-primary {
-	--spinner-background-color: var(--primary-color);
+	--spinner-background-color: var(--ai-primary-color);
 }
 
 .spinner-secondary {
-	--spinner-background-color: var(--secondary-color);
+	--spinner-background-color: var(--ai-secondary-color);
 }
 
 .spinner-light {
-	--spinner-background-color: var(--light-color);
+	--spinner-background-color: var(--ai-light-color);
 }
 
 .spinner-dark {
-	--spinner-background-color: var(--dark-color);
+	--spinner-background-color: var(--ai-dark-color);
 }
 
 /*Sizing*/

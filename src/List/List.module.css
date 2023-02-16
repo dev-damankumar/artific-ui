@@ -3,11 +3,11 @@
 	--list-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 	--list-border-radius: 5px;
 	--list-padding: 10px;
-	--list-font-size: var(--font-size);
+	--list-font-size: var(--ai-font-size);
 	--list-margin: 10px;
 	--list-border-width: 1px;
-	--list-background: var(--main-bg);
-	--list-background-color: var(--main-bg);
+	--list-background: var(--ai-bg);
+	--list-background-color: var(--ai-bg);
 	--list-text: var(--list-text);
 }
 
@@ -22,7 +22,7 @@
 	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
-	background-color: var(--main-bg);
+	background-color: var(--ai-bg);
 	-moz-box-shadow: var(--list-box-shadow);
 	-webkit-box-shadow: var(--list-box-shadow);
 	box-shadow: var(--list-box-shadow);
@@ -103,27 +103,27 @@
 
 /*=====Colors=====*/
 .list-primary {
-	--list-background: var(--primary);
-	--list-background-color: var(--primary-color);
-	--list-text: var(--primary-text);
+	--list-background: var(--ai-primary);
+	--list-background-color: var(--ai-primary-color);
+	--list-text: var(--ai-primary-text);
 }
 
 .list-secondary {
-	--list-background: var(--secondary);
-	--list-background-color: var(--secondary-color);
-	--list-text: var(--secondary-text);
+	--list-background: var(--ai-secondary);
+	--list-background-color: var(--ai-secondary-color);
+	--list-text: var(--ai-secondary-text);
 }
 
 .list-light {
-	--list-background: var(--light);
-	--list-background-color: var(--light-color);
-	--list-text: var(--light-text);
+	--list-background: var(--ai-light);
+	--list-background-color: var(--ai-light-color);
+	--list-text: var(--ai-light-text);
 }
 
 .list-dark {
-	--list-background: var(--dark);
-	--list-background-color: var(--dark-color);
-	--list-text: var(--dark-text);
+	--list-background: var(--ai-dark);
+	--list-background-color: var(--ai-dark-color);
+	--list-text: var(--ai-dark-text);
 }
 
 /*=====Colors End=====*/

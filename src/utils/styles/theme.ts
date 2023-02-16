@@ -1,6 +1,6 @@
 import Color from 'color';
 import {ComponentsType, Themes, ThemesArray} from "../../types/Common.types";
-import {ComponentsArray} from "../constants";
+import {ComponentsArray, prefix} from "../constants";
 
 interface IMain {
 	background: string;
@@ -58,13 +58,13 @@ const getDefaultHoverColors = (bgHsl: any) => {
 const createNewTheme = (themeName: string, config: IConfig, themeProps: IThemeProps) => {
 	let styles = `#${config.themeId} {`
 	ComponentsArray.forEach(component => {
-		styles += `--${component}-background: var(--${themeName});
-				   --${component}-background-color: var(--${themeName});
-				   --${component}-text: var(--${themeName}-text);
-				   --${component}-hover: ${themeProps.isBackgroundImage ? themeProps.background : themeProps.backgroundHover};
-				   --${component}-color-hover: ${themeProps.backgroundColorHover};
-				   --${component}-text-hover: ${themeProps.textHover || themeProps.text};
-				   --${component}-hover-box-shadow : ${themeProps.boxShadow};
+		styles += `--${prefix}-${component}-background: var(--${themeName});
+				   --${prefix}-${component}-background-color: var(--${themeName});
+				   --${prefix}-${component}-text: var(--${themeName}-text);
+				   --${prefix}-${component}-hover: ${themeProps.isBackgroundImage ? themeProps.background : themeProps.backgroundHover};
+				   --${prefix}-${component}-color-hover: ${themeProps.backgroundColorHover};
+				   --${prefix}-${component}-text-hover: ${themeProps.textHover || themeProps.text};
+				   --${prefix}-${component}-hover-box-shadow : ${themeProps.boxShadow};
 				   ${themeProps.isBackgroundImage ? `--${component}-gradient-hover:hsla(0, 0%, 0%, 0.15);` : ''}
     `
 
@@ -108,13 +108,13 @@ const createTheme = (theme: object, config: IConfig = {
 		}
 		themeStyle += `
 		${config.scope === 'local' ? `.${config.componentId}` : `[data-theme-id='${config.themeId}']`}{
-			--${t}:${background} ;
-			--${t}-color: ${backgroundColor};
-			--${t}-text: ${text};
-			--${t}-hover: ${isBackgroundImage ? background : backgroundHover};
-			--${t}-color-hover: ${isBackgroundImage ? background : backgroundColorHover};
-			--${t}-text-hover: ${textHover || text};
-			--${t}-hover-box-shadow : ${boxShadow};
+			--${prefix}-${t}:${background} ;
+			--${prefix}-${t}-color: ${backgroundColor};
+			--${prefix}-${t}-text: ${text};
+			--${prefix}-${t}-hover: ${isBackgroundImage ? background : backgroundHover};
+			--${prefix}-${t}-color-hover: ${isBackgroundImage ? background : backgroundColorHover};
+			--${prefix}-${t}-text-hover: ${textHover || text};
+			--${prefix}-${t}-hover-box-shadow : ${boxShadow};
 			${isBackgroundImage ? `--${t}-gradient-hover:hsla(0, 0%, 0%, 0.15);` : ''}
 		}
 		${newThemeStyles}

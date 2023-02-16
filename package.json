@@ -1,6 +1,6 @@
 {
   "name": "artific-ui",
-  "version": "1.4.42",
+  "version": "1.4.44",
   "description": "Artific UI is a modern React UI library for making your life easier. Artific UI provides you the pre-designed and customizable components to use.",
   "homepage": "https://github.com/dev-damankumar/artific-ui/",
   "bugs": "https://github.com/dev-damankumar/artific-ui/issues",
@@ -71,11 +71,11 @@
     "typescript": "^4.9.3"
   },
   "peerDependencies": {
-    "color": ">=4.2.0",
-    "prop-types": ">=15.8.1",
+    "color": "^4.2.3",
+    "prop-types": "^15.8.1",
     "react": ">=17.0.2",
     "react-dom": ">=17.0.2",
     "@types/react": ">=17.0.2",
-    "@types/color": ">=3.0.0"
+    "@types/color": "^3.0.0"
   }
 }

@@ -6,8 +6,8 @@
 	--avatar-margin: 15px;
 	--avatar-border-width: 2px;
 	--avatar-padding: 0px;
-	--avatar-background: white;
-	--avatar-background-color: white;
+	--avatar-background: var(--ai-bg);
+	--avatar-background-color: var(--ai-bg);
 	--avatar-text: inherit;
 }
 
@@ -71,27 +71,27 @@
 
 /*=====Colors=====*/
 .avatar-primary {
-	--avatar-background: var(--primary);
-	--avatar-background-color: var(--primary-color);
-	--avatar-text: var(--primary-text);
+	--avatar-background: var(--ai-primary);
+	--avatar-background-color: var(--ai-primary-color);
+	--avatar-text: var(--ai-primary-text);
 }
 
 .avatar-secondary {
-	--avatar-background: var(--secondary);
-	--avatar-background-color: var(--secondary-color);
-	--avatar-text: var(--secondary-text);
+	--avatar-background: var(--ai-secondary);
+	--avatar-background-color: var(--ai-secondary-color);
+	--avatar-text: var(--ai-secondary-text);
 }
 
 .avatar-light {
-	--avatar-background: var(--light);
-	--avatar-background-color: var(--light-color);
-	--avatar-text: var(--light-text);
+	--avatar-background: var(--ai-light);
+	--avatar-background-color: var(--ai-light-color);
+	--avatar-text: var(--ai-light-text);
 }
 
 .avatar-dark {
-	--avatar-background: var(--dark);
-	--avatar-background-color: var(--dark-color);
-	--avatar-text: var(--dark-text);
+	--avatar-background: var(--ai-dark);
+	--avatar-background-color: var(--ai-dark-color);
+	--avatar-text: var(--ai-dark-text);
 }
 
 /*=====Layouts End=====*/
@@ -99,8 +99,8 @@
 /*=====Varaints=====*/
 .avatar-outline {
 	border: var(--avatar-border-width) solid var(--avatar-background-color);
-	color: var(--primary-color);
-	background: var(--main-bg);
+	color: var(--ai-primary-color);
+	background: var(--ai-bg);
 }
 
 .avatar-outline .avatar-text {
@@ -108,24 +108,24 @@
 }
 
 .avatar-outline.avatar-primary {
-	--avatar-text: var(--primary-color);
+	--avatar-text: var(--ai-primary-color);
 }
 
 .avatar-outline.avatar-secondary {
-	--avatar-text: var(--secondary-color);
+	--avatar-text: var(--ai-secondary-color);
 }
 
 .avatar-outline.avatar-light {
-	--avatar-text: var(--light-color);
+	--avatar-text: var(--ai-light-color);
 }
 
 .avatar-outline.avatar-dark {
-	--avatar-text: var(--dark-color);
+	--avatar-text: var(--ai-dark-color);
 }
 
 .avatar-fluid {
 	--avatar-padding: 3px;
-	background: var(--main-bg);
+	background: var(--ai-bg);
 }
 
 .avatar-fluid .avatar-text {

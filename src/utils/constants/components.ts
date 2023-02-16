@@ -20,6 +20,7 @@ const Components = {
 	Tab: 'tab',
 	Typography: 'typography',
 }
+export const prefix = 'ai'
 export const ComponentsArray = [
 	'ati-message-alert',
 	'accordion',

@@ -53,9 +53,9 @@ describe("Render Progress Default Themes", () => {
 		const {container} = render(<Progress data-testid="progress" colorScheme={colorScheme}>Click Me</Progress>);
 		const element = getByTestId(container, 'progress');
 		const styles = getComputedStyle(element);
-		expect(styles.getPropertyValue('--primary')).toBe(colorScheme.background);
-		expect(styles.getPropertyValue('--primary-color')).toBe(colorScheme.backgroundColor);
-		expect(styles.getPropertyValue('--primary-text')).toBe(colorScheme.color);
+		expect(styles.getPropertyValue('--ai-primary')).toBe(colorScheme.background);
+		expect(styles.getPropertyValue('--ai-primary-color')).toBe(colorScheme.backgroundColor);
+		expect(styles.getPropertyValue('--ai-primary-text')).toBe(colorScheme.color);
 	});
 
 	themes.forEach((theme) => {
@@ -77,9 +77,9 @@ describe("Render Progress Default Themes", () => {
 		const element = getByTestId(container, 'progress');
 		expect(element).toHaveClass('progress-circular')
 		const styles = getComputedStyle(element);
-		expect(styles.getPropertyValue('--primary')).toBe(colorScheme.background);
-		expect(styles.getPropertyValue('--primary-color')).toBe(colorScheme.backgroundColor);
-		expect(styles.getPropertyValue('--primary-text')).toBe(colorScheme.color);
+		expect(styles.getPropertyValue('--ai-primary')).toBe(colorScheme.background);
+		expect(styles.getPropertyValue('--ai-primary-color')).toBe(colorScheme.backgroundColor);
+		expect(styles.getPropertyValue('--ai-primary-text')).toBe(colorScheme.color);
 	});
 
 	themes.forEach((theme) => {
@@ -102,9 +102,9 @@ describe("Render Progress Default Themes", () => {
 		const element = getByTestId(container, 'progress');
 		expect(element).toHaveClass("progress-line")
 		const styles = getComputedStyle(element);
-		expect(styles.getPropertyValue('--primary')).toBe(colorScheme.background);
-		expect(styles.getPropertyValue('--primary-color')).toBe(colorScheme.backgroundColor);
-		expect(styles.getPropertyValue('--primary-text')).toBe(colorScheme.color);
+		expect(styles.getPropertyValue('--ai-primary')).toBe(colorScheme.background);
+		expect(styles.getPropertyValue('--ai-primary-color')).toBe(colorScheme.backgroundColor);
+		expect(styles.getPropertyValue('--ai-primary-text')).toBe(colorScheme.color);
 	});
 });
 

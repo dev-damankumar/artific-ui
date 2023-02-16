@@ -3,12 +3,12 @@
 	--dropdown-border-radius: 5px;
 	--dropdown-padding: 10px;
 	--dropdown-margin: 10px;
-	--dropdown-font-size: var(--font-size);
+	--dropdown-font-size: var(--ai-font-size);
 	--dropdown-min-width: 200px;
 	--dropdown-max-height: 200px;
 	--dropdown-border-width: 2px;
-	--dropdown-background: white;
-	--dropdown-background-color: white;
+	--dropdown-background: var(--ai-bg);
+	--dropdown-background-color: var(--ai-bg);
 	--dropdown-text: inherit;
 }
 
@@ -30,7 +30,7 @@
 	content: "";
 	left: 0;
 	background: transparent;
-	z-index: var(--z-index-fixed);
+	z-index: var(--ai-z-index-fixed);
 }*/
 
 .dropdown-btn {
@@ -52,7 +52,7 @@
 }
 
 .dropdown-wrap::-webkit-scrollbar-track {
-	background: var(--scroll-bg);
+	background: var(--ai-scroll);
 	border-radius: 50px;
 }
 
@@ -77,7 +77,7 @@
 
 .dropdown-menu {
 	position: absolute;
-	background: white;
+	background: var(--ai-bg);
 	min-width: var(--dropdown-min-width);
 	max-width: 100%;
 	width: auto;
@@ -89,7 +89,7 @@
 	-webkit-box-shadow: var(--dropdown-box-shadow);
 	box-shadow: var(--dropdown-box-shadow);
 	padding: calc(var(--dropdown-padding) / 2) 0;
-	z-index: var(--z-index-dropdown);
+	z-index: var(--ai-z-index-dropdown);
 	top: calc(100% + 10px);
 	height: auto;
 	visibility: hidden;
@@ -108,7 +108,7 @@
 	content: "";
 	border-width: 7px;
 	border-style: solid;
-	border-color: transparent transparent white transparent;
+	border-color: transparent transparent var(--ai-bg) transparent;
 	position: absolute;
 	top: -14px;
 	left: 20px;
@@ -127,7 +127,7 @@
 }
 
 .dropdown-item:hover {
-	background: var(--accent-bg);
+	background: var(--ai-bg-alt);
 	cursor: pointer;
 }
 
@@ -136,7 +136,7 @@
 	align-items: center;
 	justify-content: flex-start;
 	padding: var(--dropdown-padding);
-	color: var(--text);
+	color: var(--ai-text);
 }
 
 .dropdown-icon-left {
@@ -160,7 +160,7 @@
 	padding: calc(var(--dropdown-padding) / 2) var(--dropdown-padding);
 	margin-bottom: 0;
 	font-size: calc(var(--dropdown-font-size) - 2px);
-	color: var(--text);
+	color: var(--ai-text);
 	font-weight: 600;
 	cursor: default;
 }
@@ -168,32 +168,32 @@
 .dropdown-item-text {
 	display: block;
 	padding: var(--dropdown-padding);
-	color: var(--text);
+	color: var(--ai-text);
 }
 
 /*=====Colors=====*/
 .dropdown-primary {
-	--dropdown-background: var(--primary);
-	--dropdown-background-color: var(--primary-color);
-	--dropdown-text: var(--primary-text);
+	--dropdown-background: var(--ai-primary);
+	--dropdown-background-color: var(--ai-primary-color);
+	--dropdown-text: var(--ai-primary-text);
 }
 
 .dropdown-secondary {
-	--dropdown-background: var(--secondary);
-	--dropdown-background-color: var(--secondary-color);
-	--dropdown-text: var(--secondary-text);
+	--dropdown-background: var(--ai-secondary);
+	--dropdown-background-color: var(--ai-secondary-color);
+	--dropdown-text: var(--ai-secondary-text);
 }
 
 .dropdown-light {
-	--dropdown-background: var(--light);
-	--dropdown-background-color: var(--light-color);
-	--dropdown-text: var(--light-text);
+	--dropdown-background: var(--ai-light);
+	--dropdown-background-color: var(--ai-light-color);
+	--dropdown-text: var(--ai-light-text);
 }
 
 .dropdown-dark {
-	--dropdown-background: var(--dark);
-	--dropdown-background-color: var(--dark-color);
-	--dropdown-text: var(--dark-text);
+	--dropdown-background: var(--ai-dark);
+	--dropdown-background-color: var(--ai-dark-color);
+	--dropdown-text: var(--ai-dark-text);
 }
 
 
@@ -318,7 +318,7 @@
 	right: unset;
 	top: 15px;
 	left: -14px;
-	border-color: transparent #ffffff transparent #9c27b000;
+	border-color: transparent var(--ai-bg) transparent #9c27b000;
 }
 
 .dropdown-drawer.drop-right.dropdown-open .dropdown-toggle {
@@ -343,7 +343,7 @@
 	left: unset;
 	top: 15px;
 	right: -14px;
-	border-color: transparent transparent transparent #ffffff;
+	border-color: transparent transparent transparent var(--ai-bg);
 }
 
 .dropdown-drawer.drop-left.dropdown-open .dropdown-toggle {
@@ -370,7 +370,7 @@
 	top: unset;
 	left: 20px;
 	bottom: -14px;
-	border-color: white transparent transparent transparent;
+	border-color: var(--ai-bg) transparent transparent transparent;
 }
 
 .drop-top .dropdown-menu.dropdown-menu-right:before {

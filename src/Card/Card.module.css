@@ -3,15 +3,15 @@
 	--card-box-shadow-hover: 0 1px 13px rgba(0, 0, 0, 0.1);
 	--card-border-radius: 5px;
 	--card-padding: 15px;
-	--card-main-color: var(--bg-alt);
+	--card-main-color: var(--ai-bg-alt);
 	--card-border-width: 2px;
 	--card-border-color: #f0f0f0;
 	--card-img-width: 100%;
 	--card-width: 100%;
-	--card-background: white;
-	--card-background-color: white;
+	--card-background: var(--ai-bg);
+	--card-background-color: var(--ai-bg);
 	--card-text: inherit;
-	--card-font-size: var(--font-size);
+	--card-font-size: var(--ai-font-size);
 }
 
 .card {
@@ -71,27 +71,27 @@
 
 /*=====Colors=====*/
 .card-primary {
-	--card-background: var(--primary);
-	--card-background-color: var(--primary-color);
-	--card-text: var(--primary-text);
+	--card-background: var(--ai-primary);
+	--card-background-color: var(--ai-primary-color);
+	--card-text: var(--ai-primary-text);
 }
 
 .card-secondary {
-	--card-background: var(--secondary);
-	--card-background-color: var(--secondary-color);
-	--card-text: var(--secondary-text);
+	--card-background: var(--ai-secondary);
+	--card-background-color: var(--ai-secondary-color);
+	--card-text: var(--ai-secondary-text);
 }
 
 .card-light {
-	--card-background: var(--light);
-	--card-background-color: var(--light-color);
-	--card-text: var(--light-text);
+	--card-background: var(--ai-light);
+	--card-background-color: var(--ai-light-color);
+	--card-text: var(--ai-light-text);
 }
 
 .card-dark {
-	--card-background: var(--dark);
-	--card-background-color: var(--dark-color);
-	--card-text: var(--dark-text);
+	--card-background: var(--ai-dark);
+	--card-background-color: var(--ai-dark-color);
+	--card-text: var(--ai-dark-text);
 }
 
 
@@ -139,29 +139,29 @@
 
 .card-outline {
 	box-shadow: none;
-	background: var(--main-bg);
+	background: var(--ai-bg);
 	border: var(--card-border-width) solid var(--card-background-color);
 	color: var(--card-background-color);
 }
 
 .card-outline.card-primary {
-	--card-background-color: var(--primary-color);
-	--card-text: var(--primary-color);
+	--card-background-color: var(--ai-primary-color);
+	--card-text: var(--ai-primary-color);
 }
 
 .card-outline.card-secondary {
-	--card-background-color: var(--secondary-color);
-	--card-text: var(--secondary-color);
+	--card-background-color: var(--ai-secondary-color);
+	--card-text: var(--ai-secondary-color);
 }
 
 .card-outline.card-dark {
-	--card-background-color: var(--dark-color);
-	--card-text: var(--dark-color);
+	--card-background-color: var(--ai-dark-color);
+	--card-text: var(--ai-dark-color);
 }
 
 .card-outline.card-light {
-	--card-background-color: var(--light-color);
-	--card-text: var(--light-color);
+	--card-background-color: var(--ai-light-color);
+	--card-text: var(--ai-light-color);
 }
 
 

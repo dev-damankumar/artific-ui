@@ -1,14 +1,14 @@
 :root {
 	--typography-border-width: 2px;
 	--typography-padding: 5px;
-	--typography-font-size: var(--font-size);
+	--typography-font-size: var(--ai-font-size);
 	--typography-border-radius: 5px;
 }
 
 .typography {
 	font-family: Nunito Sans, sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 	font-weight: 400;
-	line-height: var(--line-height);
+	line-height: var(--ai-line-height);
 	display: block;
 	margin: 0 0 1rem;
 }
@@ -47,8 +47,8 @@ div.typography {
 	display: inline;
 	padding: var(--typography-padding) calc(var(--typography-padding) * 2);
 	font-size: calc(var(--typography-font-size) / 1.2);
-	color: white;
-	background-color: var(--dark);
+	color: var(--ai-bg);
+	background-color: var(--ai-dark);
 	font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
 	border-radius: var(--typography-border-radius);
 }
@@ -70,16 +70,16 @@ div.typography {
 
 .typography-heading {
 	font-family: 'Segoe UI', sans-serif;
-	color: var(--text);
+	color: var(--ai-text);
 	font-weight: bold;
 }
 
 .typography-caption {
-	--line-height: 1.66;
+	--ai-line-height: 1.66;
 	font-family: 'Segoe UI', sans-serif;
 	font-weight: 400;
 	font-size: 0.75rem;
-	line-height: var(--line-height);
+	line-height: var(--ai-line-height);
 	color: #1a2027;
 	letter-spacing: 0.03333em;
 }
@@ -94,17 +94,17 @@ div.typography {
 
 
 .text-primary {
-	color: var(--primary-color) !important;
+	color: var(--ai-primary-color) !important;
 }
 
 .text-secondary {
-	color: var(--secondary-color) !important;
+	color: var(--ai-secondary-color) !important;
 }
 
 .text-light {
-	color: var(--light-color) !important;
+	color: var(--ai-light-color) !important;
 }
 
 .text-dark {
-	color: var(--dark-color) !important;
+	color: var(--ai-dark-color) !important;
 }

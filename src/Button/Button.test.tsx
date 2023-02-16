@@ -44,9 +44,9 @@ describe("Render Button Default Themes", () => {
 		const {container} = render(<Button colorScheme={colorScheme}>Click Me</Button>);
 		const element = getByText(container, 'Click Me');
 		const styles = getComputedStyle(element);
-		expect(styles.getPropertyValue('--primary')).toBe(colorScheme.background);
-		expect(styles.getPropertyValue('--primary-color')).toBe(colorScheme.backgroundColor);
-		expect(styles.getPropertyValue('--primary-text')).toBe(colorScheme.color);
+		expect(styles.getPropertyValue('--ai-primary')).toBe(colorScheme.background);
+		expect(styles.getPropertyValue('--ai-primary-color')).toBe(colorScheme.backgroundColor);
+		expect(styles.getPropertyValue('--ai-primary-text')).toBe(colorScheme.color);
 	});
 });
 

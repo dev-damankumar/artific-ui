@@ -44,14 +44,14 @@ describe("Render ButtonGroup Default Themes", () => {
 		const button1 = getByTestId(container, 'button1')
 		const button2 = getByTestId(container, 'button2')
 		const styles = getComputedStyle(button1);
-		expect(styles.getPropertyValue('--primary')).toBe(colorScheme.background);
-		expect(styles.getPropertyValue('--primary-color')).toBe(colorScheme.backgroundColor);
-		expect(styles.getPropertyValue('--primary-text')).toBe(colorScheme.color);
+		expect(styles.getPropertyValue('--ai-primary')).toBe(colorScheme.background);
+		expect(styles.getPropertyValue('--ai-primary-color')).toBe(colorScheme.backgroundColor);
+		expect(styles.getPropertyValue('--ai-primary-text')).toBe(colorScheme.color);
 
 		const styles2 = getComputedStyle(button2);
-		expect(styles2.getPropertyValue('--primary')).toBe(colorScheme.background);
-		expect(styles2.getPropertyValue('--primary-color')).toBe(colorScheme.backgroundColor);
-		expect(styles2.getPropertyValue('--primary-text')).toBe(colorScheme.color);
+		expect(styles2.getPropertyValue('--ai-primary')).toBe(colorScheme.background);
+		expect(styles2.getPropertyValue('--ai-primary-color')).toBe(colorScheme.backgroundColor);
+		expect(styles2.getPropertyValue('--ai-primary-text')).toBe(colorScheme.color);
 	});
 });
 

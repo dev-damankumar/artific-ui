@@ -18,11 +18,11 @@ export const AccordionBody: React.FC<IAccordionBody & IDiv> = (
 	const bodyStyle: CSSStyle = {};
 	if (open) {
 		if (ref?.current) {
-			bodyStyle['padding'] = 'var(--accordion-padding)';
-			bodyStyle['height'] = `calc(${(ref?.current as HTMLElement)?.scrollHeight}px + calc(var(--accordion-padding)*2))`;
+			bodyStyle['padding'] = 'var(--ai-acc-pad) calc(var(--ai-acc-pad) * 2)';
+			bodyStyle['height'] = `calc(${(ref?.current as HTMLElement)?.scrollHeight}px + calc(var(--ai-acc-pad)*2))`;
 		}
 	} else {
-		bodyStyle['padding'] = '0 var(--accordion-padding) 0 var(--accordion-padding)';
+		bodyStyle['padding'] = '0 calc(var(--ai-acc-pad) * 2) 0 calc(var(--ai-acc-pad) * 2)';
 		bodyStyle['height'] = 0;
 	}
 	return (

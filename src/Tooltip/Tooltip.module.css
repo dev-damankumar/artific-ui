@@ -1,7 +1,7 @@
 :root {
-	--tooltip-background: white;
-	--tooltip-background-color: white;
-	--tooltip-text: var(--text);
+	--tooltip-background: var(--ai-bg);
+	--tooltip-background-color: var(--ai-bg);
+	--tooltip-text: var(--ai-text);
 
 	--tooltip-border-radius: 5px;
 	--tooltip-left: 50%;
@@ -16,7 +16,7 @@
 .tooltip {
 	top: calc(var(--tooltip-top) + 10px);
 	left: var(--tooltip-left);
-	z-index: var(--z-index-tooltip);
+	z-index: var(--ai-z-index-tooltip);
 	background: var(--tooltip-background);
 	color: var(--tooltip-text);
 	max-width: 200px;
@@ -80,7 +80,7 @@
 
 
 .tooltip-large {
-	--tooltip-font-size: var(--font-size);
+	--tooltip-font-size: var(--ai-font-size);
 	--tooltip-padding: 6px;
 }
 
@@ -98,27 +98,27 @@
 
 /*=====Colors=====*/
 .tooltip-primary {
-	--tooltip-background: var(--primary);
-	--tooltip-background-color: var(--primary-color);
-	--tooltip-text: var(--primary-text);
+	--tooltip-background: var(--ai-primary);
+	--tooltip-background-color: var(--ai-primary-color);
+	--tooltip-text: var(--ai-primary-text);
 }
 
 .tooltip-secondary {
-	--tooltip-background: var(--secondary);
-	--tooltip-text: var(--secondary-text);
-	--tooltip-background-color: var(--secondary-color);
+	--tooltip-background: var(--ai-secondary);
+	--tooltip-text: var(--ai-secondary-text);
+	--tooltip-background-color: var(--ai-secondary-color);
 }
 
 .tooltip-light {
-	--tooltip-background: var(--light);
-	--tooltip-text: var(--light-text);
-	--tooltip-background-color: var(--light-color);
+	--tooltip-background: var(--ai-light);
+	--tooltip-text: var(--ai-light-text);
+	--tooltip-background-color: var(--ai-light-color);
 }
 
 .tooltip-dark {
-	--tooltip-background: var(--dark);
-	--tooltip-text: var(--dark-text);
-	--tooltip-background-color: var(--dark-color);
+	--tooltip-background: var(--ai-dark);
+	--tooltip-text: var(--ai-dark-text);
+	--tooltip-background-color: var(--ai-dark-color);
 }
 
 /*=====Colors End=====*/

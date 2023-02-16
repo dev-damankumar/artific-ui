@@ -130,9 +130,9 @@ describe("Render Tabs Default Themes", () => {
 		</Tabs>);
 		const element = getByTestId(container, 'tab');
 		const styles = getComputedStyle(element);
-		expect(styles.getPropertyValue('--primary')).toBe(colorScheme.background);
-		expect(styles.getPropertyValue('--primary-color')).toBe(colorScheme.backgroundColor);
-		expect(styles.getPropertyValue('--primary-text')).toBe(colorScheme.color);
+		expect(styles.getPropertyValue('--ai-primary')).toBe(colorScheme.background);
+		expect(styles.getPropertyValue('--ai-primary-color')).toBe(colorScheme.backgroundColor);
+		expect(styles.getPropertyValue('--ai-primary-text')).toBe(colorScheme.color);
 	});
 });
 

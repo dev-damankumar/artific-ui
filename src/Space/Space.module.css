@@ -1,15 +1,15 @@
 :root {
-	--gap: 10px;
+	--ai-gap: 10px;
 }
 
 .space {
 	display: flex;
-	gap: var(--gap);
+	gap: var(--ai-gap);
 }
 
-.space-direction-column > * {
-	width: 100%;
-}
+/*.space-direction-column > * {*/
+/*	width: 100%;*/
+/*}*/
 
 .space-wrap {
 	flex-wrap: wrap;
