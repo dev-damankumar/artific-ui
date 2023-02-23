@@ -1,7 +1,0 @@
-{
-  "name": "artific-ui/ThemeProvider",
-  "private": true,
-  "main": "../cjs/index.js",
-  "module": "./index.js",
-  "types": "./index.d.ts"
-}
