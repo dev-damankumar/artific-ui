@@ -16,7 +16,6 @@
     "react-router": "^6.8.1",
     "react-router-dom": "^6.8.1",
     "prop-types": "^15.8.1",
-    "@mdx-js/react": "^2.3.0",
     "color": "^4.2.3"
   },
   "devDependencies": {
