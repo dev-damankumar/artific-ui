@@ -1,0 +1,10 @@
+import{j as e,T as r}from"./index-f2287826.js";function c(n){const o=Object.assign({h2:"h2",p:"p",code:"code"},n.components);return e.jsxs(e.Fragment,{children:[e.jsx("div",{className:"main-blogs",children:n.noMainHeading?e.jsx(r,{title:"Artific UI - Themes"}):e.jsx(o.h2,{children:"Artific UI - Themes"})}),`
+`,e.jsx("h2",{children:"Theme"}),`
+`,e.jsx(o.p,{children:"Theme defines which colors to apply on your component by default its primary. but it can be one of the four values."}),`
+`,e.jsxs(o.p,{children:[e.jsx(o.code,{children:"theme"})," props has basic four values (",e.jsx(o.code,{children:"primary"}),"|",e.jsx(o.code,{children:"secondary"}),"|",e.jsx(o.code,{children:"dark"}),"|",e.jsx(o.code,{children:"light"}),")."]}),`
+`,e.jsxs(o.p,{children:[e.jsx(o.code,{children:"NOTE:"}),` If you want to use a different color scheme for component instead of the provided themes then  you can use\r
+`,e.jsx(o.code,{children:"colorScheme"})," props to define your color scheme."]}),`
+`,e.jsxs(o.p,{children:["colorScheme is an object containing three properties: ",e.jsx(o.code,{children:"background"}),", ",e.jsx(o.code,{children:"backgroundColor"}),", ",e.jsx(o.code,{children:"color"}),"."]}),`
+`,e.jsxs(o.p,{children:[e.jsx(o.code,{children:"background:"})," is used primarly for backgrond only and its value can be ",e.jsx(o.code,{children:"color"})," | ",e.jsx(o.code,{children:"gredient"})," | ",e.jsx(o.code,{children:"url"}),". its same as the css property ",e.jsx(o.code,{children:"background"})]}),`
+`,e.jsxs(o.p,{children:[e.jsx(o.code,{children:"backgroundColor:"})," is used primarily for additional properties like outline or border color and it can only have ",e.jsx(o.code,{children:"color"})," as value its same as the css property ",e.jsx(o.code,{children:"backgroundColor"})]}),`
+`,e.jsxs(o.p,{children:[e.jsx(o.code,{children:"color:"})," is used to define your text color."]})]})}function d(n={}){const{wrapper:o}=n.components||{};return o?e.jsx(o,Object.assign({},n,{children:e.jsx(c,n)})):c(n)}export{d as default};
