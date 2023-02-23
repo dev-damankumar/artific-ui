@@ -1,0 +1,7 @@
+{
+  "name": "artific-ui/Col",
+  "private": true,
+  "main": "../cjs/index.js",
+  "module": "./index.js",
+  "types": "./index.d.ts"
+}

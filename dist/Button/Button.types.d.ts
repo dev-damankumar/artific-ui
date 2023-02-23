@@ -1,0 +1,51 @@
+import { CSSProperties, ReactElement, ReactNode } from 'react';
+import { ColorScheme, Layouts, Sizes, Themes, Variants } from '../types/Common.types';
+import PropTypes from "prop-types";
+export declare const LoadingDirectionsArray: readonly ["before", "after"];
+export type LoadingDirections = typeof LoadingDirectionsArray[number];
+export declare const LoadingStylesArray: readonly ["spin", "grow"];
+export type LoadingStyles = typeof LoadingStylesArray[number];
+export declare const DirectionsArray: readonly ["horizontal", "vertical"];
+export type Directions = typeof DirectionsArray[number];
+export declare const ButtonTypeArray: readonly ["button", "reset", "submit"];
+export type ButtonType = typeof ButtonTypeArray[number];
+export declare const propTypes: {
+    variant: PropTypes.Requireable<"default" | "text" | "outline">;
+    size: PropTypes.Requireable<"xs" | "sm" | "md" | "lg" | "xl">;
+    disabled: PropTypes.Requireable<boolean>;
+    elevation: PropTypes.Requireable<boolean>;
+    type: PropTypes.Requireable<"button" | "reset" | "submit">;
+    theme: PropTypes.Requireable<"default" | "primary" | "secondary" | "dark" | "light">;
+    hideTextOnLoading: PropTypes.Requireable<boolean>;
+    loading: PropTypes.Requireable<boolean>;
+    noRipple: PropTypes.Requireable<boolean>;
+    fullwidth: PropTypes.Requireable<boolean>;
+    colorScheme: PropTypes.Requireable<PropTypes.InferProps<{
+        background: PropTypes.Validator<string>;
+        backgroundColor: PropTypes.Validator<string>;
+        color: PropTypes.Validator<string>;
+    }>>;
+    loadingDirection: PropTypes.Requireable<"before" | "after">;
+    layout: PropTypes.Requireable<"default" | "rounded" | "pill" | "no-radius">;
+    loadingStyle: PropTypes.Requireable<"spin" | "grow">;
+};
+export interface IButtonProps {
+    children: ReactNode;
+    type?: ButtonType;
+    style?: CSSProperties;
+    theme?: Themes;
+    hideTextOnLoading?: boolean;
+    elevation?: boolean;
+    noRipple?: boolean;
+    fullwidth?: boolean;
+    colorScheme?: ColorScheme;
+    loadingDirection?: LoadingDirections;
+    variant?: Variants;
+    layout?: Layouts;
+    size?: Sizes;
+    loadingStyle?: LoadingStyles;
+    disabled?: boolean;
+    loading?: boolean;
+    prefix?: ReactElement | null;
+    suffix?: ReactElement | null;
+}

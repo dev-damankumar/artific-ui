@@ -1,0 +1,42 @@
+import React from 'react';
+export declare const ISizes: any;
+export declare const IModalSizesArray: readonly ["", "extra-small-content", "full", "expanded", "small-content", "large-content", "extra-large-content", "full-width", "full-height"];
+export type IModalSizesType = typeof IModalSizesArray[number];
+export declare const IModalSizes: any;
+export type CreateArrayWithLengthX<LENGTH extends number, ACC extends unknown[] = []> = ACC['length'] extends LENGTH ? ACC : CreateArrayWithLengthX<LENGTH, [...ACC, 1]>;
+export type NumericRange<START_ARR extends number[], END extends number, ACC extends number = never> = START_ARR['length'] extends END ? ACC | END : NumericRange<[...START_ARR, 1], END, ACC | START_ARR['length']>;
+export declare const VariantsArray: readonly ["default", "text", "outline"];
+export type Variants = typeof VariantsArray[number];
+export declare const ThemesArray: readonly ["primary", "secondary", "dark", "light", "default"];
+export type Themes = typeof ThemesArray[number];
+export declare const LayoutsArray: readonly ["default", "rounded", "pill", "no-radius"];
+export type Layouts = typeof LayoutsArray[number];
+export declare const SizesArray: readonly ["xs", "sm", "md", "lg", "xl"];
+export type Sizes = typeof SizesArray[number];
+export declare const DirectionsArray: readonly ["top", "bottom", "right", "left"];
+export type Directions = typeof DirectionsArray[number];
+export declare const LayoutDirectionsArray: readonly ["row", "column"];
+export type LayoutDirections = typeof LayoutDirectionsArray[number];
+export declare const AxisArray: readonly ["horizontal", "vertical"];
+export type Axis = typeof AxisArray[number];
+export type ColorScheme = {
+    background: string;
+    backgroundColor: string;
+    color: string;
+} | null;
+export type IDiv = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+export type IButton = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+export type IImage = React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>;
+export type ILink = React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
+export type IUl = React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement>;
+export type ILi = React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>;
+export type ITbody = React.DetailedHTMLProps<React.HTMLAttributes<HTMLTableSectionElement>, HTMLTableSectionElement>;
+export type ITd = React.DetailedHTMLProps<React.TdHTMLAttributes<HTMLTableDataCellElement>, HTMLTableDataCellElement>;
+export type ITh = React.DetailedHTMLProps<React.ThHTMLAttributes<HTMLTableHeaderCellElement>, HTMLTableHeaderCellElement>;
+export type ITr = React.DetailedHTMLProps<React.HTMLAttributes<HTMLTableRowElement>, HTMLTableRowElement>;
+export type IAnyElement = React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+export interface CSSStyle extends React.CSSProperties {
+}
+export type FunctionCallback = (...args: any[]) => any;
+export declare const ComponentsTypeArray: readonly ["ati-message-alert", "accordion", "alert", "avatar", "badge", "btn", "alert", "card", "col", "container", "dropdown", "list", "modal", "pagination", "progress", "row", "spinner", "table", "tab", "tooltip", "typography"];
+export type ComponentsType = typeof ComponentsTypeArray[number];
