@@ -6,4 +6,5 @@
 	flex-wrap: wrap;
 	width: 100%;
 	gap: var(--ai-gap);
+	justify-content: space-evenly;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Space} from "artific-ui";
+import {Space} from "../../../src/index";
 
 const ContentLoader=() => {
 	return (

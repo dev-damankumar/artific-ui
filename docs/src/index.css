@@ -413,7 +413,7 @@ code {
 }
 
 .main-container {
-	gap: 30px;
+	padding: 0 30px;
 }
 
 .right-sidebar {

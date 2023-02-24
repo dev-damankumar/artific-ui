@@ -5,6 +5,8 @@
 .space {
 	display: flex;
 	gap: var(--ai-gap);
+	width: 100%;
+	align-items: stretch;
 }
 
 /*.space-direction-column > * {*/

@@ -14,7 +14,7 @@ interface IColProps {
 	gap?: number | [number, number];
 }
 
-export const AlignTypeArray = ['start', 'end', 'center', 'baseline'] as const;
+export const AlignTypeArray = ['start', 'end', 'center', 'baseline', 'default'] as const;
 export type AlignType = typeof AlignTypeArray[number];
 
 export const Space: React.FC<IColProps & IDiv> = (
@@ -23,7 +23,7 @@ export const Space: React.FC<IColProps & IDiv> = (
 		direction = 'horizontal',
 		gap = 10,
 		children,
-		align = 'start',
+		align = 'default',
 		...rest
 	}) => {
 	const context = useContext(ThemeContext)
@@ -36,7 +36,7 @@ export const Space: React.FC<IColProps & IDiv> = (
 		gapStyle = `${gapStyle[1]}px ${gapStyle[0]}px`
 	}
 	const mainStyle = {gap: gapStyle, flexDirection: directionStyle};
-	const alignClasses = `space-align-${align}`
+	const alignClasses = align !== 'default' ? `space-align-${align}` : ''
 	return (
 		<div {...rest} data-theme-id={context?.themeId || ''} style={{...rest.style, ...mainStyle}} className={`${getClassNames(styles, alignClasses, 'space', wrap ? 'space-wrap' : '', `space-direction-${directionStyle}`)}`}>
 			{children}

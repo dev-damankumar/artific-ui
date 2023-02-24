@@ -1,5 +1,5 @@
 import React, {Suspense} from 'react';
-import {Space, ThemeProvider} from "artific-ui";
+import {Space, ThemeProvider} from "../../../src/index";
 import theme from "../theme.js";
 import Controls from "./Controls.jsx";
 import ContentLoader from "./ContentLoader.jsx";
