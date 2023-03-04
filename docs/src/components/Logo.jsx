@@ -1,11 +1,11 @@
 import React from 'react'
 import logo from '../assets/images/logo-1-lg.png'
-import { Dropdown, DropdownMenu, DropdownToggle, MenuItem } from 'artific-ui'
+import {Dropdown, DropdownMenu, DropdownToggle, MenuItem} from 'artific-ui'
 
 const Logo = () => {
     return (
-        <a className="logo-expand" href="#">
-            <img className="logo" src={logo} />
+        <div className="logo-expand">
+            <img className="logo" src={logo} alt="Artific UI"/>
             <span className="logo-span">Artific UI</span>
             <Dropdown
                 className="version-dropdown"
@@ -13,7 +13,7 @@ const Logo = () => {
                 size="sm"
                 variant="drawer"
                 fullwidth
-                style={{ marginLeft: 'auto' }}
+                style={{marginLeft: 'auto'}}
             >
                 <DropdownToggle className="version-button" variant="text">
                     1.0.2
@@ -24,7 +24,7 @@ const Logo = () => {
                     <MenuItem>1.0.2</MenuItem>
                 </DropdownMenu>
             </Dropdown>
-        </a>
+        </div>
     )
 }
 

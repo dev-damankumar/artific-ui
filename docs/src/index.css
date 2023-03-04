@@ -55,6 +55,10 @@ img {
     --stroke-line-join: round;
 }
 
+h2 {
+    margin-top: 15px;
+}
+
 body {
     color: var(--body-color);
     padding: 0;
@@ -272,14 +276,33 @@ code {
     overflow-x: hidden;
 }
 
+.wrap {
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+    margin-top: 40px;
+}
+
+.preview-actions {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    z-index: 999;
+    right: 0;
+    top: -40px;
+}
+
 .code-div {
     width: 100%;
     position: relative;
     background: black;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     padding: 15px;
-    border-radius: 13px;
-    margin-bottom: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
 .code-div * {
@@ -454,10 +477,10 @@ code {
     top: 0;
     left: 0;
     background: linear-gradient(
-        to bottom,
-        #1f1d2b 0,
-        #1f1d2b 78%,
-        rgba(31, 29, 43, 0) 100%
+            to bottom,
+            #1f1d2b 0,
+            #1f1d2b 78%,
+            rgba(31, 29, 43, 0) 100%
     );
     z-index: 11;
 }
@@ -605,6 +628,7 @@ code {
 
 ::-webkit-scrollbar {
     width: 6px;
+    height: 6px;
     border-radius: 10px;
 }
 
@@ -652,10 +676,19 @@ button.icon-btn svg path {
 
 button.btn.copy-btn {
     background: #353535;
+    margin-right: 0;
+    color: white;
+    margin-left: 10px;
+}
+
+.code-block-actions {
     position: absolute;
     top: 15px;
     right: 15px;
-    margin-right: 0;
+}
+
+.copy-success {
+    background: #57ac5a !important;
 }
 
 .controls {
@@ -761,6 +794,10 @@ button.btn.copy-btn {
 }
 
 @media screen and (max-width: 650px) {
+    .main-container {
+        padding: 0 0px 30px;
+    }
+
     .header .version-dropdown {
         display: none;
     }

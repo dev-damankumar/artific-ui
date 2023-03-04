@@ -43,8 +43,8 @@
     border: none;
     background: none;
     color: inherit;
-    font-size: var(--alert-font-size);
-    font-weight: 700;
+    font-size: calc(var(--alert-font-size) * 1.5);
+    font-weight: 400;
     line-height: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -57,8 +57,8 @@
     justify-content: center;
     cursor: pointer;
     outline: none;
-    width: calc(var(--alert-font-size) + 9px);
-    height: calc(var(--alert-font-size) + 9px);
+    width: calc(calc(var(--alert-font-size) * 1.5) + calc(var(--alert-padding) / 2));
+    height: calc(calc(var(--alert-font-size) * 1.5) + calc(var(--alert-padding) / 2));
     border-radius: 50px;
     top: 50%;
     transform: translateY(-50%);

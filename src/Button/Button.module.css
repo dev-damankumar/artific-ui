@@ -3,7 +3,7 @@
     --btn-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
     --btn-border-radius: 5px;
     --btn-padding: 8px;
-    --btn-font-size: var(--ai-font-size);
+    --btn-font-size: 16px;
     --btn-margin: 10px;
     --btn-border-width: 2px;
     --btn-cursor: pointer;
@@ -15,6 +15,10 @@
     --btn-text-hover: var(--ai-primary-text-hover);
     --btn-hover-box-shadow: var(--ai-primary-hover-box-shadow);
     --gradient-hover: transparent;
+}
+
+.btn > p {
+    font-size: var(--btn-font-size);
 }
 
 .btn {

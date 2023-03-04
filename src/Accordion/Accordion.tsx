@@ -11,6 +11,7 @@ export const Accordion: FC<IAccordionProps & IDiv> = (
     {
         className = '',
         children,
+        fullwidth = false,
         theme = 'default',
         variant = 'default',
         size = 'md',
@@ -36,6 +37,7 @@ export const Accordion: FC<IAccordionProps & IDiv> = (
         styles,
         'accordion-wrap',
         indicatorPosition === 'start' && 'accordion-indicator-left',
+        fullwidth ? 'accordion-fullwidth' : ''
     )
     return (
         <>

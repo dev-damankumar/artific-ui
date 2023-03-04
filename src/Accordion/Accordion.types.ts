@@ -28,7 +28,8 @@ export interface IAccordionProps {
     variant?: Variants
     layout?: Layouts
     indicatorPosition?: IndicatorDirection
-    size?: Sizes
+    size?: Sizes,
+    fullwidth?: boolean
     colorScheme?: ColorScheme
 }
 
@@ -39,6 +40,7 @@ export const propTypes = {
     layout: oneOf(LayoutsArray),
     indicatorPosition: oneOf(IndicatorDirectionArray),
     size: oneOf(SizesArray),
+    fullwidth: bool,
     colorScheme: shape({
         background: string.isRequired,
         backgroundColor: string.isRequired,

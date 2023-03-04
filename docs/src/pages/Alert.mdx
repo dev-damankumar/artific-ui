@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Alert, Button } from 'artific-ui'
+import {useState} from 'react'
+import {Alert, Button} from 'artific-ui'
 
 export const Template = args => {
     const [show, setShow] = useState(true)
@@ -28,19 +28,6 @@ An alert displays a short, important message in a way that attracts the user's a
 import { Alert } from 'artific-ui/Alert'
 ```
 
-## Dismissible Alert
-
-A dismissible alert is a alert which can be removed from the user's screen by clicking on the close icon button
-
-<div>
-    <div name="Dismissible Alert">
-        <Alert dismiss="true">
-            <strong>Primary!</strong> You should{' '}
-            <a href="data/Alert.stories#">read this message</a>.
-        </Alert>
-    </div>
-</div>
-
 ## Alert Themes
 
 If you want to use a different theme for `Alert` use the `theme` prop to set the theme
@@ -49,7 +36,7 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 <div>
     <div name="Alert Themes">
         <h5>Basic Alerts</h5>
-        <br />
+        <br/>
         <Alert dismiss={true}>
             <strong>Primary!</strong> You should{' '}
             <a href="data/Alert.stories#">read this message</a>.
@@ -66,11 +53,12 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
             <strong>Dark!</strong> You should{' '}
             <a href="data/Alert.stories#">read this message</a>.
         </Alert>
-        <br />
+        <br/>
     </div>
 </div>
 
-## 2. Custom Alert
+
+##  Custom Alert
 
 If you want to use a different color scheme for `Alert` instead of the provided themes then you can use
 `colorScheme` props to define your color scheme.
@@ -79,10 +67,8 @@ colorScheme is an object containing three properties: `background`, `backgroundC
 
 <div>
     <div name="Custom Alert">
-        <h5>CustomScheme Alerts</h5>
-        <br />
         <Alert
-            dismiss="true"
+            dismiss
             colorScheme={{
                 background: 'linear-gradient(45deg, #e736f4, #673ab7)',
                 backgroundColor: '#e736f4',
@@ -95,7 +81,45 @@ colorScheme is an object containing three properties: `background`, `backgroundC
     </div>
 </div>
 
-## 3. Alert Sizes
+
+## Dismissible Alert
+
+A dismissible alert is a alert which can be removed from the user's screen by clicking on the close icon button
+
+<div>
+    <div name="Dismissible Alert">
+        <Alert dismiss>
+            <strong>Primary!</strong> You should{' '}
+            <a href="data/Alert.stories#">read this message</a>.
+        </Alert>
+        <Alert dismiss theme="secondary">
+            <strong>Secondary!</strong> You should{' '}
+            <a href="data/Alert.stories#">read this message</a>.
+        </Alert>
+        <Alert dismiss theme="dark">
+            <strong>Dark!</strong> You should{' '}
+            <a href="data/Alert.stories#">read this message</a>.
+        </Alert>
+        <Alert dismiss theme="light">
+            <strong>Light!</strong> You should{' '}
+            <a href="data/Alert.stories#">read this message</a>.
+        </Alert>
+        <Alert
+            dismiss
+            colorScheme={{
+                background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+                backgroundColor: '#e736f4',
+                color: 'white',
+            }}
+        >
+            <strong>Custom!</strong> You should{' '}
+            <a href="data/Alert.stories#">read this message</a>.
+        </Alert>
+    </div>
+</div>
+
+
+##  Alert Sizes
 
 you can use a `size` prop to define the size of your components
 
@@ -105,25 +129,25 @@ Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg
 
 <div>
     <div name="Alert Sizes">
-        <Alert size="xs">
+        <Alert dismiss size="xs">
             You should <a href="data/Alert.stories#">read this message</a>.
         </Alert>
-        <Alert size="sm">
+        <Alert dismiss size="sm">
             You should <a href="data/Alert.stories#">read this message</a>.
         </Alert>
-        <Alert>
+        <Alert dismiss>
             You should <a href="data/Alert.stories#">read this message</a>.
         </Alert>
-        <Alert size="lg">
+        <Alert dismiss size="lg">
             You should <a href="data/Alert.stories#">read this message</a>.
         </Alert>
-        <Alert size="xl">
+        <Alert dismiss size="xl">
             You should <a href="data/Alert.stories#">read this message</a>.
         </Alert>
     </div>
 </div>
 
-## 3. Alert Layouts
+##  Alert Layouts
 
 Alert Has basic four layouts to choose from to define how you component's structure should look like.
 
@@ -134,7 +158,7 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 <div>
     <div name="Alert Layouts">
         <h5>Alerts Layouts</h5>
-        <br />
+        <br/>
         <Alert layout="rounded">
             <strong>Rounded!</strong> You should{' '}
             <a href="data/Alert.stories#">read this message</a>.
@@ -154,7 +178,7 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
     </div>
 </div>
 
-## 3. Alert Variants
+##  Alert Variants
 
 Artific UI provides a `variant` prop to make you choose how your component ui should look like
 
@@ -180,7 +204,7 @@ you can check out the props table to see which variant is supported by the compo
     </div>
 </div>
 
-## 3. Note Variant Directions
+## Note Variant Directions
 
 Alert Note Variant has `direction` prop to define which direction the alert should follow.
 

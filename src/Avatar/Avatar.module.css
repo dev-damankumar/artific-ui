@@ -144,12 +144,6 @@
 }
 
 /*=====Variants End=====*/
-@media screen and (max-width: 500px) {
-    .avatar {
-        --avatar-padding: 10px;
-        --avatar-font-size: 14px;
-    }
-}
 
 /*=====Sizes =====*/
 

@@ -1,12 +1,15 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import docs from '../docs.jsx'
-import { ThemeProvider } from 'artific-ui'
+import {ThemeProvider} from 'artific-ui'
 import theme from '../theme.js'
 import Logo from './Logo.jsx'
 import UserSettings from './UserSettings.jsx'
 
-const Sidebar = ({ openLeftSidebar, closeSidebar }) => {
+const Sidebar = ({openLeftSidebar, closeSidebar}) => {
+    const onClick = (e) => {
+        closeSidebar()
+    }
     const toggleMenus = (e, id) => {
         const menu = document.querySelector(`#${id}`)
         if (menu) {
@@ -32,10 +35,11 @@ const Sidebar = ({ openLeftSidebar, closeSidebar }) => {
                     openLeftSidebar ? 'open' : ''
                 }`}
             >
-                <Logo />
+                <Logo/>
                 <div className="side-wrapper">
                     <div className="side-menu">
                         <NavLink
+                            onClick={onClick}
                             className={classData => {
                                 return `${
                                     classData.isActive ? 'is-active' : ''
@@ -70,6 +74,7 @@ const Sidebar = ({ openLeftSidebar, closeSidebar }) => {
                             Getting Started
                         </NavLink>
                         <NavLink
+                            onClick={onClick}
                             className={classData => {
                                 return `${
                                     classData.isActive ? 'is-active' : ''
@@ -97,6 +102,7 @@ const Sidebar = ({ openLeftSidebar, closeSidebar }) => {
                             Install
                         </NavLink>
                         <NavLink
+                            onClick={onClick}
                             className={classData => {
                                 return `${
                                     classData.isActive ? 'is-active' : ''
@@ -122,6 +128,7 @@ const Sidebar = ({ openLeftSidebar, closeSidebar }) => {
                             Layouts
                         </NavLink>
                         <NavLink
+                            onClick={onClick}
                             className={classData => {
                                 return `${
                                     classData.isActive ? 'is-active' : ''
@@ -164,6 +171,7 @@ const Sidebar = ({ openLeftSidebar, closeSidebar }) => {
                         </NavLink>
 
                         <NavLink
+                            onClick={onClick}
                             className={classData => {
                                 return `${
                                     classData.isActive ? 'is-active' : ''
@@ -192,6 +200,7 @@ const Sidebar = ({ openLeftSidebar, closeSidebar }) => {
                         </NavLink>
 
                         <NavLink
+                            onClick={onClick}
                             className={classData => {
                                 return `${
                                     classData.isActive ? 'is-active' : ''
@@ -267,6 +276,7 @@ const Sidebar = ({ openLeftSidebar, closeSidebar }) => {
                             {docs.map((doc, index) => {
                                 return (
                                     <NavLink
+                                        onClick={onClick}
                                         key={`id-${doc.path}-${index}`}
                                         className={classData => {
                                             return `${
@@ -323,7 +333,7 @@ const Sidebar = ({ openLeftSidebar, closeSidebar }) => {
                         </div>
                     </div>
                 </div>
-                <UserSettings />
+                <UserSettings/>
             </div>
         </ThemeProvider>
     )
