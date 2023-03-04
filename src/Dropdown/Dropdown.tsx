@@ -50,7 +50,6 @@ export const Dropdown: React.FC<IDropdownProps & IDiv> = (
             onClick: toggleDropdown,
         },
         DropdownMenu: {
-            closeHandler: handleCloseMenu,
             autoClose,
             onClick: toggleDropdown,
         },

@@ -6,15 +6,16 @@ import {propTypes} from '../Button/Button.types'
 import {IButton} from '../types/Common.types'
 import {ThemeContext} from '../ThemeProvider'
 
-export const DropdownToggle: React.FC<IButtonProps & IButton> = ({
-                                                                     style,
-                                                                     className = '',
-                                                                     children,
-                                                                     onClick,
-                                                                     colorScheme,
-                                                                     theme,
-                                                                     ...rest
-                                                                 }) => {
+export const DropdownToggle: React.FC<IButtonProps & IButton> = (
+    {
+        style,
+        className = '',
+        children,
+        onClick,
+        colorScheme,
+        theme,
+        ...rest
+    }) => {
     const context = useContext(ThemeContext)
     return (
         <Button

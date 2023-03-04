@@ -14,6 +14,7 @@
     "husky-install": "husky install",
     "build": "npm run rollup && npm run post:build",
     "post:build": "node ./scripts/frankBuild.js",
+    "prod": "npm run test && npm run build-lib && npm run post:build",
     "rollup": "del dist && rollup -c",
     "build-lib": "rollup -c",
     "build:esm": "tsc",
