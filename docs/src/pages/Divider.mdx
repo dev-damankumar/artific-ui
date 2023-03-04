@@ -1,43 +1,43 @@
-import {Divider} from "artific-ui";
+import { Divider } from 'artific-ui'
 
-
-
-export const Template=(args) => {
-	return <>
-		<h5>Basic Divider</h5>
-		<Divider/>
-		<h5>Basic Divider</h5>
-	</>
-};
+export const Template = args => {
+    return (
+        <>
+            <h5>Basic Divider</h5>
+            <Divider />
+            <h5>Basic Divider</h5>
+        </>
+    )
+}
 
 # Divider
 
 The divider is used to divide section by putting line between them.
 
 <div>
-	<div name="Default">{Template.bind({})}</div>
+    <div name="Default">{Template.bind({})}</div>
 </div>
 
 ## API
 
 ```jsx
-import { Divider } from 'artific-ui';
+import { Divider } from 'artific-ui'
 ```
-
-
 
 ## Divider Direction
 
 The Divider has main two directions ie. (`horizontal`|`vertical`)
 
 <div>
-	<div name="Containers">
-		<div style={{display: 'flex', height: 200}}>
-			<div style={{width: 200, background: 'gainsboro'}}>Basic Divider</div>
-			<Divider direction="vertical"/>
-			<div style={{width: 200, background: 'gainsboro'}}>Basic Divider</div>
-		</div>
-	</div>
+    <div name="Containers">
+        <div style={{ display: 'flex', height: 200 }}>
+            <div style={{ width: 200, background: 'gainsboro' }}>
+                Basic Divider
+            </div>
+            <Divider direction="vertical" />
+            <div style={{ width: 200, background: 'gainsboro' }}>
+                Basic Divider
+            </div>
+        </div>
+    </div>
 </div>
-
-

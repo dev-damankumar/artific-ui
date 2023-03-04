@@ -1,7 +1,11 @@
-import TitleBar from "../components/TitleBar.jsx";
+import TitleBar from '../components/TitleBar.jsx'
 
 <div className="main-blogs">
-	{props.noMainHeading ? <TitleBar title="Artific UI - Variants"/> : <h2>Artific UI - Variants</h2>}
+    {props.noMainHeading ? (
+        <TitleBar title="Artific UI - Variants" />
+    ) : (
+        <h2>Artific UI - Variants</h2>
+    )}
 </div>
 
 <h2>Variant</h2>
@@ -10,7 +14,6 @@ Variant defines how you components ui should look like
 
 `variant` prop has different the values based on which component you are using
 but most common are (`default`|`outline`|`separate`|`text`). you can mix them with diffrent supported `theme` or `layout` to make component more customizabe
-
 
 <h2>Size</h2>
 

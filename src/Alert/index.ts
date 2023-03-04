@@ -1,5 +1,5 @@
-import Alert from "./Alert";
-import "../index.css"
+import Alert from './Alert'
+import '../index.css'
 
 export default Alert
-export * from './Alert';
+export * from './Alert'

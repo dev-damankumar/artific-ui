@@ -1,110 +1,114 @@
 :root {
-	--typography-border-width: 2px;
-	--typography-padding: 5px;
-	--typography-font-size: var(--ai-font-size);
-	--typography-border-radius: 5px;
+    --typography-border-width: 2px;
+    --typography-padding: 5px;
+    --typography-font-size: var(--ai-font-size);
+    --typography-border-radius: 5px;
 }
 
 .typography {
-	font-family: Nunito Sans, sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-	font-weight: 400;
-	line-height: var(--ai-line-height);
-	display: block;
-	margin: 0 0 1rem;
+    font-family: Nunito Sans, sans-serif, system-ui, -apple-system, Segoe UI,
+    Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-weight: 400;
+    line-height: var(--ai-line-height);
+    display: block;
+    margin: 0 0 1rem;
 }
 
 div.typography {
-	margin: 0 !important;
+    margin: 0 !important;
 }
 
 .typography-subtitle {
-	font-family: 'Segoe UI', sans-serif;
-	color: #1a2027;
-	letter-spacing: 0.00938em;
+    font-family: 'Segoe UI', sans-serif;
+    color: #1a2027;
+    letter-spacing: 0.00938em;
 }
 
 .typography-description {
-	font-family: 'Segoe UI', sans-serif;
-	color: #606060;
-	font-size: 0.9rem;
-	letter-spacing: 0.00938em;
+    font-family: 'Segoe UI', sans-serif;
+    color: #606060;
+    font-size: 0.9rem;
+    letter-spacing: 0.00938em;
 }
 
 .typography-highlight {
-	display: inline;
-	background-color: #fcf8e3;
-	padding: 0.2em;
+    display: inline;
+    background-color: #fcf8e3;
+    padding: 0.2em;
 }
 
 .typography-abbr {
-	display: inline;
-	border-bottom: var(--typography-border-width) dotted;
-	text-decoration: none;
+    display: inline;
+    border-bottom: var(--typography-border-width) dotted;
+    text-decoration: none;
 }
 
 .typography-kbd {
-	--typography-padding: 3px;
-	display: inline;
-	padding: var(--typography-padding) calc(var(--typography-padding) * 2);
-	font-size: calc(var(--typography-font-size) / 1.2);
-	color: var(--ai-bg);
-	background-color: var(--ai-dark);
-	font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-	border-radius: var(--typography-border-radius);
+    --typography-padding: 3px;
+    display: inline;
+    padding: var(--typography-padding) calc(var(--typography-padding) * 2);
+    font-size: calc(var(--typography-font-size) / 1.2);
+    color: var(--ai-bg);
+    background-color: var(--ai-dark);
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+    Courier New, monospace;
+    border-radius: var(--typography-border-radius);
 }
 
 .typography-pre {
-	word-wrap: break-word;
-	font-size: .875em;
-	font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    word-wrap: break-word;
+    font-size: 0.875em;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+    Courier New, monospace;
 }
 
 .typography-code {
-	word-wrap: break-word;
-	color: #d63384;
-	font-size: .875em;
-	direction: ltr;
-	font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-	unicode-bidi: bidi-override;
+    word-wrap: break-word;
+    color: #d63384;
+    font-size: 0.875em;
+    direction: ltr;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+    Courier New, monospace;
+    unicode-bidi: bidi-override;
 }
 
 .typography-heading {
-	font-family: 'Segoe UI', sans-serif;
-	color: var(--ai-text);
-	font-weight: bold;
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--ai-text);
+    font-weight: bold;
 }
 
 .typography-caption {
-	--ai-line-height: 1.66;
-	font-family: 'Segoe UI', sans-serif;
-	font-weight: 400;
-	font-size: 0.75rem;
-	line-height: var(--ai-line-height);
-	color: #1a2027;
-	letter-spacing: 0.03333em;
+    --ai-line-height: 1.66;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: var(--ai-line-height);
+    color: #1a2027;
+    letter-spacing: 0.03333em;
 }
 
 .typography-light {
-	font-weight: 300;
+    font-weight: 300;
 }
 
 .typography-bold {
-	font-weight: 600;
+    font-weight: 600;
 }
 
-
 .text-primary {
-	color: var(--ai-primary-color) !important;
+    color: var(--ai-primary-color) !important;
 }
 
 .text-secondary {
-	color: var(--ai-secondary-color) !important;
+    color: var(--ai-secondary-color) !important;
 }
 
 .text-light {
-	color: var(--ai-light-color) !important;
+    color: var(--ai-light-color) !important;
 }
 
 .text-dark {
-	color: var(--ai-dark-color) !important;
+    color: var(--ai-dark-color) !important;
 }

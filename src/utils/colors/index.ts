@@ -1,1 +1,1 @@
-export * from './applyColorScheme';
+export * from './applyColorScheme'

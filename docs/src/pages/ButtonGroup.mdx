@@ -1,27 +1,26 @@
-import {Button, ButtonGroup} from "artific-ui";
-
+import { Button, ButtonGroup } from 'artific-ui'
 
 # ButtonGroup
 
 You can group together multiple button with `ButtonGroup`
 
-export const defaultTemplate=(args) => <ButtonGroup {...args}>
-	<Button type="button">Primary</Button>
-	<Button type="button">Light</Button>
-	<Button type="button">Dark</Button>
-</ButtonGroup>;
+export const defaultTemplate = args => (
+    <ButtonGroup {...args}>
+        <Button type="button">Primary</Button>
+        <Button type="button">Light</Button>
+        <Button type="button">Dark</Button>
+    </ButtonGroup>
+)
 
 <div>
-	<div name="Default">{defaultTemplate.bind({})}</div>
+    <div name="Default">{defaultTemplate.bind({})}</div>
 </div>
 
 ## API
 
 ```jsx
-import { Button } from 'artific-ui/Button';
+import { Button } from 'artific-ui/Button'
 ```
-
-
 
 ## Button Horizontal Group
 
@@ -30,16 +29,21 @@ Use `direction` props on `ButtonGroup` to define the direction of the ButtonGrou
 default is `horizontal`
 
 <div>
-	<div name="Button Horizontal Group">
-		<ButtonGroup>
-			<Button type="button">Primary</Button>
-			<Button theme="secondary" type="button">Secondary</Button>
-			<Button theme="light" type="button">Light</Button>
-			<Button theme="dark" type="button">Dark</Button>
-		</ButtonGroup>
-	</div>
+    <div name="Button Horizontal Group">
+        <ButtonGroup>
+            <Button type="button">Primary</Button>
+            <Button theme="secondary" type="button">
+                Secondary
+            </Button>
+            <Button theme="light" type="button">
+                Light
+            </Button>
+            <Button theme="dark" type="button">
+                Dark
+            </Button>
+        </ButtonGroup>
+    </div>
 </div>
-
 
 ## Button Vertical Group
 
@@ -48,13 +52,17 @@ Use `direction` props on `ButtonGroup` to define the direction of the ButtonGrou
 default is `horizontal`
 
 <div>
-	<div name="Button Vertical Group">
-		<ButtonGroup direction="vertical">
-			<Button type="button">Primary</Button>
-			<Button theme="light" type="button">Light</Button>
-			<Button theme="dark" type="button">Dark</Button>
-		</ButtonGroup>
-	</div>
+    <div name="Button Vertical Group">
+        <ButtonGroup direction="vertical">
+            <Button type="button">Primary</Button>
+            <Button theme="light" type="button">
+                Light
+            </Button>
+            <Button theme="dark" type="button">
+                Dark
+            </Button>
+        </ButtonGroup>
+    </div>
 </div>
 
 ## Button Group Sizes
@@ -66,32 +74,48 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 `Note:` when using `ButtonGroup` you don't have to provide the `size` prop on `Button` itself just use the props on the main component.
 
 <div>
-	<div name="Button Group Sizes">
-		<ButtonGroup size="xs">
-			<Button type="button">Primary</Button>
-			<Button theme="light" type="button">Light</Button>
-			<Button theme="dark" type="button">Dark</Button>
-		</ButtonGroup>
-		<br/>
-		<br/>
-		<ButtonGroup size="sm">
-			<Button type="button">Primary</Button>
-			<Button theme="light" type="button">Light</Button>
-			<Button theme="dark" type="button">Dark</Button>
-		</ButtonGroup>
-		<br/>
-		<br/>
-		<ButtonGroup size="lg">
-			<Button type="button">Primary</Button>
-			<Button theme="light" type="button">Light</Button>
-			<Button theme="dark" type="button">Dark</Button>
-		</ButtonGroup>
-		<br/>
-		<br/>
-		<ButtonGroup size="xl">
-			<Button type="button">Primary</Button>
-			<Button theme="light" type="button">Light</Button>
-			<Button theme="dark" type="button">Dark</Button>
-		</ButtonGroup>
-	</div>
+    <div name="Button Group Sizes">
+        <ButtonGroup size="xs">
+            <Button type="button">Primary</Button>
+            <Button theme="light" type="button">
+                Light
+            </Button>
+            <Button theme="dark" type="button">
+                Dark
+            </Button>
+        </ButtonGroup>
+        <br />
+        <br />
+        <ButtonGroup size="sm">
+            <Button type="button">Primary</Button>
+            <Button theme="light" type="button">
+                Light
+            </Button>
+            <Button theme="dark" type="button">
+                Dark
+            </Button>
+        </ButtonGroup>
+        <br />
+        <br />
+        <ButtonGroup size="lg">
+            <Button type="button">Primary</Button>
+            <Button theme="light" type="button">
+                Light
+            </Button>
+            <Button theme="dark" type="button">
+                Dark
+            </Button>
+        </ButtonGroup>
+        <br />
+        <br />
+        <ButtonGroup size="xl">
+            <Button type="button">Primary</Button>
+            <Button theme="light" type="button">
+                Light
+            </Button>
+            <Button theme="dark" type="button">
+                Dark
+            </Button>
+        </ButtonGroup>
+    </div>
 </div>

@@ -1,33 +1,29 @@
-import {List, ListItem} from "artific-ui";
-
+import { List, ListItem } from 'artific-ui'
 
 ## Lists
 
 Lists are a continuous group of text or images. They are composed of items containing primary and supplemental actions, which are represented by icons and text.
 
-export const defaultTemplate=(args) => {
-	return (
-		<List {...args}>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-	);
-};
+export const defaultTemplate = args => {
+    return (
+        <List {...args}>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+    )
+}
 
 <div>
-	<div name="Default">{defaultTemplate.bind({})}</div>
+    <div name="Default">{defaultTemplate.bind({})}</div>
 </div>
 
 ## API
 
 ```jsx
-import { List } from 'artific-ui/List';
+import { List } from 'artific-ui/List'
 ```
-
-
-
 
 ## List Themes
 
@@ -37,68 +33,74 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 You can also use `colorScheme` prop to define a custom theme.
 
 <div>
-	<div name="List Themes">
-		<List>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List theme="secondary">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List theme="dark">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List theme="primary" colorScheme={{
-			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
-			backgroundColor: '#e736f4',
-			color: 'white',
-		}}>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-	</div>
+    <div name="List Themes">
+        <List>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+        <List theme="secondary">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+        <List theme="dark">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+        <List theme="light">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+        <List
+            theme="primary"
+            colorScheme={{
+                background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+                backgroundColor: '#e736f4',
+                color: 'white',
+            }}
+        >
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+    </div>
 </div>
-
 
 ## Basic List With Icons
 
 Use `prefix` or `suffix` to add a icon to your list at the start or end respectively.
 
 <div>
-	<div name="Basic List With Icons">
-		<List variant="expanded" theme="light">
-			<ListItem prefix={<i className='bx bx-expand-vertical'></i>}>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem suffix={<i className='bx bx-expand-vertical'></i>}>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-	</div>
+    <div name="Basic List With Icons">
+        <List variant="expanded" theme="light">
+            <ListItem prefix={<i className="bx bx-expand-vertical"></i>}>
+                Lorem ipsum dolor sit amet.
+            </ListItem>
+            <ListItem suffix={<i className="bx bx-expand-vertical"></i>}>
+                Lorem ipsum dolor sit amet.
+            </ListItem>
+        </List>
+        <br />
+        <br />
+    </div>
 </div>
 
 ## Disabled List Item
@@ -106,14 +108,14 @@ Use `prefix` or `suffix` to add a icon to your list at the start or end respecti
 Use `disabled` prop to disable a list
 
 <div>
-	<div name="Disabled List Item">
-		<List variant="expanded" theme="light">
-			<ListItem disabled>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-	</div>
+    <div name="Disabled List Item">
+        <List variant="expanded" theme="light">
+            <ListItem disabled>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+    </div>
 </div>
 
 ## List Layouts
@@ -125,40 +127,40 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`)
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
 <div>
-	<div name="List Layouts">
-		<List layout="default" theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List layout="rounded" theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List layout="no-radius" theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List layout="pill" theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-	</div>
+    <div name="List Layouts">
+        <List layout="default" theme="light">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+        <List layout="rounded" theme="light">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+        <List layout="no-radius" theme="light">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+        <List layout="pill" theme="light">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+    </div>
 </div>
 
 ## List Directions
@@ -168,24 +170,24 @@ Use `direction` prop to set the direction flow of your list.
 Followings are the value for `direction` props (`column`|`row`)
 
 <div>
-	<div name="List Directions">
-		<List direction="column" theme="light">
-			<ListItem>Lorem ipsum</ListItem>
-			<ListItem>Lorem ipsum</ListItem>
-			<ListItem>Lorem ipsum</ListItem>
-			<ListItem>Lorem ipsum</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List theme="light" direction="row">
-			<ListItem>Lorem ipsum</ListItem>
-			<ListItem>Lorem ipsum</ListItem>
-			<ListItem>Lorem ipsum</ListItem>
-			<ListItem>Lorem ipsum</ListItem>
-		</List>
-		<br/>
-		<br/>
-	</div>
+    <div name="List Directions">
+        <List direction="column" theme="light">
+            <ListItem>Lorem ipsum</ListItem>
+            <ListItem>Lorem ipsum</ListItem>
+            <ListItem>Lorem ipsum</ListItem>
+            <ListItem>Lorem ipsum</ListItem>
+        </List>
+        <br />
+        <br />
+        <List theme="light" direction="row">
+            <ListItem>Lorem ipsum</ListItem>
+            <ListItem>Lorem ipsum</ListItem>
+            <ListItem>Lorem ipsum</ListItem>
+            <ListItem>Lorem ipsum</ListItem>
+        </List>
+        <br />
+        <br />
+    </div>
 </div>
 
 ## List Sizes
@@ -197,48 +199,48 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <div>
-	<div name="List Sizes">
-		<List size="xs" theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List size="sm" theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List size="md" theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List size="lg" theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List size="xl" theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-	</div>
+    <div name="List Sizes">
+        <List size="xs" theme="light">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+        <List size="sm" theme="light">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+        <List size="md" theme="light">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+        <List size="lg" theme="light">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+        <List size="xl" theme="light">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+    </div>
 </div>
 
 ## List Variants
@@ -251,47 +253,46 @@ Note: Different components might have addition or different variant based on the
 you can check out the props table to see which variant is supported by the component
 
 <div>
-	<div name="List Variants">
-		<List variant="default" theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List variant="striped" theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List variant="separate" theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List variant="borderless" theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-		<List variant="bordered" theme="light">
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-			<ListItem>Lorem ipsum dolor sit amet.</ListItem>
-		</List>
-		<br/>
-		<br/>
-	</div>
+    <div name="List Variants">
+        <List variant="default" theme="light">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+        <List variant="striped" theme="light">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+        <List variant="separate" theme="light">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+        <List variant="borderless" theme="light">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+        <List variant="bordered" theme="light">
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+            <ListItem>Lorem ipsum dolor sit amet.</ListItem>
+        </List>
+        <br />
+        <br />
+    </div>
 </div>
-

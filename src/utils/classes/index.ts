@@ -1,4 +1,3 @@
-export * from "./getDefaultClasses";
-export * from "./getClassnames";
-export * from "./sizeClasses";
-
+export * from './getDefaultClasses'
+export * from './getClassnames'
+export * from './sizeClasses'

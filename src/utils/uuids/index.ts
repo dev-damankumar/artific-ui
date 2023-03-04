@@ -1,2 +1,2 @@
-export * from './uuid';
-export * from './generateRandomClassId';
+export * from './uuid'
+export * from './generateRandomClassId'

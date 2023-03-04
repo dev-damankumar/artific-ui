@@ -1,4 +1,4 @@
 import '@testing-library/jest-dom'
-import {matchers} from "@emotion/jest";
+import { matchers } from '@emotion/jest'
 
-expect.extend(matchers);
+expect.extend(matchers)

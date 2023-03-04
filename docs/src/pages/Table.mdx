@@ -1,166 +1,102 @@
-import {Table, TableBody, TableCell, TableHead, TableHeading, TableRow} from "artific-ui";
-
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeading,
+    TableRow,
+} from 'artific-ui'
 
 # Tables
 
 Tables display information in a way that's easy to scan, so that users can look for patterns and insights. Its a combination of rows an columns.
 
-export const defaultTemplate=(args) => <Table {...args}>
-	<TableHead>
-		<TableRow>
-			<TableHeading>
-				<div>Id</div>
-			</TableHeading>
-			<TableHeading>
-				<div>First Name</div>
-			</TableHeading>
-			<TableHeading>
-				<div>Last Name</div>
-			</TableHeading>
-			<TableHeading>
-				<div>Title</div>
-			</TableHeading>
-			<TableHeading>
-				<div>Email</div>
-			</TableHeading>
-			<TableHeading>
-				<div>Gender</div>
-			</TableHeading>
-			<TableHeading>
-				<div>Ip Address</div>
-			</TableHeading>
-		</TableRow>
-	</TableHead>
-	<TableBody>
-		<TableRow>
-			<TableCell>
-				1
-			</TableCell>
-			<TableCell>
-				Daman
-			</TableCell>
-			<TableCell>
-				Kumar
-			</TableCell>
-			<TableCell>
-				React Js
-			</TableCell>
-			<TableCell>
-				damankumar@gmail.com
-			</TableCell>
-			<TableCell>
-				Male
-			</TableCell>
-			<TableCell>
-				123.344.555.666
-			</TableCell>
-		</TableRow>
-		<TableRow>
-			<TableCell>
-				1
-			</TableCell>
-			<TableCell>
-				Daman
-			</TableCell>
-			<TableCell>
-				Kumar
-			</TableCell>
-			<TableCell>
-				React Js
-			</TableCell>
-			<TableCell>
-				damankumar@gmail.com
-			</TableCell>
-			<TableCell>
-				Male
-			</TableCell>
-			<TableCell>
-				123.344.555.666
-			</TableCell>
-		</TableRow>
-		<TableRow>
-			<TableCell>
-				1
-			</TableCell>
-			<TableCell>
-				Daman
-			</TableCell>
-			<TableCell>
-				Kumar
-			</TableCell>
-			<TableCell>
-				React Js
-			</TableCell>
-			<TableCell>
-				damankumar@gmail.com
-			</TableCell>
-			<TableCell>
-				Male
-			</TableCell>
-			<TableCell>
-				123.344.555.666
-			</TableCell>
-		</TableRow>
-		<TableRow>
-			<TableCell>
-				1
-			</TableCell>
-			<TableCell>
-				Daman
-			</TableCell>
-			<TableCell>
-				Kumar
-			</TableCell>
-			<TableCell>
-				React Js
-			</TableCell>
-			<TableCell>
-				damankumar@gmail.com
-			</TableCell>
-			<TableCell>
-				Male
-			</TableCell>
-			<TableCell>
-				123.344.555.666
-			</TableCell>
-		</TableRow>
-		<TableRow>
-			<TableCell>
-				1
-			</TableCell>
-			<TableCell>
-				Daman
-			</TableCell>
-			<TableCell>
-				Kumar
-			</TableCell>
-			<TableCell>
-				React Js
-			</TableCell>
-			<TableCell>
-				damankumar@gmail.com
-			</TableCell>
-			<TableCell>
-				Male
-			</TableCell>
-			<TableCell>
-				123.344.555.666
-			</TableCell>
-		</TableRow>
-	</TableBody>
-</Table>;
+export const defaultTemplate = args => (
+    <Table {...args}>
+        <TableHead>
+            <TableRow>
+                <TableHeading>
+                    <div>Id</div>
+                </TableHeading>
+                <TableHeading>
+                    <div>First Name</div>
+                </TableHeading>
+                <TableHeading>
+                    <div>Last Name</div>
+                </TableHeading>
+                <TableHeading>
+                    <div>Title</div>
+                </TableHeading>
+                <TableHeading>
+                    <div>Email</div>
+                </TableHeading>
+                <TableHeading>
+                    <div>Gender</div>
+                </TableHeading>
+                <TableHeading>
+                    <div>Ip Address</div>
+                </TableHeading>
+            </TableRow>
+        </TableHead>
+        <TableBody>
+            <TableRow>
+                <TableCell>1</TableCell>
+                <TableCell>Daman</TableCell>
+                <TableCell>Kumar</TableCell>
+                <TableCell>React Js</TableCell>
+                <TableCell>damankumar@gmail.com</TableCell>
+                <TableCell>Male</TableCell>
+                <TableCell>123.344.555.666</TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>1</TableCell>
+                <TableCell>Daman</TableCell>
+                <TableCell>Kumar</TableCell>
+                <TableCell>React Js</TableCell>
+                <TableCell>damankumar@gmail.com</TableCell>
+                <TableCell>Male</TableCell>
+                <TableCell>123.344.555.666</TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>1</TableCell>
+                <TableCell>Daman</TableCell>
+                <TableCell>Kumar</TableCell>
+                <TableCell>React Js</TableCell>
+                <TableCell>damankumar@gmail.com</TableCell>
+                <TableCell>Male</TableCell>
+                <TableCell>123.344.555.666</TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>1</TableCell>
+                <TableCell>Daman</TableCell>
+                <TableCell>Kumar</TableCell>
+                <TableCell>React Js</TableCell>
+                <TableCell>damankumar@gmail.com</TableCell>
+                <TableCell>Male</TableCell>
+                <TableCell>123.344.555.666</TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>1</TableCell>
+                <TableCell>Daman</TableCell>
+                <TableCell>Kumar</TableCell>
+                <TableCell>React Js</TableCell>
+                <TableCell>damankumar@gmail.com</TableCell>
+                <TableCell>Male</TableCell>
+                <TableCell>123.344.555.666</TableCell>
+            </TableRow>
+        </TableBody>
+    </Table>
+)
 
 <div>
-	<div name="Default">{defaultTemplate.bind({})}</div>
+    <div name="Default">{defaultTemplate.bind({})}</div>
 </div>
 
 ## API
 
 ```jsx
-import { Table } from 'artific-ui/Table';
+import { Table } from 'artific-ui/Table'
 ```
-
-
 
 ## Table Theme
 
@@ -169,746 +105,396 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 
 You can also use `colorScheme` prop to define a custom theme.
 
-
 <div>
-	<div name="Table Theme">
-		<Table>
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<Table theme="secondary">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<Table theme="dark">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<Table theme="light">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<Table colorScheme={{
-			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
-			backgroundColor: '#e736f4',
-			color: 'white',
-		}}>
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-	</div>
+    <div name="Table Theme">
+        <Table>
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+        <Table theme="secondary">
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+        <Table theme="dark">
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+        <Table theme="light">
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+        <Table
+            colorScheme={{
+                background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+                backgroundColor: '#e736f4',
+                color: 'white',
+            }}
+        >
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+    </div>
 </div>
-
 
 ## Table Layouts
 
@@ -919,595 +505,314 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
 <div>
-	<div name="Table Layouts">
-		<h5>Default Layout</h5>
-		<Table>
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<Table layout="rounded">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<Table layout="no-radius">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<Table layout="pill">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-	</div>
+    <div name="Table Layouts">
+        <h5>Default Layout</h5>
+        <Table>
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+        <Table layout="rounded">
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+        <Table layout="no-radius">
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+        <Table layout="pill">
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+    </div>
 </div>
-
 
 ## Table Variants
 
@@ -1519,598 +824,316 @@ Note: Different components might have addition or different variant based on the
 you can check out the props table to see which variant is supported by the component
 
 <div>
-	<div name="Table Variants">
-		<h5>Default Variants</h5>
-		<Table>
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<Table variant="outline">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<Table variant="striped">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<Table variant="borderless">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-	</div>
+    <div name="Table Variants">
+        <h5>Default Variants</h5>
+        <Table>
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+        <Table variant="outline">
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+        <Table variant="striped">
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+        <Table variant="borderless">
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+    </div>
 </div>
 
-
 ## Table Sizes
-
 
 you can use a `size` prop to define the size of your components
 
@@ -2119,736 +1142,386 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <div>
-	<div name="Table Sizes">
-		<Table size="xs">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<Table size="sm">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<Table size="md">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<Table size="lg">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-		<Table size="xl">
-			<TableHead>
-				<TableRow>
-					<TableHeading>
-						<div>Id</div>
-					</TableHeading>
-					<TableHeading>
-						<div>First Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Last Name</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Title</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Email</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Gender</div>
-					</TableHeading>
-					<TableHeading>
-						<div>Ip Address</div>
-					</TableHeading>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>
-						1
-					</TableCell>
-					<TableCell>
-						Daman
-					</TableCell>
-					<TableCell>
-						Kumar
-					</TableCell>
-					<TableCell>
-						React Js
-					</TableCell>
-					<TableCell>
-						damankumar@gmail.com
-					</TableCell>
-					<TableCell>
-						Male
-					</TableCell>
-					<TableCell>
-						123.344.555.666
-					</TableCell>
-				</TableRow>
-			</TableBody>
-		</Table>
-		<br/>
-		<br/>
-	</div>
+    <div name="Table Sizes">
+        <Table size="xs">
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+        <Table size="sm">
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+        <Table size="md">
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+        <Table size="lg">
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+        <Table size="xl">
+            <TableHead>
+                <TableRow>
+                    <TableHeading>
+                        <div>Id</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>First Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Last Name</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Title</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Email</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Gender</div>
+                    </TableHeading>
+                    <TableHeading>
+                        <div>Ip Address</div>
+                    </TableHeading>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>1</TableCell>
+                    <TableCell>Daman</TableCell>
+                    <TableCell>Kumar</TableCell>
+                    <TableCell>React Js</TableCell>
+                    <TableCell>damankumar@gmail.com</TableCell>
+                    <TableCell>Male</TableCell>
+                    <TableCell>123.344.555.666</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <br />
+        <br />
+    </div>
 </div>

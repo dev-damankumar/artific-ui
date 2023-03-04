@@ -1,47 +1,69 @@
-import {Button, Modal, ModalBody, ModalFooter, ModalHeader, Typography} from "artific-ui";
-import {useState} from "react";
+import {
+    Button,
+    Modal,
+    ModalBody,
+    ModalFooter,
+    ModalHeader,
+    Typography,
+} from 'artific-ui'
+import { useState } from 'react'
 
 # Modals
 
 The Modal component is a dialog box/popup window that is displayed on top of the current page:
 
-
-export const defaultTemplate=(args) => {
-	const [open, setOpen]=useState(false);
-	return <>
-		<Button size="sm" type="button" onClick={() => {
-			setOpen(true)
-		}}>Open Modal</Button>
-		<Modal open={open} onClose={() => {
-			setOpen(false)
-		}}>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-	</>
-};
+export const defaultTemplate = args => {
+    const [open, setOpen] = useState(false)
+    return (
+        <>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen(true)
+                }}
+            >
+                Open Modal
+            </Button>
+            <Modal
+                open={open}
+                onClose={() => {
+                    setOpen(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+        </>
+    )
+}
 
 <div>
-	<div name="Default">{defaultTemplate.bind({})}</div>
+    <div name="Default">{defaultTemplate.bind({})}</div>
 </div>
 
 ## API
 
 ```jsx
-import {Modal} from 'artific-ui/Modal';
+import { Modal } from 'artific-ui/Modal'
 ```
-
-
 
 ## Dismissible
 
@@ -53,107 +75,129 @@ use `dismiss={false}` when you don't want user to close modal. it will remove th
 
 if you want user to close button when he clicks outside use `onBackdropClick` and provide it with callback to close the modal.
 
-export const dismissTypesTemplate=(args) => {
-	const [open, setOpen]=useState(false);
-	const [open1, setOpen1]=useState(false);
-	const [open2, setOpen2]=useState(false);
-	return <>
-		<Button
-			type="button"
-			onClick={() => {
-				setOpen2(true)
-			}}
-			size="sm"
-		>
-			Modal with no close icon
-		</Button>
-		<Button
-			type="button"
-			onClick={() => {
-				setOpen(true)
-			}}
-			size="sm"
-		>
-			Open Non-Backdrop Dismissible Modal
-		</Button>
-		<Button
-			type="button"
-			onClick={() => {
-				setOpen1(true)
-			}}
-			size="sm"
-		>
-			Open Backdrop Dismissible Modal
-		</Button>
-		<Modal
-			open={open2}
-			dismiss={false}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button onClick={() => {
-					setOpen2(false)
-				}} type="button" theme="dark" size="sm">Close Me From Here</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			open={open}
-			onClose={() => {
-				setOpen(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			open={open1}
-			onClose={() => {
-				setOpen1(false)
-			}}
-			onBackdropClick={() => {
-				setOpen1(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-	</>
-};
+export const dismissTypesTemplate = args => {
+    const [open, setOpen] = useState(false)
+    const [open1, setOpen1] = useState(false)
+    const [open2, setOpen2] = useState(false)
+    return (
+        <>
+            <Button
+                type="button"
+                onClick={() => {
+                    setOpen2(true)
+                }}
+                size="sm"
+            >
+                Modal with no close icon
+            </Button>
+            <Button
+                type="button"
+                onClick={() => {
+                    setOpen(true)
+                }}
+                size="sm"
+            >
+                Open Non-Backdrop Dismissible Modal
+            </Button>
+            <Button
+                type="button"
+                onClick={() => {
+                    setOpen1(true)
+                }}
+                size="sm"
+            >
+                Open Backdrop Dismissible Modal
+            </Button>
+            <Modal open={open2} dismiss={false}>
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button
+                        onClick={() => {
+                            setOpen2(false)
+                        }}
+                        type="button"
+                        theme="dark"
+                        size="sm"
+                    >
+                        Close Me From Here
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                open={open}
+                onClose={() => {
+                    setOpen(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                open={open1}
+                onClose={() => {
+                    setOpen1(false)
+                }}
+                onBackdropClick={() => {
+                    setOpen1(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+        </>
+    )
+}
 
 <div>
-	<div name="Dismissible">
-		{dismissTypesTemplate.bind({})}
-	</div>
+    <div name="Dismissible">{dismissTypesTemplate.bind({})}</div>
 </div>
-
 
 ## Modal Layouts
 
@@ -163,105 +207,126 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`)
 
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
-export const layoutsTemplate=(args) => {
-	const [open, setOpen]=useState(false);
-	const [open1, setOpen1]=useState(false);
-	const [open2, setOpen2]=useState(false);
-	return <>
-		<Button
-			type="button"
-			size="sm"
-			onClick={() => {
-				setOpen2(true)
-			}}
-		>
-			Default Layout
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen(true)
-			}}
-		>
-			Rounded Layout
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen1(true)
-			}}
-		>
-			No Radius Layout
-		</Button>
-		<Modal
-			open={open2}
-			onClose={() => {
-				setOpen2(false)
-			}}
-			layout="default"
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Close</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			open={open}
-			onClose={() => {
-				setOpen(false)
-			}}
-			layout="rounded"
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			open={open1}
-			onClose={() => {
-				setOpen1(false)
-			}}
-			layout="no-radius"
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-	</>
-};
+export const layoutsTemplate = args => {
+    const [open, setOpen] = useState(false)
+    const [open1, setOpen1] = useState(false)
+    const [open2, setOpen2] = useState(false)
+    return (
+        <>
+            <Button
+                type="button"
+                size="sm"
+                onClick={() => {
+                    setOpen2(true)
+                }}
+            >
+                Default Layout
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen(true)
+                }}
+            >
+                Rounded Layout
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen1(true)
+                }}
+            >
+                No Radius Layout
+            </Button>
+            <Modal
+                open={open2}
+                onClose={() => {
+                    setOpen2(false)
+                }}
+                layout="default"
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Close
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                open={open}
+                onClose={() => {
+                    setOpen(false)
+                }}
+                layout="rounded"
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                open={open1}
+                onClose={() => {
+                    setOpen1(false)
+                }}
+                layout="no-radius"
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+        </>
+    )
+}
 
 <div>
-	<div name="Modal Layouts">
-		{layoutsTemplate.bind({})}
-	</div>
+    <div name="Modal Layouts">{layoutsTemplate.bind({})}</div>
 </div>
 
 ## Modal Themes
@@ -272,139 +337,166 @@ Note: All components have basic four themes ie. (`dark`|`light`). you can use ei
 
 also you can use `overlay` prop to set your backdrop to either `transparent` which is default or `blur`.
 
-export const themesTemplate=(args) => {
-	const [open, setOpen]=useState(false);
-	const [open1, setOpen1]=useState(false);
-	const [open2, setOpen2]=useState(false);
-	const [open3, setOpen3]=useState(false);
-	return <>
-		<Button
-			type="button"
-			size="sm"
-			onClick={() => {
-				setOpen2(true)
-			}}
-		>
-			Default/Dark Theme
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen(true)
-			}}
-		>
-			Light Theme
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen1(true)
-			}}
-		>
-			Default/Dark Theme with Blur Overlay
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen3(true)
-			}}
-		>
-			Light Theme with Blur Overlay
-		</Button>
-		<Modal
-			open={open2}
-			onClose={() => {
-				setOpen2(false)
-			}}
-			theme="dark"
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Close</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			open={open}
-			onClose={() => {
-				setOpen(false)
-			}}
-			theme="light"
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			open={open1}
-			onClose={() => {
-				setOpen1(false)
-			}}
-			theme="dark"
-			overlay="blur"
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			open={open3}
-			onClose={() => {
-				setOpen3(false)
-			}}
-			overlay="blur"
-			theme="light"
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-	</>
-};
+export const themesTemplate = args => {
+    const [open, setOpen] = useState(false)
+    const [open1, setOpen1] = useState(false)
+    const [open2, setOpen2] = useState(false)
+    const [open3, setOpen3] = useState(false)
+    return (
+        <>
+            <Button
+                type="button"
+                size="sm"
+                onClick={() => {
+                    setOpen2(true)
+                }}
+            >
+                Default/Dark Theme
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen(true)
+                }}
+            >
+                Light Theme
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen1(true)
+                }}
+            >
+                Default/Dark Theme with Blur Overlay
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen3(true)
+                }}
+            >
+                Light Theme with Blur Overlay
+            </Button>
+            <Modal
+                open={open2}
+                onClose={() => {
+                    setOpen2(false)
+                }}
+                theme="dark"
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Close
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                open={open}
+                onClose={() => {
+                    setOpen(false)
+                }}
+                theme="light"
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                open={open1}
+                onClose={() => {
+                    setOpen1(false)
+                }}
+                theme="dark"
+                overlay="blur"
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                open={open3}
+                onClose={() => {
+                    setOpen3(false)
+                }}
+                overlay="blur"
+                theme="light"
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+        </>
+    )
+}
 
 <div>
-	<div name="Modal Themes">
-		{themesTemplate.bind({})}
-	</div>
+    <div name="Modal Themes">{themesTemplate.bind({})}</div>
 </div>
-
 
 ## Modal Sizes
 
@@ -412,287 +504,348 @@ you can use a `size` prop to define the size of your components
 
 Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`|`full-width`|`full-height`|`full`|`extended`). you can mix them with different supported `theme` or `layout`
 
-
-export const sizesTemplate=(args) => {
-	const [open, setOpen]=useState(false);
-	const [open1, setOpen1]=useState(false);
-	const [open2, setOpen2]=useState(false);
-	const [open3, setOpen3]=useState(false);
-	const [open4, setOpen4]=useState(false);
-	const [open5, setOpen5]=useState(false);
-	const [open6, setOpen6]=useState(false);
-	const [open7, setOpen7]=useState(false);
-	const [open8, setOpen8]=useState(false);
-	return <>
-		<Button
-			type="button"
-			size="sm"
-			onClick={() => {
-				setOpen2(true)
-			}}
-		>
-			Default Size
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen(true)
-			}}
-		>
-			Extra Small Size
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen1(true)
-			}}
-		>
-			Small Size
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen3(true)
-			}}
-		>
-			Large Size
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen4(true)
-			}}
-		>
-			Extra Large Size
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen5(true)
-			}}
-		>
-			Full Size
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen6(true)
-			}}
-		>
-			Full width Size
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen7(true)
-			}}
-		>
-			Full Height Size
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen8(true)
-			}}
-		>
-			Expanded
-		</Button>
-		<Modal
-			open={open2}
-			onClose={() => {
-				setOpen2(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Close</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			size="xs"
-			open={open}
-			onClose={() => {
-				setOpen(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			size="sm"
-			open={open1}
-			onClose={() => {
-				setOpen1(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			size="lg"
-			open={open3}
-			onClose={() => {
-				setOpen3(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			size="xl"
-			open={open4}
-			onClose={() => {
-				setOpen4(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			size="full"
-			open={open5}
-			onClose={() => {
-				setOpen5(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			size="full-width"
-			open={open6}
-			onClose={() => {
-				setOpen6(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			size="full-height"
-			open={open7}
-			onClose={() => {
-				setOpen7(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			size="expanded"
-			open={open8}
-			onClose={() => {
-				setOpen8(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-	</>
-};
+export const sizesTemplate = args => {
+    const [open, setOpen] = useState(false)
+    const [open1, setOpen1] = useState(false)
+    const [open2, setOpen2] = useState(false)
+    const [open3, setOpen3] = useState(false)
+    const [open4, setOpen4] = useState(false)
+    const [open5, setOpen5] = useState(false)
+    const [open6, setOpen6] = useState(false)
+    const [open7, setOpen7] = useState(false)
+    const [open8, setOpen8] = useState(false)
+    return (
+        <>
+            <Button
+                type="button"
+                size="sm"
+                onClick={() => {
+                    setOpen2(true)
+                }}
+            >
+                Default Size
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen(true)
+                }}
+            >
+                Extra Small Size
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen1(true)
+                }}
+            >
+                Small Size
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen3(true)
+                }}
+            >
+                Large Size
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen4(true)
+                }}
+            >
+                Extra Large Size
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen5(true)
+                }}
+            >
+                Full Size
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen6(true)
+                }}
+            >
+                Full width Size
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen7(true)
+                }}
+            >
+                Full Height Size
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen8(true)
+                }}
+            >
+                Expanded
+            </Button>
+            <Modal
+                open={open2}
+                onClose={() => {
+                    setOpen2(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Close
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                size="xs"
+                open={open}
+                onClose={() => {
+                    setOpen(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                size="sm"
+                open={open1}
+                onClose={() => {
+                    setOpen1(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                size="lg"
+                open={open3}
+                onClose={() => {
+                    setOpen3(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                size="xl"
+                open={open4}
+                onClose={() => {
+                    setOpen4(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                size="full"
+                open={open5}
+                onClose={() => {
+                    setOpen5(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                size="full-width"
+                open={open6}
+                onClose={() => {
+                    setOpen6(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                size="full-height"
+                open={open7}
+                onClose={() => {
+                    setOpen7(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                size="expanded"
+                open={open8}
+                onClose={() => {
+                    setOpen8(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+        </>
+    )
+}
 
 <div>
-	<div name="Modal Sizes">
-		{sizesTemplate.bind({})}
-	</div>
+    <div name="Modal Sizes">{sizesTemplate.bind({})}</div>
 </div>
-
 
 ## Modal Variants
 
@@ -703,164 +856,199 @@ Set `variant` prop with the value of (`default`|`striped`|`striped-body`|`stripe
 Note: Different components might have addition or different variant based on there configuration and flexibility.
 you can check out the props table to see which variant is supported by the component
 
-export const variantsTemplate=(args) => {
-	const [open, setOpen]=useState(false);
-	const [open1, setOpen1]=useState(false);
-	const [open2, setOpen2]=useState(false);
-	const [open3, setOpen3]=useState(false);
-	const [open4, setOpen4]=useState(false);
-	return <>
-		<Button
-			type="button"
-			size="sm"
-			onClick={() => {
-				setOpen2(true)
-			}}
-		>
-			Default Variant
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen(true)
-			}}
-		>
-			Striped Variant
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen1(true)
-			}}
-		>
-			Striped Body Variant
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen3(true)
-			}}
-		>
-			Striped Header Variant
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen4(true)
-			}}
-		>
-			Striped Footer Variant
-		</Button>
-		<Modal
-			open={open2}
-			onClose={() => {
-				setOpen2(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Close</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			variant="striped"
-			open={open}
-			onClose={() => {
-				setOpen(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			variant="striped-body"
-			open={open1}
-			onClose={() => {
-				setOpen1(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			variant="striped-header"
-			open={open3}
-			onClose={() => {
-				setOpen3(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			variant="striped-footer"
-			open={open4}
-			onClose={() => {
-				setOpen4(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-	</>
-};
+export const variantsTemplate = args => {
+    const [open, setOpen] = useState(false)
+    const [open1, setOpen1] = useState(false)
+    const [open2, setOpen2] = useState(false)
+    const [open3, setOpen3] = useState(false)
+    const [open4, setOpen4] = useState(false)
+    return (
+        <>
+            <Button
+                type="button"
+                size="sm"
+                onClick={() => {
+                    setOpen2(true)
+                }}
+            >
+                Default Variant
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen(true)
+                }}
+            >
+                Striped Variant
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen1(true)
+                }}
+            >
+                Striped Body Variant
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen3(true)
+                }}
+            >
+                Striped Header Variant
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen4(true)
+                }}
+            >
+                Striped Footer Variant
+            </Button>
+            <Modal
+                open={open2}
+                onClose={() => {
+                    setOpen2(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Close
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                variant="striped"
+                open={open}
+                onClose={() => {
+                    setOpen(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                variant="striped-body"
+                open={open1}
+                onClose={() => {
+                    setOpen1(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                variant="striped-header"
+                open={open3}
+                onClose={() => {
+                    setOpen3(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                variant="striped-footer"
+                open={open4}
+                onClose={() => {
+                    setOpen4(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+        </>
+    )
+}
 
 <div>
-	<div name="Modal Variants">
-		{variantsTemplate.bind({})}
-	</div>
+    <div name="Modal Variants">{variantsTemplate.bind({})}</div>
 </div>
 
 ## Docking
@@ -869,135 +1057,163 @@ export const variantsTemplate=(args) => {
 
 possible values are: (`left`|`right`|`top`|`bottom`)
 
-export const dockingTemplate=(args) => {
-	const [open, setOpen]=useState(false);
-	const [open1, setOpen1]=useState(false);
-	const [open2, setOpen2]=useState(false);
-	const [open3, setOpen3]=useState(false);
-	return <>
-		<Button
-			type="button"
-			size="sm"
-			onClick={() => {
-				setOpen2(true)
-			}}
-		>
-			Left Docking
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen(true)
-			}}
-		>
-			Right Docking
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen1(true)
-			}}
-		>
-			Top Docking
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen3(true)
-			}}
-		>
-			Bottom Docking
-		</Button>
-		<Modal
-			open={open2}
-			dock="left"
-			onClose={() => {
-				setOpen2(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Close</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			dock="right"
-			open={open}
-			onClose={() => {
-				setOpen(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			dock="top"
-			open={open1}
-			onClose={() => {
-				setOpen1(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			dock="bottom"
-			open={open3}
-			onClose={() => {
-				setOpen3(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-	</>
-};
+export const dockingTemplate = args => {
+    const [open, setOpen] = useState(false)
+    const [open1, setOpen1] = useState(false)
+    const [open2, setOpen2] = useState(false)
+    const [open3, setOpen3] = useState(false)
+    return (
+        <>
+            <Button
+                type="button"
+                size="sm"
+                onClick={() => {
+                    setOpen2(true)
+                }}
+            >
+                Left Docking
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen(true)
+                }}
+            >
+                Right Docking
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen1(true)
+                }}
+            >
+                Top Docking
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen3(true)
+                }}
+            >
+                Bottom Docking
+            </Button>
+            <Modal
+                open={open2}
+                dock="left"
+                onClose={() => {
+                    setOpen2(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Close
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                dock="right"
+                open={open}
+                onClose={() => {
+                    setOpen(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                dock="top"
+                open={open1}
+                onClose={() => {
+                    setOpen1(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                dock="bottom"
+                open={open3}
+                onClose={() => {
+                    setOpen3(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+        </>
+    )
+}
 
 <div>
-	<div name="Docking">
-		{dockingTemplate.bind({})}
-	</div>
+    <div name="Docking">{dockingTemplate.bind({})}</div>
 </div>
 
 ## Positions
@@ -1006,138 +1222,165 @@ export const dockingTemplate=(args) => {
 
 possible values are: (`left`|`right`|`top`|`bottom`)
 
-export const positionTemplate=(args) => {
-	const [open, setOpen]=useState(false);
-	const [open1, setOpen1]=useState(false);
-	const [open2, setOpen2]=useState(false);
-	const [open3, setOpen3]=useState(false);
-	return <>
-		<Button
-			type="button"
-			size="sm"
-			onClick={() => {
-				setOpen2(true)
-			}}
-		>
-			Left Position
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen(true)
-			}}
-		>
-			Right Position
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen1(true)
-			}}
-		>
-			Top Position
-		</Button>
-		<Button
-			size="sm"
-			type="button"
-			onClick={() => {
-				setOpen3(true)
-			}}
-		>
-			Bottom Position
-		</Button>
-		<Modal
-			open={open2}
-			position="left"
-			size="full-height"
-			onClose={() => {
-				setOpen2(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Close</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			position="right"
-			open={open}
-			size="full-height"
-			onClose={() => {
-				setOpen(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			position="top"
-			open={open1}
-			size="full-width"
-			onClose={() => {
-				setOpen1(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-		<Modal
-			position="bottom"
-			open={open3}
-			size="full-width"
-			onClose={() => {
-				setOpen3(false)
-			}}
-		>
-			<ModalHeader>
-				<Typography variant="heading">This is Heading</Typography>
-			</ModalHeader>
-			<ModalBody>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum deserunt dolores eos excepturi
-				explicabo inventore ipsam, ipsum iste necessitatibus pariatur quibusdam quod sapiente sed totam
-				veritatis voluptates? Eos, illo, molestiae? Aliquam architecto dolorem, iusto laudantium officiis
-			</ModalBody>
-			<ModalFooter>
-				<Button type="button" theme="primary" size="sm">Delete</Button>
-				<Button type="button" theme="dark" size="sm">Cancel</Button>
-			</ModalFooter>
-		</Modal>
-	</>
-};
+export const positionTemplate = args => {
+    const [open, setOpen] = useState(false)
+    const [open1, setOpen1] = useState(false)
+    const [open2, setOpen2] = useState(false)
+    const [open3, setOpen3] = useState(false)
+    return (
+        <>
+            <Button
+                type="button"
+                size="sm"
+                onClick={() => {
+                    setOpen2(true)
+                }}
+            >
+                Left Position
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen(true)
+                }}
+            >
+                Right Position
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen1(true)
+                }}
+            >
+                Top Position
+            </Button>
+            <Button
+                size="sm"
+                type="button"
+                onClick={() => {
+                    setOpen3(true)
+                }}
+            >
+                Bottom Position
+            </Button>
+            <Modal
+                open={open2}
+                position="left"
+                size="full-height"
+                onClose={() => {
+                    setOpen2(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Close
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                position="right"
+                open={open}
+                size="full-height"
+                onClose={() => {
+                    setOpen(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                position="top"
+                open={open1}
+                size="full-width"
+                onClose={() => {
+                    setOpen1(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+            <Modal
+                position="bottom"
+                open={open3}
+                size="full-width"
+                onClose={() => {
+                    setOpen3(false)
+                }}
+            >
+                <ModalHeader>
+                    <Typography variant="heading">This is Heading</Typography>
+                </ModalHeader>
+                <ModalBody>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi cum deserunt dolores eos excepturi explicabo
+                    inventore ipsam, ipsum iste necessitatibus pariatur
+                    quibusdam quod sapiente sed totam veritatis voluptates? Eos,
+                    illo, molestiae? Aliquam architecto dolorem, iusto
+                    laudantium officiis
+                </ModalBody>
+                <ModalFooter>
+                    <Button type="button" theme="primary" size="sm">
+                        Delete
+                    </Button>
+                    <Button type="button" theme="dark" size="sm">
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
+        </>
+    )
+}
 
 <div>
-	<div name="Positions">
-		{positionTemplate.bind({})}
-	</div>
+    <div name="Positions">{positionTemplate.bind({})}</div>
 </div>
-

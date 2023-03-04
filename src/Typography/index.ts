@@ -1,5 +1,5 @@
-import Typography from "./Typography";
-import "../index.css"
+import Typography from './Typography'
+import '../index.css'
 
 export default Typography
-export * from './Typography';
+export * from './Typography'

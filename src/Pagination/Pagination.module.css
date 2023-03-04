@@ -1,272 +1,289 @@
 :root {
-	--pagination-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-	--pagination-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
-	--pagination-border-radius: 5px;
-	--pagination-padding: 5px;
-	--pagination-item-padding: 6px 15px;
-	--pagination-font-size: 15px;
-	--pagination-margin: 13px;
-	--pagination-border-width: 2px;
-	--pagination-cursor: pointer;
-	--pagination-background: #f8f8f8;
-	--pagination-background-color: #f8f8f8;
-	--pagination-text: #f8f8f8;
+    --pagination-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    --pagination-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+    --pagination-border-radius: 5px;
+    --pagination-padding: 5px;
+    --pagination-item-padding: 6px 15px;
+    --pagination-font-size: 15px;
+    --pagination-margin: 13px;
+    --pagination-border-width: 2px;
+    --pagination-cursor: pointer;
+    --pagination-background: #f8f8f8;
+    --pagination-background-color: #f8f8f8;
+    --pagination-text: #f8f8f8;
 }
 
-.breadcrumb, .pagination {
-	list-style: none;
-	-webkit-box-pack: start;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-	display: -webkit-inline-box;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-	margin: 0;
-	-moz-box-shadow: var(--pagination-box-shadow);
-	-webkit-box-shadow: var(--pagination-box-shadow);
-	box-shadow: var(--pagination-box-shadow);
-	border-radius: var(--pagination-border-radius);
-	padding: var(--pagination-padding);
-	margin-top: var(--pagination-margin);
-	margin-bottom: var(--pagination-margin);
+.breadcrumb,
+.pagination {
+    list-style: none;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin: 0;
+    -moz-box-shadow: var(--pagination-box-shadow);
+    -webkit-box-shadow: var(--pagination-box-shadow);
+    box-shadow: var(--pagination-box-shadow);
+    border-radius: var(--pagination-border-radius);
+    padding: var(--pagination-padding);
+    margin-top: var(--pagination-margin);
+    margin-bottom: var(--pagination-margin);
 }
 
-.breadcrumb-link, .page-link {
-	text-decoration: none;
-	padding: var(--pagination-item-padding);
-	min-width: 30px;
-	min-height: 30px;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	color: var(--ai-text);
-	border-radius: var(--pagination-border-radius);
-	font-size: var(--pagination-font-size);
+.breadcrumb-link,
+.page-link {
+    text-decoration: none;
+    padding: var(--pagination-item-padding);
+    min-width: 30px;
+    min-height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: var(--ai-text);
+    border-radius: var(--pagination-border-radius);
+    font-size: var(--pagination-font-size);
 }
 
-.page-link:hover, .breadcrumb-link:hover {
-	background-color: #f5f5f5;
+.page-link:hover,
+.breadcrumb-link:hover {
+    background-color: #f5f5f5;
 }
 
-.page-item a, .breadcrumb-item a {
-	border: 1px solid none;
+.page-item a,
+.breadcrumb-item a {
+    border: 1px solid none;
 }
 
-.page-item.active a, .breadcrumb-item.active a {
-	background: var(--pagination-background);
-	color: var(--pagination-text);
+.page-item.active a,
+.breadcrumb-item.active a {
+    background: var(--pagination-background);
+    color: var(--pagination-text);
 }
 
 .page-item {
-	margin-left: 5px;
+    margin-left: 5px;
 }
 
-.breadcrumb-item, .page-item {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	text-align: center;
-	position: relative;
+.breadcrumb-item,
+.page-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
 }
 
-.page-link.disabled, .breadcrumb-link.disabled {
-	background: #f6f6f6;
-	color: gray;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	cursor: not-allowed;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+.page-link.disabled,
+.breadcrumb-link.disabled {
+    background: #f6f6f6;
+    color: gray;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    cursor: not-allowed;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-
 
 /*=====Layouts=====*/
-.pagination-rounded, .breadcrumb-rounded {
-	--pagination-border-radius: 10px;
+.pagination-rounded,
+.breadcrumb-rounded {
+    --pagination-border-radius: 10px;
 }
 
-.pagination-pill, .breadcrumb-pill {
-	--pagination-border-radius: 50px;
+.pagination-pill,
+.breadcrumb-pill {
+    --pagination-border-radius: 50px;
 }
 
-.pagination-no-radius, .breadcrumb-no-radius {
-	--pagination-border-radius: 0px;
+.pagination-no-radius,
+.breadcrumb-no-radius {
+    --pagination-border-radius: 0px;
 }
 
 /*=====Layouts End=====*/
 
 /*=====Colors=====*/
 .pagination-primary {
-	--pagination-background: var(--ai-primary);
-	--pagination-background-color: var(--ai-primary-color);
-	--pagination-text: var(--ai-primary-text);
+    --pagination-background: var(--ai-primary);
+    --pagination-background-color: var(--ai-primary-color);
+    --pagination-text: var(--ai-primary-text);
 }
 
 .pagination-secondary {
-	--pagination-background: var(--ai-secondary);
-	--pagination-background-color: var(--ai-secondary-color);
-	--pagination-text: var(--ai-secondary-text);
+    --pagination-background: var(--ai-secondary);
+    --pagination-background-color: var(--ai-secondary-color);
+    --pagination-text: var(--ai-secondary-text);
 }
 
 .pagination-light {
-	--pagination-background: var(--ai-light);
-	--pagination-background-color: var(--ai-light-color);
-	--pagination-text: var(--ai-light-text);
+    --pagination-background: var(--ai-light);
+    --pagination-background-color: var(--ai-light-color);
+    --pagination-text: var(--ai-light-text);
 }
 
 .pagination-dark {
-	--pagination-background: var(--ai-dark);
-	--pagination-background-color: var(--ai-dark-color);
-	--pagination-text: var(--ai-dark-text);
+    --pagination-background: var(--ai-dark);
+    --pagination-background-color: var(--ai-dark-color);
+    --pagination-text: var(--ai-dark-text);
 }
 
 /*=====Colors End=====*/
 
 /*=====Variants=====*/
 
-.pagination-separate .page-link, .breadcrumb-separate .breadcrumb-link {
-	-moz-box-shadow: var(--pagination-box-shadow);
-	-webkit-box-shadow: var(--pagination-box-shadow);
-	box-shadow: var(--pagination-box-shadow);
-	margin-right: var(--pagination-margin);
+.pagination-separate .page-link,
+.breadcrumb-separate .breadcrumb-link {
+    -moz-box-shadow: var(--pagination-box-shadow);
+    -webkit-box-shadow: var(--pagination-box-shadow);
+    box-shadow: var(--pagination-box-shadow);
+    margin-right: var(--pagination-margin);
 }
 
 .breadcrumb-separate .breadcrumb-link {
-	color: var(--ai-text);
-	border-radius: var(--pagination-border-radius)
+    color: var(--ai-text);
+    border-radius: var(--pagination-border-radius);
 }
 
 .pagination-separate .page-link:hover {
-	-moz-box-shadow: var(--pagination-box-shadow-hover);
-	-webkit-box-shadow: var(--pagination-box-shadow-hover);
-	box-shadow: var(--pagination-box-shadow-hover);
+    -moz-box-shadow: var(--pagination-box-shadow-hover);
+    -webkit-box-shadow: var(--pagination-box-shadow-hover);
+    box-shadow: var(--pagination-box-shadow-hover);
 }
 
-.pagination-separate, .breadcrumb-separate {
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	padding: 0;
+.pagination-separate,
+.breadcrumb-separate {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding: 0;
 }
 
-.pagination-separate .page-item, .breadcrumb-separate .breadcrumb-item {
-	margin-left: 0px;
+.pagination-separate .page-item,
+.breadcrumb-separate .breadcrumb-item {
+    margin-left: 0px;
 }
 
 /*=====Variants End=====*/
 
 /*=====Sizes=====*/
-.pagination-extra-large, .breadcrumb-extra-large {
-	--pagination-padding: 10px;
-	--pagination-item-padding: 10px 20px;
-	--pagination-font-size: 18px;
-	--pagination-margin: 20px;
+.pagination-extra-large,
+.breadcrumb-extra-large {
+    --pagination-padding: 10px;
+    --pagination-item-padding: 10px 20px;
+    --pagination-font-size: 18px;
+    --pagination-margin: 20px;
 }
 
-.pagination-large, .breadcrumb-large {
-	--pagination-padding: 8px;
-	--pagination-item-padding: 8px 18px;
-	--pagination-font-size: var(--ai-font-size);
-	--pagination-margin: 15px;
+.pagination-large,
+.breadcrumb-large {
+    --pagination-padding: 8px;
+    --pagination-item-padding: 8px 18px;
+    --pagination-font-size: var(--ai-font-size);
+    --pagination-margin: 15px;
 }
 
-.pagination-small, .breadcrumb-small {
-	--pagination-padding: 5px;
-	--pagination-item-padding: 5px 12px;
-	--pagination-font-size: 14px;
-	--pagination-margin: 10px;
+.pagination-small,
+.breadcrumb-small {
+    --pagination-padding: 5px;
+    --pagination-item-padding: 5px 12px;
+    --pagination-font-size: 14px;
+    --pagination-margin: 10px;
 }
 
-.pagination-extra-small, .breadcrumb-extra-small {
-	--pagination-padding: 3px;
-	--pagination-item-padding: 3px 8px;
-	--pagination-font-size: 14px;
-	--pagination-margin: 5px;
+.pagination-extra-small,
+.breadcrumb-extra-small {
+    --pagination-padding: 3px;
+    --pagination-item-padding: 3px 8px;
+    --pagination-font-size: 14px;
+    --pagination-margin: 5px;
 }
 
 /*=====Sizes End=====*/
 
 .breadcrumb-item:not(:last-child):before {
-	content: "";
-	position: absolute;
-	top: 50%;
-	right: -10px;
-	width: calc(var(--pagination-font-size) / 2);
-	height: calc(var(--pagination-font-size) / 2);
-	border: 2px solid;
-	-webkit-transform: rotate(45deg) translateY(-50%);
-	-ms-transform: rotate(45deg) translateY(-50%);
-	transform: rotate(45deg) translateY(-50%);
-	z-index: 9;
-	border-left: 0;
-	border-bottom: 0;
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    width: calc(var(--pagination-font-size) / 2);
+    height: calc(var(--pagination-font-size) / 2);
+    border: 2px solid;
+    -webkit-transform: rotate(45deg) translateY(-50%);
+    -ms-transform: rotate(45deg) translateY(-50%);
+    transform: rotate(45deg) translateY(-50%);
+    z-index: 9;
+    border-left: 0;
+    border-bottom: 0;
 }
 
 .breadcrumb-separate .breadcrumb-item:not(:last-child):before {
-	right: -5px;
+    right: -5px;
 }
 
 .breadcrumb-item:not(:first-child) {
-	padding-left: 20px;
+    padding-left: 20px;
 }
 
 .breadcrumb-item:last-child {
-	padding-right: 0px;
+    padding-right: 0px;
 }
 
 .breadcrumb .breadcrumb-item:not(:last-child):not(.active) .breadcrumb-link {
-	background: whitesmoke;
+    background: whitesmoke;
 }
 
-.breadcrumb-separate .breadcrumb-item:not(:last-child):not(.active) .breadcrumb-link {
-	background: var(--ai-bg);
+.breadcrumb-separate
+.breadcrumb-item:not(:last-child):not(.active)
+.breadcrumb-link {
+    background: var(--ai-bg);
 }
 
 @media screen and (max-width: 600px) {
-	.breadcrumb-item:not(:first-child) {
-		padding-left: 10px;
-	}
+    .breadcrumb-item:not(:first-child) {
+        padding-left: 10px;
+    }
 
-	.breadcrumb-separate .breadcrumb-item:not(:last-child):before {
-		right: 0px;
-	}
+    .breadcrumb-separate .breadcrumb-item:not(:last-child):before {
+        right: 0px;
+    }
 
-	.breadcrumb-separate .breadcrumb-link {
-		padding: 2px 10px;
-		min-width: auto;
-		min-height: auto;
-		font-size: 13px;
-	}
+    .breadcrumb-separate .breadcrumb-link {
+        padding: 2px 10px;
+        min-width: auto;
+        min-height: auto;
+        font-size: 13px;
+    }
 }
 
-
 @media screen and (max-width: 576px) {
-	.page-link {
-		padding: 3px 10px !important;
-	}
+    .page-link {
+        padding: 3px 10px !important;
+    }
 
-	.pagination-separate .page-item, .breadcrumb-separate .breadcrumb-item {
-		margin-bottom: 10px;
-	}
+    .pagination-separate .page-item,
+    .breadcrumb-separate .breadcrumb-item {
+        margin-bottom: 10px;
+    }
 
-	.pagination, .breadcrumb {
-		flex-wrap: wrap;
-	}
-
-
+    .pagination,
+    .breadcrumb {
+        flex-wrap: wrap;
+    }
 }

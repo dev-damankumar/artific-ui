@@ -1,16 +1,16 @@
 {
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "modules": "umd"
-      }
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "modules": "umd"
+            }
+        ],
+        "@babel/preset-react",
+        "@babel/preset-typescript"
     ],
-    "@babel/preset-react",
-    "@babel/preset-typescript"
-  ],
-  "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-proposal-nullish-coalescing-operator"
-  ]
+    "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-nullish-coalescing-operator"
+    ]
 }

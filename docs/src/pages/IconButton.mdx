@@ -1,22 +1,24 @@
-import {IconButton} from "artific-ui";
+import { IconButton } from 'artific-ui'
 
 # IconButtons
 
 Icon Button are used to show icons in the form of button
 
-export const defaultTemplate=(args) => <IconButton {...args}><i className='bx bxs-color-fill'></i></IconButton>;
+export const defaultTemplate = args => (
+    <IconButton {...args}>
+        <i className="bx bxs-color-fill"></i>
+    </IconButton>
+)
 
 <div>
-	<div name="Default">{defaultTemplate.bind({})}</div>
+    <div name="Default">{defaultTemplate.bind({})}</div>
 </div>
 
 ## API
 
 ```jsx
-import { IconButton } from 'artific-ui/IconButton';
+import { IconButton } from 'artific-ui/IconButton'
 ```
-
-
 
 ## IconButton Themes
 
@@ -24,14 +26,21 @@ If you want to use a different theme for `IconButton` use the `theme` prop to se
 Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`light`). you can use either of them.
 
 <div>
-	<div name="IconButton Themes">
-		<IconButton theme="primary" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton theme="secondary" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton theme="light" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton theme="dark" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-	</div>
+    <div name="IconButton Themes">
+        <IconButton theme="primary" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton theme="secondary" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton theme="light" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton theme="dark" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+    </div>
 </div>
-
 
 ## IconButton Variants
 
@@ -43,13 +52,18 @@ Note: Different components might have addition or different variant based on the
 you can check out the props table to see which variant is supported by the component
 
 <div>
-	<div name="IconButton Variants">
-		<IconButton variant="default" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton variant="text" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton variant="outline" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-	</div>
+    <div name="IconButton Variants">
+        <IconButton variant="default" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton variant="text" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton variant="outline" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+    </div>
 </div>
-
 
 ## IconButton Layouts
 
@@ -60,12 +74,20 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
 <div>
-	<div name="Button Layouts">
-		<IconButton layout="default" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton layout="rounded" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton layout="pill" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton layout="no-radius" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-	</div>
+    <div name="Button Layouts">
+        <IconButton layout="default" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton layout="rounded" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton layout="pill" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton layout="no-radius" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+    </div>
 </div>
 
 ## Sizes
@@ -77,13 +99,23 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <div>
-	<div name="Sizes">
-		<IconButton size="xs" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton size="sm" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton size="lg" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton size="xl" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-	</div>
+    <div name="Sizes">
+        <IconButton size="xs" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton size="sm" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton size="lg" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton size="xl" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+    </div>
 </div>
 
 ## Disabled IconButtons
@@ -91,11 +123,17 @@ Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg
 Use `disabled` prop to make any button disable.
 
 <div>
-	<div name="Disabled IconButtons">
-		<IconButton disabled type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton disabled theme="light" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton disabled theme="dark" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-	</div>
+    <div name="Disabled IconButtons">
+        <IconButton disabled type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton disabled theme="light" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton disabled theme="dark" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+    </div>
 </div>
 
 ## Loading IconButtons
@@ -109,17 +147,28 @@ also you can use `loadingStyle:` (`spin`|`grow`) to change the loading style.
 use `loadingDirection` to set on with direction loader should appare.
 
 <div>
-	<div name="Loading IconButtons">
-		<IconButton loading hideTextOnLoading loadingStyle="spin" type="button">
-			<i className='bx bxs-color-fill'></i>
-		</IconButton>
-		<IconButton loading hideTextOnLoading loadingStyle="grow" type="button"><i
-			className='bx bxs-color-fill'></i></IconButton>
-		<IconButton loading loadingStyle="grow" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton loading loadingDirection="after" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton loading loadingDirection="after" loadingStyle="grow" type="button"><i
-			className='bx bxs-color-fill'></i></IconButton>
-	</div>
+    <div name="Loading IconButtons">
+        <IconButton loading hideTextOnLoading loadingStyle="spin" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton loading hideTextOnLoading loadingStyle="grow" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton loading loadingStyle="grow" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton loading loadingDirection="after" type="button">
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton
+            loading
+            loadingDirection="after"
+            loadingStyle="grow"
+            type="button"
+        >
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+    </div>
 </div>
 
 ## Custom theme IconButtons
@@ -130,24 +179,48 @@ If you want to use a different color scheme for `Alert` instead of the provided 
 colorScheme is an object containing three properties: `background`, `backgroundColor`, `color`
 
 <div>
-	<div name="Custom theme IconButtons">
-		<IconButton colorScheme={{
-			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
-			backgroundColor: '#e736f4',
-			color: 'white',
-		}} type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton colorScheme={{
-			background: 'red',
-			color: 'white',
-		}} theme="light" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton colorScheme={{
-			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
-			backgroundColor: '#e736f4',
-			color: 'white',
-		}} variant="outline" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-		<IconButton colorScheme={{
-			background: 'red',
-			color: 'white',
-		}} variant="outline" theme="light" type="button"><i className='bx bxs-color-fill'></i></IconButton>
-	</div>
+    <div name="Custom theme IconButtons">
+        <IconButton
+            colorScheme={{
+                background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+                backgroundColor: '#e736f4',
+                color: 'white',
+            }}
+            type="button"
+        >
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton
+            colorScheme={{
+                background: 'red',
+                color: 'white',
+            }}
+            theme="light"
+            type="button"
+        >
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton
+            colorScheme={{
+                background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+                backgroundColor: '#e736f4',
+                color: 'white',
+            }}
+            variant="outline"
+            type="button"
+        >
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+        <IconButton
+            colorScheme={{
+                background: 'red',
+                color: 'white',
+            }}
+            variant="outline"
+            theme="light"
+            type="button"
+        >
+            <i className="bx bxs-color-fill"></i>
+        </IconButton>
+    </div>
 </div>

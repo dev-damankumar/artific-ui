@@ -10,7 +10,6 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint src --color",
-    "prettier": "prettier src -check",
     "lint-staged": "lint-staged --config lint-staged.js",
     "husky-install": "husky install",
     "build": "npm run rollup && npm run post:build",
@@ -61,7 +60,7 @@
     "babel-jest": "^29.4.2",
     "babel-loader": "^9.1.0",
     "color": "^4.2.3",
-    "eslint": "^8.35.0",
+    "eslint": "8.22.0",
     "eslint-plugin-react": "^7.32.2",
     "fs-extra": "^11.1.0",
     "husky": "^8.0.3",
