@@ -1,6 +1,6 @@
-import "../index.css"
-import Button from "./Button"
+import '../index.css'
+import Button from './Button'
 
-export * from './Button';
-export default Button;
-export type {IButtonProps} from './Button.types';
+export * from './Button'
+export default Button
+export type {IButtonProps} from './Button.types'

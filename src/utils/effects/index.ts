@@ -1,1 +1,1 @@
-export * from './effectRipple';
+export * from './effectRipple'

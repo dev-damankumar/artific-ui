@@ -1,7 +1,7 @@
-import Tabs from "./Tabs"
-import "../index.css"
+import Tabs from './Tabs'
+import '../index.css'
 
-export * from './Tabs';
-export * from './TabItem';
-export * from './TabContent';
-export default Tabs;
+export * from './Tabs'
+export * from './TabItem'
+export * from './TabContent'
+export default Tabs

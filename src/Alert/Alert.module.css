@@ -1,201 +1,204 @@
 :root {
-	--alert-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-	--alert-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-	--alert-border-radius: 5px;
-	--alert-font-size: var(--ai-font-size);
-	--alert-margin: 15px;
-	--alert-border-width: 2px;
-	--alert-padding: 15px;
-	--alert-bg-alt: #dddddd2b;
-	--alert-background: #f8f8f8;
-	--alert-background-color: #f8f8f8;
-	--alert-text: #f8f8f8;
+    --alert-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    --alert-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    --alert-border-radius: 5px;
+    --alert-font-size: var(--ai-font-size);
+    --alert-margin: 15px;
+    --alert-border-width: 2px;
+    --alert-padding: 15px;
+    --alert-bg-alt: #dddddd2b;
+    --alert-background: #f8f8f8;
+    --alert-background-color: #f8f8f8;
+    --alert-text: #f8f8f8;
 }
 
 .alert {
-	width: 100%;
-	padding: var(--alert-padding) calc(calc(var(--alert-padding) + 3px) + calc(var(--alert-font-size) + 9px)) var(--alert-padding) calc(var(--alert-padding) + 3px);
-	border-radius: var(--alert-border-radius);
-	-webkit-box-shadow: var(--alert-box-shadow);
-	box-shadow: var(--alert-box-shadow);
-	background: var(--alert-background);
-	color: var(--alert-text);
-	margin: 0 0 var(--alert-font-size);
-	position: relative;
-	z-index: 9;
-	font-size: var(--alert-font-size);
-	font-family: 'Nunito Sans', sans-serif;
-	border: var(--alert-border-width) solid none;
+    width: 100%;
+    padding: var(--alert-padding) calc(
+            calc(var(--alert-padding) + 3px) +
+            calc(var(--alert-font-size) + 9px)
+    ) var(--alert-padding) calc(var(--alert-padding) + 3px);
+    border-radius: var(--alert-border-radius);
+    -webkit-box-shadow: var(--alert-box-shadow);
+    box-shadow: var(--alert-box-shadow);
+    background: var(--alert-background);
+    color: var(--alert-text);
+    margin: 0 0 var(--alert-font-size);
+    position: relative;
+    z-index: 9;
+    font-size: var(--alert-font-size);
+    font-family: 'Nunito Sans', sans-serif;
+    border: var(--alert-border-width) solid none;
 }
 
 .alert:hover {
-	-moz-box-shadow: var(--alert-box-shadow-hover);
-	-webkit-box-shadow: var(--alert-box-shadow-hover);
-	box-shadow: var(--alert-box-shadow-hover);
+    -moz-box-shadow: var(--alert-box-shadow-hover);
+    -webkit-box-shadow: var(--alert-box-shadow-hover);
+    box-shadow: var(--alert-box-shadow-hover);
 }
 
 .alert .close {
-	position: absolute;
-	border: none;
-	background: none;
-	color: inherit;
-	font-size: var(--alert-font-size);
-	font-weight: 700;
-	line-height: 0;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	cursor: pointer;
-	outline: none;
-	width: calc(var(--alert-font-size) + 9px);
-	height: calc(var(--alert-font-size) + 9px);
-	border-radius: 50px;
-	top: 50%;
-	transform: translateY(-50%);
-	right: var(--alert-margin);
+    position: absolute;
+    border: none;
+    background: none;
+    color: inherit;
+    font-size: var(--alert-font-size);
+    font-weight: 700;
+    line-height: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    width: calc(var(--alert-font-size) + 9px);
+    height: calc(var(--alert-font-size) + 9px);
+    border-radius: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: var(--alert-margin);
 }
 
 .alert .close:hover {
-	background: var(--alert-bg-alt);
-	-webkit-box-shadow: 0 0 32px rgba(0, 0, 0, 0.08);
-	box-shadow: 0 0 32px rgba(0, 0, 0, 0.08);
+    background: var(--alert-bg-alt);
+    -webkit-box-shadow: 0 0 32px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.08);
 }
 
 .alert *:last-child {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .alert a {
-	color: inherit;
-	font-weight: bold;
-	text-decoration: underline;
+    color: inherit;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 /*=====Layouts=====*/
 
 .alert-rounded {
-	--alert-border-radius: 10px;
+    --alert-border-radius: 10px;
 }
 
 .alert-no-radius {
-	--alert-border-radius: 0px;
+    --alert-border-radius: 0px;
 }
 
 .alert-pill {
-	--alert-border-radius: 50px;
+    --alert-border-radius: 50px;
 }
 
 /*=====Layouts End=====*/
 /*=====Colors=====*/
 .alert-primary {
-	--alert-background: var(--ai-primary);
-	--alert-background-color: var(--ai-primary-color);
-	--alert-text: var(--ai-primary-text);
+    --alert-background: var(--ai-primary);
+    --alert-background-color: var(--ai-primary-color);
+    --alert-text: var(--ai-primary-text);
 }
 
 .alert-secondary {
-	--alert-background: var(--ai-secondary);
-	--alert-background-color: var(--ai-secondary-color);
-	--alert-text: var(--ai-secondary-text);
+    --alert-background: var(--ai-secondary);
+    --alert-background-color: var(--ai-secondary-color);
+    --alert-text: var(--ai-secondary-text);
 }
 
 .alert-light {
-	--alert-background: var(--ai-light);
-	--alert-background-color: var(--ai-light-color);
-	--alert-text: var(--ai-light-text);
+    --alert-background: var(--ai-light);
+    --alert-background-color: var(--ai-light-color);
+    --alert-text: var(--ai-light-text);
 }
 
 .alert-dark {
-	--alert-background: var(--ai-dark);
-	--alert-background-color: var(--ai-dark-color);
-	--alert-text: var(--ai-dark-text);
+    --alert-background: var(--ai-dark);
+    --alert-background-color: var(--ai-dark-color);
+    --alert-text: var(--ai-dark-text);
 }
 
 /*=====Colors End=====*/
 /*=====Variants=====*/
 .alert-outline {
-	color: var(--ai-primary-color);
-	background: var(--ai-bg);
-	border: var(--alert-border-width) solid;
+    color: var(--ai-primary-color);
+    background: var(--ai-bg);
+    border: var(--alert-border-width) solid;
 }
 
 .alert-outline.alert-primary {
-	color: var(--ai-primary-color);
+    color: var(--ai-primary-color);
 }
 
 .alert-outline.alert-secondary {
-	color: var(--ai-secondary-color);
+    color: var(--ai-secondary-color);
 }
 
 .alert-outline.alert-light {
-	color: var(--ai-light-color);
+    color: var(--ai-light-color);
 }
 
 .alert-outline.alert-dark {
-	color: var(--ai-dark-color);
+    color: var(--ai-dark-color);
 }
 
 .alert-note {
-	background: var(--alert-bg-alt) !important;
-	box-shadow: none;
-	border: none;
-	border-left-width: calc(var(--alert-border-width) + 1px);
-	border-left-style: solid;
+    background: var(--alert-bg-alt) !important;
+    box-shadow: none;
+    border: none;
+    border-left-width: calc(var(--alert-border-width) + 1px);
+    border-left-style: solid;
 }
 
 .alert-note-top {
-	border: none;
-	border-top-width: calc(var(--alert-border-width) + 1px);
-	border-top-style: solid;
+    border: none;
+    border-top-width: calc(var(--alert-border-width) + 1px);
+    border-top-style: solid;
 }
 
 .alert-note-right {
-	border: none;
-	border-right-width: calc(var(--alert-border-width) + 1px);
-	border-right-style: solid;
+    border: none;
+    border-right-width: calc(var(--alert-border-width) + 1px);
+    border-right-style: solid;
 }
 
 .alert-note-bottom {
-	border: none;
-	border-bottom-width: calc(var(--alert-border-width) + 1px);
-	border-bottom-style: solid;
+    border: none;
+    border-bottom-width: calc(var(--alert-border-width) + 1px);
+    border-bottom-style: solid;
 }
 
-
 @media screen and (max-width: 500px) {
-	.alert {
-		--alert-padding: 10px;
-		--alert-font-size: 14px;
-	}
+    .alert {
+        --alert-padding: 10px;
+        --alert-font-size: 14px;
+    }
 }
 
 /*=====Sizes=====*/
 .alert-extra-large {
-	--alert-padding: 30px;
-	--alert-font-size: 20px;
+    --alert-padding: 30px;
+    --alert-font-size: 20px;
 }
 
 .alert-large {
-	--alert-padding: 20px;
-	--alert-font-size: 18px;
+    --alert-padding: 20px;
+    --alert-font-size: 18px;
 }
 
 .alert-small {
-	--alert-margin: 8px;
-	--alert-padding: 10px;
-	--alert-font-size: 14px;
+    --alert-margin: 8px;
+    --alert-padding: 10px;
+    --alert-font-size: 14px;
 }
 
 .alert-extra-small {
-	--alert-margin: 5px;
-	--alert-padding: 5px;
-	--alert-font-size: 13px;
+    --alert-margin: 5px;
+    --alert-padding: 5px;
+    --alert-font-size: 13px;
 }
 
 /*=====Sizes End=====*/

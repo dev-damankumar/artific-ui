@@ -1,5 +1,5 @@
-import Progress from "./Progress"
-import "../index.css"
+import Progress from './Progress'
+import '../index.css'
 
-export * from './Progress';
-export default Progress;
+export * from './Progress'
+export default Progress

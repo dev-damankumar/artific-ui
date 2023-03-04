@@ -1,24 +1,24 @@
-import {Button, Tooltip} from "artific-ui";
+import { Button, Tooltip } from 'artific-ui'
 
 # Tooltip
 
 Tooltips display informative text when users hover over, focus on, or tap an element.
 
-export const defaultTemplate=(args) => <Tooltip title="This is tooltip">
-	<Button>Default Tooltip</Button>
-</Tooltip>;
+export const defaultTemplate = args => (
+    <Tooltip title="This is tooltip">
+        <Button>Default Tooltip</Button>
+    </Tooltip>
+)
 
 <div>
-	<div name="Default">{defaultTemplate.bind({})}</div>
+    <div name="Default">{defaultTemplate.bind({})}</div>
 </div>
 
 ## API
 
 ```jsx
-import { Tooltip } from 'artific-ui/Tooltip';
+import { Tooltip } from 'artific-ui/Tooltip'
 ```
-
-
 
 ## Tooltip Theme
 
@@ -28,39 +28,41 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 You can also use `colorScheme` prop to define a custom theme.
 
 <div>
-	<div name="Tooltip Theme">
-		<Tooltip title="This is tooltip">
-			<Button>Default Tooltip</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-		<Tooltip theme="secondary" title="This is tooltip">
-			<Button>Secondary Tooltip</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-		<Tooltip theme="dark" title="This is tooltip">
-			<Button>Dark Tooltip</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-		<Tooltip theme="light" title="This is tooltip">
-			<Button>Light Tooltip</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-		<Tooltip colorScheme={{
-			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
-			backgroundColor: '#e736f4',
-			color: 'white',
-		}} title="This is tooltip">
-			<Button>Light Tooltip</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-	</div>
+    <div name="Tooltip Theme">
+        <Tooltip title="This is tooltip">
+            <Button>Default Tooltip</Button>
+        </Tooltip>
+        <br />
+        <br />
+        <Tooltip theme="secondary" title="This is tooltip">
+            <Button>Secondary Tooltip</Button>
+        </Tooltip>
+        <br />
+        <br />
+        <Tooltip theme="dark" title="This is tooltip">
+            <Button>Dark Tooltip</Button>
+        </Tooltip>
+        <br />
+        <br />
+        <Tooltip theme="light" title="This is tooltip">
+            <Button>Light Tooltip</Button>
+        </Tooltip>
+        <br />
+        <br />
+        <Tooltip
+            colorScheme={{
+                background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+                backgroundColor: '#e736f4',
+                color: 'white',
+            }}
+            title="This is tooltip"
+        >
+            <Button>Light Tooltip</Button>
+        </Tooltip>
+        <br />
+        <br />
+    </div>
 </div>
-
 
 ## Tooltip Placements
 
@@ -69,53 +71,57 @@ Use `placement` prop to set where the tooltip should appear
 possible values are (`bottom`|`bottom-start`|`bottom-end`|`top`|`top-start`|`top-end`|`right`|`right-start`|`right-end`|`bottom`|`bottom-start`|`bottom-end`)
 
 <div>
-	<div name="Tooltip Placements">
-		<Tooltip variant="arrow" placement="bottom" title="Bottom tooltip">
-			<Button>Bottom Placement</Button>
-		</Tooltip>
-		<Tooltip variant="arrow" placement="bottom-start" title="Bottom tooltip">
-			<Button>Bottom Start Placement</Button>
-		</Tooltip>
-		<Tooltip variant="arrow" placement="bottom-end" title="Bottom tooltip">
-			<Button>Bottom End Placement</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-		<br/>
-		<Tooltip variant="arrow" placement="left" title="Left tooltip">
-			<Button style={{marginLeft: 100}}>Left Placement</Button>
-		</Tooltip>
-		<Tooltip variant="arrow" placement="left-start" title="Left tooltip">
-			<Button>Left Start Placement</Button>
-		</Tooltip>
-		<Tooltip variant="arrow" placement="left-end" title="Left tooltip">
-			<Button>Left End Placement</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-		<br/>
-		<Tooltip variant="arrow" placement="right" title="Right tooltip">
-			<Button>Right Placement</Button>
-		</Tooltip>
-		<Tooltip variant="arrow" placement="right-start" title="Right tooltip">
-			<Button>Right Start Placement</Button>
-		</Tooltip>
-		<Tooltip variant="arrow" placement="right-end" title="Right tooltip">
-			<Button>Right End Placement</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-		<br/>
-		<Tooltip variant="arrow" placement="top" title="Top tooltip">
-			<Button>Top Placement</Button>
-		</Tooltip>
-		<Tooltip variant="arrow" placement="top-start" title="Top tooltip">
-			<Button>Top Start Placement</Button>
-		</Tooltip>
-		<Tooltip variant="arrow" placement="top-end" title="Top tooltip">
-			<Button>Top End Placement</Button>
-		</Tooltip>
-	</div>
+    <div name="Tooltip Placements">
+        <Tooltip variant="arrow" placement="bottom" title="Bottom tooltip">
+            <Button>Bottom Placement</Button>
+        </Tooltip>
+        <Tooltip
+            variant="arrow"
+            placement="bottom-start"
+            title="Bottom tooltip"
+        >
+            <Button>Bottom Start Placement</Button>
+        </Tooltip>
+        <Tooltip variant="arrow" placement="bottom-end" title="Bottom tooltip">
+            <Button>Bottom End Placement</Button>
+        </Tooltip>
+        <br />
+        <br />
+        <br />
+        <Tooltip variant="arrow" placement="left" title="Left tooltip">
+            <Button style={{ marginLeft: 100 }}>Left Placement</Button>
+        </Tooltip>
+        <Tooltip variant="arrow" placement="left-start" title="Left tooltip">
+            <Button>Left Start Placement</Button>
+        </Tooltip>
+        <Tooltip variant="arrow" placement="left-end" title="Left tooltip">
+            <Button>Left End Placement</Button>
+        </Tooltip>
+        <br />
+        <br />
+        <br />
+        <Tooltip variant="arrow" placement="right" title="Right tooltip">
+            <Button>Right Placement</Button>
+        </Tooltip>
+        <Tooltip variant="arrow" placement="right-start" title="Right tooltip">
+            <Button>Right Start Placement</Button>
+        </Tooltip>
+        <Tooltip variant="arrow" placement="right-end" title="Right tooltip">
+            <Button>Right End Placement</Button>
+        </Tooltip>
+        <br />
+        <br />
+        <br />
+        <Tooltip variant="arrow" placement="top" title="Top tooltip">
+            <Button>Top Placement</Button>
+        </Tooltip>
+        <Tooltip variant="arrow" placement="top-start" title="Top tooltip">
+            <Button>Top Start Placement</Button>
+        </Tooltip>
+        <Tooltip variant="arrow" placement="top-end" title="Top tooltip">
+            <Button>Top End Placement</Button>
+        </Tooltip>
+    </div>
 </div>
 
 ## Tooltip Layouts
@@ -127,28 +133,28 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
 <div>
-	<div name="Tooltip Layouts">
-		<Tooltip layout="default" title="This is tooltip">
-			<Button>Default Tooltip</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-		<Tooltip layout="rounded" title="This is tooltip">
-			<Button>Rounded Tooltip</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-		<Tooltip layout="no-radius" title="This is tooltip">
-			<Button>No Radius Tooltip</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-		<Tooltip layout="pill" title="This is tooltip">
-			<Button>Pill Tooltip</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-	</div>
+    <div name="Tooltip Layouts">
+        <Tooltip layout="default" title="This is tooltip">
+            <Button>Default Tooltip</Button>
+        </Tooltip>
+        <br />
+        <br />
+        <Tooltip layout="rounded" title="This is tooltip">
+            <Button>Rounded Tooltip</Button>
+        </Tooltip>
+        <br />
+        <br />
+        <Tooltip layout="no-radius" title="This is tooltip">
+            <Button>No Radius Tooltip</Button>
+        </Tooltip>
+        <br />
+        <br />
+        <Tooltip layout="pill" title="This is tooltip">
+            <Button>Pill Tooltip</Button>
+        </Tooltip>
+        <br />
+        <br />
+    </div>
 </div>
 
 ## Tooltip Variants
@@ -161,16 +167,16 @@ Note: Different components might have addition or different variant based on the
 you can check out the props table to see which variant is supported by the component
 
 <div>
-	<div name="Tooltip Variants">
-		<Tooltip variant="default" title="This is tooltip">
-			<Button>Default Tooltip</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-		<Tooltip variant="arrow" title="This is tooltip">
-			<Button>Arrow Tooltip</Button>
-		</Tooltip>
-	</div>
+    <div name="Tooltip Variants">
+        <Tooltip variant="default" title="This is tooltip">
+            <Button>Default Tooltip</Button>
+        </Tooltip>
+        <br />
+        <br />
+        <Tooltip variant="arrow" title="This is tooltip">
+            <Button>Arrow Tooltip</Button>
+        </Tooltip>
+    </div>
 </div>
 
 ## Tooltip Sizes
@@ -182,31 +188,31 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <div>
-	<div name="Tooltip Sizes">
-		<Tooltip size="xs" title="This is tooltip">
-			<Button>Tooltip</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-		<Tooltip size="sm" title="This is tooltip">
-			<Button>Tooltip</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-		<Tooltip size="md" title="This is tooltip">
-			<Button>Tooltip</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-		<Tooltip size="lg" title="This is tooltip">
-			<Button>Tooltip</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-		<Tooltip size="xl" title="This is tooltip">
-			<Button>Tooltip</Button>
-		</Tooltip>
-		<br/>
-		<br/>
-	</div>
+    <div name="Tooltip Sizes">
+        <Tooltip size="xs" title="This is tooltip">
+            <Button>Tooltip</Button>
+        </Tooltip>
+        <br />
+        <br />
+        <Tooltip size="sm" title="This is tooltip">
+            <Button>Tooltip</Button>
+        </Tooltip>
+        <br />
+        <br />
+        <Tooltip size="md" title="This is tooltip">
+            <Button>Tooltip</Button>
+        </Tooltip>
+        <br />
+        <br />
+        <Tooltip size="lg" title="This is tooltip">
+            <Button>Tooltip</Button>
+        </Tooltip>
+        <br />
+        <br />
+        <Tooltip size="xl" title="This is tooltip">
+            <Button>Tooltip</Button>
+        </Tooltip>
+        <br />
+        <br />
+    </div>
 </div>

@@ -1,453 +1,459 @@
 :root {
-	--tab-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-	--tab-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
-	--tab-border-radius: 5px;
-	--tab-padding: 10px 20px;
-	--tab-wrap-padding: 10px;
-	--tab-font-size: var(--ai-font-size);
-	--tab-margin: 15px;
-	--tab-border-width: 2px;
-	--tab-cursor: pointer;
-	--tab-background: #f8f8f8;
-	--tab-background-color: #f8f8f8;
-	--tab-text: #f8f8f8;
+    --tab-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    --tab-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+    --tab-border-radius: 5px;
+    --tab-padding: 10px 20px;
+    --tab-wrap-padding: 10px;
+    --tab-font-size: var(--ai-font-size);
+    --tab-margin: 15px;
+    --tab-border-width: 2px;
+    --tab-cursor: pointer;
+    --tab-background: #f8f8f8;
+    --tab-background-color: #f8f8f8;
+    --tab-text: #f8f8f8;
 }
 
 .tab-wrap {
-	-moz-box-shadow: var(--btn-box-shadow);
-	-webkit-box-shadow: var(--btn-box-shadow);
-	box-shadow: var(--btn-box-shadow);
-	padding: var(--tab-wrap-padding);
-	border-radius: var(--tab-border-radius);
+    -moz-box-shadow: var(--btn-box-shadow);
+    -webkit-box-shadow: var(--btn-box-shadow);
+    box-shadow: var(--btn-box-shadow);
+    padding: var(--tab-wrap-padding);
+    border-radius: var(--tab-border-radius);
 }
 
 .tabs {
-	list-style: none;
-	padding: 0;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: start;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	margin-bottom: 0;
-	border-bottom: var(--tab-border-width) solid #eeeeee;
+    list-style: none;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    border-bottom: var(--tab-border-width) solid #eeeeee;
 }
 
 .tab-pane {
-	padding: 0;
-	margin: var(--tab-margin) 0;
-	display: none;
-	line-height: var(--ai-line-height);
-	color: var(--ai-text);
+    padding: 0;
+    margin: var(--tab-margin) 0;
+    display: none;
+    line-height: var(--ai-line-height);
+    color: var(--ai-text);
 }
 
 .tab-pane *:last-child {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .tab-open {
-	display: block;
+    display: block;
 }
 
 .tab-content {
-	padding: var(--tab-padding);
-	background: #f5f5f5;
-	border-radius: 0 var(--tab-border-radius) var(--tab-border-radius) var(--tab-border-radius);
-	border: 1px solid #eeeeee;
+    padding: var(--tab-padding);
+    background: #f5f5f5;
+    border-radius: 0 var(--tab-border-radius) var(--tab-border-radius) var(--tab-border-radius);
+    border: 1px solid #eeeeee;
 }
 
-.tabs .tab-link:not(.tabs .active .tab-link):focus, .tabs .tab-link:not(.tabs .active .tab-link):hover {
-	border-color: #eeeeee;
-	background: whitesmoke;
+.tabs .tab-link:not(.tabs .active .tab-link):focus,
+.tabs .tab-link:not(.tabs .active .tab-link):hover {
+    border-color: #eeeeee;
+    background: whitesmoke;
 }
 
-.tabs .tab-item.show .tab-link, .tabs .tab-link.active {
-	color: #495057;
-	background-color: var(--ai-bg);
-	border-color: #dee2e6 #dee2e6 var(--ai-bg);
+.tabs .tab-item.show .tab-link,
+.tabs .tab-link.active {
+    color: #495057;
+    background-color: var(--ai-bg);
+    border-color: #dee2e6 #dee2e6 var(--ai-bg);
 }
 
 .tabs .tab-item {
-	margin-bottom: -1px;
-
+    margin-bottom: -1px;
 }
 
 .tab-link {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .tabs .tab-link {
-	cursor: pointer;
-	padding: var(--tab-padding);
-	display: block;
-	border: none;
-	border-top-right-radius: var(--tab-border-radius);
-	border-top-left-radius: var(--tab-border-radius);
-	color: var(--ai-dark);
-	font-size: var(--tab-font-size);
+    cursor: pointer;
+    padding: var(--tab-padding);
+    display: block;
+    border: none;
+    border-top-right-radius: var(--tab-border-radius);
+    border-top-left-radius: var(--tab-border-radius);
+    color: var(--ai-dark);
+    font-size: var(--tab-font-size);
 }
 
 /*=====Layouts=====*/
 
-
-.tab-rounded, .tab-rounded ~ .tab-content {
-	--tab-border-radius: 10px;
+.tab-rounded,
+.tab-rounded ~ .tab-content {
+    --tab-border-radius: 10px;
 }
 
 .tab-pill {
-	--tab-border-radius: 50px;
+    --tab-border-radius: 50px;
 }
 
 .tab-pill ~ .tab-content {
-	--tab-border-radius: 20px;
+    --tab-border-radius: 20px;
 }
 
-.tab-no-radius, .tab-no-radius ~ .tab-content {
-	--tab-border-radius: 0px;
+.tab-no-radius,
+.tab-no-radius ~ .tab-content {
+    --tab-border-radius: 0px;
 }
 
 /*=====Layouts End=====*/
 
 /*=====Colors=====*/
 .tab-primary {
-	--tab-background: var(--ai-primary);
-	--tab-background-color: var(--ai-primary-color);
-	--tab-text: var(--ai-primary-text);
+    --tab-background: var(--ai-primary);
+    --tab-background-color: var(--ai-primary-color);
+    --tab-text: var(--ai-primary-text);
 }
 
 .tab-secondary {
-	--tab-background: var(--ai-secondary);
-	--tab-background-color: var(--ai-secondary-color);
-	--tab-text: var(--ai-secondary-text);
+    --tab-background: var(--ai-secondary);
+    --tab-background-color: var(--ai-secondary-color);
+    --tab-text: var(--ai-secondary-text);
 }
 
 .tab-light {
-	--tab-background: var(--ai-light);
-	--tab-background-color: var(--ai-light-color);
-	--tab-text: var(--ai-light-text);
+    --tab-background: var(--ai-light);
+    --tab-background-color: var(--ai-light-color);
+    --tab-text: var(--ai-light-text);
 }
 
 .tab-dark {
-	--tab-background: var(--ai-dark);
-	--tab-background-color: var(--ai-dark-color);
-	--tab-text: var(--ai-dark-text);
+    --tab-background: var(--ai-dark);
+    --tab-background-color: var(--ai-dark-color);
+    --tab-text: var(--ai-dark-text);
 }
 
 .active a.tab-link {
-	background: var(--tab-background);
-	color: var(--tab-text);
-	border-color: var(--tab-background-color) !important;
-	border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0;
+    background: var(--tab-background);
+    color: var(--tab-text);
+    border-color: var(--tab-background-color) !important;
+    border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0;
 }
 
 /*=====Colors End=====*/
 
 /*=====Variants=====*/
 .tabs.tab-separate {
-	border-bottom: 1px solid #eee;
-	margin-bottom: var(--tab-margin);
+    border-bottom: 1px solid #eee;
+    margin-bottom: var(--tab-margin);
 }
 
 .tabs.tab-separate ~ .tab-content {
-	border-radius: var(--tab-border-radius) !important;
+    border-radius: var(--tab-border-radius) !important;
 }
 
 .tab-float.tab-line .active .tab-link {
-	background: none;
-	border: var(--tab-border-width) solid var(--tab-background-color);
-	color: var(--tab-background-color);
+    background: none;
+    border: var(--tab-border-width) solid var(--tab-background-color);
+    color: var(--tab-background-color);
 }
 
 .tabs.tab-line .active .tab-link {
-	background: none;
-	border-bottom: var(--tab-border-width) solid var(--tab-background-color);
-	color: var(--tab-background-color);
+    background: none;
+    border-bottom: var(--tab-border-width) solid var(--tab-background-color);
+    color: var(--tab-background-color);
 }
 
 .tabs.tab-line .tab-link {
-	background: none;
-	border-bottom: var(--tab-border-width) solid transparent;
+    background: none;
+    border-bottom: var(--tab-border-width) solid transparent;
 }
 
 .tabs.tab-line .tab-link:hover {
-	background: none !important;
-	border-bottom: var(--tab-border-width) solid #eee;
+    background: none !important;
+    border-bottom: var(--tab-border-width) solid #eee;
 }
 
 .tab-floating-line .active .tab-link {
-	background: #f4f5f7 !important;
-	color: var(--tab-background-color);
-	position: relative;
+    background: #f4f5f7 !important;
+    color: var(--tab-background-color);
+    position: relative;
 }
 
 .tabs.tab-floating-line .active .tab-link {
-	background: none !important;
+    background: none !important;
 }
 
 .tab-floating-line .active .tab-link::before {
-	content: "";
-	position: absolute;
-	bottom: calc(calc(var(--tab-font-size) / 4) - 1px);
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-	transform: translateX(-50%);
-	width: 50%;
-	height: calc(calc(var(--tab-font-size) / 4) - 1px);
-	background: var(--tab-background);
-	border-radius: 50px;
+    content: '';
+    position: absolute;
+    bottom: calc(calc(var(--tab-font-size) / 4) - 1px);
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 50%;
+    height: calc(calc(var(--tab-font-size) / 4) - 1px);
+    background: var(--tab-background);
+    border-radius: 50px;
 }
 
 .tab-floating-line-left .active .tab-link::before {
-	height: 50% !important;
-	width: calc(calc(var(--tab-font-size) / 4) - 1px) !important;
-	left: calc(calc(var(--tab-font-size) / 4) - 1px) !important;
-	top: 50% !important;
-	right: unset;
-	transform: translateY(-50%) translateX(0) !important;
+    height: 50% !important;
+    width: calc(calc(var(--tab-font-size) / 4) - 1px) !important;
+    left: calc(calc(var(--tab-font-size) / 4) - 1px) !important;
+    top: 50% !important;
+    right: unset;
+    transform: translateY(-50%) translateX(0) !important;
 }
 
 .tab-floating-line-right .active .tab-link::before {
-	height: 50% !important;
-	width: calc(calc(var(--tab-font-size) / 4) - 1px) !important;
-	left: unset !important;
-	right: calc(calc(var(--tab-font-size) / 4) - 1px) !important;
-	top: 50% !important;
-	transform: translateY(-50%) translateX(0) !important;
+    height: 50% !important;
+    width: calc(calc(var(--tab-font-size) / 4) - 1px) !important;
+    left: unset !important;
+    right: calc(calc(var(--tab-font-size) / 4) - 1px) !important;
+    top: 50% !important;
+    transform: translateY(-50%) translateX(0) !important;
 }
 
 .tab-floating-line-top .active .tab-link::before {
-	bottom: unset !important;
-	top: calc(calc(var(--tab-font-size) / 4) - 1px) !important;
-	left: 50% !important;
-	-webkit-transform: translateX(-50%) !important;
-	transform: translateX(-50%) !important;
-	width: 50%;
-	height: calc(calc(var(--tab-font-size) / 4) - 1px) !important;
+    bottom: unset !important;
+    top: calc(calc(var(--tab-font-size) / 4) - 1px) !important;
+    left: 50% !important;
+    -webkit-transform: translateX(-50%) !important;
+    transform: translateX(-50%) !important;
+    width: 50%;
+    height: calc(calc(var(--tab-font-size) / 4) - 1px) !important;
 }
 
 /*=====Variants End=====*/
 
 /*=====Sizes=====*/
-.tab-large, .tab-large ~ .tab-content {
-	--tab-padding: 12px 25px;
-	--tab-wrap-padding: 15px;
-	--tab-font-size: 17px;
-	--tab-margin: 20px;
+.tab-large,
+.tab-large ~ .tab-content {
+    --tab-padding: 12px 25px;
+    --tab-wrap-padding: 15px;
+    --tab-font-size: 17px;
+    --tab-margin: 20px;
 }
 
-.tab-extra-large, .tab-extra-large ~ .tab-content {
-	--tab-padding: 15px 30px;
-	--tab-wrap-padding: 15px;
-	--tab-font-size: 20px;
-	--tab-margin: 25px;
+.tab-extra-large,
+.tab-extra-large ~ .tab-content {
+    --tab-padding: 15px 30px;
+    --tab-wrap-padding: 15px;
+    --tab-font-size: 20px;
+    --tab-margin: 25px;
 }
 
-.tab-small, .tab-small ~ .tab-content {
-	--tab-padding: 8px 15px;
-	--tab-wrap-padding: 8px;
-	--tab-font-size: 15px;
-	--tab-margin: 10px;
+.tab-small,
+.tab-small ~ .tab-content {
+    --tab-padding: 8px 15px;
+    --tab-wrap-padding: 8px;
+    --tab-font-size: 15px;
+    --tab-margin: 10px;
 }
 
-.tab-extra-small, .tab-extra-small ~ .tab-content {
-	--tab-padding: 5px 10px;
-	--tab-wrap-padding: 5px;
-	--tab-font-size: 13px;
-	--tab-margin: 5px;
+.tab-extra-small,
+.tab-extra-small ~ .tab-content {
+    --tab-padding: 5px 10px;
+    --tab-wrap-padding: 5px;
+    --tab-font-size: 13px;
+    --tab-margin: 5px;
 }
 
 /*=====Sizes End=====*/
 
 /*=====Type=====*/
 .tab-float {
-	list-style: none;
-	padding: 0;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: start;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	margin-bottom: var(--tab-margin);
+    list-style: none;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: var(--tab-margin);
 }
 
 .tab-float.tab-separate .tab-link {
-	box-shadow: var(--tab-box-shadow);
+    box-shadow: var(--tab-box-shadow);
 }
 
 .tab-float .tab-item {
-	margin-right: calc(var(--tab-margin));
-	border-radius: var(--tab-border-radius);
+    margin-right: calc(var(--tab-margin));
+    border-radius: var(--tab-border-radius);
 }
 
-
-.tab-float .tab-item:focus:not(.active), .tab-float .tab-item:hover:not(.active) {
-	border-color: #eeeeee #eeeeee #eeeeee;
-	background: whitesmoke;
+.tab-float .tab-item:focus:not(.active),
+.tab-float .tab-item:hover:not(.active) {
+    border-color: #eeeeee #eeeeee #eeeeee;
+    background: whitesmoke;
 }
 
-.tab-float .tab-item.show .tab-link, .tab-float .tab-link.active {
-	color: var(--ai-text);
-	background-color: var(--ai-bg);
-	border-color: #dee2e6 #dee2e6 var(--ai-bg);
+.tab-float .tab-item.show .tab-link,
+.tab-float .tab-link.active {
+    color: var(--ai-text);
+    background-color: var(--ai-bg);
+    border-color: #dee2e6 #dee2e6 var(--ai-bg);
 }
 
 .tab-float .active a.tab-link {
-	border-radius: var(--tab-border-radius) !important;
+    border-radius: var(--tab-border-radius) !important;
 }
 
 .tab-float .tab-item {
-	margin-bottom: -1px;
+    margin-bottom: -1px;
 }
 
 .tab-float ~ .tab-content {
-	border-radius: var(--tab-border-radius) !important;
+    border-radius: var(--tab-border-radius) !important;
 }
 
 .tab-float .tab-link {
-	padding: var(--tab-padding);
-	display: block;
-	font-size: var(--tab-font-size);
-	border: var(--tab-border-width) solid none;
-	border-radius: var(--tab-border-radius);
+    padding: var(--tab-padding);
+    display: block;
+    font-size: var(--tab-font-size);
+    border: var(--tab-border-width) solid none;
+    border-radius: var(--tab-border-radius);
 }
 
 .tab-float.tab-separate ~ .tab-content {
-	border-radius: var(--tab-border-radius) !important;
+    border-radius: var(--tab-border-radius) !important;
 }
 
 /*=====Type End=====*/
 
-
 /*=====Positions=====*/
 
-.tab-left .tab-float, .tab-left .tabs {
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-align: stretch;
-	-ms-flex-align: stretch;
-	align-items: stretch;
-	-webkit-box-pack: start;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
+.tab-left .tab-float,
+.tab-left .tabs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
 }
 
 .tab-left {
-	display: flex;
+    display: flex;
 }
 
 .tab-left .tab-link {
-	white-space: nowrap;
+    white-space: nowrap;
 }
 
 .tab-left .tab-item {
-	margin-bottom: var(--tab-margin) !important;
+    margin-bottom: var(--tab-margin) !important;
 }
 
 .tab-left .tabs .tab-link {
-	border-top-right-radius: 0 !important;
-	border-bottom-left-radius: var(--tab-border-radius) !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: var(--tab-border-radius) !important;
 }
 
-.tab-right .tab-float, .tab-right .tabs {
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-align: stretch;
-	-ms-flex-align: stretch;
-	align-items: stretch;
-	-webkit-box-pack: start;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
+.tab-right .tab-float,
+.tab-right .tabs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
 }
 
 .tab-right {
-	display: flex;
-	flex-direction: row-reverse;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .tab-right .tab-link {
-	white-space: nowrap;
+    white-space: nowrap;
 }
 
 .tab-right .tab-float .tab-item {
-	margin-left: calc(var(--tab-margin));
-	margin-right: 0;
-	border-radius: var(--tab-border-radius);
+    margin-left: calc(var(--tab-margin));
+    margin-right: 0;
+    border-radius: var(--tab-border-radius);
 }
 
 .tab-right .tab-item {
-	margin-bottom: var(--tab-margin) !important;
+    margin-bottom: var(--tab-margin) !important;
 }
 
 .tab-right .tabs .tab-link {
-	border-radius: 0 var(--tab-border-radius) var(--tab-border-radius) 0;
+    border-radius: 0 var(--tab-border-radius) var(--tab-border-radius) 0;
 }
 
 .tab-bottom {
-	display: flex;
-	flex-direction: column-reverse;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .tab-bottom .tab-link {
-	white-space: nowrap;
+    white-space: nowrap;
 }
 
 .tab-bottom .tab-float .tab-item {
-	margin-left: 0;
-	margin-bottom: 0;
-	border-radius: var(--tab-border-radius);
+    margin-left: 0;
+    margin-bottom: 0;
+    border-radius: var(--tab-border-radius);
 }
 
 .tab-bottom .tab-float .tab-item {
-	margin-top: var(--tab-margin) !important;
+    margin-top: var(--tab-margin) !important;
 }
 
 .tab-bottom .tabs:not(.tab-line) .active a.tab-link {
-	border-radius: 0 0 var(--tab-border-radius) var(--tab-border-radius);
+    border-radius: 0 0 var(--tab-border-radius) var(--tab-border-radius);
 }
 
 .tab-bottom .tabs.tab-separate {
-	margin-top: var(--tab-margin);
+    margin-top: var(--tab-margin);
 }
 
 .tab-bottom .tabs:not(.tab-line) .tab-link {
-	border-radius: 0 0 var(--tab-border-radius) var(--tab-border-radius);
+    border-radius: 0 0 var(--tab-border-radius) var(--tab-border-radius);
 }
 
 .tab-bottom .tabs {
-	border-top: var(--tab-border-width) solid #eeeeee;
-	border-bottom: 0;
+    border-top: var(--tab-border-width) solid #eeeeee;
+    border-bottom: 0;
 }
 
 /*=====Positions End=====*/
 
-
 @media screen and (max-width: 576px) {
-	.tabs .tab-link {
-		--tab-padding: 5px 10px;
-	}
+    .tabs .tab-link {
+        --tab-padding: 5px 10px;
+    }
 
-	.tab-pane {
-		padding: 0;
-	}
+    .tab-pane {
+        padding: 0;
+    }
 
-	.tab-wrap {
-		--tab-wrap-padding: 15px;
-	}
-
+    .tab-wrap {
+        --tab-wrap-padding: 15px;
+    }
 }

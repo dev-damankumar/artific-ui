@@ -1,12 +1,12 @@
 :root {
-	--ai-gap: 10px;
+    --ai-gap: 10px;
 }
 
 .space {
-	display: flex;
-	gap: var(--ai-gap);
-	width: 100%;
-	align-items: stretch;
+    display: flex;
+    gap: var(--ai-gap);
+    width: 100%;
+    align-items: stretch;
 }
 
 /*.space-direction-column > * {*/
@@ -14,21 +14,21 @@
 /*}*/
 
 .space-wrap {
-	flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .space-align-start {
-	align-items: flex-start;
+    align-items: flex-start;
 }
 
 .space-align-end {
-	align-items: flex-end;
+    align-items: flex-end;
 }
 
 .space-align-center {
-	align-items: center;
+    align-items: center;
 }
 
 .space-align-baseline {
-	align-items: baseline;
+    align-items: baseline;
 }

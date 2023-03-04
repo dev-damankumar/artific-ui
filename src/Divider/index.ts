@@ -1,5 +1,5 @@
-import Divider from "./Divider"
-import "../index.css"
+import Divider from './Divider'
+import '../index.css'
 
-export * from './Divider';
-export default Divider;
+export * from './Divider'
+export default Divider

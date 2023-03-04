@@ -1,29 +1,28 @@
-import {Pagination, PaginationItem} from "artific-ui";
-
+import { Pagination, PaginationItem } from 'artific-ui'
 
 # Pagination
 
 The Pagination component enables the user to select a specific page from a range of pages.
 
-export const defaultTemplate=(args) => <Pagination {...args}>
-	<PaginationItem>Prev</PaginationItem>
-	<PaginationItem active>1</PaginationItem>
-	<PaginationItem>2</PaginationItem>
-	<PaginationItem>3</PaginationItem>
-	<PaginationItem>Next</PaginationItem>
-</Pagination>;
+export const defaultTemplate = args => (
+    <Pagination {...args}>
+        <PaginationItem>Prev</PaginationItem>
+        <PaginationItem active>1</PaginationItem>
+        <PaginationItem>2</PaginationItem>
+        <PaginationItem>3</PaginationItem>
+        <PaginationItem>Next</PaginationItem>
+    </Pagination>
+)
 
 <div>
-	<div name="Default">{defaultTemplate.bind({})}</div>
+    <div name="Default">{defaultTemplate.bind({})}</div>
 </div>
 
 ## API
 
 ```jsx
-import { Pagination } from 'artific-ui/Pagination';
+import { Pagination } from 'artific-ui/Pagination'
 ```
-
-
 
 ## Pagination Theme
 
@@ -33,55 +32,57 @@ Note: All components have basic four themes ie. (`primary`|`secondary`|`dark`|`l
 You can also use `colorScheme` prop to define a custom theme.
 
 <div>
-	<div name="Pagination Theme">
-		<Pagination theme="primary">
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-		<Pagination theme="secondary">
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-		<Pagination theme="dark">
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-		<Pagination theme="light">
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-		<Pagination colorScheme={{
-			background: 'linear-gradient(45deg, #e736f4, #673ab7)',
-			backgroundColor: '#e736f4',
-			color: 'white',
-		}}>
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-	</div>
+    <div name="Pagination Theme">
+        <Pagination theme="primary">
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+        <Pagination theme="secondary">
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+        <Pagination theme="dark">
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+        <Pagination theme="light">
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+        <Pagination
+            colorScheme={{
+                background: 'linear-gradient(45deg, #e736f4, #673ab7)',
+                backgroundColor: '#e736f4',
+                color: 'white',
+            }}
+        >
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+    </div>
 </div>
 
 ## Pagination Layouts
@@ -93,44 +94,43 @@ Set `layout` prop with the value of (`default`|`rounded`|`no-radius`|`pill`)
 `Note:` Different components might have addition layouts based on there configuration and flexibility. you can check out the props table to see which layout is supported by the component
 
 <div>
-	<div name="Pagination Layouts">
-		<Pagination layout="default">
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-		<Pagination layout="rounded">
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-		<Pagination layout="pill">
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-		<Pagination layout="no-radius">
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-	</div>
+    <div name="Pagination Layouts">
+        <Pagination layout="default">
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+        <Pagination layout="rounded">
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+        <Pagination layout="pill">
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+        <Pagination layout="no-radius">
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+    </div>
 </div>
-
 
 ## Pagination Variants
 
@@ -142,44 +142,43 @@ Note: Different components might have addition or different variant based on the
 you can check out the props table to see which variant is supported by the component
 
 <div>
-	<div name="Pagination Variants">
-		<Pagination variant="default">
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-		<Pagination variant="separate">
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-		<Pagination variant="breadcrumb">
-			<PaginationItem>Photos</PaginationItem>
-			<PaginationItem>Summer 2017</PaginationItem>
-			<PaginationItem>Italy</PaginationItem>
-			<PaginationItem>Rome</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-		<Pagination variant="float">
-			<PaginationItem>Photos</PaginationItem>
-			<PaginationItem>Summer 2017</PaginationItem>
-			<PaginationItem>Italy</PaginationItem>
-			<PaginationItem>Rome</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-	</div>
+    <div name="Pagination Variants">
+        <Pagination variant="default">
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+        <Pagination variant="separate">
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+        <Pagination variant="breadcrumb">
+            <PaginationItem>Photos</PaginationItem>
+            <PaginationItem>Summer 2017</PaginationItem>
+            <PaginationItem>Italy</PaginationItem>
+            <PaginationItem>Rome</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+        <Pagination variant="float">
+            <PaginationItem>Photos</PaginationItem>
+            <PaginationItem>Summer 2017</PaginationItem>
+            <PaginationItem>Italy</PaginationItem>
+            <PaginationItem>Rome</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+    </div>
 </div>
-
 
 ## Pagination Sizes
 
@@ -190,51 +189,51 @@ Set `size` prop with the value of (`xs`|`sm`|`md`|`lg`,`xl`). you can mix them w
 Note: Mostly all the components have the same size values ie.(`xs`|`sm`|`md`|`lg`,`xl`). but some of the components might have additional sizes.
 
 <div>
-	<div name="Pagination Sizes">
-		<Pagination size="xs">
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-		<Pagination size="sm">
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-		<Pagination size="md">
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-		<Pagination size="lg">
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-		<Pagination size="xl">
-			<PaginationItem>Prev</PaginationItem>
-			<PaginationItem active={true}>1</PaginationItem>
-			<PaginationItem>2</PaginationItem>
-			<PaginationItem>3</PaginationItem>
-			<PaginationItem>Next</PaginationItem>
-		</Pagination>
-		<br/>
-		<br/>
-	</div>
+    <div name="Pagination Sizes">
+        <Pagination size="xs">
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+        <Pagination size="sm">
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+        <Pagination size="md">
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+        <Pagination size="lg">
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+        <Pagination size="xl">
+            <PaginationItem>Prev</PaginationItem>
+            <PaginationItem active={true}>1</PaginationItem>
+            <PaginationItem>2</PaginationItem>
+            <PaginationItem>3</PaginationItem>
+            <PaginationItem>Next</PaginationItem>
+        </Pagination>
+        <br />
+        <br />
+    </div>
 </div>

@@ -1,5 +1,5 @@
-import Tooltip from "./Tooltip";
-import "../index.css"
+import Tooltip from './Tooltip'
+import '../index.css'
 
 export default Tooltip
-export * from './Tooltip';
+export * from './Tooltip'

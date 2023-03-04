@@ -1,11 +1,12 @@
-import TitleBar from "../components/TitleBar.jsx";
-
-
+import TitleBar from '../components/TitleBar.jsx'
 
 <div className="main-blogs">
-	{props.noMainHeading ? <TitleBar title="Artific UI - Layouts"/> : <h2>Artific UI - Layouts</h2>}
+    {props.noMainHeading ? (
+        <TitleBar title="Artific UI - Layouts" />
+    ) : (
+        <h2>Artific UI - Layouts</h2>
+    )}
 </div>
-
 
 Layout defines how your component's structure is going to look like for example, should it be has rounded corners or should it be circular and so on.
 
@@ -14,4 +15,3 @@ Layout defines how your component's structure is going to look like for example,
 If you don't understand what this means then explore the components to know more.
 
 `NOTE:` most of the components shares the same values for layout, but it can have some additional or different values based on component's flexibility and design
-

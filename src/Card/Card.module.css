@@ -1,221 +1,217 @@
 :root {
-	--card-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.1);
-	--card-box-shadow-hover: 0 1px 13px rgba(0, 0, 0, 0.1);
-	--card-border-radius: 5px;
-	--card-padding: 15px;
-	--card-main-color: var(--ai-bg-alt);
-	--card-border-width: 2px;
-	--card-border-color: #f0f0f0;
-	--card-img-width: 100%;
-	--card-width: 100%;
-	--card-background: var(--ai-bg);
-	--card-background-color: var(--ai-bg);
-	--card-text: inherit;
-	--card-font-size: var(--ai-font-size);
+    --card-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.1);
+    --card-box-shadow-hover: 0 1px 13px rgba(0, 0, 0, 0.1);
+    --card-border-radius: 5px;
+    --card-padding: 15px;
+    --card-main-color: var(--ai-bg-alt);
+    --card-border-width: 2px;
+    --card-border-color: #f0f0f0;
+    --card-img-width: 100%;
+    --card-width: 100%;
+    --card-background: var(--ai-bg);
+    --card-background-color: var(--ai-bg);
+    --card-text: inherit;
+    --card-font-size: var(--ai-font-size);
 }
 
 .card {
-	display: flex;
-	flex-direction: column;
-	background: var(--card-background);
-	color: var(--card-text);
-	-moz-box-shadow: var(--card-box-shadow);
-	-webkit-box-shadow: var(--card-box-shadow);
-	box-shadow: var(--card-box-shadow);
-	border-radius: var(--card-border-radius);
-	padding: var(--card-padding);
-	position: relative;
-	-webkit-transition: ease-in-out .3s;
-	-o-transition: ease-in-out .3s;
-	transition: ease-in-out .3s;
-	margin-bottom: 30px;
-	max-width: var(--card-width);
-	font-size: var(--card-font-size);
+    display: flex;
+    flex-direction: column;
+    background: var(--card-background);
+    color: var(--card-text);
+    -moz-box-shadow: var(--card-box-shadow);
+    -webkit-box-shadow: var(--card-box-shadow);
+    box-shadow: var(--card-box-shadow);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    position: relative;
+    -webkit-transition: ease-in-out 0.3s;
+    -o-transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.3s;
+    margin-bottom: 30px;
+    max-width: var(--card-width);
+    font-size: var(--card-font-size);
 }
 
 .card-body {
-	margin-top: 0;
+    margin-top: 0;
 }
 
 .card-img-div-col {
-	margin-bottom: calc(var(--card-padding) + 5px) !important;
+    margin-bottom: calc(var(--card-padding) + 5px) !important;
 }
 
 .card-img-no-margin {
-	margin-bottom: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 .card-img-div {
-	max-width: var(--card-img-width);
-	margin-right: var(--card-padding);
+    max-width: var(--card-img-width);
+    margin-right: var(--card-padding);
 }
 
 .card-img-div .card-image {
-	width: 100%;
-	height: 100%;
-	border-radius: var(--card-border-radius);
+    width: 100%;
+    height: 100%;
+    border-radius: var(--card-border-radius);
 }
 
 .card-row {
-	flex-direction: row;
+    flex-direction: row;
 }
 
-.card:not(.card-fill,.card-fill-with-border,.card-outline):hover {
-	box-shadow: var(--card-box-shadow-hover);
+.card:not(.card-fill, .card-fill-with-border, .card-outline):hover {
+    box-shadow: var(--card-box-shadow-hover);
 }
 
 .card > img {
-	width: 100%;
-	max-height: 500px;
+    width: 100%;
+    max-height: 500px;
 }
 
 /*=====Colors=====*/
 .card-primary {
-	--card-background: var(--ai-primary);
-	--card-background-color: var(--ai-primary-color);
-	--card-text: var(--ai-primary-text);
+    --card-background: var(--ai-primary);
+    --card-background-color: var(--ai-primary-color);
+    --card-text: var(--ai-primary-text);
 }
 
 .card-secondary {
-	--card-background: var(--ai-secondary);
-	--card-background-color: var(--ai-secondary-color);
-	--card-text: var(--ai-secondary-text);
+    --card-background: var(--ai-secondary);
+    --card-background-color: var(--ai-secondary-color);
+    --card-text: var(--ai-secondary-text);
 }
 
 .card-light {
-	--card-background: var(--ai-light);
-	--card-background-color: var(--ai-light-color);
-	--card-text: var(--ai-light-text);
+    --card-background: var(--ai-light);
+    --card-background-color: var(--ai-light-color);
+    --card-text: var(--ai-light-text);
 }
 
 .card-dark {
-	--card-background: var(--ai-dark);
-	--card-background-color: var(--ai-dark-color);
-	--card-text: var(--ai-dark-text);
+    --card-background: var(--ai-dark);
+    --card-background-color: var(--ai-dark-color);
+    --card-text: var(--ai-dark-text);
 }
-
 
 /*=====Colors End=====*/
 /*=====Layouts=====*/
 
 .card-rounded {
-	--card-border-radius: 15px;
+    --card-border-radius: 15px;
 }
 
 .card-no-radius {
-	--card-border-radius: 0px;
+    --card-border-radius: 0px;
 }
 
 .card-image-no-radius {
-	--card-border-radius: 0
+    --card-border-radius: 0;
 }
 
 .card-image-rounded {
-	--card-border-radius: 15px;
+    --card-border-radius: 15px;
 }
 
 .card-image-pill {
-	--card-border-radius: 50%;
+    --card-border-radius: 50%;
 }
 
 /*=====Layouts End=====*/
 
 /*=====Variants=====*/
 .card-extended {
-	padding: 0 !important;
-	overflow: hidden;
+    padding: 0 !important;
+    overflow: hidden;
 }
 
 .card-extended .card-body {
-	margin-top: 0 !important;
-	padding: calc(var(--card-padding) + 5px) !important;
+    margin-top: 0 !important;
+    padding: calc(var(--card-padding) + 5px) !important;
 }
 
 .card.card-fill {
-	box-shadow: none;
-	background: var(--card-main-color);
-	--card-text: var(--card-background-color);
+    box-shadow: none;
+    background: var(--card-main-color);
+    --card-text: var(--card-background-color);
 }
 
 .card-outline {
-	box-shadow: none;
-	background: var(--ai-bg);
-	border: var(--card-border-width) solid var(--card-background-color);
-	color: var(--card-background-color);
+    box-shadow: none;
+    background: var(--ai-bg);
+    border: var(--card-border-width) solid var(--card-background-color);
+    color: var(--card-background-color);
 }
 
 .card-outline.card-primary {
-	--card-background-color: var(--ai-primary-color);
-	--card-text: var(--ai-primary-color);
+    --card-background-color: var(--ai-primary-color);
+    --card-text: var(--ai-primary-color);
 }
 
 .card-outline.card-secondary {
-	--card-background-color: var(--ai-secondary-color);
-	--card-text: var(--ai-secondary-color);
+    --card-background-color: var(--ai-secondary-color);
+    --card-text: var(--ai-secondary-color);
 }
 
 .card-outline.card-dark {
-	--card-background-color: var(--ai-dark-color);
-	--card-text: var(--ai-dark-color);
+    --card-background-color: var(--ai-dark-color);
+    --card-text: var(--ai-dark-color);
 }
 
 .card-outline.card-light {
-	--card-background-color: var(--ai-light-color);
-	--card-text: var(--ai-light-color);
+    --card-background-color: var(--ai-light-color);
+    --card-text: var(--ai-light-color);
 }
 
-
 .card-fill-with-border {
-	box-shadow: none;
-	border: var(--card-border-width) solid var(--card-main-color);
-	background: var(--card-main-color);
-	--card-text: var(--card-background-color);
+    box-shadow: none;
+    border: var(--card-border-width) solid var(--card-main-color);
+    background: var(--card-main-color);
+    --card-text: var(--card-background-color);
 }
 
 .card a {
-	font-weight: 600;
-	color: var(--card-text);
+    font-weight: 600;
+    color: var(--card-text);
 }
 
 /*=====Variants End=====*/
 
-
 /*=====Sizes=====*/
 .card-large {
-	--card-width: 80%
+    --card-width: 80%;
 }
 
 .card-extra-large {
-	--card-width: 100%
+    --card-width: 100%;
 }
 
 .card-small {
-	--card-width: 40%
+    --card-width: 40%;
 }
 
 .card-extra-small {
-	--card-width: 20%
+    --card-width: 20%;
 }
 
 .card-image-large {
-	--card-img-width: 80%
+    --card-img-width: 80%;
 }
 
 .card-image-extra-large {
-	--card-img-width: 100%
+    --card-img-width: 100%;
 }
 
 .card-image-small {
-	--card-img-width: 40%
+    --card-img-width: 40%;
 }
 
 .card-image-extra-small {
-	--card-img-width: 20%
+    --card-img-width: 20%;
 }
 
 .card-title {
-	font-size: var(--card-font-size);
+    font-size: var(--card-font-size);
 }
 
 /*=====Sizes End=====*/
-

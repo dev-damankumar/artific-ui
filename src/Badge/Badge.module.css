@@ -1,173 +1,175 @@
 :root {
-	--badge-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-	--badge-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-	--badge-border-radius: 5px;
-	--badge-font-size: 14px;
-	--badge-margin: 15px;
-	--badge-border-width: 2px;
-	--badge-padding: 3px;
-	--badge-background: var(--ai-bg);
-	--badge-background-color: var(--ai-bg);
-	--badge-text: inherit;
+    --badge-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    --badge-box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    --badge-border-radius: 5px;
+    --badge-font-size: 14px;
+    --badge-margin: 15px;
+    --badge-border-width: 2px;
+    --badge-padding: 3px;
+    --badge-background: var(--ai-bg);
+    --badge-background-color: var(--ai-bg);
+    --badge-text: inherit;
 }
 
 .badge {
-	position: relative;
-	display: inline-flex;
-	-webkit-box-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	justify-content: center;
-	flex-shrink: 0;
-	min-width: calc(var(--badge-font-size) * 1.5);
-	height: calc(var(--badge-font-size) * 1.5);
-	overflow: hidden;
-	user-select: none;
-	color: var(--badge-text);
-	padding: var(--badge-padding) calc(var(--badge-padding) * 2);
-	border-radius: var(--badge-border-radius);
-	-webkit-box-shadow: var(--badge-box-shadow);
-	box-shadow: var(--badge-box-shadow);
-	background: var(--badge-background);
-	z-index: 9;
-	font-size: calc(var(--badge-font-size) - 2px);
-	border: var(--badge-border-width) solid none;
-	text-overflow: clip;
-	line-height: 0;
-	text-align: center;
-	cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: calc(var(--badge-font-size) * 1.5);
+    height: calc(var(--badge-font-size) * 1.5);
+    overflow: hidden;
+    user-select: none;
+    color: var(--badge-text);
+    padding: var(--badge-padding) calc(var(--badge-padding) * 2);
+    border-radius: var(--badge-border-radius);
+    -webkit-box-shadow: var(--badge-box-shadow);
+    box-shadow: var(--badge-box-shadow);
+    background: var(--badge-background);
+    z-index: 9;
+    font-size: calc(var(--badge-font-size) - 2px);
+    border: var(--badge-border-width) solid none;
+    text-overflow: clip;
+    line-height: 0;
+    text-align: center;
+    cursor: pointer;
 }
 
 .badge-group {
-	display: flex;
+    display: flex;
 }
 
-
-.badge-group > .badge-group:not(:last-child) > .badge, .badge-group > .badge:not(:last-child):not(.dropdown-toggle) {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
+.badge-group > .badge-group:not(:last-child) > .badge,
+.badge-group > .badge:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-.badge-group > .badge-group:not(:first-child) > .badge, .badge-group > .badge:nth-child(n+3), .badge-group > :not(.btn-check) + .badge {
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
+.badge-group > .badge-group:not(:first-child) > .badge,
+.badge-group > .badge:nth-child(n + 3),
+.badge-group > :not(.btn-check) + .badge {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
-
 
 .badge-image {
-	object-fit: cover;
-	width: 100%;
-	height: 100%;
-	object-position: center;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center;
 }
 
 .badge:hover {
-	-moz-box-shadow: var(--badge-box-shadow-hover);
-	-webkit-box-shadow: var(--badge-box-shadow-hover);
-	box-shadow: var(--badge-box-shadow-hover);
+    -moz-box-shadow: var(--badge-box-shadow-hover);
+    -webkit-box-shadow: var(--badge-box-shadow-hover);
+    box-shadow: var(--badge-box-shadow-hover);
 }
 
 /*=====Layouts=====*/
 .badge-rounded {
-	--badge-border-radius: 10px;
+    --badge-border-radius: 10px;
 }
 
 .badge-no-radius {
-	--badge-border-radius: 0px;
+    --badge-border-radius: 0px;
 }
 
 .badge-pill {
-	--badge-border-radius: 50px;
+    --badge-border-radius: 50px;
 }
 
 .badge-circular {
-	--badge-border-radius: 50%;
-	width: calc(var(--badge-font-size) * 1.5);
+    --badge-border-radius: 50%;
+    width: calc(var(--badge-font-size) * 1.5);
 }
 
 /*=====Layouts End=====*/
 
 /*=====Colors=====*/
 .badge-primary {
-	--badge-background: var(--ai-primary);
-	--badge-background-color: var(--ai-primary-color);
-	--badge-text: var(--ai-primary-text);
+    --badge-background: var(--ai-primary);
+    --badge-background-color: var(--ai-primary-color);
+    --badge-text: var(--ai-primary-text);
 }
 
 .badge-secondary {
-	--badge-background: var(--ai-secondary);
-	--badge-background-color: var(--ai-secondary-color);
-	--badge-text: var(--ai-secondary-text);
+    --badge-background: var(--ai-secondary);
+    --badge-background-color: var(--ai-secondary-color);
+    --badge-text: var(--ai-secondary-text);
 }
 
 .badge-light {
-	--badge-background: var(--ai-light);
-	--badge-background-color: var(--ai-light-color);
-	--badge-text: var(--ai-light-text);
+    --badge-background: var(--ai-light);
+    --badge-background-color: var(--ai-light-color);
+    --badge-text: var(--ai-light-text);
 }
 
 .badge-dark {
-	--badge-background: var(--ai-dark);
-	--badge-background-color: var(--ai-dark-color);
-	--badge-text: var(--ai-dark-text);
+    --badge-background: var(--ai-dark);
+    --badge-background-color: var(--ai-dark-color);
+    --badge-text: var(--ai-dark-text);
 }
 
 /*=====Colors End=====*/
 
 /*=====Variants=====*/
 .badge-outline {
-	border: var(--badge-border-width) solid var(--badge-background-color);
-	background: var(--ai-bg);
-	color: var(--badge-background-color);
+    border: var(--badge-border-width) solid var(--badge-background-color);
+    background: var(--ai-bg);
+    color: var(--badge-background-color);
 }
 
 .badge-outline.badge-primary {
-	color: var(--ai-primary-color);
+    color: var(--ai-primary-color);
 }
 
 .badge-outline.badge-secondary {
-	color: var(--ai-secondary-color);
+    color: var(--ai-secondary-color);
 }
 
 .badge-outline.badge-light {
-	color: var(--ai-light-color);
+    color: var(--ai-light-color);
 }
 
 .badge-outline.badge-dark {
-	color: var(--ai-dark-color);
+    color: var(--ai-dark-color);
 }
 
 .badge-dot {
-	--badge-padding: 0px;
-	min-width: calc(var(--badge-font-size));
-	width: calc(var(--badge-font-size));
-	height: calc(var(--badge-font-size));
+    --badge-padding: 0px;
+    min-width: calc(var(--badge-font-size));
+    width: calc(var(--badge-font-size));
+    height: calc(var(--badge-font-size));
 }
 
 /*=====Variants End=====*/
 @media screen and (max-width: 500px) {
-	.badge {
-		--badge-padding: 10px;
-		--badge-font-size: 14px;
-	}
+    .badge {
+        --badge-padding: 10px;
+        --badge-font-size: 14px;
+    }
 }
 
 /*=====Sizes =====*/
 
 .badge-extra-large {
-	--badge-font-size: 18px;
+    --badge-font-size: 18px;
 }
 
 .badge-large {
-	--badge-font-size: var(--ai-font-size);
+    --badge-font-size: var(--ai-font-size);
 }
 
 .badge-small {
-	--badge-font-size: 12px;
+    --badge-font-size: 12px;
 }
 
 .badge-extra-small {
-	--badge-font-size: 10px;
+    --badge-font-size: 10px;
 }
 
 /*=====Sizes End=====*/
